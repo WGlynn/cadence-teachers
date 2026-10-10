@@ -21,7 +21,7 @@
   (c) 'base', K=96: 64x32 beats 16x8 by .02 to .05 in final knowledge (smaller than the original >= .05).
   (d) Overall: size helps only where stale teaching is left unfixed: the 64x32 - 16x8 gain in 'base' exceeds the gain in
       'both' at both K.
-- Result: PENDING (full 12-seed run started 2026-10-10 ~17:00, 3 workers, ~3 h).
+- Result: PENDING (full 12-seed run started 2026-10-10 ~17:00; stopped at 30 of 144 runs at 17:15 on Will's call to put EXP-42 first; resumable with the same command, checkpoint exp/EXP-40-full.jsonl).
 - Verdict: PENDING.
 
 ## Reflection
