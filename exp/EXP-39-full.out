@@ -1,0 +1,24 @@
+EXP-39 prerequisite chain  B=40 episodes  MAX_STEPS=8  seeds=12  (34s)
+  SPARSE-FWD       solved  0/12  policy acc 0.45 (SEM 0.04)  train success 0.34  top-move share 0.32  e.g. path warm > warm > warm > warm > warm > warm
+  SPARSE-BWD       solved  0/12  policy acc 0.35 (SEM 0.03)  train success 0.84  top-move share 0.43  e.g. path warm > warm > warm > warm > warm > warm
+  GRADE-FWD        solved 12/12  policy acc 0.98 (SEM 0.02)  train success 0.77  top-move share 0.28  e.g. path wood > stone > craft > warm
+  GRADE-BWD        solved  8/12  policy acc 0.87 (SEM 0.06)  train success 0.91  top-move share 0.42  e.g. path wood > stone > craft > warm
+  GRADE-BWD-BLIND  solved  0/12  policy acc 0.28 (SEM 0.03)  train success 0.63  top-move share 0.32  e.g. path wood > craft > craft > craft > craft > craft
+EXP-39 prerequisite chain  B=150 episodes  MAX_STEPS=8  seeds=12  (107s)
+  SPARSE-FWD       solved  0/12  policy acc 0.60 (SEM 0.04)  train success 0.40  top-move share 0.29  e.g. path craft > craft > craft > craft > craft > craft
+  SPARSE-BWD       solved  0/12  policy acc 0.35 (SEM 0.04)  train success 0.84  top-move share 0.43  e.g. path warm > warm > warm > warm > warm > warm
+  GRADE-FWD        solved 12/12  policy acc 1.00 (SEM 0.00)  train success 0.93  top-move share 0.26  e.g. path wood > stone > craft > warm
+  GRADE-BWD        solved 12/12  policy acc 0.98 (SEM 0.02)  train success 0.96  top-move share 0.47  e.g. path wood > stone > craft > warm
+  GRADE-BWD-BLIND  solved  0/12  policy acc 0.23 (SEM 0.02)  train success 0.63  top-move share 0.32  e.g. path craft > craft > craft > craft > craft > craft
+EXP-39 prerequisite chain  B=500 episodes  MAX_STEPS=8  seeds=12  (314s)
+  SPARSE-FWD       solved  1/12  policy acc 0.70 (SEM 0.05)  train success 0.46  top-move share 0.31  e.g. path craft > craft > craft > craft > craft > craft
+  SPARSE-BWD       solved  0/12  policy acc 0.38 (SEM 0.03)  train success 0.84  top-move share 0.44  e.g. path craft > craft > craft > craft > craft > craft
+  GRADE-FWD        solved 12/12  policy acc 1.00 (SEM 0.00)  train success 0.98  top-move share 0.26  e.g. path wood > stone > craft > warm
+  GRADE-BWD        solved 12/12  policy acc 1.00 (SEM 0.00)  train success 0.99  top-move share 0.50  e.g. path wood > stone > craft > warm
+  GRADE-BWD-BLIND  solved  0/12  policy acc 0.22 (SEM 0.02)  train success 0.64  top-move share 0.32  e.g. path craft > craft > craft > craft > craft > craft
+EXP-39 prerequisite chain  B=1500 episodes  MAX_STEPS=8  seeds=12  (819s)
+  SPARSE-FWD       solved 11/12  policy acc 0.95 (SEM 0.03)  train success 0.66  top-move share 0.30  e.g. path stone > wood > craft > warm
+  SPARSE-BWD       solved  0/12  policy acc 0.52 (SEM 0.04)  train success 0.88  top-move share 0.42  e.g. path wood > craft > craft > craft > craft > craft
+  GRADE-FWD        solved 12/12  policy acc 1.00 (SEM 0.00)  train success 0.99  top-move share 0.25  e.g. path stone > wood > craft > warm
+  GRADE-BWD        solved 12/12  policy acc 1.00 (SEM 0.00)  train success 1.00  top-move share 0.51  e.g. path wood > stone > craft > warm
+  GRADE-BWD-BLIND  solved  0/12  policy acc 0.20 (SEM 0.00)  train success 0.65  top-move share 0.33  e.g. path warm > warm > warm > warm > warm > warm

@@ -16,6 +16,7 @@
 !/exp/
 !/ui/
 !/.github/
+!/site/
 # inside exp: no brain checkpoints, caches, scratch backups
 /exp/*_brains/
 /exp/__pycache__/
@@ -23,3 +24,7 @@
 /exp/*.bak
 /exp/*.npz
 __pycache__/
+# web app: no dependencies, build output, or the synced data copy (experiments/atlas.json is the source)
+/site/node_modules/
+/site/dist/
+/site/src/data/atlas.json

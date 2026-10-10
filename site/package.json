@@ -1,0 +1,32 @@
+{
+  "name": "cadence-atlas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "predev": "node scripts/sync.mjs",
+    "prebuild": "node scripts/sync.mjs",
+    "shots": "node scripts/shots.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.1",
+    "@react-three/postprocessing": "3.2.0",
+    "motion": "14.1.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "puppeteer-core": "25.13.0",
+    "vite": "^8.3.0"
+  }
+}

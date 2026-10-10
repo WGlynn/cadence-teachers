@@ -1555,5 +1555,51 @@
    ]
   },
   "quote_worthy": "The adaptive attacker blinded the detector completely and gained nothing: the rule, not the alarm, does the work."
+ },
+ {
+  "id": "EXP-39",
+  "name": "Teaching a 4-step prerequisite chain",
+  "date": "2026-10-10",
+  "iter": "iter30",
+  "track": "teaching game",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "12 seeds x 4 budgets x 5 arms; pre-registered; toy chain, one brain configuration",
+  "headline": "A grading teacher got 12/12 students through wood > stone > fire > warm in 40 episodes; learning alone took about 1500 (11/12), and hiding the inventory made it unlearnable.",
+  "question": "Do inventory-in-state, per-move grading and backward teaching fix the 'collapse onto one action' failure on a 4-step chain?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Test advice before giving it: 'teach backwards' worked on a 2-step chain but a reverse curriculum under sparse reward causes the collapse on 4 steps.",
+  "chart": {
+   "title": "Students solving the chain (of 12)",
+   "unit": "students",
+   "bars": [
+    {
+     "label": "alone, 40 episodes",
+     "value": 0
+    },
+    {
+     "label": "alone, 1500 episodes",
+     "value": 11
+    },
+    {
+     "label": "reverse curriculum, 1500",
+     "value": 0
+    },
+    {
+     "label": "graded, 40 episodes",
+     "value": 12
+    },
+    {
+     "label": "graded backward, 40",
+     "value": 8
+    },
+    {
+     "label": "inventory hidden, 1500",
+     "value": 0
+    }
+   ]
+  },
+  "quote_worthy": "Starting the lessons next to the fire taught the brains to warm up and nothing else: the reverse curriculum caused the exact collapse it was meant to cure."
  }
 ]

@@ -91,6 +91,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-10 (iter30): EXP-39 SUPPORTIVE (pre-registered): on a 4-step prerequisite chain a grading teacher gets 12/12 students solving in 40 episodes; sparse reward alone needs ~1500 (11/12); hidden inventory = unlearnable; a reverse curriculum under sparse reward CAUSES the collapse onto late-chain moves (0/12 at every budget). Our earlier 'teach backwards' advice is withdrawn.
+
 2026-10-10 (iter29): EXP-38 SUPPORTIVE: never re-teach an item the student already passed. Attacker soak .69 -> .30, honest .927 -> .946 (~2.6 SEM); total fake pay unchanged (ledger-capped, only moves to the colluder); repeat-rate penalty adds nothing; an adaptive attacker blinds the detector yet stays contained. EXP-36's fake-pay metric counted only the colluder.
 
 2026-10-10 (iter28): EXP-35b SUPPORTIVE with correct credit (CREDIT=item, 12 seeds): share 0.9 vs 0 doubles Discover pay per move (.0036 -> .0071), raises late discovery .51 -> .63 (~4 SEM) and new discoveries 54.0 -> 57.8 (~3 SEM); accuracy +.021 (~2 SEM, no claim). PI controller fell to .14 (its set point shrinks by construction). iter27 NULL superseded as a credit-design failure.
@@ -134,6 +136,12 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter30 — 2026-10-10 — EXP-39 prerequisite chain = SUPPORTIVE (grading is the teacher's value; 'teach backwards' withdrawn)
+- Version: Cadence v0.80.0 `19bee92`; brain at the key-door protocol-3 operating point, `step`. 12 seeds x B 40/150/500/1500 x 5 arms.
+- RUN GATE: pre-registered (experiments/EXP-39.md, pushed 599756b before the full run); pilot swept the budget (the window) and printed the chain; prediction revised after the pilot in the open.
+- Result (solved of 12 at B=40/150/500/1500): SPARSE-FWD 0/0/1/11; SPARSE-BWD 0/0/0/0; GRADE-FWD 12/12/12/12; GRADE-BWD 8/12/12/12; BLIND 0/0/0/0.
+- Verdict: all five predictions held. Write-up: experiments/EXP-39.md.
 
 ### iter29 — 2026-10-10 — EXP-38 repeat-need detection = SUPPORTIVE (exclusion, not detection, does the work)
 - Version: Cadence v0.80.0 `19bee92`. EXP-36 world, 16 rounds, 12 seeds, 979s at 6 workers.
