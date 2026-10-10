@@ -26,3 +26,16 @@ resuming: 0 done, 36 to run
   done PI seed 1  (1482s)
   done PI seed 0  (1503s)
   done PI seed 2  (1549s)
+  done PI seed 3  (1683s)
+  done PI seed 4  (1692s)
+  done PI seed 5  (1720s)
+  done PI seed 6  (1785s)
+  done PI seed 7  (1787s)
+  done PI seed 8  (1952s)
+  done PI seed 10  (1961s)
+  done PI seed 11  (1968s)
+  done PI seed 9  (1992s)
+EXP-35b pedigree controller  N=8 K=96 rounds=30 seeds=12 D=40  (1992s)
+  alpha 0.0  final 0.790 (SEM 0.006)  mean-over-time 0.688  network-knows 0.90  discovering 0.41  relaying 0.57  est T/D 0.0064/0.0056  royalty 0.000 direct 1.635  new-discoveries 54.0  disc-royalty 0.000
+  alpha 0.9  final 0.811 (SEM 0.009)  mean-over-time 0.696  network-knows 0.93  discovering 0.46  relaying 0.49  est T/D 0.0082/0.0076  royalty 0.604 direct 1.196  new-discoveries 57.8  disc-royalty 0.246
+  alpha PI   final 0.798 (SEM 0.007)  mean-over-time 0.692  network-knows 0.91  discovering 0.41  relaying 0.57  est T/D 0.0080/0.0068  royalty 0.322 direct 1.389  new-discoveries 55.2  disc-royalty 0.106  alpha path 0.57 0.53 0.54 0.52 0.41 0.32 0.25 0.13

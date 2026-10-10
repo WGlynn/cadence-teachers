@@ -91,6 +91,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-10 (iter28): EXP-35b SUPPORTIVE with correct credit (CREDIT=item, 12 seeds): share 0.9 vs 0 doubles Discover pay per move (.0036 -> .0071), raises late discovery .51 -> .63 (~4 SEM) and new discoveries 54.0 -> 57.8 (~3 SEM); accuracy +.021 (~2 SEM, no claim). PI controller fell to .14 (its set point shrinks by construction). iter27 NULL superseded as a credit-design failure.
+
 2026-10-10 (iter27): EXP-35b rerun (patched credit) = NULL, and the share channel is STARVED, not refuted. Royalty on discoveries is ~1/40 of direct pay, so estD never leaves PRIOR (.0100 at alpha 0, .0099 at 0.9); discovery rate is set by PRIOR vs estT, not by the share. PI controller drove alpha to 0. Next: open the effect window (pilot royalty size / PRIOR) before any rerun. Pedigree claims unchanged: record, attribution, teaching price.
 
 2026-10-10 (iter26): EXP-36 had a duplicated-lesson bug. Fixed rerun: the probe-fooling sandbagger is worse than logged (fake pay .15, honest knowledge .83 vs .95 without it); reciprocity recovers throughput (.91) but not fake pay. Lists still catastrophic (~80x). Next: repeat-need detection on top of reciprocity. EXP-35b still VOID, rerun Will-gated.
@@ -130,6 +132,23 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter28 — 2026-10-10 — EXP-35b with item credit = SUPPORTIVE (the share drives discovery)
+- **Version:** Cadence v0.80.0 `19bee92`. N=8, K=96, 30 rounds, 12 seeds, D=40, PRIOR=0.01, 6 workers, 1992s.
+- **Design change:** CREDIT=item. Discover is credited ALL pay on items the brain found by a Discover move (own teaching
+  + royalty); each move's value = decayed pay / decayed move count (PRIOR = one pseudo-move).
+- **RUN GATE.** PREDICTION in the docstring (see experiments/EXP-35b.md). WINDOW + CHAIN: pilot 3 seeds x PRIOR .01/.002,
+  full length; every link moved with ALPHA (Discover pay/move .0034 -> .0071 and .0022 -> .0064; Discover share
+  .39 -> .44 and .35 -> .42). VARIANCE: arms differ by construction. METRIC: network-new discoveries and accuracy
+  cannot be passed by a degenerate policy.
+- **Result (mean +- SEM, 12 seeds), ALPHA 0 / 0.9 / PI:** Discover pay per move .0036 / .0071 / .0049; Discover share
+  last 10 rounds .51 / .63 / .53; new discoveries 54.0+-1.0 / 57.8+-0.8 / 55.3+-1.3; final .790 / .811 / .798;
+  PI share path .57 -> .13.
+- **Verdict:** prediction held on pay (~5 SEM), late discovery (+.12, ~4 SEM) and new discoveries (+3.8, ~3 SEM, better
+  than predicted); accuracy +.021 just outside the predicted +-.02 band (~2 SEM, no claim); PI part WRONG (set point
+  shrinks by construction). Pedigree share driving discovery: first valid support, small world, one PRIOR.
+- Evidence: `exp/EXP-35b-item-2026-10-10.out`, `exp/EXP-35b-K96-R30-item.json/.jsonl`, pilot `exp/EXP-35b-pilot-item-P*.jsonl`.
+  Write-up: `experiments/EXP-35b.md`.
 
 ### iter27 — 2026-10-10 — EXP-35b rerun with patched credit = NULL; share channel starved
 - **Version:** Cadence v0.80.0. N=8, K=96, 30 rounds, 6 seeds, D=40, PRIOR=0.01, 6 workers (~17 min per credit mode).
