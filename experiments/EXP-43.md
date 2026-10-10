@@ -15,6 +15,11 @@
   - (P5) judged-w3 stays more than .05 below its own teacher (teacher-4).
   - (P6) With 3 characters of context the tabular learner beats Cadence on the same judged grades (a table stores the teacher's best for every context it has seen; a (32, 16) brain cannot hold about 2,000 contexts).
   - Check, not a prediction: outcome-w1 passes 1-3 reproduce EXP-42's w1 numbers exactly (same seeds, same grades).
+- Pilots (1 seed, 1 pass, full text, seen before the revision below): outcome-w1 pass 1 = .179, exactly EXP-42's seed 0 (the check holds). judged-w1 learned (agree with the teacher .51 in training, held-out greedy .241). partial-w1 and judged-w3 collapsed below always-space (.086 saying "aaa", .069 saying "tta") with the brain aroused on only 1% and 3% of moments: under live, a brain learns only when an outcome surprises it or reward falls below its usual level, and a deterministic grade stops surprising it once its critic expects the bad grade, so it went calm and stopped learning while wrong. The same two arms learning from every outcome (Brain.step, no arousal) reached .239 and .242 after one pass. Always-learning steps cost 9-13 ms against about 4.5, so passes cut to 6.
+- Revised design (in the open, after the pilots, before the full run): the grade comparison runs on an always-learning brain (-always: step, no arousal, EXP-39's protocol), 6 passes, greedy probes after passes 1, 3, 6, 3 seeds, arms outcome-w1, partial-w1, judged-w1, outcome-w3 (new control: is it the grade or the protocol that makes 3 characters usable?), judged-w3. The live protocol (EXP-42's) runs separately at 3 passes, 3 seeds, for outcome-w1, partial-w1, judged-w1, judged-w3.
+- Revised predictions (P1-P6 now on the always-learning arms, wording otherwise unchanged; P7-P8 new):
+  - (P7) The grade does the work for longer context: judged-w3 beats outcome-w3 by more than 2 SEM.
+  - (P8) The calm trap holds across seeds under live: partial-w1 and judged-w3 are aroused on under 10% of moments after pass 1 and end below always-space (.202) held out; outcome-w1 reproduces EXP-42's three passes exactly.
 - Breakaway = P4 holds. Result: PENDING. Verdict: PENDING.
 
 ## Reflection

@@ -17,9 +17,13 @@ Grades (all on the student's own guess; never the answer):
   outcome : +1 right, -1 wrong (EXP-42)
   judged  : the teacher's score
   partial : the mean of the two (half for being right, half for a good guess)
-Cadence arms (modules MODULES, arousal on, every step its own episode, seeds as EXP-42):
-  outcome-w1, partial-w1, judged-w1 : input = the last character; teacher order 2 (bigram)
-  judged-w3                         : input = the last 3 characters; teacher order 4
+Cadence arms (modules MODULES, every step its own episode, seeds as EXP-42):
+  <grade>-w1 : input = the last character; teacher order 2 (bigram)
+  <grade>-w3 : input = the last 3 characters; teacher order 4
+  plain name : Brain.live with arousal on (EXP-42's protocol: learns only while aroused)
+  -always    : Brain.step without arousal, learns from every outcome (EXP-39's protocol). Added after the pilot: under
+               live, a deterministic grade let the brain go calm (aroused 1-3% of moments) and stop learning while
+               wrong ("the calm trap"), so the grade comparison runs on an always-learning brain.
 Every arm also runs its order-(n+1) teacher as an observer, so "agree" (the student's guess = the teacher's best) is
 printed for every arm: the chain is grade -> reward -> agree -> accuracy.
 Baselines: majority; the teachers' own accuracy (ceilings); a tabular epsilon-greedy learner on the same grades
@@ -28,7 +32,8 @@ Protocol: PASSES passes through Alice ch.1, greedy held-out accuracy on ch.2 fro
 the passes in PROBES, then ch.2 with learning on (prequential, the teacher keeps grading). Sample after "alice was ".
 PREDICTION: experiments/EXP-43.md (written before the run).
 
-    SEEDS=3 PASSES=10 PROBES=1,3,10 WORKERS=6 TAG=full python -u EXP-43_judged_grades.py
+    SEEDS=3 PASSES=6 PROBES=1,3,6 WORKERS=8 TAG=full python -u EXP-43_judged_grades.py     (always-learning arms)
+    SEEDS=3 PASSES=3 PROBES=1,3 WORKERS=6 TAG=live ARMS=outcome-w1,partial-w1,judged-w1,judged-w3 python -u ...
     SEEDS=1 PASSES=1 PROBES=1 WORKERS=4 TAG=pilot python -u EXP-43_judged_grades.py       (pilot)
 """
 import importlib.util, json, os, tempfile, time
@@ -45,11 +50,12 @@ ALPHA, V, IDX, PROMPT, SAMPLE = E42.ALPHA, E42.V, E42.IDX, E42.PROMPT, E42.SAMPL
 window, corpus, majority = E42.window, E42.corpus, E42.majority
 
 SEEDS = int(os.environ.get("SEEDS", 3))
-PASSES = int(os.environ.get("PASSES", 10))
-PROBES = sorted({int(p) for p in os.environ.get("PROBES", "1,3,10").split(",") if int(p) <= PASSES})
+PASSES = int(os.environ.get("PASSES", 6))
+PROBES = sorted({int(p) for p in os.environ.get("PROBES", "1,3,6").split(",") if int(p) <= PASSES})
 TAG = os.environ.get("TAG", "full")
-ARMS = os.environ.get("ARMS", "outcome-w1,partial-w1,judged-w1,judged-w3").split(",")
-WORKERS = int(os.environ.get("WORKERS", 6))
+ARMS = os.environ.get("ARMS", "outcome-w1-always,partial-w1-always,judged-w1-always,outcome-w3-always,"
+                               "judged-w3-always").split(",")
+WORKERS = int(os.environ.get("WORKERS", 8))
 MODULES = tuple(int(m) for m in os.environ.get("MODULES", "32x16").split("x"))
 
 
@@ -93,26 +99,29 @@ def grade(kind, teacher, text, i, act):
 
 
 def split(arm):
-    kind, w = arm.split("-w")
-    return kind, int(w)
+    """'judged-w3' -> ('judged', 3, False); a trailing '-always' learns from every outcome (step, no arousal)."""
+    parts = arm.split("-")
+    return parts[0], int(parts[1][1:]), parts[-1] == "always"
 
 
 # ---------------- Cadence ----------------
 def run_cadence(job):
     arm, seed, a, b = job
     from cadence import ArousalConfig, Brain
-    kind, n = split(arm)
+    kind, n, always = split(arm)
     brain = Brain.compose(inputs=n * V, actions=V, modules=MODULES, seed=10_000 * (seed + 1) + 42,
-                          arousal=ArousalConfig())
+                          arousal=None if always else ArousalConfig())
+    move = brain.step if always else brain.live
     teacher, reward, t0 = Teacher(n + 1), None, time.time()
 
     def read(text):
         nonlocal reward
         hits = agree = 0
         rsum = 0.0
+        woke = 0 if always else brain.arousal.moments["aroused"]
         for i in range(len(text)):
             x = window(text, i, n)
-            act = brain.live(x) if reward is None else brain.live(x, reward=reward, done=np.array([True]))
+            act = move(x) if reward is None else move(x, reward=reward, done=np.array([True]))
             act = int(np.asarray(act).reshape(-1)[0])
             hits += act == IDX[text[i]]
             agree += act == teacher.best(text, i)
@@ -120,7 +129,8 @@ def run_cadence(job):
             rsum += r
             reward = np.array([r])
             teacher.tell(text, i)
-        return dict(acc=hits / len(text), agree=agree / len(text), reward=rsum / len(text))
+        aroused = 1.0 if always else (brain.arousal.moments["aroused"] - woke) / len(text)
+        return dict(acc=hits / len(text), agree=agree / len(text), reward=rsum / len(text), aroused=aroused)
 
     def probe(text):
         with tempfile.TemporaryDirectory() as d:
@@ -137,7 +147,7 @@ def run_cadence(job):
         if p in PROBES:
             greedy[p] = probe(b)
         s = by_pass[-1]
-        print(f"    {arm} s{seed} pass {p:2d}: acc {s['acc']:.3f} agree {s['agree']:.3f} reward {s['reward']:+.3f}"
+        print(f"    {arm} s{seed} pass {p:2d}: acc {s['acc']:.3f} agree {s['agree']:.3f} reward {s['reward']:+.3f} aroused {s['aroused']:.2f}"
               + (f"  greedy held-out {greedy[p]:.3f}" if p in greedy else ""), flush=True)
     held = read(b)
     with tempfile.TemporaryDirectory() as d:
@@ -204,9 +214,8 @@ def main():
     base = {"majority": majority(a, b)[0]}
     for k in (2, 4):
         base[f"teacher-{k} (told the answer)"] = teacher_accuracy(k, a, b)[1]
-    for arm in ARMS:
-        kind, n = split(arm)
-        base[f"bandit {arm}"] = float(np.mean([bandit(kind, n, s, a, b)[1] for s in range(SEEDS)]))
+    for kind, n in dict.fromkeys(split(arm)[:2] for arm in ARMS):
+        base[f"bandit {kind}-w{n}"] = float(np.mean([bandit(kind, n, s, a, b)[1] for s in range(SEEDS)]))
     print(f"\nheld-out accuracy (Alice ch.2), {SEEDS} seeds, {PASSES} passes  ({time.time() - t0:.0f}s)")
     for arm in ARMS:
         rs = [r for r in rows if r["arm"] == arm and r["seed"] < SEEDS and r["passes"] == PASSES]

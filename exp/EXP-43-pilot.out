@@ -1,0 +1,30 @@
+EXP-43 text: 10889 train / 10466 held-out chars; 4 Cadence runs to go (0 done); modules (32, 16), passes 1, probes [1]
+    partial-w1 s0 pass  1: acc 0.076 agree 0.059 reward -0.653  greedy held-out 0.086
+    judged-w1 s0 pass  1: acc 0.190 agree 0.512 reward +0.319  greedy held-out 0.241
+    outcome-w1 s0 pass  1: acc 0.179 agree 0.348 reward -0.642  greedy held-out 0.226
+    judged-w3 s0 pass  1: acc 0.076 agree 0.101 reward -0.623  greedy held-out 0.069
+  partial-w1 seed 0: held-out 0.086 greedy {'1': 0.08589719090387923}  4.27 ms/step  sample: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  judged-w1  seed 0: held-out 0.241 greedy {'1': 0.24144849990445252}  4.48 ms/step  sample: 't t t t t t t t t t t t t t t t t t t t t t t t t t t t t t '
+  outcome-w1 seed 0: held-out 0.214 greedy {'1': 0.2264475444295815}  4.75 ms/step  sample: 'h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h '
+  judged-w3  seed 0: held-out 0.069 greedy {'1': 0.0693674756353908}  4.77 ms/step  sample: 'ttattattattattattattattattattattattattattattattattattattatta'
+
+held-out accuracy (Alice ch.2), 1 seeds, 1 passes  (156s)
+  cadence outcome-w1 live 0.214 (SEM 0.000)  greedy by pass 1:0.226  agree 0.414  last pass acc 0.179
+  cadence partial-w1 live 0.086 (SEM 0.000)  greedy by pass 1:0.086  agree 0.055  last pass acc 0.076
+  cadence judged-w1  live 0.241 (SEM 0.000)  greedy by pass 1:0.241  agree 0.718  last pass acc 0.190
+  cadence judged-w3  live 0.069 (SEM 0.000)  greedy by pass 1:0.069  agree 0.106  last pass acc 0.076
+  majority                       0.202
+  teacher-2 (told the answer)    0.292
+  teacher-4 (told the answer)    0.515
+  bandit outcome-w1              0.193
+  bandit partial-w1              0.264
+  bandit judged-w1               0.265
+  bandit judged-w3               0.199
+
+  sample outcome-w1 seed 0: 'alice was h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h h '
+
+  sample partial-w1 seed 0: 'alice was aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  sample judged-w1 seed 0: 'alice was t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t '
+
+  sample judged-w3 seed 0: 'alice was ttattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattattat'
