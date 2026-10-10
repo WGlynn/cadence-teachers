@@ -1,1 +1,14 @@
 resuming: 0 done, 24 to run
+EXP-40 brain size x world size  seeds=2 rounds={32: 16, 96: 24}  (1868s)
+  K= 32 base  size 16x8    before 0.578  final 0.801 (SEM 0.074)  mean-over-time 0.751  forgetting 0.045 (SEM 0.009)  ~121s/run  n=2
+  K= 32 base  size 32x16   before 0.604  final 0.820 (SEM 0.039)  mean-over-time 0.777  forgetting 0.037 (SEM 0.004)  ~109s/run  n=2
+  K= 32 base  size 64x32   before 0.541  final 0.877 (SEM 0.018)  mean-over-time 0.806  forgetting 0.026 (SEM 0.000)  ~112s/run  n=2
+  K= 32 both  size 16x8    before 0.578  final 0.992 (SEM 0.004)  mean-over-time 0.882  forgetting 0.007 (SEM 0.003)  ~112s/run  n=2
+  K= 32 both  size 32x16   before 0.604  final 0.988 (SEM 0.008)  mean-over-time 0.873  forgetting 0.004 (SEM 0.001)  ~109s/run  n=2
+  K= 32 both  size 64x32   before 0.541  final 0.984 (SEM 0.008)  mean-over-time 0.882  forgetting 0.005 (SEM 0.000)  ~116s/run  n=2
+  K= 96 base  size 16x8    before 0.568  final 0.663 (SEM 0.001)  mean-over-time 0.665  forgetting 0.029 (SEM 0.004)  ~347s/run  n=2
+  K= 96 base  size 32x16   before 0.559  final 0.653 (SEM 0.028)  mean-over-time 0.642  forgetting 0.020 (SEM 0.002)  ~337s/run  n=2
+  K= 96 base  size 64x32   before 0.598  final 0.702 (SEM 0.005)  mean-over-time 0.686  forgetting 0.024 (SEM 0.002)  ~346s/run  n=2
+  K= 96 both  size 16x8    before 0.568  final 0.916 (SEM 0.003)  mean-over-time 0.805  forgetting 0.013 (SEM 0.000)  ~384s/run  n=2
+  K= 96 both  size 32x16   before 0.559  final 0.878 (SEM 0.019)  mean-over-time 0.776  forgetting 0.010 (SEM 0.004)  ~356s/run  n=2
+  K= 96 both  size 64x32   before 0.598  final 0.910 (SEM 0.022)  mean-over-time 0.801  forgetting 0.008 (SEM 0.001)  ~341s/run  n=2

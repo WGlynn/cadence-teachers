@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadence-teachers"
+version = "0.1.0"
+description = "Teaching between Cadence brains: grading lessons, twin-ablation worth, Shapley credit, market defences, and the Teaching Arena."
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.11"
+# Cadence itself (package "cadence-net") is installed from GitHub at the pinned commit by ./setup.sh;
+# it is not on PyPI at that version. teachers imports it lazily and explains how to install it if missing.
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://cadence-atlas.vercel.app"
+Repository = "https://github.com/WGlynn/cadence-teachers"
+
+[tool.setuptools]
+packages = ["teachers"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]  # import teachers from the checkout without installing it
