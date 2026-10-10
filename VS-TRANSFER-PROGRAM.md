@@ -91,6 +91,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-10 (iter32): EXP-42 BOUNDARY (pre-registered): learning Alice one character at a time from right/wrong grades alone, a Cadence brain reaches .225 held out (always-space .202; graded lookup table .231-.242; told-the-answer bigram .291, 4-gram .502). A grade carries <= 1 bit per character; contexts grow as 28^n. EXP-40 (brain size) stopped by Will at 30/144 runs, resumable; iter31 left to it.
+
 2026-10-10 (iter30): EXP-39 SUPPORTIVE (pre-registered): on a 4-step prerequisite chain a grading teacher gets 12/12 students solving in 40 episodes; sparse reward alone needs ~1500 (11/12); hidden inventory = unlearnable; a reverse curriculum under sparse reward CAUSES the collapse onto late-chain moves (0/12 at every budget). Our earlier 'teach backwards' advice is withdrawn.
 
 2026-10-10 (iter29): EXP-38 SUPPORTIVE: never re-teach an item the student already passed. Attacker soak .69 -> .30, honest .927 -> .946 (~2.6 SEM); total fake pay unchanged (ledger-capped, only moves to the colluder); repeat-rate penalty adds nothing; an adaptive attacker blinds the detector yet stays contained. EXP-36's fake-pay metric counted only the colluder.
@@ -136,6 +138,12 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter32 — 2026-10-10 — EXP-42 text from grades alone = BOUNDARY (one bit per character is not enough)
+- Version: Cadence v0.80.0 `19bee92`; modules (32, 16), arousal on. Alice ch.1 (10,891 chars) x 3 passes, ch.2 (10,468) held out, prequential. 3 seeds x arms w1 / w3 / seq.
+- RUN GATE: pre-registered (experiments/EXP-42.md, pushed 51baa5a before the full run); Will's speedrun call, a 600-character smoke run only (no window pilot).
+- Result (held out): Cadence w1 .225 (SEM .004), w3 .215, seq .200; majority .202; graded tabular bandit w1 .231, w3 .242; supervised counts bigram .291, trigram .419, 4-gram .502. Samples loop ('w w w').
+- Verdict: all six predictions held. Next levers: more passes, richer grades, a drilling teacher, Cadence's token-window connectome. Write-up: experiments/EXP-42.md.
 
 ### iter30 — 2026-10-10 — EXP-39 prerequisite chain = SUPPORTIVE (grading is the teacher's value; 'teach backwards' withdrawn)
 - Version: Cadence v0.80.0 `19bee92`; brain at the key-door protocol-3 operating point, `step`. 12 seeds x B 40/150/500/1500 x 5 arms.

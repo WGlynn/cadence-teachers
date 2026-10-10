@@ -1,6 +1,6 @@
 # EXP-42: can a Cadence brain learn text one character at a time from grades alone?
 
-- Date: 2026-10-10 | Cadence version: 0.80.0 (`19bee92`) | Program iter: iter32 (pending)
+- Date: 2026-10-10 | Cadence version: 0.80.0 (`19bee92`) | Program iter: iter32
 - Script: `exp/EXP-42_char_language.py` | Evidence: `exp/EXP-42-full.json/.jsonl`, `exp/EXP-42-full.out` | Text: `exp/data/alice-ch1.txt` (train), `exp/data/alice-ch2.txt` (held out), from Project Gutenberg #11 (public domain)
 
 ## Summary

@@ -1601,5 +1601,55 @@
    ]
   },
   "quote_worthy": "Starting the lessons next to the fire taught the brains to warm up and nothing else: the reverse curriculum caused the exact collapse it was meant to cure."
+ },
+ {
+  "id": "EXP-42",
+  "name": "Learning text one character at a time from grades alone",
+  "date": "2026-10-10",
+  "iter": "iter32",
+  "track": "language",
+  "verdict": "BOUNDARY",
+  "verdict_note": "3 seeds x 3 arms; pre-registered; Alice ch.1 train, ch.2 held out; one brain size, 3 passes",
+  "headline": "Hearing only right or wrong, a Cadence brain went from always-space (.202) to .225 on held-out Alice; a model told the answer reached .291 with one character of context and .502 with three.",
+  "question": "How far does grading alone (say a character, hear +1 or -1, never the answer) take a Cadence brain on real text?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "A right-or-wrong grade carries at most one bit per character against about 4.8 for the answer, and contexts grow as 28^n, so more context made grading worse, not better.",
+  "chart": {
+   "title": "Held-out accuracy on Alice chapter 2",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "always space",
+     "value": 0.202
+    },
+    {
+     "label": "Cadence, 1 char",
+     "value": 0.225
+    },
+    {
+     "label": "Cadence, 3 chars",
+     "value": 0.215
+    },
+    {
+     "label": "Cadence, own memory",
+     "value": 0.2
+    },
+    {
+     "label": "lookup table, graded",
+     "value": 0.242
+    },
+    {
+     "label": "told the answer, 1 char",
+     "value": 0.291
+    },
+    {
+     "label": "told the answer, 3 chars",
+     "value": 0.502
+    }
+   ]
+  },
+  "quote_worthy": "Asked to continue 'alice was ', the best graded brain said 'w w w w': in three passes it learned what a lookup table learns from the same grades, that space is common."
  }
 ]
