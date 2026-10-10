@@ -1,1 +1,28 @@
 EXP-42 text: 10889 train / 10466 held-out chars; 9 Cadence runs to go (0 done); modules (32, 16), passes 3
+  w3   seed 1: passes ['0.190', '0.204', '0.204'] held-out 0.207 greedy 0.207  4.86 ms/step  sample: 'a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a '
+  w1   seed 0: passes ['0.179', '0.216', '0.216'] held-out 0.216 greedy 0.216  4.87 ms/step  sample: 'w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w '
+  w3   seed 0: passes ['0.215', '0.213', '0.213'] held-out 0.213 greedy 0.213  5.06 ms/step  sample: 't i  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h'
+  w1   seed 2: passes ['0.191', '0.212', '0.228'] held-out 0.229 greedy 0.228  5.06 ms/step  sample: 'k k k k k k k k k k k k k k k k k k k k k k k k k k k k k k '
+  w1   seed 1: passes ['0.209', '0.220', '0.220'] held-out 0.228 greedy 0.228  5.16 ms/step  sample: 'a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a '
+  seq  seed 0: passes ['0.020', '0.075', '0.167'] held-out 0.202 greedy None  3.85 ms/step  sample: '                                                            '
+  seq  seed 2: passes ['0.143', '0.174', '0.195'] held-out 0.200 greedy None  3.85 ms/step  sample: '                                                            '
+  seq  seed 1: passes ['0.147', '0.188', '0.198'] held-out 0.199 greedy None  3.86 ms/step  sample: '                                                            '
+  w3   seed 2: passes ['0.206', '0.220', '0.222'] held-out 0.226 greedy 0.227  4.74 ms/step  sample: 't e  t e  t e  t e  t e  t e  t e  t e  t e  t e  t e  t e  '
+
+held-out accuracy (chapter 2, prequential), 3 seeds  (523s)
+  cadence-w1   0.225 (SEM 0.004)   greedy 0.224   last train pass 0.222
+  cadence-w3   0.215 (SEM 0.006)   greedy 0.216   last train pass 0.213
+  cadence-seq  0.200 (SEM 0.001)   last train pass 0.187
+  majority                 0.202
+  bandit-w1                0.231
+  bandit-w3                0.242
+  ngram-1 (supervised)     0.202
+  ngram-2 (supervised)     0.291
+  ngram-3 (supervised)     0.419
+  ngram-4 (supervised)     0.502
+
+  sample cadence-w1 seed 0: 'alice was w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w w '
+
+  sample cadence-w3 seed 0: 'alice was t i  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h  h '
+
+  sample cadence-seq seed 0: 'alice was                                                                                                                                                                 '
