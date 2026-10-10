@@ -1,5 +1,5 @@
 """
-EXP-32 — the full $SPAWN market, minimal: peer-to-peer, bidirectional, partner choice learned from pay,
+EXP-32 — the full teaching market, minimal: peer-to-peer, bidirectional, partner choice learned from pay,
 pay along every teaching edge, pedigree share up the provenance chain, budget-balanced.
 
 World = EXP-31 (N Cadence brains, K=32 bandit, each starts knowing one slice; specialist rule: a teacher
@@ -109,7 +109,7 @@ def main():
     jobs = [(arm, s) for arm in ("CHOOSE", "PEER") for s in range(SEEDS)]
     with get_context("spawn").Pool(int(os.environ.get("WORKERS", 6))) as pool:
         res = pool.map(run, jobs)
-    print(f"EXP-32 $SPAWN market  N={N} M={M} rounds={ROUNDS} seeds={SEEDS} alpha={ALPHA}  ({time.time()-t0:.0f}s)")
+    print(f"EXP-32 teaching market  N={N} M={M} rounds={ROUNDS} seeds={SEEDS} alpha={ALPHA}  ({time.time()-t0:.0f}s)")
     for arm in ("CHOOSE", "PEER"):
         rs = [r for r in res if r["arm"] == arm]
         curves = np.array([r["acc"] for r in rs])

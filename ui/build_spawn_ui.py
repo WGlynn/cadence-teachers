@@ -1,4 +1,4 @@
-"""Build a self-contained $SPAWN simulation viewer from exp/EXP-32.json -> ui/spawn-sim.html."""
+"""Build a self-contained teaching market simulation viewer from exp/EXP-32.json -> ui/spawn-sim.html."""
 import json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))

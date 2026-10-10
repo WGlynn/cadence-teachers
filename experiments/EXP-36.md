@@ -38,7 +38,7 @@
   detect the probe by construction (stated scope). The rerun did write a RUN GATE with prediction and window check first.
 - Lesson: when a result looks better than expected for a defence, audit the accounting path for double-counting; and an
   attack test needs the "attacker sees through the probe" case, because that is where the real residual lives.
-- Next: litepaper updated to the fixed numbers (`docs/SPAWN-LITEPAPER.md` and Desktop PDF v6, per HANDOFF; v5 has the
+- Next: design notes (kept outside this repo) updated to the fixed numbers (an older copy has the
   old numbers and is not to be shared). Next rung:
   repeat-need detection from the ledger (an item already taught that the probe still says is missing), run on top of
   RECIP; pay on persisting gain (designed) to close the gross-vs-net gap.

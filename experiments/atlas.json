@@ -1238,7 +1238,7 @@
   "id": "EXP-32",
   "date": "2026-10-09",
   "iter": "iter20",
-  "name": "Minimal $SPAWN market with learned choice",
+  "name": "Minimal teaching market with learned choice",
   "track": "market & attacks",
   "verdict": "SUPERSEDED",
   "verdict_note": "NULL on the main claim (CHOOSE edge not significant, choosers barely learned to pick needy peers) and SUPERSEDED by EXP-34, which led to the rule 'teaching is neediest-first, hard-wired, not learned'. Budget balance held exactly but by construction.",
@@ -1513,5 +1513,47 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-38",
+  "name": "Never re-teach a passed item",
+  "date": "2026-10-10",
+  "iter": "iter29",
+  "track": "market & attacks",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "12 seeds; scripted adversaries; detector blinded by an adaptive attacker yet the rule still holds",
+  "headline": "Ignoring need claims on already-passed items cut attacker soak from 69% to 30% of lessons and lifted honest knowledge .927 to .946 (~2.6 SEM).",
+  "question": "Does ignoring repeat need on already-passed items stop the probe-fooling sandbagger?",
+  "process_issues": [
+   "metric gameable"
+  ],
+  "lesson": "When a defence makes a number worse, check whether the metric watched only one actor; measure the mechanism, not the alarm.",
+  "chart": {
+   "title": "Share of lessons absorbed by attackers (12 seeds)",
+   "unit": "share of lessons",
+   "bars": [
+    {
+     "label": "RECIP",
+     "value": 0.69,
+     "sem": 0.01
+    },
+    {
+     "label": "REPEAT",
+     "value": 0.3,
+     "sem": 0.02
+    },
+    {
+     "label": "REPEAT+RATE",
+     "value": 0.3,
+     "sem": 0.02
+    },
+    {
+     "label": "ADAPT (detector blind)",
+     "value": 0.3,
+     "sem": 0.02
+    }
+   ]
+  },
+  "quote_worthy": "The adaptive attacker blinded the detector completely and gained nothing: the rule, not the alarm, does the work."
  }
 ]

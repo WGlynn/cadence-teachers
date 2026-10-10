@@ -62,7 +62,7 @@ None of these is built. Ranked by how hard they are to capture.
 - Only measured on a small 8-context bandit. The 0.5 crossover is symmetric here because genuine and fake
   each ace their own task equally. With asymmetric task difficulty the crossover will move.
 
-## Design consequence for Cadence pedigree / $SPAWN
+## Design consequence for Cadence pedigree / teaching market
 
 The brain score used for pricing must name where its test tasks come from. "Held-out tests released
 after commit" (flowchart v3) handles the ordering (source 2) but not the supply. The pedigree design needs

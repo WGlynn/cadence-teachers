@@ -91,6 +91,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-10 (iter29): EXP-38 SUPPORTIVE: never re-teach an item the student already passed. Attacker soak .69 -> .30, honest .927 -> .946 (~2.6 SEM); total fake pay unchanged (ledger-capped, only moves to the colluder); repeat-rate penalty adds nothing; an adaptive attacker blinds the detector yet stays contained. EXP-36's fake-pay metric counted only the colluder.
+
 2026-10-10 (iter28): EXP-35b SUPPORTIVE with correct credit (CREDIT=item, 12 seeds): share 0.9 vs 0 doubles Discover pay per move (.0036 -> .0071), raises late discovery .51 -> .63 (~4 SEM) and new discoveries 54.0 -> 57.8 (~3 SEM); accuracy +.021 (~2 SEM, no claim). PI controller fell to .14 (its set point shrinks by construction). iter27 NULL superseded as a credit-design failure.
 
 2026-10-10 (iter27): EXP-35b rerun (patched credit) = NULL, and the share channel is STARVED, not refuted. Royalty on discoveries is ~1/40 of direct pay, so estD never leaves PRIOR (.0100 at alpha 0, .0099 at 0.9); discovery rate is set by PRIOR vs estT, not by the share. PI controller drove alpha to 0. Next: open the effect window (pilot royalty size / PRIOR) before any rerun. Pedigree claims unchanged: record, attribution, teaching price.
@@ -133,6 +135,12 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
 
+### iter29 — 2026-10-10 — EXP-38 repeat-need detection = SUPPORTIVE (exclusion, not detection, does the work)
+- Version: Cadence v0.80.0 `19bee92`. EXP-36 world, 16 rounds, 12 seeds, 979s at 6 workers.
+- RUN GATE: prediction in the docstring; pilot (2 seeds, same conditions) printed the chain (repeat rate -> need -> routing -> honest knowledge) and exposed a METRIC gap (EXP-36 counted fake pay to the colluder only); fake_all added and prediction revised before the full run.
+- Result RECIP / REPEAT / REPEAT+RATE / ADAPT: honest .927 / .946 / .943 / .952; absorbed .69 / .30 / .30 / .30; fake pay all teachers .708 / .734 / .776 / .451; sandbagger repeat rate 1.00 / 1.00 / 1.00 / 0.00 (honest ~.02).
+- Verdict: all five predictions held. Write-up: experiments/EXP-38.md.
+
 ### iter28 — 2026-10-10 — EXP-35b with item credit = SUPPORTIVE (the share drives discovery)
 - **Version:** Cadence v0.80.0 `19bee92`. N=8, K=96, 30 rounds, 12 seeds, D=40, PRIOR=0.01, 6 workers, 1992s.
 - **Design change:** CREDIT=item. Discover is credited ALL pay on items the brain found by a Discover move (own teaching
@@ -170,7 +178,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
   could ever be big enough to matter. Next before any rerun: pilot the royalty-to-direct ratio (more onward teaching of
   discoveries, longer horizon, or royalty paid on downstream use) and sweep PRIOR to confirm it, not the share, drives
   the baseline. Only then is "share drives discovery" testable at this scale.
-- Litepaper unaffected: it already does not claim the share drives discovery.
+- Design notes unaffected: they already did not claim the share drives discovery.
 - Evidence: `exp/EXP-35b-full-2026-10-10.out`, `exp/EXP-35b-K96-R30-{orig,fixed}.json/.jsonl`, smoke in `exp/smoke/`.
 
 ### iter26 — 2026-10-10 — EXP-36 duplicated-lesson bug found; iter24 attack numbers re-measured
@@ -198,7 +206,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
   (code reasoning, not separately measured). Pay-on-persisting-gain (designed) would close it.
   (4) LIST still catastrophic (~80x not ~900x; the old ratio's denominator was the buggy .016).
   Caveat: version moved 0.78 -> 0.80 at the same time; the fix dominates (it halves lessons), but not separated.
-- Litepaper source updated (`docs/SPAWN-LITEPAPER.md`); Desktop PDF v5 still has the old numbers (regenerate before
+- Design notes (kept outside this repo) updated to the fixed numbers; an older copy still had the old numbers (regenerate before
   any further sharing). Next rung unchanged and now more important: repeat-need detection vs the smart sandbagger,
   run on top of RECIP.
 - Evidence: `exp/EXP-36-fixed.out/.json/.jsonl`, buggy script `exp/EXP-36_adversarial_market.py.dup-bug.bak`.
@@ -276,18 +284,18 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 - Next: re-run partner choice ON TOP of the fix (ceiling gone, choice may now matter); then EXP-35 pedigree
   share: fixed 0 / .3 / .6 vs a PI controller, with a new DISCOVER move (explore the world alone).
 
-### iter20 — 2026-10-09 — peer-to-peer (EXP-31) + the $SPAWN market sim (EXP-32) + lite paper + UI
-- Will: teaching must be peer-to-peer and bidirectional; build the full $SPAWN requirements now.
+### iter20 — 2026-10-09 — peer-to-peer (EXP-31) + the teaching-market sim (EXP-32) + design notes + UI
+- Will: teaching must be peer-to-peer and bidirectional; build the full teaching-market requirements now.
 - **EXP-31 (8 brains, K=32, each knows one slice, specialist rule, 12 rounds, 6 seeds):** one-way RING
   0.57 -> 0.76 by round 2, plateau 0.78; random PEER both-ways 0.57 -> 0.79. Prediction (peer clearly faster)
   WRONG: ring faster early, peer slightly higher late. Both PLATEAU ~0.78: likely forgetting (short mixed
   lessons overwrite older ones; brains keep teaching what they have since forgotten). Open.
-- **EXP-32 ($SPAWN market: any-to-any, bidirectional, partner choice learned by a Cadence chooser from pay,
+- **EXP-32 (teaching market: any-to-any, bidirectional, partner choice learned by a Cadence chooser from pay,
   pay = student's measured gain on the true rule, 30% pedigree share to the knowledge origin, budget-balanced):**
   final knowledge CHOOSE 0.842 (SEM .010, runs .80-.86) vs PEER random 0.791 (SEM .037, runs .70-.91).
   Paid == measured gain exactly in every run. Choosers barely learned to pick needy peers (61% vs 58%).
   Prediction partly met: small, not yet significant edge; much more consistent. WHAT to teach still random.
-- Artifacts: `docs/SPAWN-LITEPAPER.md` (+ Desktop .md/.pdf), `ui/spawn-sim.html` (built by
+- Artifacts: design notes (kept outside this repo), `ui/spawn-sim.html` (built by
   `ui/build_spawn_ui.py` from `exp/EXP-32.json`; Desktop copy). Evidence: `exp/EXP-31.out/.json`, `exp/EXP-32.out/.json`.
 
 ### iter19 — 2026-10-09 — teaching is selected through children's doing (EXP-27 powered) + knowing-your-limits (EXP-29) + over-teaching (EXP-30)
@@ -438,7 +446,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
   combination-only worth fairly with real learners. NOT shown: a brain composing two learned skills
   (Cadence #115 / XOR wall, still open). Noise: the noise-twin zero point is one twin per seed (accN
   ranges 0.25-0.875); an ensemble of noise twins would cut the SEM.
-- Design consequence for pedigree/$SPAWN: price contributions with coalition Shapley over twins, NEVER
+- Design consequence for pedigree / teaching market: price contributions with coalition Shapley over twins, NEVER
   single leave-one-out ablation (overpays synergistic pairs ~2x).
 - Evidence: `exp/EXP-18.out`, script `exp/EXP-18_keylock_synergy.py`.
 
