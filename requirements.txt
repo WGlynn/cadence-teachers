@@ -1,0 +1,3 @@
+numpy>=1.26
+# Cadence itself is not on PyPI at the pinned version: ./setup.sh clones github.com/muellerberndt/cadence
+# into vendor/cadence at the pinned commit and installs it (pip install -e vendor/cadence).

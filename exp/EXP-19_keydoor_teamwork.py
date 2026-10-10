@@ -23,11 +23,13 @@ import json, os, sys, tempfile, time, warnings
 import numpy as np
 import cadence as cd
 
-sys.path.insert(0, os.path.expanduser("~/_cadence_study/benchmarks/keydoor"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cadence_src import KEYDOOR  # noqa: E402
+sys.path.insert(0, KEYDOOR)
 from key_door import corridor, observe, make_brain, PASS, INTERACT, FLOOR, CHEST, LAMP, DOOR  # noqa
 
 warnings.simplefilter("ignore")
-PROTO = json.load(open(os.path.expanduser("~/_cadence_study/benchmarks/keydoor/protocol-3.json")))
+PROTO = json.load(open(os.path.join(KEYDOOR, "protocol-3.json")))
 POINT = PROTO["operating_point"]
 COST, LENGTH, JITTER = float(PROTO["cost"]), int(PROTO["length"]), int(PROTO["jitter"])
 DELAY = 2

@@ -1,0 +1,13 @@
+name: check
+on: [push, pull_request]
+jobs:
+  writeups:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: every experiment has a Summary + Reflection write-up
+        run: python experiments/check.py
+      - name: scripts parse
+        run: python -m py_compile exp/*.py experiments/*.py

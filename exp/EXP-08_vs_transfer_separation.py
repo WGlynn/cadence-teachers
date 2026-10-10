@@ -2,7 +2,7 @@
 EXP-08 — v(S) via measurable transfer: does twin-brain ablation separate genuine
 from a matched-fake where INTERIOR scoring scored 0.0%?
 
-Context. The V(S) paper (Desktop/vs-value-measurement-problem-paper) proves interior
+Context. The V(S) value-measurement paper (unpublished draft) proves interior
 (graph/content-structural) scoring is worth-blind: a genuine 4-mind collaboration and a
 matched acyclic fake score IDENTICALLY (0.0% separation, wash_sim.rs). Angle 3 of the paper:
 if nodes are LEARNING AGENTS, an edge a->b can mean "b ingested a and b's measurable behavior

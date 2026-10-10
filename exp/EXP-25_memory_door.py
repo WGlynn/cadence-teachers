@@ -15,7 +15,9 @@ import numpy as np
 from multiprocessing import get_context
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.expanduser("~/_cadence_study/benchmarks/keydoor"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _cadence_src import KEYDOOR  # noqa: E402
+sys.path.insert(0, KEYDOOR)
 OUT = os.path.join(HERE, "exp25_brains")
 STEP = os.environ.get("STEP", "found")
 F = int(os.environ.get("F", 1000))
@@ -27,7 +29,7 @@ COST = 0.25
 def env():
     import json as _j
     from key_door import make_brain, observe, FLOOR, CHEST, LAMP, DOOR, INTERACT
-    proto = _j.load(open(os.path.expanduser("~/_cadence_study/benchmarks/keydoor/protocol-3.json")))
+    proto = _j.load(open(os.path.join(KEYDOOR, "protocol-3.json")))
     return proto["operating_point"], make_brain, observe, FLOOR, CHEST, LAMP, DOOR, INTERACT
 
 

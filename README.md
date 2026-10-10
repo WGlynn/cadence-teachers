@@ -33,15 +33,21 @@ Each experiment has a write-up with a Summary and a Reflection in `experiments/E
 
 ## Reproduce
 
-`pip install` Cadence at the version stamped in the write-up, then `python exp/EXP-XX_<name>.py`. Most scripts read
-settings from environment variables listed at the top of the file.
+```bash
+./setup.sh                      # clones Cadence at the pinned commit into vendor/, installs it, runs the smoke test
+python exp/EXP-33_forgetting_fix.py
+```
+
+Cadence is not on PyPI at the pinned version, so `setup.sh` installs it from GitHub. Each write-up names the Cadence
+version it ran on; most scripts read their settings from environment variables listed at the top of the file. Brain
+checkpoints are not committed; scripts regenerate them.
 
 ## Help wanted
 
 Open problems: XOR-style synergy, defenses against sandbagging and fake need, who writes the tests, whether a pedigree
 share drives discovery, and teaching multi-step prerequisite chains. To contribute an experiment: write the prediction
 before running, pilot the effect window under the exact run conditions, ship `experiments/EXP-XX.md` from the template,
-and make `python experiments/check.py` pass. Nulls and replications are welcome.
+and make `python experiments/check.py` pass. Nulls and replications are welcome. Full guide: [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
