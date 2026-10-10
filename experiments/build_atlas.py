@@ -597,6 +597,11 @@ def main():
         f.write("\n".join(out))
     print("wrote %s (%d bytes, %d experiments, %d reflections)" % (OUT, os.path.getsize(OUT), len(recs), len(md)))
 
+    # Every atlas update goes live (Will 2026-10-10): publish to Vercel when this checkout is linked.
+    import publish_atlas
+    if publish_atlas.linked() and not os.environ.get("ATLAS_NO_PUBLISH"):
+        publish_atlas.publish()
+
 
 if __name__ == "__main__":
     main()
