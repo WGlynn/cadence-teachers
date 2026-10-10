@@ -32,7 +32,7 @@ __pycache__/
 /site/dist/
 /site/src/data/atlas.json
 # Arena v0 is unfinished (2026-10-10): keep its WIP out of the public repo until it lands
-/teachers/arena.py
-/tests/test_arena.py
-/tests/test_arena_reproduces.py
-/.github/workflows/arena.yml
+/teachers/arena*.py
+/tests/test_arena*.py
+/.github/workflows/arena*.yml
+/.github/ISSUE_TEMPLATE/arena*.yml
