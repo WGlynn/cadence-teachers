@@ -12,7 +12,16 @@
   Forgetting per lesson falls with size in 'base' (K=32: .045 / .037 / .026). K=96 runs take ~350 s each, so the 12-seed
   full run is ~3 h at 3 workers (next window). Early read: size helps a little where nothing else does ('base'), not once
   stale teaching is fixed ('both'); 2 seeds is not evidence.
-- Result: PENDING (full 12-seed run not yet started).
+- Revised prediction (written after the 2-seed pilot, before the 12-seed run; the original prediction above stands and is
+  scored as written on all 12 seeds; this revision is scored only on seeds 2-11, which the pilot did not run, so it is not
+  tested on the data that shaped it). A difference counts as an effect when it clears 2 SEM (unpaired, over seeds).
+  (a) 'both', either K: no size effect: |final(64x32) - final(16x8)| < .02 at K=32 and < .03 at K=96.
+  (b) 'base', K=32: 64x32 beats 16x8 by >= .03 in final knowledge, and forgetting per lesson falls with size
+      (16x8 > 32x16 > 64x32). This reverses the original "nothing at K=32" for 'base'.
+  (c) 'base', K=96: 64x32 beats 16x8 by .02 to .05 in final knowledge (smaller than the original >= .05).
+  (d) Overall: size helps only where stale teaching is left unfixed: the 64x32 - 16x8 gain in 'base' exceeds the gain in
+      'both' at both K.
+- Result: PENDING (full 12-seed run started 2026-10-10 ~17:00, 3 workers, ~3 h).
 - Verdict: PENDING.
 
 ## Reflection

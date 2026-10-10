@@ -14,6 +14,12 @@ share per lesson; 12 seeds (SEM).
 PREDICTION (2026-10-10, written before the pilot): at K=32 size changes nothing beyond noise in either arm (EXP-33).
 At K=96 the default brain forgets more and plateaus lower in 'base'; (64, 32) lifts 'base' final knowledge by >= .05 and
 cuts forgetting; under 'both' the size effect shrinks (stale teaching, not capacity, is the main limit).
+REVISED PREDICTION (2026-10-10, after the 2-seed pilot, before the 12-seed run; the original above is scored as written
+on all 12 seeds, this revision only on seeds 2-11, which the pilot did not run): (a) 'both', either K: no size effect,
+|final(64x32) - final(16x8)| < .02 at K=32 and < .03 at K=96. (b) 'base', K=32: 64x32 beats 16x8 by >= .03 in final
+knowledge and forgetting falls with size. (c) 'base', K=96: 64x32 beats 16x8 by .02 to .05. (d) size helps only where
+stale teaching is unfixed: the 64x32 - 16x8 gain in 'base' exceeds the gain in 'both' at both K. An effect must clear
+2 SEM (unpaired, over seeds). Full text: experiments/EXP-40.md.
 """
 import json, os, sys, time
 from multiprocessing import get_context
