@@ -4,7 +4,7 @@ Can small learning brains teach each other, and can a market pay them fairly for
 down generations? This repo is an open lab notebook of experiments on that question, built on
 [Cadence](https://github.com/muellerberndt/cadence) by Bernhard Mueller.
 
-**Start here: [the Atlas](https://wglynn.github.io/cadence-teachers/experiments/ATLAS.html)**: every experiment on one
+**Start here: [the Atlas](https://cadence-atlas.vercel.app)** (mirror: [GitHub Pages](https://wglynn.github.io/cadence-teachers/experiments/ATLAS.html)): every experiment on one
 page, with charts, verdicts, and the mistakes we made along the way (also at `experiments/ATLAS.html`).
 
 ## Honest floor first
