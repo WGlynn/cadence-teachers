@@ -1,0 +1,40 @@
+EXP-20b  students in table=12  rounds=1500  runs=12
+shapley  greedy end = key/door in 10/12 | last-300 key/door 0.96 | lamp/spam 0.02 | converged 12/12 (median round 39) | payout/value 1.00
+   end door/key  comp 0.95  bad 0.02  first 104
+   end door/key  comp 0.97  bad 0.01  first 1
+   end door/key  comp 0.97  bad 0.02  first 26
+   end key/door  comp 0.94  bad 0.03  first 54
+   end door/spam  comp 0.96  bad 0.02  first 53
+   end key/door  comp 0.93  bad 0.04  first 19
+   end door/spam  comp 0.95  bad 0.03  first 52
+   end key/door  comp 0.97  bad 0.01  first 24
+   end key/door  comp 0.96  bad 0.01  first 28
+   end key/door  comp 0.96  bad 0.02  first 63
+   end door/key  comp 0.95  bad 0.03  first 50
+   end key/door  comp 0.95  bad 0.02  first 17
+loo      greedy end = key/door in 10/12 | last-300 key/door 0.96 | lamp/spam 0.02 | converged 12/12 (median round 47) | payout/value 1.83
+   end key/door  comp 0.95  bad 0.02  first 97
+   end door/key  comp 0.97  bad 0.01  first 4
+   end door/key  comp 0.97  bad 0.02  first 13
+   end lamp/spam  comp 0.93  bad 0.04  first 79
+   end door/spam  comp 0.96  bad 0.02  first 41
+   end key/door  comp 0.93  bad 0.04  first 8
+   end key/door  comp 0.96  bad 0.02  first 80
+   end key/door  comp 0.97  bad 0.01  first 42
+   end key/door  comp 0.95  bad 0.02  first 23
+   end key/door  comp 0.96  bad 0.02  first 83
+   end door/key  comp 0.94  bad 0.03  first 52
+   end door/key  comp 0.96  bad 0.02  first 60
+equal    greedy end = key/door in 11/12 | last-300 key/door 0.96 | lamp/spam 0.02 | converged 12/12 (median round 54) | payout/value 1.00
+   end door/key  comp 0.95  bad 0.02  first 97
+   end door/key  comp 0.97  bad 0.01  first 0
+   end door/key  comp 0.97  bad 0.02  first 27
+   end key/door  comp 0.94  bad 0.03  first 67
+   end door/spam  comp 0.96  bad 0.02  first 69
+   end key/door  comp 0.93  bad 0.04  first 8
+   end key/door  comp 0.96  bad 0.02  first 52
+   end key/door  comp 0.97  bad 0.01  first 123
+   end key/door  comp 0.96  bad 0.01  first 21
+   end door/key  comp 0.97  bad 0.02  first 56
+   end door/key  comp 0.95  bad 0.03  first 94
+   end door/key  comp 0.96  bad 0.02  first 24

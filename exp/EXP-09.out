@@ -1,0 +1,6 @@
+EXP-09  v(S) transfer vs coordinated prior   K=8 A=2 witness=1600 seeds=20
+gamma = fraction of contexts the prior agrees with T on (1.0=genuine, 0.5=chance)
+ gamma  mean_transfer     SEM  frac>0.15
+ 0.000         -0.281   0.055       0.00
+ 0.250         -0.188   0.054       0.00
+ 0.500         -0.062   0.032       0.05

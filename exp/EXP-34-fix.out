@@ -1,0 +1,4 @@
+EXP-34 informed partner choice  N=8 K=32 M=16 rounds=16 seeds=8  (511s)
+  RANDOM   final 0.981 (SEM 0.003)  picked-the-neediest 0.27  curve 0.57 0.72 0.82 0.88 0.92 0.94 0.96 0.97 0.98
+  ORACLE   final 0.991 (SEM 0.003)  picked-the-neediest 1.00  curve 0.57 0.78 0.87 0.92 0.96 0.97 0.99 0.99 0.99
+  INFORMED final 0.982 (SEM 0.003)  picked-the-neediest 0.25  curve 0.57 0.70 0.79 0.87 0.91 0.93 0.95 0.98 0.98

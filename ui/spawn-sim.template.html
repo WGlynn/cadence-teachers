@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$SPAWN simulation</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  h1, .sub { overflow-wrap: anywhere; }
+  input[type=range] { max-width: 45vw; }
+  body { font-family: system-ui, sans-serif; margin: 0; background: #111; color: #ddd; }
+  header { padding: 12px 20px; border-bottom: 1px solid #333; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  .sub { font-size: 13px; color: #999; }
+  .controls { display: flex; gap: 14px; align-items: center; padding: 10px 20px; flex-wrap: wrap; }
+  .wrap { display: flex; gap: 20px; padding: 0 20px 20px; flex-wrap: wrap; }
+  .panel { max-width: 100%; box-sizing: border-box; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 12px; }
+  table { border-collapse: collapse; font-size: 13px; }
+  td, th { padding: 4px 10px; text-align: right; border-bottom: 1px solid #2a2a2a; }
+  th { color: #999; font-weight: normal; }
+  .log { font-size: 12px; max-height: 220px; overflow-y: auto; max-width: 420px; }
+  .log div { padding: 2px 0; border-bottom: 1px solid #222; }
+  button, select { background: #222; color: #ddd; border: 1px solid #444; border-radius: 4px; padding: 4px 10px; }
+  .note { font-size: 12px; color: #888; padding: 0 20px 16px; max-width: 900px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>$SPAWN simulation: brains teach brains, pay follows measured gain</h1>
+  <div class="sub">Each circle is a Cadence brain. Arrows are teaching sessions this round (teacher to student).
+    Green = how much of the true task the brain knows. Wallet = total pay earned (teaching + pedigree share).</div>
+</header>
+<div class="controls">
+  <label>Run <select id="run"></select></label>
+  <label>Round <input type="range" id="round" min="0" value="0"> <span id="rlabel"></span></label>
+  <button id="play">Play</button>
+</div>
+<div class="wrap">
+  <div class="panel"><svg id="net" viewBox="0 0 420 420" style="width:100%;max-width:420px"></svg></div>
+  <div class="panel">
+    <table id="tbl"></table>
+    <div style="margin-top:12px"><svg id="chart" viewBox="0 0 420 160" style="width:100%;max-width:420px"></svg></div>
+  </div>
+  <div class="panel"><div class="sub" style="margin-bottom:6px">This round's sessions</div><div class="log" id="log"></div></div>
+</div>
+<div class="note">Honest scope: small Cadence brains on a 32-situation task, 8 brains, 12 rounds. Pay = the student's measured
+  gain on the true task (a twin-style before/after test); when a brain re-teaches something it learned from another brain, a
+  30% share goes back to the original source. Partner choice is learned from pay in the CHOOSE runs, random in PEER runs.
+  What to teach is still random within what the teacher knows.</div>
+<script>
+const RUNS = /*DATA*/null;
+const N = RUNS[0].slices.length, R = RUNS[0].acc.length - 1;
+const $ = id => document.getElementById(id);
+RUNS.forEach((r, i) => { const o = document.createElement("option"); o.value = i; o.textContent = r.label; $("run").appendChild(o); });
+$("round").max = R;
+const pos = i => { const a = 2 * Math.PI * i / N - Math.PI / 2; return [210 + 160 * Math.cos(a), 210 + 160 * Math.sin(a)]; };
+const green = v => { const t = Math.max(0, Math.min(1, (v - 0.5) / 0.5)); return `rgb(${Math.round(70 - 40 * t)},${Math.round(70 + 150 * t)},${Math.round(70 - 20 * t)})`; };
+
+function wallets(run, upto) {
+  const w = Array(N).fill(0), taught = Array(N).fill(0);
+  run.events.forEach(e => { if (e.round < upto && e.student !== null) {
+    taught[e.teacher]++; Object.entries(e.pay || {}).forEach(([k, v]) => w[+k] += v); } });
+  return [w, taught];
+}
+
+function draw() {
+  const run = RUNS[+$("run").value], r = +$("round").value;
+  $("rlabel").textContent = `${r} / ${R}`;
+  const acc = run.brain_acc[r], [w, taught] = wallets(run, r);
+  const ev = run.events.filter(e => e.round === r - 1 && e.student !== null);
+  let s = `<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e8b84a"/></marker></defs>`;
+  ev.forEach(e => { const [x1, y1] = pos(e.teacher), [x2, y2] = pos(e.student);
+    const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), k = 30 / L;
+    const wdt = 1 + 40 * Math.max(0, e.gain);
+    s += `<line x1="${x1 + dx * k}" y1="${y1 + dy * k}" x2="${x2 - dx * k}" y2="${y2 - dy * k}" stroke="#e8b84a" stroke-opacity="${e.gain > 0 ? 0.9 : 0.25}" stroke-width="${wdt}" marker-end="url(#ah)"/>`; });
+  for (let i = 0; i < N; i++) { const [x, y] = pos(i);
+    s += `<circle cx="${x}" cy="${y}" r="26" fill="${green(acc[i])}" stroke="#ddd"/>
+          <text x="${x}" y="${y - 2}" text-anchor="middle" font-size="13" fill="#111" font-weight="bold">B${i}</text>
+          <text x="${x}" y="${y + 13}" text-anchor="middle" font-size="11" fill="#111">${(acc[i] * 100).toFixed(0)}%</text>`; }
+  $("net").innerHTML = s;
+  let t = `<tr><th>brain</th><th>knows</th><th>wallet</th><th>sessions taught</th></tr>`;
+  for (let i = 0; i < N; i++) t += `<tr><td>B${i}</td><td>${(acc[i] * 100).toFixed(0)}%</td><td>${w[i].toFixed(3)}</td><td>${taught[i]}</td></tr>`;
+  t += `<tr><td>all</td><td>${(run.acc[r] * 100).toFixed(0)}%</td><td>${w.reduce((a, b) => a + b, 0).toFixed(3)}</td><td></td></tr>`;
+  $("tbl").innerHTML = t;
+  let c = `<text x="4" y="12" font-size="11" fill="#999">mean knowledge by round (this run gold, other arm avg gray)</text>`;
+  const other = RUNS.filter(x => x.arm !== run.arm);
+  const avg = run.acc.map((_, j) => other.reduce((a, x) => a + x.acc[j], 0) / Math.max(1, other.length));
+  const px = j => 30 + 380 * j / R, py = v => 150 - 120 * (v - 0.5) / 0.5;
+  const path = arr => arr.map((v, j) => `${j ? "L" : "M"}${px(j)},${py(v)}`).join("");
+  c += `<path d="${path(avg)}" stroke="#777" fill="none" stroke-width="2"/><path d="${path(run.acc)}" stroke="#e8b84a" fill="none" stroke-width="2"/>`;
+  c += `<line x1="${px(r)}" y1="20" x2="${px(r)}" y2="150" stroke="#555"/>`;
+  $("chart").innerHTML = c;
+  $("log").innerHTML = r === 0 ? "<div>Round 0 = starting state (each brain knows only its own slice).</div>" :
+    ev.map(e => `<div>B${e.teacher} taught B${e.student}: gain ${(e.gain * 100).toFixed(1)} pts, learned ${e.learned} item(s); pay ${
+      Object.entries(e.pay || {}).map(([k, v]) => `B${k} ${v.toFixed(3)}`).join(", ") || "none"}</div>`).join("") || "<div>no sessions</div>";
+}
+let timer = null;
+$("play").onclick = () => { if (timer) { clearInterval(timer); timer = null; $("play").textContent = "Play"; return; }
+  $("play").textContent = "Pause"; timer = setInterval(() => { const r = +$("round").value; $("round").value = r >= R ? 0 : r + 1; draw(); }, 900); };
+$("run").onchange = draw; $("round").oninput = draw;
+draw();
+</script>
+</body>
+</html>

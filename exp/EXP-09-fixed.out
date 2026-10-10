@@ -1,0 +1,12 @@
+EXP-09  v(S) transfer vs coordinated prior   K=8 A=2 witness=1600 seeds=12
+gamma = fraction of contexts the prior agrees with T on (1.0=genuine, 0.5=chance)
+ gamma  mean_transfer     SEM  frac>0.15
+ 0.625         +0.125   0.074       0.50
+ 0.750         +0.135   0.054       0.58
+ 0.875         +0.281   0.049       0.58
+ 1.000         +0.469   0.045       1.00
+------------------------------------------
+CONCEPTUAL compare (NOT a matched baseline): peer-prediction/correlated-agreement crossover
+~ gamma*=0.70 (paper 6.1). A real in-harness PP scorer is still queued (M4-harden item 2).
+If transfer only pays at a HIGH gamma, the coordinated fake must already carry most of the
+real T-information to win -> faking collapses into contributing. That is the result.

@@ -1,0 +1,17 @@
+# EXP-16: Isomorphism-invariance of the transfer measure (M3)
+
+- Date: 2026-10-08 | Cadence version: 0.78.0 / `750c8ef` (with the #164 per-probe reset) | Program iter: iter10
+- Script: `exp/EXP-16_isomorphism_invariance.py` | Evidence: `exp/EXP-16-t0.out`, `exp/EXP-16-t1.out`, `exp/EXP-16-t2.out`
+
+## Summary
+- Question: is v(S) = v(phi(S)) when phi relabels contexts and/or actions consistently in the witness and the held-out task, with the measuring brain (the instrument) not relabeled?
+- Setup: K=8, 2 actions, modules (16, 8), 1600 witness steps. 3 tasks x 4 phi (identity, context permutation, action swap, both) x 8 instrument seeds x {genuine witness, fake witness agreeing on 0.5} = 192 transfers. One task per process (t0, t1, t2).
+- Prediction: written in the docstring before running: "a single instrument has asymmetric random weights, so v_1(phi S) != v_1(S) per instance. Invariance can only hold for the instrument-AVERAGED measure v_n ... if it shrinks ~1/sqrt(n) the measure is invariant in expectation and the residual is instrument noise; if it plateaus, something in v reads labels."
+- Result: raw twin delta per instrument moves by up to 0.500 under phi (rechecked from the per-instrument lists, e.g. task 0 instrument 2 genuine: 0.25 identity vs 0.75 act-swap; the log's "up to 0.25" is the n=1 ensemble gap, which only looks at the first instrument). max_phi |v_n(phi S) - v_n(S)| at n = 1/2/4/8: task 0: 0.250 / 0.000 / 0.250 / 0.125; task 1: 0.000 / 0.250 / 0.250 / 0.062; task 2: 0.000 / 0.125 / 0.188 / 0.031 (the same for genuine and fake). Paired form (genuine minus fake on the same instrument and phi): +0.500 in 95 of 96 cells, +0.625 in 1. This was rechecked from the per-instrument lists in the .out files.
+- Verdict: SUPPORTIVE, logged as "M3 CROSSED EMPIRICALLY for the paired measure, on this bandit; NOT a proof" (iter10). Not retracted. The raw measure was invariant only in expectation, and the per-instance claim applies to the paired / reference-relative form.
+
+## Reflection
+- What it means: the label-reading risk did not show up. The variation under phi comes from the instrument's prior (acc_base mirrors to 1 - base under action swap), not from v reading labels. Defining transfer relative to a reference witness on the same twin cancels that prior.
+- Process: the pre-written 1/sqrt(n) test did not give a clean reading. The gap is not monotone in n (task 0: n=2 gives 0.000, n=4 gives 0.250), so 8 instruments with 4 phi cannot tell shrinking from plateau. The paired form was chosen after seeing the data, not predicted. Its exact constant 0.500 comes from learning at ceiling: genuine saturates at 1.0 and the fake (agreement 0.5) at 0.5, so the pair is 1 - 0.5 by construction. The paired result therefore shows that the prior cancels, not that invariance holds under partial learning (the log flags this). Only context permutation and action swap were tested, on 3 tasks, and only ONE random context permutation per task (the log calls these "the full symmetry group of this world", but the group has 8! permutations times the swap; one sample per task was measured).
+- Lesson: measure worth relative to a reference on the same instrument, not against the instrument's own baseline. A single untouched twin is a biased zero point.
+- Next: design consequence for pricing is to use paired / reference-relative transfer averaged over an instrument ensemble. EXP-18 adopted a noise-fed twin as its zero point ("EXP-16 lesson"). Still owed: a test where learning does not saturate.

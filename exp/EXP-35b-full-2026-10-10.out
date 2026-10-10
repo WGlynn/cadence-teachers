@@ -1,0 +1,48 @@
+== CREDIT=orig
+resuming: 0 done, 18 to run
+  done 0.0 seed 2  (256s)
+  done 0.0 seed 5  (276s)
+  done 0.0 seed 4  (278s)
+  done 0.0 seed 1  (300s)
+  done 0.0 seed 0  (307s)
+  done 0.0 seed 3  (346s)
+  done 0.9 seed 2  (545s)
+  done 0.9 seed 0  (577s)
+  done 0.9 seed 1  (579s)
+  done 0.9 seed 5  (637s)
+  done 0.9 seed 4  (652s)
+  done 0.9 seed 3  (671s)
+  done PI seed 2  (853s)
+  done PI seed 1  (874s)
+  done PI seed 0  (913s)
+  done PI seed 4  (931s)
+  done PI seed 5  (959s)
+  done PI seed 3  (1017s)
+EXP-35b pedigree controller  N=8 K=96 rounds=30 seeds=6 D=40  (1017s)
+  alpha 0.0  final 0.799 (SEM 0.004)  mean-over-time 0.695  network-knows 0.86  discovering 0.34  relaying 0.38  est T/D 0.0057/0.0041  royalty 0.000 direct 1.705  new-discoveries 50.8  disc-royalty 0.000
+  alpha 0.9  final 0.804 (SEM 0.009)  mean-over-time 0.695  network-knows 0.91  discovering 0.38  relaying 0.23  est T/D 0.0069/0.0034  royalty 0.313 direct 1.519  new-discoveries 55.0  disc-royalty 0.081
+  alpha PI   final 0.788 (SEM 0.007)  mean-over-time 0.687  network-knows 0.88  discovering 0.35  relaying 0.35  est T/D 0.0065/0.0045  royalty 0.288 direct 1.468  new-discoveries 52.0  disc-royalty 0.063  alpha path 0.56 0.53 0.52 0.47 0.48 0.39 0.36 0.29
+== CREDIT=fixed
+resuming: 0 done, 18 to run
+  done 0.0 seed 2  (253s)
+  done 0.0 seed 1  (279s)
+  done 0.0 seed 4  (292s)
+  done 0.0 seed 5  (292s)
+  done 0.0 seed 0  (313s)
+  done 0.0 seed 3  (428s)
+  done 0.9 seed 2  (558s)
+  done 0.9 seed 0  (587s)
+  done 0.9 seed 1  (610s)
+  done 0.9 seed 4  (627s)
+  done 0.9 seed 3  (678s)
+  done 0.9 seed 5  (711s)
+  done PI seed 2  (861s)
+  done PI seed 1  (871s)
+  done PI seed 4  (961s)
+  done PI seed 5  (991s)
+  done PI seed 0  (993s)
+  done PI seed 3  (994s)
+EXP-35b pedigree controller  N=8 K=96 rounds=30 seeds=6 D=40  (994s)
+  alpha 0.0  final 0.771 (SEM 0.008)  mean-over-time 0.678  network-knows 0.97  discovering 0.66  relaying 0.40  est T/D 0.0077/0.0100  royalty 0.000 direct 1.210  new-discoveries 61.3  disc-royalty 0.000
+  alpha 0.9  final 0.776 (SEM 0.010)  mean-over-time 0.676  network-knows 0.96  discovering 0.67  relaying 0.17  est T/D 0.0071/0.0099  royalty 0.194 direct 1.138  new-discoveries 60.2  disc-royalty 0.029
+  alpha PI   final 0.783 (SEM 0.011)  mean-over-time 0.676  network-knows 0.96  discovering 0.63  relaying 0.27  est T/D 0.0064/0.0095  royalty 0.104 direct 1.189  new-discoveries 60.2  disc-royalty 0.009  alpha path 0.56 0.47 0.41 0.18 0.05 0.00 0.00 0.00

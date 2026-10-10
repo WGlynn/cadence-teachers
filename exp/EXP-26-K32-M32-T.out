@@ -1,0 +1,4 @@
+EXP-26 tutor focus  K=32 M=32 students=6  teacher acc 1.00  (12s)
+  focus 0.00: child acc 0.833 (SEM 0.019)  base 0.510
+  focus 0.50: child acc 0.865 (SEM 0.036)  base 0.510
+  focus 1.00: child acc 0.943 (SEM 0.041)  base 0.510

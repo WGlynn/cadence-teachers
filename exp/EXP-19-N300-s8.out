@@ -1,0 +1,21 @@
+seed 8  null 0.00  A 0.00  B 0.00  AB 0.00  F 0.00  FB 0.00   (371s)
+seed 9  null 0.00  A 0.00  B 0.00  AB 0.00  F 0.00  FB 0.00   (727s)
+seed 10  null 0.00  A 0.33  B 0.00  AB 1.00  F 0.00  FB 0.00   (1076s)
+seed 11  null 0.00  A 0.00  B 0.00  AB 1.00  F 0.00  FB 0.00   (1391s)
+------------------------------------------------------------------------
+EXP-19 keydoor teamwork  delay=2 N=300 trips/teacher  test=30  seeds=4
+  null-twin fed (raw) 0.000
+  v(A ) = +0.083  (SEM 0.083)
+  v(B ) = +0.000  (SEM 0.000)
+  v(AB) = +0.500  (SEM 0.289)
+  v(F ) = +0.000  (SEM 0.000)
+  v(FB) = +0.000  (SEM 0.000)
+  synergy v(AB)-v(A)-v(B) = +0.417 (SEM 0.250)
+credits (genuine):
+  solo   key +0.083  door +0.000
+  LOO    key +0.500  door +0.417  sum +0.917
+  shap   key +0.292  door +0.208  sum +0.500
+credits (fake key):
+  solo   key +0.000  door +0.000
+  LOO    key +0.000  door +0.000  sum +0.000
+  shap   key +0.000  door +0.000  sum +0.000

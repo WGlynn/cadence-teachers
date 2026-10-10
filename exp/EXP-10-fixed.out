@@ -1,0 +1,20 @@
+EXP-10  multi-mind worth attribution   K=8 blocks=4 witness=1200 seeds=12
+
+[per-mind attribution] collaboration = blocks 0,1 GENUINE, blocks 2,3 FAKE
+ block     kind  mean_transfer     SEM
+     0  genuine         +0.292   0.092
+     1  genuine         +0.458   0.092
+     2     fake         -0.500   0.118
+     3     fake         -0.458   0.092
+  genuine-minds mean transfer = +0.375 | fake-minds mean = -0.479 | attribution gap = +0.854
+
+[proportional worth] aggregate transfer to T vs #genuine minds
+ n_gen     f  mean_transfer     SEM
+     0  0.00         -0.542   0.037
+     1  0.25         -0.302   0.040
+     2  0.50         -0.052   0.040
+     3  0.75         +0.198   0.040
+     4  1.00         +0.448   0.040
+
+VERDICT key: if genuine-minds transfer >0 and fake-minds ~0/neg within the SAME collaboration, the measure attributes worth PER-MIND (Shapley-relevant). If the proportional curve rises with f, aggregate worth tracks genuine fraction.
+SCOPE: additive/per-node attribution only; super-additive synergy (XOR) still open.

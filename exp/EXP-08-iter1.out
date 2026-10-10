@@ -1,0 +1,16 @@
+EXP-08  v(S) transfer separation   K=4 A=2 modules=(16, 8) witness=1200 seeds=8
+seed   acc0   accG  accFr  accFw     tG    tFr    tFw  rateG
+   0   0.75   0.75   0.75   0.25  +0.00  +0.00  -0.50   1.00
+   1   0.25   1.00   0.50   0.25  +0.75  +0.25  +0.00   0.99
+   2   0.50   0.75   0.50   0.75  +0.25  +0.00  +0.25   0.99
+   3   0.25   0.75   0.25   0.75  +0.50  +0.00  +0.50   1.00
+   4   0.25   0.50   0.25   0.25  +0.25  +0.00  +0.00   1.00
+   5   0.50   1.00   0.50   0.75  +0.50  +0.00  +0.25   0.99
+   6   0.25   0.75   0.50   0.50  +0.50  +0.25  +0.25   0.99
+   7   0.50   0.75   0.50   0.25  +0.25  +0.00  -0.25   1.00
+----------------------------------------------------------------
+mean transfer  genuine=+0.375  fake_random=+0.062  fake_wrong=+0.062
+mean separation  genuine-fake_random=+0.312  genuine-fake_wrong=+0.312
+baseline acc on T (should be ~chance 0.50): 0.406
+----------------------------------------------------------------
+VERDICT: SEPARATES. genuine transfers (+0.38), fakes do not (max +0.06). Non-zero separation where interior scored 0.0%.

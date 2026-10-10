@@ -1,0 +1,6 @@
+EXP-35 pedigree controller  N=8 K=48 rounds=20 seeds=6 D=40  (1046s)
+  alpha 0.0  final 0.948 (SEM 0.008)  mean-over-time 0.803  network-knows 1.00  discovering 0.29
+  alpha 0.3  final 0.955 (SEM 0.005)  mean-over-time 0.808  network-knows 1.00  discovering 0.32
+  alpha 0.6  final 0.947 (SEM 0.005)  mean-over-time 0.795  network-knows 1.00  discovering 0.34
+  alpha 0.9  final 0.967 (SEM 0.006)  mean-over-time 0.809  network-knows 1.00  discovering 0.37
+  alpha PI   final 0.952 (SEM 0.007)  mean-over-time 0.802  network-knows 1.00  discovering 0.33  alpha path 0.42 0.36 0.14 0.00 0.00

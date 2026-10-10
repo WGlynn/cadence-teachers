@@ -1,0 +1,3 @@
+EXP-35b pedigree controller  N=8 K=96 rounds=30 seeds=2 D=40  (466s)
+  alpha 0.0  final 0.839 (SEM 0.008)  mean-over-time 0.716  network-knows 0.88  discovering 0.34  relaying 0.46
+  alpha 0.9  final 0.854 (SEM 0.006)  mean-over-time 0.720  network-knows 0.94  discovering 0.41  relaying 0.34

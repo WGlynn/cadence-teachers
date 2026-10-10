@@ -1,0 +1,17 @@
+# EXP-26: Tutor focus on the student's current mistakes
+
+- Date: 2026-10-09 | Cadence version: unrecorded (iter17-18 carry no stamp; iter16 and iter25 both stamp 0.78.0 / 750c8ef) | Program iter: iter17 (main run), iter18 (re-pilot with a perfect teacher)
+- Script: `exp/EXP-26_tutor_focus.py` | Evidence: `exp/EXP-26-K32-M128.out/.json`, `exp/EXP-26-K32-M32-T.out/.json`, `exp/EXP-26-K32-M64-T.out/.json`
+
+## Summary
+- Question: is there a teaching skill invisible to the teacher's own doing: does steering drills toward the contexts the student currently gets wrong ("focus") raise child accuracy?
+- Setup: K=32 context bandit, A=2, fixed random rule (seed 1234), plain Cadence Brain with modules (16, 8) and arousal, student learns with `live`. Teacher grades M steps (+1 if the student matches the teacher's greedy answer, -1 otherwise) and re-checks the student's wrong set every 8 steps. Focus = probability of drilling a currently-wrong context. Main run: M=128, focus 0/.25/.5/.75/1, 8 students, one teacher (seed 777, trained K*200 steps). Re-pilot (iter18, TEACHER env set to an EXP-27 founder; which founder file is not recorded): M=32 and M=64, focus 0/.5/1, 6 students.
+- Prediction: none written before running (the docstring states the pilot question: "does child accuracy after M steps depend on focus? (If not, no teaching trait.)").
+- Result: main run, teacher accuracy 0.69, student baseline 0.488: child accuracy at focus 0 / .25 / .5 / .75 / 1 = 0.625 (SEM 0.022) / 0.625 (SEM 0.039) / 0.664 (SEM 0.016) / 0.688 (SEM 0.000) / 0.688 (SEM 0.000), 8 students each. Re-pilot with teacher accuracy 1.00, baseline 0.510: M=32 focus 0 / .5 / 1 = 0.833 (SEM 0.019) / 0.865 (SEM 0.036) / 0.943 (SEM 0.041); M=64 = 0.818 (SEM 0.036) / 0.849 (SEM 0.042) / 0.964 (SEM 0.020), 6 students each.
+- Verdict: SUPPORTIVE (pilot). Focus is a real, graded teaching trait in this setup. Not retracted; it became the gene evolved in EXP-27.
+
+## Reflection
+- What it means: how a teacher chooses what to drill changes how much the student learns, and this is not visible in the teacher's own score (every teacher answers the same). With a perfect teacher the gap between focus 0 and focus 1 is about 0.11 at M=32 and 0.15 at M=64. The log's "student cannot exceed teacher" is expected from the design rather than discovered: the student is graded against the teacher's answers, not the true rule.
+- Process: the main M=128 run was effectively at ceiling. The teacher was meant to pass 100% (docstring) but only reached 0.69, and at focus .75 and 1 every student landed exactly on 0.6875 (SEM 0), which equals the teacher's own accuracy and is consistent with matching the teacher's answers everywhere; the measured gap (0.625 to 0.688) is capped by the teacher's knowledge, not by teaching quality. The pilot also ran under different conditions from the run it fed (EXP-27 founders were trained longer and reached 1.00), which caused the EXP-27 M=128 ceiling; the -T re-pilot was added afterwards to fix that. Small samples (6 to 8 students, one teacher, one rule); middle focus levels overlap within SEM.
+- Lesson: pilot under the exact conditions of the real run (same teacher quality, same budget), and check that the teacher is not itself the ceiling.
+- Next: EXP-27 (focus gene inherited with mutation; selection on doing vs teaching), with M=32 chosen from the re-pilot as the budget where the effect is visible.

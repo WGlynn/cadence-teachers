@@ -1,0 +1,19 @@
+cadence 0.78.0
+
+=== P(perception patches) = 4 ===
+  copy-b1 acc after 400: 1.00
+  copy-b2 acc after 400: 1.00
+  XOR-from-scratch acc after 800: 0.50
+  twin exact: True  (snap bytes 24947)
+
+=== P(perception patches) = 6 ===
+  copy-b1 acc after 400: 1.00
+  copy-b2 acc after 400: 1.00
+  XOR-from-scratch acc after 800: 0.75
+  twin exact: True  (snap bytes 25266)
+
+=== P(perception patches) = 8 ===
+  copy-b1 acc after 400: 1.00
+  copy-b2 acc after 400: 1.00
+  XOR-from-scratch acc after 800: 0.50
+  twin exact: True  (snap bytes 25606)

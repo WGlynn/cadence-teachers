@@ -1,0 +1,5 @@
+EXP-28 teacher vs world  students=8  (867s)
+  M=  40 trips   world 1/8   teacher 8/8
+  M= 100 trips   world 3/8   teacher 8/8
+  M= 300 trips   world 5/8   teacher 8/8
+  M= 600 trips   world 7/8   teacher 5/8

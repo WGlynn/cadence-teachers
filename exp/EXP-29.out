@@ -1,0 +1,5 @@
+teachers: A own-half 1.00 full 0.91 | B own-half 1.00 full 0.72  (117s)
+EXP-29 two partial teachers  students=8  (152s)
+  M= 32/teacher   spec 0.844 (SEM 0.046)   over 0.664 (SEM 0.022)   soloA 0.625 (SEM 0.050)
+  M= 64/teacher   spec 0.891 (SEM 0.051)   over 0.645 (SEM 0.008)   soloA 0.660 (SEM 0.046)
+  M=128/teacher   spec 0.898 (SEM 0.026)   over 0.680 (SEM 0.015)   soloA 0.629 (SEM 0.040)

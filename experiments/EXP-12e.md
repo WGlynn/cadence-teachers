@@ -1,0 +1,17 @@
+# EXP-12e: is deep-XOR acc 0.00 a clean XNOR (inverted readout) or something else
+
+- Date: 2026-10-08 | Cadence version: 0.78.0 (commit not recorded in the iter7 entry) | Program iter: iter7
+- Script: `exp/EXP-12e_xor_polarity.py` | Evidence: `exp/EXP-12e-polarity.out`
+
+## Summary
+- Question: does the deep creature's XOR accuracy of 0.00 (EXP-12c) mean it learned the exact complement (XNOR, an inverted readout), or is it not learning at all?
+- Setup: equilibrium Reinforcement creature, deep wiring perception(P=6) -> hidden(H=6) -> policy(2), fan_in 9, parameter_prior 0.3, tolerance 1e-3, settle_budget 48. Factored input (two one-hot bits plus a 3-way cue). XOR arm: 1500 RL steps, seeds 7, 11, 23. Control arm: deep copy-b1, 600 steps, seeds 7, 11. Greedy action dumped per context, plus acc and "flipped acc" (1 - acc).
+- Prediction: written in the docstring before running, as a decision rule: "acc 0.00 (if it is clean XNOR) means the deep creature DID learn the relation and reads it out inverted -> depth CAN represent XOR ... Contrast: acc ~0.50 with mixed/constant actions = genuine non-learning." Control: "if the deep stack learns a 1-bit task fine, raw credit starvation is ruled out."
+- Result: XOR, all 3 seeds: greedy action None on every context, acc 0.00, clean_XNOR=False. The printed flipped_acc 1.00 is meaningless (see Process). Control copy-b1, both seeds: actions [0, 0, 1, 1], acc 1.00.
+- Verdict: NULL for the XNOR hypothesis (the 0.00 was not inverted learning; the creature never produced an action). The diagnosis it opened ("None on every context") was resolved by EXP-12f (None was a settling-budget artifact) and the whole XOR question was then SUPERSEDED by EXP-14/14b (iter7 final verdict: the substrate does not fit XOR on the wirings tried, under RL or supervised).
+
+## Reflection
+- What it means: at P6-H6, sb=48, the deep creature's acc 0.00 was not "systematically wrong" and not evidence that credit fails to reach the front column; it was the creature returning None (no qualified action) on every context, so it never got feedback and never trained on XOR. Caveat: this is an inference about EXP-12c, not a re-dump of it. EXP-12c ran 2000 steps over P6-H6, P8-H8 and P12-H12 (P12-H12 seed 1 scored 0.50, not 0.00); EXP-12e reran only P6-H6 at 1500 steps. The deep stack itself is not broken: it learns copy-b1 to 1.00 at the same budget.
+- Process: (1) The accuracy code counts None as a wrong answer, so acc 0.00 and the printed flipped_acc 1.00 are artifacts of None, not measurements; the clean_XNOR flag is what correctly caught this. (2) The iter7 log had earlier read EXP-12c's 0.00 as "the signature of the front/perception column never learning" before this dump showed None; that reading was wrong. (3) The None rate during training was not instrumented here, only at the final greedy probe (fixed in EXP-12f). (4) Control and XOR arms differ in cue (1 vs 0) and step count (600 vs 1500), so the control is a sanity check, not a matched arm. (5) Probes reset after each act but not before the first one; this predates the iter8 #164 eval fix, which was applied to EXP-01/08/09/10 only. Irrelevant here since every probe returned None. Small seed counts (3 and 2).
+- Lesson: dump the raw actions before interpreting an accuracy; a scoring function that silently maps "no answer" to "wrong answer" can make non-learning look like systematic anti-learning.
+- Next: led directly to EXP-12f (does more settling budget remove the None and let XOR train).

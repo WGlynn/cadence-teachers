@@ -1,0 +1,19 @@
+EXP-16 task 0  T=[0, 1, 1, 1, 1, 1, 0, 1]  perm=[0, 7, 4, 6, 2, 3, 5, 1]  instruments=8
+  genuine  identity  per-instrument [0.625, 0.375, 0.25, 0.25, 0.625, 0.375, 0.625, 0.375]  mean +0.438
+  genuine  ctx-perm  per-instrument [0.625, 0.375, 0.25, 0.5, 0.625, 0.375, 0.375, 0.625]  mean +0.469
+  genuine  act-swap  per-instrument [0.375, 0.625, 0.75, 0.75, 0.375, 0.625, 0.375, 0.625]  mean +0.562
+  genuine  both      per-instrument [0.375, 0.625, 0.75, 0.5, 0.375, 0.625, 0.625, 0.375]  mean +0.531
+  genuine: max_phi |v_n(phi S) - v_n(S)| by ensemble size n
+    n=1: 0.250
+    n=2: 0.000
+    n=4: 0.250
+    n=8: 0.125
+  fake     identity  per-instrument [0.125, -0.125, -0.25, -0.25, 0.125, -0.125, 0.125, -0.125]  mean -0.062
+  fake     ctx-perm  per-instrument [0.125, -0.125, -0.25, 0.0, 0.125, -0.125, -0.125, 0.0]  mean -0.047
+  fake     act-swap  per-instrument [-0.125, 0.125, 0.25, 0.25, -0.125, 0.125, -0.125, 0.125]  mean +0.062
+  fake     both      per-instrument [-0.125, 0.125, 0.25, 0.0, -0.125, 0.125, 0.125, -0.125]  mean +0.031
+  fake: max_phi |v_n(phi S) - v_n(S)| by ensemble size n
+    n=1: 0.250
+    n=2: 0.000
+    n=4: 0.250
+    n=8: 0.125

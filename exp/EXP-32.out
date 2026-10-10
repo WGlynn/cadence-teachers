@@ -1,0 +1,5 @@
+EXP-32 $SPAWN market  N=8 M=16 rounds=12 seeds=6 alpha=0.3  (233s)
+  CHOOSE: mean acc by round 0.57 0.65 0.70 0.75 0.76 0.77 0.80 0.80 0.81 0.82 0.84 0.85 0.84
+        rounds to 0.90 [None, None, None, None, None, None]  sessions 87  taught-a-peer-who-lacked-something 0.61  paid/gain 13.031/13.031
+  PEER: mean acc by round 0.57 0.64 0.69 0.74 0.77 0.81 0.82 0.82 0.81 0.81 0.80 0.79 0.79
+        rounds to 0.90 [None, None, None, None, 9, None]  sessions 84  taught-a-peer-who-lacked-something 0.58  paid/gain 10.594/10.594

@@ -1,0 +1,2 @@
+cadence 0.78.0
+  shallow P6       steps=2000  xor_acc per-seed ['0.25', '0.75', '0.50']  mean 0.50

@@ -1,0 +1,24 @@
+cadence 0.78.0
+
+[CONTROL: copy-b1 supervised — must pass if harness is sane]
+  copy-b1                P6 H0 d1 s7: passed=True acc=1.00 preds=['0.08', '0.06', '0.81', '0.81'] target=[0, 0, 1, 1]
+  copy-b1                P6 H0 d1 s11: passed=True acc=1.00 preds=['0.14', '0.04', '0.88', '0.86'] target=[0, 0, 1, 1]
+
+[XOR supervised — shallow, width sweep]
+  XOR shallow            P4 H0 d1 s7: passed=False acc=0.50 preds=['-0.14', '-0.10', '0.04', '0.10'] target=[0, 1, 1, 0]
+  XOR shallow            P4 H0 d1 s11: passed=False acc=0.50 preds=['0.94', '0.95', '0.90', '0.92'] target=[0, 1, 1, 0]
+  XOR shallow            P6 H0 d1 s7: passed=False acc=0.50 preds=['-0.14', '-0.10', '0.04', '0.10'] target=[0, 1, 1, 0]
+  XOR shallow            P6 H0 d1 s11: passed=False acc=0.50 preds=['0.94', '0.95', '0.90', '0.92'] target=[0, 1, 1, 0]
+  XOR shallow            P12 H0 d1 s7: passed=False acc=0.50 preds=['-0.14', '-0.11', '0.06', '0.09'] target=[0, 1, 1, 0]
+  XOR shallow            P12 H0 d1 s11: passed=False acc=0.50 preds=['0.94', '0.95', '0.90', '0.92'] target=[0, 1, 1, 0]
+
+[XOR supervised — deep (perc->hidden->response)]
+Traceback (most recent call last):
+  File "C:\Users\Will\cadence-lab\exp\EXP-14_xor_supervised.py", line 68, in <module>
+    run(xor, P, H, sd, 2, "XOR deep")
+  File "C:\Users\Will\cadence-lab\exp\EXP-14_xor_supervised.py", line 48, in run
+    preds = [brain.predict(inp(b1, b2))["answer"][0] for b1, b2 in CTX]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\experimental\equilibrium\brain.py", line 253, in predict
+    raise SettlementError(
+cadence.experimental.equilibrium.brain.SettlementError: Population solve refused: budget; stationarity=0.00246297, tolerance=0.001, sweeps=96. Use settle() to inspect work and diagnostic outputs.

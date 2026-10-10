@@ -1,0 +1,12 @@
+cadence 0.78.0
+XOR targets [0, 1, 1, 0]
+
+[deep XOR supervised, ample settling]
+  deep P6-H6 sb256 s7: passed=False acc=0.50 preds=['0.16', '0.01', '0.27', '0.13'] target=[0, 1, 1, 0]
+  deep P6-H6 sb256 s11: passed=False acc=0.50 preds=['0.08', '0.40', '0.55', '0.85'] target=[0, 1, 1, 0]
+  deep P6-H6 sb512 s7: passed=False acc=0.50 preds=['0.16', '0.01', '0.27', '0.13'] target=[0, 1, 1, 0]
+  deep P6-H6 sb512 s11: passed=False acc=0.50 preds=['0.08', '0.40', '0.55', '0.85'] target=[0, 1, 1, 0]
+  deep P12-H12 sb256 s7: passed=False acc=0.50 preds=['0.15', '0.00', '0.31', '0.08'] target=[0, 1, 1, 0]
+  deep P12-H12 sb256 s11: passed=False acc=0.50 preds=['0.07', '0.40', '0.54', '0.86'] target=[0, 1, 1, 0]
+  deep P12-H12 sb512 s7: passed=False acc=0.50 preds=['0.15', '0.00', '0.31', '0.08'] target=[0, 1, 1, 0]
+  deep P12-H12 sb512 s11: passed=False acc=0.50 preds=['0.07', '0.40', '0.54', '0.86'] target=[0, 1, 1, 0]

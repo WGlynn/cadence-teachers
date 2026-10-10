@@ -1,0 +1,14 @@
+defaults: {'threshold': 0.2, 'decay': 0.9, 'tolerance': 2.0, 'floor': 0.1, 'fast': 0.05, 'slow': 0.005, 'heat': 2.0, 'youth': 100, 'value_surprise': 1.0, 'record_surprise': 0.0, 'need': 0.0}
+
+config              post_hold_mean  best_seed 
+default             0.708           1.00      
+rouse-easy(thr/2)   0.708           1.00      
+rouse-hard(thr*2)   0.646           0.94      
+hot(heat*2)         0.750           1.00      
+young(youth*2)      0.625           0.75      
+slow-decay(dec/2)   0.677           1.00      
+tol-tight(tol/2)    0.677           1.00      
+combo(thr/2,heat2)  0.740           0.94      
+
+BEST: hot(heat*2) post_hold=0.750 (baseline step path was ~0.64)
+NOT STABILIZED (no gene region holds >=0.90)

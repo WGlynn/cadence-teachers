@@ -1,0 +1,11 @@
+cadence 0.78.0
+XOR targets per ctx [0, 1, 1, 0]
+
+[deep XOR, P6-H6, sb48, 1500 steps] — action dump + acc + flipped-acc
+  seed 7: actions [None, None, None, None]  acc 0.00  flipped_acc 1.00  clean_XNOR=False
+  seed11: actions [None, None, None, None]  acc 0.00  flipped_acc 1.00  clean_XNOR=False
+  seed23: actions [None, None, None, None]  acc 0.00  flipped_acc 1.00  clean_XNOR=False
+
+[control: deep copy-b1, P6-H6, sb48, 600 steps] — does the deep stack learn a 1-bit task?
+  seed 7: actions [0, 0, 1, 1]  copyb1_acc 1.00
+  seed11: actions [0, 0, 1, 1]  copyb1_acc 1.00

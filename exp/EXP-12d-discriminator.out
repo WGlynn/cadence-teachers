@@ -1,0 +1,4 @@
+cadence 0.78.0
+deep P6-H6, steps=3000, XOR targets per ctx [0, 1, 1, 0]
+settle_budget             xor per-seed   mean
+           48 ['0.00', '0.00', '0.00']   0.00

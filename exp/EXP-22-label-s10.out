@@ -1,0 +1,4 @@
+L10  g0 do 1.00 on 1.00 off 0.67  g1 do 0.00 on 1.00 off 0.67  g2 do 0.00 on 0.50 off 0.00  g3 do 0.00 on 0.50 off 0.00  g4 do 0.00 on 0.50 off 0.00  (300s)
+E10  g0 do 1.00 on 1.00 off 0.67  g1 do 0.00 on 1.00 off 0.67  g2 do 0.00 on 0.50 off 0.00  g3 do 0.00 on 0.50 off 0.00  g4 do 0.00 on 0.50 off 0.00  (585s)
+L11  g0 do 1.00 on 1.00 off 1.00  g1 do 0.00 on 0.75 off 0.00  g2 do 0.00 on 0.50 off 0.00  g3 do 0.00 on 0.50 off 0.00  g4 do 0.00 on 0.50 off 0.00  (868s)
+E11  g0 do 1.00 on 1.00 off 0.67  g1 do 0.00 on 1.00 off 1.00  g2 do 0.00 on 0.50 off 1.00  g3 do 0.00 on 0.50 off 1.00  g4 do 0.00 on 0.50 off 1.00  (1149s)

@@ -1,0 +1,37 @@
+resuming: 0 done, 30 to run
+  done 0.0 seed 2  (273s)
+  done 0.0 seed 1  (293s)
+  done 0.0 seed 5  (299s)
+  done 0.0 seed 4  (347s)
+  done 0.0 seed 0  (351s)
+  done 0.0 seed 3  (386s)
+  done 0.3 seed 1  (583s)
+  done 0.3 seed 0  (608s)
+  done 0.3 seed 2  (615s)
+  done 0.3 seed 5  (663s)
+  done 0.3 seed 4  (672s)
+  done 0.3 seed 3  (697s)
+  done 0.6 seed 0  (864s)
+  done 0.6 seed 2  (865s)
+  done 0.6 seed 1  (882s)
+  done 0.6 seed 4  (959s)
+  done 0.6 seed 5  (982s)
+  done 0.6 seed 3  (993s)
+  done 0.9 seed 2  (1127s)
+  done 0.9 seed 1  (1162s)
+  done 0.9 seed 0  (1171s)
+  done 0.9 seed 5  (1261s)
+  done 0.9 seed 4  (1266s)
+  done 0.9 seed 3  (1269s)
+  done PI seed 2  (1418s)
+  done PI seed 0  (1444s)
+  done PI seed 1  (1444s)
+  done PI seed 5  (1529s)
+  done PI seed 4  (1534s)
+  done PI seed 3  (1619s)
+EXP-35b pedigree controller  N=8 K=96 rounds=30 seeds=6 D=40  (1619s)
+  alpha 0.0  final 0.828 (SEM 0.007)  mean-over-time 0.712  network-knows 0.89  discovering 0.34  relaying 0.45
+  alpha 0.3  final 0.850 (SEM 0.010)  mean-over-time 0.717  network-knows 0.91  discovering 0.35  relaying 0.42
+  alpha 0.6  final 0.838 (SEM 0.006)  mean-over-time 0.712  network-knows 0.89  discovering 0.35  relaying 0.34
+  alpha 0.9  final 0.848 (SEM 0.005)  mean-over-time 0.715  network-knows 0.88  discovering 0.36  relaying 0.33
+  alpha PI   final 0.840 (SEM 0.009)  mean-over-time 0.712  network-knows 0.91  discovering 0.39  relaying 0.35  alpha path 0.56 0.88 0.95 0.93 0.91 0.87 0.61 0.37

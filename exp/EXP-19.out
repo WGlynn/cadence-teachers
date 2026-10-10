@@ -1,0 +1,29 @@
+seed 0  null 0.00  A 0.00  B 0.00  AB 0.27  F 0.00  FB 0.00   (87s)
+seed 1  null 0.00  A 0.00  B 0.27  AB 0.00  F 0.00  FB 0.00   (178s)
+seed 2  null 0.00  A 0.00  B 0.00  AB 1.00  F 0.00  FB 0.00   (284s)
+seed 3  null 1.00  A 0.30  B 0.00  AB 1.00  F 0.00  FB 0.00   (395s)
+seed 4  null 0.00  A 0.00  B 0.00  AB 0.00  F 0.00  FB 0.00   (489s)
+seed 5  null 0.00  A 0.83  B 0.00  AB 0.00  F 0.00  FB 0.00   (582s)
+seed 6  null 0.00  A 0.00  B 0.00  AB 1.00  F 0.00  FB 0.00   (676s)
+seed 7  null 0.00  A 0.00  B 0.00  AB 0.00  F 0.00  FB 0.00   (782s)
+seed 8  null 0.00  A 0.00  B 0.00  AB 1.00  F 0.00  FB 0.00   (896s)
+seed 9  null 0.00  A 0.00  B 0.00  AB 0.00  F 0.00  FB 0.00   (1001s)
+seed 10  null 0.00  A 1.00  B 0.00  AB 1.00  F 0.00  FB 0.00   (1111s)
+seed 11  null 0.00  A 0.00  B 0.00  AB 1.00  F 0.00  FB 0.00   (1210s)
+------------------------------------------------------------------------
+EXP-19 keydoor teamwork  delay=2 N=100 trips/teacher  test=30  seeds=12
+  null-twin fed (raw) 0.083
+  v(A ) = +0.094  (SEM 0.125)
+  v(B ) = -0.061  (SEM 0.088)
+  v(AB) = +0.439  (SEM 0.145)
+  v(F ) = -0.083  (SEM 0.083)
+  v(FB) = -0.083  (SEM 0.083)
+  synergy v(AB)-v(A)-v(B) = +0.406 (SEM 0.209)
+credits (genuine):
+  solo   key +0.094  door -0.061
+  LOO    key +0.500  door +0.344  sum +0.844
+  shap   key +0.297  door +0.142  sum +0.439
+credits (fake key):
+  solo   key -0.083  door -0.061
+  LOO    key -0.022  door +0.000  sum -0.022
+  shap   key -0.053  door -0.031  sum -0.083

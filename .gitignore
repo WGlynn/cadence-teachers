@@ -1,0 +1,22 @@
+# Allow-list: everything is private unless listed below (internal ops notes stay out of the public repo).
+/*
+!/.gitignore
+!/README.md
+!/CONTRIBUTING.md
+!/LICENSE
+!/LICENSE-docs.md
+!/VS-TRANSFER-PROGRAM.md
+!/EXPERIMENT-QUEUE.md
+!/EXPERIMENT-RESULTS.md
+!/M5-EXOGENOUS-ANCHOR.md
+!/experiments/
+!/exp/
+!/ui/
+!/.github/
+# inside exp: no brain checkpoints, caches, scratch backups
+/exp/*_brains/
+/exp/__pycache__/
+/exp/smoke/
+/exp/*.bak
+/exp/*.npz
+__pycache__/

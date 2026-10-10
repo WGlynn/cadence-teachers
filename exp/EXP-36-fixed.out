@@ -1,0 +1,30 @@
+resuming: 0 done, 24 to run
+  done LIST seed 0  (107s)
+  done LIST seed 1  (108s)
+  done LIST seed 2  (109s)
+  done LIST seed 3  (211s)
+  done LIST seed 5  (213s)
+  done LIST seed 4  (214s)
+  done PROBE+LEDGER seed 1  (324s)
+  done PROBE+LEDGER seed 2  (325s)
+  done PROBE+LEDGER seed 0  (328s)
+  done PROBE+LEDGER seed 4  (431s)
+  done PROBE+LEDGER seed 3  (431s)
+  done PROBE+LEDGER seed 5  (440s)
+  done SMART seed 1  (538s)
+  done SMART seed 0  (545s)
+  done SMART seed 2  (548s)
+  done SMART seed 3  (643s)
+  done SMART seed 4  (651s)
+  done SMART seed 5  (657s)
+  done RECIP seed 0  (757s)
+  done RECIP seed 2  (764s)
+  done RECIP seed 1  (769s)
+  done RECIP seed 3  (864s)
+  done RECIP seed 4  (871s)
+  done RECIP seed 5  (881s)
+EXP-36 adversarial market  rounds=16 seeds=6  (881s)
+  LIST          fake pay minted 13.094 (real gain caused by colluder 0.161)  lessons absorbed by attackers 0.93  honest knowledge final 0.680  curve 0.57 0.68 0.68 0.68 0.68 0.68 0.68 0.68 0.68
+  PROBE+LEDGER  fake pay minted 0.042 (real gain caused by colluder 0.203)  lessons absorbed by attackers 0.30  honest knowledge final 0.946  curve 0.57 0.75 0.85 0.90 0.92 0.94 0.94 0.94 0.95
+  SMART         fake pay minted 0.151 (real gain caused by colluder 0.073)  lessons absorbed by attackers 0.83  honest knowledge final 0.834  curve 0.57 0.71 0.73 0.75 0.76 0.78 0.80 0.83 0.83
+  RECIP         fake pay minted 0.177 (real gain caused by colluder 0.177)  lessons absorbed by attackers 0.69  honest knowledge final 0.912  curve 0.57 0.74 0.81 0.84 0.87 0.89 0.90 0.91 0.91

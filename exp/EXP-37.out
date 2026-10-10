@@ -1,0 +1,21 @@
+seed 0: genuine dW 2.92 v +0.38  fake_wrong dW 2.43 v -0.62  fake_random dW 1.53 v +0.12
+seed 1: genuine dW 2.79 v +0.50  fake_wrong dW 2.45 v -0.50  fake_random dW 1.13 v +0.00
+seed 2: genuine dW 2.55 v +0.62  fake_wrong dW 2.45 v -0.38  fake_random dW 1.51 v +0.38
+seed 3: genuine dW 2.28 v +0.12  fake_wrong dW 2.29 v -0.88  fake_random dW 1.36 v -0.25
+seed 4: genuine dW 2.42 v +0.25  fake_wrong dW 2.14 v -0.75  fake_random dW 1.13 v -0.25
+seed 5: genuine dW 2.61 v +0.88  fake_wrong dW 2.61 v -0.12  fake_random dW 1.14 v +0.38
+seed 6: genuine dW 2.94 v +0.38  fake_wrong dW 2.46 v -0.62  fake_random dW 1.05 v +0.12
+seed 7: genuine dW 2.64 v +0.38  fake_wrong dW 2.58 v -0.62  fake_random dW 1.06 v +0.12
+seed 8: genuine dW 2.32 v +0.12  fake_wrong dW 2.80 v -0.88  fake_random dW 1.25 v +0.00
+seed 9: genuine dW 2.87 v +0.50  fake_wrong dW 2.26 v -0.50  fake_random dW 1.16 v +0.00
+seed 10: genuine dW 2.10 v +0.62  fake_wrong dW 2.26 v -0.38  fake_random dW 1.43 v +0.38
+seed 11: genuine dW 2.60 v +0.38  fake_wrong dW 2.62 v -0.62  fake_random dW 1.23 v -0.25
+seed 12: genuine dW 2.36 v +0.50  fake_wrong dW 2.56 v -0.50  fake_random dW 1.81 v +0.00
+seed 13: genuine dW 2.63 v +0.38  fake_wrong dW 2.12 v -0.62  fake_random dW 0.89 v -0.12
+seed 14: genuine dW 2.58 v +0.38  fake_wrong dW 2.81 v -0.62  fake_random dW 3.89 v -0.25
+seed 15: genuine dW 2.75 v +0.38  fake_wrong dW 2.26 v -0.62  fake_random dW 1.45 v -0.25
+------------------------------------------------------------------------
+  genuine     weight change 2.585 (sd 0.234)   measured worth +0.422
+  fake_wrong  weight change 2.443 (sd 0.206)   measured worth -0.578
+  fake_random weight change 1.439 (sd 0.670)   measured worth +0.008
+  correlation(weight change, worth) over all lessons: -0.02

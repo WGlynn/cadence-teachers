@@ -1,0 +1,5 @@
+cadence 0.78.0
+deep P6-H6, XOR, 800 steps. XOR targets [0, 1, 1, 0]
+settle_budget None%_1stHalf None%_2ndHalf    final_actions   acc
+          100            0%            0%     [0, 0, 0, 0]  0.50
+          220            0%            0%     [0, 0, 0, 0]  0.50
