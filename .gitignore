@@ -35,3 +35,4 @@ __pycache__/
 /teachers/arena.py
 /tests/test_arena.py
 /tests/test_arena_reproduces.py
+/.github/workflows/arena.yml
