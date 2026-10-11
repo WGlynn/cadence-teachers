@@ -1,0 +1,18 @@
+{
+ "passes": 6,
+ "baselines": {
+  "majority": 0.20236957768010702,
+  "teacher-2 (told the answer)": 0.29170647811962547,
+  "teacher-4 (told the answer)": 0.5056373017389643,
+  "bandit outcome-w1": 0.24781833237785844,
+  "bandit outcome-w1 SEM": 0.001974648066755841,
+  "bandit partial-w1": 0.2662908465507357,
+  "bandit partial-w1 SEM": 0.0015376912802819692,
+  "bandit judged-w1": 0.2667685839862412,
+  "bandit judged-w1 SEM": 0.0013922856866293567,
+  "bandit outcome-w3": 0.2280718517103,
+  "bandit outcome-w3 SEM": 0.004788826327590932,
+  "bandit judged-w3": 0.3457226574941079,
+  "bandit judged-w3 SEM": 0.001369513981782273
+ }
+}

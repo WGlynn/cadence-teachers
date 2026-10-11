@@ -1,0 +1,22 @@
+{'layout': {'inputs': 28, 'actions': 28, 'modules': [32, 16], 'observers': [], 'slots': [28], 'neurons': 120, 'synapses': 3072, 'populations': {'sensory': 28, 'module_0': 32, 'association': 16, 'prefrontal': 16, 'motor': 28, 'motor/actions': 28}}, 'genes': {'learning_beta': 0.1, 'learning_eta': 0.5, 'learning_eta_bias': 0.05, 'learning_centered': True, 'learning_free_steps': 1024, 'learning_nudged_steps': 12, 'learning_tolerance': 0.003, 'learning_nudge': 'cross_entropy', 'learning_temperature': 0.2, 'learning_normalize': 0.0, 'learning_normalize_floor': 0.001, 'learning_momentum': 0.9, 'learn
+   500 acc 0.044 top 'a' 0.26 learned 161/500 saturation 0.83 trace 0.0000
+  1000 acc 0.048 top 'a' 0.35 learned 63/500 saturation 0.88 trace 0.0000
+  1500 acc 0.074 top 'a' 0.34 learned 58/500 saturation 0.89 trace 0.0000
+  2000 acc 0.074 top 'a' 0.41 learned 61/500 saturation 0.85 trace 0.0000
+  2500 acc 0.114 top 'a' 0.25 learned 95/500 saturation 0.90 trace 0.0000
+  3000 acc 0.144 top 'a' 0.28 learned 98/500 saturation 0.91 trace 0.0000
+  3500 acc 0.172 top ' ' 0.37 learned 105/500 saturation 0.92 trace 0.0000
+  4000 acc 0.222 top ' ' 0.60 learned 42/500 saturation 0.90 trace 0.0000
+  4500 acc 0.168 top ' ' 0.47 learned 77/500 saturation 0.90 trace 0.0000
+  5000 acc 0.234 top ' ' 0.52 learned 31/500 saturation 0.86 trace 0.0000
+  5500 acc 0.260 top ' ' 0.49 learned 0/500 saturation nan trace nan
+  6000 acc 0.268 top ' ' 0.53 learned 0/500 saturation nan trace nan
+  6500 acc 0.230 top ' ' 0.53 learned 1/500 saturation 0.96 trace 0.0000
+  7000 acc 0.212 top ' ' 0.63 learned 16/500 saturation 0.89 trace 0.0000
+  7500 acc 0.214 top ' ' 0.70 learned 0/500 saturation nan trace nan
+  8000 acc 0.206 top ' ' 0.64 learned 5/500 saturation 0.88 trace 0.0000
+  8500 acc 0.188 top ' ' 0.64 learned 2/500 saturation 0.89 trace 0.0000
+  9000 acc 0.216 top ' ' 0.64 learned 3/500 saturation 0.83 trace 0.0000
+  9500 acc 0.222 top ' ' 0.63 learned 0/500 saturation nan trace nan
+ 10000 acc 0.184 top ' ' 0.65 learned 9/500 saturation 0.92 trace 0.0000
+ 10500 acc 0.232 top ' ' 0.63 learned 0/500 saturation nan trace nan

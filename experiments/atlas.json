@@ -1651,5 +1651,57 @@
    ]
   },
   "quote_worthy": "Asked to continue 'alice was ', the best graded brain said 'w w w w': in three passes it learned what a lookup table learns from the same grades, that space is common."
+ },
+ {
+  "id": "EXP-43",
+  "name": "Grades that judge the guess: learning text from a teacher's grades",
+  "date": "2026-10-10",
+  "iter": "iter33",
+  "track": "language",
+  "verdict": "BOUNDARY",
+  "verdict_note": "3 seeds x 5 arms (always learning, 6 passes) + 3 seeds x 4 arms (live, 3 passes); pre-registered, revised after a pilot; one seed stopped after collapsing",
+  "headline": "A teacher who grades how good the guess was, not whether it was right, took a Cadence brain to .254 on held-out Alice with three characters of context (right/wrong: .202), still short of a model told the answer (.292). A lookup table on the same grades beat that model (.346).",
+  "question": "Does more experience, or a grade that judges the guess instead of its luck, let a Cadence brain that never hears the answer reach a model told every character?",
+  "process_issues": [
+   "pilot mechanism (the calm trap) written into the revision before a healthy control; it did not hold up",
+   "a collapsed seed was stopped after pass 4; 6-pass baselines computed separately with the same code",
+   "live arms launched beside the full run oversubscribed the CPU"
+  ],
+  "lesson": "Learning from every right/wrong outcome teaches the most common answer; a grade that judges the guess carries enough for a lookup table to beat a model told the answer. On text, Cadence's limit is now the brain, not the grade.",
+  "chart": {
+   "title": "Held-out accuracy on Alice chapter 2 (6 passes)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "always space",
+     "value": 0.202
+    },
+    {
+     "label": "Cadence, right/wrong, 3 chars",
+     "value": 0.202
+    },
+    {
+     "label": "Cadence, judged, 1 char (2 seeds)",
+     "value": 0.257
+    },
+    {
+     "label": "Cadence, judged, 3 chars",
+     "value": 0.254
+    },
+    {
+     "label": "told the answer, 1 char",
+     "value": 0.292
+    },
+    {
+     "label": "lookup table, judged, 3 chars",
+     "value": 0.346
+    },
+    {
+     "label": "told the answer, 3 chars",
+     "value": 0.506
+    }
+   ]
+  },
+  "quote_worthy": "Graded right or wrong on every guess, all nine brains learned to say space. A teacher's judgement kept them off it, and a lookup table given that judgement beat a model that was told every answer."
  }
 ]

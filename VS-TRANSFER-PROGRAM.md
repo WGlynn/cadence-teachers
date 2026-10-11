@@ -91,6 +91,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-10 (iter33): EXP-43 BOUNDARY (pre-registered, revised after a pilot): a teacher that grades how good the guess was (not whether it was right) takes a Cadence brain to .254 on held-out Alice with 3 characters (right/wrong .202, always space; told-the-answer bigram .292); a lookup table on the same judged grades reaches .346, past the bigram. Learning from every right/wrong outcome collapses onto space (9/9). On text the limit is now the brain, not the grade; 4 runs collapsed onto action 0, mechanism not pinned down.
+
 2026-10-10 (iter32): EXP-42 BOUNDARY (pre-registered): learning Alice one character at a time from right/wrong grades alone, a Cadence brain reaches .225 held out (always-space .202; graded lookup table .231-.242; told-the-answer bigram .291, 4-gram .502). A grade carries <= 1 bit per character; contexts grow as 28^n. EXP-40 (brain size) stopped by Will at 30/144 runs, resumable; iter31 left to it.
 
 2026-10-10 (iter30): EXP-39 SUPPORTIVE (pre-registered): on a 4-step prerequisite chain a grading teacher gets 12/12 students solving in 40 episodes; sparse reward alone needs ~1500 (11/12); hidden inventory = unlearnable; a reverse curriculum under sparse reward CAUSES the collapse onto late-chain moves (0/12 at every budget). Our earlier 'teach backwards' advice is withdrawn.
@@ -138,6 +140,12 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter33 — 2026-10-10 — EXP-43 judged grades = BOUNDARY (the grade can carry it; the brain does not yet take it in)
+- Version: Cadence v0.80.0 `19bee92`; modules (32, 16). Alice ch.1 train, ch.2 held out. Always-learning (step) 5 arms x 3 seeds x 6 passes; live (EXP-42 protocol) 4 arms x 3 seeds x 3 passes.
+- RUN GATE: pre-registered (5666d17); pilots printed the chain (grade -> reward -> agree -> accuracy) and caught two collapsed arms; design + predictions revised in the open (f347d38); primary metric declared before results (db6242d). The revision's mechanism story (the calm trap) did not survive a healthy control.
+- Result (greedy held-out, 6 passes): right/wrong w1 .202, w3 .202, partial .202 (all always-space); judged w1 .240/.274 (+1 seed collapsed .275 -> .070); judged w3 .254 (SEM .016). Teacher-2 .292, teacher-4 .506; table on judged w3 .346. Live outcome-w1 reproduces EXP-42 exactly.
+- Verdict: 4 of 8 held (P1, P5, P6, P7). Write-up: experiments/EXP-43.md.
 
 ### iter32 — 2026-10-10 — EXP-42 text from grades alone = BOUNDARY (one bit per character is not enough)
 - Version: Cadence v0.80.0 `19bee92`; modules (32, 16), arousal on. Alice ch.1 (10,891 chars) x 3 passes, ch.2 (10,468) held out, prequential. 3 seeds x arms w1 / w3 / seq.

@@ -1,0 +1,104 @@
+EXP-43 text: 10889 train / 10466 held-out chars; 15 Cadence runs to go (0 done); modules (32, 16), passes 6, probes [1, 3, 6]
+    partial-w1-always s1 pass  1: acc 0.175 agree 0.419 reward -0.297 aroused 1.00  greedy held-out 0.202
+    outcome-w1-always s1 pass  1: acc 0.158 agree 0.366 reward -0.684 aroused 1.00  greedy held-out 0.202
+    judged-w1-always s0 pass  1: acc 0.206 agree 0.608 reward +0.488 aroused 1.00  greedy held-out 0.240
+    outcome-w1-always s0 pass  1: acc 0.154 agree 0.366 reward -0.693 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s0 pass  1: acc 0.165 agree 0.193 reward -0.670 aroused 1.00  greedy held-out 0.202
+    partial-w1-always s0 pass  1: acc 0.196 agree 0.480 reward -0.224 aroused 1.00  greedy held-out 0.239
+    partial-w1-always s1 pass  2: acc 0.183 agree 0.438 reward -0.267 aroused 1.00
+    outcome-w1-always s1 pass  2: acc 0.182 agree 0.435 reward -0.636 aroused 1.00
+    outcome-w3-always s0 pass  2: acc 0.181 agree 0.210 reward -0.638 aroused 1.00
+    outcome-w1-always s0 pass  2: acc 0.181 agree 0.434 reward -0.637 aroused 1.00
+    judged-w1-always s0 pass  2: acc 0.223 agree 0.634 reward +0.587 aroused 1.00
+    judged-w3-always s0 pass  1: acc 0.162 agree 0.204 reward -0.451 aroused 1.00  greedy held-out 0.242
+    judged-w1-always s1 pass  1: acc 0.233 agree 0.681 reward +0.612 aroused 1.00  greedy held-out 0.275
+    partial-w1-always s1 pass  3: acc 0.182 agree 0.432 reward -0.271 aroused 1.00  greedy held-out 0.202
+    outcome-w1-always s1 pass  3: acc 0.181 agree 0.432 reward -0.638 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s0 pass  3: acc 0.181 agree 0.213 reward -0.637 aroused 1.00  greedy held-out 0.202
+    judged-w1-always s0 pass  3: acc 0.225 agree 0.631 reward +0.583 aroused 1.00  greedy held-out 0.240
+    outcome-w1-always s0 pass  3: acc 0.182 agree 0.432 reward -0.635 aroused 1.00  greedy held-out 0.202
+    partial-w1-always s1 pass  4: acc 0.180 agree 0.431 reward -0.273 aroused 1.00
+    outcome-w1-always s1 pass  4: acc 0.180 agree 0.430 reward -0.641 aroused 1.00
+    outcome-w3-always s0 pass  4: acc 0.180 agree 0.210 reward -0.641 aroused 1.00
+    judged-w1-always s0 pass  4: acc 0.221 agree 0.627 reward +0.574 aroused 1.00
+    partial-w1-always s1 pass  5: acc 0.179 agree 0.430 reward -0.276 aroused 1.00
+    outcome-w1-always s0 pass  4: acc 0.180 agree 0.429 reward -0.641 aroused 1.00
+    judged-w1-always s1 pass  2: acc 0.254 agree 0.713 reward +0.720 aroused 1.00
+    partial-w1-always s0 pass  2: acc 0.217 agree 0.530 reward -0.155 aroused 1.00
+    outcome-w1-always s1 pass  5: acc 0.178 agree 0.429 reward -0.644 aroused 1.00
+    outcome-w3-always s0 pass  5: acc 0.183 agree 0.214 reward -0.633 aroused 1.00
+    judged-w1-always s0 pass  5: acc 0.226 agree 0.635 reward +0.589 aroused 1.00
+    outcome-w1-always s0 pass  5: acc 0.183 agree 0.436 reward -0.633 aroused 1.00
+    judged-w3-always s0 pass  2: acc 0.233 agree 0.298 reward -0.215 aroused 1.00
+    partial-w1-always s1 pass  6: acc 0.181 agree 0.433 reward -0.273 aroused 1.00  greedy held-out 0.202
+    outcome-w1-always s1 pass  6: acc 0.180 agree 0.432 reward -0.640 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s0 pass  6: acc 0.182 agree 0.214 reward -0.636 aroused 1.00  greedy held-out 0.202
+  partial-w1-always seed 1: held-out 0.186 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  6.71 ms/step  sample: '                                                            '
+    judged-w1-always s0 pass  6: acc 0.226 agree 0.636 reward +0.587 aroused 1.00  greedy held-out 0.240
+  outcome-w1-always seed 1: held-out 0.185 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  7.12 ms/step  sample: '                                                            '
+    outcome-w1-always s0 pass  6: acc 0.182 agree 0.436 reward -0.635 aroused 1.00  greedy held-out 0.202
+  outcome-w3-always seed 0: held-out 0.185 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  7.23 ms/step  sample: '                                                            '
+    partial-w1-always s0 pass  3: acc 0.221 agree 0.578 reward -0.111 aroused 1.00  greedy held-out 0.227
+  judged-w1-always seed 0: held-out 0.219 greedy {'1': 0.23991974011083508, '3': 0.23991974011083508, '6': 0.23991974011083508}  7.67 ms/step  sample: 't t t t t t t t t t t t t t t t t t t t t t t t t t t t t t '
+  outcome-w1-always seed 0: held-out 0.185 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  7.99 ms/step  sample: '                                                            '
+    outcome-w3-always s1 pass  1: acc 0.171 agree 0.201 reward -0.659 aroused 1.00  greedy held-out 0.202
+    partial-w1-always s0 pass  4: acc 0.181 agree 0.441 reward -0.262 aroused 1.00
+    outcome-w1-always s2 pass  1: acc 0.154 agree 0.347 reward -0.692 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s1 pass  2: acc 0.183 agree 0.212 reward -0.635 aroused 1.00
+    partial-w1-always s2 pass  1: acc 0.166 agree 0.387 reward -0.331 aroused 1.00  greedy held-out 0.202
+    judged-w3-always s0 pass  3: acc 0.243 agree 0.307 reward -0.177 aroused 1.00  greedy held-out 0.264
+    outcome-w1-always s2 pass  2: acc 0.180 agree 0.434 reward -0.640 aroused 1.00
+    judged-w1-always s2 pass  1: acc 0.245 agree 0.705 reward +0.662 aroused 1.00  greedy held-out 0.276
+    partial-w1-always s0 pass  5: acc 0.183 agree 0.436 reward -0.266 aroused 1.00
+    partial-w1-always s2 pass  2: acc 0.180 agree 0.435 reward -0.272 aroused 1.00
+    judged-w3-always s1 pass  1: acc 0.177 agree 0.225 reward -0.400 aroused 1.00  greedy held-out 0.263
+    judged-w1-always s2 pass  2: acc 0.259 agree 0.734 reward +0.748 aroused 1.00
+    outcome-w1-always s2 pass  3: acc 0.181 agree 0.431 reward -0.639 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s1 pass  3: acc 0.181 agree 0.212 reward -0.637 aroused 1.00  greedy held-out 0.202
+    partial-w1-always s0 pass  6: acc 0.182 agree 0.436 reward -0.269 aroused 1.00  greedy held-out 0.202
+    outcome-w1-always s2 pass  4: acc 0.182 agree 0.432 reward -0.635 aroused 1.00
+    partial-w1-always s2 pass  3: acc 0.181 agree 0.432 reward -0.274 aroused 1.00  greedy held-out 0.202
+    outcome-w1-always s2 pass  5: acc 0.182 agree 0.437 reward -0.636 aroused 1.00
+    outcome-w3-always s1 pass  4: acc 0.180 agree 0.212 reward -0.641 aroused 1.00
+  partial-w1-always seed 0: held-out 0.184 greedy {'1': 0.23905981272692528, '3': 0.2274030193005924, '6': 0.20236957768010702}  12.69 ms/step  sample: '                                                            '
+    judged-w1-always s2 pass  3: acc 0.260 agree 0.735 reward +0.753 aroused 1.00  greedy held-out 0.276
+    partial-w1-always s2 pass  4: acc 0.183 agree 0.433 reward -0.269 aroused 1.00
+    judged-w3-always s0 pass  4: acc 0.250 agree 0.312 reward -0.153 aroused 1.00
+    outcome-w3-always s1 pass  5: acc 0.179 agree 0.210 reward -0.643 aroused 1.00
+    outcome-w1-always s2 pass  6: acc 0.181 agree 0.431 reward -0.638 aroused 1.00  greedy held-out 0.202
+    partial-w1-always s2 pass  5: acc 0.182 agree 0.437 reward -0.266 aroused 1.00
+    outcome-w3-always s2 pass  1: acc 0.116 agree 0.133 reward -0.768 aroused 1.00  greedy held-out 0.202
+    judged-w1-always s2 pass  4: acc 0.263 agree 0.741 reward +0.750 aroused 1.00
+  outcome-w1-always seed 2: held-out 0.184 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  7.64 ms/step  sample: '                                                            '
+    outcome-w3-always s2 pass  2: acc 0.180 agree 0.210 reward -0.641 aroused 1.00
+    judged-w3-always s1 pass  2: acc 0.244 agree 0.304 reward -0.177 aroused 1.00
+    judged-w1-always s2 pass  5: acc 0.263 agree 0.760 reward +0.769 aroused 1.00
+    partial-w1-always s2 pass  6: acc 0.181 agree 0.432 reward -0.271 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s1 pass  6: acc 0.180 agree 0.211 reward -0.639 aroused 1.00  greedy held-out 0.202
+    outcome-w3-always s2 pass  3: acc 0.180 agree 0.210 reward -0.640 aroused 1.00  greedy held-out 0.202
+    judged-w3-always s2 pass  1: acc 0.118 agree 0.144 reward -0.612 aroused 1.00  greedy held-out 0.217
+  partial-w1-always seed 2: held-out 0.184 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  9.22 ms/step  sample: '                                                            '
+    judged-w1-always s2 pass  6: acc 0.261 agree 0.759 reward +0.760 aroused 1.00  greedy held-out 0.274
+  outcome-w3-always seed 1: held-out 0.186 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  10.5 ms/step  sample: '                                                            '
+    outcome-w3-always s2 pass  4: acc 0.183 agree 0.213 reward -0.635 aroused 1.00
+    judged-w3-always s0 pass  5: acc 0.258 agree 0.319 reward -0.136 aroused 1.00
+  judged-w1-always seed 2: held-out 0.248 greedy {'1': 0.27555895279954135, '3': 0.27575004777374357, '6': 0.2742212879801261}  10.01 ms/step  sample: 't t t t t t t t t t t t t t t t t t t t t t t t t t t t t t '
+    outcome-w3-always s2 pass  5: acc 0.183 agree 0.214 reward -0.634 aroused 1.00
+    judged-w3-always s2 pass  2: acc 0.208 agree 0.264 reward -0.302 aroused 1.00
+    outcome-w3-always s2 pass  6: acc 0.181 agree 0.211 reward -0.638 aroused 1.00  greedy held-out 0.202
+  outcome-w3-always seed 2: held-out 0.184 greedy {'1': 0.20236957768010702, '3': 0.20236957768010702, '6': 0.20236957768010702}  7.12 ms/step  sample: '                                                            '
+    judged-w3-always s1 pass  3: acc 0.248 agree 0.312 reward -0.166 aroused 1.00  greedy held-out 0.265
+    judged-w3-always s2 pass  3: acc 0.214 agree 0.272 reward -0.280 aroused 1.00  greedy held-out 0.234
+    judged-w3-always s0 pass  6: acc 0.256 agree 0.321 reward -0.143 aroused 1.00  greedy held-out 0.274
+    judged-w3-always s2 pass  4: acc 0.212 agree 0.271 reward -0.277 aroused 1.00
+    judged-w3-always s2 pass  5: acc 0.209 agree 0.264 reward -0.278 aroused 1.00
+  judged-w3-always seed 0: held-out 0.251 greedy {'1': 0.24173514236575577, '3': 0.2636155169119052, '6': 0.2736480030575196}  23.1 ms/step  sample: 'te t t t t t t t t t t t t t t t t t t t t t t t t t t t t t'
+    judged-w3-always s1 pass  4: acc 0.252 agree 0.315 reward -0.158 aroused 1.00
+    judged-w1-always s1 pass  3: acc 0.116 agree 0.291 reward -0.033 aroused 1.00  greedy held-out 0.070
+    judged-w3-always s2 pass  6: acc 0.208 agree 0.265 reward -0.278 aroused 1.00  greedy held-out 0.222
+  judged-w3-always seed 2: held-out 0.206 greedy {'1': 0.21651060577106823, '3': 0.23361360596216318, '6': 0.22157462258742594}  10.44 ms/step  sample: 'tt t t t t t t t t t t t t t t t t t t t t t t t t t t t t t'
+    judged-w3-always s1 pass  5: acc 0.250 agree 0.315 reward -0.157 aroused 1.00
+    judged-w3-always s1 pass  6: acc 0.250 agree 0.314 reward -0.159 aroused 1.00  greedy held-out 0.266
+  judged-w3-always seed 1: held-out 0.246 greedy {'1': 0.26275558952799544, '3': 0.2652398241926237, '6': 0.26581310911523026}  24.3 ms/step  sample: 'tt tt tt tt tt tt tt tt tt tt tt tt tt tt tt tt tt tt tt tt '
+    judged-w1-always s1 pass  4: acc 0.105 agree 0.268 reward -0.087 aroused 1.00
+  [stopped 20:10 by Jarvis: judged-w1-always seed 1 collapsed onto 'a' in pass 3 and ran > 10 min per pass afterwards; its last probe (.070 after pass 3) is recorded in this log; the 6-pass baselines were computed separately into EXP-43-full-baselines.json]
