@@ -15,7 +15,7 @@ from collections import Counter, OrderedDict
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "atlas.json")
 OUT = os.path.join(HERE, "ATLAS.html")
-GENERATED = "2026-10-10"
+GENERATED = "2026-10-13"
 
 # ============ Verdict palette ============
 # Categorical slots 1-7 of the dataviz reference palette in its validated order

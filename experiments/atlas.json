@@ -1703,5 +1703,66 @@
    ]
   },
   "quote_worthy": "Graded right or wrong on every guess, all nine brains learned to say space. A teacher's judgement kept them off it, and a lookup table given that judgement beat a model that was told every answer."
+ },
+ {
+  "id": "EXP-45",
+  "name": "Stone Age chain: is it the grade or the brain? (V5 replica)",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "12 seeds x 2 brains x 4 signals; pre-registered, pilot read before the full run; replica of Stone Age V5's chamber reproduces V5's published per-seed numbers exactly; the two brains differ on many genes at once",
+  "headline": "On Stone Age V5's own chamber and signals, Cadence's delayed-credit brain learns the 4-step chain from every teacher (V5's diluted grade .96 per-state accuracy, corrective labels .96) while the default brain with arousal learns it from none (.33-.42). V5's full-chain number is mostly search: a no-knowledge never-repeat searcher gets .304.",
+  "question": "Our grading solved the Stone Age chain 12/12; Stone Age V5's grade_only got 0.2%. Was it the grade or the brain, and does V5's full-chain success measure a learned chain?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Compute chance for the instrument, not just for the actions: in a free-retry chamber a searcher clears 'random' 2.5x over. And to settle a disagreement between labs, rebuild the other lab's setup until it reproduces their numbers seed for seed, then change one factor.",
+  "chart": {
+   "title": "Per-state greedy accuracy after 120 attempts (12 seeds)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "delayed-credit brain, every move graded",
+     "value": 1.0
+    },
+    {
+     "label": "delayed-credit brain, V5's grade",
+     "value": 0.96,
+     "sem": 0.04
+    },
+    {
+     "label": "delayed-credit brain, V5's corrective teacher",
+     "value": 0.96,
+     "sem": 0.03
+    },
+    {
+     "label": "delayed-credit brain, world reward only",
+     "value": 0.58,
+     "sem": 0.05
+    },
+    {
+     "label": "default brain, V5's corrective teacher",
+     "value": 0.42,
+     "sem": 0.04
+    },
+    {
+     "label": "default brain, every move graded",
+     "value": 0.42,
+     "sem": 0.06
+    },
+    {
+     "label": "default brain, V5's grade",
+     "value": 0.33,
+     "sem": 0.04
+    },
+    {
+     "label": "default brain, world reward only",
+     "value": 0.33,
+     "sem": 0.06
+    }
+   ]
+  },
+  "quote_worthy": "Erase the brain's carried context before each decision and V5's best arm falls from .227 to .098: it was steering within an attempt, not following a learned chain."
  }
 ]
