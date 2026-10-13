@@ -1,2 +1,23 @@
 EXP-44: 8 runs to go (7 done); passes 2; arms ['control', 'homeo-0.3', 'homeo-width', 'actor-small', 'wide']
     homeo-width s1 pass 1: acc 0.073 agree 0.093 reward -0.692 top-share 0.09  greedy held-out 0.105 (top 'o' 0.35)
+    homeo-0.3 s1 pass 1: acc 0.102 agree 0.120 reward -0.655 top-share 0.20  greedy held-out 0.219 (top ' ' 0.34)
+    homeo-0.3 s0 pass 1: acc 0.064 agree 0.078 reward -0.747 top-share 0.12  greedy held-out 0.102 (top ' ' 0.29)
+    homeo-width s0 pass 1: acc 0.066 agree 0.075 reward -0.729 top-share 0.08  greedy held-out 0.067 (top 'a' 1.00)
+    homeo-0.3 s0 pass 2: acc 0.119 agree 0.144 reward -0.592 top-share 0.22  greedy held-out 0.182 (top '.' 0.40)
+    homeo-0.3 s1 UNSETTLED in pass 2 (train): brain did not settle within 1024 steps: residual=0.00650904, tolerance=0.003; no action issued
+  homeo-0.3   seed 1: UNSETTLED train pass 2; greedy so far {'1': 0.2192814828969998}
+  homeo-0.3   seed 0: greedy {'1': 0.10185362124976113, '2': 0.18163577297917063} sampled 0.148  26.54 ms/step
+    homeo-width s1 UNSETTLED in pass 2 (train): brain did not settle within 1024 steps: residual=17.2671, tolerance=0.003; no action issued
+  homeo-width seed 1: UNSETTLED train pass 2; greedy so far {'1': 0.10519778329829925}
+    actor-small s2 pass 1: acc 0.152 agree 0.194 reward -0.476 top-share 0.38  greedy held-out 0.219 (top ' ' 0.86)
+    homeo-width s2 pass 1: acc 0.062 agree 0.079 reward -0.723 top-share 0.08  greedy held-out 0.181 (top 'n' 0.19)
+    homeo-0.3 s2 pass 1: acc 0.068 agree 0.083 reward -0.709 top-share 0.13  greedy held-out 0.254 (top 't' 0.38)
+    actor-small s2 pass 2: acc 0.204 agree 0.261 reward -0.314 top-share 0.59  greedy held-out 0.228 (top 't' 0.58)
+  actor-small seed 2: greedy {'1': 0.21899484043569653, '2': 0.22788075673609784} sampled 0.206  11.27 ms/step
+    homeo-width s2 pass 2: acc 0.114 agree 0.149 reward -0.548 top-share 0.11  greedy held-out 0.082 (top '.' 0.50)
+    homeo-0.3 s2 pass 2: acc 0.098 agree 0.126 reward -0.569 top-share 0.21  greedy held-out 0.185 (top 'r' 0.46)
+    wide s2 pass 1: acc 0.164 agree 0.194 reward -0.541 top-share 0.76  greedy held-out 0.202 (top ' ' 1.00)
+    wide s2 pass 2: acc 0.181 agree 0.211 reward -0.513 top-share 0.90  greedy held-out 0.202 (top ' ' 1.00)
+  homeo-0.3   seed 2: greedy {'1': 0.25358303076629085, '2': 0.18469329256640551} sampled 0.088  19.14 ms/step
+  wide        seed 2: greedy {'1': 0.20236957768010702, '2': 0.20236957768010702} sampled 0.185  5.4 ms/step
+  homeo-width seed 2: greedy {'1': 0.1811580355436652, '2': 0.08207529141983566} sampled 0.069  19.39 ms/step
