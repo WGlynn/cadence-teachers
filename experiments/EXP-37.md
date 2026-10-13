@@ -28,5 +28,5 @@
   breaks a clean threshold. SEM not reported (sd only). Version not stamped in the output.
 - Lesson: interior change is not a price signal; use it only as a pre-filter, expect outliers, and never let it veto a
   lesson on its own.
-- Next: answered Maarten (reply draft `Desktop/maarten-reply-brain-gains-2026-10-09.md`). HANDOFF lists a further
+- Next: answered Maarten (reply draft `Desktop/People/maarten-reply-brain-gains-2026-10-09.md`). HANDOFF lists a further
   "Maarten's weight-filter check" queued after EXP-35b; not run yet.

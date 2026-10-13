@@ -12,7 +12,7 @@ against the live clone (`~/_cadence_study`, kept at HEAD by the monitor loop).
 
 ## THE PROBLEM (grounded — do not re-derive from memory)
 
-Canonical statement: `~/Desktop/vs-value-measurement-problem-paper-2026-10-07.md`.
+Canonical statement: `~/Desktop/Research/vs-value-measurement-problem-paper-2026-10-07.md`.
 Noesis grounding: `~/noesis/ARCHITECTURE.md §v(S)` + `~/noesis/docs/research/WASH-PROBLEM-INDEX.md`.
 
 The impossibility core (a conservation law, not a cleverness gap): **any INTERIOR signal** — v(S)
@@ -282,7 +282,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
   reciprocity) so attacks do not pay whatever their form, not signature-matching.
 - Maarten G question (what does a brain gain, neurons or nodes; measure without tests?): neither, weights + memory
   records; internal change is worth-blind (EXP-08 fake moved weights fully, worth 0) but usable as a cheap PRE-FILTER.
-  Reply draft: Desktop/maarten-reply-brain-gains-2026-10-09.md. Testable: weight-change vs measured transfer.
+  Reply draft: Desktop/People/maarten-reply-brain-gains-2026-10-09.md. Testable: weight-change vs measured transfer.
 
 ### iter22 — 2026-10-09 — partner choice on the fixed network (EXP-34 FIX=1) + DESIGN RULE adopted
 - With notes + drift-check + rehearse, 16 rounds, 8 seeds: final RANDOM .981 · ORACLE (neediest first) .991 ·
@@ -543,7 +543,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 
 ### iter7 — 2026-10-08 — Cadence 0.78.0 — Dongyang fast-cadence math + XOR-depth findings
 - **Input:** Dongyang Stephen Chen "Fast Cadence: holographic recovery channels for OPH System-1
-  learning" (`~/Desktop/C__Users_dongy_reports_fast_cadence_method.md`). Will: extract the raw speed
+  learning" (`~/Desktop/Cadence/C__Users_dongy_reports_fast_cadence_method.md`). Will: extract the raw speed
   math, reverse-engineer into our cadence for a speedup, keep on synergy. OPH = Bernhard's (Observer
   Patch Holography), CC BY-NC-SA (research/reimplement ok; commercial needs license). Raw math
   extracted -> `~/cadence-lab/DONGYANG-FAST-CADENCE-MATH.md`.
