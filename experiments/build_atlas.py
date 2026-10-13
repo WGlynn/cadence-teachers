@@ -597,10 +597,29 @@ def main():
         f.write("\n".join(out))
     print("wrote %s (%d bytes, %d experiments, %d reflections)" % (OUT, os.path.getsize(OUT), len(recs), len(md)))
 
+    # Derived facts are generated, never typed (Will 2026-10-13: keep dependencies coherent when the data changes).
+    sync_readme_counts(recs)
     # Every atlas update goes live (Will 2026-10-10): publish to Vercel when this checkout is linked.
     import publish_atlas
     if publish_atlas.linked() and not os.environ.get("ATLAS_NO_PUBLISH"):
         publish_atlas.publish()
+
+
+def readme_counts_sentence(recs):
+    from collections import Counter
+    vc = Counter(r["verdict"] for r in recs)
+    order = ["CROSSED", "SUPPORTIVE", "BOUNDARY", "NULL", "VOID", "RETRACTED", "SUPERSEDED"]
+    parts = ", ".join(f"{vc[v]} {v.lower()}" for v in order if vc[v])
+    return f"{len(recs)} experiments so far: {parts}."
+
+
+def sync_readme_counts(recs):
+    p = os.path.join(os.path.dirname(HERE), "README.md")
+    s = open(p, encoding="utf-8").read()
+    new = re.sub(r"<!-- counts:start -->.*?<!-- counts:end -->",
+                 "<!-- counts:start -->" + readme_counts_sentence(recs) + "<!-- counts:end -->", s, flags=re.S)
+    if new != s:
+        open(p, "w", encoding="utf-8").write(new)
 
 
 if __name__ == "__main__":
