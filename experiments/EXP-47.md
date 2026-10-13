@@ -1,7 +1,7 @@
 # EXP-47: after the caregiver leaves, does the taught chain drift through `step`, through `live`, or both?
 
 - Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: none (teaching track; follow-up to EXP-46)
-- Script: `exp/EXP-47_alone_live_vs_step.py` | Evidence: `exp/EXP-47-pilot.*`, `exp/EXP-47-full.json/.jsonl/.out` (PENDING)
+- Script: `exp/EXP-47_alone_live_vs_step.py` | Evidence: `exp/EXP-47-pilot.*`, `exp/EXP-47-full.json/.jsonl/.out`
 
 ## Summary
 - Question: upstream's 0.83 caveat says that after 80 episodes alone through `step` the frozen greedy policy of the corrected chain can stall at one stage while the sampled policy still succeeds, and that through `live` it does not. EXP-46 saw the per-state answers drift through `live` too (all four right 9 -> 5 of 12) while full-chain success held. From the same taught brains, which path drifts, in which reading, and when?
@@ -15,7 +15,20 @@
   - (P4) The drift is early: most of the per-state loss by 80 is already there by 20 attempts alone.
 - Decision rule (written before the pilot): P1 and P2 hold -> the caveat is right about greedy full-chain success and incomplete about the mapping: `live` keeps the chain completing while stage answers drift underneath, so per-state accuracy should be read beside full-chain success after the caregiver leaves. P1 fails (step as good as live) -> the caveat does not reproduce on this chamber at this budget.
 - Pilot (3 seeds, 42-44, exact run conditions, `exp/EXP-47-pilot.out`), read before the full run: the check held (taught readings equal EXP-46's memory arms on the same seeds), and the `live` path at 80 reproduces EXP-46's after-alone readings exactly (.75 / .75 / 1.00 corrective), so saving a copy mid-stream does not perturb it. Drift is non-monotonic on both paths (stages lost and regained between checks), not at a floor or ceiling; no design change. The full run reuses the pilot's three seeds as rows and adds seeds 45-53.
-- Result: PENDING. Verdict: PENDING.
+- Result (12 seeds, paired: both paths start from each seed's same taught brain; per check: per-state accuracy / all four right / greedy full-chain solves / sampled full-chain):
+
+  | | taught | 10 alone | 20 | 40 | 80 |
+  |---|---|---|---|---|---|
+  | corrective, `live` | .94 / 9 / 11 / .963 | .92 / 8 / 11 / .967 | .88 / 6 / 10 / .937 | .85 / 5 / 11 / .941 | .85 / 5 / 12 / .955 |
+  | corrective, `step` | same | .92 / 8 / 11 / .967 | .92 / 8 / 11 / .891 | .81 / 6 / 10 / .862 | .94 / 9 / 12 / .972 |
+  | natural, `live` | .75 / 4 / 9 / .777 | .79 / 5 / 9 / .848 | .85 / 7 / 9 / .830 | .88 / 8 / 10 / .857 | .88 / 8 / 10 / .857 |
+  | natural, `step` | same | .77 / 4 / 8 / .829 | .79 / 6 / 9 / .843 | .90 / 7 / 10 / .936 | .90 / 7 / 9 / .949 |
+
+  Check held (taught readings equal EXP-46's memory arms; `live` at 80 reproduces EXP-46's after-alone readings). P1 FAILED: corrective greedy full-chain solves at 80 are 12/12 through both paths, identical seed by seed; the caveat's greedy stall through `step` does not appear. P2 FAILED: the per-state drift is not on both paths at 80: `live` 9 -> 5 all four right, `step` 9 -> 9 (it dipped to 6 at 40 and recovered). P3 HELD (sampled .955 `live`, .972 `step`). P4 HELD for `live` (three quarters of its 80-attempt loss is there by 20); not applicable to `step`, which ends with no loss. Off-prediction: reward-alone learners improve with time alone on both paths (.75 -> .88 / .90).
+- Verdict: BOUNDARY. 2 of 4 predictions held. On this chamber at this budget upstream's caveat does not reproduce: nothing stalls the greedy chain on either path, and the measurable effect runs the other way, `live` drifts the per-state mapping while full-chain success holds, and `step` recovers it by 80. Stated with its limit: drift fluctuates on both paths (`step` lost three seeds' stages at 40 and regained them), so a single end point understates how much the mapping moves.
 
 ## Reflection
-- PENDING (after the run).
+- What it means: after the caregiver leaves, the full-chain reading says nothing changes (12/12 greedy solves on both paths), and the per-state reading says the mapping moves underneath: through `live` a third of the fully correct seeds lose a stage and keep it lost through 80; through `step` stages are lost and regained. Upstream's caveat about a greedy stall through `step` was not seen here; what we see instead is a `live`-side drift the full-chain reading hides. For reward-alone learners time alone helps on both paths, so "alone" is not one effect: it erodes what a caregiver installed and improves what the brain found itself.
+- Process: pre-registered and pushed before the pilot; pilot read before the full run; checks held exactly, including the reproduction of EXP-46's end point. Limits: one chamber, one budget (120 taught, 80 alone), 12 seeds; four check points, and the `step` dip at 40 shows a single end point is a snapshot of a moving mapping; upstream's caveat comes from its own crafting chain, which may differ in ways that matter (we did not rebuild it).
+- Lesson: when a claim is about what survives without the teacher, read the mapping at several times, not one, and read it per state; full-chain success after the teacher leaves can stay perfect while the taught answers drift.
+- Next: tell upstream the caveat did not reproduce on this chamber and the drift is on the `live` side (Will-gated, folds into the Bernhard note); longer alone phases (200-400 attempts) to see whether `live` drift settles or keeps going; EXP-48 (generalization) is running.

@@ -1772,7 +1772,7 @@
   "iter": "none",
   "track": "teaching game",
   "verdict": "SUPPORTIVE",
-  "verdict_note": "12 seeds x 2 x 3 arms; pre-registered, pilot read before the full run; 4 of 5 predictions held; memory arms near the ceiling at 120 attempts; one chamber (V5 replica, reproduces upstream's 0.82 V5 figure exactly)",
+  "verdict_note": "12 seeds x 2 x 3 arms; pre-registered, pilot read before the full run; 4 of 5 predictions held; memory arms near the ceiling at 120 attempts; one chamber (V5 replica, reproduces upstream's 0.82 V5 figure exactly); taught and tested on the same four states, so it shows the memory brain acquires the chain, not that it generalizes (EXP-48 tests that)",
   "headline": "On Stone Age V5's chamber, Cadence 0.83's episodic memory turns the default brain from in-attempt search into a learned chain: caregiver-corrected .193 -> .963 full-chain (per-state .58 -> .94), reward alone .092 -> .777 (.29 -> .75), matching upstream's own table on a chamber upstream did not build.",
   "question": "Does 0.83's opt-in episodic memory make the default brain learn the Stone Age chain, read by an instrument search cannot pass?",
   "process_issues": [
@@ -1816,5 +1816,47 @@
    ]
   },
   "quote_worthy": "Without the memory the default brain's best full-chain numbers were search; with it, they are a chain."
+ },
+ {
+  "id": "EXP-47",
+  "name": "After the caregiver leaves: live vs step",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "BOUNDARY",
+  "verdict_note": "12 seeds, paired (both paths from the same taught brain); pre-registered, pilot read first; 2 of 4 predictions held; one chamber, one budget, four check points",
+  "headline": "Upstream's 0.83 caveat (the greedy chain stalls after time alone through step) did not reproduce: greedy full-chain stayed 12/12 on both paths. The drift is on the live side and only the per-state reading shows it: all four stages right fell 9 -> 5 of 12 through live, 9 -> 9 through step.",
+  "question": "After the caregiver leaves, does a memory brain's taught Stone Age chain drift through step, through live, or both, and when?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "When a claim is about what survives without the teacher, read the mapping per state and at several times; full-chain success can stay perfect while the taught answers drift.",
+  "chart": {
+   "title": "Corrective + memory: seeds with all four stages right, of 12",
+   "unit": "seeds",
+   "bars": [
+    {
+     "label": "taught",
+     "value": 9
+    },
+    {
+     "label": "live, 20 alone",
+     "value": 6
+    },
+    {
+     "label": "live, 80 alone",
+     "value": 5
+    },
+    {
+     "label": "step, 40 alone",
+     "value": 6
+    },
+    {
+     "label": "step, 80 alone",
+     "value": 9
+    }
+   ]
+  },
+  "quote_worthy": "Full-chain success said nothing changed after the caregiver left; the per-state reading showed a third of the perfect students had quietly lost a stage."
  }
 ]

@@ -1,0 +1,39 @@
+EXP-47: 18 runs to go (6 done); signals ['corrective', 'natural']; paths ['live', 'step']; checks [10, 20, 40, 80]
+  corrective s45: taught acc 1.00 [0, 1, 2, 3] | live 10:1.00/1 20:0.75/0 40:0.75/0 80:0.75/1 | step 10:1.00/1 20:0.75/1 40:0.50/1 80:1.00/1 (47.5s)
+  natural    s45: taught acc 0.75 [1, 1, 2, 3] | live 10:0.75/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:0.75/1 20:1.00/1 40:0.75/1 80:1.00/1 (48.5s)
+  corrective s46: taught acc 1.00 [0, 1, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:1.00/1 20:1.00/1 40:0.75/1 80:1.00/1 (40.4s)
+  natural    s46: taught acc 0.75 [0, 3, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 (43.9s)
+  corrective s47: taught acc 1.00 [0, 1, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:1.00/1 20:1.00/1 40:0.75/1 80:1.00/1 (39.2s)
+  natural    s47: taught acc 1.00 [0, 1, 2, 3] | live 10:0.75/1 20:0.75/1 40:0.75/1 80:0.75/1 | step 10:0.75/1 20:0.75/1 40:0.75/1 80:1.00/1 (44.5s)
+  corrective s48: taught acc 1.00 [0, 1, 2, 3] | live 10:0.75/1 20:0.75/1 40:0.75/1 80:0.75/1 | step 10:0.75/1 20:1.00/1 40:0.50/0 80:0.75/1 (52.1s)
+  natural    s48: taught acc 0.75 [0, 2, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:0.75/0 20:0.75/1 40:0.75/1 80:1.00/1 (48.9s)
+  corrective s49: taught acc 1.00 [0, 1, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 (41.0s)
+  natural    s49: taught acc 0.75 [0, 3, 2, 3] | live 10:0.75/0 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:0.75/0 20:0.75/0 40:0.75/0 80:0.75/0 (46.9s)
+  corrective s50: taught acc 1.00 [0, 1, 2, 3] | live 10:0.75/1 20:0.75/1 40:0.75/1 80:0.75/1 | step 10:0.75/1 20:0.75/1 40:0.75/1 80:1.00/1 (42.8s)
+  natural    s50: taught acc 0.75 [0, 2, 2, 3] | live 10:0.75/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:0.75/1 20:1.00/1 40:1.00/1 80:0.75/1 (41.6s)
+  corrective s51: taught acc 0.75 [0, 1, 3, 3] | live 10:0.75/1 20:0.75/1 40:0.75/1 80:0.75/1 | step 10:0.75/1 20:1.00/1 40:1.00/1 80:0.75/1 (43.1s)
+  natural    s51: taught acc 1.00 [0, 1, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:1.00/1 20:1.00/1 40:1.00/1 80:0.75/1 (36.6s)
+  corrective s52: taught acc 0.75 [0, 0, 2, 3] | live 10:0.75/0 20:0.75/0 40:0.75/1 80:0.75/1 | step 10:0.75/0 20:1.00/1 40:0.50/0 80:1.00/1 (45.5s)
+  natural    s52: taught acc 0.25 [3, 3, 3, 3] | live 10:0.50/0 20:0.75/0 40:0.75/0 80:0.75/0 | step 10:0.50/0 20:0.75/1 40:1.00/1 80:0.75/0 (58.9s)
+  corrective s53: taught acc 0.75 [0, 2, 2, 3] | live 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 | step 10:1.00/1 20:1.00/1 40:1.00/1 80:1.00/1 (41.3s)
+  natural    s53: taught acc 0.25 [1, 1, 1, 1] | live 10:0.25/0 20:0.25/0 40:0.25/0 80:0.25/0 | step 10:0.25/0 20:0.25/0 40:1.00/1 80:1.00/1 (54.0s)
+
+EXP-47 summary, 12 seeds (424s). Per check: per-state acc mean / all-4-right count / greedy full-chain solves / sampled mean
+  corrective taught      acc 0.94  all-4  9  greedy 11  sampled 0.963
+  corrective live  10    acc 0.92  all-4  8  greedy 11  sampled 0.967
+  corrective live  20    acc 0.88  all-4  6  greedy 10  sampled 0.937
+  corrective live  40    acc 0.85  all-4  5  greedy 11  sampled 0.941
+  corrective live  80    acc 0.85  all-4  5  greedy 12  sampled 0.955
+  corrective step  10    acc 0.92  all-4  8  greedy 11  sampled 0.967
+  corrective step  20    acc 0.92  all-4  8  greedy 11  sampled 0.891
+  corrective step  40    acc 0.81  all-4  6  greedy 10  sampled 0.862
+  corrective step  80    acc 0.94  all-4  9  greedy 12  sampled 0.972
+  natural    taught      acc 0.75  all-4  4  greedy  9  sampled 0.777
+  natural    live  10    acc 0.79  all-4  5  greedy  9  sampled 0.848
+  natural    live  20    acc 0.85  all-4  7  greedy  9  sampled 0.830
+  natural    live  40    acc 0.88  all-4  8  greedy 10  sampled 0.857
+  natural    live  80    acc 0.88  all-4  8  greedy 10  sampled 0.857
+  natural    step  10    acc 0.77  all-4  4  greedy  8  sampled 0.829
+  natural    step  20    acc 0.79  all-4  6  greedy  9  sampled 0.843
+  natural    step  40    acc 0.90  all-4  7  greedy 10  sampled 0.936
+  natural    step  80    acc 0.90  all-4  7  greedy  9  sampled 0.949

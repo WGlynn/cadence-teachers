@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-47 — after the caregiver leaves: `live` vs `step` drift of a memory brain's Stone Age chain — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`, EXP-46's memory brain. **Script:** `exp/EXP-47_alone_live_vs_step.py`. Paired: both paths from each seed's same taught brain; reproduces EXP-46's end point exactly.
+- **Result (12 seeds, corrective, 80 alone):** greedy full-chain 12/12 on both paths (identical per seed); per-state all four right 9 -> 5 through `live`, 9 -> 9 through `step` (dipped to 6 at 40); sampled .955 / .972. Reward-alone learners improve alone on both paths (.75 -> .88 / .90).
+- **Verdict: BOUNDARY (2/4 held).** Upstream's caveat (greedy stall through `step`) does not reproduce on this chamber; the measurable drift is on the `live` side and only the per-state reading shows it. Detail: experiments/EXP-47.md.
+
 ## EXP-46 — 0.83 episodic memory on the Stone Age chain (V5 replica), read state by state — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`, default composition, `memory_choice=True` at its own defaults. **Script:** `exp/EXP-46_episodic_memory_stone_age.py`. Replica check: without memory, corrective on V5's seeds = .264, upstream's published 0.82 V5 figure exactly.
 - **Result (12 seeds):** without -> with memory, sampled full-chain / per-state greedy accuracy: corrective .193 -> .963 / .58 -> .94; reward alone .092 -> .777 / .29 -> .75; V5's grade .006 -> .917 / .44 -> .90; after 80 alone through live, corrective .276 -> .955 sampled but all-four-right 9 -> 5 of 12 (a stage drifts, the context covers it).
