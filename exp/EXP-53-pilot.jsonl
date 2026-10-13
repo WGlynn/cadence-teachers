@@ -1,1 +1,9 @@
 {"lesson": 40, "student": 1, "know4": 0.75, "random": 0.875, "untaught": 1.0, "content": -0.125, "secs": 13.9}
+{"lesson": 40, "student": 0, "know4": 0.25, "random": 0.9375, "untaught": 0.25, "content": -0.6875, "secs": 14.5}
+{"lesson": 120, "student": 0, "know4": 0.6875, "random": 1.0, "untaught": 0.5625, "content": -0.3125, "secs": 29.5}
+{"lesson": 40, "student": 2, "know4": 0.9375, "random": 1.0, "untaught": 0.4375, "content": -0.0625, "secs": 13.5}
+{"lesson": 120, "student": 1, "know4": 0.8125, "random": 0.875, "untaught": 0.25, "content": -0.0625, "secs": 31.2}
+{"lesson": 240, "student": 0, "know4": 0.5625, "random": 0.9375, "untaught": 0.8125, "content": -0.375, "secs": 51.2}
+{"lesson": 240, "student": 1, "know4": 1.0, "random": 0.8125, "untaught": 1.0, "content": 0.1875, "secs": 46.4}
+{"lesson": 120, "student": 2, "know4": 0.625, "random": 1.0, "untaught": 0.9375, "content": -0.375, "secs": 27.7}
+{"lesson": 240, "student": 2, "know4": 1.0, "random": 0.4375, "untaught": 0.5, "content": 0.5625, "secs": 43.3}

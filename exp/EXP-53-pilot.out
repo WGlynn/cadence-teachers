@@ -1,0 +1,15 @@
+EXP-53: 9 students to go (0 done); lengths [40, 120, 240]
+  L 40 st1: know4 0.75 random 0.88 untaught 1.00 content -0.12 (13.9s)
+  L 40 st0: know4 0.25 random 0.94 untaught 0.25 content -0.69 (14.5s)
+  L120 st0: know4 0.69 random 1.00 untaught 0.56 content -0.31 (29.5s)
+  L 40 st2: know4 0.94 random 1.00 untaught 0.44 content -0.06 (13.5s)
+  L120 st1: know4 0.81 random 0.88 untaught 0.25 content -0.06 (31.2s)
+  L240 st0: know4 0.56 random 0.94 untaught 0.81 content -0.38 (51.2s)
+  L240 st1: know4 1.00 random 0.81 untaught 1.00 content +0.19 (46.4s)
+  L120 st2: know4 0.62 random 1.00 untaught 0.94 content -0.38 (27.7s)
+  L240 st2: know4 1.00 random 0.44 untaught 0.50 content +0.56 (43.3s)
+
+EXP-53 summary: 3 students per length (89s); per-state accuracy on unseen weather
+  lesson  40 n= 3  know-4 0.646  random 0.938  untaught 0.562  content (know-4 - random) -0.292 (SEM 0.199)
+  lesson 120 n= 3  know-4 0.708  random 0.958  untaught 0.583  content (know-4 - random) -0.250 (SEM 0.095)
+  lesson 240 n= 3  know-4 0.854  random 0.729  untaught 0.771  content (know-4 - random) +0.125 (SEM 0.272)

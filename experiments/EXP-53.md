@@ -13,6 +13,7 @@
   - (P3) Content grows with lesson length: mean content at 40 < 120 < 240.
   - (P4) Both taught arms beat untaught at every length.
 - Decision rule (written before the pilot): P2 holds -> the teaching channel carries content given enough lessons, and Noesis-lite needs lessons at least as long as the length where content appears; P2 fails -> in this protocol the student learns from being corrected and not from the label's content even at 240 attempts, which is a finding about Cadence's teaching path worth telling upstream, and market work waits for a channel that carries content.
+- Pilot (3 students per length, exact run conditions, `exp/EXP-53-pilot.out`), read before the full run: content (know-4 minus random) -.29 at 40, -.25 at 120, +.13 at 240, with random labels above know-4 at the two short lengths (.94 vs .65 at 40); SEMs .10-.27 at n=3, so direction only. No floor or ceiling; no design change. The full run reuses the pilot rows and adds 21 students per length.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection
