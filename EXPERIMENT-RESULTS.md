@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-45 — Stone Age chain: grade vs brain 2x2 + search check (V5 replica) — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`, both brains on the 0.81 composition. **Script:** `exp/EXP-45_stone_age_2x2.py`. Replica of Stone Age V5's chamber reproduces V5's per-seed corrective numbers exactly (28/24/20/11/11).
+- **Result (12 seeds):** per-state greedy accuracy, our delayed-credit brain: grade-dense 1.00, V5's grade .96, corrective .96, world reward .58; V5's default brain + arousal: .33 / .33 / .42 / .42 (collapse onto "wood" in all states common). V5 corrective sampled full-chain .227, with the carried context erased each decision .098; a no-knowledge never-repeat searcher gets .304.
+- **Verdict: SUPPORTIVE (5/5 predictions held).** V5's grade_only failed on the brain's operating point, not the grade; V5's full-chain metric mostly measures in-attempt search. Detail: experiments/EXP-45.md.
+
 ## EXP-36 (fixed) — attack test re-measured after duplicated-lesson bug — 2026-10-10
 - **Version:** Cadence v0.80.0 main `19bee92`. **Script:** `exp/EXP-36_adversarial_market.py` (bug fixed; old in `.dup-bug.bak`).
 - **Result:** fake pay / honest final: LIST 13.09 / .680 · PROBE+LEDGER .042 / .946 · SMART .151 / .834 · RECIP .177 / .912.

@@ -17,14 +17,14 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-01b** (ready) — joint-gene + scale sweep: slow-decay x young region crossed, plus 16x8 vs
   32x16 vs 64x32 net sizes, to test whether stabilization is a joint-gene or scale effect rather
   than single-axis. Spawned by EXP-01's REFUTED coarse result (best 0.72, none >=0.90).
-- **EXP-45a** (ready, spawned 2026-10-13 by Cadence 0.83 + EXP-43/44) — on EXP-43's judged-w3 graded text, does
+- **EXP-46a** (ready, spawned 2026-10-13 by Cadence 0.83 + EXP-43/44) — on EXP-43's judged-w3 graded text, does
   0.83's episodic memory (`Brain.compose(memory_choice=True)`, records keyed by situation that vote in the choice)
   close the gap to the counts table (.254 Cadence vs .346 table)? The memory is table-shaped, so this is the direct
   test. Honest counter-prediction from upstream: memory_choice LOWERED a history-free bandit (0.86 -> 0.75), and
   per-character grading with done=True is close to a contextual bandit. Arms: control (0.83 compose) vs memory_choice;
   3 seeds, 2 passes, greedy + sampled held-out. NOTE: 0.82 changed the composed default (working_memory_scale 12 -> 1.2),
   so the control must be re-measured on 0.83, not borrowed from EXP-43/44.
-- **EXP-45b** (ready, spawned 2026-10-13 by Will forwarding the Stone Age V5 repo) — re-run our EXP-39 Stone Age COLD
+- **EXP-46b** (EXP-45 runs the 0.81-composition 2x2 on the same chamber first) (ready, spawned 2026-10-13 by Will forwarding the Stone Age V5 repo) — re-run our EXP-39 Stone Age COLD
   rebuild (our code, not the third-party repo) on 0.83 with a memory_choice arm, sparse-reward and per-step-graded,
   at the budgets where EXP-39 failed (sparse 150/500). Upstream 0.83 reports a 4-step crafting chain from reward
   alone 9.1% -> 73.2% and caregiver-corrected 38.1% -> 98.7%; does it hold on our version of the chain? Context:
@@ -32,3 +32,6 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   founder 7.6%, grade_only 0.2%, greedy 0.0% on every arm; their grade_only failure conflicts with our EXP-39
   (per-step grade 12/12 within 40 episodes, inventory observable). Upstream's 0.82 release notes verify on that env
   (corrective teacher 18.8 -> 26.4%; 4-step chain from corrections 21.0 -> 44.8%, reward alone 0 -> 13.4%).
+- **EXP-46c** (ready, spawned 2026-10-13 by EXP-45) — which gene sinks the default brain on the Stone Age chain? Start
+  from V5's brain (compose defaults, arousal) and move one gene at a time toward the delayed-credit point (actor step 1.0 -> .1
+  first, then critic rate .3 -> 5, arousal off, width), grade-v5 signal, per-state greedy accuracy primary, 12 seeds.
