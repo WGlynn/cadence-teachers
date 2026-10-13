@@ -1,0 +1,68 @@
+EXP-44: 15 runs to go (0 done); passes 2; arms ['control', 'homeo-0.3', 'homeo-width', 'actor-small', 'wide']
+    wide s0 pass 1: acc 0.171 agree 0.203 reward -0.520 top-share 0.85  greedy held-out 0.202 (top ' ' 1.00)
+    actor-small s0 pass 1: acc 0.170 agree 0.217 reward -0.412 top-share 0.36  greedy held-out 0.227 (top 't' 0.50)
+    control s0 pass 1: acc 0.162 agree 0.204 reward -0.451 top-share 0.34  greedy held-out 0.242 (top ' ' 0.60)
+    control s1 pass 1: acc 0.177 agree 0.225 reward -0.400 top-share 0.34  greedy held-out 0.263 (top 't' 0.51)
+    wide s0 pass 2: acc 0.181 agree 0.210 reward -0.512 top-share 0.90  greedy held-out 0.202 (top ' ' 1.00)
+  wide        seed 0: greedy {'1': 0.20236957768010702, '2': 0.20236957768010702} sampled 0.184  6.97 ms/step
+    actor-small s0 pass 2: acc 0.209 agree 0.268 reward -0.282 top-share 0.49  greedy held-out 0.227 (top ' ' 0.57)
+    homeo-width s1 pass 1: acc 0.073 agree 0.093 reward -0.692 top-share 0.09  greedy held-out 0.105 (top 'o' 0.35)
+  actor-small seed 0: greedy {'1': 0.2274030193005924, '2': 0.2273074718134913} sampled 0.206  9.26 ms/step
+    actor-small s1 pass 1: acc 0.187 agree 0.238 reward -0.362 top-share 0.43  greedy held-out 0.228 (top 't' 0.54)
+    control s0 pass 2: acc 0.233 agree 0.298 reward -0.215 top-share 0.56  greedy held-out 0.259 (top ' ' 0.61)
+    homeo-0.3 s1 pass 1: acc 0.102 agree 0.120 reward -0.655 top-share 0.20  greedy held-out 0.219 (top ' ' 0.34)
+    wide s1 pass 1: acc 0.183 agree 0.230 reward -0.384 top-share 0.49  greedy held-out 0.235 (top ' ' 0.62)
+    control s1 pass 2: acc 0.244 agree 0.304 reward -0.177 top-share 0.48  greedy held-out 0.266 (top 't' 0.60)
+  control     seed 0: greedy {'1': 0.24173514236575577, '2': 0.25874259506974967} sampled 0.234  14.2 ms/step
+    homeo-0.3 s0 pass 1: acc 0.064 agree 0.078 reward -0.747 top-share 0.12  greedy held-out 0.102 (top ' ' 0.29)
+    actor-small s1 pass 2: acc 0.211 agree 0.268 reward -0.280 top-share 0.53  greedy held-out 0.232 (top 't' 0.58)
+  control     seed 1: greedy {'1': 0.26275558952799544, '2': 0.265526466653927} sampled 0.242  16.78 ms/step
+    control s2 pass 1: acc 0.118 agree 0.144 reward -0.612 top-share 0.42  greedy held-out 0.217 (top ' ' 0.88)
+    wide s1 pass 2: acc 0.219 agree 0.278 reward -0.261 top-share 0.58  greedy held-out 0.235 (top ' ' 0.64)
+  actor-small seed 1: greedy {'1': 0.22797630422319892, '2': 0.2317982037072425} sampled 0.207  11.81 ms/step
+  wide        seed 1: greedy {'1': 0.23514236575578062, '2': 0.23514236575578062} sampled 0.215  10.93 ms/step
+    control s2 pass 2: acc 0.208 agree 0.264 reward -0.302 top-share 0.61  greedy held-out 0.234 (top ' ' 0.75)
+    homeo-width s0 pass 1: acc 0.066 agree 0.075 reward -0.729 top-share 0.08  greedy held-out 0.067 (top 'a' 1.00)
+  control     seed 2: greedy {'1': 0.21651060577106823, '2': 0.23380470093636538} sampled 0.213  9.88 ms/step
+    actor-small s2 pass 1: acc 0.152 agree 0.194 reward -0.476 top-share 0.38  greedy held-out 0.219 (top ' ' 0.86)
+    homeo-0.3 s2 pass 1: acc 0.068 agree 0.083 reward -0.709 top-share 0.13  greedy held-out 0.254 (top 't' 0.38)
+    homeo-width s2 pass 1: acc 0.062 agree 0.079 reward -0.723 top-share 0.08  greedy held-out 0.181 (top 'n' 0.19)
+    wide s2 pass 1: acc 0.164 agree 0.194 reward -0.541 top-share 0.76  greedy held-out 0.202 (top ' ' 1.00)
+    homeo-0.3 s0 pass 2: acc 0.119 agree 0.144 reward -0.592 top-share 0.22  greedy held-out 0.182 (top '.' 0.40)
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\cadence-lab\exp\EXP-44_operating_point.py", line 91, in run
+    by_pass.append(read(a))
+                   ^^^^^^^
+  File "C:\Users\Will\cadence-lab\exp\EXP-44_operating_point.py", line 66, in read
+    act = brain.step(x) if reward is None else brain.step(x, reward=reward, done=np.array([True]))
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\generic.py", line 1306, in step
+    return self.act(x)
+           ^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\generic.py", line 1703, in act
+    drive, free = self._settled(x)
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\generic.py", line 1710, in _settled
+    return drive, self._qualified(drive, self._activity(), operation="act")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\generic.py", line 1190, in _qualified
+    raise RuntimeError(
+RuntimeError: brain did not settle within 1024 steps: residual=0.00650904, tolerance=0.003; no action issued
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Will\cadence-lab\exp\EXP-44_operating_point.py", line 140, in <module>
+    main()
+  File "C:\Users\Will\cadence-lab\exp\EXP-44_operating_point.py", line 116, in main
+    for r in pool.imap_unordered(run, jobs):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\pool.py", line 873, in next
+    raise value
+RuntimeError: brain did not settle within 1024 steps: residual=0.00650904, tolerance=0.003; no action issued
