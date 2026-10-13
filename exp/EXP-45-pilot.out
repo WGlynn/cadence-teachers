@@ -1,0 +1,37 @@
+EXP-45: 24 runs to go (0 done); episodes 120; brains ['ours', 'v5']; signals ['natural', 'grade-v5', 'grade-dense', 'corrective']
+  ours grade-v5    s42: acc 1.00 greedy 1 sampled 0.93 erased 0.88 memoryless 0.88 p_right [0.64, 0.47, 0.38, 0.96] train 0.50 (23.5s)
+  ours natural     s42: acc 0.50 greedy 0 sampled 0.33 erased 0.35 memoryless 0.40 p_right [0.19, 0.22, 0.43, 0.94] train 0.20 (24.5s)
+  ours grade-dense s42: acc 1.00 greedy 1 sampled 1.00 erased 1.00 memoryless 1.00 p_right [0.91, 0.87, 0.93, 0.94] train 0.90 (15.1s)
+  ours corrective  s42: acc 1.00 greedy 1 sampled 1.00 erased 1.00 memoryless 0.99 p_right [0.79, 0.6, 0.7, 0.91] train 0.58 (20.9s)
+  v5   natural     s42: acc 0.50 greedy 0 sampled 0.00 erased 0.18 memoryless 0.15 p_right [0.2, 0.25, 0.24, 0.18] train 0.00 (27.4s)
+  v5   grade-v5    s42: acc 0.50 greedy 0 sampled 0.00 erased 0.00 memoryless 0.29 p_right [0.97, 0.26, 0.25, 0.15] train 0.00 (24.1s)
+C:\Users\Will\_cadence_study\src\cadence\generic.py:1546: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  _, teaching = self.learner.step(drive, labels)
+  v5   grade-dense s42: acc 0.25 greedy 0 sampled 0.00 erased 0.00 memoryless 0.00 p_right [0.99, 0.01, 0.01, 0.02] train 0.00 (25.4s)
+  v5   corrective  s42: acc 0.25 greedy 0 sampled 0.28 erased 0.05 memoryless 0.08 p_right [0.73, 0.1, 0.11, 0.16] train 0.16 (32.3s)
+  ours natural     s43: acc 0.75 greedy 0 sampled 0.25 erased 0.32 memoryless 0.29 p_right [0.19, 0.33, 0.16, 0.93] train 0.20 (22.8s)
+  ours grade-v5    s43: acc 1.00 greedy 1 sampled 0.99 erased 0.97 memoryless 0.96 p_right [0.67, 0.58, 0.51, 0.94] train 0.45 (20.7s)
+  ours grade-dense s43: acc 1.00 greedy 1 sampled 1.00 erased 1.00 memoryless 1.00 p_right [0.89, 0.82, 0.91, 0.91] train 0.93 (14.1s)
+  ours corrective  s43: acc 1.00 greedy 1 sampled 1.00 erased 1.00 memoryless 1.00 p_right [0.88, 0.74, 0.8, 0.91] train 0.82 (18.3s)
+  v5   natural     s43: acc 0.50 greedy 0 sampled 0.17 erased 0.21 memoryless 0.21 p_right [0.23, 0.2, 0.16, 0.57] train 0.12 (26.1s)
+  v5   grade-v5    s43: acc 0.50 greedy 0 sampled 0.01 erased 0.06 memoryless 0.12 p_right [0.94, 0.04, 0.15, 0.85] train 0.15 (27.6s)
+  v5   grade-dense s43: acc 0.50 greedy 0 sampled 0.00 erased 0.00 memoryless 0.00 p_right [0.96, 0.54, 0.01, 0.0] train 0.00 (22.7s)
+  ours natural     s44: acc 0.25 greedy 0 sampled 0.20 erased 0.19 memoryless 0.17 p_right [0.17, 0.17, 0.15, 0.97] train 0.37 (22.0s)
+  v5   corrective  s43: acc 0.50 greedy 0 sampled 0.24 erased 0.19 memoryless 0.26 p_right [0.46, 0.28, 0.09, 0.89] train 0.22 (32.4s)
+  ours grade-dense s44: acc 1.00 greedy 1 sampled 1.00 erased 1.00 memoryless 1.00 p_right [0.89, 0.85, 0.91, 0.93] train 0.89 (14.7s)
+  ours grade-v5    s44: acc 1.00 greedy 1 sampled 0.97 erased 0.74 memoryless 0.74 p_right [0.5, 0.29, 0.44, 0.97] train 0.68 (20.8s)
+  ours corrective  s44: acc 0.75 greedy 1 sampled 0.97 erased 0.57 memoryless 0.52 p_right [0.79, 0.14, 0.37, 0.96] train 0.42 (25.4s)
+  v5   natural     s44: acc 0.25 greedy 0 sampled 0.00 erased 0.01 memoryless 0.01 p_right [0.82, 0.07, 0.04, 0.05] train 0.01 (32.6s)
+  v5   grade-v5    s44: acc 0.50 greedy 0 sampled 0.00 erased 0.00 memoryless 0.00 p_right [0.4, 0.53, 0.0, 0.0] train 0.00 (24.2s)
+  v5   grade-dense s44: acc 0.25 greedy 0 sampled 0.00 erased 0.00 memoryless 0.00 p_right [0.29, 0.01, 0.0, 0.3] train 0.00 (24.0s)
+  v5   corrective  s44: acc 0.50 greedy 0 sampled 0.20 erased 0.02 memoryless 0.02 p_right [0.32, 0.04, 0.02, 0.96] train 0.13 (30.0s)
+
+EXP-45 summary, 3 seeds, 120 episodes (296s). Chance: random .121, avoid-last .178, never-repeat .304
+  ours natural     n= 3  acc 0.50 (SEM 0.14, all-4 0)  greedy solved 0  sampled 0.260 (SEM 0.038)  erased 0.287  memoryless 0.288  train 0.26
+  ours grade-v5    n= 3  acc 1.00 (SEM 0.00, all-4 3)  greedy solved 3  sampled 0.963 (SEM 0.018)  erased 0.863  memoryless 0.860  train 0.54
+  ours grade-dense n= 3  acc 1.00 (SEM 0.00, all-4 3)  greedy solved 3  sampled 1.000 (SEM 0.000)  erased 1.000  memoryless 1.000  train 0.91
+  ours corrective  n= 3  acc 0.92 (SEM 0.08, all-4 2)  greedy solved 3  sampled 0.990 (SEM 0.010)  erased 0.857  memoryless 0.837  train 0.61
+  v5   natural     n= 3  acc 0.42 (SEM 0.08, all-4 0)  greedy solved 0  sampled 0.057 (SEM 0.057)  erased 0.133  memoryless 0.121  train 0.04
+  v5   grade-v5    n= 3  acc 0.50 (SEM 0.00, all-4 0)  greedy solved 0  sampled 0.003 (SEM 0.003)  erased 0.020  memoryless 0.137  train 0.05
+  v5   grade-dense n= 3  acc 0.33 (SEM 0.08, all-4 0)  greedy solved 0  sampled 0.000 (SEM 0.000)  erased 0.000  memoryless 0.000  train 0.00
+  v5   corrective  n= 3  acc 0.42 (SEM 0.08, all-4 0)  greedy solved 0  sampled 0.240 (SEM 0.023)  erased 0.087  memoryless 0.118  train 0.17

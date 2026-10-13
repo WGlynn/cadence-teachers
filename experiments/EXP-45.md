@@ -15,6 +15,7 @@
   - (P4) Search: in v5/corrective, sampled exceeds the memoryless prediction by >= .05, and erasing the carried context before each decision closes at least half of that gap.
   - (P5) No v5-brain arm beats the never-repeat searcher (.304) on sampled full-chain success.
 - Decision rule (written before the pilot): P3 holds -> V5's grade_only failed on the operating point (actor step 1.0, critic .3, arousal), so the advice to V5 is "tune the brain, keep the grade"; the reverse (v5/grade-dense high, ours/grade-v5 low) -> the diluted grade is the cause; both low off-diagonal -> they interact and both changes are needed. P4 holds -> V5's full-chain number measures in-attempt search through the carried context, and per-state accuracy should be reported beside it.
+- Pilot (3 seeds, 42-44, exact run conditions, `exp/EXP-45-pilot.out`), read before the full run: the replica reproduces V5 exactly where both report, v5/corrective sampled .28 / .24 / .20 on seeds 42 / 43 / 44 (V5's published per-seed 28 / 24 / 20%) and seed 42's per-state p(right) .73 / .10 / .11 / .16 (V5's 72.7 / 10.0 / 11.0 / 16.3), v5/grade-v5 .003 (V5 0.2%). The 2x2 contrast is visible and not at a floor or ceiling that hides the question (ours/grade-dense at ceiling is P1's prediction, not a window problem), so the budget stays at 120 attempts; no design change. Because every run is seeded and the code is unchanged, the full run reuses the pilot's three seeds as rows and adds seeds 45-53.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection
