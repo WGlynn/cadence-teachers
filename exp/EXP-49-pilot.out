@@ -1,0 +1,33 @@
+teacher skill on unseen weather: {'m0/genuine-20': 0.25, 'm0/genuine-40': 0.88, 'm0/genuine-80': 0.75, 'm0/genuine-120': 0.81}
+EXP-49: 21 lessons to go (0 done); lesson 40, vest 20, teachers ['genuine-20', 'genuine-40', 'genuine-80', 'genuine-120', 'random', 'wrong-chain', 'echo']
+  m0 genuine-120  st0: worth +0.25 / +0.06 (at lesson end -0.06) final 0 pay 0.00 (16.7s)
+  m0 genuine-40   st0: worth +0.94 / -0.69 (at lesson end +1.00) final 0 pay 0.00 (18.4s)
+  m0 genuine-20   st0: worth -0.69 / +0.06 (at lesson end -0.31) final 0 pay 0.00 (18.6s)
+  m0 genuine-80   st0: worth -0.25 / +0.50 (at lesson end -0.25) final 0 pay 0.00 (19.8s)
+  m0 random       st0: worth +0.31 / +0.12 (at lesson end -0.19) final 0 pay 0.00 (17.2s)
+  m0 echo         st0: worth -0.81 / -0.06 (at lesson end -0.50) final 0 pay 0.00 (17.0s)
+  m0 wrong-chain  st0: worth +0.56 / +0.06 (at lesson end +0.06) final 0 pay 0.00 (18.3s)
+  m0 genuine-20   st1: worth +0.88 / -0.69 (at lesson end +0.38) final 0 pay 0.00 (17.9s)
+  m0 genuine-40   st1: worth +1.00 / +0.44 (at lesson end +0.56) final 1 pay 0.72 (18.2s)
+  m0 genuine-80   st1: worth +0.94 / +0.00 (at lesson end +1.00) final 0 pay 0.00 (17.6s)
+  m0 random       st1: worth +0.50 / +0.75 (at lesson end +0.31) final 1 pay 0.62 (15.7s)
+  m0 genuine-120  st1: worth +0.25 / +0.69 (at lesson end +0.56) final 1 pay 0.47 (16.8s)
+  m0 wrong-chain  st1: worth +0.31 / +0.62 (at lesson end +0.25) final 1 pay 0.47 (17.0s)
+  m0 genuine-40   st2: worth -0.06 / +0.00 (at lesson end +0.44) final 0 pay 0.00 (15.7s)
+  m0 echo         st1: worth +0.38 / -0.44 (at lesson end -0.38) final 0 pay 0.00 (16.3s)
+  m0 genuine-20   st2: worth +0.00 / +0.00 (at lesson end -0.19) final 0 pay 0.00 (19.7s)
+  m0 random       st2: worth +0.19 / +0.00 (at lesson end -0.31) final 0 pay 0.00 (17.4s)
+  m0 genuine-80   st2: worth -0.75 / +0.00 (at lesson end +0.56) final 0 pay 0.00 (18.4s)
+  m0 genuine-120  st2: worth +0.31 / +0.56 (at lesson end +0.25) final 1 pay 0.44 (19.9s)
+  m0 wrong-chain  st2: worth +0.25 / -0.12 (at lesson end +0.00) final 0 pay 0.00 (16.4s)
+  m0 echo         st2: worth -0.25 / +0.00 (at lesson end -0.12) final 0 pay 0.00 (16.7s)
+
+EXP-49 summary: 1 market seeds x 3 students x 7 teachers (123s)
+  genuine-20   worth -0.073 (SEM 0.237; at lesson end -0.292)  finalized 0/3  pay share 0.000  teacher skill 0.25
+  genuine-40   worth +0.271 (SEM 0.265; at lesson end +0.417)  finalized 1/3  pay share 0.264  teacher skill 0.88
+  genuine-80   worth +0.073 (SEM 0.240; at lesson end +0.396)  finalized 0/3  pay share 0.000  teacher skill 0.75
+  genuine-120  worth +0.354 (SEM 0.094; at lesson end +0.458)  finalized 2/3  pay share 0.333  teacher skill 0.81
+  random       worth +0.312 (SEM 0.112; at lesson end +0.344)  finalized 1/3  pay share 0.230
+  wrong-chain  worth +0.281 (SEM 0.117; at lesson end -0.031)  finalized 1/3  pay share 0.172
+  echo         worth -0.198 (SEM 0.166; at lesson end -0.198)  finalized 0/3  pay share 0.000
+  Spearman(pay, teacher skill) across genuine teachers, pooled over market seeds: 0.80 (n=4)
