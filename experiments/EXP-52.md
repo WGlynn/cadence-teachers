@@ -15,6 +15,7 @@
   - (P4) Against the null, know-4 is worth >= .2.
   - (P5) Against no teacher (EXP-49's counterfactual, same runs), the random teacher is again worth > 0 by more than 2 SEM.
 - Decision rule (written before the pilot): P1-P3 hold -> the form-matched null fixes EXP-49's failure, and v2 (stake, standing, colluding verifiers) is built on it; P1 holds but P3 fails -> fakes are priced out but skill is not ranked at this sample size, and pay needs aggregation over more receivers before it can scale with skill; P1 fails -> the null is not enough, and the measure needs a second guard.
+- Pilot (1 seed block, 3 students per teacher, exact run conditions, `exp/EXP-52-pilot.out`), read before the full run: against the null, random sits at +.01, wrong-chain -.20, echo -.22, but know-4 is also near zero (-.05) and Spearman(worth, k) is -.18 (n=24); against no teacher know-4 +.31 and random +.21. Single-student worths stay noisy (SEMs .10-.24 at n=6). Nothing at a floor or ceiling; no design change. The full run reuses the pilot's block-0 rows and adds 9 students per teacher in block 0 and blocks 1-2.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection

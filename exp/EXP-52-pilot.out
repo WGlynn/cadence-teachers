@@ -1,0 +1,42 @@
+EXP-52: 21 lessons to go (0 done); lesson 40, vest 20
+  b0 know-4       st0: vs null +0.25/+0.12  vs none +0.50/+0.62 (29.5s)
+  b0 know-3       st0: vs null -0.38/-0.31  vs none +0.50/-0.75 (31.0s)
+  b0 know-1       st0: vs null +0.00/+0.56  vs none +0.00/+0.12 (31.4s)
+  b0 know-2       st0: vs null -0.25/+0.25  vs none +0.00/+0.75 (33.9s)
+  b0 random       st0: vs null -0.38/-0.25  vs none +0.12/+0.31 (26.5s)
+  b0 echo         st0: vs null +0.00/-0.25  vs none -0.12/+0.00 (29.0s)
+  b0 wrong-chain  st0: vs null +0.19/-0.19  vs none +0.69/+0.00 (29.9s)
+  b0 know-1       st1: vs null +0.69/-0.62  vs none +0.75/-0.25 (29.0s)
+  b0 know-2       st1: vs null -0.81/+0.31  vs none -0.81/+0.38 (26.0s)
+  b0 know-3       st1: vs null +0.00/+0.12  vs none +0.00/+0.19 (23.8s)
+  b0 know-4       st1: vs null -0.31/-0.31  vs none -0.12/+0.06 (29.1s)
+  b0 random       st1: vs null +0.69/+0.38  vs none +0.62/+0.19 (28.7s)
+  b0 wrong-chain  st1: vs null -0.38/-0.31  vs none -0.19/-0.69 (25.2s)
+  b0 echo         st1: vs null -0.19/-0.31  vs none +0.31/+0.25 (25.4s)
+  b0 know-2       st2: vs null +0.06/+0.19  vs none -0.44/-0.06 (24.6s)
+  b0 know-1       st2: vs null +0.56/-0.50  vs none +0.56/+0.19 (27.7s)
+  b0 know-3       st2: vs null +0.44/+0.12  vs none +0.31/+0.25 (29.4s)
+  b0 know-4       st2: vs null -0.12/+0.06  vs none +0.31/+0.50 (27.4s)
+  b0 wrong-chain  st2: vs null +0.00/-0.50  vs none -0.31/-0.12 (23.7s)
+  b0 random       st2: vs null +0.00/-0.38  vs none +0.00/+0.00 (27.7s)
+  b0 echo         st2: vs null -0.38/-0.19  vs none -0.31/-0.25 (25.6s)
+
+EXP-52 summary: 1 blocks x 3 students x 7 teachers (163s)
+  counterfactual: vs_null
+    know-1       worth +0.115 (SEM 0.236, n=6)  pay share 0.000
+    know-2       worth -0.042 (SEM 0.174, n=6)  pay share 0.000
+    know-3       worth +0.000 (SEM 0.124, n=6)  pay share 0.000
+    know-4       worth -0.052 (SEM 0.096, n=6)  pay share 0.000
+    random       worth +0.010 (SEM 0.179, n=6)  pay share 1.000
+    wrong-chain  worth -0.198 (SEM 0.104, n=6)  pay share 0.000
+    echo         worth -0.219 (SEM 0.053, n=6)  pay share 0.000
+    Spearman(worth, k) over know-k lessons: -0.18 (n=24)
+  counterfactual: vs_none
+    know-1       worth +0.229 (SEM 0.150, n=6)  pay share 0.162
+    know-2       worth -0.031 (SEM 0.228, n=6)  pay share 0.000
+    know-3       worth +0.083 (SEM 0.179, n=6)  pay share 0.122
+    know-4       worth +0.312 (SEM 0.119, n=6)  pay share 0.419
+    random       worth +0.208 (SEM 0.096, n=6)  pay share 0.176
+    wrong-chain  worth -0.104 (SEM 0.185, n=6)  pay share 0.000
+    echo         worth -0.021 (SEM 0.105, n=6)  pay share 0.122
+    Spearman(worth, k) over know-k lessons: 0.17 (n=24)
