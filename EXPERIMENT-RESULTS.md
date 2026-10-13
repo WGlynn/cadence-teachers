@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-52 — Noesis-lite v1.1: priced against a form-matched null — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-52_noesis_lite_null_counterfactual.py`. Twins taught / random-label null / untaught; know-k teachers (k = 1..4) and three fakes; 72 worth samples per teacher.
+- **Result:** vs null, fakes price at or below zero (random -.07, wrong-chain -.21, echo -.27) but genuine teachers are also near zero (know-4 +.013; Spearman with k .06): a teacher who knows the whole chain is worth no more than one labelling at random (accuracy .661 vs .648; untaught .46). Vs no teacher, random +.104 (EXP-49 reproduces).
+- **Verdict: BOUNDARY (1/5).** The null fixes fake pricing on average but shows the lesson channel carries no content at 40 attempts: students learn from being corrected, not from what they are told. Next EXP-53: does content matter at longer lessons. Detail: experiments/EXP-52.md.
+
 ## EXP-49 — Noesis-lite v1: a teacher market paid by twin-ablation transfer — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-49_noesis_lite_market.py`. EXP-48's weather chamber; worth on unseen weather after 20 attempts alone, taught minus untaught twin; replication; bar .125.
 - **Result (3 markets x 6 students x 7 teachers):** genuine teachers worth +.17 to +.30, pay share .716; random-label fake +.179 (about 3 SEM above zero), wrong-chain +.061, echo -.036; fakes take .285 of pay; Spearman(pay, skill) .05; genuine worth survives vesting (.86).

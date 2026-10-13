@@ -42,3 +42,6 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-52** (ready, spawned 2026-10-13 by EXP-49 BOUNDARY) — Noesis-lite v1.1: the same market with the counterfactual
   twin taught by a random-label teacher (form-matched null), 12+ students per teacher, and genuine teachers with skill set
   directly (k of 4 stages right), so pay can be checked against a known skill range.
+- **EXP-53** (ready, spawned 2026-10-13 by EXP-52) — does label content matter at all? know-4 vs random-label teachers on the
+  weather chamber at 40, 120 and 240 lesson attempts, per-state accuracy on unseen weather, 12+ seeds. Gate for any further
+  Noesis-lite market work: no content transfer, nothing to price.

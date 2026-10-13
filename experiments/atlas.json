@@ -2008,5 +2008,62 @@
    ]
   },
   "quote_worthy": "A teacher who labeled at random earned two thirds of a genuine teacher's pay: it wasn't teaching the chain, it was knocking a stuck student loose."
+ },
+ {
+  "id": "EXP-52",
+  "name": "Noesis-lite v1.1: priced against a null of the same form",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "verdict_note": "3 blocks x 12 students x 7 teachers, each lesson replicated (72 samples per teacher); pre-registered, pilot read first, design kept; 1 of 5 predictions held; one lesson length (40)",
+  "headline": "Priced against a random-label teacher instead of no teacher, fakes stop earning on average (random -.07, wrong-chain -.21, echo -.27), but so do the genuine teachers: one who knows the whole chain is worth no more than one labelling at random (.661 vs .648). At 40 attempts the student learns from being corrected, not from what it is told.",
+  "question": "Priced against a null contribution of the same form, do fakes price at zero and does pay follow how much a teacher knows?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Before pricing a contribution's information, check that the channel carries information at all: compare a perfect teacher with a random one first.",
+  "chart": {
+   "title": "Worth against the random-label null (72 samples per teacher)",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "knows 4 of 4 stages",
+     "value": 0.013,
+     "sem": 0.044
+    },
+    {
+     "label": "knows 3 of 4",
+     "value": 0.012,
+     "sem": 0.045
+    },
+    {
+     "label": "knows 2 of 4",
+     "value": 0.057,
+     "sem": 0.045
+    },
+    {
+     "label": "knows 1 of 4",
+     "value": -0.019,
+     "sem": 0.042
+    },
+    {
+     "label": "fake: random labels",
+     "value": -0.073,
+     "sem": 0.044
+    },
+    {
+     "label": "fake: wrong chain",
+     "value": -0.205,
+     "sem": 0.041
+    },
+    {
+     "label": "fake: echo the student",
+     "value": -0.268,
+     "sem": 0.043
+    }
+   ]
+  },
+  "quote_worthy": "A teacher who knew the whole chain was worth exactly as much as one who answered at random: the student was learning from the interruption, not the answer."
  }
 ]
