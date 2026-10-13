@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-44 — graded text: readout operating point or brain size? — 2026-10-13
+- **Version:** Cadence v0.81.0 `736fee9` (pre-registered; last 8 runs from a pinned worktree after upstream removed the gene in 0.82). **Script:** `exp/EXP-44_operating_point.py`.
+- **Result (3 seeds, greedy held-out after pass 2):** control .253 (SEM .010); 0.81 gene target .3 .183, target 1/28 .068 (each 1 of 3 brains failed to settle); actor step .2 .229; twice as wide .213 (top-answer share .88). Table on the same grades .346.
+- **Verdict: NULL (3/4 held; P3 failed).** Neither operating point nor width lifts it; by the decision rule the gap to the table is exploration. Detail: experiments/EXP-44.md; program iter34.
+
 ## EXP-47 — after the caregiver leaves: `live` vs `step` drift of a memory brain's Stone Age chain — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`, EXP-46's memory brain. **Script:** `exp/EXP-47_alone_live_vs_step.py`. Paired: both paths from each seed's same taught brain; reproduces EXP-46's end point exactly.
 - **Result (12 seeds, corrective, 80 alone):** greedy full-chain 12/12 on both paths (identical per seed); per-state all four right 9 -> 5 through `live`, 9 -> 9 through `step` (dipped to 6 at 40); sampled .955 / .972. Reward-alone learners improve alone on both paths (.75 -> .88 / .90).

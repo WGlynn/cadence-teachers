@@ -1858,5 +1858,56 @@
    ]
   },
   "quote_worthy": "Full-chain success said nothing changed after the caregiver left; the per-state reading showed a third of the perfect students had quietly lost a stage."
+ },
+ {
+  "id": "EXP-44",
+  "name": "Graded text: the readout's operating point or the brain's size?",
+  "date": "2026-10-13",
+  "iter": "iter34",
+  "track": "language",
+  "verdict": "NULL",
+  "verdict_note": "3 seeds x 5 arms x 2 passes; pre-registered on 0.81; first run crashed on an unsettled brain, amended before the remaining runs, finished on a pinned 0.81; two arms have 2 usable seeds",
+  "headline": "Neither lever moved a Cadence brain on graded text: the 0.81 readout gene (.183 / .068, and 1 of 3 brains failed to settle at each target), a smaller actor step (.229) and twice the width (.213, more collapsed) all stayed at or below the control (.253), far from a table on the same grades (.346). The remaining gap reads as exploration.",
+  "question": "On graded text, is the limit the readout's operating point or the brain's size?",
+  "process_issues": [
+   "crash mid-run (unsettled brain); amended and resumed on a pinned version"
+  ],
+  "lesson": "When a pre-registered experiment outlives its version, pin the version instead of moving it, and count a crash as a result.",
+  "chart": {
+   "title": "Greedy held-out accuracy on Alice ch.2 after 2 passes (3 seeds)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "control (32, 16)",
+     "value": 0.253,
+     "sem": 0.01
+    },
+    {
+     "label": "smaller actor step",
+     "value": 0.229,
+     "sem": 0.001
+    },
+    {
+     "label": "twice as wide",
+     "value": 0.213,
+     "sem": 0.011
+    },
+    {
+     "label": "0.81 gene, target .3",
+     "value": 0.183,
+     "sem": 0.002
+    },
+    {
+     "label": "0.81 gene, target 1/28",
+     "value": 0.068,
+     "sem": 0.014
+    },
+    {
+     "label": "lookup table, same grades",
+     "value": 0.346
+    }
+   ]
+  },
+  "quote_worthy": "Twice the brain answered the same character in 88% of positions: more capacity, more collapse."
  }
 ]

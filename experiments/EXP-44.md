@@ -1,7 +1,7 @@
 # EXP-44: on graded text, is the limit the readout's operating point or the brain's size?
 
-- Date: 2026-10-11 | Cadence version: 0.81.0 (`736fee9`) | Program iter: iter34 (pending)
-- Script: `exp/EXP-44_operating_point.py` | Evidence: `exp/EXP-44-full.json/.jsonl/.out` (PENDING) | Text: Alice ch.1 (train), ch.2 (held out), as EXP-42/43
+- Date: 2026-10-11 | Cadence version: 0.81.0 (`736fee9`) | Program iter: iter34
+- Script: `exp/EXP-44_operating_point.py` | Evidence: `exp/EXP-44-full.json/.jsonl/.out`, crashed first attempt `exp/EXP-44-full-crash-2026-10-11.out` | Text: Alice ch.1 (train), ch.2 (held out), as EXP-42/43
 
 ## Summary
 - Question: EXP-43 left a gap. Graded by a judging teacher, a Cadence brain reading 3 characters reached .254 held out, and a lookup table on the same grades reached .346. EXP-43's next levers were (a) the readout's operating point and (b) capacity. Which one moves it? Run by the cadence experiment loop as lever (a), Jarvis's stated pick, sharpened with a capacity arm so the run decides between (a) and (b).
@@ -15,7 +15,21 @@
   - (P4) Every arm stays below the table on the same grades (.346).
 - Decision rule (written before the run): wide up and no operating-point arm up -> capacity next (lever b); an operating-point arm up -> lever (a) holds; neither -> the gap to the table is exploration (the table tries every character once per context it sees; Cadence samples), and the next lever is exploration, not size or operating point.
 - Amendment (2026-10-13, after the crash, before the remaining runs' results): the 2026-10-11 full run stopped at 7 of 15 runs when one brain in a readout-gene arm raised "brain did not settle within 1024 steps" (residual .0065, tolerance .003), which killed the whole pool. A brain that cannot settle is a result, so the script now records such a run as unsettled (pass, phase, message), counts it per arm, and keeps it out of the arm's mean. Nothing else changed. Upstream removed the readout gene in Cadence 0.82.0 (it flattened a six-action policy under reward), so the remaining 8 runs finish on the pre-registered 0.81.0 from a pinned worktree, not on the current release. The crashed log is kept as `exp/EXP-44-full-crash-2026-10-11.out`.
-- Result: PENDING. Verdict: PENDING.
+- Result (greedy held-out accuracy on Alice ch.2 after pass 2, 3 seeds; Cadence 0.81.0 for every run, the last 8 from a pinned worktree after upstream moved to 0.83):
+
+  | arm | pass 1 | pass 2 (SEM) | sampled | greedy top-answer share | unsettled |
+  |---|---|---|---|---|---|
+  | control (32, 16) | .240 | .253 (.010) | .230 | .66 | 0/3 |
+  | homeo-0.3 | .178 | .183 (.002), n=2 | .118 | .43 | 1/3 (s1, pass 2 training, residual .0065) |
+  | homeo-width | .124 | .068 (.014), n=2 | .068 | .64 | 1/3 (s1, pass 2 training, residual 17.27) |
+  | actor-small (.2) | .225 | .229 (.001) | .206 | .58 | 0/3 |
+  | wide (64, 32) | .213 | .213 (.011) | .195 | .88 | 0/3 |
+
+  Check held: control pass 1 reproduces EXP-43's judged-w3-always numbers exactly (.242 / .263 / .217). P1 HELD (homeo-0.3 .183 below control .253). P2 HELD (no operating-point arm beats control; all three are below it). P3 FAILED (wide .213 is below control, not above it; the wider brain answers one character in 88% of positions). P4 HELD (every arm below the table on the same grades, .346).
+- Verdict: NULL. Neither lever moved it: no readout operating point (the 0.81 gene at two targets, a fifth of the actor step) and not twice the width lifts a Cadence brain on graded text in 2 passes; both gene settings made one brain of three fail to settle, and upstream removed the gene in 0.82 for flattening a policy under reward. By the pre-registered decision rule (neither up), the gap to the table (.253 vs .346) reads as exploration: the table tries every character in every context it meets, the brain samples.
 
 ## Reflection
-- PENDING (after the run).
+- What it means: on graded text the brain is not held back by its readout's set points or by its width at this length of training; the 0.81 gene hurt (as upstream found under reward), the smaller actor step changed little, and doubling the width made the brain more collapsed (top answer .88), not more accurate. What separates it from the lookup table on the same grades is most plausibly how it explores, which is the lever the decision rule names next. Cadence 0.83's episodic memory, a table-like record store inside the brain, is the obvious candidate for that lever (EXP-46a in the queue).
+- Process: pre-registered before the run; the first full run crashed on 2026-10-11 when one homeostasis brain failed to settle and killed the pool; the amendment (record and count an unsettled brain, never average it) was committed and pushed (5fc77c7) before the remaining runs, and those finished on the pre-registered 0.81 from a pinned worktree because upstream had removed the gene in 0.82; the resumed runs reproduce the crashed log line for line where they overlap. Limits: 3 seeds, 2 passes (EXP-43's curve still rose to pass 6), one text; two arms have 2 usable seeds.
+- Lesson: when a pre-registered experiment outlives the version it was written for, pin the version (a worktree) instead of silently moving it, and treat a crash as a result to count, not a run to rerun.
+- Next: test the episodic memory as the exploration lever on graded text (EXP-46a), with the control re-measured on 0.83's composition.

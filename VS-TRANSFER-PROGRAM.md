@@ -91,6 +91,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-13 (iter34): EXP-44 NULL (pre-registered on 0.81; finished on a pinned worktree after upstream removed the gene): on graded text neither a readout operating point (0.81's intrinsic plasticity, a smaller actor step) nor twice the width lifts a Cadence brain past the control (.253; gene .183 / .068 with 1 of 3 brains unsettled each, actor .229, wide .213); the table on the same grades stays at .346. By the decision rule the remaining gap is exploration. Teaching track the same day: EXP-45-48 on the Stone Age chain (operating point decides whether a brain can be taught at all; 0.83's episodic memory makes the default brain learn the chain and replicates upstream's table).
+
 2026-10-10 (iter33): EXP-43 BOUNDARY (pre-registered, revised after a pilot): a teacher that grades how good the guess was (not whether it was right) takes a Cadence brain to .254 on held-out Alice with 3 characters (right/wrong .202, always space; told-the-answer bigram .292); a lookup table on the same judged grades reaches .346, past the bigram. Learning from every right/wrong outcome collapses onto space (9/9). On text the limit is now the brain, not the grade; 4 runs collapsed onto action 0, mechanism not pinned down.
 
 2026-10-10 (iter32): EXP-42 BOUNDARY (pre-registered): learning Alice one character at a time from right/wrong grades alone, a Cadence brain reaches .225 held out (always-space .202; graded lookup table .231-.242; told-the-answer bigram .291, 4-gram .502). A grade carries <= 1 bit per character; contexts grow as 28^n. EXP-40 (brain size) stopped by Will at 30/144 runs, resumable; iter31 left to it.
@@ -140,6 +142,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter34 — 2026-10-13 — EXP-44 readout operating point vs size on graded text = NULL (neither lever; the gap is exploration)
+- Version: Cadence v0.81.0 `736fee9`; the first full run crashed 2026-10-11 on an unsettled homeostasis brain; amendment pushed (5fc77c7) before the remaining 8 runs, which finished from a pinned 0.81 worktree after upstream's 0.82 removed the gene.
+- Result (greedy held-out after pass 2, 3 seeds): control .253 (SEM .010; pass 1 reproduces EXP-43 exactly); homeo-0.3 .183 (n=2), homeo-width .068 (n=2), each 1 of 3 unsettled; actor-small .229; wide .213, top-answer share .88. Table .346.
+- Verdict: NULL, 3 of 4 held (P3, capacity, failed). Next lever: exploration, with 0.83's episodic memory as the candidate (EXP-46a). Write-up: experiments/EXP-44.md.
 
 ### iter33 — 2026-10-10 — EXP-43 judged grades = BOUNDARY (the grade can carry it; the brain does not yet take it in)
 - Version: Cadence v0.80.0 `19bee92`; modules (32, 16). Alice ch.1 train, ch.2 held out. Always-learning (step) 5 arms x 3 seeds x 6 passes; live (EXP-42 protocol) 4 arms x 3 seeds x 3 passes.
