@@ -2065,5 +2065,42 @@
    ]
   },
   "quote_worthy": "A teacher who knew the whole chain was worth exactly as much as one who answered at random: the student was learning from the interruption, not the answer."
+ },
+ {
+  "id": "EXP-53",
+  "name": "Does the content of a teacher's labels matter?",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "NULL",
+  "verdict_note": "24 students per lesson length, paired twins; pre-registered, pilot read first; 1 of 4 predictions held; one teaching protocol (labels on executed mistakes), default memory brain",
+  "headline": "A teacher who knows the whole Stone Age chain and one who labels at random are within noise of each other at 40, 120 and 240 lesson attempts (content +.01 / +.11 / +.07). At short lessons the act of correcting is the whole effect (+.25 over untaught for either); the answer itself barely reaches the student.",
+  "question": "Is EXP-52's 'perfect teacher = random teacher' a property of short lessons, or does the label's content not get through this teaching channel at all?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Before a market prices teaching, test that the teaching channel carries content: a perfect teacher against a random one, at the lesson lengths the market will use.",
+  "chart": {
+   "title": "Content of the labels: know-4 minus random-label teacher (24 students per length)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "40-attempt lessons",
+     "value": 0.013,
+     "sem": 0.061
+    },
+    {
+     "label": "120-attempt lessons",
+     "value": 0.107,
+     "sem": 0.064
+    },
+    {
+     "label": "240-attempt lessons",
+     "value": 0.068,
+     "sem": 0.058
+    }
+   ]
+  },
+  "quote_worthy": "The student was learning from the interruption, not the answer, at every lesson length we tried."
  }
 ]

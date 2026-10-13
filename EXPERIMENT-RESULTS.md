@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-53 — does the content of a teacher's labels matter, and at what lesson length? — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-53_does_content_matter.py`. Paired twins (know-4 / random labels / untaught), lessons of 40, 120, 240 attempts, 24 students each.
+- **Result:** content (know-4 minus random) +.013 / +.107 / +.068 (SEMs about .06); correction itself is worth +.25 at 40 attempts for either teacher; untaught catches up at longer lessons.
+- **Verdict: NULL (1/4).** Label content could not be seen at any length (pooled 120-240 about +.09, about 2 SEM). Students learn from being corrected, not from the answer; market work waits for a channel that carries content. Detail: experiments/EXP-53.md.
+
 ## EXP-52 — Noesis-lite v1.1: priced against a form-matched null — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-52_noesis_lite_null_counterfactual.py`. Twins taught / random-label null / untaught; know-k teachers (k = 1..4) and three fakes; 72 worth samples per teacher.
 - **Result:** vs null, fakes price at or below zero (random -.07, wrong-chain -.21, echo -.27) but genuine teachers are also near zero (know-4 +.013; Spearman with k .06): a teacher who knows the whole chain is worth no more than one labelling at random (accuracy .661 vs .648; untaught .46). Vs no teacher, random +.104 (EXP-49 reproduces).
