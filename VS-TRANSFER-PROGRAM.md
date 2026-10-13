@@ -146,7 +146,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ### iter34 — 2026-10-13 — EXP-44 readout operating point vs size on graded text = NULL (neither lever; the gap is exploration)
 - Version: Cadence v0.81.0 `736fee9`; the first full run crashed 2026-10-11 on an unsettled homeostasis brain; amendment pushed (5fc77c7) before the remaining 8 runs, which finished from a pinned 0.81 worktree after upstream's 0.82 removed the gene.
 - Result (greedy held-out after pass 2, 3 seeds): control .253 (SEM .010; pass 1 reproduces EXP-43 exactly); homeo-0.3 .183 (n=2), homeo-width .068 (n=2), each 1 of 3 unsettled; actor-small .229; wide .213, top-answer share .88. Table .346.
-- Verdict: NULL, 3 of 4 held (P3, capacity, failed). Next lever: exploration, with 0.83's episodic memory as the candidate (EXP-46a). Write-up: experiments/EXP-44.md.
+- Verdict: NULL, 3 of 4 held (P3, capacity, failed). Next lever: exploration, with 0.83's episodic memory as the candidate (EXP-50). Write-up: experiments/EXP-44.md.
 
 ### iter33 — 2026-10-10 — EXP-43 judged grades = BOUNDARY (the grade can carry it; the brain does not yet take it in)
 - Version: Cadence v0.80.0 `19bee92`; modules (32, 16). Alice ch.1 train, ch.2 held out. Always-learning (step) 5 arms x 3 seeds x 6 passes; live (EXP-42 protocol) 4 arms x 3 seeds x 3 passes.
