@@ -86,15 +86,29 @@ def run(job):
                 hits += act == IDX[text[i]]
             return hits / len(text), said.most_common(1)[0][1] / len(text), ALPHA[said.most_common(1)[0][0]]
 
-    by_pass, greedy = [], {}
-    for p in range(1, PASSES + 1):
-        by_pass.append(read(a))
-        greedy[p] = probe(b)
-        s = by_pass[-1]
-        print(f"    {arm} s{seed} pass {p}: acc {s['acc']:.3f} agree {s['agree']:.3f} reward {s['reward']:+.3f} "
-              f"top-share {s['top_share']:.2f}  greedy held-out {greedy[p][0]:.3f} (top '{greedy[p][2]}' {greedy[p][1]:.2f})",
-              flush=True)
-    sampled = probe(b, greedy=False)
+    # Amendment 2026-10-13 (after the 10-11 crash, before the remaining runs): a brain that raises "did not settle"
+    # is recorded as unsettled (pass, phase, message) instead of killing the pool; it is counted, never averaged.
+    by_pass, greedy, phase = [], {}, "train"
+    try:
+        for p in range(1, PASSES + 1):
+            phase = "train"
+            by_pass.append(read(a))
+            phase = "greedy-probe"
+            greedy[p] = probe(b)
+            s = by_pass[-1]
+            print(f"    {arm} s{seed} pass {p}: acc {s['acc']:.3f} agree {s['agree']:.3f} reward {s['reward']:+.3f} "
+                  f"top-share {s['top_share']:.2f}  greedy held-out {greedy[p][0]:.3f} (top '{greedy[p][2]}' {greedy[p][1]:.2f})",
+                  flush=True)
+        phase = "sampled-probe"
+        sampled = probe(b, greedy=False)
+    except RuntimeError as e:
+        if "did not settle" not in str(e):
+            raise
+        print(f"    {arm} s{seed} UNSETTLED in pass {len(by_pass) + (phase == 'train')} ({phase}): {e}", flush=True)
+        return dict(arm=arm, seed=seed, modules="x".join(map(str, modules)), genes=genes, passes=PASSES, by_pass=by_pass,
+                    greedy={str(k): v[0] for k, v in greedy.items()}, unsettled=dict(
+                        pass_=len(by_pass) + (phase == "train"), phase=phase, error=str(e)),
+                    cadence=__import__("cadence").__version__)
     steps = PASSES * len(a)
     return dict(arm=arm, seed=seed, modules="x".join(map(str, modules)), genes=genes, passes=PASSES, by_pass=by_pass,
                 greedy={str(k): v[0] for k, v in greedy.items()}, greedy_top_share={str(k): v[1] for k, v in greedy.items()},
@@ -117,13 +131,21 @@ def main():
                 rows.append(r)
                 with open(ckpt, "a") as f:
                     f.write(json.dumps(r) + "\n")
-                print(f"  {r['arm']:11s} seed {r['seed']}: greedy {r['greedy']} sampled {r['sampled']:.3f}  "
-                      f"{r['ms_per_step']} ms/step", flush=True)
+                if "unsettled" in r:
+                    print(f"  {r['arm']:11s} seed {r['seed']}: UNSETTLED {r['unsettled']['phase']} pass "
+                          f"{r['unsettled']['pass_']}; greedy so far {r['greedy']}", flush=True)
+                else:
+                    print(f"  {r['arm']:11s} seed {r['seed']}: greedy {r['greedy']} sampled {r['sampled']:.3f}  "
+                          f"{r['ms_per_step']} ms/step", flush=True)
     sem = lambda x: float(np.std(x, ddof=1) / np.sqrt(len(x))) if len(x) > 1 else 0.0
     print(f"\ngreedy held-out accuracy (Alice ch.2) by pass, {SEEDS} seeds  ({time.time() - t0:.0f}s)")
     summary = {}
     for arm in ARM_ORDER:
-        rs = [r for r in rows if r["arm"] == arm and r["seed"] < SEEDS and r["passes"] == PASSES]
+        bad = [r for r in rows if r["arm"] == arm and r["seed"] < SEEDS and "unsettled" in r]
+        if bad:
+            print(f"  {arm:11s} UNSETTLED {len(bad)} of {SEEDS}: "
+                  + ", ".join(f"s{r['seed']} pass {r['unsettled']['pass_']} {r['unsettled']['phase']}" for r in bad))
+        rs = [r for r in rows if r["arm"] == arm and r["seed"] < SEEDS and r["passes"] == PASSES and "unsettled" not in r]
         if not rs:
             continue
         last = [r["greedy"][str(PASSES)] for r in rs]

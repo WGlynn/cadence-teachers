@@ -14,6 +14,7 @@
   - (P3) wide beats control by more than 2 SEM after pass 2 (capacity is a binding limit with about 2,000 three-character contexts).
   - (P4) Every arm stays below the table on the same grades (.346).
 - Decision rule (written before the run): wide up and no operating-point arm up -> capacity next (lever b); an operating-point arm up -> lever (a) holds; neither -> the gap to the table is exploration (the table tries every character once per context it sees; Cadence samples), and the next lever is exploration, not size or operating point.
+- Amendment (2026-10-13, after the crash, before the remaining runs' results): the 2026-10-11 full run stopped at 7 of 15 runs when one brain in a readout-gene arm raised "brain did not settle within 1024 steps" (residual .0065, tolerance .003), which killed the whole pool. A brain that cannot settle is a result, so the script now records such a run as unsettled (pass, phase, message), counts it per arm, and keeps it out of the arm's mean. Nothing else changed. Upstream removed the readout gene in Cadence 0.82.0 (it flattened a six-action policy under reward), so the remaining 8 runs finish on the pre-registered 0.81.0 from a pinned worktree, not on the current release. The crashed log is kept as `exp/EXP-44-full-crash-2026-10-11.out`.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection
