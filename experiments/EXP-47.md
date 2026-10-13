@@ -14,6 +14,7 @@
   - (P3) Sampled full-chain stays at or above .9 after 80 alone for corrective under both paths.
   - (P4) The drift is early: most of the per-state loss by 80 is already there by 20 attempts alone.
 - Decision rule (written before the pilot): P1 and P2 hold -> the caveat is right about greedy full-chain success and incomplete about the mapping: `live` keeps the chain completing while stage answers drift underneath, so per-state accuracy should be read beside full-chain success after the caregiver leaves. P1 fails (step as good as live) -> the caveat does not reproduce on this chamber at this budget.
+- Pilot (3 seeds, 42-44, exact run conditions, `exp/EXP-47-pilot.out`), read before the full run: the check held (taught readings equal EXP-46's memory arms on the same seeds), and the `live` path at 80 reproduces EXP-46's after-alone readings exactly (.75 / .75 / 1.00 corrective), so saving a copy mid-stream does not perturb it. Drift is non-monotonic on both paths (stages lost and regained between checks), not at a floor or ceiling; no design change. The full run reuses the pilot's three seeds as rows and adds seeds 45-53.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection
