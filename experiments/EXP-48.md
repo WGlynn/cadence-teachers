@@ -13,6 +13,7 @@
   - (P3) The memory's gain is not only recording: memory + corrective's unseen accuracy beats no-memory + corrective's unseen accuracy by >= .2.
   - (P4) Without memory the readout generalizes as well as it learns: no-memory arms' mean gap is within .1 of zero.
 - Decision rule (written before the pilot): P2 and P3 hold -> the memory both records and generalizes, and its EXP-46 numbers overstate what transfers to new situations by the gap; a gap near zero with P3 holding -> the memory generalizes over irrelevant features, and EXP-46's limit is answered for this kind of novelty; unseen accuracy at the no-memory level -> the memory's gain was recording.
+- Pilot (3 seeds, 42-44, exact run conditions, `exp/EXP-48-pilot.out`), read before the full run: gaps are small (memory corrective +.04, memory natural +.06, no-memory +.02 / .00), seen accuracy is below EXP-46's (memory corrective .83 vs .94: three irrelevant inputs slow acquisition at 120 attempts), and nothing sits at a floor or ceiling. No design change; the full run reuses the pilot's seeds and adds 45-53.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection
