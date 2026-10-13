@@ -1951,5 +1951,62 @@
    ]
   },
   "quote_worthy": "Records keyed by the whole situation, and still the chain held in weather the brain had never seen."
+ },
+ {
+  "id": "EXP-49",
+  "name": "Noesis-lite v1: a teacher market paid by measured transfer",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "verdict_note": "3 market seeds x 6 students x 7 teachers, each lesson replicated; pre-registered, pilot read first (bar deliberately not raised); 1 of 5 predictions held",
+  "headline": "Paying teachers by twin-ablation transfer against an untaught twin paid fakes 29% of the pot: random labels earned +.18 (about two thirds of a genuine teacher) because they knock a stuck student loose, and pay did not follow skill (Spearman .05). Genuine worth did survive time alone (.86).",
+  "question": "Does a market that pays teachers by measured transfer, on unseen situations and after time alone, pay genuine teachers by skill and price every fake at zero?",
+  "process_issues": [
+   "genuine teacher skill did not vary as designed (training budget loosely sets skill)"
+  ],
+  "lesson": "Compare against a null contribution of the same form, not against no contribution; otherwise any perturbation that helps gets paid.",
+  "chart": {
+   "title": "Mean worth per lesson (36 samples per teacher)",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "genuine, 120-attempt teacher",
+     "value": 0.302,
+     "sem": 0.048
+    },
+    {
+     "label": "genuine, 20-attempt teacher",
+     "value": 0.267,
+     "sem": 0.064
+    },
+    {
+     "label": "genuine, 80-attempt teacher",
+     "value": 0.193,
+     "sem": 0.068
+    },
+    {
+     "label": "genuine, 40-attempt teacher",
+     "value": 0.165,
+     "sem": 0.069
+    },
+    {
+     "label": "fake: random labels",
+     "value": 0.179,
+     "sem": 0.059
+    },
+    {
+     "label": "fake: wrong chain",
+     "value": 0.061,
+     "sem": 0.067
+    },
+    {
+     "label": "fake: echo the student",
+     "value": -0.036,
+     "sem": 0.052
+    }
+   ]
+  },
+  "quote_worthy": "A teacher who labeled at random earned two thirds of a genuine teacher's pay: it wasn't teaching the chain, it was knocking a stuck student loose."
  }
 ]

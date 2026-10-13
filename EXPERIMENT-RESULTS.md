@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-49 — Noesis-lite v1: a teacher market paid by twin-ablation transfer — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-49_noesis_lite_market.py`. EXP-48's weather chamber; worth on unseen weather after 20 attempts alone, taught minus untaught twin; replication; bar .125.
+- **Result (3 markets x 6 students x 7 teachers):** genuine teachers worth +.17 to +.30, pay share .716; random-label fake +.179 (about 3 SEM above zero), wrong-chain +.061, echo -.036; fakes take .285 of pay; Spearman(pay, skill) .05; genuine worth survives vesting (.86).
+- **Verdict: BOUNDARY (1/5 held).** Priced against "no teacher", the market pays random labels (they unstick a stuck student) and cannot rank skill. Next: a form-matched null counterfactual (random-label twin) and more students (EXP-52). Detail: experiments/EXP-49.md.
+
 ## EXP-48 — does 0.83's episodic memory generalize the Stone Age chain or record it? — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-48_generalize_or_record.py`. V5 replica + 3 irrelevant weather bits; teach under 4 combinations, test under the 4 never seen.
 - **Result (12 seeds, per-state greedy accuracy seen / unseen):** memory corrective .89 / .84 (gap +.05, 9 of 12 seeds lose nothing); memory natural .64 / .58; without memory .53 / .53 and .32 / .33. On unseen weather memory beats no memory by .31 (corrective; sampled full-chain .920 vs .201).

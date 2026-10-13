@@ -39,3 +39,6 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   the Stone Age chain paid by twin-ablation transfer on held-out per-state accuracy, vesting after time alone, wash teachers
   (random, wrong-chain, echo, stake whale), two-dimension finality. Design: docs/NOESIS-LITE-SIM.md (local). Run after EXP-48
   answers generalization (the market should pay on held-out situations).
+- **EXP-52** (ready, spawned 2026-10-13 by EXP-49 BOUNDARY) — Noesis-lite v1.1: the same market with the counterfactual
+  twin taught by a random-label teacher (form-matched null), 12+ students per teacher, and genuine teachers with skill set
+  directly (k of 4 stages right), so pay can be checked against a known skill range.

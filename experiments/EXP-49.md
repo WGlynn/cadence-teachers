@@ -1,7 +1,7 @@
 # EXP-49: Noesis-lite v1, a teacher market paid by measured transfer on unseen situations
 
 - Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: none (teaching track; Will 14:07: "imagine running a noesis lite in the simulation"; design `docs/NOESIS-LITE-SIM.md`, local)
-- Script: `exp/EXP-49_noesis_lite_market.py` | Evidence: `exp/EXP-49-pilot.*`, `exp/EXP-49-full.json/.jsonl/.out` (PENDING)
+- Script: `exp/EXP-49_noesis_lite_market.py` | Evidence: `exp/EXP-49-pilot.*`, `exp/EXP-49-full.json/.jsonl/.out`
 
 ## Summary
 - Question: in a market that pays teachers by measured transfer, read on situations the lesson never covered and after the student has lived alone for a while, do genuine teachers get paid in proportion to their skill while every fake prices at zero or below?
@@ -15,7 +15,23 @@
   - (P5) Genuine worth survives vesting: across genuine teachers, mean worth after 20 attempts alone is >= .7 of mean worth at lesson end.
 - Decision rule (written before the pilot): P1-P3 hold -> transfer pricing on held-out situations works as a contribution measure in this world, and v2 (stake, standing, colluding verifiers) is worth building on it; P1 fails for echo -> agreement leaks into worth and the measure needs a guard; P3 fails with P1 holding -> the measure separates real from fake but does not rank skill, so pay needs a different scale.
 - Pilot (1 market seed, 3 students per teacher, exact run conditions, `exp/EXP-49-pilot.out`), read before the full run: single-student twin worth is very noisy (one teacher ranges -.69 to +1.00), and the random and wrong-chain fakes average +.31 and +.28 (each finalized one lesson), close to the best genuine teachers; wrong-chain is near zero at lesson end and turns positive during the time alone. Bar decision: the RUN GATE allowed raising the .125 bar if fakes cross it; the pilot shows the fakes are not noise around zero but positive on average, so a higher bar would cut genuine pay with them and hide the effect. The bar and design stay as registered; the full run measures this with 36 worth samples per teacher. Hypothesis written before the full run (not a prediction under test here): any label that interrupts a stuck student acts as exploration, so worth against a no-teacher twin credits unsticking that carries no chain information; the fix to test next is a form-matched null twin (a random-label teacher) as the counterfactual.
-- Result: PENDING. Verdict: PENDING.
+- Result (3 market seeds x 6 students x 7 teachers; every lesson measured twice on independent students, so 36 worth samples per teacher; worth = per-state accuracy on unseen weather after 20 attempts alone, taught twin minus untaught twin):
+
+  | teacher | worth (SEM) | worth at lesson end | finalized | pay share | teacher skill |
+  |---|---|---|---|---|---|
+  | genuine-20 | +.267 (.064) | +.163 | 6/18 | .248 | .67 |
+  | genuine-40 | +.165 (.069) | +.370 | 3/18 | .124 | .92 |
+  | genuine-80 | +.193 (.068) | +.240 | 3/18 | .084 | .75 |
+  | genuine-120 | +.302 (.048) | +.304 | 7/18 | .260 | .79 |
+  | random | +.179 (.059) | +.177 | 3/18 | .114 | |
+  | wrong-chain | +.061 (.067) | -.076 | 3/18 | .109 | |
+  | echo | -.036 (.052) | -.160 | 2/18 | .062 | |
+
+  P1 FAILED: the random-label fake is worth +.179, about three SEM above zero, and the fakes together take .285 of all pay. P2 FAILED: genuine teachers take .716. P3 FAILED: Spearman(pay, skill) across the 12 genuine teachers is .05. P4 FAILED: wrong-chain is +.061 after vesting (-.076 at lesson end), not below -.2. P5 HELD: genuine worth after 20 attempts alone is .86 of its lesson-end value (.232 vs .269).
+- Verdict: BOUNDARY. 1 of 5 predictions held. Stated with its number: priced against an untaught twin, one student per measurement, 40-attempt lessons, this market cannot tell teaching from noise well enough to pay it. A teacher that labels at random earns about two thirds of what a genuine teacher earns (+.18 vs a genuine mean of +.23), a teacher of a wrong chain about a quarter, and pay does not follow skill. The pre-registered decision branch for echo does not apply (echo prices at zero); the failure is random's positive worth, which matches the hypothesis written before the full run: any label that interrupts a stuck student works as exploration, and against a no-teacher twin that counts as worth.
 
 ## Reflection
-- PENDING (after the run).
+- What it means: the first Noesis-lite market fails in a specific, useful way. Twin ablation priced against "no contribution" pays for anything that changes the student's trajectory for the better, and a random label does: a student left alone tends to get stuck on one action, and a stream of random corrections knocks it loose. That is real help, but it carries no information about the chain, so it is not the contribution the market means to pay for, and it is free to fake. The counterfactual has to be a null contribution of the same form (a random-label teacher), so worth measures information over and above being taught at all. The second failure, no skill ranking, is power: single-student worths swing by a full point, and 36 samples per teacher do not resolve differences of .1 between genuine teachers whose skills mostly sit between .75 and 1.0.
+- Process: pre-registered and pushed before the pilot; the pilot already showed the fakes scoring positive, and the bar was deliberately not raised to hide it (written before the full run). Limits: three market seeds; genuine teacher skill did not vary as designed (training budget only loosely sets skill: a 20-attempt teacher scored 1.0 in one market, .25 in another); 40-attempt lessons on the default memory brain; per-state accuracy on 16 situations is coarse (steps of .0625).
+- Lesson: for Noesis, a value measure that compares against "no contribution" pays for perturbation; compare against a form-matched null contribution, and aggregate over many receivers before paying.
+- Next: Noesis-lite v1.1 (EXP-52): the same market with the counterfactual twin taught by a random-label teacher, more students per teacher, and genuine teachers with skill set directly (a teacher that knows k of 4 stages), so the ranking test has range. Then v2 (stake, standing, colluding verifiers).
