@@ -1764,5 +1764,57 @@
    ]
   },
   "quote_worthy": "Erase the brain's carried context before each decision and V5's best arm falls from .227 to .098: it was steering within an attempt, not following a learned chain."
+ },
+ {
+  "id": "EXP-46",
+  "name": "0.83's episodic memory on the Stone Age chain, read state by state",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "12 seeds x 2 x 3 arms; pre-registered, pilot read before the full run; 4 of 5 predictions held; memory arms near the ceiling at 120 attempts; one chamber (V5 replica, reproduces upstream's 0.82 V5 figure exactly)",
+  "headline": "On Stone Age V5's chamber, Cadence 0.83's episodic memory turns the default brain from in-attempt search into a learned chain: caregiver-corrected .193 -> .963 full-chain (per-state .58 -> .94), reward alone .092 -> .777 (.29 -> .75), matching upstream's own table on a chamber upstream did not build.",
+  "question": "Does 0.83's opt-in episodic memory make the default brain learn the Stone Age chain, read by an instrument search cannot pass?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Replicate a release claim with an instrument that search cannot pass; per-state accuracy also shows the drift that full-chain success hides (after the caregiver leaves, all-four-right fell 9 -> 5 of 12 while full-chain success held).",
+  "chart": {
+   "title": "Per-state greedy accuracy after teaching, default brain (12 seeds)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "corrective teacher, with memory",
+     "value": 0.94,
+     "sem": 0.03
+    },
+    {
+     "label": "corrective teacher, without",
+     "value": 0.58,
+     "sem": 0.04
+    },
+    {
+     "label": "V5's grade, with memory",
+     "value": 0.9,
+     "sem": 0.05
+    },
+    {
+     "label": "V5's grade, without",
+     "value": 0.44,
+     "sem": 0.06
+    },
+    {
+     "label": "reward alone, with memory",
+     "value": 0.75,
+     "sem": 0.08
+    },
+    {
+     "label": "reward alone, without",
+     "value": 0.29,
+     "sem": 0.04
+    }
+   ]
+  },
+  "quote_worthy": "Without the memory the default brain's best full-chain numbers were search; with it, they are a chain."
  }
 ]

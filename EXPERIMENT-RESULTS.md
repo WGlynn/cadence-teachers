@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-46 — 0.83 episodic memory on the Stone Age chain (V5 replica), read state by state — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`, default composition, `memory_choice=True` at its own defaults. **Script:** `exp/EXP-46_episodic_memory_stone_age.py`. Replica check: without memory, corrective on V5's seeds = .264, upstream's published 0.82 V5 figure exactly.
+- **Result (12 seeds):** without -> with memory, sampled full-chain / per-state greedy accuracy: corrective .193 -> .963 / .58 -> .94; reward alone .092 -> .777 / .29 -> .75; V5's grade .006 -> .917 / .44 -> .90; after 80 alone through live, corrective .276 -> .955 sampled but all-four-right 9 -> 5 of 12 (a stage drifts, the context covers it).
+- **Verdict: SUPPORTIVE (4/5 held; P5 failed: 0.82's context alone lifted corrective to .58).** Upstream's 0.83 claim replicates on an outside chamber with an instrument search cannot pass. Detail: experiments/EXP-46.md.
+
 ## EXP-45 — Stone Age chain: grade vs brain 2x2 + search check (V5 replica) — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`, both brains on the 0.81 composition. **Script:** `exp/EXP-45_stone_age_2x2.py`. Replica of Stone Age V5's chamber reproduces V5's per-seed corrective numbers exactly (28/24/20/11/11).
 - **Result (12 seeds):** per-state greedy accuracy, our delayed-credit brain: grade-dense 1.00, V5's grade .96, corrective .96, world reward .58; V5's default brain + arousal: .33 / .33 / .42 / .42 (collapse onto "wood" in all states common). V5 corrective sampled full-chain .227, with the carried context erased each decision .098; a no-knowledge never-repeat searcher gets .304.
