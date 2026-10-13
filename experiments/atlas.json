@@ -1909,5 +1909,47 @@
    ]
   },
   "quote_worthy": "Twice the brain answered the same character in 88% of positions: more capacity, more collapse."
+ },
+ {
+  "id": "EXP-48",
+  "name": "Does the episodic memory generalize the chain, or record it?",
+  "date": "2026-10-13",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "12 seeds x 2 x 2 arms; pre-registered, pilot read first; 3 of 4 held (P2 failed toward generalization); novelty is irrelevant features only, not a new recipe",
+  "headline": "Taught under four weathers and tested under four it never saw, 0.83's memory brain keeps the Stone Age chain (per-state .89 seen, .84 unseen; 9 of 12 seeds lose nothing) and keeps its .31 lead over the brain without memory. It generalizes over irrelevant novelty; it is not an answer key.",
+  "question": "EXP-46 taught and tested on the same states. Does the memory brain still get the chain right in situations it was never taught?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "An acquisition result becomes a learning result only when the test holds situations the lesson never covered.",
+  "chart": {
+   "title": "Per-state greedy accuracy under unseen weather (12 seeds)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "memory, corrective teacher (seen .89)",
+     "value": 0.84,
+     "sem": 0.06
+    },
+    {
+     "label": "without memory, corrective (seen .53)",
+     "value": 0.53,
+     "sem": 0.05
+    },
+    {
+     "label": "memory, reward alone (seen .64)",
+     "value": 0.58,
+     "sem": 0.06
+    },
+    {
+     "label": "without memory, reward alone (seen .32)",
+     "value": 0.33,
+     "sem": 0.04
+    }
+   ]
+  },
+  "quote_worthy": "Records keyed by the whole situation, and still the chain held in weather the brain had never seen."
  }
 ]

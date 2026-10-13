@@ -41,3 +41,8 @@
 {"memory": false, "signal": "corrective", "seed": 52, "train_success": 0.23333333333333334, "seen": 0.25, "unseen": 0.25, "sampled_unseen": 0.12, "secs": 15.4, "cadence": "0.83.0"}
 {"memory": false, "signal": "natural", "seed": 52, "train_success": 0.008333333333333333, "seen": 0.3125, "unseen": 0.375, "sampled_unseen": 0.0, "secs": 15.3, "cadence": "0.83.0"}
 {"memory": true, "signal": "corrective", "seed": 52, "train_success": 0.8166666666666667, "seen": 0.8125, "unseen": 0.625, "sampled_unseen": 0.99, "secs": 13.6, "cadence": "0.83.0"}
+{"memory": true, "signal": "natural", "seed": 52, "train_success": 0.325, "seen": 0.6875, "unseen": 0.4375, "sampled_unseen": 0.2, "secs": 14.8, "cadence": "0.83.0"}
+{"memory": true, "signal": "corrective", "seed": 53, "train_success": 0.8, "seen": 1.0, "unseen": 1.0, "sampled_unseen": 1.0, "secs": 12.3, "cadence": "0.83.0"}
+{"memory": false, "signal": "natural", "seed": 53, "train_success": 0.18333333333333332, "seen": 0.4375, "unseen": 0.5625, "sampled_unseen": 0.24, "secs": 13.9, "cadence": "0.83.0"}
+{"memory": false, "signal": "corrective", "seed": 53, "train_success": 0.225, "seen": 0.6875, "unseen": 0.625, "sampled_unseen": 0.0, "secs": 16.7, "cadence": "0.83.0"}
+{"memory": true, "signal": "natural", "seed": 53, "train_success": 0.7583333333333333, "seen": 0.75, "unseen": 0.75, "sampled_unseen": 0.6, "secs": 15.4, "cadence": "0.83.0"}

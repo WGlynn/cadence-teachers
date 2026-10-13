@@ -1,0 +1,43 @@
+EXP-48: 36 runs to go (12 done); memory [False, True]; signals ['corrective', 'natural']
+  mem corrective s45: seen 1.00 unseen 1.00 sampled-unseen 1.00 train 0.85 (12.2s)
+  mem natural    s45: seen 0.56 unseen 0.50 sampled-unseen 0.30 train 0.38 (14.9s)
+  off corrective s45: seen 0.56 unseen 0.56 sampled-unseen 0.32 train 0.21 (15.5s)
+  off natural    s45: seen 0.38 unseen 0.25 sampled-unseen 0.02 train 0.00 (21.9s)
+  mem corrective s46: seen 1.00 unseen 1.00 sampled-unseen 0.99 train 0.82 (12.1s)
+  off corrective s46: seen 0.44 unseen 0.50 sampled-unseen 0.26 train 0.20 (15.6s)
+  off natural    s46: seen 0.25 unseen 0.31 sampled-unseen 0.01 train 0.07 (12.9s)
+  mem natural    s46: seen 1.00 unseen 1.00 sampled-unseen 1.00 train 0.51 (10.3s)
+  mem corrective s47: seen 1.00 unseen 1.00 sampled-unseen 0.95 train 0.94 (10.3s)
+  off corrective s47: seen 0.31 unseen 0.38 sampled-unseen 0.15 train 0.17 (12.6s)
+  off natural    s47: seen 0.44 unseen 0.44 sampled-unseen 0.06 train 0.05 (14.5s)
+  mem natural    s47: seen 0.94 unseen 0.75 sampled-unseen 0.77 train 0.59 (13.3s)
+  mem corrective s48: seen 1.00 unseen 1.00 sampled-unseen 0.97 train 0.85 (11.8s)
+  off natural    s48: seen 0.38 unseen 0.44 sampled-unseen 0.19 train 0.23 (14.0s)
+  off corrective s48: seen 0.62 unseen 0.62 sampled-unseen 0.33 train 0.17 (16.3s)
+  mem natural    s48: seen 0.50 unseen 0.50 sampled-unseen 0.11 train 0.59 (13.5s)
+  off corrective s49: seen 0.25 unseen 0.25 sampled-unseen 0.21 train 0.07 (13.2s)
+  mem corrective s49: seen 0.56 unseen 0.56 sampled-unseen 0.84 train 0.84 (13.5s)
+  off natural    s49: seen 0.00 unseen 0.00 sampled-unseen 0.00 train 0.01 (14.6s)
+  mem natural    s49: seen 0.50 unseen 0.50 sampled-unseen 0.01 train 0.14 (12.5s)
+  mem corrective s50: seen 1.00 unseen 1.00 sampled-unseen 0.97 train 0.96 (10.4s)
+  off corrective s50: seen 0.69 unseen 0.62 sampled-unseen 0.02 train 0.29 (14.6s)
+  off natural    s50: seen 0.25 unseen 0.25 sampled-unseen 0.12 train 0.15 (14.5s)
+  mem natural    s50: seen 0.56 unseen 0.56 sampled-unseen 0.66 train 0.70 (12.4s)
+  off corrective s51: seen 0.62 unseen 0.69 sampled-unseen 0.30 train 0.17 (14.4s)
+  off natural    s51: seen 0.25 unseen 0.25 sampled-unseen 0.18 train 0.14 (11.9s)
+  mem natural    s51: seen 0.50 unseen 0.50 sampled-unseen 0.07 train 0.33 (11.9s)
+  mem corrective s51: seen 0.75 unseen 0.50 sampled-unseen 0.68 train 0.83 (14.7s)
+  off corrective s52: seen 0.25 unseen 0.25 sampled-unseen 0.12 train 0.23 (15.4s)
+  off natural    s52: seen 0.31 unseen 0.38 sampled-unseen 0.00 train 0.01 (15.3s)
+  mem corrective s52: seen 0.81 unseen 0.62 sampled-unseen 0.99 train 0.82 (13.6s)
+  mem natural    s52: seen 0.69 unseen 0.44 sampled-unseen 0.20 train 0.33 (14.8s)
+  mem corrective s53: seen 1.00 unseen 1.00 sampled-unseen 1.00 train 0.80 (12.3s)
+  off natural    s53: seen 0.44 unseen 0.56 sampled-unseen 0.24 train 0.18 (13.9s)
+  off corrective s53: seen 0.69 unseen 0.62 sampled-unseen 0.00 train 0.23 (16.7s)
+  mem natural    s53: seen 0.75 unseen 0.75 sampled-unseen 0.60 train 0.76 (15.4s)
+
+EXP-48 summary, 12 seeds (128s). Per-state greedy accuracy under seen / unseen weather
+  off corrective n=12  seen 0.53 (SEM 0.05)  unseen 0.53 (SEM 0.05)  gap +0.00 (SEM 0.01)  sampled-unseen 0.201
+  off natural    n=12  seen 0.32 (SEM 0.04)  unseen 0.33 (SEM 0.04)  gap -0.02 (SEM 0.02)  sampled-unseen 0.098
+  mem corrective n=12  seen 0.89 (SEM 0.04)  unseen 0.84 (SEM 0.06)  gap +0.05 (SEM 0.02)  sampled-unseen 0.920
+  mem natural    n=12  seen 0.64 (SEM 0.06)  unseen 0.58 (SEM 0.06)  gap +0.06 (SEM 0.02)  sampled-unseen 0.387

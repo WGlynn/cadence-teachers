@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-48 — does 0.83's episodic memory generalize the Stone Age chain or record it? — 2026-10-13
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-48_generalize_or_record.py`. V5 replica + 3 irrelevant weather bits; teach under 4 combinations, test under the 4 never seen.
+- **Result (12 seeds, per-state greedy accuracy seen / unseen):** memory corrective .89 / .84 (gap +.05, 9 of 12 seeds lose nothing); memory natural .64 / .58; without memory .53 / .53 and .32 / .33. On unseen weather memory beats no memory by .31 (corrective; sampled full-chain .920 vs .201).
+- **Verdict: SUPPORTIVE (3/4; P2 failed toward generalization).** The memory generalizes over irrelevant novelty; EXP-46's acquisition-only limit answered for this kind of novelty, not for new recipes. Detail: experiments/EXP-48.md.
+
 ## EXP-44 — graded text: readout operating point or brain size? — 2026-10-13
 - **Version:** Cadence v0.81.0 `736fee9` (pre-registered; last 8 runs from a pinned worktree after upstream removed the gene in 0.82). **Script:** `exp/EXP-44_operating_point.py`.
 - **Result (3 seeds, greedy held-out after pass 2):** control .253 (SEM .010); 0.81 gene target .3 .183, target 1/28 .068 (each 1 of 3 brains failed to settle); actor step .2 .229; twice as wide .213 (top-answer share .88). Table on the same grades .346.
