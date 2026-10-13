@@ -1,7 +1,7 @@
 # EXP-45: the Stone Age chain, grade vs brain (why grading worked for us and not in V5), and search inside an attempt
 
 - Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`), both brains on the 0.81 composition (working_memory_scale 12, decay 0.2) | Program iter: none (teaching track; spawned by Will forwarding Stone Age V5)
-- Script: `exp/EXP-45_stone_age_2x2.py` | Evidence: `exp/EXP-45-pilot.json/.jsonl`, `exp/EXP-45-full.json/.jsonl/.out` (PENDING)
+- Script: `exp/EXP-45_stone_age_2x2.py` | Evidence: `exp/EXP-45-pilot.json/.jsonl`, `exp/EXP-45-full.json/.jsonl/.out`
 
 ## Summary
 - Question: EXP-39 (ours, 0.80) solved the 4-step Stone Age chain 12/12 by grading every move; Stone Age V5 (ali12mahmood12345-boop/cadence-stone-age, 0.81) reports grade_only at 0.2% and a corrective teacher at 18.8%. Is the difference the grade (V5's is a third as dense, half the size, added to a bigger end reward) or the brain (V5 uses Cadence defaults with arousal; ours is a tuned delayed-credit point)? And is V5's in-sequence success a learned chain, or search inside an attempt (a wrong action costs nothing but a decision, and a no-knowledge never-repeat searcher finishes 30.4%)?
