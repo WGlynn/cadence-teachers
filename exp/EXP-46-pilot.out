@@ -1,0 +1,39 @@
+EXP-46: 18 runs to go (0 done); memory [False, True]; signals ['natural', 'grade-v5', 'corrective']
+  off grade-v5   s42: taught acc 0.25 greedy 0 sampled 0.00 | after alone acc 0.25 greedy 0 sampled 0.00 | answers [0, 0, 0, 0] -> [0, 0, 0, 0] (20.3s)
+  off natural    s42: taught acc 0.25 greedy 0 sampled 0.00 | after alone acc 0.25 greedy 0 sampled 0.00 | answers [2, 2, 2, 2] -> [2, 2, 2, 2] (24.5s)
+  mem natural    s42: taught acc 0.75 greedy 1 sampled 0.75 | after alone acc 0.75 greedy 1 sampled 0.82 | answers [0, 2, 2, 3] -> [0, 2, 2, 3] (18.6s)
+  off corrective s42: taught acc 0.75 greedy 0 sampled 0.28 | after alone acc 0.75 greedy 0 sampled 0.40 | answers [0, 1, 3, 3] -> [0, 2, 2, 3] (29.3s)
+  mem grade-v5   s42: taught acc 1.00 greedy 1 sampled 1.00 | after alone acc 1.00 greedy 1 sampled 1.00 | answers [0, 1, 2, 3] -> [0, 1, 2, 3] (13.3s)
+  mem corrective s42: taught acc 1.00 greedy 1 sampled 1.00 | after alone acc 0.75 greedy 1 sampled 0.82 | answers [0, 1, 2, 3] -> [0, 3, 2, 3] (17.9s)
+  off natural    s43: taught acc 0.25 greedy 0 sampled 0.01 | after alone acc 0.50 greedy 0 sampled 0.27 | answers [3, 3, 3, 3] -> [0, 2, 0, 3] (22.5s)
+  off grade-v5   s43: taught acc 0.25 greedy 0 sampled 0.00 | after alone acc 0.75 greedy 0 sampled 0.00 | answers [0, 0, 0, 0] -> [0, 1, 1, 3] (21.3s)
+  off corrective s43: taught acc 0.75 greedy 0 sampled 0.33 | after alone acc 0.50 greedy 0 sampled 0.31 | answers [0, 2, 2, 3] -> [0, 0, 2, 2] (25.3s)
+  mem natural    s43: taught acc 1.00 greedy 1 sampled 1.00 | after alone acc 1.00 greedy 1 sampled 0.98 | answers [0, 1, 2, 3] -> [0, 1, 2, 3] (15.9s)
+  mem grade-v5   s43: taught acc 1.00 greedy 1 sampled 1.00 | after alone acc 1.00 greedy 1 sampled 0.96 | answers [0, 1, 2, 3] -> [0, 1, 2, 3] (13.5s)
+  mem corrective s43: taught acc 1.00 greedy 1 sampled 1.00 | after alone acc 0.75 greedy 1 sampled 0.99 | answers [0, 1, 2, 3] -> [0, 2, 2, 3] (16.2s)
+  off natural    s44: taught acc 0.25 greedy 0 sampled 0.00 | after alone acc 0.25 greedy 0 sampled 0.00 | answers [3, 3, 3, 3] -> [3, 3, 3, 3] (22.0s)
+  off grade-v5   s44: taught acc 0.75 greedy 0 sampled 0.07 | after alone acc 0.75 greedy 0 sampled 0.02 | answers [0, 1, 1, 3] -> [0, 1, 1, 3] (23.4s)
+  mem natural    s44: taught acc 1.00 greedy 1 sampled 0.95 | after alone acc 1.00 greedy 1 sampled 0.93 | answers [0, 1, 2, 3] -> [0, 1, 2, 3] (17.5s)
+  off corrective s44: taught acc 0.75 greedy 0 sampled 0.38 | after alone acc 0.75 greedy 0 sampled 0.30 | answers [0, 2, 2, 3] -> [0, 2, 2, 3] (27.0s)
+  mem grade-v5   s44: taught acc 0.50 greedy 0 sampled 0.01 | after alone acc 1.00 greedy 1 sampled 1.00 | answers [3, 3, 2, 3] -> [0, 1, 2, 3] (17.5s)
+  mem corrective s44: taught acc 1.00 greedy 1 sampled 1.00 | after alone acc 1.00 greedy 1 sampled 1.00 | answers [0, 1, 2, 3] -> [0, 1, 2, 3] (16.9s)
+
+EXP-46 summary, 3 seeds (184s). Chance: uniform .121, never-repeat searcher .304
+  off natural    taught n= 3  acc 0.25 (SEM 0.00, all-4 0)  greedy solves 0  sampled 0.003 (SEM 0.003)
+  off natural    after  n= 3  acc 0.33 (SEM 0.08, all-4 0)  greedy solves 0  sampled 0.090 (SEM 0.090)
+  off natural    taught sampled on V5's seeds 42-46: 0.003
+  off grade-v5   taught n= 3  acc 0.42 (SEM 0.17, all-4 0)  greedy solves 0  sampled 0.023 (SEM 0.023)
+  off grade-v5   after  n= 3  acc 0.58 (SEM 0.17, all-4 0)  greedy solves 0  sampled 0.007 (SEM 0.007)
+  off grade-v5   taught sampled on V5's seeds 42-46: 0.023
+  off corrective taught n= 3  acc 0.75 (SEM 0.00, all-4 0)  greedy solves 0  sampled 0.330 (SEM 0.029)
+  off corrective after  n= 3  acc 0.67 (SEM 0.08, all-4 0)  greedy solves 0  sampled 0.337 (SEM 0.032)
+  off corrective taught sampled on V5's seeds 42-46: 0.330
+  mem natural    taught n= 3  acc 0.92 (SEM 0.08, all-4 2)  greedy solves 3  sampled 0.900 (SEM 0.076)
+  mem natural    after  n= 3  acc 0.92 (SEM 0.08, all-4 2)  greedy solves 3  sampled 0.910 (SEM 0.047)
+  mem natural    taught sampled on V5's seeds 42-46: 0.900
+  mem grade-v5   taught n= 3  acc 0.83 (SEM 0.17, all-4 2)  greedy solves 2  sampled 0.670 (SEM 0.330)
+  mem grade-v5   after  n= 3  acc 1.00 (SEM 0.00, all-4 3)  greedy solves 3  sampled 0.987 (SEM 0.013)
+  mem grade-v5   taught sampled on V5's seeds 42-46: 0.670
+  mem corrective taught n= 3  acc 1.00 (SEM 0.00, all-4 3)  greedy solves 3  sampled 1.000 (SEM 0.000)
+  mem corrective after  n= 3  acc 0.83 (SEM 0.08, all-4 1)  greedy solves 3  sampled 0.937 (SEM 0.058)
+  mem corrective taught sampled on V5's seeds 42-46: 1.000

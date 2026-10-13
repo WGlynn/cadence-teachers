@@ -15,6 +15,7 @@
   - (P4) grade-v5 + memory: per-state greedy accuracy >= .75 (the memory makes V5's diluted grade usable on the default brain).
   - (P5) without memory, every signal stays at per-state accuracy <= .5 after teaching (EXP-45's default-brain result carries to the 0.82 composition).
 - Decision rule (written before the pilot): P1-P3 hold -> upstream's 0.83 claim replicates on an outside chamber with the per-state instrument, and memory turns search into a learned chain; sampled high but per-state accuracy low -> the memory helps search, not the mapping; P5 fails -> the 0.82 composition alone already fixed part of it, and the memory gain is read against that.
+- Pilot (3 seeds, 42-44, exact run conditions, `exp/EXP-46-pilot.out`), read before the full run: memory arms near the ceiling (taught per-state accuracy natural .92, grade-v5 .83, corrective 1.00), so as pre-registered the design is kept and the full run cannot rank memory arms against each other at this budget. Without memory, corrective reads .75 (EXP-45's 0.81 composition gave .42), so P5 is at risk: the 0.82 composition alone may have moved the default brain. No design change; the full run reuses the pilot's three seeds as rows (seeded, unchanged code) and adds seeds 45-53.
 - Result: PENDING. Verdict: PENDING.
 
 ## Reflection
