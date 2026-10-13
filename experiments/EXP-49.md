@@ -1,0 +1,20 @@
+# EXP-49: Noesis-lite v1, a teacher market paid by measured transfer on unseen situations
+
+- Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: none (teaching track; Will 14:07: "imagine running a noesis lite in the simulation"; design `docs/NOESIS-LITE-SIM.md`, local)
+- Script: `exp/EXP-49_noesis_lite_market.py` | Evidence: `exp/EXP-49-pilot.*`, `exp/EXP-49-full.json/.jsonl/.out` (PENDING)
+
+## Summary
+- Question: in a market that pays teachers by measured transfer, read on situations the lesson never covered and after the student has lived alone for a while, do genuine teachers get paid in proportion to their skill while every fake prices at zero or below?
+- Setup: EXP-48's weather chamber (lessons under seen weathers, worth measured under the four unseen ones). Teachers per market seed: four genuine memory brains taught by the corrective caregiver for 20 / 40 / 80 / 120 attempts (skill varies), and three fakes: random labels, a consistent wrong chain (each stage's action shifted by one), and echo (labels the action the student just took: zero information, total agreement). A lesson: a fresh memory student lives 40 attempts under seen weather; on an executed mistake in a guided window (V5's 4-of-12 schedule) the teacher's greedy answer for the student's situation is the label. Worth = twin ablation: the same student seed lives the same 40 attempts with no teacher; both twins then live 20 attempts alone through `live`; worth = per-state greedy accuracy under unseen weather, taught minus untaught. Replication: every lesson runs on two independent students; credit finalizes only if both worths exceed .125 (two of the 16 test situations); pay = the mean finalized worth. 3 market seeds x 6 students x 7 teachers.
+- RUN GATE: (1) prediction below, written before the pilot. (2) Window: a pilot of one market seed with 3 students per teacher at exact run conditions; if fake teachers' worths spread past the .125 bar often enough to finalize, the bar is revised before the full run and the revision is written here first. A smoke run at 5 attempts was seen (code check only). (3) Variance: twins share the student seed and world draws, so worth is paired; replication uses an independent student. (4) Metric: pay share by teacher type; Spearman of pay against the genuine teacher's own unseen per-state accuracy. (5) Chain: teacher skill -> worth at lesson end -> worth after vesting -> finalized -> pay.
+- Prediction (written before the pilot):
+  - (P1) Fakes price at zero or below: random, wrong-chain and echo each have mean worth <= 0, and their combined pay share is <= .05.
+  - (P2) Genuine teachers take >= .90 of all pay.
+  - (P3) Pay follows skill: Spearman(pay, teacher skill) across genuine teachers, pooled over market seeds, >= .5.
+  - (P4) Harmful teaching prices below zero, not at zero: wrong-chain mean worth <= -.2.
+  - (P5) Genuine worth survives vesting: across genuine teachers, mean worth after 20 attempts alone is >= .7 of mean worth at lesson end.
+- Decision rule (written before the pilot): P1-P3 hold -> transfer pricing on held-out situations works as a contribution measure in this world, and v2 (stake, standing, colluding verifiers) is worth building on it; P1 fails for echo -> agreement leaks into worth and the measure needs a guard; P3 fails with P1 holding -> the measure separates real from fake but does not rank skill, so pay needs a different scale.
+- Result: PENDING. Verdict: PENDING.
+
+## Reflection
+- PENDING (after the run).
