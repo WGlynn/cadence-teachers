@@ -108,7 +108,7 @@ export default function App() {
 
       <section className="block" id="river">
         <div className="wrap">
-          <SectionHead num="03" title="Forty runs, in order." sub="Run order, one lane per track. Hover a dot, click to open." />
+          <SectionHead num="03" title={`${EXPS.length} runs, in order.`} sub="Run order, one lane per track. Scroll sideways for the latest; hover a dot, click to open." />
           <Reveal><River onPick={onPick} /></Reveal>
         </div>
       </section>
