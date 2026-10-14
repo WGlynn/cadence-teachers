@@ -1,0 +1,5 @@
+student 0: so far 16 situations, cortex != behaviour 8, cortex right 6, behaviour right 14
+student 1: so far 32 situations, cortex != behaviour 20, cortex right 10, behaviour right 30
+student 2: so far 48 situations, cortex != behaviour 32, cortex right 14, behaviour right 46
+student 3: so far 64 situations, cortex != behaviour 40, cortex right 22, behaviour right 62
+cortex answer differs from greedy behaviour in 40/64 (0.62); right: cortex 0.34, behaviour 0.97

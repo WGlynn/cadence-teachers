@@ -1,0 +1,18 @@
+EXP-55: 9 students to go (0 done); lengths [40, 120, 240]; cadence from C:\Users\Will/_cadence_197/src
+  L 40 st1: off know4 0.69 random 0.38 | on know4 0.50 random 0.88 | untaught 1.00 | content off +0.31 on -0.38 | agreed know4 17/82 random 21/114 (23.8s)
+  L 40 st0: off know4 0.62 random 0.25 | on know4 0.75 random 0.31 | untaught 0.25 | content off +0.38 on +0.44 | agreed know4 13/102 random 23/96 (24.9s)
+  L120 st0: off know4 0.94 random 0.81 | on know4 1.00 random 1.00 | untaught 0.56 | content off +0.12 on +0.00 | agreed know4 69/192 random 39/206 (50.7s)
+  L 40 st2: off know4 0.25 random 0.81 | on know4 0.75 random 0.81 | untaught 0.44 | content off -0.56 on -0.06 | agreed know4 28/79 random 26/111 (22.5s)
+  L120 st1: off know4 0.50 random 0.31 | on know4 1.00 random 1.00 | untaught 0.25 | content off +0.19 on +0.00 | agreed know4 58/228 random 54/286 (50.7s)
+  L240 st0: off know4 0.50 random 1.00 | on know4 0.81 random 0.94 | untaught 0.81 | content off -0.50 on -0.12 | agreed know4 102/425 random 89/434 (93.3s)
+  L240 st1: off know4 0.75 random 1.00 | on know4 1.00 random 1.00 | untaught 1.00 | content off -0.25 on +0.00 | agreed know4 137/441 random 89/405 (89.5s)
+  L120 st2: off know4 0.88 random 1.00 | on know4 0.69 random 0.94 | untaught 0.94 | content off -0.12 on -0.25 | agreed know4 59/253 random 59/342 (50.4s)
+  L240 st2: off know4 0.69 random 1.00 | on know4 0.94 random 1.00 | untaught 0.50 | content off -0.31 on -0.06 | agreed know4 95/516 random 65/404 (86.2s)
+
+EXP-55 summary: 3 students per length (161s); per-state accuracy on unseen weather
+  lesson  40 n= 3  off: know-4 0.521 random 0.479 | on: know-4 0.667 random 0.667 | untaught 0.562 (= EXP-53: True)
+             content off +0.042 (SEM 0.303)  on +0.000 (SEM 0.237)  rule gain -0.042 (SEM 0.347)  know-4 off - untaught -0.042 (SEM 0.211)  agreed share know-4 0.221 random 0.218
+  lesson 120 n= 3  off: know-4 0.771 random 0.708 | on: know-4 0.896 random 0.979 | untaught 0.583 (= EXP-53: True)
+             content off +0.062 (SEM 0.095)  on -0.083 (SEM 0.083)  rule gain -0.146 (SEM 0.021)  know-4 off - untaught +0.188 (SEM 0.130)  agreed share know-4 0.276 random 0.182
+  lesson 240 n= 3  off: know-4 0.646 random 1.000 | on: know-4 0.917 random 0.979 | untaught 0.771 (= EXP-53: True)
+             content off -0.354 (SEM 0.075)  on -0.062 (SEM 0.036)  rule gain +0.292 (SEM 0.042)  know-4 off - untaught -0.125 (SEM 0.157)  agreed share know-4 0.242 random 0.195

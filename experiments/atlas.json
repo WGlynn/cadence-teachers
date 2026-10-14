@@ -2139,5 +2139,105 @@
    ]
   },
   "quote_worthy": "After a mistake the brain's own answer is usually the mistake, so a rule that skips lessons it already knows found almost nothing to skip."
+ },
+ {
+  "id": "EXP-56",
+  "name": "On an ambiguous chain, do misses wash the memory that matters out of Cadence's context?",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "memory",
+  "verdict": "NULL",
+  "verdict_note": "24 seeds per arm and signal, paired; pre-registered, mechanical check and pilot read first; 1 of 4 held (the replication); one post-hoc reading declared; our rebuild of Huncho's V7.2 chamber, 120 attempts",
+  "headline": "Cadence 0.83's temporal context beats place-only memory on an A/B/A/B chain with identical observations (sampled success .63 vs .33; clean greedy passes 5/48 vs 0/48, matching V7.2's 11/100 vs 0/100). Keeping misses out of the context did not help recovery after a miss, so the erosion idea is refuted; it did change first tries, and clean greedy passes went from 5 to 17 of 48, a post-hoc reading now under confirmation (EXP-57).",
+  "question": "Is the fixed fading context weak on ambiguous sequences because every miss pushes the one decision that tells the two visits apart further back in the trace?",
+  "process_issues": [
+   "one reading (retry repeats the miss) added after the pilot and declared; full run reran all seeds"
+  ],
+  "lesson": "The arithmetic of a trace (0.5 to the power of the misses) can be right while the limit on behaviour lies elsewhere; a paired arm that removes only that link is what tells you.",
+  "chart": {
+   "title": "Clean greedy passes of the ambiguous chain, of 48 (24 seeds x 2 signals)",
+   "unit": "count",
+   "bars": [
+    {
+     "label": "place only (context 0)",
+     "value": 0
+    },
+    {
+     "label": "context .5",
+     "value": 5
+    },
+    {
+     "label": "context .8",
+     "value": 6
+    },
+    {
+     "label": "context .5, misses held out",
+     "value": 17
+    }
+   ]
+  },
+  "quote_worthy": "The trace survived the misses fine; what moved was where training put the memories."
+ },
+ {
+  "id": "EXP-57",
+  "name": "Keep misses out of the temporal context: confirmed on fresh seeds",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "memory",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "fresh seeds, pre-registered, EXP-56 as the pilot; 3 of 4 held (the predicted-flat sampled success rose instead); 96 pairs at 120 attempts, 48 at 240; instrument-level rule on our rebuild of Huncho's ambiguous chain",
+  "headline": "On an A/B/A/B chain with identical observations, letting only decisions that changed the observation into Cadence's temporal context takes clean greedy passes from 4 of 96 to 38 of 96 at 120 attempts (36 vs 2 discordant pairs, p < .0001), 60% with caregiver corrections, and keeps a lead at 240 (23 vs 9 of 48). Cadence already applies this rule to its replay path; the key that stores its memories does not.",
+  "question": "Is EXP-56's post-hoc result (holding misses out of the context triples clean greedy passes) real on fresh seeds, and does it last to 240 attempts?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "An effect found in a reading you did not predict needs a confirmatory run on fresh seeds before it is said out loud; here it came back larger.",
+  "chart": {
+   "title": "Clean greedy passes at 120 attempts, fresh seeds (of 96)",
+   "unit": "count",
+   "bars": [
+    {
+     "label": "context .5 (founder)",
+     "value": 4
+    },
+    {
+     "label": "context .5, only observation-changing decisions enter",
+     "value": 38
+    }
+   ]
+  },
+  "quote_worthy": "The memory that mattered was the decision that changed something; letting the misses in buried it under every way of failing."
+ },
+ {
+  "id": "EXP-55",
+  "name": "Demonstrations at every decision, with and without upstream's surprise rule",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "BOUNDARY",
+  "verdict_note": "24 students per lesson length, paired twins; pre-registered, pilot read first; 2 of 4 held (one only on means); upstream PR #197 head (unmerged); side check declared",
+  "headline": "Showing the right action at every decision does not carry content either: at 240 attempts it leaves the student below one shown random actions (-.16, 3.4 SEM), the readout saturation upstream's PR #197 names. Its surprise rule removes that harm (+.19) but content stays near zero. With episodic memory on, the rule judges against the cortex's answer (right 34%) while the brain acts on the memory's vote (right 97%).",
+  "question": "Does a teacher's content reach the student when it demonstrates at every decision instead of only after mistakes, and does teaching only where the answer differs (#197) help?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "A filter keyed on the learner's own answer must use the answer the learner acts on; when a second system shapes behaviour, the first system's answer is the wrong thing to filter on.",
+  "chart": {
+   "title": "Content at 240 attempts: right-answer minus random-answer teacher (24 students)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "every decision, every row taught",
+     "value": -0.161,
+     "sem": 0.047
+    },
+    {
+     "label": "every decision, surprise rule (#197)",
+     "value": 0.031,
+     "sem": 0.054
+    }
+   ]
+  },
+  "quote_worthy": "Telling a student the right answer every time it already knew it made it worse than telling it nonsense."
  }
 ]

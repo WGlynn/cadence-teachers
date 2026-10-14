@@ -48,8 +48,17 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-54** (DONE 2026-10-14: NULL, gate held 0/3; spawned by EXP-53 + upstream PR #197) — PR #197's `learning_surprise`
   (teach only rows whose answer differs from the label) through EXP-53's mistake-only protocol, at the PR head in a pinned
   worktree. Near no-op: after a mistake the brain's answer is mostly that mistake, so right labels are rarely dropped.
-- **EXP-55** (ready, spawned 2026-10-14 by EXP-54) — where #197's rule has answered rows to remove: demonstrations at EVERY
+- **EXP-55** (DONE 2026-10-14: BOUNDARY 2/4, right-answer demos hurt at 240, #197 rule removes it, content ~0; spawned 2026-10-14 by EXP-54) — where #197's rule has answered rows to remove: demonstrations at EVERY
   guided decision (not only after mistakes), every-row vs `learning_surprise=True`, know-4 vs random-label teachers, on the
   weather chamber at 40/120/240 attempts, per-state accuracy on unseen weather, 24 students per length, at the #197 head
   (`~/_cadence_197`) or on main if #197 has merged. Pre-register: log the agreed-share first (pilot) per EXP-54's lesson.
   Content under the gene is both the content-carrying channel Noesis-lite v2 needs and the reading #197 asks for.
+- **EXP-56** (DONE 2026-10-14: NULL 1/4; spawned by the group thread, Huncho V7.2) — ambiguous A/B/A/B chain: context vs place
+  replicates; misses-held-out does not help recovery; post-hoc clean greedy 17/48 vs 5/48.
+- **EXP-57** (DONE 2026-10-14: SUPPORTIVE 3/4) — confirmatory, fresh seeds: clean greedy 38/96 vs 4/96 at 120, 23 vs 9 of 48 at 240.
+- **EXP-58** (ready, spawned 2026-10-14 by EXP-53/54/55) — a content channel off `step(teacher=...)`: settled `fit()`-style lessons
+  between lives, or EXP-45's delayed-credit brain, know-4 vs random-label teachers, per-state accuracy on unseen weather.
+  Gate for Noesis-lite v2 (nothing to price until some channel carries content).
+- **EXP-59** (ready, spawned 2026-10-14 by EXP-57) — the boundary of the hold rule: a chamber where an unchanged observation
+  still carries information (a wait-then-act timer, or a stage that needs two identical actions), hold vs plain context.
+  The rule should break there; measure how badly, before proposing it upstream as an opt-in gene.

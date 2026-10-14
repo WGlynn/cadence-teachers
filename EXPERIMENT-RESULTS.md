@@ -5,6 +5,21 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-57 — keep misses out of the temporal context: confirmed on fresh seeds — 2026-10-14
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-57_confirm_hold_greedy.py` (EXP-56's chamber/arms). Fresh seeds 57000+, ctx5 vs hold5, 48 per signal at 120 attempts, 24 at 240.
+- **Insight:** clean greedy passes of the ambiguous chain 38/96 with hold vs 4/96 without at 120 (McNemar 36 vs 2, p < .0001; 29/48 vs 2/48 with corrections), 23 vs 9 of 48 at 240 (p = .007); first-try accuracy +.17 (7 SEM); sampled success +.25 (predicted flat). A clean pass never fires the rule, so the gain is in what training stored. Cadence's replay path already applies this rule; the context key does not.
+- **Verdict: SUPPORTIVE (3/4).** Detail: experiments/EXP-57.md.
+
+## EXP-56 — on an ambiguous chain, do misses wash the memory that matters out of Cadence's context? — 2026-10-14
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-56_ambiguous_chain_trace.py`. Huncho's V7.2 A/B/A/B chain on our V5 chamber; place / ctx .5 / ctx .8 / ctx .5 with misses held out; natural + corrective; 24 seeds.
+- **Insight:** context beats place (sampled +.30; clean greedy 5/48 vs 0/48, on V7.2's 11/100 vs 0/100). Holding misses out does not help recovery after a miss (+.01), so the erosion idea is refuted; it raised first tries (+.10) and clean greedy passes 17/48 vs 5/48 (post-hoc, confirmed in EXP-57). Slower fade (.8) is worse.
+- **Verdict: NULL (1/4).** Detail: experiments/EXP-56.md.
+
+## EXP-55 — demonstrations at every decision, with and without upstream's surprise rule (PR #197) — 2026-10-14
+- **Version:** PR #197 head `8d99c75` (pinned `~/_cadence_197`). **Script:** `exp/EXP-55_every_decision_demonstrations.py`. EXP-53's chamber/seeds; know-4 vs random demonstrations at every guided decision, rule off/on, untaught; 24 students per length.
+- **Insight:** content at 240 is -.16 with every row taught (random demonstrations beat right ones, 3.4 SEM): readout saturation. The rule removes it (+.19; know-4 student .72 -> .88) but content stays ~0 (+.03). Side check: with memory_choice the rule reads the cortex answer (right .34) while the brain acts on the memory vote (right .97).
+- **Verdict: BOUNDARY (2/4).** No content-carrying channel through step(teacher=) yet. Detail: experiments/EXP-55.md.
+
 ## EXP-54 — does teaching only where the answer differs (upstream PR #197) let a label's content through? — 2026-10-14
 - **Version:** PR #197 head `8d99c75` (0.83.0 + opt-in `learning_surprise`, unmerged), pinned worktree `~/_cadence_197`. **Script:** `exp/EXP-54_surprise_teaching.py`. EXP-53 exactly with the gene on; every-row arms = EXP-53's rows, valid after a bit-identical gate. 24 students per length.
 - **Insight:** content under the gene -.008 / +.125 / +.003 at 40 / 120 / 240 (every-row +.013 / +.107 / +.068); gene effect on know-4 within 1.3 SEM of zero at every length. The rule dropped random labels at chance (.20) and the perfect teacher's less often (.13 to .16): right after an executed mistake the brain's answer is mostly that mistake. Free-phase budget exhaustion (0.1 to 0.5% of lessons) is the founder's, gene off and on alike.
