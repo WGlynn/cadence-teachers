@@ -1,0 +1,22 @@
+EXP-54: 9 students to go (0 done); lengths [40, 120, 240]; cadence from C:\Users\Will/_cadence_197/src
+  L 40 st1: know4 0.50 random 0.25 untaught 1.00 content +0.25 | agreed know4 7/55 random 17/69 (12.1s)
+  L 40 st0: know4 0.50 random 0.38 untaught 0.25 content +0.12 | agreed know4 4/37 random 16/71 (12.7s)
+C:\Users\Will/_cadence_197/src\cadence\generic.py:1550: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  L120 st0: know4 1.00 random 0.25 untaught 0.56 content +0.75 | agreed know4 3/108 random 19/108 (27.4s)
+  L120 st1: know4 1.00 random 0.94 untaught 0.25 content +0.06 | agreed know4 8/57 random 30/141 (28.0s)
+  L 40 st2: know4 0.56 random 0.75 untaught 0.44 content -0.19 | agreed know4 19/44 random 23/88 (13.6s)
+C:\Users\Will/_cadence_197/src\cadence\generic.py:1550: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  L240 st0: know4 0.75 random 0.75 untaught 0.81 content +0.00 | agreed know4 37/152 random 64/294 (51.2s)
+  L240 st1: know4 0.56 random 0.88 untaught 1.00 content -0.31 | agreed know4 28/152 random 30/170 (47.2s)
+  L120 st2: know4 0.69 random 0.25 untaught 0.94 content +0.44 | agreed know4 34/93 random 54/247 (30.7s)
+  L240 st2: know4 0.81 random 0.94 untaught 0.50 content -0.12 | agreed know4 27/170 random 43/245 (46.8s)
+
+EXP-54 summary: 3 students per length (88s); per-state accuracy on unseen weather; every-row = EXP-53's rows for the same seeds
+  lesson  40 n= 3  know-4 0.521  random 0.458  untaught 0.562  content +0.062 (SEM 0.130; every-row -0.292)
+             gene effect know-4 -0.125 (SEM 0.191)  random -0.479 (SEM 0.116)  agreed share know-4 0.221 random 0.246  untaught = EXP-53: True
+  lesson 120 n= 3  know-4 0.896  random 0.479  untaught 0.583  content +0.417 (SEM 0.199; every-row -0.250)
+             gene effect know-4 +0.188 (SEM 0.072)  random -0.479 (SEM 0.271)  agreed share know-4 0.174 random 0.208  untaught = EXP-53: True
+  lesson 240 n= 3  know-4 0.708  random 0.854  untaught 0.771  content -0.146 (SEM 0.091; every-row +0.125)
+             gene effect know-4 -0.146 (SEM 0.182)  random +0.125 (SEM 0.201)  agreed share know-4 0.194 random 0.193  untaught = EXP-53: True

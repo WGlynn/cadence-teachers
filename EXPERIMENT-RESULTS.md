@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-54 — does teaching only where the answer differs (upstream PR #197) let a label's content through? — 2026-10-14
+- **Version:** PR #197 head `8d99c75` (0.83.0 + opt-in `learning_surprise`, unmerged), pinned worktree `~/_cadence_197`. **Script:** `exp/EXP-54_surprise_teaching.py`. EXP-53 exactly with the gene on; every-row arms = EXP-53's rows, valid after a bit-identical gate. 24 students per length.
+- **Insight:** content under the gene -.008 / +.125 / +.003 at 40 / 120 / 240 (every-row +.013 / +.107 / +.068); gene effect on know-4 within 1.3 SEM of zero at every length. The rule dropped random labels at chance (.20) and the perfect teacher's less often (.13 to .16): right after an executed mistake the brain's answer is mostly that mistake. Free-phase budget exhaustion (0.1 to 0.5% of lessons) is the founder's, gene off and on alike.
+- **Verdict: NULL (gate held, 0/3).** In mistake-only teaching the surprise rule is not what hid content. Next: demonstrations at every guided decision, where the rule has answered rows to remove. Detail: experiments/EXP-54.md.
+
 ## EXP-53 — does the content of a teacher's labels matter, and at what lesson length? — 2026-10-13
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-53_does_content_matter.py`. Paired twins (know-4 / random labels / untaught), lessons of 40, 120, 240 attempts, 24 students each.
 - **Result:** content (know-4 minus random) +.013 / +.107 / +.068 (SEMs about .06); correction itself is worth +.25 at 40 attempts for either teacher; untaught catches up at longer lessons.

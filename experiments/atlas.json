@@ -2102,5 +2102,42 @@
    ]
   },
   "quote_worthy": "The student was learning from the interruption, not the answer, at every lesson length we tried."
+ },
+ {
+  "id": "EXP-54",
+  "name": "Does teaching only where the answer differs let a label's content through?",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "NULL",
+  "verdict_note": "24 students per lesson length, paired twins; pre-registered, gate and pilot read first; gate held, 0 of 3 substantive predictions held; upstream PR #197 head (unmerged), one teaching protocol (labels on executed mistakes), default memory brain",
+  "headline": "Upstream's opt-in rule that teaches only where the brain's own answer differs from the label leaves EXP-53's null in place: a perfect teacher and a random one stay within noise at 40, 120 and 240 lesson attempts (content -.01 / +.13 / +.00). Right after a mistake the brain's answer is mostly the mistake it just made, so the rule passes almost every lesson through.",
+  "question": "Was EXP-53's 'perfect teacher = random teacher' caused by lessons on answers the brain already gives (the readout saturation upstream PR #197 targets)?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Before testing a rule that filters lessons by the learner's own answer, measure how often that answer agrees with the label at the moments the protocol teaches; after mistakes it is below chance, and the filter has nothing to remove.",
+  "chart": {
+   "title": "Content of the labels under the surprise rule: know-4 minus random-label teacher (24 students per length)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "40-attempt lessons",
+     "value": -0.008,
+     "sem": 0.077
+    },
+    {
+     "label": "120-attempt lessons",
+     "value": 0.125,
+     "sem": 0.077
+    },
+    {
+     "label": "240-attempt lessons",
+     "value": 0.003,
+     "sem": 0.062
+    }
+   ]
+  },
+  "quote_worthy": "After a mistake the brain's own answer is usually the mistake, so a rule that skips lessons it already knows found almost nothing to skip."
  }
 ]

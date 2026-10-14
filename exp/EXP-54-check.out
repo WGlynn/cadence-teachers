@@ -1,0 +1,10 @@
+EXP-54 check (P0): cadence 0.83.0 from C:\Users\Will/_cadence_197/src\cadence
+  L40 st0 know4: gene off 0.25  EXP-53 0.25  SAME
+  L40 st0 random: gene off 0.9375  EXP-53 0.9375  SAME
+  L40 st0 untaught: gene off 0.25  EXP-53 0.25  SAME
+  L40 st0 gene off know4 lessons 44 taught 44 agreed 0
+  L40 st1 know4: gene off 0.75  EXP-53 0.75  SAME
+  L40 st1 random: gene off 0.875  EXP-53 0.875  SAME
+  L40 st1 untaught: gene off 1.0  EXP-53 1.0  SAME
+  L40 st1 gene off know4 lessons 61 taught 61 agreed 0
+P0 (gene off reproduces EXP-53): HOLDS
