@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-59 — where the hold rule breaks: a correct action that changes nothing visible — 2026-10-14
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-59_hold_boundary.py`. Observations A, A, B, C (WOOD correct but invisible); place / ctx5 / hold5, 48 fresh seeds per signal, 120 attempts.
+- **Insight:** hold erases the invisible correct WOOD: stage-2 first try -.157 vs plain context (3.7 SEM), clean passes 2 vs 9 of 96 (7 vs 0), corrective sampled .48 vs .81; no cost where the observation changes. The gate must key on "the decision changed nothing", which the observation cannot always tell.
+- **Verdict: SUPPORTIVE (3/3, the predicted break).** Detail: experiments/EXP-59.md.
+
 ## EXP-58 — a teacher's content finally gets through: the delayed-credit brain — 2026-10-14
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-58_content_delayed_credit_brain.py`. EXP-53's chamber/schedule/seeds with EXP-45's delayed-credit brain (alone phase through step: no arousal genes); know-4 vs random vs untaught, 24 students at 40 and 120.
 - **Insight:** content +.193 (5.8 SEM) at 40, +.469 (11 SEM) at 120; know-4 student .93; random labels worth nothing (-.08 vs untaught). First channel with measurable content (EXP-52..55 were null on the default memory brain). Confound: alone phase path differs (EXP-61 splits it).

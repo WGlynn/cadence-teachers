@@ -12,4 +12,20 @@
   - (P2) Clean greedy passes: ctx5 has more ctx5-only pairs than hold5-only pairs, pooled.
   - (P3) At the stages where the observation does change (3 and 4), hold5 is not worse than ctx5 on first-try accuracy (difference > -.05 pooled).
 - Decision rule (written before any run): P1 holds -> the rule as stated is wrong in general; the gate has to be "the decision changed nothing", which the observation alone cannot tell when actions can have invisible effects; any upstream proposal names that limit and the signal it would need (outcome, reward, or the brain's own forecast). P1 fails -> the rule survives even an invisible correct step at this horizon, which needs explaining before anyone relies on it.
-- Result: (pending)
+- Result (48 fresh seeds per signal, 120 attempts; `exp/EXP-59-full.*`). First-try accuracy by stage, pooled (stage 2 is STONE at A, after the invisible WOOD):
+
+  | arm | stage 1 | stage 2 | stage 3 | stage 4 | clean greedy passes (of 96) | sampled success |
+  |---|---|---|---|---|---|---|
+  | place | .21 | .42 | .68 | .95 | 2 | .275 |
+  | ctx5 | .22 | .54 | .71 | .93 | 9 | .481 |
+  | hold5 | .19 | .39 | .70 | .95 | 2 | .302 |
+
+  hold5 - ctx5 first try: stage 1 -.030 (.028), stage 2 -.157 (.042), stage 3 -.021 (.038), stage 4 +.024 (.020). Clean passes: ctx5-only 7, hold-only 0 (exact McNemar p = .016). By signal, sampled success ctx5 vs hold5: natural .158 vs .125, corrective .805 vs .478.
+  P1 HELD (stage 2 -.157, 3.7 SEM). P2 HELD (7 vs 0). P3 HELD (stages 3 and 4 within -.05).
+- Verdict: SUPPORTIVE, 3 of 3 (the predicted break). When a correct action changes nothing visible, the hold rule erases it, the invisible step falls back to place-memory level (.39 vs place .42), and with corrections sampled success drops from .81 to .48. Decision rule: P1 held, so the rule as stated is wrong in general; the gate has to be "the decision changed nothing", which the observation alone cannot tell.
+
+## Reflection
+- What it means: EXP-57, 59 and 60 together pin the rule down. It helps a lot when progress is hidden and misses are the only unchanged-observation decisions (EXP-57), does nothing when progress is visible (EXP-60), and hurts when a correct action is invisible (EXP-59). The memory that matters is "the decision that changed something", and the observation is only a proxy for that. A working gate needs a signal that tells a miss from an invisible success: an outcome, a reward, or the brain's own forecast error. Cadence's replay path makes the same observation-equality judgment (`_extend_paths`), so it may share this blind spot; untested here.
+- Process: pre-registered before any run, fresh seeds, no pilot (same machinery); ran beside EXP-58 and EXP-61 on shared cores, which changed timing only. Limits: our rebuild, one composed brain, 120 attempts, one kind of invisible step.
+- Lesson: name the boundary of a fix and test it before proposing the fix; here the boundary is the fix's main limitation and belongs in the same message as the gain.
+- Next: a gate keyed on outcome rather than observation (hold only decisions the world answered as failures), on all three chambers.

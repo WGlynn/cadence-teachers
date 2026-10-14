@@ -2314,5 +2314,39 @@
    ]
   },
   "quote_worthy": "Four nulls said labels carry no content; the fifth brain said they carry almost all of it."
+ },
+ {
+  "id": "EXP-59",
+  "name": "Where the hold rule breaks: a correct action that changes nothing visible",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "memory",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "48 fresh seeds per signal, pre-registered, 3 of 3 held (the predicted break); 120 attempts; our rebuild of the chamber",
+  "headline": "If gathering wood is correct but invisible, keeping unchanged-observation decisions out of the context erases it: first-try accuracy at the step after it drops .16 (3.7 SEM), clean greedy passes fall from 9 to 2 of 96, and with corrections sampled success falls from .81 to .48. The rule helps only when 'nothing visible changed' really means 'nothing happened'.",
+  "question": "Does EXP-57's hold rule break where a correct action leaves the observation unchanged?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Name the boundary of a fix and test it before proposing the fix; the boundary belongs in the same message as the gain.",
+  "chart": {
+   "title": "First-try accuracy at the step after the invisible correct action (pooled, 96)",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "place only",
+     "value": 0.42
+    },
+    {
+     "label": "context .5",
+     "value": 0.54
+    },
+    {
+     "label": "context .5, unchanged-observation decisions held out",
+     "value": 0.39
+    }
+   ]
+  },
+  "quote_worthy": "The rule could not tell a miss from a success it could not see."
  }
 ]
