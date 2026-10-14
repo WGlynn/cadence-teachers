@@ -63,7 +63,7 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   still carries information (a wait-then-act timer, or a stage that needs two identical actions), hold vs plain context.
   The rule should break there; measure how badly, before proposing it upstream as an opt-in gene.
 - **EXP-60** (DONE 2026-10-14: SUPPORTIVE 3/3) — hold rule on the visible-inventory chain: 75 vs 75 clean passes; gain is specific to hidden progress.
-- **EXP-61** (RUNNING 2026-10-14, pre-registered; spawned 2026-10-14 by EXP-58) — split EXP-58's confound: the DEFAULT memory brain with EXP-58's exact
+- **EXP-61** (DONE 2026-10-14: SUPPORTIVE 2/2, content -.05 / +.02 at 40 / 120 on the default brain through step: the brain blocks content, not the live path; spawned 2026-10-14 by EXP-58) — split EXP-58's confound: the DEFAULT memory brain with EXP-58's exact
   protocol (alone phase through `step`, no labels), know-4 vs random vs untaught, 40 and 120 attempts, 24 students. Content
   still ~0 -> the operating point blocks content; content appears -> `live` after teaching was washing it out.
 - **EXP-62** (ready, spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,

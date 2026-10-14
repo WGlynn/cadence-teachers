@@ -2348,5 +2348,42 @@
    ]
   },
   "quote_worthy": "The rule could not tell a miss from a success it could not see."
+ },
+ {
+  "id": "EXP-61",
+  "name": "It was the brain: the default memory brain blocks a teacher's content",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "24 students per lesson length, paired twins, EXP-53's seeds and world draws; pre-registered, no pilot (EXP-53 fixed the window); 2 of 2 held",
+  "headline": "The default memory brain run through EXP-58's exact protocol (alone phase through step, not live) still takes in no content: right-answer minus random-label teacher is -.05 at 40 attempts and +.02 at 120, against +.47 on the delayed-credit brain. Every arm lands within about .06 of EXP-53, so the alone-phase path was not washing content out. The brain's operating point blocks it, and Noesis-lite v2 runs on the delayed-credit brain.",
+  "question": "Is it the default brain, or the time alone through live, that hid a teacher's content in EXP-53?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "When two things differ between a null and a hit, swap one of them alone before writing the story.",
+  "chart": {
+   "title": "Content (right-answer minus random-label teacher) at 120 attempts, 24 students",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "default memory brain, alone through live (EXP-53)",
+     "value": 0.107,
+     "sem": 0.064
+    },
+    {
+     "label": "default memory brain, alone through step",
+     "value": 0.016,
+     "sem": 0.066
+    },
+    {
+     "label": "delayed-credit brain, alone through step (EXP-58)",
+     "value": 0.469,
+     "sem": 0.041
+    }
+   ]
+  },
+  "quote_worthy": "Change the path and nothing moves; change the brain and the teacher is heard."
  }
 ]

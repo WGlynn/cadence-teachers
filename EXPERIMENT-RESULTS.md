@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-61 — it was the brain: the default memory brain blocks a teacher's content — 2026-10-14
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-61_default_brain_step_alone.py`. EXP-58's protocol (alone phase through step) with EXP-53's default memory brain; know-4 vs random vs untaught, 24 students at 40 and 120, EXP-53's seeds.
+- **Insight:** content -.049 (SEM .085) at 40, +.016 (.066) at 120, against +.469 on the delayed-credit brain (EXP-58); every arm within ~.06 of EXP-53, so the step-vs-live alone path is not what hid content. Being corrected at all still +.268 at 40.
+- **Verdict: SUPPORTIVE (2/2).** The default brain's operating point blocks content; Noesis-lite v2 (EXP-62) runs on the delayed-credit brain. Detail: experiments/EXP-61.md.
+
 ## EXP-59 — where the hold rule breaks: a correct action that changes nothing visible — 2026-10-14
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-59_hold_boundary.py`. Observations A, A, B, C (WOOD correct but invisible); place / ctx5 / hold5, 48 fresh seeds per signal, 120 attempts.
 - **Insight:** hold erases the invisible correct WOOD: stage-2 first try -.157 vs plain context (3.7 SEM), clean passes 2 vs 9 of 96 (7 vs 0), corrective sampled .48 vs .81; no cost where the observation changes. The gate must key on "the decision changed nothing", which the observation cannot always tell.
