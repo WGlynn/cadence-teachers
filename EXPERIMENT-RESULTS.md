@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-60 — the hold rule on the normal chain, where the inventory is visible — 2026-10-14
+- **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-60_hold_on_visible_chain.py`. EXP-57's arms on EXP-45's visible-inventory observation; 48 fresh seeds per signal (place on 24).
+- **Insight:** hold vs plain context 75 vs 75 clean greedy passes of 96 (14 vs 14), first try +.006; place-only 39 vs 40 of 48. The rule's gain (EXP-57) is specific to chains where the observation does not show progress; it is neutral elsewhere.
+- **Verdict: SUPPORTIVE (3/3).** Detail: experiments/EXP-60.md.
+
 ## EXP-57 — keep misses out of the temporal context: confirmed on fresh seeds — 2026-10-14
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-57_confirm_hold_greedy.py` (EXP-56's chamber/arms). Fresh seeds 57000+, ctx5 vs hold5, 48 per signal at 120 attempts, 24 at 240.
 - **Insight:** clean greedy passes of the ambiguous chain 38/96 with hold vs 4/96 without at 120 (McNemar 36 vs 2, p < .0001; 29/48 vs 2/48 with corrections), 23 vs 9 of 48 at 240 (p = .007); first-try accuracy +.17 (7 SEM); sampled success +.25 (predicted flat). A clean pass never fires the rule, so the gain is in what training stored. Cadence's replay path already applies this rule; the context key does not.

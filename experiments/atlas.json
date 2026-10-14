@@ -2239,5 +2239,43 @@
    ]
   },
   "quote_worthy": "Telling a student the right answer every time it already knew it made it worse than telling it nonsense."
+ },
+ {
+  "id": "EXP-60",
+  "name": "The hold rule on the normal chain, where the inventory is visible",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "memory",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "fresh seeds, pre-registered, 3 of 3 held; 96 hold/context pairs, 48 place/context pairs; scope check before reporting EXP-57",
+  "headline": "On the ordinary Stone Age chain, where the brain can see its inventory, keeping misses out of the temporal context changes nothing: 75 vs 75 clean greedy passes of 96, and place-only memory does as well as context (39 vs 40 of 48). The 4% to 40% jump in EXP-57 is specific to chains where the observation does not show progress.",
+  "question": "Is EXP-57's gain specific to the hidden-inventory chain, or does the hold rule help on the normal chain too?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "Before reporting a mechanism's gain, run it where the problem it fixes is absent; a gain that vanishes there is evidence it fixes that problem.",
+  "chart": {
+   "title": "Clean greedy passes of 96 at 120 attempts: hidden inventory (EXP-57) vs visible (EXP-60)",
+   "unit": "count",
+   "bars": [
+    {
+     "label": "hidden, context .5",
+     "value": 4
+    },
+    {
+     "label": "hidden, misses held out",
+     "value": 38
+    },
+    {
+     "label": "visible, context .5",
+     "value": 75
+    },
+    {
+     "label": "visible, misses held out",
+     "value": 75
+    }
+   ]
+  },
+  "quote_worthy": "When the brain can see how far it has got, it does not need to remember, and the rule has nothing to fix."
  }
 ]

@@ -59,6 +59,7 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-58** (ready, spawned 2026-10-14 by EXP-53/54/55) — a content channel off `step(teacher=...)`: settled `fit()`-style lessons
   between lives, or EXP-45's delayed-credit brain, know-4 vs random-label teachers, per-state accuracy on unseen weather.
   Gate for Noesis-lite v2 (nothing to price until some channel carries content).
-- **EXP-59** (ready, spawned 2026-10-14 by EXP-57) — the boundary of the hold rule: a chamber where an unchanged observation
+- **EXP-59** (RUNNING 2026-10-14, pre-registered: invisible correct WOOD, A/A/B/C; spawned 2026-10-14 by EXP-57) — the boundary of the hold rule: a chamber where an unchanged observation
   still carries information (a wait-then-act timer, or a stage that needs two identical actions), hold vs plain context.
   The rule should break there; measure how badly, before proposing it upstream as an opt-in gene.
+- **EXP-60** (DONE 2026-10-14: SUPPORTIVE 3/3) — hold rule on the visible-inventory chain: 75 vs 75 clean passes; gain is specific to hidden progress.

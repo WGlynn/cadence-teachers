@@ -599,6 +599,7 @@ def main():
 
     # Derived facts are generated, never typed (Will 2026-10-13: keep dependencies coherent when the data changes).
     sync_readme_counts(recs)
+    sync_site_meta(recs)
     # Every atlas update goes live (Will 2026-10-10): publish to Vercel when this checkout is linked.
     import publish_atlas
     if publish_atlas.linked() and not os.environ.get("ATLAS_NO_PUBLISH"):
@@ -618,6 +619,15 @@ def sync_readme_counts(recs):
     s = open(p, encoding="utf-8").read()
     new = re.sub(r"<!-- counts:start -->.*?<!-- counts:end -->",
                  "<!-- counts:start -->" + readme_counts_sentence(recs) + "<!-- counts:end -->", s, flags=re.S)
+    if new != s:
+        open(p, "w", encoding="utf-8").write(new)
+
+
+def sync_site_meta(recs):
+    """The site's link-preview text (meta description, og:description) carries the experiment count; derive it."""
+    p = os.path.join(os.path.dirname(HERE), "site", "index.html")
+    s = open(p, encoding="utf-8").read()
+    new = re.sub(r"\b\d+ experiments\b", f"{len(recs)} experiments", s)
     if new != s:
         open(p, "w", encoding="utf-8").write(new)
 

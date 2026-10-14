@@ -132,7 +132,8 @@ export function River({ onPick }) {
   const W = LEFT + STEP * EXPS.length + 30, H = TOP + ROWH * TRACKS.length
   const [tip, setTip] = useState(null)
   const days = []
-  EXPS.forEach((e, i) => { const d = e.date.slice(5, 10); if (!days.length || days[days.length - 1].d !== d) days.push({ d, i }) })
+  // a day label only when the day moves forward and there is room for it (some write-ups are dated before the one above)
+  EXPS.forEach((e, i) => { const d = e.date.slice(5, 10), p = days[days.length - 1]; if (!p || (d > p.d && i - p.i >= 2)) days.push({ d, i }) })
   return (
     <div className="river" ref={ref} style={{ position: 'relative' }}>
       <svg viewBox={`0 0 ${W} ${H}`}>

@@ -36,6 +36,10 @@ readme = open(os.path.join(ROOT, "README.md"), encoding="utf-8").read()
 m = re.search(r"<!-- counts:start -->(.*?)<!-- counts:end -->", readme, re.S)
 if not m or m.group(1).strip() != want:
     bad.append(f"README counts out of date: run python experiments/build_atlas.py (want: {want})")
+html = open(os.path.join(ROOT, "site", "index.html"), encoding="utf-8").read()
+for n in re.findall(r"\b(\d+) experiments\b", html):
+    if int(n) != len(atlas):
+        bad.append(f"site/index.html: link preview says {n} experiments, the atlas has {len(atlas)}; run build_atlas.py")
 for dp, _, fns in os.walk(os.path.join(ROOT, "site", "src")):
     for fn in fns:
         if fn.endswith((".jsx", ".js")) and fn != "atlas.json":

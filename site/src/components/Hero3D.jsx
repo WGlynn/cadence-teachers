@@ -2,34 +2,33 @@ import { useMemo, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing'
 import * as THREE from 'three'
+import { EXPS, VCOLOR, STANDING } from '../data'
 
 // Deterministic RNG so the lineage looks the same on every visit.
 function rng(seed) {
   return () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 }
 }
 
-/** Generations of brains (left to right); edges = who taught whom; pulses = lessons in flight. */
+/** The experiments themselves: one node per experiment, run days left to right, coloured by verdict; edges join
+ *  consecutive experiments of the same track (each question led to the next); pulses = lessons in flight.
+ *  The node count is the experiment count, so the picture grows with the atlas. */
 function Lineage({ reduced }) {
   const group = useRef()
   const pulses = useRef()
   const { nodes, edges } = useMemo(() => {
-    const r = rng(11), G = 7, nodes = [], edges = []
-    let prev = []
-    for (let g = 0; g < G; g++) {
-      const n = g === 0 ? 3 : 4 + Math.floor(r() * 4), cur = []
-      for (let i = 0; i < n; i++) {
-        const a = (i / n) * Math.PI * 2 + g * 0.7, rad = 1.3 + r() * 1.1
-        const p = new THREE.Vector3((g - (G - 1) / 2) * 2.4, Math.sin(a) * rad, Math.cos(a) * rad)
-        const idx = nodes.length
-        nodes.push({ p, g, gold: r() < 0.35 })
-        cur.push(idx)
-        if (prev.length) {
-          const k = 1 + (r() < 0.4 ? 1 : 0)
-          for (let j = 0; j < k; j++) edges.push([prev[Math.floor(r() * prev.length)], idx])
-        }
-      }
-      prev = cur
-    }
+    const r = rng(11), byDay = new Map(), nodes = [], edges = [], at = {}, last = {}
+    EXPS.forEach((e) => { const d = e.date.slice(0, 10); if (!byDay.has(d)) byDay.set(d, []); byDay.get(d).push(e) })
+    const days = [...byDay.keys()].sort(), G = days.length, gap = G > 1 ? Math.min(2.4, 12 / (G - 1)) : 0   // span <= 12 keeps the newest day in frame
+    days.forEach((d, g) => {
+      const day = byDay.get(d), n = day.length
+      day.forEach((e, i) => {
+        const a = (i / n) * Math.PI * 2 + g * 0.7, rad = 0.8 + Math.min(1.7, n * 0.1) + r() * 0.4
+        at[e.id] = nodes.length
+        nodes.push({ p: new THREE.Vector3((g - (G - 1) / 2) * gap, Math.sin(a) * rad, Math.cos(a) * rad),
+                     c: VCOLOR[e.verdict], crossed: e.verdict === 'CROSSED', solid: STANDING.has(e.verdict) })
+      })
+    })
+    EXPS.forEach((e) => { if (last[e.track] !== undefined) edges.push([at[last[e.track]], at[e.id]]); last[e.track] = e.id })
     return { nodes, edges }
   }, [])
 
@@ -71,9 +70,9 @@ function Lineage({ reduced }) {
       </lineSegments>
       {nodes.map((n, i) => (
         <mesh key={i} position={n.p}>
-          <icosahedronGeometry args={[n.g === 0 ? 0.26 : 0.17, 2]} />
-          <meshStandardMaterial color={n.gold ? '#f5b942' : '#efe8d8'} emissive={n.gold ? '#f5b942' : '#3fc1b0'}
-            emissiveIntensity={n.gold ? 2.2 : 0.9} roughness={0.35} metalness={0.2} />
+          <icosahedronGeometry args={[n.crossed ? 0.26 : 0.17, 2]} />
+          <meshStandardMaterial color={n.c} emissive={n.c}
+            emissiveIntensity={n.crossed ? 2.2 : n.solid ? 0.9 : 0.3} roughness={0.35} metalness={0.2} />
         </mesh>
       ))}
       <instancedMesh ref={pulses} args={[null, null, P]}>
