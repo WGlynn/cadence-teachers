@@ -35,13 +35,21 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-51** (ready; was "EXP-46c", spawned 2026-10-13 by EXP-45) — which gene sinks the default brain on the Stone Age chain? Start
   from V5's brain (compose defaults, arousal) and move one gene at a time toward the delayed-credit point (actor step 1.0 -> .1
   first, then critic rate .3 -> 5, arousal off, width), grade-v5 signal, per-state greedy accuracy primary, 12 seeds.
-- **EXP-49** (ready, spawned 2026-10-13 by Will: "imagine running a noesis lite in the simulation") — a teacher market on
+- **EXP-49** (DONE 2026-10-13: BOUNDARY 1/5, fakes paid against an untaught twin; spawned 2026-10-13 by Will: "imagine running a noesis lite in the simulation") — a teacher market on
   the Stone Age chain paid by twin-ablation transfer on held-out per-state accuracy, vesting after time alone, wash teachers
   (random, wrong-chain, echo, stake whale), two-dimension finality. Design: docs/NOESIS-LITE-SIM.md (local). Run after EXP-48
   answers generalization (the market should pay on held-out situations).
-- **EXP-52** (ready, spawned 2026-10-13 by EXP-49 BOUNDARY) — Noesis-lite v1.1: the same market with the counterfactual
+- **EXP-52** (DONE 2026-10-13: BOUNDARY 1/5, know-4 = random-label teacher at 40 attempts; spawned 2026-10-13 by EXP-49 BOUNDARY) — Noesis-lite v1.1: the same market with the counterfactual
   twin taught by a random-label teacher (form-matched null), 12+ students per teacher, and genuine teachers with skill set
   directly (k of 4 stages right), so pay can be checked against a known skill range.
-- **EXP-53** (ready, spawned 2026-10-13 by EXP-52) — does label content matter at all? know-4 vs random-label teachers on the
+- **EXP-53** (DONE 2026-10-13: NULL 1/4, label content not visible at 40/120/240; spawned 2026-10-13 by EXP-52) — does label content matter at all? know-4 vs random-label teachers on the
   weather chamber at 40, 120 and 240 lesson attempts, per-state accuracy on unseen weather, 12+ seeds. Gate for any further
   Noesis-lite market work: no content transfer, nothing to price.
+- **EXP-54** (DONE 2026-10-14: NULL, gate held 0/3; spawned by EXP-53 + upstream PR #197) — PR #197's `learning_surprise`
+  (teach only rows whose answer differs from the label) through EXP-53's mistake-only protocol, at the PR head in a pinned
+  worktree. Near no-op: after a mistake the brain's answer is mostly that mistake, so right labels are rarely dropped.
+- **EXP-55** (ready, spawned 2026-10-14 by EXP-54) — where #197's rule has answered rows to remove: demonstrations at EVERY
+  guided decision (not only after mistakes), every-row vs `learning_surprise=True`, know-4 vs random-label teachers, on the
+  weather chamber at 40/120/240 attempts, per-state accuracy on unseen weather, 24 students per length, at the #197 head
+  (`~/_cadence_197`) or on main if #197 has merged. Pre-register: log the agreed-share first (pilot) per EXP-54's lesson.
+  Content under the gene is both the content-carrying channel Noesis-lite v2 needs and the reading #197 asks for.
