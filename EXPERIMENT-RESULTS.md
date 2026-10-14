@@ -12,7 +12,7 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 
 ## EXP-56 — on an ambiguous chain, do misses wash the memory that matters out of Cadence's context? — 2026-10-14
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-56_ambiguous_chain_trace.py`. Huncho's V7.2 A/B/A/B chain on our V5 chamber; place / ctx .5 / ctx .8 / ctx .5 with misses held out; natural + corrective; 24 seeds.
-- **Insight:** context beats place (sampled +.30; clean greedy 5/48 vs 0/48, on V7.2's 11/100 vs 0/100). Holding misses out does not help recovery after a miss (+.01), so the erosion idea is refuted; it raised first tries (+.10) and clean greedy passes 17/48 vs 5/48 (post-hoc, confirmed in EXP-57). Slower fade (.8) is worse.
+- **Insight:** context beats place (sampled +.30; clean greedy 5/48 vs 0/48, on V7.2's 11/100 vs 0/100). Holding misses out did not help recovery after a miss on these seeds (+.01; on fresh seeds in EXP-57 it did, +.13, less than at first try), so the predicted after-miss concentration failed; it raised first tries (+.10) and clean greedy passes 17/48 vs 5/48 (post-hoc, confirmed in EXP-57). Slower fade (.8) is worse.
 - **Verdict: NULL (1/4).** Detail: experiments/EXP-56.md.
 
 ## EXP-55 — demonstrations at every decision, with and without upstream's surprise rule (PR #197) — 2026-10-14

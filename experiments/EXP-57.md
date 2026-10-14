@@ -24,6 +24,7 @@
   | 240, corrective | 24 | 11 vs 7 | 8 / 4 (p .39) | +.104 (.047) | .876 vs .775 (+.102, .097) |
   | **240, pooled** | 48 | **23 vs 9** | **19 / 5 (p .007)** | +.139 (.039) | .798 vs .640 (+.158, .074) |
 
+  Accuracy after a miss (P(right | r >= 1)), hold5 - ctx5: +.130 (SEM .025) at 120, +.097 (.045) at 240; at the first try +.174 and +.139. So hold helps both, more at the first try; EXP-56's flat after-miss reading (+.009) was that seed set.
   P1 HELD (36 vs 2 discordant pairs, p < .0001). P2 HELD (+.174, 7 SEM). P3 FAILED: sampled success did not stay flat, it rose +.252 (5.6 SEM); EXP-56's +.019 on its 48 pairs now looks like that seed set's luck (pooled over both experiments, 144 pairs, the sampled gain is about +.17). P4 HELD (19 vs 5, p = .007 at 240).
 - Verdict: SUPPORTIVE, 3 of 4. On fresh seeds, keeping decisions that left the observation unchanged out of the temporal context takes clean greedy passes of the ambiguous chain from 4% to 40% at 120 attempts (60% with corrections), raises first-try accuracy by .17, and keeps a lead at 240 attempts. A clean pass never fires the rule, so the gain is in what training stored. Decision rule: P1 held, so the reply to the group carries these numbers.
 

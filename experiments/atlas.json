@@ -2148,7 +2148,7 @@
   "track": "memory",
   "verdict": "NULL",
   "verdict_note": "24 seeds per arm and signal, paired; pre-registered, mechanical check and pilot read first; 1 of 4 held (the replication); one post-hoc reading declared; our rebuild of Huncho's V7.2 chamber, 120 attempts",
-  "headline": "Cadence 0.83's temporal context beats place-only memory on an A/B/A/B chain with identical observations (sampled success .63 vs .33; clean greedy passes 5/48 vs 0/48, matching V7.2's 11/100 vs 0/100). Keeping misses out of the context did not help recovery after a miss, so the erosion idea is refuted; it did change first tries, and clean greedy passes went from 5 to 17 of 48, a post-hoc reading now under confirmation (EXP-57).",
+  "headline": "Cadence 0.83's temporal context beats place-only memory on an A/B/A/B chain with identical observations (sampled success .63 vs .33; clean greedy passes 5/48 vs 0/48, matching V7.2's 11/100 vs 0/100). Keeping misses out of the context did not concentrate its gain after misses as predicted; on these seeds it changed first tries, and clean greedy passes went from 5 to 17 of 48, a post-hoc reading confirmed in EXP-57 (where it also helped after misses, less than at first try).",
   "question": "Is the fixed fading context weak on ambiguous sequences because every miss pushes the one decision that tells the two visits apart further back in the trace?",
   "process_issues": [
    "one reading (retry repeats the miss) added after the pilot and declared; full run reran all seeds"
@@ -2176,7 +2176,7 @@
     }
    ]
   },
-  "quote_worthy": "The trace survived the misses fine; what moved was where training put the memories."
+  "quote_worthy": "The gain from keeping misses out showed up at the first try, not where I predicted it, after the misses."
  },
  {
   "id": "EXP-57",
