@@ -1,0 +1,12 @@
+EXP-58: 6 students to go (0 done); lengths [40, 120]
+  _, teaching = self.learner.step(drive, labels)
+  L 40 st0: know4 0.69 random 0.38 untaught 0.44 content +0.31 (15.0s)
+  L120 st0: know4 1.00 random 0.56 untaught 0.69 content +0.44 (26.7s)
+  L 40 st1: know4 0.69 random 0.50 untaught 0.56 content +0.19 (12.4s)
+  L 40 st2: know4 0.75 random 0.50 untaught 0.56 content +0.25 (13.0s)
+  L120 st1: know4 1.00 random 0.62 untaught 0.75 content +0.38 (29.0s)
+  L120 st2: know4 1.00 random 0.50 untaught 0.50 content +0.50 (29.0s)
+
+EXP-58 summary: 3 students per length (70s); per-state accuracy on unseen weather
+  lesson  40 n= 3  know-4 0.708  random 0.458  untaught 0.521 | content +0.250 (SEM 0.036) | know-4 - untaught +0.188 (SEM 0.036) | random - untaught -0.062 (SEM 0.000)
+  lesson 120 n= 3  know-4 1.000  random 0.562  untaught 0.646 | content +0.438 (SEM 0.036) | know-4 - untaught +0.354 (SEM 0.075) | random - untaught -0.083 (SEM 0.042)

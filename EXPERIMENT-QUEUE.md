@@ -56,10 +56,15 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-56** (DONE 2026-10-14: NULL 1/4; spawned by the group thread, Huncho V7.2) — ambiguous A/B/A/B chain: context vs place
   replicates; misses-held-out does not help recovery; post-hoc clean greedy 17/48 vs 5/48.
 - **EXP-57** (DONE 2026-10-14: SUPPORTIVE 3/4) — confirmatory, fresh seeds: clean greedy 38/96 vs 4/96 at 120, 23 vs 9 of 48 at 240.
-- **EXP-58** (ready, spawned 2026-10-14 by EXP-53/54/55) — a content channel off `step(teacher=...)`: settled `fit()`-style lessons
+- **EXP-58** (DONE 2026-10-14: SUPPORTIVE 3/3, content +.47 at 120 on the delayed-credit brain; spawned 2026-10-14 by EXP-53/54/55) — a content channel off `step(teacher=...)`: settled `fit()`-style lessons
   between lives, or EXP-45's delayed-credit brain, know-4 vs random-label teachers, per-state accuracy on unseen weather.
   Gate for Noesis-lite v2 (nothing to price until some channel carries content).
 - **EXP-59** (RUNNING 2026-10-14, pre-registered: invisible correct WOOD, A/A/B/C; spawned 2026-10-14 by EXP-57) — the boundary of the hold rule: a chamber where an unchanged observation
   still carries information (a wait-then-act timer, or a stage that needs two identical actions), hold vs plain context.
   The rule should break there; measure how badly, before proposing it upstream as an opt-in gene.
 - **EXP-60** (DONE 2026-10-14: SUPPORTIVE 3/3) — hold rule on the visible-inventory chain: 75 vs 75 clean passes; gain is specific to hidden progress.
+- **EXP-61** (ready, spawned 2026-10-14 by EXP-58) — split EXP-58's confound: the DEFAULT memory brain with EXP-58's exact
+  protocol (alone phase through `step`, no labels), know-4 vs random vs untaught, 40 and 120 attempts, 24 students. Content
+  still ~0 -> the operating point blocks content; content appears -> `live` after teaching was washing it out.
+- **EXP-62** (ready, spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
+  random / wrong-chain / echo fakes, pay = worth against the random-label null twin), now that content gets through.

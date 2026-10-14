@@ -12,4 +12,20 @@
   - (P2) Know-4 teaching beats no teacher at 120 by more than 2 SEM.
   - (P3) Random labels give this brain no lift: random minus untaught at 120 is below +.05 (on the default brain, being corrected at all was worth +.25 at 40, EXP-53).
 - Decision rule (written before the pilot): P1 holds -> content does get through `step(teacher=...)` on the right brain; the default brain's operating point is what blocks it, and Noesis-lite v2 runs on this brain against the random-label null. P1 fails -> neither brain takes in content through this path; the next channel is settled `fit()`-style lessons.
-- Result: (pending)
+- Pilot (3 students per length, `exp/EXP-58-pilot.out`), read before the full run: content +.25 at 40 and +.44 at 120, positive for every pilot student; random labels slightly below untaught (-.06, -.08); untaught .52 and .65, not at ceiling, so the lengths stay; know-4 reaches 1.00 at 120 (a ceiling on that arm, content still readable). No design change; the full run reuses the pilot rows.
+- Result (24 students per length, paired twins; per-state accuracy on unseen weather after 20 attempts alone; `exp/EXP-58-full.*`):
+
+  | lesson | know-4 | random labels | untaught | content = know-4 - random (SEM) | know-4 - untaught (SEM) | random - untaught (SEM) |
+  |---|---|---|---|---|---|---|
+  | 40 | .635 | .443 | .458 | +.193 (.033) | +.177 (.030) | -.016 (.035) |
+  | 120 | .932 | .464 | .542 | +.469 (.041) | +.391 (.041) | -.078 (.032) |
+
+  P1 HELD (content +.469 at 120, 11 SEM). P2 HELD (know-4 beats untaught by +.391, 9.5 SEM). P3 HELD (random labels give no lift: -.078).
+- Verdict: SUPPORTIVE, 3 of 3. On the delayed-credit brain, what a teacher says reaches the student through `step(teacher=...)`: a right-answer teacher takes it to .93 per-state accuracy on weather it never saw, and a random-label teacher is worth nothing (slightly below no teacher). This is the first channel in the series (EXP-52 to 58) with measurable content. Decision rule: P1 held, so Noesis-lite v2 runs on this brain against the random-label null.
+- Confound, stated: two things differ from EXP-53, the brain's operating point and the 20 attempts alone (through `step`, because this brain has no arousal genes for `live`). The content difference is measured within this setup and stands; attributing the default brain's failure to its operating point rather than to `live` needs EXP-61 (the default brain with the alone phase through `step`).
+
+## Reflection
+- What it means: the four nulls before this (EXP-52 to 55) were not "teaching through labels cannot carry content in Cadence"; on a slower-actor, strong-critic brain without episodic memory, it carries a lot. That fits EXP-45 (the same brain learned the Stone Age chain from every signal while the default brain learned from none) and EXP-55's side check (on the default brain, behaviour follows the episodic vote, not the cortex the labels teach). For Noesis-lite: there is finally something to price, and a market can now be tested against the form-matched random-label null on this brain.
+- Process: pre-registered; a smoke test (not a pilot) surfaced that `live` needs arousal genes, and the protocol was amended before any data and the amendment recorded; pilot read before the full run; ran beside EXP-59 on the remaining cores. Limits: one chamber, the corrective schedule only, 24 students per length, the know-4 arm near ceiling at 120 (.93), and the confound above.
+- Lesson: when one setup returns null after null, change the thing the setup holds fixed (here the brain) before concluding the channel is empty; one operating point is not the library.
+- Next: EXP-61 (default brain, alone phase through `step`) to split the confound; then Noesis-lite v2 on this brain.

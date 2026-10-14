@@ -2277,5 +2277,42 @@
    ]
   },
   "quote_worthy": "When the brain can see how far it has got, it does not need to remember, and the rule has nothing to fix."
+ },
+ {
+  "id": "EXP-58",
+  "name": "A teacher's content finally gets through: the delayed-credit brain",
+  "date": "2026-10-14",
+  "iter": "none",
+  "track": "teaching game",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "24 students per lesson length, paired twins; pre-registered (amended before any data: alone phase through step), pilot read first; 3 of 3 held; confound with the alone-phase path stated, EXP-61 splits it",
+  "headline": "On EXP-45's delayed-credit brain, a right-answer teacher takes the student to .93 per-state accuracy on unseen weather at 120 attempts, a random-label teacher to .46 (content +.47, 11 SEM), and random labels are worth nothing. After four nulls on the default memory brain, this is the first teaching channel that carries content, so a Noesis-lite market finally has something to price.",
+  "question": "Is the missing content in EXP-52 to 55 a property of teaching through step(teacher=...), or of the default brain?",
+  "process_issues": [
+   "none"
+  ],
+  "lesson": "When one setup returns null after null, change the thing it holds fixed before concluding the channel is empty; one operating point is not the library.",
+  "chart": {
+   "title": "Content (right-answer minus random-label teacher), 24 students per length",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "default memory brain, 120 attempts (EXP-53)",
+     "value": 0.107,
+     "sem": 0.064
+    },
+    {
+     "label": "delayed-credit brain, 40 attempts",
+     "value": 0.193,
+     "sem": 0.033
+    },
+    {
+     "label": "delayed-credit brain, 120 attempts",
+     "value": 0.469,
+     "sem": 0.041
+    }
+   ]
+  },
+  "quote_worthy": "Four nulls said labels carry no content; the fifth brain said they carry almost all of it."
  }
 ]
