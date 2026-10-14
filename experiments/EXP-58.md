@@ -1,0 +1,15 @@
+# EXP-58: does the delayed-credit brain take in what a teacher says, where the default memory brain does not?
+
+- Date: 2026-10-14 | Cadence version: 0.83.0 (`23dba71`, `~/_cadence_study`) | Program iter: none (teaching track; Noesis-lite gate: no channel has carried content so far)
+- Script: `exp/EXP-58_content_delayed_credit_brain.py` (EXP-53's chamber, protocol, seeds and readings; EXP-45's delayed-credit brain) | Evidence: `exp/EXP-58-pilot.*`, `exp/EXP-58-full.json/.jsonl/.out`
+
+## Summary
+- Question: in EXP-52, 53, 54 and 55, a teacher that always gives the right action was worth no more than one giving random labels (after mistakes, at every decision, with and without upstream's surprise rule), on the default composed brain with episodic memory. EXP-45 found a second operating point, the key-door protocol-3 "delayed-credit" brain (actor step .1, bias step .01, lam .95, gamma .95, critic rate 5, modules (32,), working-memory amplitude .3, consolidation .25, no arousal, no episodic memory), that learned the Stone Age chain from every signal. Is the missing content a property of teaching through `step(teacher=...)`, or of the default brain?
+- Setup: EXP-53 exactly (EXP-48's weather chamber, V5's corrective schedule: the label after an executed mistake in a guided window, 20 attempts alone, per-state greedy accuracy on unseen weather, EXP-53's student seeds and world draws), with EXP-45's delayed-credit brain built for 10 inputs. Amended before any run: this brain has no arousal genes and Cadence's `live` requires them, so the 20 attempts alone run through `step` with world reward only and no labels (the smoke test, not a pilot, surfaced this). Twins per student: know-4 (right action), random labels, untaught. Lesson lengths 40 and 120 attempts, 24 students per length.
+- RUN GATE: (1) prediction below, written before the pilot. (2) Window: a pilot of 3 students per length at exact run conditions; if the untaught twin already sits at ceiling (per-state > .9 at 40), lengths drop to 20 and 40. (3) Variance: paired twins share seed and world draws. (4) Metric: content = know-4 minus random, paired. (5) Chain: slower actor and strong critic -> a label nudges the policy toward its content instead of just perturbing it -> know-4 above random.
+- Prediction (written before the pilot):
+  - (P1, headline) The delayed-credit brain takes in content: at 120 attempts, know-4 minus random is >= .10 and more than 2 SEM.
+  - (P2) Know-4 teaching beats no teacher at 120 by more than 2 SEM.
+  - (P3) Random labels give this brain no lift: random minus untaught at 120 is below +.05 (on the default brain, being corrected at all was worth +.25 at 40, EXP-53).
+- Decision rule (written before the pilot): P1 holds -> content does get through `step(teacher=...)` on the right brain; the default brain's operating point is what blocks it, and Noesis-lite v2 runs on this brain against the random-label null. P1 fails -> neither brain takes in content through this path; the next channel is settled `fit()`-style lessons.
+- Result: (pending)
