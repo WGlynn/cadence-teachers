@@ -5,6 +5,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
 
+## EXP-63 — key the hold on the outcome: the gain stays, the invisible-action break goes — 2026-10-15
+- **Version:** Cadence v0.83.0 `6499e56` (stored EXP-57/59/60 rows recompute identically at this head). **Script:** `exp/EXP-63_outcome_gate.py`. ctx5 / hold5 (observation gate) / out5 (outcome gate: hold only decisions the chamber answered as failures) on the invisible-action chain (48 fresh seeds per signal), ctx5 / out5 on the hidden and visible chains (24 per signal); 120 attempts (pilot-fixed).
+- **Insight:** invisible chain clean greedy passes out5 19 vs ctx5 5 vs hold5 1 of 96 (out5-only 18 / ctx5-only 4, p .004), stage-2 first try +.068 vs ctx5 and +.216 vs hold5 (EXP-59's -.15 replicates for hold5); hidden 17 vs 4 of 48 (p .001); visible 37 vs 34 (neutral). All invisible-chain clean passes came with corrections. The outcome is an oracle here: neither observation nor reward tells a miss from the invisible WOOD, so a gene keyed this way needs a failure input `step()` does not take.
+- **Verdict: SUPPORTIVE (5/5; CONFIRMED).** Comment drafted for upstream #202 (Will posts). Detail: experiments/EXP-63.md.
+
 ## EXP-61 — it was the brain: the default memory brain blocks a teacher's content — 2026-10-14
 - **Version:** Cadence v0.83.0 `23dba71`. **Script:** `exp/EXP-61_default_brain_step_alone.py`. EXP-58's protocol (alone phase through step) with EXP-53's default memory brain; know-4 vs random vs untaught, 24 students at 40 and 120, EXP-53's seeds.
 - **Insight:** content -.049 (SEM .085) at 40, +.016 (.066) at 120, against +.469 on the delayed-credit brain (EXP-58); every arm within ~.06 of EXP-53, so the step-vs-live alone path is not what hid content. Being corrected at all still +.268 at 40.

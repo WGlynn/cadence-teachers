@@ -2385,5 +2385,39 @@
    ]
   },
   "quote_worthy": "Change the path and nothing moves; change the brain and the teacher is heard."
+ },
+ {
+  "id": "EXP-63",
+  "name": "Key the hold on the outcome: the gain stays, the invisible-action break goes",
+  "date": "2026-10-15",
+  "iter": "none",
+  "track": "memory",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "pre-registered (514e510) before check, pilot and full run; fresh seeds; 5 of 5 held; 96 pairs on the invisible chain, 48 on the hidden and visible chains; the outcome is read from the chamber as an oracle",
+  "headline": "Holding out of the context key only the decisions the world answered as failures keeps EXP-57's gain where progress is hidden (17 vs 4 clean greedy passes of 48), stays neutral where it is visible (37 vs 34), and turns EXP-59's break into a gain where a correct action is invisible: 19 vs 5 clean passes of 96 against the plain context (p .004), and the step after the invisible action no longer drops (+.07 instead of -.15). The catch: nothing Cadence receives here tells a miss from the invisible success, so a library gene keyed this way needs a failure signal from the world.",
+  "question": "Does a gate keyed on the outcome (hold only failed decisions) keep the hold rule's gain and remove its invisible-action break?",
+  "process_issues": [
+   "one unpredicted cell (visible chain, corrective, stage-1 first try -.11, 3 SEM) not seen on EXP-60's 48 seeds for the identical rule; recorded, not claimed"
+  ],
+  "lesson": "When a rule's trigger is a proxy for the property that matters, run it keyed on the property itself, even through an oracle: it separates a wrong idea from a wrong proxy and names the signal a real implementation needs.",
+  "chart": {
+   "title": "Clean greedy passes of 96 on the invisible-action chain (A, A, B, C), 120 attempts",
+   "unit": "count",
+   "bars": [
+    {
+     "label": "context .5 (founder key)",
+     "value": 5
+    },
+    {
+     "label": "unchanged-observation decisions held out",
+     "value": 1
+    },
+    {
+     "label": "failed decisions held out",
+     "value": 19
+    }
+   ]
+  },
+  "quote_worthy": "The idea held; the proxy broke."
  }
 ]

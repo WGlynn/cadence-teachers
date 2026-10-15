@@ -68,5 +68,18 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   still ~0 -> the operating point blocks content; content appears -> `live` after teaching was washing it out.
 - **EXP-62** (ready, spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
   random / wrong-chain / echo fakes, pay = worth against the random-label null twin), now that content gets through.
-- **EXP-63** (ready, spawned 2026-10-14 by EXP-59) — an outcome-keyed gate: hold only decisions the world answered as failures
+- **EXP-63** (DONE 2026-10-15: SUPPORTIVE 5/5, invisible chain clean passes 19 vs 5 of 96 vs the plain context, stage-2 no
+  longer drops; hidden 17 vs 4 of 48; visible neutral; outcome read as an oracle; spawned 2026-10-14 by EXP-59) — an outcome-keyed gate: hold only decisions the world answered as failures
   (not merely unchanged observations), on the hidden (EXP-57), visible (EXP-60) and invisible-step (EXP-59) chambers.
+  Upstream hook (monitor 2026-10-15): Bernhard opened #202 proposing the hold rule as an opt-in gene, citing EXP-57/59;
+  its gate includes "the invisible-action boundary measured and reported", so EXP-63's result is a direct #202 comment.
+- **EXP-64** (candidate, not pre-registered; spawned 2026-10-15 by the monitor from upstream #198) — #198 proposes the composed
+  founder's actor step 1.0 -> 0.1 (bias 0.05 -> 0.01) because the readout saturates in reward chambers. EXP-58/61 found content
+  on the delayed-credit brain (actor .1, critic 5, no arousal, no memory) and none on the default memory brain, but several genes
+  differ. Isolate: EXP-61's exact protocol on the default memory brain with ONLY `actor_eta=0.1, actor_eta_bias=0.01`. Content
+  appears -> an outside reading for #198's Stone Age gate; still ~0 -> the block is elsewhere (critic, arousal, or the vote).
+- **EXP-65** (ready, spawned 2026-10-15 by EXP-63) — EXP-63's outcome gate read the chamber's success flag as an oracle; nothing
+  Cadence receives in that chamber tells a miss from the invisible WOOD. Key the gate on signals the brain does have, on the
+  invisible-action chain with out5 as the ceiling and ctx5 / hold5 as floors: (a) the corrective teacher's label (a label after a
+  guided decision marks it a miss; guided decisions only), (b) the brain's own forecast error at the decision (critic / TD sign).
+  Tells #202 whether an outcome-keyed gene can run without a new input from the world.

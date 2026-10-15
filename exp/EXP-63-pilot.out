@@ -1,0 +1,121 @@
+EXP-63 pilot: 72 lives to go (0 done); plan [('invisible', ('ctx5', 'hold5', 'out5'), 120, 6, 63500), ('invisible', ('ctx5', 'hold5', 'out5'), 240, 6, 63500)]; workers 2
+  invisible ctx5  natural    ep120 s 0: exact 0 sampled 0.00 first-try 0.12 0.05 0.00   -  (13.6s)
+  invisible hold5 natural    ep120 s 0: exact 0 sampled 0.01 first-try 0.05 0.00 0.00 1.00 (14.1s)
+  invisible out5  natural    ep120 s 0: exact 0 sampled 0.33 first-try 0.07 0.95 1.00 1.00 (11.8s)
+  invisible ctx5  corrective ep120 s 0: exact 0 sampled 0.99 first-try 0.25 0.85 0.99 1.00 (12.4s)
+  invisible out5  corrective ep120 s 0: exact 0 sampled 0.98 first-try 0.34 0.88 1.00 1.00 (11.5s)
+  invisible hold5 corrective ep120 s 0: exact 0 sampled 0.43 first-try 0.05 0.82 0.90 1.00 (13.7s)
+  invisible ctx5  natural    ep120 s 1: exact 0 sampled 0.01 first-try 0.10 0.02 0.11 1.00 (12.4s)
+  invisible hold5 natural    ep120 s 1: exact 0 sampled 0.14 first-try 0.00 0.94 1.00 1.00 (12.5s)
+  invisible ctx5  corrective ep120 s 1: exact 0 sampled 0.68 first-try 0.03 0.89 0.97 1.00 (13.4s)
+  invisible out5  natural    ep120 s 1: exact 0 sampled 0.54 first-try 0.08 0.84 0.98 0.96 (14.9s)
+  invisible hold5 corrective ep120 s 1: exact 0 sampled 0.38 first-try 0.03 0.93 1.00 1.00 (11.5s)
+  invisible out5  corrective ep120 s 1: exact 1 sampled 0.95 first-try 0.88 0.86 0.85 1.00 (11.6s)
+  invisible ctx5  natural    ep120 s 2: exact 0 sampled 0.00 first-try 0.00 0.71 0.00   -  (12.7s)
+  invisible hold5 natural    ep120 s 2: exact 0 sampled 0.09 first-try 0.05 0.07 0.26 1.00 (12.3s)
+  invisible out5  natural    ep120 s 2: exact 0 sampled 0.39 first-try 0.13 0.29 0.50 1.00 (12.2s)
+  invisible ctx5  corrective ep120 s 2: exact 0 sampled 0.33 first-try 0.06 0.57 1.00 1.00 (13.2s)
+C:\Users\Will/_cadence_study/src\cadence\generic.py:1550: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  invisible hold5 corrective ep120 s 2: exact 0 sampled 0.70 first-try 0.16 0.78 0.80 1.00 (12.6s)
+  invisible out5  corrective ep120 s 2: exact 0 sampled 0.84 first-try 0.26 0.93 0.96 1.00 (14.1s)
+  invisible ctx5  natural    ep120 s 3: exact 0 sampled 0.15 first-try 0.06 0.16 0.32 1.00 (13.3s)
+  invisible hold5 natural    ep120 s 3: exact 0 sampled 0.02 first-try 0.03 0.00 0.50 1.00 (13.0s)
+  invisible out5  natural    ep120 s 3: exact 0 sampled 0.03 first-try 0.01 0.43 0.50 1.00 (12.1s)
+  invisible ctx5  corrective ep120 s 3: exact 0 sampled 0.26 first-try 0.49 0.66 0.10 1.00 (14.1s)
+C:\Users\Will/_cadence_study/src\cadence\generic.py:1550: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  invisible hold5 corrective ep120 s 3: exact 0 sampled 0.01 first-try 0.70 0.46 0.00 1.00 (15.0s)
+  invisible out5  corrective ep120 s 3: exact 1 sampled 0.97 first-try 0.62 0.90 0.99 0.99 (11.2s)
+  invisible ctx5  natural    ep120 s 4: exact 0 sampled 0.04 first-try 0.08 0.07 1.00 1.00 (13.9s)
+  invisible hold5 natural    ep120 s 4: exact 0 sampled 0.08 first-try 0.09 0.06 0.54 1.00 (14.0s)
+  invisible out5  natural    ep120 s 4: exact 0 sampled 0.52 first-try 0.09 0.91 0.98 0.98 (13.8s)
+  invisible ctx5  corrective ep120 s 4: exact 0 sampled 0.68 first-try 0.14 0.89 0.99 0.99 (13.7s)
+  invisible hold5 corrective ep120 s 4: exact 0 sampled 0.96 first-try 0.42 0.44 0.97 1.00 (12.8s)
+  invisible out5  corrective ep120 s 4: exact 0 sampled 0.45 first-try 0.08 0.39 1.00 0.98 (12.6s)
+  invisible ctx5  natural    ep120 s 5: exact 0 sampled 0.03 first-try 0.00 1.00 1.00 1.00 (12.7s)
+  invisible hold5 natural    ep120 s 5: exact 0 sampled 0.12 first-try 0.62 0.01 1.00 0.31 (12.7s)
+  invisible ctx5  corrective ep120 s 5: exact 1 sampled 1.00 first-try 0.47 0.85 0.96 0.99 (12.5s)
+  invisible out5  natural    ep120 s 5: exact 0 sampled 0.16 first-try 0.02 1.00 0.82 1.00 (13.5s)
+  invisible out5  corrective ep120 s 5: exact 1 sampled 0.99 first-try 0.68 0.95 0.96 1.00 (10.7s)
+  invisible hold5 corrective ep120 s 5: exact 0 sampled 0.07 first-try 0.92 0.03 0.88 1.00 (12.9s)
+  invisible ctx5  natural    ep240 s 0: exact 0 sampled 0.00 first-try 0.03 0.06 0.00   -  (20.9s)
+  invisible hold5 natural    ep240 s 0: exact 0 sampled 0.00 first-try 0.02 0.07 0.00   -  (21.5s)
+  invisible out5  natural    ep240 s 0: exact 0 sampled 0.60 first-try 0.26 0.22 1.00 1.00 (18.4s)
+  invisible ctx5  corrective ep240 s 0: exact 0 sampled 0.89 first-try 0.12 0.97 1.00 1.00 (20.3s)
+  invisible out5  corrective ep240 s 0: exact 0 sampled 0.98 first-try 0.47 0.94 1.00 1.00 (17.0s)
+  invisible hold5 corrective ep240 s 0: exact 0 sampled 0.05 first-try 0.76 0.01 1.00 1.00 (21.3s)
+  invisible hold5 natural    ep240 s 1: exact 0 sampled 0.48 first-try 0.26 0.16 0.94 1.00 (18.2s)
+  invisible ctx5  natural    ep240 s 1: exact 0 sampled 0.14 first-try 0.09 0.09 1.00 1.00 (20.1s)
+  invisible out5  natural    ep240 s 1: exact 0 sampled 0.04 first-try 0.20 0.49 0.01 1.00 (22.3s)
+  invisible ctx5  corrective ep240 s 1: exact 0 sampled 0.83 first-try 0.10 0.95 0.94 1.00 (22.5s)
+  invisible hold5 corrective ep240 s 1: exact 0 sampled 0.87 first-try 0.25 0.74 1.00 1.00 (18.6s)
+  invisible out5  corrective ep240 s 1: exact 1 sampled 0.96 first-try 0.88 0.88 0.88 1.00 (17.1s)
+  invisible hold5 natural    ep240 s 2: exact 0 sampled 0.15 first-try 0.10 0.17 0.60 1.00 (19.3s)
+  invisible ctx5  natural    ep240 s 2: exact 0 sampled 0.50 first-try 0.03 0.98 0.96 1.00 (21.0s)
+  invisible out5  natural    ep240 s 2: exact 0 sampled 0.21 first-try 0.04 0.92 1.00 1.00 (18.2s)
+  invisible ctx5  corrective ep240 s 2: exact 0 sampled 0.88 first-try 0.11 0.98 0.99 1.00 (21.6s)
+  invisible hold5 corrective ep240 s 2: exact 0 sampled 0.67 first-try 0.13 0.88 1.00 1.00 (21.9s)
+  invisible out5  corrective ep240 s 2: exact 1 sampled 0.97 first-try 0.94 0.84 1.00 0.99 (20.0s)
+  invisible ctx5  natural    ep240 s 3: exact 0 sampled 0.09 first-try 0.08 0.06 0.31 1.00 (20.4s)
+  invisible hold5 natural    ep240 s 3: exact 0 sampled 0.04 first-try 0.01 0.15 0.67 1.00 (20.6s)
+  invisible out5  natural    ep240 s 3: exact 0 sampled 0.14 first-try 0.07 0.24 0.56 1.00 (19.0s)
+  invisible ctx5  corrective ep240 s 3: exact 0 sampled 1.00 first-try 0.38 0.80 1.00 1.00 (19.1s)
+  invisible hold5 corrective ep240 s 3: exact 1 sampled 1.00 first-try 0.82 0.98 1.00 1.00 (19.1s)
+  invisible out5  corrective ep240 s 3: exact 1 sampled 0.91 first-try 0.73 0.94 0.88 1.00 (18.5s)
+  invisible ctx5  natural    ep240 s 4: exact 0 sampled 0.23 first-try 0.06 0.21 0.89 1.00 (19.7s)
+  invisible hold5 natural    ep240 s 4: exact 0 sampled 0.05 first-try 0.02 0.67 0.60 1.00 (22.8s)
+  invisible out5  natural    ep240 s 4: exact 0 sampled 0.75 first-try 0.14 0.98 0.99 1.00 (16.6s)
+  invisible ctx5  corrective ep240 s 4: exact 0 sampled 0.96 first-try 0.33 0.87 1.00 0.96 (20.3s)
+  invisible hold5 corrective ep240 s 4: exact 1 sampled 0.82 first-try 0.79 0.87 0.93 1.00 (18.4s)
+  invisible out5  corrective ep240 s 4: exact 0 sampled 0.41 first-try 0.59 0.90 0.10 1.00 (20.9s)
+  invisible ctx5  natural    ep240 s 5: exact 0 sampled 0.85 first-try 0.20 0.82 0.84 0.99 (18.0s)
+  invisible hold5 natural    ep240 s 5: exact 0 sampled 0.11 first-try 0.01 1.00 1.00 0.73 (19.8s)
+  invisible out5  natural    ep240 s 5: exact 0 sampled 0.28 first-try 0.07 0.59 0.80 1.00 (19.9s)
+  invisible ctx5  corrective ep240 s 5: exact 0 sampled 0.84 first-try 0.18 0.94 1.00 0.79 (21.7s)
+  invisible hold5 corrective ep240 s 5: exact 0 sampled 0.24 first-try 0.02 0.73 1.00 0.96 (20.6s)
+  invisible out5  corrective ep240 s 5: exact 1 sampled 1.00 first-try 0.93 0.85 0.98 1.00 (15.4s)
+
+EXP-63 pilot summary (593s)
+  [invisible ep120 natural] clean greedy ctx5 0  hold5 0  out5 0 | sampled ctx5 0.038  hold5 0.077  out5 0.328
+      first try by stage ctx5 : 0.06 0.34 0.41 1.00
+      first try by stage hold5: 0.14 0.18 0.55 0.89
+      first try by stage out5 : 0.07 0.74 0.80 0.99
+      out5-ctx5  n=  6 clean out5-only 0 / ctx5-only 0 (p 1.0000) | first try s1 +0.007 (0.027)  s2 +0.401 (0.222)  s3 +0.392 (0.196)  s4 -0.014 (0.009) | all first tries +0.323 (0.100) | sampled +0.290 (0.100)
+      out5-hold5 n=  6 clean out5-only 0 / hold5-only 0 (p 1.0000) | first try s1 -0.073 (0.107)  s2 +0.556 (0.182)  s3 +0.248 (0.175)  s4 +0.105 (0.117) | all first tries +0.259 (0.091) | sampled +0.252 (0.075)
+      hold5-ctx5 n=  6 clean hold5-only 0 / ctx5-only 0 (p 1.0000) | first try s1 +0.080 (0.110)  s2 -0.155 (0.265)  s3 +0.145 (0.181)  s4 -0.172 (0.172) | all first tries +0.064 (0.067) | sampled +0.038 (0.038)
+  [invisible ep120 corrective] clean greedy ctx5 1  hold5 0  out5 3 | sampled ctx5 0.657  hold5 0.425  out5 0.863
+      first try by stage ctx5 : 0.24 0.78 0.84 1.00
+      first try by stage hold5: 0.38 0.58 0.76 1.00
+      first try by stage out5 : 0.48 0.82 0.96 0.99
+      out5-ctx5  n=  6 clean out5-only 2 / ctx5-only 0 (p 0.5000) | first try s1 +0.237 (0.129)  s2 +0.035 (0.122)  s3 +0.125 (0.154)  s4 -0.001 (0.003) | all first tries +0.140 (0.089) | sampled +0.207 (0.145)
+      out5-hold5 n=  6 clean out5-only 3 / hold5-only 0 (p 0.2500) | first try s1 +0.097 (0.177)  s2 +0.243 (0.155)  s3 +0.202 (0.163)  s4 -0.005 (0.004) | all first tries +0.230 (0.103) | sampled +0.438 (0.225)
+      hold5-ctx5 n=  6 clean hold5-only 0 / ctx5-only 1 (p 1.0000) | first try s1 +0.140 (0.093)  s2 -0.209 (0.152)  s3 -0.077 (0.032)  s4 +0.004 (0.003) | all first tries -0.090 (0.068) | sampled -0.232 (0.202)
+  [invisible ep120 pooled] clean greedy ctx5 1  hold5 0  out5 3 | sampled ctx5 0.347  hold5 0.251  out5 0.596
+      first try by stage ctx5 : 0.15 0.56 0.62 1.00
+      first try by stage hold5: 0.26 0.38 0.65 0.94
+      first try by stage out5 : 0.27 0.78 0.88 0.99
+      out5-ctx5  n= 12 clean out5-only 2 / ctx5-only 0 (p 0.5000) | first try s1 +0.122 (0.072)  s2 +0.218 (0.133)  s3 +0.259 (0.125)  s4 -0.006 (0.004) | all first tries +0.231 (0.070) | sampled +0.248 (0.085)
+      out5-hold5 n= 12 clean out5-only 3 / hold5-only 0 (p 0.2500) | first try s1 +0.012 (0.102)  s2 +0.400 (0.123)  s3 +0.225 (0.114)  s4 +0.050 (0.058) | all first tries +0.245 (0.066) | sampled +0.345 (0.117)
+      hold5-ctx5 n= 12 clean hold5-only 0 / ctx5-only 1 (p 1.0000) | first try s1 +0.110 (0.069)  s2 -0.182 (0.146)  s3 +0.034 (0.094)  s4 -0.066 (0.069) | all first tries -0.013 (0.051) | sampled -0.097 (0.106)
+  [invisible ep240 natural] clean greedy ctx5 0  hold5 0  out5 0 | sampled ctx5 0.302  hold5 0.138  out5 0.337
+      first try by stage ctx5 : 0.08 0.37 0.67 1.00
+      first try by stage hold5: 0.07 0.37 0.63 0.95
+      first try by stage out5 : 0.13 0.57 0.73 1.00
+      out5-ctx5  n=  6 clean out5-only 0 / ctx5-only 0 (p 1.0000) | first try s1 +0.048 (0.050)  s2 +0.204 (0.143)  s3 +0.059 (0.260)  s4 +0.002 (0.002) | all first tries +0.092 (0.131) | sampled +0.035 (0.187)
+      out5-hold5 n=  6 clean out5-only 0 / hold5-only 0 (p 1.0000) | first try s1 +0.060 (0.046)  s2 +0.205 (0.156)  s3 +0.091 (0.269)  s4 +0.055 (0.055) | all first tries +0.236 (0.122) | sampled +0.198 (0.168)
+      hold5-ctx5 n=  6 clean hold5-only 0 / ctx5-only 0 (p 1.0000) | first try s1 -0.012 (0.050)  s2 -0.001 (0.175)  s3 -0.033 (0.110)  s4 -0.052 (0.052) | all first tries -0.144 (0.105) | sampled -0.163 (0.148)
+  [invisible ep240 corrective] clean greedy ctx5 0  hold5 2  out5 4 | sampled ctx5 0.900  hold5 0.608  out5 0.872
+      first try by stage ctx5 : 0.20 0.92 0.99 0.96
+      first try by stage hold5: 0.46 0.70 0.99 0.99
+      first try by stage out5 : 0.76 0.89 0.81 1.00
+      out5-ctx5  n=  6 clean out5-only 4 / ctx5-only 0 (p 0.1250) | first try s1 +0.553 (0.106)  s2 -0.028 (0.040)  s3 -0.182 (0.145)  s4 +0.040 (0.035) | all first tries +0.097 (0.064) | sampled -0.028 (0.110)
+      out5-hold5 n=  6 clean out5-only 3 / hold5-only 1 (p 0.6250) | first try s1 +0.295 (0.223)  s2 +0.188 (0.152)  s3 -0.182 (0.131)  s4 +0.005 (0.007) | all first tries +0.173 (0.129) | sampled +0.263 (0.208)
+      hold5-ctx5 n=  6 clean hold5-only 2 / ctx5-only 0 (p 0.5000) | first try s1 +0.258 (0.124)  s2 -0.216 (0.160)  s3 -0.001 (0.017)  s4 +0.035 (0.027) | all first tries -0.076 (0.086) | sampled -0.292 (0.144)
+  [invisible ep240 pooled] clean greedy ctx5 0  hold5 2  out5 4 | sampled ctx5 0.601  hold5 0.373  out5 0.604
+      first try by stage ctx5 : 0.14 0.64 0.83 0.98
+      first try by stage hold5: 0.27 0.54 0.81 0.97
+      first try by stage out5 : 0.44 0.73 0.77 1.00
+      out5-ctx5  n= 12 clean out5-only 4 / ctx5-only 0 (p 0.1250) | first try s1 +0.301 (0.094)  s2 +0.088 (0.079)  s3 -0.062 (0.146)  s4 +0.023 (0.019) | all first tries +0.094 (0.070) | sampled +0.003 (0.104)
+      out5-hold5 n= 12 clean out5-only 3 / hold5-only 1 (p 0.6250) | first try s1 +0.177 (0.114)  s2 +0.197 (0.104)  s3 -0.045 (0.149)  s4 +0.028 (0.025) | all first tries +0.204 (0.085) | sampled +0.231 (0.128)
+      hold5-ctx5 n= 12 clean hold5-only 2 / ctx5-only 0 (p 0.5000) | first try s1 +0.123 (0.076)  s2 -0.108 (0.118)  s3 -0.017 (0.053)  s4 -0.005 (0.030) | all first tries -0.110 (0.066) | sampled -0.228 (0.100)

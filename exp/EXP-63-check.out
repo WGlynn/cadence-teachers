@@ -1,0 +1,11 @@
+EXP-63 check: cadence 0.83.0 from C:\Users\Will/_cadence_study/src\cadence
+  EXP-57 row (hidden, ctx5, natural, seed 57000) at 0.83.0 head identical to the stored 23dba71 row: True
+  EXP-57 row (hidden, hold5, corrective, seed 57000) at 0.83.0 head identical to the stored 23dba71 row: True
+  EXP-59 row (invisible, hold5, natural, seed 59000) at 0.83.0 head identical to the stored 23dba71 row: True
+  EXP-60 row (visible, ctx5, corrective, seed 60000) at 0.83.0 head identical to the stored 23dba71 row: True
+  hidden    natural   : out5 row identical to hold5 row: True (expected True)
+  hidden    corrective: out5 row identical to hold5 row: True (expected True)
+  visible   natural   : out5 row identical to hold5 row: True (expected True)
+  visible   corrective: out5 row identical to hold5 row: True (expected True)
+  invisible natural   : out5 row identical to hold5 row: False (expected False)
+check: PASS
