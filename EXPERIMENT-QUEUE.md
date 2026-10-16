@@ -78,8 +78,14 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   on the delayed-credit brain (actor .1, critic 5, no arousal, no memory) and none on the default memory brain, but several genes
   differ. Isolate: EXP-61's exact protocol on the default memory brain with ONLY `actor_eta=0.1, actor_eta_bias=0.01`. Content
   appears -> an outside reading for #198's Stone Age gate; still ~0 -> the block is elsewhere (critic, arousal, or the vote).
-- **EXP-65** (ready, spawned 2026-10-15 by EXP-63) — EXP-63's outcome gate read the chamber's success flag as an oracle; nothing
+- **EXP-65** (DONE 2026-10-16: BOUNDARY, label gate 9 vs 5 clean passes of 48 (p .39) vs oracle 19, never holds a correct move; forecast-error gate BLIND, AUC .525; spawned 2026-10-15 by EXP-63) — EXP-63's outcome gate read the chamber's success flag as an oracle; nothing
   Cadence receives in that chamber tells a miss from the invisible WOOD. Key the gate on signals the brain does have, on the
   invisible-action chain with out5 as the ceiling and ctx5 / hold5 as floors: (a) the corrective teacher's label (a label after a
   guided decision marks it a miss; guided decisions only), (b) the brain's own forecast error at the decision (critic / TD sign).
   Tells #202 whether an outcome-keyed gene can run without a new input from the world.
+- **EXP-66** (ready, spawned 2026-10-16 by EXP-65) — the smallest per-decision failure input through a channel Cadence already
+  has: a small negative reward on a failed action (natural signal; e.g. -0.05 per miss, size fixed by a pilot under the exact
+  run conditions so the penalty is visible but does not swamp the +2/-1 episode outcome), with the gate keyed on it (hold a
+  decision whose reward is negative). Arms on the invisible and hidden chains: ctx5 (no penalty), pen (penalty, no gate),
+  pen+gate, and out5t as the ceiling. Separates "the penalty teaches" from "the penalty keys the gate". Tells #202 whether the
+  failure input can be a reward convention rather than a new argument to step().

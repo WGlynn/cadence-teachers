@@ -2419,5 +2419,44 @@
    ]
   },
   "quote_worthy": "The idea held; the proxy broke."
+ },
+ {
+  "id": "EXP-65",
+  "name": "The outcome gate on signals Cadence receives: the label is safe but sparse, the forecast error is blind",
+  "date": "2026-10-16",
+  "iter": "none",
+  "track": "memory",
+  "verdict": "BOUNDARY",
+  "verdict_note": "pre-registered (93d5645), amended before the full run (75dfc6a, check scope and review fixes, no prediction changed); P2 P4 P5 P6 held, P1 and P3 failed; 48 pairs per signal on the invisible chain, 24 on the hidden; comparators are EXP-63 rows on the same seeds, recomputed identically",
+  "headline": "Keyed on the corrective teacher's label, the hold gate never holds a correct move but covers only taught decisions (a third of the misses): 9 clean greedy passes of 48 on the invisible-action chain against 5 for the plain context (p .39) and 19 for the oracle gate. Keyed on the brain's own forecast error it is blind: it cannot tell a miss from the invisible correct action (AUC .525) and does worse than no gate. In this chamber nothing Cadence already receives stands in for the world's failure flag.",
+  "question": "Can the outcome-keyed hold gate run on a signal Cadence already receives (the teacher's label, or its own forecast error) instead of the chamber's success flag?",
+  "process_issues": [
+   "first check failed one item scoped too wide (the library resets the context at done); rescoped and reported before the pilot",
+   "comparator arms are EXP-63 rows on the same seeds (recomputed identically), not fresh lives"
+  ],
+  "lesson": "Before keying a gate on an available signal, measure its coverage of the decisions the oracle acted on, not only its precision; and use a metric one phase cannot touch (a clean greedy pass has no misses, so read-time holding cannot change it) to locate where an effect is made.",
+  "chart": {
+   "title": "Clean greedy passes of 48 on the invisible-action chain, corrective teaching, 120 attempts",
+   "unit": "count",
+   "bars": [
+    {
+     "label": "context .5 (founder key)",
+     "value": 5
+    },
+    {
+     "label": "held when the brain's own forecast error is negative",
+     "value": 2
+    },
+    {
+     "label": "held when the teacher's label follows",
+     "value": 9
+    },
+    {
+     "label": "failed decisions held out (oracle, training only)",
+     "value": 19
+    }
+   ]
+  },
+  "quote_worthy": "The label is never wrong and rarely there; the forecast is always there and cannot see the difference."
  }
 ]
