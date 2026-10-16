@@ -1,6 +1,6 @@
 # EXP-40: are our brains too small? (brain size x world size)
 
-- Date: 2026-10-10 | Cadence version: 0.80.0 (`19bee92`) | Program iter: iter31 (pending)
+- Date: 2026-10-10 | Cadence version: 0.80.0 (`19bee92`) | Program iter: iter31 (ABANDONED by Will at 30/144, see HANDOFF)
 - Script: `exp/EXP-40_brain_size.py` (runs on the `teachers` library) | Evidence: `exp/EXP-40-full.json/.jsonl`, pilot `exp/EXP-40-pilot.jsonl`
 
 ## Summary
@@ -21,8 +21,8 @@
   (c) 'base', K=96: 64x32 beats 16x8 by .02 to .05 in final knowledge (smaller than the original >= .05).
   (d) Overall: size helps only where stale teaching is left unfixed: the 64x32 - 16x8 gain in 'base' exceeds the gain in
       'both' at both K.
-- Result: PENDING (full 12-seed run started 2026-10-10 ~17:00; stopped at 30 of 144 runs at 17:15 on Will's call to put EXP-42 first; resumable with the same command, checkpoint exp/EXP-40-full.jsonl).
-- Verdict: PENDING.
+- Result: ABANDONED by Will at 30/144 (see HANDOFF). (Full 12-seed run started 2026-10-10 ~17:00; stopped at 30 of 144 runs at 17:15 on Will's call to put EXP-42 first; resumable with the same command, checkpoint exp/EXP-40-full.jsonl).
+- Verdict: ABANDONED by Will at 30/144 (see HANDOFF).
 
 ## Reflection
 - PENDING.

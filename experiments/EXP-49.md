@@ -1,6 +1,6 @@
 # EXP-49: Noesis-lite v1, a teacher market paid by measured transfer on unseen situations
 
-- Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: none (teaching track; Will 14:07: "imagine running a noesis lite in the simulation"; design `docs/NOESIS-LITE-SIM.md`, local)
+- Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: iter35 (program evidence, logged 2026-10-16)
 - Script: `exp/EXP-49_noesis_lite_market.py` | Evidence: `exp/EXP-49-pilot.*`, `exp/EXP-49-full.json/.jsonl/.out`
 
 ## Summary

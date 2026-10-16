@@ -1,6 +1,6 @@
 # EXP-52: Noesis-lite v1.1, priced against a null contribution of the same form
 
-- Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: none (teaching track; follow-up to EXP-49's BOUNDARY)
+- Date: 2026-10-13 | Cadence version: 0.83.0 (`23dba71`) | Program iter: iter35 (program evidence, logged 2026-10-16)
 - Script: `exp/EXP-52_noesis_lite_null_counterfactual.py` | Evidence: `exp/EXP-52-pilot.*`, `exp/EXP-52-full.json/.jsonl/.out`
 
 ## Summary

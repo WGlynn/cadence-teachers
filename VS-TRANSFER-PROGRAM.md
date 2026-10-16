@@ -39,6 +39,13 @@ held-out task is exogenous and informationally-disjoint from the adversary. We d
 built the exogenous-task oracle; we test whether, GIVEN one, transfer measurement separates — and
 how robustly.
 
+Two measured lessons (added 2026-10-16):
+1. Zero point: an untaught twin pays a fake for jolting a stuck student (EXP-49, +.179). Price against a
+   form-matched null on the same instrument (EXP-52; also EXP-16/18), and check that abstaining is not
+   paid against that null.
+2. Instrument validity: the measuring brain must take in content (EXP-61 +.016 vs EXP-58 +.469 under the
+   same protocol), and the choice of brain moves the price.
+
 ---
 
 ## SOLVED-CRITERIA (when does the loop stop / ping Will)
@@ -46,30 +53,57 @@ how robustly.
 A chain of increasingly hard bars. Each is a real milestone; ping Will on each crossing.
 
 - **M1 — separation exists.** Measured transfer separates genuine from a surface-matched fake on an
-  exogenous task (genuine transfers, fakes ~0), robust across seeds/sizes.  [STATUS: CROSSED iter2 —
-  genuine +0.219 (~3.6 SEM) vs fake_random +0.008, fake_wrong -0.242, clean chance baseline, own-task
-  diagnostic confirms task-specificity. Still only SURFACE-matched; interior-matched fake = M2.]
+  exogenous task (genuine transfers, fakes ~0), robust across seeds/sizes.
+  [STATUS: CROSSED on the K=8 bandit (iter2; rerun iter8 after the #164 fix): genuine +0.422 (SEM .045)
+  vs fake_random -0.109, fake_wrong -0.578, 16 seeds, bit-identical on 0.78-0.83 and on the #203 head.
+  Robust across sizes is NOT shown (K=4 pre-fix and K=8 only, one module size). Off the bandit: on the
+  default 0.83 memory brain, genuine does not separate from a random-label fake against the form-matched
+  null (EXP-52: know-4 +.013, Spearman .06), and against an untaught twin a random fake earns +.179
+  (EXP-49). Untested on a brain that takes in content (EXP-62).]
+- **M1b: content validity.** Before pricing on any instrument, show that the instrument takes in
+  content: know-max minus the form-matched null > 0 by 2 SEM, with that null and the counterfactual rule
+  committed in advance. Evidence so far: fails on the default 0.83 memory brain (EXP-52/53/55/61); holds
+  on the delayed-credit brain (EXP-58, +.469, 11 SEM). (Added 2026-10-16.)
 - **M2 — feature-matched fake.** Separation survives a fake matched on ALL interior features the
   paper's impossibility uses (novelty, synergy, acyclic topology, content-stats), not just surface
-  stats. This is the real adversary from wash_sim.rs, ported to learning agents.  [STATUS: ADDITIVE
-  half CROSSED iter5 (EXP-10) — multi-mind collaboration, interior-identical genuine vs fake minds;
-  transfer localizes worth PER-MIND (+0.250 vs -0.292, gap +0.542) and scales ~linearly with genuine
-  fraction. SYNERGY half OPEN — super-additive (combination-only, XOR-style) worth NOT representable
-  in a small bandit; needs a different substrate/task design. This is the remaining M2 bar.]
+  stats. This is the adversary class of wash_sim.rs. Here it is matched by construction (EXP-10's
+  interior is identical); no interior scorer from wash_sim.rs has been run in the harness yet.
+  [STATUS: ADDITIVE CROSSED on the bandit (EXP-10, iter8 rerun: genuine +0.375 vs fake -0.479, gap
+  +0.854, linear in genuine fraction). SYNERGY crossed for data-channel synergy (EXP-18, +0.375, about 4
+  sigma) and for learned sequential composition (EXP-19 N=300, +0.72 SEM .18; about 12 effective
+  outcomes; 4/12 founders never learn the chain). XOR-style representational synergy is not
+  representable on the substrates tried (EXP-12/12b-f, 14/14b; the search was not exhaustive). Recorded
+  as a boundary of the instrument: it under-pays combinations and opens no wash hole.]
 - **M3 — isomorphism-invariance.** The transfer measure provably satisfies v(S)=v(phi(S)) for any
   structure-preserving relabeling phi of everything v may see. (The paper's formal success criterion.)
+  [STATUS: EMPIRICAL ONLY, not proven (EXP-16, iter10). On the bandit the paired genuine-minus-fake is
+  +0.500 in 95/96 cells. Limits: the constant is forced by learning at ceiling; one random context
+  permutation per task was tested (not the 8!-element group); the instrument was not relabeled; the
+  paired form was chosen after seeing the data. The raw twin delta moves by up to 0.500 per instrument.
+  This does not discharge Noesis gate WASH-PROBLEM-INDEX row 9 (learned v(S) over graph features).]
 - **M4 — coordinated-prior robustness.** Separation holds against a coordinated-but-wrong prior past
   the peer-prediction crossover (paper reports gamma*=0.70 for correlated-agreement). Transfer should
-  beat that because it reads a causal delta, not agreement.  [STATUS: SUPPORTIVE, clean curve (iter4) —
-  monotonic, worth bar firmly at gamma=0.875-1.0, everything <=0.75 ~zero. Noise objection resolved.
-  Still owes a MATCHED in-harness peer-prediction scorer before the >0.70 comparison is decision-grade.]
+  beat that because it reads a causal delta, not agreement.
+  [STATUS: CROSSED on a matched comparison, by construction (EXP-15, iter9). Transfer: genuine +0.448 vs
+  ring -0.052 / +0.073 / +0.198 at a_R .5 / .625 / .75, independent of c because the transfer arm never
+  reads c. PP flips at c* about .5 (run on noiseless rule vectors, no SEM; the margin at a_R .75 is
+  +0.004). The EXP-09 curve after the fix is proportional (0.625 +0.125, 0.75 +0.135, 0.875 +0.281, 1.0
+  +0.469). The iter4 claim "<=0.75 ~zero" is RETRACTED. The paper's gamma*=0.70 is on a different axis.
+  Still owed: the EXP-09 low-gamma half (0-0.5) after the fix, and PP on brain behaviour.]
 - **M5 — exogenous anchor honesty.** State precisely what exogenous ingredient the measure still
   assumes (the disjoint task / capital-independent reference set) and whether any part of it can be
   sourced from a cost-bearing real signal rather than assumed. This is the irreducible-1 anchor; may
   end as an honest boundary ("this is what still must come from outside"), which is itself a result.
+  [STATUS: STATED AS A BOUNDARY (iter11, EXP-17, M5-EXOGENOUS-ANCHOR.md). q* = 0.500 is set by the
+  symmetric design (a_R .5, uniform adversary pool, saturated learning); it is not a measured property.
+  No cost-bearing task source is built. Derived from EXP-17's own model, not measured: an adversary that
+  knows T and supplies only the states where its rule disagrees flips prices at
+  q* = (1 - a_R)/(2 - a_R), which is .33 at a_R .5, so .5 is an upper bound. RESTATED: the measure assumes three outside
+  ingredients, not one: the task T, the instrument I (the receiving brain) and the null N (the
+  counterfactual contribution) (EXP-49/52/58/61).]
 
-"Solved" = M1-M4 crossed with measured robustness + M5 stated as either a construction or a proven
-boundary. Realistically this is a long program; the loop's job is to advance it one honest rung per
+"Solved" = M1, M1b, M2-M4 crossed with measured robustness + M5 stated with T, I and N.
+Realistically this is a long program; the loop's job is to advance it one honest rung per
 fire and never fake a rung.
 
 ---
@@ -90,6 +124,21 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 `experiments/TEMPLATE.md`), including nulls, voids and reruns. `python experiments/check.py` must pass.
 
 ## FRONTIER (update every fire — one line: where we actually are)
+
+2026-10-16 (re-rank, no new rung): no milestone has moved since iter13 (10-09).
+
+Status on the bandit:
+- M1 and additive M2 are crossed.
+- M4 is crossed, but its immunity to coordination holds by construction.
+- M3 is empirical only: one permutation per task, learning saturated.
+- M5 is a boundary whose q* = .5 is set by the symmetric design.
+
+Off the bandit, the measure failed its first richer substrate:
+- Against an untaught twin, a random-label fake earned +.179 (EXP-49).
+- Against a form-matched null, fakes priced at or below 0, but skill was invisible on the default brain: know-4 +.013, Spearman .06 (EXP-52).
+- Content reaches only the delayed-credit brain: +.469, 11 SEM (EXP-58), vs +.016 on the default brain (EXP-61).
+
+So v(S) depends on the instrument I and the null N, not only the task T. The binding open question is whether transfer prices skill on a brain that takes in content, against a committed null. That is EXP-62: ready since 10-14, not yet run.
 
 2026-10-13 (iter34): EXP-44 NULL (pre-registered on 0.81; finished on a pinned worktree after upstream removed the gene): on graded text neither a readout operating point (0.81's intrinsic plasticity, a smaller actor step) nor twice the width lifts a Cadence brain past the control (.253; gene .183 / .068 with 1 of 3 brains unsettled each, actor .229, wide .213); the table on the same grades stays at .346. By the decision rule the remaining gap is exploration. Teaching track the same day: EXP-45-48 on the Stone Age chain (operating point decides whether a brain can be taught at all; 0.83's episodic memory makes the default brain learn the chain and replicates upstream's table).
 
@@ -125,9 +174,9 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 2026-10-08 (iter12): M2-SYNERGY CROSSED for data-channel synergy (EXP-18: synergy +0.375 ~4 sigma, Shapley splits 50/50, LOO overpays 1.7x). Learned-composition synergy (#115 / XOR wall) still OPEN.
 
-2026-10-08 (iter11): M5 STATED AS BOUNDARY (EXP-17: task-pool capture flips at q*=0.5; see M5-EXOGENOUS-ANCHOR.md). Only M2-SYNERGY remains open.
+2026-10-08 (iter11): M5 STATED AS BOUNDARY (EXP-17: task-pool capture flips at q*=0.5; see M5-EXOGENOUS-ANCHOR.md). Open: M2 XOR-style synergy, a proof for M3, scale (item 4), and any M5 construction; M4 is immune to c by construction.
 
-2026-10-08 (iter8, post-#164 eval fix): **M1 CROSSED (stronger, +0.42 vs fakes <=-0.11) · M2 ADDITIVE CROSSED (gap +0.854) · M3 CROSSED EMPIRICALLY (EXP-16: paired transfer invariant in 95/96 cells; raw delta only in expectation) · M4 CROSSED on a matched PP baseline (EXP-15: PP flips at c~0.5 coordination, transfer unaffected given exogenous T; cost = M5) · M2 SYNERGY OPEN.** Numbers below this line are pre-fix.
+2026-10-08 (iter8, post-#164 eval fix): **M1 CROSSED (stronger, +0.42 vs fakes <=-0.11) · M2 ADDITIVE CROSSED (gap +0.854) · M3 EMPIRICAL ONLY (EXP-16: paired 95/96 cells; one permutation per task; learning saturated) · M4 CROSSED on a matched PP baseline, immune to c by construction (EXP-15: PP flips at c~0.5 coordination, transfer unaffected given exogenous T; cost = M5) · M2 SYNERGY OPEN.** Numbers below this line are pre-fix.
 
 Pre-fix: **M1 CROSSED · M4 SUPPORTIVE (clean curve) · M2 ADDITIVE CROSSED · M2 SYNERGY OPEN.**
 M1 (iter2): genuine transfer +0.219 (~3.6 sigma) vs surface-matched fakes ~0/neg; task-specific.
@@ -142,6 +191,41 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter35 (program evidence, logged late 2026-10-16): Noesis-lite pricing (EXP-49, EXP-52) and the content sub-track (EXP-48/53/54/55/58/61)
+- Numbering: iter14 to iter34 are teaching and text work. From iter35 on, only runs that touch M1-M5 take iteration
+  numbers. EXP-49 and EXP-52 are Noesis-lite pricing, which is program work; they and the content sub-track were run
+  2026-10-13/14 and logged here late (old entries not renumbered).
+- Version: Cadence v0.83.0 `23dba71`; EXP-54/55 on PR #197 head `8d99c75` (pinned `~/_cadence_197`).
+- EXP-48 (2026-10-13, the weather chamber EXP-49 uses): 12 seeds, per-state greedy accuracy seen / unseen: memory
+  corrective .89 / .84 (gap +.05, 9 of 12 seeds lose nothing); memory natural .64 / .58; without memory .53 / .53 and
+  .32 / .33. On unseen weather memory beats no memory by .31 (corrective; sampled full-chain .920 vs .201).
+  SUPPORTIVE (3/4; P2 failed toward generalization).
+- EXP-49 (2026-10-13, Noesis-lite v1, worth = taught minus untaught twin; 3 markets x 6 students x 7 teachers):
+  genuine teachers worth +.17 to +.30, pay share .716; random-label fake +.179 (about 3 SEM above zero), wrong-chain
+  +.061, echo -.036; fakes take .285 of pay; Spearman(pay, skill) .05; genuine worth survives vesting (.86).
+  BOUNDARY (1/5 held): priced against "no teacher", the market pays random labels (they unstick a stuck student) and
+  cannot rank skill.
+- EXP-52 (2026-10-13, Noesis-lite v1.1, priced against a form-matched random-label null; 72 worth samples per teacher):
+  vs null, fakes price at or below zero (random -.07, wrong-chain -.21, echo -.27) but genuine teachers are also near
+  zero (know-4 +.013; Spearman with k .06); accuracy .661 vs .648; untaught .46. Vs no teacher, random +.104 (EXP-49
+  reproduces). BOUNDARY (1/5).
+- EXP-53 (2026-10-13): content (know-4 minus random) +.013 / +.107 / +.068 at 40 / 120 / 240 attempts (SEMs about
+  .06); correction itself is worth +.25 at 40 attempts for either teacher; pooled 120-240 about +.09, about 2 SEM.
+  NULL (1/4).
+- EXP-54 (2026-10-14, PR #197 surprise rule): content under the gene -.008 / +.125 / +.003 at 40 / 120 / 240
+  (every-row +.013 / +.107 / +.068); gene effect on know-4 within 1.3 SEM of zero at every length. NULL (gate held, 0/3).
+- EXP-55 (2026-10-14, demonstrations at every decision): content at 240 is -.16 with every row taught (random
+  demonstrations beat right ones, 3.4 SEM): readout saturation. The rule removes it (+.19; know-4 student .72 -> .88)
+  but content stays ~0 (+.03). BOUNDARY (2/4).
+- EXP-58 (2026-10-14, EXP-45's delayed-credit brain): content +.193 (5.8 SEM) at 40, +.469 (11 SEM) at 120; know-4
+  student .93; random labels worth nothing (-.08 vs untaught). SUPPORTIVE (3/3).
+- EXP-61 (2026-10-14, EXP-58's protocol on the default memory brain): content -.049 (SEM .085) at 40, +.016 (.066) at
+  120; every arm within ~.06 of EXP-53. Being corrected at all still +.268 at 40. SUPPORTIVE (2/2): the default
+  brain's operating point blocks content.
+- Program reading (2026-10-16 re-rank): no milestone moved; v(S) depends on the instrument I and the null N, not only
+  the task T. New rung M1b; restated M5; next = EXP-62 (see FRONTIER 2026-10-16 and NEXT ITERATIONS).
+- Write-ups: experiments/EXP-48.md, EXP-49.md, EXP-52.md, EXP-53.md, EXP-54.md, EXP-55.md, EXP-58.md, EXP-61.md.
 
 ### iter34 — 2026-10-13 — EXP-44 readout operating point vs size on graded text = NULL (neither lever; the gap is exploration)
 - Version: Cadence v0.81.0 `736fee9`; the first full run crashed 2026-10-11 on an unsettled homeostasis brain; amendment pushed (5fc77c7) before the remaining 8 runs, which finished from a pinned 0.81 worktree after upstream's 0.82 removed the gene.
@@ -159,6 +243,10 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 - RUN GATE: pre-registered (experiments/EXP-42.md, pushed 51baa5a before the full run); Will's speedrun call, a 600-character smoke run only (no window pilot).
 - Result (held out): Cadence w1 .225 (SEM .004), w3 .215, seq .200; majority .202; graded tabular bandit w1 .231, w3 .242; supervised counts bigram .291, trigram .419, 4-gram .502. Samples loop ('w w w').
 - Verdict: all six predictions held. Next levers: more passes, richer grades, a drilling teacher, Cadence's token-window connectome. Write-up: experiments/EXP-42.md.
+
+### iter31 (note, logged 2026-10-16): EXP-40 brain size in the peer network = ABANDONED by Will at 30/144 runs
+- Teaching track. The 12-seed run was stopped at 30 of 144 runs on 2026-10-10 on Will's call to put EXP-42 first, then
+  abandoned ("abandon exp-40", HANDOFF). No result is claimed. Write-up: experiments/EXP-40.md.
 
 ### iter30 — 2026-10-10 — EXP-39 prerequisite chain = SUPPORTIVE (grading is the teacher's value; 'teach backwards' withdrawn)
 - Version: Cadence v0.80.0 `19bee92`; brain at the key-door protocol-3 operating point, `step`. 12 seeds x B 40/150/500/1500 x 5 arms.
@@ -445,7 +533,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
   pays 0), door teacher (starts holding, +1 for opening), fake key (rewards the lamp). Every coalition
   gets 2N trips (missing slot = null trips), interleaved. Test = 30 greedy full-task trips, no learning.
 - Run 1 (N=100, score = fed): CONTAMINATED. 4/12 untouched founders pass by interact-everything, and
-  the fake passed 2 seeds the same way. Kept as `exp/EXP-19-fedonly.out`.
+  the fake passed 3 seeds the same way (seeds 4, 5, 11 per exp/EXP-19-fedonly.out). Kept as `exp/EXP-19-fedonly.out`.
 - Run 2 (N=100, score = CLEAN trip: fed with zero wrong presses): v(A) +0.09, v(B) -0.06, v(AB) +0.44,
   fakes -0.08; synergy +0.41 (SEM .21, ~2 sigma). Composition sloppy at 100 trips. Door teacher
   interferes with key skill (holding-start trips penalize touching the chest).
@@ -495,7 +583,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 - phi = context permutation and/or action swap, applied to witness + T; instrument (brain init) NOT
   relabeled. 3 tasks x 4 phi x 8 instruments x {genuine, fake(agree 0.5)} = 192 transfers.
 - **Raw twin-delta v = acc_after - acc_base is invariant only in EXPECTATION.** Per instrument it moves
-  by up to 0.25 under phi; ensemble gap max_phi|v_n(phiS)-v_n(S)| at n=8 = 0.125 / 0.062 / 0.031 on the
+  by up to 0.500 under phi (EXP-16 recheck; 0.25 was the n=1 ensemble gap); ensemble gap max_phi|v_n(phiS)-v_n(S)| at n=8 = 0.125 / 0.062 / 0.031 on the
   3 tasks (n=1 up to 0.25). Cause identified: the noise is the instrument's PRIOR (acc_base), which
   mirrors under action-swap (base -> 1-base) while acc_after saturates (genuine 1.0, fake 0.5).
 - **Paired form v_pair = transfer(witness) - transfer(reference witness) on the same instrument cancels
@@ -505,7 +593,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 - **M3 VERDICT: CROSSED EMPIRICALLY for the paired measure, on this bandit; NOT a proof.** Caveats: the
   exactness leans on learning saturating (after = 1.0 / 0.5); with partial learning the paired form
   should still cancel the prior but will carry learning noise. Only context-perm + action-swap tested
-  (the full symmetry group of this world), 3 tasks. Design consequence: the v(S) used in pricing should
+  (one random context permutation per task plus the action swap, not the full 8!-element group), 3 tasks. Design consequence: the v(S) used in pricing should
   be the paired / reference-relative transfer, averaged over an instrument ensemble.
   Evidence: exp/EXP-16-t{0,1,2}.out.
 
@@ -520,7 +608,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 - PP crossover (ring >= genuine): c*=0.5 at a_R 0.5 and 0.625, c*=0.6 at a_R 0.75. Once about half the
   reference pool is ring, PP ranks the ring above the genuine contributor (at c=1.0 genuine ~0).
 - **M4 VERDICT: CROSSED on the matched comparison**, with an honest asymmetry: transfer's immunity to c is
-  partly by construction, since it consumes an exogenous held-out T that PP does not have. What is shown:
+  fully by construction (the transfer arm never reads c; EXP-15 write-up), since it consumes an exogenous held-out T that PP does not have. What is shown:
   given an exogenous T, coordination of the reference pool buys a ring nothing under transfer, whereas it
   flips PP at c~0.5. The cost of that is exactly M5 (where T comes from). PP c* here depends on P and
   honest accuracy (design params), so c*~0.5 is not a universal constant. Evidence: exp/EXP-15.out.
@@ -680,41 +768,225 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
-1. **M2-SYNERGY** (TOP — the hard open core). Additive/per-node M2 is DONE (iter5: mapping-level
-   fake_wrong priced to -0.24; multi-mind per-contributor attribution gap +0.542). What remains is
-   SUPER-ADDITIVE synergy: worth that exists ONLY in the combination of minds (e.g. T=XOR(b1,b2);
-   neither witness alone enables T, both together do). A small Cadence bandit cannot cleanly represent
-   combination-only worth from separate bit-teachers. Needs a different design: either a brain whose
-   input encodes both witnesses' learned reps and a held-out task that reads the joint, or a
-   compositional-perception curriculum, or a richer substrate. Design carefully (do NOT fake the
-   synergy with additive coverage — that is iter5, already done). This is where the measure either
-   captures emergent collaborative worth or hits an honest boundary.
-   **SUBSTRATE NAMED (Bernhard, 2026-10-07 TG, convergent):** `muellerberndt/cadence-demos/patch-world`
-   — a multi-creature evolutionary world (survival/mass task = real held-out consequence, `speak`
-   action = creature-to-creature contribution, private-imagination = twin-like rollout). Bernhard
-   independently proposed our exact twin-brain-ablation edge ("byte-identical twin; a useless
-   contribution leaves a settled learner unchanged") and suggested patch-world as the model. Minimal
-   synergy probe: freeze creature b, fork a byte-identical twin, expose only one to a's output over a
-   window, measure survival/reward gap on a held-out stretch; synergy = two signals that help only
-   combined. GATING QUESTION RESOLVED (2026-10-08, read the code): the byte-identical twin EXISTS at
-   the creature level. `cadence.experimental.equilibrium.Reinforcement.snapshot()` saves brain +
-   replay + pending action + RNG state for exact continuation; `.from_snapshot(text)` reconstructs
-   (schema `reinforcement/3`, strict-validated). patch-world's `library_brain.py` builds exactly a
-   `Reinforcement` creature; the README "no saved continuation" is about the browser PAGE, not the
-   creature API. => M2-synergy probe is buildable SOLO on the equilibrium Reinforcement substrate
-   (richer than our bandit: multi-patch columns, 106-dim continuous senses, replay), no full JS world
-   and no waiting on Bernhard. Build on current 0.78 (snapshot confirmed present); patch-world itself
-   pins 0.70.0. Design care: construct a genuinely super-additive task (combination-only worth), NOT
-   additive coverage (that was iter5).
-2. **M4-harden**: rerun the gamma sweep at 16-32 seeds for a clean crossover AND implement a real
-   peer-prediction/correlated-agreement scorer in the same harness, so "transfer's bar is higher than
-   0.70" becomes a MATCHED measurement, not a conceptual comparison.
-3. **M3 invariance test**: apply structure-preserving relabelings (permute contexts/actions/module
-   seeds consistently) and confirm the transfer score is invariant; find any relabeling that moves it.
-4. **scale/robustness**: larger brains/tasks, longer witnesses, transfer half-life, and whether the
-   delta survives when b has its own ongoing life (interference). Also lift genuine mastery at K=8
-   (more steps/bigger net) so absolute separation is not capped by partial learning.
-5. **M5 anchor write-up**: once M1-M4 measured, state the residual exogenous assumption precisely;
-   decide construction-vs-boundary. Feeds a paper section + Bernhard note (Will dispatches).
+Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
 
-DONE: M1-harden (iter2, crossed) · M4 first pass (iter3, supportive).
+1. **EXP-62, sharpened: does transfer price skill on a brain that takes in content, against a committed null?**
+
+   **Milestone:** New rung M1b (content validity). Also re-crosses M1 and additive M2 on a multi-step chain, and tests the angle's premise ('a fake that produces the delta had to carry real task-information').
+
+   **What:** Rung 0. Do this in the same fire, before the pilot, with no compute: apply the status corrections listed below; log EXP-49/52 plus the content sub-track (EXP-48/53/54/55/58/61) as iter35; replace NEXT ITERATIONS with this list; write the RUN GATE lines.
+
+   Rung 1. Merge EXP-52's market (exp/EXP-52_noesis_lite_null_counterfactual.py) with EXP-58's delayed-credit brain and its alone phase run through step. Five changes:
+   (a) Shared student seeds across teachers. EXP-52's seed base includes TEACHERS.index(kind) (line 69), so every teacher got different students, and the null and untaught twins were rebuilt for every job. Build them once per student instead. That gives a know-k ladder within each student and roughly halves compute.
+   (b) Price against the stronger counterfactual. Worth = taught minus whichever of {random-label null, untaught} has the higher pooled mean on this instrument. This is a fixed rule, not a per-student max, which would push every price down and make the fake bar easier to pass. Report both counterfactuals.
+   (c) Window pilot under the exact run conditions: 3 students, lesson lengths 40/80/120, know-1..4 plus random. EXP-58's know-4 is .932 at 120, close to ceiling. At 40 the steps between know-k levels are about .05.
+   (d) Finalize pay on batches of 6 students per teacher. This replaces EXP-52's two-student > .125 rule, which leaked .209 of pay to fakes.
+   (e) Log every twin's per-state greedy actions and every teacher's label stream, so items 5 and 6 can run mostly from saved data.
+
+   Arms:
+   - know-1..4;
+   - random, wrong-chain, echo;
+   - abstain (this is the untaught twin, so it costs nothing);
+   - anti-echo: labels uniformly among the 4 actions other than the student's executed mistake. This is one line of code, because the labeller already receives `a` and fires only after executed mistakes (EXP-49 line 63).
+
+   **Why now:** This is the binding question, and both lenses and all three readers agree. Each earlier run tested a different combination, and none tested all three conditions together:
+   - EXP-49 was fooled: against an untaught twin a random fake earned +.179.
+   - EXP-52 was blind: against the form-matched null, know-4 scored +.013 and Spearman was .06.
+   - EXP-58/61 found content on only one brain: +.469 (11 SEM) on the delayed-credit brain vs +.016 on the default brain.
+   That leaves exactly one untested combination: a brain that takes in content, the form-matched null and a known-skill ladder.
+
+   Two more reasons:
+   - EXP-62 has been ready since 10-14 and lost the 10-15 and 10-16 fires to the #202 memory track.
+   - Every later chain rung reuses this harness.
+
+   **Cost:** 1 fire. About 1-2 h of code (merging two existing scripts), about 3 min of pilot, and an estimated 25-35 min full run at 4 workers (72 students x about 10 twins x about 10 s per 120-attempt twin, scaled from EXP-58's 461 s). These are estimates, not measurements.
+
+   **Ready:** Ready. Rung 0 has to land first in the same fire; otherwise the stale list keeps sending the loop to the queue.
+
+   **Kill or confirm:** Pre-register the following.
+
+   CONFIRM if all of these hold:
+   - means are ordered know-1 < know-2 < know-3 < know-4, and pooled Spearman(worth, k) >= .3 (EXP-52's metric, n >= 288);
+   - know-4 >= .2 against the stronger counterfactual;
+   - every task-blind fake, abstain included, has mean <= 0;
+   - fakes take <= .10 of pay.
+   Then transfer prices skill on an instrument that takes in content, and the angle stands, with the instrument I and the null N named.
+
+   KILL (angle refuted under its best conditions): any task-blind fake earns worth >= know-2 with adequate power.
+
+   DECISIVE FOR NOESIS WITHOUT KILLING THE ANGLE:
+   - Content is large but Spearman < .1. Then transfer is a pass/fail filter, not a price.
+   - Anti-echo is > 0 by 2 SEM. Then the zero point has to be the best fake in a declared, committed class, not uniform noise, because the corrective schedule leaks one elimination bit per mistake to whoever does the labelling.
+
+2. **EXP-62b: does the price among genuine contributions depend on which brain measures it? (absorbs EXP-64)**
+
+   **Milestone:** Restated M5 (the instrument I as an outside ingredient) and the instrument axis of M3, which EXP-16 held fixed. Decides whether a worth independent of the instrument exists.
+
+   **What:** Use EXP-62's harness, shared student seeds and chosen lesson length.
+
+   Genuine teachers whose content is equal in size but different in kind:
+   - know-early-2 (stages 0 and 1);
+   - know-late-2 (stages 2 and 3);
+   - know-4.
+   Plus the random null and the untaught twin. Labels arrive only after mistakes the student executes, so late-stage knowledge reaches a student only if that brain gets that far. That is where instruments should disagree.
+
+   Three instruments in one run:
+   - (A) the delayed-credit brain;
+   - (B) EXP-64's brain: the default memory brain with ONLY actor_eta .1 and actor_eta_bias .01 changed. This gives upstream its #198 reading at the same time;
+   - (C) one delayed-credit variant, written into the pre-registration before any data (for example modules (64,) with critic rate 2). This guarantees two instruments that take in content even if B turns out blind. C must not be chosen by checking which brain separates.
+
+   24 students.
+
+   **Why now:** EXP-58 vs EXP-61 already shows that changing only the brain moves measured worth by about .45 (5.8 combined SEM), with the same contributions, task and oracle. If the ORDER of worth also depends on the brain, v(S) is defined only relative to a committed instrument, and whoever picks that instrument sets the price.
+
+   After EXP-62 this is the cheapest way to falsify 'v(S) is a property of the contribution'. Folding EXP-64 in turns a 9-minute diagnostic into a comparison that can support a decision.
+
+   I chose the early/late design over re-running the know-k ladder on a second brain. On any brain that takes in content, more knowledge giving more transfer is close to forced. The informative question is which knowledge each brain can use.
+
+   **Cost:** 1 fire. Small code delta on top of EXP-62. About 15-25 min of compute at 4 workers (estimate).
+
+   **Ready:** Blocked on EXP-62 (the harness and the chosen lesson length). The design is otherwise complete.
+
+   **Kill or confirm:** CONFIRM: on every instrument that takes in content (content > 2 SEM), early-2, late-2 and know-4 come out in the same price order, and the early/late ratio agrees within about 2 SEM. Ordinal worth is then robust to the instrument, and only its scale is set by the instrument.
+
+   KILL FOR NOESIS: the early/late order flips significantly between two instruments that both take in content. Then no worth exists independently of the instrument, and I and N must be committed from outside, in advance, just like T.
+
+   If B is blind: that is the #198 reading (the actor step alone is not the block), and C carries the comparison. EXP-51 stays parked.
+
+3. **EXP-62c: M3 off the bandit, plus the in-expectation argument from the code**
+
+   **Milestone:** M3 (isomorphism-invariance). Moves it from 'empirical on a saturated bandit' toward an argument. Bears on Noesis gate WASH-PROBLEM-INDEX row 9.
+
+   **What:** Rung A, about 0.25 day, no compute, can run in any fire (including while EXP-62 computes in the background). Read Brain.compose initialization and the step/act update path. Check two things:
+   - whether initial weights are exchangeable when input and output units are permuted;
+   - whether the learning law and the action choice are permutation-equivariant.
+   Look for argmax tie-breaking toward low indices, biases tied to particular actions, and positional context. If both properties hold, write the short argument that expected paired transfer is invariant under consistent relabeling.
+
+   Rung B, 1 fire. Use the EXP-62 harness at a lesson length where learning does not saturate. Apply about 12-20 random consistent permutations of action indices and weather-input order to the chamber, the teachers' labels and the readout together. Same student seeds. Teachers know-2, know-4 and wrong-chain. Paired worth against EXP-62's committed counterfactual.
+
+   State explicitly that relabeling the instrument itself is not covered; that is item 2.
+
+   **Why now:** EXP-16's limits:
+   - one permutation per task, not the 8!-element group;
+   - learning at ceiling, which forces the .500;
+   - the paired form was chosen after seeing the data.
+   The 'provably' bar is unmet.
+
+   The code read is the only route to an argument, and it costs almost nothing. One plausible invariance breaker is an inference, not measured: the text runs collapsed onto action 0 (EXP-43), which points at index-dependent behaviour.
+
+   I ranked this above scale (the value lens had it 6th) because rung A is nearly free, and rung B reuses item 1's harness with no new build.
+
+   **Cost:** About 1.25 total: 0.25 day of reading, plus 1 fire of about 25 min compute (estimate).
+
+   **Ready:** Rung A is ready now. Rung B is blocked on EXP-62.
+
+   **Kill or confirm:** CONFIRM: initialization is exchangeable and the learning law is equivariant in the code, and each teacher's worth stays within 2 SEM across all permutations with ranks preserved. M3 then holds in expectation, with a proof sketch.
+
+   KILL: a named term breaks the symmetry (index-ordered tie-breaking, or a bias tied to a particular action), and some permutation moves a teacher's worth by more than 3 SEM. Then v(S) needs explicit symmetrization (averaging over a random relabeling committed in advance), and M3 stays open with that term named.
+
+4. **Scale and interference on a brain that takes in content (stale item 4, never run on the transfer harness)**
+
+   **Milestone:** M1 'robust across sizes' (currently unshown) and the stale NEXT item 4. Folds in EXP-07 (forgetting).
+
+   **What:** Rung A, 1 fire. Extend the chamber from 4 to 6 stages, or add weathers. Run only the RUN GATE window pilot, with know-k and random teachers, on the best instrument from items 1 and 2.
+
+   Rung B, 1 fire. Run the full know-k ladder and fakes at the chosen length, under item 1's pre-registered bars. Add a half-life arm: after the lesson, N attempts of unrelated life in a different chamber, then measure worth again.
+
+   Optional if rung B has headroom: one non-label channel (per-step grades as in EXP-39).
+
+   **Why now:** All of the content evidence on a chain comes from one chamber, one corrective schedule and 24 students per length (EXP-58's stated limits). The first step up from the bandit is what exposed the instrument problem (EXP-49), so the next step up must run only on a brain already shown to take in content.
+
+   This is the only path to the 'robust across sizes' half of M1. It can kill: if content does not carry across tasks, Noesis would have to validate its instrument per task class.
+
+   I placed it above the M5 curve because most of M5's new information can be derived at zero compute (see item 5).
+
+   **Cost:** 2 fires (build and pilot, then run). Estimate.
+
+   **Ready:** Needs design (the chamber extension). Blocked on EXP-62 passing at least its content and know-4 bars.
+
+   **Kill or confirm:** CONFIRM: the know-k ranking and fakes <= 0 hold at 6 stages (Spearman >= .3), and worth keeps >= .5 of its lesson-end value after the unrelated life. KILL: ranking or fake pricing collapses as the chain gets longer, so the measure is valid only on short chains. Or worth decays to noise under ordinary continuing life, so transfer has to be measured immediately; that shapes the protocol's settlement window.
+
+5. **M5 on the chain: a measured capture curve with an adversary that chooses which tasks it supplies**
+
+   **Milestone:** M5 (exogenous anchor), restated as T + I + N.
+
+   **What:** Rung 0, no compute; can ride in item 1's rung 0. Add a derived caveat to M5-EXOGENOUS-ANCHOR.md. In EXP-17's own linear model, genuine and fake differ only on contexts where R disagrees with T.
+   - With a uniform adversary pool, both terms scale by (1 - a_R), so on a saturated learner q* = .5 for EVERY a_R. A bandit sweep over a_R alone therefore cannot move q*.
+   - If the adversary supplies only states where R disagrees with T, the same model gives q* = (1 - a_R)/(2 - a_R): .33 at a_R .5 and .20 at a_R .75.
+   This is derived, not measured. It applies only to an adversary that knows T well enough to find the states where its rule disagrees, which a deliberately built fake does (EXP-52's wrong-chain is built from c.right()).
+
+   Rung 1, 1 fire. On item 1's harness and saved per-state logs, add consistent partial-rule teachers that agree with T on m of 4 stages (m = 1, 2, 3). Compute paired genuine-minus-adversary worth as a function of q under two pools: a uniform adversary pool, and a disagreement-selecting adversary pool. The only new compute is the partial-rule arms.
+
+   **Why now:** EXP-17's own reflection admits q* = .500 is forced by the design. The derivation shows the stated boundary ('an honest majority of tasks') is an upper bound on q*. That changes the task-supply bond Noesis would need.
+
+   The chain run checks whether the linear model survives learning that does not saturate. This is also Boardy's round-3 ask.
+
+   It ranks below items 1-4 because answering it helps every approach equally, and most of its value is captured by the zero-compute rung.
+
+   **Cost:** 0.1 day (rung 0) plus 1 fire (about 20 min of new compute plus analysis; estimate).
+
+   **Ready:** Rung 0 is ready now. Rung 1 is blocked on EXP-62's per-state logs.
+
+   **Kill or confirm:** CONFIRM (a useful boundary): measured q* tracks the derived curve. A disagreement-selecting adversary flips prices well below .5 (around .33 at a_R .5), and a uniform one at about .5. The honest task share Noesis must guarantee is then about 1/(2 - a_R), not one half. Write that into M5 as a design number.
+
+   SURPRISE: q* on the chain sits far from both predictions. The linear model then does not describe a learner below saturation, and M5 must cite the measured curve only.
+
+6. **Interior battery on the label streams, post hoc (makes M2's 'wash_sim adversary' literal)**
+
+   **Milestone:** M2 (feature-matched fake). The program currently says 'ported from wash_sim.rs', which is not literally true.
+
+   **What:** No new compute. Score every EXP-62 lesson on the interior features available from its logged label stream:
+   - agreement with the student;
+   - label entropy;
+   - consistency within each stage;
+   - coverage;
+   - plus EXP-37's weight change dW where it can be computed.
+   Report each feature's AUC for genuine vs each declared fake, next to transfer on the same rows. Then either make the M2 wording literal or delete 'ported'.
+
+   **Why now:** This is the cheapest thing that moves M2. It replaces the 1-2 day port of novelty, synergy, cycle-energy and circulation onto EXP-10, whose interior is identical by construction, so that port would show little.
+
+   It also answers, more cheaply, the key question a learned v(S) would raise: can label-stream features separate fakes? It polishes a rung that is already crossed, so it ranks below the open questions.
+
+   **Cost:** About 0.3-0.5 day of analysis, 0 compute.
+
+   **Ready:** Blocked on EXP-62 having run with label streams logged (change (e) in item 1).
+
+   **Kill or confirm:** CONFIRM (the impossibility core on a second substrate): every interior feature ranks at least one fake at or above the genuine teachers, while transfer orders them correctly. For example, echo has total agreement and wrong-chain has perfect consistency.
+
+   SURPRISE: some interior feature separates. That does not break the core, because these fakes were not built to match that feature. It does make 'a fake matched on that feature' the next adversary to build before claiming M2 against wash_sim's adversary.
+
+7. **EXP-05: does a mid-lesson snapshot of the delayed-credit brain replay bit-identically in a fresh process, on main and on the #203 head?**
+
+   **Milestone:** Instrument infrastructure. A precondition for committing I so that any validator can replay the twin.
+
+   **What:** Snapshot a delayed-credit brain partway through a lesson and restore it in a fresh process. Check that it continues bit-identically and that the digests match. Do this on main (6499e56) and on the PR #203 worktree (~/_cadence_203, 9a2d422, checkpoint format cadence-generic/9).
+
+   **Why now:** A verifiable v(S) needs any validator to replay the same twin and get the same delta. Same-process twins are shown: EXP-08 is bit-identical across versions and on the #203 head. Restoring the brain that carries content in a fresh process is not shown, and #203 changes the checkpoint format. The worktree already exists, so running both now covers the merge.
+
+   **Cost:** 0.1-0.25. Filler for any fire whose main item is blocked or running in the background.
+
+   **Ready:** Ready.
+
+   **Kill or confirm:** CONFIRM: continuation is bit-identical on both, so the instrument can be committed and replayed. KILL: the runs diverge (RNG or replay state not captured). Measured transfer then cannot be verified independently until upstream fixes it; file an upstream issue with the minimal repro.
+
+Dropped / parked (2026-10-16 re-rank):
+- FOLD: standalone EXP-64 becomes instrument B in EXP-62b. Its #198 reading comes out of that run.
+- DROP: the EXP-17 asymmetric sweep on the bandit, with only a_R varied. Under EXP-17's own linear model with a uniform adversary pool and saturated learning, q* = .5 for every a_R, so the run cannot move it. Replaced by the derived (1 - a_R)/(2 - a_R) caveat now, and by the chain capture curve (item 5).
+- DROP: the 'self-sharpen' fake. On this schedule labels fire only after executed mistakes, so labelling the student's greedy action mostly reproduces echo. It would also need the student's policy, which the labeller signature (c, a) does not carry. Anti-echo replaces it.
+- PARK: an 'eliminator' fake that remembers rejected actions per state. It learns the task from the student's own failures, which makes it a relay rather than a fake that never sees the task. Whether reprocessing the receiver's own feedback should be paid is a design decision to make before running it.
+- PARK: learned v(S) trained on transfer labels. The labels come from the chamber's own oracle, not exogenous realized use, so this does not advance irreducible 2 as stated. The EXP-49/52 rows are labels of the jolt to the student, taken from a brain that does not take in content. Item 6 answers the fake question more cheaply. Revisit after items 1-2 pass, framed as a bound on distilling the live measure into a static scorer.
+- PARK: the XOR wiring search (more columns, fan_in, parameter_prior): 2-3 days with a low prior. It would fix under-payment, not a wash hole. The boundary is written into M2's status instead. Keying on #203's recall codes would likely act as a lookup table and remove the synergy.
+- DROP: the M1 size sweep on the bandit (K 8/16/32). The bandit is already a valid instrument; the scale question lives on the chain (item 4).
+- PARK: porting wash_sim's novelty, synergy, cycle-energy and circulation scorers onto EXP-10. EXP-10's interior is identical by construction; item 6 does the same job on the chain for zero compute.
+- PARK: M4 residuals (EXP-09 low-gamma rerun after the fix; peer prediction on brain behaviour with SEMs). These are filler for a fire whose main item is blocked, since M4's immunity to c holds by construction.
+- PARK: M5 constructions (EXP-41 Sybil students vs network marginal value, commit-reveal sealed windows, priced-examiner noise sweep, realized-use task source). Stage them after item 5's curve says which one is needed. EXP-41 is out of scope while the protocol fixes the instrument.
+- PARK: EXP-51 gene-by-gene dissection. Run it only if EXP-62b's brain B is blind and upstream wants to know which gene blocks content.
+- PARK: Shapley pricing extras (EXP-20b/21 free-rider game, paying an honest party on its best coalition, noise-twin ensemble) and Noesis-lite two-dimension finality vs a stake whale plus a ring, until item 1 shows pay rising with skill.
+- OFF-PROGRAM: the memory track (EXP-66 and further #202 hold-rule work). The receiver that carries content has no episodic memory, and no program task needs hidden-progress chains. The #202 comment v2 is already posted (comment 6220420983, 2026-10-16), so nothing is waiting to be sent.
+- OFF-PROGRAM: the text track (EXP-50; EXP-42-44 follow-ons) and pedigree/royalty economics (EXP-35b, EXP-38 follow-ons). They take v(S) as given.
+- DROP: EXP-01b and EXP-02. Both rest on the retracted #164 eval bug.
+- DROP: EXP-40 (brain size in the peer network). Will said abandon, and it covers only the teaching network.
+- FOLD: EXP-07 (forgetting) into item 4's interference arm. PARK: EXP-06.
+- DROP: the patch-world substrate plan inside the old M2-SYNERGY item. The snapshot twin exists, and the XOR wall belongs to the substrate.
+
+DONE: M1-harden (iter2); M4 first pass (iter3); M1/M2/M4 rerun after the #164 fix (iter8); M4 matched PP (iter9); M3 empirical (iter10); M5 boundary statement (iter11); M2 data-channel synergy (iter12); M2 learned-composition synergy (iter13); content-channel prerequisite discharged (EXP-58/61, 10-14).

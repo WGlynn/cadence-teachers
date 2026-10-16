@@ -5,8 +5,8 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 
 | id | question | method | our interest | cost | status |
 |---|---|---|---|---|---|
-| EXP-01 | Does ANY arousal gene setting stabilize the fast reward-flip (fix the oscillation / sub-1.0 cap)? | sweep threshold/heat/youth/decay/tolerance on the reward-flip, measure post-flip hold vs baseline | answers the open Q to Bernhard; gates [[cadence-library-status]] "tuned-genes open" | ~5 min | **done 2026-10-07: REFUTED (coarse). best slow-decay 0.72 vs 0.64 baseline, none >=0.90. See EXPERIMENT-RESULTS.md** |
-| EXP-02 | Does our reward-flip finding reconcile with Bernhard's `benchmarks/reversal` 39/40 pass? | run his own odour/reversal nursery, compare regime (continuing life vs our bandit) | is the gap our setup or the mechanism? | ~10 min | ready |
+| EXP-01 | Does ANY arousal gene setting stabilize the fast reward-flip (fix the oscillation / sub-1.0 cap)? | sweep threshold/heat/youth/decay/tolerance on the reward-flip, measure post-flip hold vs baseline | answers the open Q to Bernhard; gates [[cadence-library-status]] "tuned-genes open" | ~5 min | **OBSOLETE 2026-10-16: rests on the retracted #164 eval bug (see EXPERIMENT-RESULTS 2026-10-08 rerun).** Was: **done 2026-10-07: REFUTED (coarse). best slow-decay 0.72 vs 0.64 baseline, none >=0.90. See EXPERIMENT-RESULTS.md** |
+| EXP-02 | Does our reward-flip finding reconcile with Bernhard's `benchmarks/reversal` 39/40 pass? | run his own odour/reversal nursery, compare regime (continuing life vs our bandit) | is the gap our setup or the mechanism? | ~10 min | **OBSOLETE 2026-10-16: rests on the retracted #164 eval bug** |
 | EXP-03 | Is "measurable transfer" between two brains real and causal? | twin-brain ablation ... | makes [[noesis-transfer-graph-not-citation-graph]] concrete | ~15 min | **DONE-superseded by V(S) program M1 (EXP-08): twin-brain ablation built, genuine transfer +0.219 ~3.6σ** |
 | EXP-04 | Does the transfer signal SEPARATE genuine learning from wash? | genuine vs wash witness delta | [[noesis-wash-reduces-to-two-irreducibles]] on Cadence | ~15 min | **DONE-superseded by M1+M2 (EXP-08/10): fakes price to ~0/neg; per-mind attribution gap +0.542** |
 | EXP-05 | Is the portable-mind byte-identical property robust under mid-stream snapshot/restore? | snapshot a learning brain mid-stream, restore in a fresh process, assert bit-identical continuation + digest match | [[portable-swappable-jarvis-mind]] Idea 1 (the one demonstrated property) | ~5 min | ready |
@@ -14,10 +14,10 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 | EXP-07 | Does Cadence avoid catastrophic forgetting of an unrelated skill? | teach skill A, then B, check A retained (nursery's "stable pair") | persistence relevance for a learned local policy | ~10 min | ready |
 
 ## Spawned follow-ups
-- **EXP-01b** (ready) — joint-gene + scale sweep: slow-decay x young region crossed, plus 16x8 vs
+- **EXP-01b** (OBSOLETE 2026-10-16: rests on the retracted #164 eval bug) — joint-gene + scale sweep: slow-decay x young region crossed, plus 16x8 vs
   32x16 vs 64x32 net sizes, to test whether stabilization is a joint-gene or scale effect rather
   than single-axis. Spawned by EXP-01's REFUTED coarse result (best 0.72, none >=0.90).
-- **EXP-50** (ready; was "EXP-46a", spawned 2026-10-13 by Cadence 0.83 + EXP-43/44) — on EXP-43's judged-w3 graded text, does
+- **EXP-50** (candidate, off-program, Will-gated (2026-10-16 re-rank); was "EXP-46a", spawned 2026-10-13 by Cadence 0.83 + EXP-43/44) — on EXP-43's judged-w3 graded text, does
   0.83's episodic memory (`Brain.compose(memory_choice=True)`, records keyed by situation that vote in the choice)
   close the gap to the counts table (.254 Cadence vs .346 table)? The memory is table-shaped, so this is the direct
   test. Honest counter-prediction from upstream: memory_choice LOWERED a history-free bandit (0.86 -> 0.75), and
@@ -66,14 +66,14 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-61** (DONE 2026-10-14: SUPPORTIVE 2/2, content -.05 / +.02 at 40 / 120 on the default brain through step: the brain blocks content, not the live path; spawned 2026-10-14 by EXP-58) — split EXP-58's confound: the DEFAULT memory brain with EXP-58's exact
   protocol (alone phase through `step`, no labels), know-4 vs random vs untaught, 40 and 120 attempts, 24 students. Content
   still ~0 -> the operating point blocks content; content appears -> `live` after teaching was washing it out.
-- **EXP-62** (ready, spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
+- **EXP-62** (ready; the V(S) program's top item per the 2026-10-16 re-rank; spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
   random / wrong-chain / echo fakes, pay = worth against the random-label null twin), now that content gets through.
 - **EXP-63** (DONE 2026-10-15: SUPPORTIVE 5/5, invisible chain clean passes 19 vs 5 of 96 vs the plain context, stage-2 no
   longer drops; hidden 17 vs 4 of 48; visible neutral; outcome read as an oracle; spawned 2026-10-14 by EXP-59) — an outcome-keyed gate: hold only decisions the world answered as failures
   (not merely unchanged observations), on the hidden (EXP-57), visible (EXP-60) and invisible-step (EXP-59) chambers.
   Upstream hook (monitor 2026-10-15): Bernhard opened #202 proposing the hold rule as an opt-in gene, citing EXP-57/59;
   its gate includes "the invisible-action boundary measured and reported", so EXP-63's result is a direct #202 comment.
-- **EXP-64** (candidate, not pre-registered; spawned 2026-10-15 by the monitor from upstream #198) — #198 proposes the composed
+- **EXP-64** (folded into EXP-62b (instrument B), 2026-10-16 re-rank; was candidate, not pre-registered; spawned 2026-10-15 by the monitor from upstream #198) — #198 proposes the composed
   founder's actor step 1.0 -> 0.1 (bias 0.05 -> 0.01) because the readout saturates in reward chambers. EXP-58/61 found content
   on the delayed-credit brain (actor .1, critic 5, no arousal, no memory) and none on the default memory brain, but several genes
   differ. Isolate: EXP-61's exact protocol on the default memory brain with ONLY `actor_eta=0.1, actor_eta_bias=0.01`. Content
@@ -83,7 +83,7 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   invisible-action chain with out5 as the ceiling and ctx5 / hold5 as floors: (a) the corrective teacher's label (a label after a
   guided decision marks it a miss; guided decisions only), (b) the brain's own forecast error at the decision (critic / TD sign).
   Tells #202 whether an outcome-keyed gene can run without a new input from the world.
-- **EXP-66** (ready, spawned 2026-10-16 by EXP-65) — the smallest per-decision failure input through a channel Cadence already
+- **EXP-66** (candidate, off-program, Will-gated (2026-10-16 re-rank); spawned 2026-10-16 by EXP-65) — the smallest per-decision failure input through a channel Cadence already
   has: a small negative reward on a failed action (natural signal; e.g. -0.05 per miss, size fixed by a pilot under the exact
   run conditions so the penalty is visible but does not swamp the +2/-1 episode outcome), with the gate keyed on it (hold a
   decision whose reward is negative). Arms on the invisible and hidden chains: ctx5 (no penalty), pen (penalty, no gate),

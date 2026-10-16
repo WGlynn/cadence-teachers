@@ -4,6 +4,9 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 
 > **North star:** the V(S) TRANSFER PROGRAM (`~/cadence-lab/VS-TRANSFER-PROGRAM.md`) is the standing
 > top-priority thread per Will 2026-10-07. EXP-08/09+ advance it.
+>
+> Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
+> write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
 ## EXP-65 — the outcome gate on signals Cadence receives: the label is safe but too sparse, the forecast error is blind — 2026-10-16
 - **Version:** Cadence v0.83.0 `6499e56` (EXP-63's head; three stored EXP-63 rows recompute identically). **Script:** `exp/EXP-65_inbrain_gate.py`. New arms gate during training only: lab5 (hold a decision when the corrective teacher's label follows it), td5 (hold when the brain's own signed forecast error for it is below 0), out5t (EXP-63's oracle during training only, the matched ceiling). Comparators: EXP-63's ctx5 / hold5 / out5 rows on the same seeds (invisible chain 48 per signal, hidden 24). Pre-registered `93d5645`, amended before the full run `75dfc6a` (check scope, review fixes; no arm or prediction changed). 3 workers, 25 min.
@@ -105,6 +108,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 - **Version:** Cadence v0.78.0 / `750c8ef`. **Script:** `exp/EXP-35b_pedigree_controller.py` (ROUNDS=30 SEEDS=6).
 - **Result:** all arms final .828-.850, within ~2 SEM; discovery .34-.39; relaying falls .45 -> .33 with share.
 - **Verdict: VOID (amended 2026-10-09).** Originally logged REFUTED. The test was blind: royalty was credited to whatever move the origin made that round, so the Discover estimate never saw its pay and the share never reached the decision. The staged CREDIT=fixed patch has its own leaks (review 2026-10-09: founder-item royalty counted as Discover pay; positive-only royalty guard; optimistic 0.05 priors; PI arm winds up). Rerun Will-gated after those are fixed. Detail: VS-TRANSFER-PROGRAM iter25.
+- **Note 2026-10-16 (program re-rank):** VOID above is superseded. iter27 (patched credit) was NULL, a
+  credit-design failure; iter28 (CREDIT=item, Cadence v0.80.0 `19bee92`, 12 seeds) is SUPPORTIVE: ALPHA 0 / 0.9 / PI
+  Discover pay per move .0036 / .0071 / .0049; Discover share last 10 rounds .51 / .63 / .53; new discoveries
+  54.0+-1.0 / 57.8+-0.8 / 55.3+-1.3; final .790 / .811 / .798. Accuracy +.021 (~2 SEM, no claim); PI part wrong
+  (set point shrinks by construction). Detail: experiments/EXP-35b.md, VS-TRANSFER-PROGRAM iter28.
 
 ## EXP-11 smoke — Reinforcement (patch-world substrate) twin-ablation foundation — 2026-10-08
 - **Version:** Cadence v0.78.0 / `750c8ef`. **Script:** `exp/EXP-11_smoke_reinforcement.py`.
@@ -146,6 +154,9 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
   NEW result is per-mind LOCALIZATION, not the aggregate curve. **SCOPE: additive/per-node attribution
   only. Super-additive SYNERGY (worth only in the combination, XOR-style) is NOT tested and remains
   open (M2-synergy) — a small bandit cannot cleanly represent it.** Do not round up.
+- **Note 2026-10-16 (program re-rank):** the numbers above are pre-fix. After the #164 eval fix (iter8, 12 seeds):
+  genuine minds +0.375 vs fake -0.479, gap +0.854 (was +0.542); proportional curve f=0..1:
+  -0.542/-0.302/-0.052/+0.198/+0.448, linear. See VS-TRANSFER-PROGRAM iter8.
 
 ## EXP-09 — v(S) transfer vs coordinated-but-wrong prior (program M4) — 2026-10-07
 - **Version:** Cadence v0.75.0 / `88f4dde`. **Script:** `exp/EXP-09_vs_gamma_coordinated_prior.py`.
@@ -164,6 +175,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
   matched in-harness baseline — a real PP scorer is still owed before "crossover higher than 0.70" is
   decision-grade. Mixed-N curve (labeled). Absolute transfer modest (partial mastery at K=8).
   Infra: greedy act() probed PURE -> eval clone dropped; witness-ingest is the bottleneck.
+- **Note 2026-10-16 (program re-rank):** the numbers above are pre-fix, and the claim that everything at
+  gamma<=0.75 prices to ~zero is RETRACTED (iter8; the "act() is PURE" probe was wrong, #164). After the fix
+  (crossover band, 12 seeds): gamma 0.625 +0.125 (.074), 0.75 +0.135 (.054), 0.875 +0.281 (.049), 1.0 +0.469
+  (.045); credit rises roughly proportionally with agreement. The low-gamma half (0.0-0.5) has not been rerun.
+  The paper's gamma*=0.70 is on a different axis (EXP-15, iter9). See VS-TRANSFER-PROGRAM iter8, M4.
 
 ## EXP-08 — v(S) via measurable transfer: twin-brain ablation separation (program M1) — 2026-10-07
 - **Version:** Cadence v0.75.0 / `88f4dde`. **Script:** `exp/EXP-08_vs_transfer_separation.py`.
@@ -191,6 +207,8 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
   transfer), so absolute separation is modest; the mean, not the per-seed, is the signal. iter1 (K=4)
   gave a coarser +0.31 with a fake leak later confirmed as K=4 chance-overlap artifact.
 - **Next:** EXP-09 (M4 gamma sweep), then M2 feature-matched fake.
+- **Note 2026-10-16 (program re-rank):** the numbers above are pre-fix. After the #164 eval fix (iter8, 16 seeds):
+  genuine +0.422 (SEM .045) vs fake_random -0.109, fake_wrong -0.578; separation +0.531. See VS-TRANSFER-PROGRAM iter8.
 
 ## EXP-01 — arousal gene sweep (reward-flip stabilization) — 2026-10-07
 - **Version:** Cadence main `88f4dde` / v0.75.0 (clone `~/_cadence_study`).
