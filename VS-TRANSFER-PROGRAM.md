@@ -48,6 +48,8 @@ Two measured lessons (added 2026-10-16):
 
 ---
 
+> **Design note 2026-10-16 (Will, designed not measured):** layered anchors, brains as instruments with an OPH/DI obstruction readout, and exogeneity relative to the attacker. Local technical note `DESIGN-NOTE-layered-anchors-2026-10-16.md` (not published); plain version on Will's Desktop.
+
 ## SOLVED-CRITERIA (when does the loop stop / ping Will)
 
 A chain of increasingly hard bars. Each is a real milestone; ping Will on each crossing.
@@ -853,6 +855,8 @@ Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rera
 
    If B is blind: that is the #198 reading (the actor step alone is not the block), and C carries the comparison. EXP-51 stays parked.
 
+   **Added readout (design note 2026-10-16):** price inconsistency across the instruments as an OPH-style obstruction; prediction: fakes leave larger obstruction than genuine teachers. No extra compute (computed from the run's own rows).
+
 3. **EXP-62c: M3 off the bandit, plus the in-expectation argument from the code**
 
    **Milestone:** M3 (isomorphism-invariance). Moves it from 'empirical on a saturated bandit' toward an argument. Bears on Noesis gate WASH-PROBLEM-INDEX row 9.
@@ -979,7 +983,7 @@ Dropped / parked (2026-10-16 re-rank):
 - DROP: the M1 size sweep on the bandit (K 8/16/32). The bandit is already a valid instrument; the scale question lives on the chain (item 4).
 - PARK: porting wash_sim's novelty, synergy, cycle-energy and circulation scorers onto EXP-10. EXP-10's interior is identical by construction; item 6 does the same job on the chain for zero compute.
 - PARK: M4 residuals (EXP-09 low-gamma rerun after the fix; peer prediction on brain behaviour with SEMs). These are filler for a fire whose main item is blocked, since M4's immunity to c holds by construction.
-- PARK: M5 constructions (EXP-41 Sybil students vs network marginal value, commit-reveal sealed windows, priced-examiner noise sweep, realized-use task source). Stage them after item 5's curve says which one is needed. EXP-41 is out of scope while the protocol fixes the instrument.
+- PARK: M5 constructions (EXP-41 Sybil students vs network marginal value, commit-reveal sealed windows, priced-examiner noise sweep, realized-use task source). Stage them after item 5's curve says which one is needed. EXP-41 is out of scope while the protocol fixes the instrument. Also: cost-to-fake across 1/2/3 layers with independent vs correlated roots (design note 2026-10-16).
 - PARK: EXP-51 gene-by-gene dissection. Run it only if EXP-62b's brain B is blind and upstream wants to know which gene blocks content.
 - PARK: Shapley pricing extras (EXP-20b/21 free-rider game, paying an honest party on its best coalition, noise-twin ensemble) and Noesis-lite two-dimension finality vs a stake whale plus a ring, until item 1 shows pay rising with skill.
 - OFF-PROGRAM: the memory track (EXP-66 and further #202 hold-rule work). The receiver that carries content has no episodic memory, and no program task needs hidden-progress chains. The #202 comment v2 is already posted (comment 6220420983, 2026-10-16), so nothing is waiting to be sent.
