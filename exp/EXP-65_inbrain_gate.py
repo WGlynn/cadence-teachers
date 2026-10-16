@@ -30,7 +30,7 @@ PHASE = os.environ.get("PHASE", "full")
 WORKERS = int(os.environ.get("WORKERS", 3))
 TD_THRESH = float(os.environ.get("TD_THRESH", 0.0))
 SIGNALS = ("natural", "corrective")
-for a in ("out5t", "lab5", "td5"):
+for a in ("out5t", "lab5", "td5", "td5o"):
     E56.CONTEXT[a] = 0.5
 NEW = {"natural": ("out5t", "td5"), "corrective": ("out5t", "lab5", "td5")}   # lab5 under natural = ctx5 (no labels)
 
@@ -151,9 +151,23 @@ class TDTrace(ObsTrace, Logged):
         return int(np.asarray(out).reshape(-1)[0])
 
 
+class TDOracleTrace(TDTrace):
+    """Check only (review 2026-10-16): td5's restore point, gated on the chamber's flag. Must reproduce out5 exactly."""
+
+    def _on_learn(self, b, rep):
+        if self.hold and not self._boundary and self.prev is not None and E63.LAST_OK[0] is False:
+            b._context = None if self.pre is None else self.pre.copy()
+            self.held.append((LAST_STAGE[0], False))
+        if self._boundary:
+            self._cur_pre = None if b._context is None else np.zeros_like(b._context)
+        else:
+            self._cur_pre = None if b._context is None else b._context.copy()
+
+
 TRAIN = dict(ctx5=(ObsTrace, False), hold5=(ObsTrace, True), out5=(OutcomeTrace, True), out5t=(LoggedOutcome, True),
-             lab5=(LabelTrace, True), td5=(TDTrace, True), ctx5log=(LoggedObs, False))
-READ = dict(ctx5=(ObsTrace, False), hold5=(ObsTrace, True), out5=(OutcomeTrace, True))    # every other arm reads plain
+             lab5=(LabelTrace, True), td5=(TDTrace, True), ctx5log=(LoggedObs, False),
+             td5o=(TDOracleTrace, True))
+READ = dict(ctx5=(ObsTrace, False), hold5=(ObsTrace, True), out5=(OutcomeTrace, True), td5o=(OutcomeTrace, True))    # every other arm reads plain
 
 
 def auc(neg, pos):
@@ -205,7 +219,7 @@ def run(job):
     t0 = time.time()
     stats, rd, diag = life(chain, arm, signal, episodes, base + i)
     row = dict(phase=phase, chain=chain, arm=arm, signal=signal, episodes=episodes, seed=i, seed_base=base, **stats, **rd,
-               diag=diag, secs=round(time.time() - t0, 1), cadence=cd.__version__)
+               diag=diag, td_thresh=TD_THRESH, secs=round(time.time() - t0, 1), cadence=cd.__version__)
     ft = " ".join("  - " if v is None else f"{v:.2f}" for v in rd["first_try"])
     h = diag.get("held", {})
     a1 = diag.get("auc_s1")
@@ -243,6 +257,7 @@ def check():
                          ("ident", "invisible", "ctx5log", "natural", 120, S, 0.0),
                          ("pair", "invisible", "out5", "corrective", 120, S, 0.0),
                          ("pair", "invisible", "out5t", "corrective", 120, S, 0.0),
+                         ("oracle_td", "invisible", "td5o", "corrective", 120, S, 0.0),
                          ("probe", "invisible", "td5", "natural", 120, S, 0.0),
                          ("probe", "invisible", "td5", "corrective", 120, S, 0.0)]
     with get_context("spawn").Pool(max(1, min(WORKERS, len(jobs)))) as pool:
@@ -262,15 +277,20 @@ def check():
     same_greedy = o["greedy_exact"] == t["greedy_exact"]
     print(f"  out5t training identical to out5: {same_train}; greedy exact identical: {same_greedy} (expected True, True)", flush=True)
     ok &= same_train and same_greedy
+    od = got[("oracle_td", "invisible", "td5o", "corrective", 120, S, 0.0)]
+    same = all(od[f] == o[f] for f in READ_FIELDS)
+    print(f"  td5's restore point gated on the chamber's flag identical to out5: {same} (expected True; the gate-fired path)", flush=True)
+    ok &= same
     for sig in SIGNALS:
         g = got[("probe", "invisible", "td5", sig, 120, S, 0.0)]
         dg = g["diag"]
-        live = any(v is not None and v != 0 for v in dg["dop_mean"].values())
+        vals = [v for v in dg["dop_mean"].values() if v is not None]
+        live = any(v != 0 for v in vals) and len({round(v, 6) for v in vals}) > 1
         print(f"  td5 {sig}: learn() changed the context {dg['ctx_changed_by_learn']} times off a boundary (expected 0), "
               f"{dg['ctx_changed_at_done']} at done (the library's reset); dopamine alive: {live}; "
               f"held {dg['held']}; auc s1 {dg['auc_s1']}, auc all {dg['auc_all']}; n s1 {dg['n_s1']}", flush=True)
         print(f"      dopamine means {json.dumps({k: (None if v is None else round(v, 4)) for k, v in dg['dop_mean'].items()})}", flush=True)
-        ok &= dg["ctx_changed_by_learn"] == 0
+        ok &= dg["ctx_changed_by_learn"] == 0 and live
     print(f"check: {'PASS' if ok else 'FAIL'}", flush=True)
 
 
@@ -286,6 +306,8 @@ def mcnemar(b, c):
 
 
 def main():
+    if TD_THRESH != 0.0:
+        raise SystemExit("TD_THRESH is pre-registered at 0; other values only in MODE=check")
     t0 = time.time()
     ckpt = os.path.join(HERE, f"EXP-65-{PHASE}.jsonl")
     rows = [json.loads(l) for l in open(ckpt)] if os.path.exists(ckpt) else []
@@ -301,7 +323,9 @@ def main():
                 with open(ckpt, "a") as fh:
                     fh.write(json.dumps(r) + "\n")
     ref_file = os.path.join(HERE, f"EXP-63-{PHASE}.jsonl")
-    ref = [json.loads(l) for l in open(ref_file)] if os.path.exists(ref_file) else []
+    if not os.path.exists(ref_file):
+        raise SystemExit(f"missing comparator file {ref_file}")
+    ref = [json.loads(l) for l in open(ref_file)]
     by = {(r["chain"], r["arm"], r["signal"], r["episodes"], r["seed"]): r for r in ref + rows}
     sem = lambda x: float(np.std(x, ddof=1) / np.sqrt(len(x))) if len(x) > 1 else 0.0
     print(f"\nEXP-65 {PHASE} summary ({time.time() - t0:.0f}s); comparators from {os.path.basename(ref_file)}")
@@ -332,6 +356,8 @@ def main():
                 if x not in arms or y not in arms:
                     continue
                 pairs = [(by[(chain, x, s, ep, i)], by[(chain, y, s, ep, i)]) for s in sigs for i in range(n)]
+                for u, v in pairs:
+                    assert u["seed_base"] == v["seed_base"] == base and u["cadence"] == v["cadence"], (x, y, u["seed"])
                 xb = sum(u["greedy_exact"] and not v["greedy_exact"] for u, v in pairs)
                 yb = sum(v["greedy_exact"] and not u["greedy_exact"] for u, v in pairs)
                 stage = []
@@ -352,10 +378,13 @@ def main():
                 if a in o["diag"]:
                     dg = o["diag"][a]
                     f = lambda t: "-" if t is None else f"{t[0]:.3f} ({t[1]:.3f}, n={t[2]})"
-                    line += f" | auc s1 {f(dg['auc_s1'])} all {f(dg['auc_all'])} | held {dg['held']}"
+                    dev = "" if dg["auc_s1"] is None else f" (|auc s1 - .5| {abs(dg['auc_s1'][0] - .5):.3f}, exploratory)"
+                    line += f" | auc s1 {f(dg['auc_s1'])}{dev} all {f(dg['auc_all'])} | held {dg['held']}"
                 print(line)
+            if "lab5" in o["clean"] and "out5" in o["clean"] and "ctx5" in o["clean"]:
+                print(f"      P3 bar (ctx5 + out5) / 2 = {(o['clean']['ctx5'] + o['clean']['out5']) / 2:.1f}; lab5 {o['clean']['lab5']}")
             for name, q in o["pairs"].items():
-                st = "  ".join(f"s{k + 1} {m:+.3f} ({se:.3f})" for k, (m, se, _) in enumerate(q["stage"]) if m is not None)
+                st = "  ".join(f"s{k + 1} {m:+.3f} ({se:.3f}, n={nn})" for k, (m, se, nn) in enumerate(q["stage"]) if m is not None)
                 print(f"      {name:11s} n={q['n']:3d} clean {name.split('-')[0]}-only {q['x_only']} / "
                       f"{name.split('-')[1]}-only {q['y_only']} (p {q['p']:.4f}) | first try {st} | all first tries "
                       f"{q['r0'][0]:+.3f} ({q['r0'][1]:.3f}) | sampled {q['sampled'][0]:+.3f} ({q['sampled'][1]:.3f})")

@@ -1,0 +1,70 @@
+EXP-65 pilot: 30 lives to go (0 done); plan [('invisible', 120, 6, 63500)]; workers 3; td threshold 0.0
+  invisible out5t corrective s 0: exact 0 sampled 0.97 first-try 0.36 0.84 1.00 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.41 (11.6s)
+  invisible out5t natural    s 0: exact 0 sampled 0.42 first-try 0.08 0.81 1.00 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.51 (12.1s)
+  invisible td5   natural    s 0: exact 0 sampled 0.01 first-try 0.01 0.03 0.10 1.00 | held 12/991 misses, 0 ok (0 at s1) | auc s1 0.50 (13.7s)
+  invisible td5   corrective s 0: exact 0 sampled 1.00 first-try 0.34 0.56 1.00 0.99 | held 410/567 misses, 166 ok (76 at s1) | auc s1 0.47 (11.7s)
+  invisible lab5  corrective s 0: exact 0 sampled 0.99 first-try 0.82 0.32 1.00 1.00 | held 192/623 misses, 0 ok (0 at s1) | auc s1 0.55 (13.1s)
+  invisible out5t natural    s 1: exact 0 sampled 0.39 first-try 0.05 0.79 0.98 0.95 | held -/- misses, - ok (- at s1) | auc s1 0.51 (15.7s)
+  invisible out5t corrective s 1: exact 1 sampled 0.93 first-try 0.91 0.86 0.81 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.56 (11.3s)
+  invisible lab5  corrective s 1: exact 0 sampled 0.99 first-try 0.40 0.76 0.87 1.00 | held 121/357 misses, 0 ok (0 at s1) | auc s1 0.44 (10.6s)
+  invisible td5   natural    s 1: exact 0 sampled 0.01 first-try 0.04 0.24 0.25 0.00 | held 207/949 misses, 34 ok (31 at s1) | auc s1 0.52 (17.1s)
+  invisible td5   corrective s 1: exact 0 sampled 0.47 first-try 0.01 0.91 1.00 0.98 | held 386/683 misses, 121 ok (58 at s1) | auc s1 0.56 (10.5s)
+  invisible out5t natural    s 2: exact 0 sampled 0.25 first-try 0.15 0.28 0.49 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.53 (12.2s)
+  invisible td5   natural    s 2: exact 0 sampled 0.00 first-try 0.03 0.06 0.00   -  | held 24/900 misses, 0 ok (0 at s1) | auc s1 0.61 (13.5s)
+  invisible out5t corrective s 2: exact 0 sampled 0.73 first-try 0.28 0.91 0.91 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.56 (15.0s)
+  invisible lab5  corrective s 2: exact 0 sampled 0.97 first-try 0.36 0.88 1.00 1.00 | held 165/519 misses, 0 ok (0 at s1) | auc s1 0.42 (12.8s)
+  invisible td5   corrective s 2: exact 0 sampled 0.75 first-try 0.82 0.22 0.37 1.00 | held 504/650 misses, 127 ok (82 at s1) | auc s1 0.59 (12.2s)
+  invisible out5t natural    s 3: exact 0 sampled 0.02 first-try 0.01 0.25 0.67 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.38 (12.3s)
+  invisible td5   natural    s 3: exact 0 sampled 0.00 first-try 0.00 0.25 0.00   -  | held 72/977 misses, 1 ok (1 at s1) | auc s1 0.49 (13.2s)
+  invisible out5t corrective s 3: exact 1 sampled 0.91 first-try 0.63 0.88 0.99 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.57 (12.0s)
+  invisible lab5  corrective s 3: exact 0 sampled 0.61 first-try 0.11 0.67 0.97 1.00 | held 191/633 misses, 0 ok (0 at s1) | auc s1 0.50 (13.9s)
+  invisible td5   corrective s 3: exact 0 sampled 0.81 first-try 0.11 0.74 0.94 1.00 | held 321/712 misses, 91 ok (39 at s1) | auc s1 0.50 (13.6s)
+  invisible out5t natural    s 4: exact 0 sampled 0.31 first-try 0.09 0.86 1.00 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.49 (16.1s)
+  invisible td5   natural    s 4: exact 0 sampled 0.02 first-try 0.06 0.04 0.50 1.00 | held 41/889 misses, 5 ok (4 at s1) | auc s1 0.55 (15.1s)
+  invisible out5t corrective s 4: exact 0 sampled 0.20 first-try 0.08 0.23 1.00 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.43 (14.2s)
+  invisible lab5  corrective s 4: exact 0 sampled 0.93 first-try 0.42 0.80 0.97 1.00 | held 126/358 misses, 0 ok (0 at s1) | auc s1 0.46 (13.4s)
+  invisible td5   corrective s 4: exact 0 sampled 0.30 first-try 0.07 1.00 0.94 1.00 | held 320/687 misses, 103 ok (54 at s1) | auc s1 0.58 (12.1s)
+  invisible out5t natural    s 5: exact 0 sampled 0.14 first-try 0.02 0.88 0.87 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.63 (13.2s)
+  invisible td5   natural    s 5: exact 0 sampled 0.07 first-try 0.00 0.88 1.00 1.00 | held 110/942 misses, 7 ok (7 at s1) | auc s1 0.63 (12.7s)
+  invisible out5t corrective s 5: exact 1 sampled 0.97 first-try 0.71 0.87 0.94 1.00 | held -/- misses, - ok (- at s1) | auc s1 0.53 (10.6s)
+  invisible lab5  corrective s 5: exact 0 sampled 0.99 first-try 0.38 0.84 0.99 0.98 | held 148/425 misses, 0 ok (0 at s1) | auc s1 0.48 (12.3s)
+  invisible td5   corrective s 5: exact 0 sampled 0.79 first-try 0.15 0.79 0.93 0.99 | held 506/598 misses, 194 ok (99 at s1) | auc s1 0.55 (13.3s)
+
+EXP-65 pilot summary (135s); comparators from EXP-63-pilot.jsonl
+  [invisible ep120 natural] clean greedy ctx5 0  hold5 0  out5 0  out5t 0  td5 0 | sampled ctx5 0.038  hold5 0.077  out5 0.328  out5t 0.255  td5 0.018
+      first try by stage ctx5 : 0.06 0.34 0.41 1.00
+      first try by stage hold5: 0.14 0.18 0.55 0.89
+      first try by stage out5 : 0.07 0.74 0.80 0.99
+      first try by stage out5t: 0.07 0.65 0.83 0.99 | auc s1 0.509 (0.034, n=6) all 0.513 (0.033, n=6) | held None
+      first try by stage td5  : 0.02 0.25 0.31 0.75 | auc s1 0.551 (0.025, n=6) all 0.530 (0.028, n=6) | held {'total': 513, 'on_miss': 466, 'on_ok': 47, 'on_ok_s1': 43, 'misses': 5648}
+      td5-ctx5    n=  6 clean td5-only 0 / ctx5-only 0 (p 1.0000) | first try s1 -0.037 (0.020)  s2 -0.087 (0.123)  s3 -0.097 (0.104)  s4 -0.333 (0.333) | all first tries -0.041 (0.036) | sampled -0.020 (0.027)
+      td5-hold5   n=  6 clean td5-only 0 / hold5-only 0 (p 1.0000) | first try s1 -0.117 (0.101)  s2 +0.068 (0.206)  s3 -0.242 (0.134)  s4 -0.078 (0.347) | all first tries -0.105 (0.035) | sampled -0.058 (0.019)
+      td5-out5    n=  6 clean td5-only 0 / out5-only 0 (p 1.0000) | first try s1 -0.043 (0.013)  s2 -0.488 (0.146)  s3 -0.490 (0.150)  s4 -0.236 (0.242) | all first tries -0.364 (0.086) | sampled -0.310 (0.085)
+      out5t-ctx5  n=  6 clean out5t-only 0 / ctx5-only 0 (p 1.0000) | first try s1 +0.007 (0.031)  s2 +0.311 (0.219)  s3 +0.427 (0.185)  s4 -0.013 (0.013) | all first tries +0.276 (0.097) | sampled +0.217 (0.082)
+      out5t-out5  n=  6 clean out5t-only 0 / out5-only 0 (p 1.0000) | first try s1 -0.000 (0.007)  s2 -0.090 (0.027)  s3 +0.035 (0.028)  s4 +0.001 (0.004) | all first tries -0.047 (0.019) | sampled -0.073 (0.046)
+  [invisible ep120 corrective] clean greedy ctx5 1  hold5 0  out5 3  out5t 3  lab5 0  td5 0 | sampled ctx5 0.657  hold5 0.425  out5 0.863  out5t 0.785  lab5 0.913  td5 0.687
+      first try by stage ctx5 : 0.24 0.78 0.84 1.00
+      first try by stage hold5: 0.38 0.58 0.76 1.00
+      first try by stage out5 : 0.48 0.82 0.96 0.99
+      first try by stage out5t: 0.50 0.77 0.94 1.00 | auc s1 0.509 (0.028, n=6) all 0.627 (0.033, n=6) | held None
+      first try by stage lab5 : 0.42 0.71 0.97 1.00 | auc s1 0.475 (0.019, n=6) all 0.592 (0.035, n=6) | held {'total': 943, 'on_miss': 943, 'on_ok': 0, 'on_ok_s1': 0, 'misses': 2915}
+      first try by stage td5  : 0.25 0.70 0.86 0.99 | auc s1 0.541 (0.020, n=6) all 0.551 (0.031, n=6) | held {'total': 3249, 'on_miss': 2447, 'on_ok': 802, 'on_ok_s1': 408, 'misses': 3897}
+      lab5-ctx5   n=  6 clean lab5-only 0 / ctx5-only 1 (p 1.0000) | first try s1 +0.175 (0.141)  s2 -0.074 (0.111)  s3 +0.131 (0.149)  s4 +0.001 (0.003) | all first tries +0.111 (0.051) | sampled +0.257 (0.099)
+      lab5-out5   n=  6 clean lab5-only 0 / out5-only 3 (p 0.2500) | first try s1 -0.062 (0.175)  s2 -0.109 (0.127)  s3 +0.007 (0.012)  s4 +0.002 (0.006) | all first tries -0.029 (0.078) | sampled +0.050 (0.110)
+      td5-ctx5    n=  6 clean td5-only 0 / ctx5-only 1 (p 1.0000) | first try s1 +0.010 (0.167)  s2 -0.080 (0.080)  s3 +0.028 (0.192)  s4 -0.003 (0.005) | all first tries -0.021 (0.061) | sampled +0.030 (0.153)
+      td5-hold5   n=  6 clean td5-only 0 / hold5-only 0 (p 1.0000) | first try s1 -0.130 (0.222)  s2 +0.128 (0.204)  s3 +0.105 (0.184)  s4 -0.007 (0.004) | all first tries +0.070 (0.071) | sampled +0.262 (0.225)
+      td5-out5    n=  6 clean td5-only 0 / out5-only 3 (p 0.2500) | first try s1 -0.227 (0.208)  s2 -0.115 (0.178)  s3 -0.097 (0.103)  s4 -0.002 (0.007) | all first tries -0.161 (0.047) | sampled -0.177 (0.068)
+      out5t-ctx5  n=  6 clean out5t-only 2 / ctx5-only 0 (p 0.5000) | first try s1 +0.255 (0.132)  s2 -0.019 (0.141)  s3 +0.107 (0.159)  s4 +0.004 (0.003) | all first tries +0.102 (0.110) | sampled +0.128 (0.161)
+      out5t-out5  n=  6 clean out5t-only 0 / out5-only 0 (p 1.0000) | first try s1 +0.018 (0.005)  s2 -0.054 (0.023)  s3 -0.018 (0.009)  s4 +0.005 (0.004) | all first tries -0.038 (0.026) | sampled -0.078 (0.038)
+      lab5-out5t  n=  6 clean lab5-only 0 / out5t-only 3 (p 0.2500) | first try s1 -0.080 (0.177)  s2 -0.055 (0.144)  s3 +0.025 (0.020)  s4 -0.003 (0.003) | all first tries +0.009 (0.102) | sampled +0.128 (0.140)
+  [invisible ep120 pooled] clean greedy ctx5 1  hold5 0  out5 3  out5t 3  td5 0 | sampled ctx5 0.347  hold5 0.251  out5 0.596  out5t 0.520  td5 0.353
+      first try by stage ctx5 : 0.15 0.56 0.62 1.00
+      first try by stage hold5: 0.26 0.38 0.65 0.94
+      first try by stage out5 : 0.27 0.78 0.88 0.99
+      first try by stage out5t: 0.28 0.71 0.89 1.00 | auc s1 0.509 (0.021, n=12) all 0.570 (0.028, n=12) | held None
+      first try by stage td5  : 0.14 0.48 0.59 0.90 | auc s1 0.546 (0.015, n=12) all 0.540 (0.020, n=12) | held {'total': 3762, 'on_miss': 2913, 'on_ok': 849, 'on_ok_s1': 451, 'misses': 9545}
+      td5-ctx5    n= 12 clean td5-only 0 / ctx5-only 1 (p 1.0000) | first try s1 -0.013 (0.081)  s2 -0.084 (0.070)  s3 -0.035 (0.106)  s4 -0.113 (0.111) | all first tries -0.031 (0.034) | sampled +0.005 (0.075)
+      td5-hold5   n= 12 clean td5-only 0 / hold5-only 0 (p 1.0000) | first try s1 -0.123 (0.116)  s2 +0.098 (0.138)  s3 -0.068 (0.121)  s4 -0.036 (0.127) | all first tries -0.018 (0.046) | sampled +0.102 (0.118)
+      td5-out5    n= 12 clean td5-only 0 / out5-only 3 (p 0.2500) | first try s1 -0.135 (0.103)  s2 -0.301 (0.124)  s3 -0.293 (0.105)  s4 -0.096 (0.096) | all first tries -0.262 (0.056) | sampled -0.243 (0.056)
+      out5t-ctx5  n= 12 clean out5t-only 2 / ctx5-only 0 (p 0.5000) | first try s1 +0.131 (0.075)  s2 +0.146 (0.134)  s3 +0.267 (0.126)  s4 -0.003 (0.006) | all first tries +0.189 (0.075) | sampled +0.173 (0.087)
+      out5t-out5  n= 12 clean out5t-only 0 / out5-only 0 (p 1.0000) | first try s1 +0.009 (0.005)  s2 -0.072 (0.018)  s3 +0.008 (0.016)  s4 +0.003 (0.003) | all first tries -0.042 (0.015) | sampled -0.076 (0.028)

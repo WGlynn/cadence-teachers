@@ -1,0 +1,14 @@
+EXP-65 check: cadence 0.83.0 from C:\Users\Will/_cadence_study/src\cadence
+  EXP-63 row (invisible, ctx5, natural, seed 0) recomputes identically through this script: True
+  EXP-63 row (invisible, out5, corrective, seed 0) recomputes identically through this script: True
+  EXP-63 row (hidden, out5, corrective, seed 0) recomputes identically through this script: True
+  td5     (natural, threshold -inf) identical to ctx5: True (expected True)
+  lab5    (natural) identical to ctx5: True (expected True)
+  ctx5log (natural) identical to ctx5: True (expected True)
+  out5t training identical to out5: True; greedy exact identical: True (expected True, True)
+  td5's restore point gated on the chamber's flag identical to out5: True (expected True; the gate-fired path)
+  td5 natural: learn() changed the context 0 times off a boundary (expected 0), 120 at done (the library's reset); dopamine alive: True; held {'total': 121, 'on_miss': 112, 'on_ok': 9, 'on_ok_s1': 9, 'misses': 1007}; auc s1 0.42870140612076096, auc all 0.49771886648532737; n s1 {'ok': 45, 'miss': 806}
+      dopamine means {"s1_ok": 0.0287, "s1_miss": 0.039, "s2_ok": 0.0584, "s2_miss": 0.0579, "s3_ok": 0.0581, "s3_miss": 0.0578, "s4_ok": null, "s4_miss": 0.0565}
+  td5 corrective: learn() changed the context 0 times off a boundary (expected 0), 120 at done (the library's reset); dopamine alive: True; held {'total': 544, 'on_miss': 389, 'on_ok': 155, 'on_ok_s1': 79, 'misses': 655}; auc s1 0.5841269841269842, auc all 0.48808384008280503; n s1 {'ok': 105, 'miss': 315}
+      dopamine means {"s1_ok": -0.006, "s1_miss": -0.0104, "s2_ok": -0.0029, "s2_miss": 0.0042, "s3_ok": -0.0024, "s3_miss": -0.0053, "s4_ok": null, "s4_miss": 0.0066}
+check: PASS
