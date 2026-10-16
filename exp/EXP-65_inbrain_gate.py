@@ -52,7 +52,7 @@ class Logged:
     """Wraps the brain's learn() to read the forecast error of the decision just answered (never changes it)."""
 
     def _install(self, b):
-        self.log, self.ctx_changed, self._boundary = [], 0, False
+        self.log, self.ctx_changed, self.ctx_changed_boundary, self._boundary = [], 0, 0, False
         orig = b.learn
 
         def learn(*a, **k):
@@ -61,7 +61,11 @@ class Logged:
             after = b._context
             if not ((before is None and after is None) or (before is not None and after is not None
                                                            and np.array_equal(before, after))):
-                self.ctx_changed += 1
+                # check amendment (before the pilot): the library clears the context at done; gates never act there
+                if self._boundary:
+                    self.ctx_changed_boundary += 1
+                else:
+                    self.ctx_changed += 1
             if not self._boundary:
                 self.log.append((LAST_STAGE[0], bool(E63.LAST_OK[0]), float(rep.get("dopamine", np.nan))))
             self._on_learn(b, rep)
@@ -165,7 +169,7 @@ def diagnose(tr, chain):
     log = getattr(tr, "log", None)
     if log is None:
         return {}
-    d = dict(n_logged=len(log), ctx_changed_by_learn=tr.ctx_changed)
+    d = dict(n_logged=len(log), ctx_changed_by_learn=tr.ctx_changed, ctx_changed_at_done=tr.ctx_changed_boundary)
     dop = [(s, ok, v) for s, ok, v in log if np.isfinite(v)]
     d["auc_all"] = auc([v for s, ok, v in dop if not ok], [v for s, ok, v in dop if ok])
     d["auc_s1"] = auc([v for s, ok, v in dop if s == 0 and not ok], [v for s, ok, v in dop if s == 0 and ok])
@@ -262,7 +266,8 @@ def check():
         g = got[("probe", "invisible", "td5", sig, 120, S, 0.0)]
         dg = g["diag"]
         live = any(v is not None and v != 0 for v in dg["dop_mean"].values())
-        print(f"  td5 {sig}: learn() changed the context {dg['ctx_changed_by_learn']} times (expected 0); dopamine alive: {live}; "
+        print(f"  td5 {sig}: learn() changed the context {dg['ctx_changed_by_learn']} times off a boundary (expected 0), "
+              f"{dg['ctx_changed_at_done']} at done (the library's reset); dopamine alive: {live}; "
               f"held {dg['held']}; auc s1 {dg['auc_s1']}, auc all {dg['auc_all']}; n s1 {dg['n_s1']}", flush=True)
         print(f"      dopamine means {json.dumps({k: (None if v is None else round(v, 4)) for k, v in dg['dop_mean'].items()})}", flush=True)
         ok &= dg["ctx_changed_by_learn"] == 0
