@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-17 (iter36, EXP-62 BOUNDARY 4/5): on the delayed-credit brain, against a committed null (the random-label null won the pooled rule), transfer PRICES SKILL: know-1..4 +.054 / +.068 / +.138 / +.236, ordered, Spearman .40 (n 288); wrong-chain, echo, random and abstain all below zero; fakes take .041 of pay. Only the zero point failed: anti-echo +.023 (1.2 SEM), and worth tracks label information across all arms (r .99), so the measure prices the elimination bit the corrective schedule leaks. M1b not formally crossed. Binding question now: price against the best fake in a declared class (EXP-62c, fresh seeds), then instrument dependence (EXP-62b).
+
 2026-10-16 (re-rank, no new rung): no milestone has moved since iter13 (10-09).
 
 Status on the bandit:
@@ -193,6 +195,12 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter36 (2026-10-17): EXP-62, Noesis-lite v2 on the content-taking brain against a committed null: BOUNDARY 4/5
+- Version: Cadence v0.83.0 + Unreleased `6499e56`. Pre-registered `e6d6d82`, pilot + amendment A1 `aaafac7`, run 1,997 s.
+- RUN GATE: (1) prediction in experiments/EXP-62.md before the pilot; (2) window: lessons 40/80/120 piloted under run conditions, rule picked 40 (80 excluded by the .90 ceiling guard on 3 students), 80 run as declared exploratory; (3) variance: know-k varies label correctness .35 / .49 / .70 / 1.00 by construction; (4) metric: priced against the committed stronger counterfactual, abstain and anti-echo arms included; (5) chain printed in the pilot: label correctness -> taught accuracy -> CF accuracy -> worth, every link moved.
+- Result (40): ladder +.054 / +.068 / +.138 / +.236 ordered, Spearman .400; random -.028, wrong-chain -.054, echo -.075, abstain -.016, anti-echo +.023 (SEM .019); fake pay .041. 80 (exploratory): ladder to +.391, Spearman .530, anti-echo +.031.
+- Reading: transfer prices skill on instrument I = delayed-credit brain with null N = random-label teacher; the zero point leaks: worth follows label information (r .99 across arms), and the corrective schedule gives any labeller one elimination bit per mistake. Re-priced against anti-echo (exploratory) the ladder holds (know-1 +.030 to know-4 +.213). Milestones: M1 and additive M2 re-cross on this chain (genuine positive, fakes non-positive except the leak-carrying one); M1b BOUNDARY.
 
 ### iter35 (program evidence, logged late 2026-10-16): Noesis-lite pricing (EXP-49, EXP-52) and the content sub-track (EXP-48/53/54/55/58/61)
 - Numbering: iter14 to iter34 are teaching and text work. From iter35 on, only runs that touch M1-M5 take iteration
@@ -771,6 +779,10 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-17 update (iter36):** item 1 (EXP-62) DONE, BOUNDARY 4/5 (zero-point criterion only). New order: **0. EXP-62c** (below), then item 2 (EXP-62b), then the rest unchanged.
+
+0. **EXP-62c: price against the best fake in a declared class.** Milestone: M1b. What: EXP-62's harness and lesson 40 on FRESH seeds (6_400_000 + student), committed zero = anti-echo (the best labeller that sees only what the corrective schedule gives it: the executed action was wrong), pre-registered before any run; same CONFIRM criteria with fakes = random, wrong-chain, echo, abstain priced against anti-echo, plus Spearman and know-4 >= .2 against anti-echo (EXP-62's exploratory re-read gave know-4 +.213, know-1 +.030). Why: converts EXP-62's only failure into a decided test; the class argument fixes the zero point in advance rather than post hoc. Cost: about 15 min at 4 workers (72 x 10 twins at ~4.5 s). Kill: any non-anti-echo fake >= know-2 vs anti-echo. Ready.
 
 1. **EXP-62, sharpened: does transfer price skill on a brain that takes in content, against a committed null?**
 

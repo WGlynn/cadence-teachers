@@ -66,8 +66,9 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-61** (DONE 2026-10-14: SUPPORTIVE 2/2, content -.05 / +.02 at 40 / 120 on the default brain through step: the brain blocks content, not the live path; spawned 2026-10-14 by EXP-58) — split EXP-58's confound: the DEFAULT memory brain with EXP-58's exact
   protocol (alone phase through `step`, no labels), know-4 vs random vs untaught, 40 and 120 attempts, 24 students. Content
   still ~0 -> the operating point blocks content; content appears -> `live` after teaching was washing it out.
-- **EXP-62** (ready; the V(S) program's top item per the 2026-10-16 re-rank; spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
+- **EXP-62** (DONE 2026-10-17: BOUNDARY 4/5, transfer prices skill on the delayed-credit brain vs the committed null, Spearman .40, fakes .041 of pay; only the zero point failed, anti-echo +.023; spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
   random / wrong-chain / echo fakes, pay = worth against the random-label null twin), now that content gets through.
+- **EXP-62c** (ready; spawned 2026-10-17 by EXP-62; the V(S) program's new top item) — EXP-62's harness on fresh seeds with the committed zero = anti-echo, the best labeller in the class that sees only the executed mistake; same CONFIRM criteria against it. ~15 min.
 - **EXP-63** (DONE 2026-10-15: SUPPORTIVE 5/5, invisible chain clean passes 19 vs 5 of 96 vs the plain context, stage-2 no
   longer drops; hidden 17 vs 4 of 48; visible neutral; outcome read as an oracle; spawned 2026-10-14 by EXP-59) — an outcome-keyed gate: hold only decisions the world answered as failures
   (not merely unchanged observations), on the hidden (EXP-57), visible (EXP-60) and invisible-step (EXP-59) chambers.

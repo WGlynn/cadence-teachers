@@ -2458,5 +2458,65 @@
    ]
   },
   "quote_worthy": "The label is never wrong and rarely there; the forecast is always there and cannot see the difference."
+ },
+ {
+  "id": "EXP-62",
+  "name": "Noesis-lite v2: transfer prices skill on a content-taking brain; the zero point is the best fake, not noise",
+  "date": "2026-10-17",
+  "iter": "iter36",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "verdict_note": "pre-registered (e6d6d82), pilot + window decision + amendment A1 before the full run (aaafac7); 4 of 5 CONFIRM criteria held, the zero-point criterion failed (anti-echo +.023, 1.2 SEM); 72 shared students, lesson 40 decides, lesson 80 exploratory",
+  "headline": "On the brain that takes in what a teacher says, priced against a committed random-label null, the market finally ranks skill: teachers who know 1, 2, 3 or 4 stages are worth +.054, +.068, +.138 and +.236 (Spearman .40), while wrong-chain, echo, random labels and abstaining all price below zero and fakes take 4% of pay. The one miss is a labeller that only avoids the action the student just got wrong: it prices slightly above zero, exactly as much as its extra information predicts, because the teaching schedule leaks which action failed.",
+  "question": "On a brain that takes in teacher content, priced against a committed null, does measured transfer order teachers by skill and price every task-blind fake at or below zero?",
+  "process_issues": [
+   "the registered window rule picked lesson 40 over the predicted 80 (ceiling guard judged on 3 pilot students); 80 ran as a declared exploratory arm",
+   "the counterfactual flipped vs prediction (random-label null above untaught); the fixed pooled rule handled it",
+   "the label-information correlation and the anti-echo re-pricing are post hoc and labelled exploratory"
+  ],
+  "lesson": "A task-blind fake is only blind relative to what the protocol tells it. Enumerate what the schedule leaks to a labeller and set the zero point at the best fake that uses only that, declared in advance.",
+  "chart": {
+   "title": "Worth vs the committed null, lesson 40, 72 students (per-state accuracy on unseen weather)",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "knows 1 stage",
+     "value": 0.054
+    },
+    {
+     "label": "knows 2 stages",
+     "value": 0.068
+    },
+    {
+     "label": "knows 3 stages",
+     "value": 0.138
+    },
+    {
+     "label": "knows 4 stages",
+     "value": 0.236
+    },
+    {
+     "label": "avoids the last mistake (anti-echo)",
+     "value": 0.023
+    },
+    {
+     "label": "random labels",
+     "value": -0.028
+    },
+    {
+     "label": "abstain",
+     "value": -0.016
+    },
+    {
+     "label": "wrong chain",
+     "value": -0.054
+    },
+    {
+     "label": "echo the mistake",
+     "value": -0.075
+    }
+   ]
+  },
+  "quote_worthy": "The measure was not fooled; it priced the one bit the protocol gave away."
  }
 ]
