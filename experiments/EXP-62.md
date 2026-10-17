@@ -35,6 +35,21 @@ Predicted verdict: CONFIRM. Biggest risk: adjacent know-k means (know-1 vs know-
 - DECISIVE FOR NOESIS WITHOUT KILLING: content large but Spearman < .1 means transfer is a pass/fail filter, not a price. Anti-echo > 0 against CF by 2 SEM means the zero point must be the best fake in a declared committed class, because the corrective schedule leaks one elimination bit per mistake.
 - Anything else: BOUNDARY, with the failing criterion named.
 
+## Pilot and window decision (2026-10-17, before the full run)
+
+Pilot (`exp/EXP-62-pilot.*`, 3 students per length, 132 s). Chain links per arm, pooled over lengths: label-correctness
+rises with k as designed (know-1 .30-.34, know-2 .45-.63, know-3 .76-.84, know-4 1.00, random .18-.19). The committed
+CF is the untaught twin at every length (untaught .479 / .583 / .542 vs null .438 / .438 / .458 at 40 / 80 / 120), as
+predicted. Know-4 mean accuracy .667 / .917 / .708; know-4 minus know-1 .125 / (.917 - .458) / .062.
+
+Window rule as registered: 80 is excluded (know-4 .917 > .90), so the rule picks **40** (largest know-4 - know-1 among
+qualifying lengths). This departs from the prediction (which expected 80); the rule governs.
+
+**Amendment A1 (written before the full run):** the primary run is lesson 40, and only lesson 40 decides the verdict.
+Because the ceiling guard was judged on 3 students and the prediction expected 80, lesson 80 is also run on the same 72
+students as an EXPLORATORY secondary. Its result is reported but cannot change the verdict. Known risk at 40: EXP-58 had
+know-4 - untaught = .177 there, under the .2 bar, so BOUNDARY on the know-4 criterion is a live outcome.
+
 ## Summary
 PENDING (after the run)
 
