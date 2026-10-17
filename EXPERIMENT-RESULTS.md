@@ -8,9 +8,15 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-62c — fresh students, zero = anti-echo: the skill price replicates (Spearman .61); the zero point is a noise band — 2026-10-17
+- **Version:** Cadence v0.83.0 + Unreleased `6499e56`. **Script:** `exp/EXP-62c_best_fake_zero.py` (EXP-62's harness, declared settings). Pre-registered `aa364c5`. Lesson 80, 72 fresh students, committed zero = anti-echo.
+- **Insight:** know-1..4 +.073 / +.162 / +.300 / +.436, Spearman .612 (n 288); wrong-chain -.071, echo -.095; random +.027, abstain +.032 (both about 1.4 SEM); fake pay .034. Anti-echo fell below the null (-.012), reversing EXP-62. Exploratory: know-1 beats every uninformative arm by >2 SEM paired; vs a pooled uninformative zero all fakes sit within +-.02.
+- **Verdict: BOUNDARY (4/5; loop: INCONCLUSIVE on the zero-point criterion).** The point-estimate "every fake <= 0" rule against a single noisy fake fails by chance; EXP-62's leak reading withdrawn. EXP-62d (pooled zero, noise allowance, separation test) pre-registered and queued. Detail: experiments/EXP-62c.md.
+
 ## EXP-62 — Noesis-lite v2: transfer prices skill on a content-taking brain; the zero point is the best fake, not noise — 2026-10-17
 - **Version:** Cadence v0.83.0 + Unreleased `6499e56`. **Script:** `exp/EXP-62_content_market_committed_null.py`. Pre-registered `e6d6d82`; pilot + window decision + amendment A1 `aaafac7`. EXP-58's delayed-credit brain, EXP-52's market, 72 shared students x 10 twins, lesson 40 primary (window rule), 80 exploratory; worth = taught minus the committed counterfactual (pooled stronger of null / untaught; it was the random-label null at both lengths).
 - **Insight:** lesson 40: know-1..4 +.054 / +.068 / +.138 / +.236 (ordered), Spearman .400 (n 288); random -.028, wrong-chain -.054, echo -.075, abstain -.016, anti-echo +.023 (SEM .019); fake pay .041. Lesson 80 (exploratory): ladder +.059 to +.391, Spearman .530, anti-echo +.031 (1.6 SEM). Worth tracks label correctness across all 8 arms (r .99, descriptive); anti-echo's labels are right .25 vs random .19 because the corrective schedule leaks which action just failed.
+- **Correction 2026-10-17:** the anti-echo leak reading did not replicate on fresh seeds (EXP-62c); withdrawn.
 - **Verdict: BOUNDARY (4/5; loop: INCONCLUSIVE on the zero-point criterion, every other CONFIRM criterion met).** First run where the measure prices skill on a content brain against a committed null; the remaining gap is the zero point (best declared fake, not uniform noise). EXP-62c queued. Detail: experiments/EXP-62.md.
 
 ## EXP-65 — the outcome gate on signals Cadence receives: the label is safe but too sparse, the forecast error is blind — 2026-10-16

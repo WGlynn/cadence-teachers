@@ -24,7 +24,16 @@
 - Anything else: BOUNDARY, with the failing criterion named.
 
 ## Summary
-PENDING (after the run)
+- Question: with the zero declared in advance as the best fake in the schedule-only class (anti-echo), does transfer price skill on the content-taking brain on fresh students?
+- Setup: EXP-62's harness, lesson 80, 72 fresh students (seeds 6_400_000 + student), committed zero = anti-echo; fakes random, wrong-chain, echo, abstain. Run 1,339 s.
+- Prediction: CONFIRM (from EXP-62's lesson-80 data re-scored against anti-echo), weakest point know-1 near zero. Missed: the zero itself came in low.
+- Result: know-1..4 +.073 / +.162 / +.300 / +.436 (SEMs .017-.022), ordered; Spearman .612 (n 288); wrong-chain -.071, echo -.095; random +.027 (SEM .021), abstain +.032 (SEM .022); fake pay .034 (random .012, abstain .022). Anti-echo accuracy .423 vs null .435 vs untaught .455: anti-echo fell BELOW the random-label null this time (-.012), where in EXP-62 it sat above it (+.023 at 40, +.031 at 80).
+- Criteria: ordered yes, Spearman yes, know-4 >= .2 yes, every fake <= 0 NO (random, abstain), fake pay <= .10 yes; no kill.
+- Exploratory (same data): know-1 beats every uninformative arm, paired: random +.046 (2.2 SEM), untaught +.041 (2.3), null +.061 (3.2), anti-echo +.073 (3.6). Against a pooled zero (mean of null, untaught, random, anti-echo) every uninformative arm sits within +-.02 (<= 1.4 SEM) and know-1 is +.055 (SEM .015).
+- Verdict: BOUNDARY (4/5, the zero-point criterion again, this time failed from the other side).
 
 ## Reflection
-PENDING (after the run)
+- What it means: the skill price replicates on fresh students and is the strongest yet (Spearman .61; even know-1 clears every uninformative arm by more than 2 SEM). What did NOT replicate is EXP-62's reading that anti-echo carries a measurable extra bit: on fresh seeds it priced below the null. The uninformative arms (null, untaught, random, anti-echo) form a band about +-.03 wide at n = 72, and their order shuffles between runs. So the zero point is fuzzy at that scale, and no single fake is a stable zero.
+- Process: the decision rule was the weak part. "Every fake mean <= 0" against one noisy fake as zero is a max-of-noisy-estimates test: when the fakes are equal in truth, a zero that draws low makes all of them look positive, so it fails often by chance. EXP-62 failed it with anti-echo high; EXP-62c failed it with anti-echo low. That is a criterion design flaw, recorded here; it does not change either verdict. The exploratory paired and pooled reads are post hoc.
+- Lesson: set the zero as the pooled mean of a declared uninformative class, not a single fake, and test fakes against it with a noise allowance (no fake above zero by more than 2 SEM) plus a separation test (the weakest genuine contributor beats every fake by 2 SEM, paired). A point-estimate "every fake <= 0" rule needs far more students than the effect it is guarding.
+- Next: EXP-62d pre-registered now with that criterion, on fresh seeds, queued for the next loop fire (not run today).

@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-17 (iter37, EXP-62c BOUNDARY 4/5): on 72 fresh students the skill price replicates and strengthens (know-1..4 +.073 / +.162 / +.300 / +.436, Spearman .61, fakes .034 of pay; know-1 beats every uninformative arm by >2 SEM paired). The zero-point criterion failed again from the other side (zero = anti-echo drew low; random and abstain +.03). EXP-62's leak reading is withdrawn: the uninformative arms are a +-.03 noise band at n 72. The binding issue is now the decision rule, not the measure: EXP-62d (pooled zero + noise allowance + separation test) is pre-registered and queued.
+
 2026-10-17 (iter36, EXP-62 BOUNDARY 4/5): on the delayed-credit brain, against a committed null (the random-label null won the pooled rule), transfer PRICES SKILL: know-1..4 +.054 / +.068 / +.138 / +.236, ordered, Spearman .40 (n 288); wrong-chain, echo, random and abstain all below zero; fakes take .041 of pay. Only the zero point failed: anti-echo +.023 (1.2 SEM), and worth tracks label information across all arms (r .99), so the measure prices the elimination bit the corrective schedule leaks. M1b not formally crossed. Binding question now: price against the best fake in a declared class (EXP-62c, fresh seeds), then instrument dependence (EXP-62b).
 
 2026-10-16 (re-rank, no new rung): no milestone has moved since iter13 (10-09).
@@ -195,6 +197,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter37 (2026-10-17): EXP-62c, fresh students with the zero declared as anti-echo: BOUNDARY 4/5
+- Version: Cadence v0.83.0 + Unreleased `6499e56`. Pre-registered `aa364c5`. Lesson 80 (chosen from EXP-62's full data before the run), 72 fresh students, run 1,339 s.
+- Result: ladder +.073 / +.162 / +.300 / +.436 ordered, Spearman .612; wrong-chain -.071, echo -.095; random +.027, abstain +.032; fake pay .034; anti-echo -.012 vs null (EXP-62: +.023 / +.031).
+- Reading: skill pricing on instrument I = delayed-credit brain is robust across two independent student sets and two lengths; the zero point is a +-.03 band of uninformative arms whose order shuffles. The "every fake <= 0 vs one fake" rule is a max-of-noisy-estimates test and fails by chance. EXP-62's leak interpretation withdrawn (addendum in EXP-62.md). M1b still not formally crossed.
 
 ### iter36 (2026-10-17): EXP-62, Noesis-lite v2 on the content-taking brain against a committed null: BOUNDARY 4/5
 - Version: Cadence v0.83.0 + Unreleased `6499e56`. Pre-registered `e6d6d82`, pilot + amendment A1 `aaafac7`, run 1,997 s.
@@ -779,6 +786,10 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-17 update (iter37):** EXP-62c DONE, BOUNDARY 4/5 (zero point failed from the other side; leak reading withdrawn). New top: **EXP-62d** (below), then EXP-62b.
+
+00. **EXP-62d: pooled zero with a noise allowance and a separation test.** Milestone: M1b. Pre-registered in experiments/EXP-62d.md (written 2026-10-17, before any data). EXP-62's harness, lesson 80, 72 fresh students (seeds 6_600_000 + student). Zero = per-student mean of the declared uninformative class {null, untaught, random, anti-echo}. CONFIRM if: know-1 < know-2 < know-3 < know-4 and Spearman >= .3 (n 288); know-4 >= .2; no uninformative arm and neither misleading arm (wrong-chain, echo) above zero by more than 2 SEM; know-1 beats every uninformative arm by >= 2 SEM paired; fakes take <= .10 of pay (pay vs the pooled zero, batches of 6, mean > 0 and t > 2). KILL: any fake >= know-2. Why: two BOUNDARYs on a criterion that fails by chance; this replaces it with a noise-aware test stated before seeing new data. Cost ~22 min. Ready for the next loop fire.
 
 **2026-10-17 update (iter36):** item 1 (EXP-62) DONE, BOUNDARY 4/5 (zero-point criterion only). New order: **0. EXP-62c** (below), then item 2 (EXP-62b), then the rest unchanged.
 

@@ -2466,15 +2466,15 @@
   "iter": "iter36",
   "track": "market & attacks",
   "verdict": "BOUNDARY",
-  "verdict_note": "pre-registered (e6d6d82), pilot + window decision + amendment A1 before the full run (aaafac7); 4 of 5 CONFIRM criteria held, the zero-point criterion failed (anti-echo +.023, 1.2 SEM); 72 shared students, lesson 40 decides, lesson 80 exploratory",
-  "headline": "On the brain that takes in what a teacher says, priced against a committed random-label null, the market finally ranks skill: teachers who know 1, 2, 3 or 4 stages are worth +.054, +.068, +.138 and +.236 (Spearman .40), while wrong-chain, echo, random labels and abstaining all price below zero and fakes take 4% of pay. The one miss is a labeller that only avoids the action the student just got wrong: it prices slightly above zero, exactly as much as its extra information predicts, because the teaching schedule leaks which action failed.",
+  "verdict_note": "pre-registered (e6d6d82), pilot + window decision + amendment A1 before the full run (aaafac7); 4 of 5 CONFIRM criteria held, the zero-point criterion failed (anti-echo +.023, 1.2 SEM); 72 shared students, lesson 40 decides, lesson 80 exploratory; CORRECTION after EXP-62c: the anti-echo leak reading did not replicate on fresh seeds and is withdrawn",
+  "headline": "On the brain that takes in what a teacher says, priced against a committed random-label null, the market finally ranks skill: teachers who know 1, 2, 3 or 4 stages are worth +.054, +.068, +.138 and +.236 (Spearman .40), while wrong-chain, echo, random labels and abstaining all price below zero and fakes take 4% of pay. The one miss, a labeller that only avoids the last mistake pricing at +.023, did not replicate on fresh students (EXP-62c): it is noise in a band of uninformative arms about +-.03 wide.",
   "question": "On a brain that takes in teacher content, priced against a committed null, does measured transfer order teachers by skill and price every task-blind fake at or below zero?",
   "process_issues": [
    "the registered window rule picked lesson 40 over the predicted 80 (ceiling guard judged on 3 pilot students); 80 ran as a declared exploratory arm",
    "the counterfactual flipped vs prediction (random-label null above untaught); the fixed pooled rule handled it",
    "the label-information correlation and the anti-echo re-pricing are post hoc and labelled exploratory"
   ],
-  "lesson": "A task-blind fake is only blind relative to what the protocol tells it. Enumerate what the schedule leaks to a labeller and set the zero point at the best fake that uses only that, declared in advance.",
+  "lesson": "Check whether a small failing gap replicates before building an explanation on it; a near-perfect correlation across arms says nothing about the smallest gap.",
   "chart": {
    "title": "Worth vs the committed null, lesson 40, 72 students (per-state accuracy on unseen weather)",
    "unit": "worth",
@@ -2517,6 +2517,61 @@
     }
    ]
   },
-  "quote_worthy": "The measure was not fooled; it priced the one bit the protocol gave away."
+  "quote_worthy": "The ladder held; the small story about the one miss did not."
+ },
+ {
+  "id": "EXP-62c",
+  "name": "Fresh students, zero declared in advance: the skill price replicates; the zero point is a noise band",
+  "date": "2026-10-17",
+  "iter": "iter37",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "verdict_note": "pre-registered (aa364c5); 4 of 5 CONFIRM criteria held; the zero-point criterion failed from the other side (the declared zero drew low); 72 fresh students, lesson 80",
+  "headline": "On 72 students the measure had never seen, teachers who know 1, 2, 3 or 4 stages are worth +.073, +.162, +.300 and +.436 against the declared zero (Spearman .61), and even the weakest beats every uninformative arm by more than two standard errors. The fakes that carry no information (random labels, abstaining, the null, a labeller that avoids the last mistake) form a band about plus or minus .03 wide whose order shuffles between runs, so a rule requiring every fake to sit at or below one chosen fake fails by chance.",
+  "question": "With the zero point declared in advance as the best fake in the schedule-only class, does transfer price skill on fresh students?",
+  "process_issues": [
+   "the decision rule (every fake mean <= 0 against a single noisy fake) is a max-of-noisy-estimates test that fails by chance when fakes are equal in truth; recorded as a design flaw, verdict unchanged",
+   "the paired and pooled-zero reads are post hoc and exploratory"
+  ],
+  "lesson": "Set the zero as the pooled mean of a declared uninformative class and test fakes with a noise allowance plus a separation test against the weakest genuine contributor; a point-estimate every-fake-below-zero rule needs far more data than the effect it guards.",
+  "chart": {
+   "title": "Worth vs the declared zero (anti-echo), lesson 80, 72 fresh students",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "knows 1 stage",
+     "value": 0.073
+    },
+    {
+     "label": "knows 2 stages",
+     "value": 0.162
+    },
+    {
+     "label": "knows 3 stages",
+     "value": 0.3
+    },
+    {
+     "label": "knows 4 stages",
+     "value": 0.436
+    },
+    {
+     "label": "abstain",
+     "value": 0.032
+    },
+    {
+     "label": "random labels",
+     "value": 0.027
+    },
+    {
+     "label": "wrong chain",
+     "value": -0.071
+    },
+    {
+     "label": "echo the mistake",
+     "value": -0.095
+    }
+   ]
+  },
+  "quote_worthy": "The skill price replicated; the zero point turned out to be a band, not a line."
  }
 ]
