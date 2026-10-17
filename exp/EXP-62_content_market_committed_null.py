@@ -37,7 +37,9 @@ BATCH = 6
 KNOW = ["know-1", "know-2", "know-3", "know-4"]
 FAKES = ["random", "wrong-chain", "echo", "anti-echo"]
 TEACHERS = KNOW + (FAKES if os.environ.get("ARMS", "full") == "full" else ["random"])
-SEED_BASE = 6_290_000 if TAG == "pilot" else 6_200_000
+SEED_BASE = int(os.environ.get("SEED_BASE", 6_290_000 if TAG == "pilot" else 6_200_000))
+PREFIX = os.environ.get("PREFIX", "EXP-62")          # EXP-62c reuses this harness under its own name
+CF_ARM = os.environ.get("CF", "")                     # set = a declared committed zero instead of the pooled rule
 
 
 def labeller(kind, rng):
@@ -106,8 +108,11 @@ def analyse(rows, lesson):
     rs = sorted((r for r in rows if r["lesson"] == lesson and r["student"] < STUDENTS), key=lambda r: r["student"])
     acc = lambda arm: np.array([r["arms"][arm]["acc"] for r in rs])
     null, unt = acc("null"), acc("untaught")
-    cf_name = "null" if null.mean() > unt.mean() else "untaught"
-    cf = null if cf_name == "null" else unt
+    if CF_ARM:
+        cf_name, cf = CF_ARM, acc(CF_ARM)
+    else:
+        cf_name = "null" if null.mean() > unt.mean() else "untaught"
+        cf = null if cf_name == "null" else unt
     arms = TEACHERS + ["abstain"]
     worth = {t: (acc(t) if t != "abstain" else unt) - cf for t in arms}
     o = dict(lesson=lesson, n=len(rs), cf=cf_name, null_acc=float(null.mean()), untaught_acc=float(unt.mean()), arms={})
@@ -133,7 +138,7 @@ def analyse(rows, lesson):
                 p += m
         pay[t] = p
     total = sum(pay.values()) or 1.0
-    blind = FAKES + ["abstain"]
+    blind = [t for t in FAKES + ["abstain"] if t != cf_name]
     o["pay"] = {t: pay[t] / total for t in arms}
     o["fake_pay_share"] = float(sum(pay[t] for t in blind if t in pay) / total)
     k2 = o["arms"]["know-2"]["worth"]
@@ -167,11 +172,11 @@ def report(o):
 def main():
     import cadence
     t0 = time.time()
-    ckpt = os.path.join(HERE, f"EXP-62-{TAG}.jsonl")
+    ckpt = os.path.join(HERE, f"{PREFIX}-{TAG}.jsonl")
     rows = [json.loads(l) for l in open(ckpt)] if os.path.exists(ckpt) else []
     done = {(r["lesson"], r["student"]) for r in rows}
     jobs = [(L, k) for k in range(STUDENTS) for L in LENGTHS if (L, k) not in done]
-    print(f"EXP-62 [{TAG}]: cadence {getattr(cadence, '__version__', '?')} at {os.path.dirname(cadence.__file__)}; "
+    print(f"{PREFIX} [{TAG}]: cadence {getattr(cadence, '__version__', '?')} at {os.path.dirname(cadence.__file__)}; "
           f"{len(jobs)} students to go ({len(done)} done); lengths {LENGTHS}; arms null, untaught, {TEACHERS}", flush=True)
     if jobs:
         with get_context("spawn").Pool(max(1, min(WORKERS, len(jobs)))) as pool:
@@ -179,13 +184,13 @@ def main():
                 rows.append(r)
                 with open(ckpt, "a") as fh:
                     fh.write(json.dumps(r) + "\n")
-    print(f"\nEXP-62 [{TAG}] summary ({time.time() - t0:.0f}s); worth = taught - committed CF, per-state accuracy on unseen weather")
+    print(f"\n{PREFIX} [{TAG}] summary ({time.time() - t0:.0f}s); worth = taught - committed CF, per-state accuracy on unseen weather")
     summ = {}
     for L in LENGTHS:
         o = analyse(rows, L)
         summ[str(L)] = o
         report(o)
-    json.dump(dict(summary=summ), open(os.path.join(HERE, f"EXP-62-{TAG}.json"), "w"))
+    json.dump(dict(summary=summ), open(os.path.join(HERE, f"{PREFIX}-{TAG}.json"), "w"))
 
 
 if __name__ == "__main__":
