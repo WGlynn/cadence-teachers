@@ -1,0 +1,42 @@
+# EXP-62: does transfer price skill on a brain that takes in content, against a committed null?
+
+- Date: 2026-10-17 | Cadence version: 0.83.0 + Unreleased, main `6499e56` (`~/_cadence_study`) | Program iter: iter36
+- Script: `exp/EXP-62_content_market_committed_null.py` | Evidence: `exp/EXP-62-pilot.*`, `exp/EXP-62-full.*` (outputs, json, jsonl)
+
+## Pre-registration (written 2026-10-17 before the pilot; nothing below this section existed when it was written)
+
+**Question.** On the one brain known to take in teacher content (EXP-58's delayed-credit operating point), priced against a fixed, committed counterfactual, does measured transfer order genuine teachers by skill and price every task-blind fake at or below zero?
+
+**Why.** This is the one untested combination. EXP-49 used the default brain against an untaught twin and was fooled (a random fake earned +.179). EXP-52 used the default brain against a form-matched null and was blind (know-4 +.013, Spearman .06). EXP-58 and EXP-61 showed content reaches only the delayed-credit brain (+.469 at 120 attempts vs +.016).
+
+**Setup.**
+- Instrument I: EXP-58's `compose` (10 inputs, 5 actions, modules (32,), EXP-45 actor/critic settings, working memory as in EXP-58). The alone phase is 20 attempts through `step` with no labels, as in EXP-58.
+- Chamber and schedule: EXP-48's weather chamber, lessons under SEEN weather. Labels are given only after an executed mistake in V5's guided window (EXP-49 `live_world`). Worth is read as per-state greedy accuracy under UNSEEN weather after the alone phase.
+- Shared students (change a): every arm for a student uses the same student seed and the same world draws. The null and untaught twins are built once per student, not once per teacher. Labeller seeds: teachers use student_seed+1, the null uses student_seed+2 (EXP-52 convention), so the random teacher and the null are different draws.
+- Arms (10 twins per student): null (random-label teacher, the form-matched null), untaught (= abstain), know-1, know-2, know-3, know-4 (EXP-52 labeller: right action at k known stages, uniform random elsewhere), random, wrong-chain, echo, anti-echo (uniform among the 4 actions other than the executed mistake).
+- Counterfactual (change b): pooled over all students, whichever of {null, untaught} has the higher mean accuracy is the committed counterfactual CF. Worth = taught - CF on the same student. This is a fixed rule chosen once from pooled means, not a per-student max. Both counterfactuals are reported.
+- Pay (change d): per teacher, students in fixed batches of 6 (by student index). A batch finalizes iff its mean worth > 0 and mean / SEM > 2. Pay for a finalized batch = its mean worth; otherwise 0. Fake pay share = pay to {random, wrong-chain, echo, anti-echo, abstain} / total pay.
+- Logging (change e): every twin's 16 per-state greedy actions on UNSEEN weather, and every teacher's label stream (right action, executed action, label) are saved.
+- Full run: 72 students (n = 288 know-k twins), 4 workers, fresh seeds 6_200_000 + student. Pilot seeds are disjoint (6_290_000 + 1000*L + student).
+
+**Window (change c), pilot under the exact run conditions:** 3 students, lesson lengths 40 / 80 / 120, arms null, untaught, know-1..4, random. Choice rule fixed now: pick the length with the largest pooled (know-4 - know-1) among lengths where know-4 mean <= .90; ties go to the shorter length. If no length qualifies, pick 80. The pilot also prints each chain link per arm: label-correctness rate, taught accuracy, counterfactual accuracy, worth.
+
+**Prediction.** From EXP-58: random labels sit slightly below untaught on this brain (-.016 at 40, -.078 at 120), so CF will be the untaught twin. Know-4 minus untaught was .177 at 40 and .391 at 120 (near ceiling at .93), so the pilot should pick 80. At the chosen length:
+- know-1 < know-2 < know-3 < know-4, Spearman(worth, k) about .4 to .5;
+- know-4 worth about +.25 to +.35;
+- random about -.02 to -.06; wrong-chain and echo clearly negative; abstain exactly 0 (CF = untaught);
+- anti-echo about -.02 against CF (not > 0 by 2 SEM), about +.03 against the null;
+- fake pay share well under .10.
+Predicted verdict: CONFIRM. Biggest risk: adjacent know-k means (know-1 vs know-2) out of order through noise at n = 72.
+
+**Decision rules (from VS-TRANSFER-PROGRAM.md NEXT ITERATIONS item 1, unchanged):**
+- CONFIRM if all hold: means ordered know-1 < know-2 < know-3 < know-4 and pooled Spearman(worth, k) >= .3 (n >= 288); know-4 >= .2 against CF; every task-blind fake (abstain included) has mean <= 0; fakes take <= .10 of pay. Then transfer prices skill on an instrument that takes in content, with I and N named.
+- KILL (angle refuted under its best conditions): any task-blind fake's mean worth >= know-2's mean worth (point estimates, n = 72 each).
+- DECISIVE FOR NOESIS WITHOUT KILLING: content large but Spearman < .1 means transfer is a pass/fail filter, not a price. Anti-echo > 0 against CF by 2 SEM means the zero point must be the best fake in a declared committed class, because the corrective schedule leaks one elimination bit per mistake.
+- Anything else: BOUNDARY, with the failing criterion named.
+
+## Summary
+PENDING (after the run)
+
+## Reflection
+PENDING (after the run)
