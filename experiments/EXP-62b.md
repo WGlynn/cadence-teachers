@@ -41,6 +41,8 @@ Instruments, fixed now and not chosen by looking at which brain separates:
 - Exploratory, no verdict weight: each instrument's ranking of the three genuine teachers; whether a majority vote across instruments ranks them in a cycle; untaught vs null per instrument.
 Loop verdict: ORDER DEPENDS -> CONFIRMED (the instrument-dependence claim); ORDER AGREES -> REFUTED; MAGNITUDE ONLY or INCONCLUSIVE -> INCONCLUSIVE.
 
+**Pilot (2026-10-19, before the full run; nothing in the design changed).** 3 students (7_090_000+), lesson 80, 234 s at 2 workers (about 37 / 66 / 39 s per student for A / B / C). know-4 worth vs null: A +.52, B +.06, C +.38, so no instrument is below .05 and the full run stays at lesson 80. Pilot numbers are not a result (n 3).
+
 **Cost.** 48 students x 3 instruments x 5 arms = 720 twins; about 25-35 min at 4 workers (pilot measures it).
 
 ## Summary

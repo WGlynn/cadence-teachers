@@ -1,0 +1,18 @@
+EXP-62b [pilot]: lesson 80; 9 jobs to go (0 done); seeds 7090000+
+  A st 0: null 0.25 untaught 0.69 | know-early-2 0.75 know-late-2 0.62 know-4 1.00 (39.3s)
+  B st 0: null 0.88 untaught 0.69 | know-early-2 0.88 know-late-2 1.00 know-4 0.88 (79.1s)
+  C st 0: null 0.44 untaught 0.38 | know-early-2 0.75 know-late-2 0.31 know-4 0.50 (41.6s)
+  A st 1: null 0.50 untaught 0.25 | know-early-2 0.75 know-late-2 0.50 know-4 0.69 (35.6s)
+  B st 1: null 0.81 untaught 1.00 | know-early-2 0.81 know-late-2 0.88 know-4 0.94 (36.6s)
+  C st 1: null 0.50 untaught 0.62 | know-early-2 1.00 know-late-2 0.44 know-4 1.00 (38.2s)
+  A st 2: null 0.38 untaught 0.56 | know-early-2 0.94 know-late-2 0.56 know-4 1.00 (36.5s)
+  C st 2: null 0.44 untaught 0.62 | know-early-2 1.00 know-late-2 0.50 know-4 1.00 (36.8s)
+  B st 2: null 0.94 untaught 0.69 | know-early-2 0.94 know-late-2 0.94 know-4 1.00 (80.9s)
+
+EXP-62b [pilot] summary (234s), lesson 80
+  [A] n=3 takes in content: True | worth vs null: know-early-2 +0.438 (0.095)  know-late-2 +0.188 (0.108)  know-4 +0.521 (0.171)  untaught +0.125 (0.201) | D = early - late +0.250 (0.072) | rank know-4 > know-early-2 > know-late-2 | 37s per student
+  [B] n=3 takes in content: False | worth vs null: know-early-2 +0.000 (0.000)  know-late-2 +0.062 (0.036)  know-4 +0.062 (0.036)  untaught -0.083 (0.137) | D = early - late -0.062 (0.036) | rank know-late-2 > know-4 > know-early-2 | 66s per student
+  [C] n=3 takes in content: True | worth vs null: know-early-2 +0.458 (0.075)  know-late-2 -0.042 (0.055)  know-4 +0.375 (0.157)  untaught +0.083 (0.075) | D = early - late +0.500 (0.036) | rank know-early-2 > know-4 > know-late-2 | 39s per student
+  pair A-C: n=3 D diff -0.250 (0.062) opposite sign at 2 SEM: False; |diff| > 2 SEM: True
+  valid instruments: ['A', 'C'] -> MAGNITUDE ONLY
+  pilot rule: instruments with know-4 worth < .05: [] -> full run lesson 80
