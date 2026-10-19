@@ -865,6 +865,8 @@ Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rera
 
 2. **EXP-62b: does the price among genuine contributions depend on which brain measures it? (absorbs EXP-64)**
 
+   **PRE-REGISTERED 2026-10-19** in experiments/EXP-62b.md (48 fresh students, seeds 7_000_000+, zero = random-label null per EXP-62e, instruments A / B / C fixed as below, pilot rule on know-4 validity only). Script exp/EXP-62b_instrument_order.py.
+
    **Milestone:** Restated M5 (the instrument I as an outside ingredient) and the instrument axis of M3, which EXP-16 held fixed. Decides whether a worth independent of the instrument exists.
 
    **What:** Use EXP-62's harness, shared student seeds and chosen lesson length.
