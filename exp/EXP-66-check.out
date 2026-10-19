@@ -1,0 +1,12 @@
+EXP-66 check: cadence 0.84.3 from C:\Users\Will/_cadence_study/src\cadence
+C:\Users\Will/_cadence_study/src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+C:\Users\Will/_cadence_study/src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  (a) ctx5 through this script identical to EXP-63's harness at 0.84.3: True
+  (a) out5t trains and passes greedily exactly as EXP-63's out5: True
+  (b) pen at p = 0 identical to ctx5: True
+  (b) peng at p = 0 identical to ctx5: True
+  (c) peng at p = .05 holds exactly the non-terminal misses: True ({'total': 264, 'on_miss': 264, 'on_ok': 0, 'on_ok_s1': 0, 'misses': 264})
+  (d) dopamine alive in pen at p = .05: True; auc s1 0.6473858846740203; means {"s1_ok": -0.0472, "s1_miss": -0.09, "s2_ok": 0.038, "s2_miss": -0.1078, "s3_ok": 0.0721, "s3_miss": -0.094, "s4_ok": null, "s4_miss": -0.0377}
+check: PASS
