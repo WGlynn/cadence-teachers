@@ -38,6 +38,8 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED (the instrument-dependence claim, now a
 
 **Cost.** 48 students x 3 instruments x 5 arms = 720 twins. EXP-62b measured about 37 s per student for A and 66 s for the memory brain at 2 workers, so about 30-40 min at 4 workers (the pilot measures it).
 
+**Pilot (2026-10-19 ~16:05, 108 s at 3 workers; nothing in the design changed).** 3 students (7_190_000+), lesson 80. know-4 worth vs null: A +.52, D1 +.06, D2 +.06. No instrument is below .05, so by the registered rule the full run would stay at lesson 80. But D1 and D2 are not blind, they are at ceiling. Untaught accuracy is 1.00 for all three students, and the null twin scores 1.00, .81 and 1.00. With A's learning rule, the memory-choice architecture solves the task alone inside lesson 80 plus 20 attempts, so a teacher has nothing left to add. D1 and D2 match to the last digit, so arousal has no effect here. The registered pilot rule handles only the too-weak case (lengthen the lesson), not a ceiling. Run as written, the full run would label D1 and D2 "blind" when the true reading is ceiling, and the verdict would be INCONCLUSIVE for a reason the pilot already shows. **Full run NOT started.** The registration is closed at the pilot. The follow-up (EXP-62g) must fix the difficulty before any data, using a pilot sweep of the untaught D1 student under the exact run conditions, so the measuring window sits between noise and ceiling. Pilot numbers are n 3, not a result.
+
 ## Summary
 - PENDING.
 

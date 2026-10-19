@@ -3,3 +3,21 @@ C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite
   lesson, teaching = self.learner.step(drive, labels, answer=answer)
 C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
   lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  A st 0: null 0.38 untaught 0.50 | know-early-2 0.56 know-late-2 0.56 know-4 0.94 (34.5s)
+  D1 st 0: null 1.00 untaught 1.00 | know-early-2 1.00 know-late-2 1.00 know-4 1.00 (35.4s)
+  D2 st 0: null 1.00 untaught 1.00 | know-early-2 1.00 know-late-2 1.00 know-4 1.00 (36.1s)
+  D1 st 1: null 0.81 untaught 1.00 | know-early-2 1.00 know-late-2 0.75 know-4 1.00 (29.3s)
+  D2 st 1: null 0.81 untaught 1.00 | know-early-2 1.00 know-late-2 0.75 know-4 1.00 (29.6s)
+  A st 1: null 0.44 untaught 0.50 | know-early-2 0.75 know-late-2 0.56 know-4 0.88 (32.7s)
+  A st 2: null 0.44 untaught 0.25 | know-early-2 0.69 know-late-2 0.50 know-4 1.00 (35.6s)
+C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  D1 st 2: null 1.00 untaught 1.00 | know-early-2 1.00 know-late-2 1.00 know-4 1.00 (40.4s)
+  D2 st 2: null 1.00 untaught 1.00 | know-early-2 1.00 know-late-2 1.00 know-4 1.00 (39.9s)
+
+EXP-62f [pilot] summary (108s), lesson 80
+  [A] n=3 takes in content: True | worth vs null: know-early-2 +0.250 (0.036)  know-late-2 +0.125 (0.036)  know-4 +0.521 (0.042)  untaught +0.000 (0.095) | D = early - late +0.125 (0.062) | rank know-4 > know-early-2 > know-late-2 | 34s per student
+  [D1] n=3 takes in content: False | worth vs null: know-early-2 +0.062 (0.062)  know-late-2 -0.021 (0.021)  know-4 +0.062 (0.062)  untaught +0.062 (0.062) | D = early - late +0.083 (0.083) | rank know-early-2 > know-4 > know-late-2 | 35s per student
+  [D2] n=3 takes in content: False | worth vs null: know-early-2 +0.062 (0.062)  know-late-2 -0.021 (0.021)  know-4 +0.062 (0.062)  untaught +0.062 (0.062) | D = early - late +0.083 (0.083) | rank know-early-2 > know-4 > know-late-2 | 35s per student
+  valid instruments: ['A'] -> INCONCLUSIVE (no cross-family pair takes in content)
+  pilot rule: instruments with know-4 worth < .05: [] -> full run lesson 80
