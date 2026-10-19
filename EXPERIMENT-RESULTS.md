@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-62b — instrument dependence: the two content-taking brains agree on order, differ on the early-vs-late exchange rate (MAGNITUDE ONLY) — 2026-10-19
+- **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-62b_instrument_order.py` (EXP-62's harness). Pre-registered `39ab1a4`, pilot `10a35a4`. Lesson 80, 48 fresh students (7_000_000+), zero = random-label null, 2,802 s.
+- **Result:** A (delayed-credit) early +.264 / late +.064 / know-4 +.432, D = +.201 (.026). C (delayed-credit variant) +.339 / +.036 / +.458, D = +.302 (.029). B (default memory brain, actor step .1 = EXP-64) +.039 / +.007 / +.069, blind. D_A - D_C = -.102 (2.8 SEM). Same order on A and C (know-4 > early > late).
+- **Verdict: MAGNITUDE ONLY (loop: INCONCLUSIVE).** The judge sets the exchange rate between kinds of contribution, not their order, on this task family. For #198: the actor step alone does not open the default memory brain to content. Next: a content-taking instrument from a different family (candidate EXP-62f). Detail: experiments/EXP-62b.md.
+
 ## EXP-66 — a cost for each miss, with and without the gate keyed on it: the gate adds 18 / 3 over the cost, never holds a correct move; gains need a teacher — 2026-10-19
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-66_penalty_gate.py` (imports EXP-65 / 63 / 56). Pre-registered `f8d0be0`; check PASS and pilot (p = .05 by stage-1 forecast-error AUC .774) `d38cbda`. Seeds 66_000+, 768 lives.
 - **Result (clean greedy passes, discordant pairs):** invisible pooled ctx5 11 / out5t 16 / pen 21 / peng 36; peng vs pen 18 / 3 (p .0015); pen vs ctx5 17 / 7 (p .064); peng vs out5t 23 / 3; out5t vs ctx5 12 / 7 (p .36, was 18 / 4 on 0.83). Hidden pooled peng vs ctx5 18 / 0, peng vs pen 10 / 2 (p .039). Visible pooled peng vs ctx5 8 / 5 (no loss). peng held 58,563 invisible-chain decisions, all misses. All but one invisible-chain clean pass came with corrective teaching (reward alone: 1 / 0 / 0 / 0); under reward alone the penalty lowers sampled success (hidden .365 -> .076).

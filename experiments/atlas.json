@@ -2739,5 +2739,52 @@
    ]
   },
   "quote_worthy": "Four runs failed the zero test because one of our 'fakes' was right a quarter of the time instead of a fifth, and the measure noticed."
+ },
+ {
+  "id": "EXP-62b",
+  "date": "2026-10-19",
+  "iter": "iter40",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "name": "Which brain measures: the judge sets the exchange rate between kinds of knowledge, not their order",
+  "verdict_note": "pre-registered (39ab1a4); MAGNITUDE ONLY: two content-taking brains agree on order, differ on early-vs-late by 2.8 SEM; the default memory brain with a lowered actor step was blind; 48 fresh students, lesson 80, Cadence 0.84.3",
+  "headline": "Teachers who know the same amount but different parts of the task were priced by three brains. The two brains that take in content ranked them identically (all four stages, then the early two, then the late two), but disagreed on the exchange rate: late knowledge is worth about a quarter of early knowledge to one brain and about a ninth to the other. The third brain, the library's default memory brain with only its actor step lowered, barely took in content at all.",
+  "question": "Do differently built brains rank teachers who know the same amount, but different parts of the task, in the same order?",
+  "process_issues": [
+   "two of the three instruments are from one family, so agreement on order says little about brains built differently",
+   "the third instrument was blind by the registered bar, leaving a single comparison"
+  ],
+  "lesson": "Separate order from magnitude when asking whether a value measure depends on the instrument; they can come apart, and payout rules depend on both.",
+  "chart": {
+   "title": "Worth vs the random-label null, lesson 80, 48 fresh students",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "A: knows early stages",
+     "value": 0.264
+    },
+    {
+     "label": "A: knows late stages",
+     "value": 0.064
+    },
+    {
+     "label": "C: knows early stages",
+     "value": 0.339
+    },
+    {
+     "label": "C: knows late stages",
+     "value": 0.036
+    },
+    {
+     "label": "B: knows early stages",
+     "value": 0.039
+    },
+    {
+     "label": "B: knows late stages",
+     "value": 0.007
+    }
+   ]
+  },
+  "quote_worthy": "Two brains agreed on which teacher is worth more and disagreed by a factor of two on how much more."
  }
 ]

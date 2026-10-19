@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-19 (iter40, EXP-62b MAGNITUDE ONLY, on v0.84.3): two content-taking brains (A delayed-credit, C its variant) rank equal-size early / late teachers identically but price late knowledge at about 1/4 vs 1/9 of early (D +.201 vs +.302, 2.8 SEM apart); the default memory brain with only a lower actor step (EXP-64) is blind. The judge sets the exchange rate, not the order, on this task family. Next: an instrument from a different family.
+
 2026-10-19 (iter39, EXP-62e BOUNDARY 4/5, on v0.84.3): fourth replication of the skill price on 216 fresh students (know-1..4 +.069 / +.146 / +.254 / +.416, Spearman .61, know-1 beats every uninformative arm by >= 4.1 SEM, fakes .024 of pay). The margin rule failed on anti-echo (+.023, upper bound .033 vs .031). Mechanism (exploratory, logged fields): anti-echo's labels are right .25 vs .20 for random labels in every run, so it was never uninformative; the instrument prices it in proportion (about 38% of know-1's information edge, about 38% of its worth edge). Zero-point work closed as pre-registered; next rung EXP-62b.
 
 2026-10-19 (iter38, EXP-62d BOUNDARY 4/5, on v0.84.3): third replication of the skill price on a third disjoint student set (know-1..4 +.070 / +.140 / +.249 / +.421, Spearman .64, know-1 beats every uninformative arm by >= 2.07 SEM paired, fakes .007 of pay); the pooled-zero 2-SEM rule failed on abstain (+.029, 2.57 SEM). Diagnosis (permutation of the real data): that rule false-fails ~9% at any n, so it tests significance where the question is equivalence. EXP-62e pre-registered: non-superiority margin 1/32, 216 fresh students, declared the last zero-point redesign; then EXP-62b.
@@ -201,6 +203,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter40 (2026-10-19): EXP-62b, instrument dependence: MAGNITUDE ONLY
+- Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `39ab1a4`, pilot `10a35a4`. Lesson 80, 48 fresh students, 2,802 s.
+- Result: A D +.201 (.026), C D +.302 (.029), D_A - D_C -.102 (2.8 SEM); B blind (know-4 +.069).
+- Reading: order agrees, magnitude does not, across two near-relative instruments; a different-family instrument is needed before any general claim. M5 (instrument as an outside ingredient) not decided.
 
 ### iter39 (2026-10-19): EXP-62e, non-superiority margin 1/32 on 216 fresh students: BOUNDARY 4/5
 - Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `cb60045`. Lesson 80, 216 fresh students (6_800_000+), run 3,784 s. Run outside the loop's 1-per-24h cap on Will's live instruction (EXP-62d ran the same morning).

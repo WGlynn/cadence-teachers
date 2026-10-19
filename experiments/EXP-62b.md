@@ -46,7 +46,19 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED (the instrument-dependence claim); ORDE
 **Cost.** 48 students x 3 instruments x 5 arms = 720 twins; about 25-35 min at 4 workers (pilot measures it).
 
 ## Summary
-PENDING (after the run)
+- Question: do differently built brains rank teachers who know the same amount, but different parts of the task, in the same order?
+- Setup: as registered. Cadence 0.84.3 (`8dc92d8`), lesson 80 (pilot rule), 48 fresh students (7_000_000+), three instruments, 720 twins, 2,802 s at 2 workers.
+- Prediction: A and C agree in sign on D; below even odds that their D differ by more than 2 SEM; B the most likely to be blind; no prediction on the sign of D.
+- Result (worth = accuracy minus the random-label null twin, same student):
+  - A (delayed-credit): know-early-2 +.264 (SEM .025), know-late-2 +.064 (.023), know-4 +.432 (.026). Takes in content. D = early - late +.201 (.026).
+  - B (default memory brain, actor step .1): know-early-2 +.039, know-late-2 +.007, know-4 +.069 (.016). Blind by the registered bar (know-4 below .10).
+  - C (delayed-credit, 64 units, critic 2.0): know-early-2 +.339 (.026), know-late-2 +.036 (.022), know-4 +.458 (.031). Takes in content. D = +.302 (.029).
+  - A vs C, paired by student: D_A - D_C = -.102 (SEM .036, 2.8 SEM). Same sign, both far from zero.
+  - Both valid instruments rank know-4 > know-early-2 > know-late-2; no cycle across instruments (exploratory).
+- Verdict: MAGNITUDE ONLY (loop: INCONCLUSIVE). The brain changed how much early knowledge is worth relative to late knowledge, not the order.
 
 ## Reflection
-PENDING (after the run)
+- What it means: the judge sets the exchange rate, not the order. Both brains that take in content rank the teachers the same way. They disagree on how much late knowledge is worth next to early knowledge: about a quarter on A (.064 / .264), about a ninth on C (.036 / .339). Late knowledge only reaches a student who gets far enough to make late mistakes, so a brain that progresses less prices it lower. Whoever picks the judge therefore sets that rate even when the order holds. That still argues for committing the judge before the work it prices (Noesis brainstorm idea 1). It also suggests judges can agree on order here (idea 2) while disagreeing on price. B, the default memory brain with only the actor step lowered (EXP-64), barely takes in content (+.069 for full knowledge), so for upstream #198 the actor step alone does not open this brain to content in this protocol; the block is elsewhere (critic, arousal or the vote).
+- Process: pre-registered before any data (39ab1a4) and the pilot recorded before the full run (10a35a4); run as written. My prediction that A and C would not differ by more than 2 SEM was wrong (2.8 SEM). Two instruments from one family is a narrow test of order: a sign flip is less likely between near relatives than between unrelated brains, so agreement here says little about brains built differently. B being blind left only that pair.
+- Lesson: separate order from magnitude when asking whether a value measure depends on the instrument. They can come apart, and payout rules depend on both.
+- Next: a third content-taking instrument from a different family (not a delayed-credit relative) is needed before claiming order agreement in general; candidate EXP-62f. For #198 (EXP-64's question): the next isolation is the critic rate or arousal on the default memory brain, one gene at a time.
