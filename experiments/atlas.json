@@ -2460,6 +2460,45 @@
   "quote_worthy": "The label is never wrong and rarely there; the forecast is always there and cannot see the difference."
  },
  {
+  "id": "EXP-66",
+  "name": "A small cost for each miss: the gate keyed on it adds a gain the cost alone does not, but only with a teacher",
+  "date": "2026-10-19",
+  "iter": "none (memory track, upstream #202)",
+  "track": "memory & recall",
+  "verdict": "SUPPORTIVE",
+  "verdict_note": "pre-registered (f8d0be0); P1-P5 held, P0 failed: the oracle gate's own gain did not survive Cadence 0.84.x (12 vs 7 discordant clean passes, was 18 vs 4 on 0.83); 768 lives, penalty .05 fixed by a pilot on the learner's own forecast error",
+  "headline": "When every wasted move costs .05, a gate that keeps those decisions out of the brain's temporal key wins 18 of 21 discordant clean passes against the cost alone, never holds a correct move, and keeps the fully observed floor. The cost also teaches by itself, and the two together beat the old oracle gate. The catch: all of the gain comes with a corrective teacher. With reward alone nobody passes the invisible chain, and the cost makes behaviour more timid everywhere (hidden chain sampled success .37 to .08).",
+  "question": "If a failed action receives a small negative reward, does a gate keyed on that reward add anything over what the penalty itself teaches, while keeping the ambiguous-chain gain, the fully observed floor and the invisible-action boundary?",
+  "process_issues": [
+   "the oracle gate's gain shrank on 0.84.3 (the founder key improved after #204), so the pre-registered precondition failed and the result is read in that light",
+   "an orphaned duplicate run appended 116 lives twice to the checkpoint; every duplicate was bit-identical apart from wall-clock time and was removed before the resume"
+  ],
+  "lesson": "A cost on failure is information a learner can use, but it is not free: it makes reward-only learners timid, and it pays off when something else shows the way. Run the cost with and without the gate keyed on it to separate what it teaches from what it keys.",
+  "chart": {
+   "title": "Clean greedy passes, invisible chain, 96 lives per arm (both signals)",
+   "unit": "clean passes",
+   "bars": [
+    {
+     "label": "founder key (no cost, no gate)",
+     "value": 11
+    },
+    {
+     "label": "oracle gate, no cost",
+     "value": 16
+    },
+    {
+     "label": "cost .05, no gate",
+     "value": 21
+    },
+    {
+     "label": "cost .05 + gate on negative reward",
+     "value": 36
+    }
+   ]
+  },
+  "quote_worthy": "The gate held 58,563 decisions and every one of them was a miss."
+ },
+ {
   "id": "EXP-62",
   "name": "Noesis-lite v2: transfer prices skill on a content-taking brain; the zero point is the best fake, not noise",
   "date": "2026-10-17",
