@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-19 (iter39, EXP-62e BOUNDARY 4/5, on v0.84.3): fourth replication of the skill price on 216 fresh students (know-1..4 +.069 / +.146 / +.254 / +.416, Spearman .61, know-1 beats every uninformative arm by >= 4.1 SEM, fakes .024 of pay). The margin rule failed on anti-echo (+.023, upper bound .033 vs .031). Mechanism (exploratory, logged fields): anti-echo's labels are right .25 vs .20 for random labels in every run, so it was never uninformative; the instrument prices it in proportion (about 38% of know-1's information edge, about 38% of its worth edge). Zero-point work closed as pre-registered; next rung EXP-62b.
+
 2026-10-19 (iter38, EXP-62d BOUNDARY 4/5, on v0.84.3): third replication of the skill price on a third disjoint student set (know-1..4 +.070 / +.140 / +.249 / +.421, Spearman .64, know-1 beats every uninformative arm by >= 2.07 SEM paired, fakes .007 of pay); the pooled-zero 2-SEM rule failed on abstain (+.029, 2.57 SEM). Diagnosis (permutation of the real data): that rule false-fails ~9% at any n, so it tests significance where the question is equivalence. EXP-62e pre-registered: non-superiority margin 1/32, 216 fresh students, declared the last zero-point redesign; then EXP-62b.
 
 2026-10-17 (iter37, EXP-62c BOUNDARY 4/5): on 72 fresh students the skill price replicates and strengthens (know-1..4 +.073 / +.162 / +.300 / +.436, Spearman .61, fakes .034 of pay; know-1 beats every uninformative arm by >2 SEM paired). The zero-point criterion failed again from the other side (zero = anti-echo drew low; random and abstain +.03). EXP-62's leak reading is withdrawn: the uninformative arms are a +-.03 noise band at n 72. The binding issue is now the decision rule, not the measure: EXP-62d (pooled zero + noise allowance + separation test) is pre-registered and queued.
@@ -199,6 +201,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter39 (2026-10-19): EXP-62e, non-superiority margin 1/32 on 216 fresh students: BOUNDARY 4/5
+- Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `cb60045`. Lesson 80, 216 fresh students (6_800_000+), run 3,784 s. Run outside the loop's 1-per-24h cap on Will's live instruction (EXP-62d ran the same morning).
+- Result: ladder +.069 / +.146 / +.254 / +.416 ordered, Spearman .614; separation passes (>= 4.1 SEM); wrong-chain -.093, echo -.134; fake pay .024; anti-echo +.023 (3.6 SEM), upper bound .033 > margin .031.
+- Reading: the instrument is right and the class was wrong. Labels follow mistakes, so anti-echo names the right action 1 time in 4 against 1 in 5 for random labels (logged label accuracy .25 vs .20 in all four runs); pooled over 432 students it is worth +.016 (3.4 SEM) and earns about the share of know-1's worth that its share of label information predicts. EXP-62's original leak reading was right; EXP-62c's withdrawal was wrong (inside the noise at n 72). M1b not formally crossed; the measure prices information continuously near zero.
 
 ### iter38 (2026-10-19): EXP-62d, pooled uninformative zero with a 2-SEM allowance: BOUNDARY 4/5
 - Version: Cadence v0.84.3 `8dc92d8` (main moved 0.83.0 -> 0.84.3 between pre-registration and run; run gate: EXP-62c students 0-1 reproduced bit-identically, actions + labels, all 10 arms). Pre-registered `8b46525`. Lesson 80, 72 fresh students (6_600_000+), run 1,191 s.
@@ -793,6 +800,8 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-19 update (iter39):** EXP-62e DONE, BOUNDARY 4/5 (anti-echo carries information: labels right .25 vs .20; it fails the margin by .002). Zero-point redesigns closed as committed. New top: **EXP-62b** (item 2 below). For any later zero, use the random-label null alone or a class whose label accuracy is measured at chance.
 
 **2026-10-19 update (iter38):** EXP-62d DONE, BOUNDARY 4/5 (abstain tripped the 2-SEM rule; the rule, not the measure, is the problem). New top: **EXP-62e** (below), then EXP-62b. No further zero-point redesign after EXP-62e.
 

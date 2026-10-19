@@ -2637,5 +2637,68 @@
    ]
   },
   "quote_worthy": "Three runs, three replications of the skill price, three failures of a zero test that would fail one run in eleven on identical fakes."
+ },
+ {
+  "id": "EXP-62e",
+  "name": "A margin for the fakes: the skill price replicates a fourth time, and one 'fake' turns out to carry information",
+  "date": "2026-10-19",
+  "iter": "iter39",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "verdict_note": "pre-registered (cb60045); 4 of 5 CONFIRM criteria held; anti-echo's upper bound .033 against a margin of .031; 216 fresh students, lesson 80, Cadence 0.84.3",
+  "headline": "On 216 students the measure had never seen, teachers who know 1, 2, 3 or 4 stages are worth +.069, +.146, +.254 and +.416 against the average of four supposedly uninformative teachers (Spearman .61), and the weakest beats each of them by at least 4 standard errors. One of the four, anti-echo, was worth +.023. It is not a fake: labels only arrive after a mistake, so naming any action except the one just tried is right a quarter of the time, where a random label is right a fifth. The measure priced that extra information in proportion.",
+  "question": "With the zero pooled over a declared uninformative class, is every fake worth less than half of one answer (non-superiority margin 1/32), while transfer still prices skill?",
+  "process_issues": [
+   "the declared uninformative class contained an informative arm: anti-echo's labels are right 25% of the time against 20% for random labels in every run (read from logged fields after the result; exploratory)",
+   "run outside the loop's one-experiment-per-24h cap, on Will's live instruction to continue (EXP-62d ran the same morning)"
+  ],
+  "lesson": "Declare an arm uninformative by measured information (its labels are right at chance), not by what it looks like. A fake built from the student's own mistake inherits information from the schedule that produced the mistake.",
+  "chart": {
+   "title": "Worth vs the pooled uninformative zero, lesson 80, 216 fresh students",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "knows 1 stage",
+     "value": 0.069
+    },
+    {
+     "label": "knows 2 stages",
+     "value": 0.146
+    },
+    {
+     "label": "knows 3 stages",
+     "value": 0.254
+    },
+    {
+     "label": "knows 4 stages",
+     "value": 0.416
+    },
+    {
+     "label": "anti-echo",
+     "value": 0.023
+    },
+    {
+     "label": "abstain",
+     "value": 0.006
+    },
+    {
+     "label": "random labels",
+     "value": -0.013
+    },
+    {
+     "label": "null (random labels)",
+     "value": -0.015
+    },
+    {
+     "label": "wrong chain",
+     "value": -0.093
+    },
+    {
+     "label": "echo the mistake",
+     "value": -0.134
+    }
+   ]
+  },
+  "quote_worthy": "Four runs failed the zero test because one of our 'fakes' was right a quarter of the time instead of a fifth, and the measure noticed."
  }
 ]
