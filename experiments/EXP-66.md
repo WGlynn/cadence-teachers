@@ -48,6 +48,10 @@ Loop verdict: CONFIRMED (SUPPORTIVE) / INCONCLUSIVE (BOUNDARY) / REFUTED (NULL).
 
 **Not measured.** The failed action's episodic record value (the #210 readout). No public read of a single record was checked before this registration; the pen-vs-ctx5 contrast carries that pathway at the behaviour level.
 
+**Check and pilot (2026-10-19, after the registration, before the full run; nothing in the design changed).**
+- Check (`exp/EXP-66-check.out`): PASS. ctx5 through this script equals EXP-63's harness at 0.84.3; out5t trains and passes greedily as EXP-63's out5; pen and peng at p = 0 equal ctx5; at p = .05 peng held exactly the 264 non-terminal misses of the life and no correct move; dopamine alive. Library warning seen in corrective lives (finite teaching free phase used its free_steps budget; 0.84.x), recorded, not acted on.
+- Pilot (`exp/EXP-66-pilot.*`, invisible chain, seeds 66_500+, 12 lives per p): pen-arm stage-1 AUC .626 at p .02, .774 at .05, .918 at .10. Rule: smallest p with AUC >= .75, so **p = .05**. peng held 6,687 / 7,023 / 7,357 decisions across the three sizes, all misses, none correct. About 15 s per life.
+
 **Cost.** Pilot 72 lives, full 768 lives, 4 workers; timing recorded at the pilot.
 
 ## Summary
