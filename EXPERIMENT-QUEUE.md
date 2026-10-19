@@ -69,7 +69,8 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
 - **EXP-62** (DONE 2026-10-17: BOUNDARY 4/5, transfer prices skill on the delayed-credit brain vs the committed null, Spearman .40, fakes .041 of pay; only the zero point failed, anti-echo +.023; spawned 2026-10-14 by EXP-58) — Noesis-lite v2 on the delayed-credit brain: EXP-52's market (know-k teachers,
   random / wrong-chain / echo fakes, pay = worth against the random-label null twin), now that content gets through.
 - **EXP-62c** (DONE 2026-10-17: BOUNDARY 4/5, skill price replicates on fresh students, Spearman .61; zero point failed from the other side, leak reading withdrawn; spawned 2026-10-17 by EXP-62) — EXP-62's harness on fresh seeds with the committed zero = anti-echo, the best labeller in the class that sees only the executed mistake; same CONFIRM criteria against it. ~15 min.
-- **EXP-62d** (ready, PRE-REGISTERED 2026-10-17 in experiments/EXP-62d.md, for the next loop fire; spawned by EXP-62c) — pooled uninformative zero, noise allowance (no fake > zero + 2 SEM), separation test (know-1 beats every uninformative arm by 2 SEM paired); fresh seeds 6_600_000+; lesson 80; ~22 min.
+- **EXP-62d** (DONE 2026-10-19: BOUNDARY 4/5 on v0.84.3, skill price replicates (Spearman .64, separation passes), untaught +.029 trips the 2-SEM rule; spawned EXP-62e; was ready, PRE-REGISTERED 2026-10-17 in experiments/EXP-62d.md; spawned by EXP-62c) — pooled uninformative zero, noise allowance (no fake > zero + 2 SEM), separation test (know-1 beats every uninformative arm by 2 SEM paired); fresh seeds 6_600_000+; lesson 80; ~22 min.
+- **EXP-62e** (ready, PRE-REGISTERED 2026-10-19 in experiments/EXP-62e.md, script `exp/EXP-62e_margin_zero.py` written and smoke-tested on a copy of 62d's data; spawned by EXP-62d) — same harness and pooled zero, 216 fresh students (6_800_000+), decisive rule = non-superiority: every fake's worth + 1.645 SEM < 1/32 (half of one of 16 states). Under exact equality it false-fails ~1% at n 216 (permutation of the real data); planning pass rate ~85%. Declared the LAST zero-point redesign; EXP-62b follows either way. Cost ~56 min at 4 workers. Identity-gate one EXP-62d student first if the version moved.
 - **EXP-63** (DONE 2026-10-15: SUPPORTIVE 5/5, invisible chain clean passes 19 vs 5 of 96 vs the plain context, stage-2 no
   longer drops; hidden 17 vs 4 of 48; visible neutral; outcome read as an oracle; spawned 2026-10-14 by EXP-59) — an outcome-keyed gate: hold only decisions the world answered as failures
   (not merely unchanged observations), on the hidden (EXP-57), visible (EXP-60) and invisible-step (EXP-59) chambers.
@@ -91,3 +92,14 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   decision whose reward is negative). Arms on the invisible and hidden chains: ctx5 (no penalty), pen (penalty, no gate),
   pen+gate, and out5t as the ceiling. Separates "the penalty teaches" from "the penalty keys the gate". Tells #202 whether the
   failure input can be a reward convention rather than a new argument to step().
+  **2026-10-19 (monitor): UPSTREAM ASKED FOR THIS.** Bernhard's #202 status review (2026-10-18 09:18 UTC) asks, before any
+  implementation, to "specify precisely which available signal holds a decision out of the key. If a failed action receives
+  a new negative reward, compare that reward change with and without the gate", and to keep the ambiguous-chain paired test,
+  the fully observed preservation floor and the invisible-action boundary. That is this design plus the visible chain as the
+  floor. Still Will-gated (off-program); recommend un-gating, since it answers an open upstream question on our own thread.
+  Two design changes from 0.84: (1) run on 0.84.3 and re-measure ctx5 / out5t there, not reuse EXP-63's 6499e56 numbers,
+  because 0.84.1 changed memory_choice (one greedy choice for acting and teaching; a decision whose outcome was a reward or a
+  punishment now stays on the replay path, which a per-miss penalty triggers); (2) #210 (2026-10-19) shows an unpaid (0)
+  failure never extinguishes a paid episodic record under memory_choice, while a -1 cost does, so the pen arm alone may
+  move behaviour through extinction, not the key. That is why pen-without-gate is the arm that separates information from
+  the key rule, and the readout should log the failed action's episodic record value per arm.

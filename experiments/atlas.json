@@ -2573,5 +2573,69 @@
    ]
   },
   "quote_worthy": "The skill price replicated; the zero point turned out to be a band, not a line."
+ },
+ {
+  "id": "EXP-62d",
+  "name": "A pooled zero: the skill price replicates a third time; the zero test was the wrong test",
+  "date": "2026-10-19",
+  "iter": "iter38",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "verdict_note": "pre-registered (8b46525); 4 of 5 CONFIRM criteria held; abstain sat 2.6 SEM above the pooled zero; 72 fresh students, lesson 80, Cadence 0.84.3 (harness bit-identical to the 0.83 runs)",
+  "headline": "On a third set of 72 students the measure had never seen, teachers who know 1, 2, 3 or 4 stages are worth +.070, +.140, +.249 and +.421 against the average of four uninformative teachers (Spearman .64), and even the weakest beats every uninformative one by at least two standard errors. One uninformative arm, the student left alone, sat 2.6 standard errors above that zero. Shuffling the uninformative arms within each student shows why this keeps happening: a rule that no fake may sit 2 standard errors above zero fails about one run in eleven even when the fakes are identical, however many students you add.",
+  "question": "With the zero set as the average of a declared class of uninformative teachers and fakes allowed two standard errors of noise, does transfer price skill on fresh students?",
+  "process_issues": [
+   "the decision rule tests whether a fake is significantly positive, where the question is whether it is worth anything that matters; under exact equality it false-fails about 9% at any sample size (within-student permutation of the real data)",
+   "the 216-student pooled read and the permutation check are post hoc and exploratory",
+   "Cadence moved 0.83.0 to 0.84.3 between pre-registration and run; a two-student replay against the 0.83 run was bit-identical before the full run"
+  ],
+  "lesson": "To show a fake is worth nothing, test non-superiority against a margin that matters (here half of one answer), powered for the whole class of fakes, not significance against zero for each.",
+  "chart": {
+   "title": "Worth vs the pooled uninformative zero, lesson 80, 72 fresh students",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "knows 1 stage",
+     "value": 0.07
+    },
+    {
+     "label": "knows 2 stages",
+     "value": 0.14
+    },
+    {
+     "label": "knows 3 stages",
+     "value": 0.249
+    },
+    {
+     "label": "knows 4 stages",
+     "value": 0.421
+    },
+    {
+     "label": "abstain",
+     "value": 0.029
+    },
+    {
+     "label": "anti-echo",
+     "value": 0.005
+    },
+    {
+     "label": "random labels",
+     "value": -0.017
+    },
+    {
+     "label": "null (random labels)",
+     "value": -0.017
+    },
+    {
+     "label": "wrong chain",
+     "value": -0.089
+    },
+    {
+     "label": "echo the mistake",
+     "value": -0.172
+    }
+   ]
+  },
+  "quote_worthy": "Three runs, three replications of the skill price, three failures of a zero test that would fail one run in eleven on identical fakes."
  }
 ]

@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-19 (iter38, EXP-62d BOUNDARY 4/5, on v0.84.3): third replication of the skill price on a third disjoint student set (know-1..4 +.070 / +.140 / +.249 / +.421, Spearman .64, know-1 beats every uninformative arm by >= 2.07 SEM paired, fakes .007 of pay); the pooled-zero 2-SEM rule failed on abstain (+.029, 2.57 SEM). Diagnosis (permutation of the real data): that rule false-fails ~9% at any n, so it tests significance where the question is equivalence. EXP-62e pre-registered: non-superiority margin 1/32, 216 fresh students, declared the last zero-point redesign; then EXP-62b.
+
 2026-10-17 (iter37, EXP-62c BOUNDARY 4/5): on 72 fresh students the skill price replicates and strengthens (know-1..4 +.073 / +.162 / +.300 / +.436, Spearman .61, fakes .034 of pay; know-1 beats every uninformative arm by >2 SEM paired). The zero-point criterion failed again from the other side (zero = anti-echo drew low; random and abstain +.03). EXP-62's leak reading is withdrawn: the uninformative arms are a +-.03 noise band at n 72. The binding issue is now the decision rule, not the measure: EXP-62d (pooled zero + noise allowance + separation test) is pre-registered and queued.
 
 2026-10-17 (iter36, EXP-62 BOUNDARY 4/5): on the delayed-credit brain, against a committed null (the random-label null won the pooled rule), transfer PRICES SKILL: know-1..4 +.054 / +.068 / +.138 / +.236, ordered, Spearman .40 (n 288); wrong-chain, echo, random and abstain all below zero; fakes take .041 of pay. Only the zero point failed: anti-echo +.023 (1.2 SEM), and worth tracks label information across all arms (r .99), so the measure prices the elimination bit the corrective schedule leaks. M1b not formally crossed. Binding question now: price against the best fake in a declared class (EXP-62c, fresh seeds), then instrument dependence (EXP-62b).
@@ -197,6 +199,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter38 (2026-10-19): EXP-62d, pooled uninformative zero with a 2-SEM allowance: BOUNDARY 4/5
+- Version: Cadence v0.84.3 `8dc92d8` (main moved 0.83.0 -> 0.84.3 between pre-registration and run; run gate: EXP-62c students 0-1 reproduced bit-identically, actions + labels, all 10 arms). Pre-registered `8b46525`. Lesson 80, 72 fresh students (6_600_000+), run 1,191 s.
+- Result: ladder +.070 / +.140 / +.249 / +.421 ordered, Spearman .636; separation passes (know-1 vs untaught 2.07 SEM, the rest 3.3-4.4); wrong-chain -.089, echo -.172; fake pay .007; untaught +.029 (2.57 SEM) fails "no fake above zero by 2 SEM".
+- Reading: skill pricing on instrument I is now robust across three disjoint student sets. The zero-point failures are a test-design problem: the 2-SEM rule over a four-arm class false-fails ~9% at any n under exact equality and more under any small real gap. Pooled over 216 students the uninformative arms sit within +-.015 (exploratory). EXP-62e (non-superiority margin 1/32, n 216, ~1% false-fail) pre-registered and declared the last redesign. M1b still not formally crossed.
 
 ### iter37 (2026-10-17): EXP-62c, fresh students with the zero declared as anti-echo: BOUNDARY 4/5
 - Version: Cadence v0.83.0 + Unreleased `6499e56`. Pre-registered `aa364c5`. Lesson 80 (chosen from EXP-62's full data before the run), 72 fresh students, run 1,339 s.
@@ -787,9 +794,13 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
 
+**2026-10-19 update (iter38):** EXP-62d DONE, BOUNDARY 4/5 (abstain tripped the 2-SEM rule; the rule, not the measure, is the problem). New top: **EXP-62e** (below), then EXP-62b. No further zero-point redesign after EXP-62e.
+
+000. **EXP-62e: non-superiority margin, powered for the class.** Milestone: M1b. Pre-registered in experiments/EXP-62e.md (2026-10-19, before any data); script exp/EXP-62e_margin_zero.py ready. EXP-62's harness, lesson 80, 216 fresh students (6_800_000+), pooled uninformative zero; CONFIRM needs ordered + Spearman >= .3 (n 864), know-4 >= .2, every fake's worth + 1.645 SEM < 1/32, know-1 beats every uninformative arm by 2 SEM paired, fake pay <= .10. KILL: any fake >= know-2. Cost ~56 min at 4 workers. Ready for the next loop fire.
+
 **2026-10-17 update (iter37):** EXP-62c DONE, BOUNDARY 4/5 (zero point failed from the other side; leak reading withdrawn). New top: **EXP-62d** (below), then EXP-62b.
 
-00. **EXP-62d: pooled zero with a noise allowance and a separation test.** Milestone: M1b. Pre-registered in experiments/EXP-62d.md (written 2026-10-17, before any data). EXP-62's harness, lesson 80, 72 fresh students (seeds 6_600_000 + student). Zero = per-student mean of the declared uninformative class {null, untaught, random, anti-echo}. CONFIRM if: know-1 < know-2 < know-3 < know-4 and Spearman >= .3 (n 288); know-4 >= .2; no uninformative arm and neither misleading arm (wrong-chain, echo) above zero by more than 2 SEM; know-1 beats every uninformative arm by >= 2 SEM paired; fakes take <= .10 of pay (pay vs the pooled zero, batches of 6, mean > 0 and t > 2). KILL: any fake >= know-2. Why: two BOUNDARYs on a criterion that fails by chance; this replaces it with a noise-aware test stated before seeing new data. Cost ~22 min. Ready for the next loop fire.
+00. **(DONE 2026-10-19, iter38: BOUNDARY 4/5) EXP-62d: pooled zero with a noise allowance and a separation test.** Milestone: M1b. Pre-registered in experiments/EXP-62d.md (written 2026-10-17, before any data). EXP-62's harness, lesson 80, 72 fresh students (seeds 6_600_000 + student). Zero = per-student mean of the declared uninformative class {null, untaught, random, anti-echo}. CONFIRM if: know-1 < know-2 < know-3 < know-4 and Spearman >= .3 (n 288); know-4 >= .2; no uninformative arm and neither misleading arm (wrong-chain, echo) above zero by more than 2 SEM; know-1 beats every uninformative arm by >= 2 SEM paired; fakes take <= .10 of pay (pay vs the pooled zero, batches of 6, mean > 0 and t > 2). KILL: any fake >= know-2. Why: two BOUNDARYs on a criterion that fails by chance; this replaces it with a noise-aware test stated before seeing new data. Cost ~22 min. Ready for the next loop fire.
 
 **2026-10-17 update (iter36):** item 1 (EXP-62) DONE, BOUNDARY 4/5 (zero-point criterion only). New order: **0. EXP-62c** (below), then item 2 (EXP-62b), then the rest unchanged.
 

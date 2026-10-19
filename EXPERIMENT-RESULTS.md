@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-62d — pooled uninformative zero: the skill price replicates a third time (Spearman .64, separation test passes); abstain trips the 2-SEM rule — 2026-10-19
+- **Version:** Cadence v0.84.3 `8dc92d8` (run gate: EXP-62c students 0-1 bit-identical on it, actions + labels, all 10 arms). **Script:** `exp/EXP-62d_pooled_zero.py` (EXP-62's harness unchanged). Pre-registered 2026-10-17 (`8b46525`). Lesson 80, 72 fresh students (6_600_000+), zero = mean of {null, untaught, random, anti-echo}.
+- **Insight:** know-1..4 +.070 / +.140 / +.249 / +.421 (SEMs .016-.020), Spearman .636 (n 288); know-1 beats every uninformative arm by >= 2.07 SEM paired; wrong-chain -.089, echo -.172; fake pay .007. Untaught +.029 (2.57 SEM) above the pooled zero; null and random -.017. Exploratory: pooled over EXP-62/62c/62d (216 students) every uninformative arm sits within +-.015 of the zero and know-1 is +.065 (7.2 SEM); permuting the uninformative arms within student shows the 2-SEM rule false-fails ~9% at n 72 and n 216 alike.
+- **Verdict: BOUNDARY (4/5; loop: INCONCLUSIVE on the zero-point criterion).** The measure separates skill from noise three times out of three; the 2-SEM zero rule is the wrong test (significance, not equivalence). EXP-62e (non-superiority margin 1/32, 216 students) pre-registered as the last zero-point redesign. Detail: experiments/EXP-62d.md.
+
 ## EXP-62c — fresh students, zero = anti-echo: the skill price replicates (Spearman .61); the zero point is a noise band — 2026-10-17
 - **Version:** Cadence v0.83.0 + Unreleased `6499e56`. **Script:** `exp/EXP-62c_best_fake_zero.py` (EXP-62's harness, declared settings). Pre-registered `aa364c5`. Lesson 80, 72 fresh students, committed zero = anti-echo.
 - **Insight:** know-1..4 +.073 / +.162 / +.300 / +.436, Spearman .612 (n 288); wrong-chain -.071, echo -.095; random +.027, abstain +.032 (both about 1.4 SEM); fake pay .034. Anti-echo fell below the null (-.012), reversing EXP-62. Exploratory: know-1 beats every uninformative arm by >2 SEM paired; vs a pooled uninformative zero all fakes sit within +-.02.
