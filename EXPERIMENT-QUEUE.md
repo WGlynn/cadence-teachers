@@ -86,7 +86,7 @@ version-stamped. Pick highest-value `ready` (ties → cheapest). Experiments spa
   invisible-action chain with out5 as the ceiling and ctx5 / hold5 as floors: (a) the corrective teacher's label (a label after a
   guided decision marks it a miss; guided decisions only), (b) the brain's own forecast error at the decision (critic / TD sign).
   Tells #202 whether an outcome-keyed gene can run without a new input from the world.
-- **EXP-66** (candidate, off-program, Will-gated (2026-10-16 re-rank); spawned 2026-10-16 by EXP-65) — the smallest per-decision failure input through a channel Cadence already
+- **EXP-66** (ready, PRE-REGISTERED 2026-10-19 in experiments/EXP-66.md, script `exp/EXP-66_penalty_gate.py`; Will un-gated 2026-10-19; off-program; spawned 2026-10-16 by EXP-65) — the smallest per-decision failure input through a channel Cadence already
   has: a small negative reward on a failed action (natural signal; e.g. -0.05 per miss, size fixed by a pilot under the exact
   run conditions so the penalty is visible but does not swamp the +2/-1 episode outcome), with the gate keyed on it (hold a
   decision whose reward is negative). Arms on the invisible and hidden chains: ctx5 (no penalty), pen (penalty, no gate),
