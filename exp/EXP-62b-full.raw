@@ -143,3 +143,14 @@ C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite
   C st45: null 0.56 untaught 0.44 | know-early-2 0.81 know-late-2 0.31 know-4 1.00 (31.4s)
   A st46: null 0.31 untaught 0.56 | know-early-2 0.75 know-late-2 0.62 know-4 1.00 (31.8s)
   C st46: null 0.44 untaught 0.44 | know-early-2 1.00 know-late-2 0.38 know-4 1.00 (32.7s)
+  A st47: null 0.50 untaught 0.50 | know-early-2 0.50 know-late-2 0.56 know-4 0.94 (31.0s)
+  B st47: null 0.94 untaught 1.00 | know-early-2 1.00 know-late-2 1.00 know-4 1.00 (29.1s)
+  B st46: null 0.75 untaught 0.81 | know-early-2 0.75 know-late-2 1.00 know-4 0.69 (112.1s)
+  C st47: null 0.50 untaught 0.50 | know-early-2 0.88 know-late-2 0.56 know-4 1.00 (31.3s)
+
+EXP-62b [full] summary (2802s), lesson 80
+  [A] n=48 takes in content: True | worth vs null: know-early-2 +0.264 (0.025)  know-late-2 +0.064 (0.023)  know-4 +0.432 (0.026)  untaught +0.016 (0.026) | D = early - late +0.201 (0.026) | rank know-4 > know-early-2 > know-late-2 | 34s per student
+  [B] n=48 takes in content: False | worth vs null: know-early-2 +0.039 (0.018)  know-late-2 +0.007 (0.022)  know-4 +0.069 (0.016)  untaught +0.000 (0.028) | D = early - late +0.033 (0.022) | rank know-4 > know-early-2 > know-late-2 | 47s per student
+  [C] n=48 takes in content: True | worth vs null: know-early-2 +0.339 (0.026)  know-late-2 +0.036 (0.022)  know-4 +0.458 (0.031)  untaught +0.027 (0.022) | D = early - late +0.302 (0.029) | rank know-4 > know-early-2 > know-late-2 | 35s per student
+  pair A-C: n=48 D diff -0.102 (0.036) opposite sign at 2 SEM: False; |diff| > 2 SEM: True
+  valid instruments: ['A', 'C'] -> MAGNITUDE ONLY
