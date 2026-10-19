@@ -1,0 +1,5 @@
+EXP-62f [pilot]: lesson 80; 9 jobs to go (0 done); seeds 7190000+
+C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
