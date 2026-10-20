@@ -62,3 +62,10 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED (the instrument-dependence claim); ORDE
 - Process: pre-registered before any data (39ab1a4) and the pilot recorded before the full run (10a35a4); run as written. My prediction that A and C would not differ by more than 2 SEM was wrong (2.8 SEM). Two instruments from one family is a narrow test of order: a sign flip is less likely between near relatives than between unrelated brains, so agreement here says little about brains built differently. B being blind left only that pair.
 - Lesson: separate order from magnitude when asking whether a value measure depends on the instrument. They can come apart, and payout rules depend on both.
 - Next: a third content-taking instrument from a different family (not a delayed-credit relative) is needed before claiming order agreement in general; candidate EXP-62f. For #198 (EXP-64's question): the next isolation is the critic rate or arousal on the default memory brain, one gene at a time.
+
+## Addendum 2026-10-20: scaled re-read (exploratory, existing data, no verdict change)
+- Prompted by EXP-62g, where the cross-family brain absorbed about twice the reference's content and the gap between them vanished once each instrument was scaled by its own know-4 worth. Here, on this run's 48 students (paired bootstrap, 5,000 draws):
+  - know-4 worth A .432, C .458: the two absorb about the same, so scale cannot explain their difference.
+  - Late/early worth ratio A .241 (95% interval .081 to .394), C .108 (-.014 to .226); difference -.134 (-.340 to +.073).
+  - D as a share of know-4: A .464, C .659; difference +.195 (+.013 to +.370).
+- Reading: these two near relatives disagree on the exchange rate even at equal scale, while EXP-62g's pair built differently agrees once scaled. Scaling by an instrument's own range is not a general fix. The verdict stays MAGNITUDE ONLY.

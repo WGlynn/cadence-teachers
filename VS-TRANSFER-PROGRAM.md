@@ -127,7 +127,7 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
-2026-10-20 (iter41, EXP-62g MAGNITUDE ONLY, on v0.84.3): a cross-family brain (memory-choice architecture with the delayed-credit brain's learning rule), on a task made harder by an untaught-only sweep (6 decisions per attempt), ranks early / late / full knowledge exactly as the reference does; the early-late gap is 3.6 SEM bigger, but it absorbs about twice as much of everything, and scaled by that the exchange rate agrees (.16 vs .18, wide intervals). The order of worth holds across size and architecture on this task family. Next: re-read EXP-62b scaled, then a test with the scaled rate as the primary quantity.
+2026-10-20 (iter41, EXP-62g MAGNITUDE ONLY, on v0.84.3): a cross-family brain (memory-choice architecture with the delayed-credit brain's learning rule), on a task made harder by an untaught-only sweep (6 decisions per attempt), ranks early / late / full knowledge exactly as the reference does; the early-late gap is 3.6 SEM bigger, but it absorbs about twice as much of everything, and scaled by that the exchange rate agrees (.16 vs .18, wide intervals). The order of worth holds across size and architecture on this task family. EXP-62b re-read scaled: its near relatives still differ (.46 vs .66), so scaling is not a general fix. Next: a scaled-rate test with both kinds of pair.
 
 2026-10-19 (iter40, EXP-62b MAGNITUDE ONLY, on v0.84.3): two content-taking brains (A delayed-credit, C its variant) rank equal-size early / late teachers identically but price late knowledge at about 1/4 vs 1/9 of early (D +.201 vs +.302, 2.8 SEM apart); the default memory brain with only a lower actor step (EXP-64) is blind. The judge sets the exchange rate, not the order, on this task family. Next: an instrument from a different family.
 
@@ -815,7 +815,7 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
 
-**2026-10-20 update (iter41):** EXP-62g DONE, MAGNITUDE ONLY (order holds across architecture; gap scales with uptake). EXP-62f SUPERSEDED. New top: re-read EXP-62b with each instrument's own scale (exploratory, existing data), then pre-register a scaled exchange-rate test powered to separate about .10.
+**2026-10-20 update (iter41):** EXP-62g DONE, MAGNITUDE ONLY (order holds across architecture; gap scales with uptake). EXP-62f SUPERSEDED. EXP-62b re-read scaled the same day (addendum in EXP-62b.md): its near relatives absorb equally (.43 vs .46) yet still differ on the scaled rate (D/know-4 .46 vs .66), so scaling is not a general fix. New top: pre-register a scaled exchange-rate test that includes both a near-relative pair and a cross-family pair, powered to separate about .10.
 
 **2026-10-19 update (iter39):** EXP-62e DONE, BOUNDARY 4/5 (anti-echo carries information: labels right .25 vs .20; it fails the margin by .002). Zero-point redesigns closed as committed. New top: **EXP-62b** (item 2 below). For any later zero, use the random-label null alone or a class whose label accuracy is measured at chance.
 

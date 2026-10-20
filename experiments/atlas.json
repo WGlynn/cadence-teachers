@@ -2829,7 +2829,8 @@
   "question": "Does the order of worth survive a change of the measuring brain's architecture, on a task that brain cannot reliably solve alone?",
   "process_issues": [
    "the scaled comparison is exploratory and its intervals are wide",
-   "one registered prediction (smaller budget favours early knowledge) was untestable under the registration's own within-run rule"
+   "one registered prediction (smaller budget favours early knowledge) was untestable under the registration's own within-run rule",
+   "the same scaling does not reconcile EXP-62b's near relatives (scaled D .46 vs .66), so it is not a general fix"
   ],
   "lesson": "Order, rate and scale are three different claims; compare shares of each instrument's own scale before calling a magnitude difference a disagreement about value.",
   "chart": {
