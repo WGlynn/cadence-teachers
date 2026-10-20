@@ -1,0 +1,11 @@
+EXP-68 check: cadence 0.84.3
+  (a) penm at p = 0 identical to ctx5: True
+  (a) penmR at p = 0 identical to ctx5: True
+  (a) penmW at p = 0 identical to ctx5: True
+  (b) pen at .005, memory saw path 809 outcome 809: True
+  (b) penm at .005, memory saw path 0 outcome 0: True
+  (b) penmR at .005, memory saw path 0 outcome 552: True
+  (b) penmW at .005, memory saw path 906 outcome 0: True
+  (b) pen at 1e-6 charges every non-terminal miss and the memory sees it: True ({'misses': 915, 'first': 222, 'charged': 915})
+  (c) pen at .005 through this script identical to EXP-67's life(): True
+check: PASS
