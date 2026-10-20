@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-62g — a brain built differently ranks knowledge the same way; the gap scales with how much it absorbs (MAGNITUDE ONLY) — 2026-10-20
+- **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-62g_budget_cross_family.py` (EXP-62f's instruments and readings plus a decision-budget knob). Pre-registered `d241ca0`, sweep `f74362f` (untaught only: 6 decisions per attempt chosen), pilot `38bb2ed`. Lesson 80, 48 fresh students (7_200_000+), 1,315 s.
+- **Result:** A (delayed-credit) early +.173 / late +.027 / know-4 +.204, D = +.146 (.037). D1 (memory-choice architecture with A's learning rule) +.414 / +.073 / +.451, D = +.341 (.038). D2 (arousal off) identical to D1 everywhere. Same order on all three. D_A - D_D1 = -.195 (3.6 SEM). Exploratory: scaled by each brain's know-4, late/early .16 vs .18 and D/know-4 .71 vs .76, no difference detected (wide intervals).
+- **Verdict: MAGNITUDE ONLY (loop: INCONCLUSIVE).** The order of worth survives a change of architecture as well as size; the raw gap does not, and here it looks like scale (D1 absorbs about twice as much). EXP-62f closed at its pilot (ceiling) and is superseded by this. For #198: arousal inert; the memory-choice brain's near-blindness came from its default learning rule. Detail: experiments/EXP-62g.md.
+
 ## EXP-62b — instrument dependence: the two content-taking brains agree on order, differ on the early-vs-late exchange rate (MAGNITUDE ONLY) — 2026-10-19
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-62b_instrument_order.py` (EXP-62's harness). Pre-registered `39ab1a4`, pilot `10a35a4`. Lesson 80, 48 fresh students (7_000_000+), zero = random-label null, 2,802 s.
 - **Result:** A (delayed-credit) early +.264 / late +.064 / know-4 +.432, D = +.201 (.026). C (delayed-credit variant) +.339 / +.036 / +.458, D = +.302 (.029). B (default memory brain, actor step .1 = EXP-64) +.039 / +.007 / +.069, blind. D_A - D_C = -.102 (2.8 SEM). Same order on A and C (know-4 > early > late).

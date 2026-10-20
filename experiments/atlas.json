@@ -2786,5 +2786,82 @@
    ]
   },
   "quote_worthy": "Two brains agreed on which teacher is worth more and disagreed by a factor of two on how much more."
+ },
+ {
+  "id": "EXP-62f",
+  "date": "2026-10-19",
+  "iter": "iter41",
+  "track": "market & attacks",
+  "verdict": "SUPERSEDED",
+  "name": "A cross-family brain that solved the task alone: closed at the pilot",
+  "verdict_note": "pre-registered (79f3f8c); pilot only (c9f6160): the memory-choice architecture with the delayed-credit brain's learning rule scored 1.00 untaught, a ceiling the pilot rule did not cover; superseded by EXP-62g",
+  "headline": "The plan was to price early and late knowledge with a brain built differently. With the reference brain's learning rule, that brain learned the whole task alone before any teacher could help, so the test could not run as written. That was itself a reading: the architecture is not what kept it from learning earlier.",
+  "question": "Does the order of worth hold when the measuring brain has a different architecture?",
+  "process_issues": [
+   "the pilot rule guarded only against a signal that was too weak, not against a ceiling"
+  ],
+  "lesson": "A pilot rule needs a ceiling guard as well as a floor guard.",
+  "chart": {
+   "title": "Untaught accuracy in the pilot, lesson 80, 3 students",
+   "unit": "accuracy",
+   "bars": [
+    {
+     "label": "A untaught",
+     "value": 0.417
+    },
+    {
+     "label": "D1 untaught",
+     "value": 1.0
+    }
+   ]
+  },
+  "quote_worthy": false
+ },
+ {
+  "id": "EXP-62g",
+  "date": "2026-10-20",
+  "iter": "iter41",
+  "track": "market & attacks",
+  "verdict": "BOUNDARY",
+  "name": "A brain built differently ranks knowledge the same way; the gap scales with how much it absorbs",
+  "verdict_note": "pre-registered (d241ca0); sweep picked 6 decisions per attempt from untaught students only (f74362f); pilot 38bb2ed; MAGNITUDE ONLY: same order on all three brains, early-minus-late gap differs by 3.6 SEM; 48 fresh students, lesson 80, Cadence 0.84.3",
+  "headline": "On a harder version of the task, two brains built differently ranked teachers who know the same amount the same way: all four stages, then the early two, then the late two. The size of the early-late gap differed by 3.6 standard errors. But the second brain absorbed about twice as much of everything. Scaled by that, late knowledge was worth about a sixth of early knowledge to both (.16 and .18), though that comparison has wide error bars.",
+  "question": "Does the order of worth survive a change of the measuring brain's architecture, on a task that brain cannot reliably solve alone?",
+  "process_issues": [
+   "the scaled comparison is exploratory and its intervals are wide",
+   "one registered prediction (smaller budget favours early knowledge) was untestable under the registration's own within-run rule"
+  ],
+  "lesson": "Order, rate and scale are three different claims; compare shares of each instrument's own scale before calling a magnitude difference a disagreement about value.",
+  "chart": {
+   "title": "Worth vs the random-label null, 6 decisions per attempt, lesson 80, 48 fresh students",
+   "unit": "worth",
+   "bars": [
+    {
+     "label": "A: knows early stages",
+     "value": 0.173
+    },
+    {
+     "label": "A: knows late stages",
+     "value": 0.027
+    },
+    {
+     "label": "A: knows all four",
+     "value": 0.204
+    },
+    {
+     "label": "D1: knows early stages",
+     "value": 0.414
+    },
+    {
+     "label": "D1: knows late stages",
+     "value": 0.073
+    },
+    {
+     "label": "D1: knows all four",
+     "value": 0.451
+    }
+   ]
+  },
+  "quote_worthy": false
  }
 ]

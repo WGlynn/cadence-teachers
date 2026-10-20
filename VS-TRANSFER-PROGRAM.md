@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-20 (iter41, EXP-62g MAGNITUDE ONLY, on v0.84.3): a cross-family brain (memory-choice architecture with the delayed-credit brain's learning rule), on a task made harder by an untaught-only sweep (6 decisions per attempt), ranks early / late / full knowledge exactly as the reference does; the early-late gap is 3.6 SEM bigger, but it absorbs about twice as much of everything, and scaled by that the exchange rate agrees (.16 vs .18, wide intervals). The order of worth holds across size and architecture on this task family. Next: re-read EXP-62b scaled, then a test with the scaled rate as the primary quantity.
+
 2026-10-19 (iter40, EXP-62b MAGNITUDE ONLY, on v0.84.3): two content-taking brains (A delayed-credit, C its variant) rank equal-size early / late teachers identically but price late knowledge at about 1/4 vs 1/9 of early (D +.201 vs +.302, 2.8 SEM apart); the default memory brain with only a lower actor step (EXP-64) is blind. The judge sets the exchange rate, not the order, on this task family. Next: an instrument from a different family.
 
 2026-10-19 (iter39, EXP-62e BOUNDARY 4/5, on v0.84.3): fourth replication of the skill price on 216 fresh students (know-1..4 +.069 / +.146 / +.254 / +.416, Spearman .61, know-1 beats every uninformative arm by >= 4.1 SEM, fakes .024 of pay). The margin rule failed on anti-echo (+.023, upper bound .033 vs .031). Mechanism (exploratory, logged fields): anti-echo's labels are right .25 vs .20 for random labels in every run, so it was never uninformative; the instrument prices it in proportion (about 38% of know-1's information edge, about 38% of its worth edge). Zero-point work closed as pre-registered; next rung EXP-62b.
@@ -203,6 +205,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter41 (2026-10-20): EXP-62g, cross-family instrument on a harder task: MAGNITUDE ONLY
+- Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `d241ca0`, sweep `f74362f`, pilot `38bb2ed`. Budget 6, lesson 80, 48 fresh students, 1,315 s. EXP-62f (same question at budget 10) closed at its pilot: D1 at ceiling (SUPERSEDED).
+- Result: A D +.146 (.037), D1 D +.341 (.038), difference -.195 (3.6 SEM); D2 = D1; same order on all three; scaled late/early .16 vs .18 (exploratory).
+- Reading: order agrees across a change of architecture; raw magnitude does not, and the exploratory scaling suggests the difference is how much each brain absorbs rather than how it values late against early. M5 (instrument as an outside ingredient) not decided; the scaled-rate question is next.
 
 ### iter40 (2026-10-19): EXP-62b, instrument dependence: MAGNITUDE ONLY
 - Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `39ab1a4`, pilot `10a35a4`. Lesson 80, 48 fresh students, 2,802 s.
@@ -807,6 +814,8 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-20 update (iter41):** EXP-62g DONE, MAGNITUDE ONLY (order holds across architecture; gap scales with uptake). EXP-62f SUPERSEDED. New top: re-read EXP-62b with each instrument's own scale (exploratory, existing data), then pre-register a scaled exchange-rate test powered to separate about .10.
 
 **2026-10-19 update (iter39):** EXP-62e DONE, BOUNDARY 4/5 (anti-echo carries information: labels right .25 vs .20; it fails the margin by .002). Zero-point redesigns closed as committed. New top: **EXP-62b** (item 2 below). For any later zero, use the random-label null alone or a class whose label accuracy is measured at chance.
 
