@@ -2958,5 +2958,40 @@
    ]
   },
   "quote_worthy": true
+ },
+ {
+  "id": "EXP-62h",
+  "date": "2026-10-20",
+  "iter": "iter42",
+  "track": "market & attacks",
+  "verdict": "SUPPORTIVE",
+  "name": "Scaled by how much each brain absorbs, a brain built differently still prices late knowledge differently",
+  "verdict_note": "pre-registered (043dd25), pilot set N 720 (0ae8bf9); RATE DEPENDS ON THE BRAIN: cross-family scaled difference -.263 (95% -.349 to -.180); near relatives +.064 (-.025 to +.153); 2,160 student-instruments, budget 6, Cadence 0.84.3",
+  "headline": "Three brains judged teachers who know equal amounts of different stages. All three ranked them the same way. But to the two delayed-credit brains a teacher of the late stages was worth almost nothing next to a teacher of the early stages (.04 and .01), while to the memory-choice brain it was worth about a third. Scaling by how much each brain absorbs did not remove the difference. Two earlier small-sample readings had pointed the other way.",
+  "question": "Once each brain's numbers are scaled by how much it absorbs, do brains agree on how much late knowledge is worth against early knowledge?",
+  "process_issues": [
+   "both exploratory n 48 readings that motivated the test were wrong, in opposite directions",
+   "the near-relative pair is neither different nor shown equal within .10"
+  ],
+  "lesson": "Order and exchange rate are separate claims; at n 48 a ratio of two noisy means can point either way, so power the test before reading it.",
+  "chart": {
+   "title": "Scaled early-minus-late gap (D / know-4 worth), 720 students, budget 6",
+   "unit": "share of know-4",
+   "bars": [
+    {
+     "label": "A delayed-credit",
+     "value": 0.874
+    },
+    {
+     "label": "C near relative",
+     "value": 0.937
+    },
+    {
+     "label": "D1 memory-choice",
+     "value": 0.61
+    }
+   ]
+  },
+  "quote_worthy": true
  }
 ]

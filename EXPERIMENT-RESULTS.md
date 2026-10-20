@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-62h — scaled by how much each brain absorbs, the cross-family brain still prices late knowledge differently (RATE DEPENDS ON THE BRAIN) — 2026-10-20
+- **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-62h_scaled_rate.py` (EXP-62g's harness, budget 6). Pre-registered `043dd25`, pilot `0ae8bf9` (N 840 capped at 720). 720 fresh students (7_400_000+), 14,501 s.
+- **Result:** scaled D (D / know-4 worth): A .874, C .937, D1 .610. A-C +.064 (95% -.025 to +.153); A-D1 -.263 (95% -.349 to -.180). Late/early worth ratio A .044, C .009, D1 .326. Same order on all three.
+- **Verdict: RATE DEPENDS ON THE BRAIN (loop: CONFIRMED).** The exchange rate between kinds of knowledge depends on the judge's architecture even after scaling; the order does not. Both n 48 exploratory scaled readings (62g, 62b addendum) are withdrawn. Detail: experiments/EXP-62h.md.
+
 ## EXP-68 — the cost's harm is a switch in the memory's replay (MEMORY SWITCH) — 2026-10-20
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-68_memory_switch.py` (imports EXP-67). Pre-registered + check PASS `90da30b`. Hidden chain, natural signal, 7 arms x 48 lives, seeds 68_000+, 1,358 s.
 - **Result:** sampled success ctx5 .413; per-miss cost 1e-6 .068, 1e-4 .071, .005 .127. Memory blind to the cost (learner still pays it) .417. Replay restored only .294 (+.167 over pen); writes removed only .142 (+.015).

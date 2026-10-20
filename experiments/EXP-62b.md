@@ -69,3 +69,6 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED (the instrument-dependence claim); ORDE
   - Late/early worth ratio A .241 (95% interval .081 to .394), C .108 (-.014 to .226); difference -.134 (-.340 to +.073).
   - D as a share of know-4: A .464, C .659; difference +.195 (+.013 to +.370).
 - Reading: these two near relatives disagree on the exchange rate even at equal scale, while EXP-62g's pair built differently agrees once scaled. Scaling by an instrument's own range is not a general fix. The verdict stays MAGNITUDE ONLY.
+
+## Addendum 2026-10-20 (later): the near-relative scaled difference did not hold either
+- The exploratory scaled reading in the addendum above (A .46 vs C .66, at budget 10) was tested in EXP-62h at budget 6 with n 720: A-C +.064 (95% interval -.025 to +.153), no difference detected. Different task, so not a direct replication, but the n 48 reading should not be cited. Verdict here unchanged.

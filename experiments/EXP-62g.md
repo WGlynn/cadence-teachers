@@ -59,3 +59,6 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED; ORDER AGREES -> REFUTED; MAGNITUDE ONL
 - For upstream #198: arousal had no effect at all, at budget 10 (EXP-62f pilot) and at budget 6 (here), in any arm of any of the 51 students. With A's learning rule, the memory-choice brain takes in content at about twice A's rate, so EXP-62b's near-blindness of that architecture came from its default learning rule, not from the architecture.
 - Lesson: when one instrument absorbs more than another, compare shares of each instrument's own scale before calling a magnitude difference a disagreement about value. Order, rate and scale are three different claims.
 - Next: re-read EXP-62b with the same scaling (exploratory, existing data). Then a pre-registered test where the scaled exchange rate is the primary quantity, with enough students to separate a rate difference of about .10.
+
+## Addendum 2026-10-20 (later): the scaled agreement did not hold
+- The exploratory scaled reading above (A .71 vs D1 .76, n 48) was tested as the primary quantity in EXP-62h (n 720, same task). There the cross-family pair DIFFERS: scaled D .874 vs .610, difference -.263 (95% interval -.349 to -.180). The registered MAGNITUDE ONLY verdict here stands; the "friendlier case" reading in the Reflection is withdrawn.

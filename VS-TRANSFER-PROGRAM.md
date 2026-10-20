@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-20 (iter42, EXP-62h RATE DEPENDS ON THE BRAIN, on v0.84.3): powered (n 720) on one task, scaled by each brain's own range, the cross-family brain prices late knowledge at about a third of early, the delayed-credit brains at almost nothing (scaled D .61 vs .87, difference -.26, 95% -.35 to -.18); near relatives not different (+.06, -.03 to +.15). Order holds across size and architecture; the exchange rate does not, even scaled. Both n 48 exploratory scaled readings withdrawn. Next: test whether the rate difference is exposure (late-only teachers only reach students who get far), by scaffolding students to stage 3.
+
 2026-10-20 (iter41, EXP-62g MAGNITUDE ONLY, on v0.84.3): a cross-family brain (memory-choice architecture with the delayed-credit brain's learning rule), on a task made harder by an untaught-only sweep (6 decisions per attempt), ranks early / late / full knowledge exactly as the reference does; the early-late gap is 3.6 SEM bigger, but it absorbs about twice as much of everything, and scaled by that the exchange rate agrees (.16 vs .18, wide intervals). The order of worth holds across size and architecture on this task family. EXP-62b re-read scaled: its near relatives still differ (.46 vs .66), so scaling is not a general fix. Next: a scaled-rate test with both kinds of pair.
 
 2026-10-19 (iter40, EXP-62b MAGNITUDE ONLY, on v0.84.3): two content-taking brains (A delayed-credit, C its variant) rank equal-size early / late teachers identically but price late knowledge at about 1/4 vs 1/9 of early (D +.201 vs +.302, 2.8 SEM apart); the default memory brain with only a lower actor step (EXP-64) is blind. The judge sets the exchange rate, not the order, on this task family. Next: an instrument from a different family.
@@ -205,6 +207,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter42 (2026-10-20): EXP-62h, scaled exchange rate across a near-relative and a cross-family pair: RATE DEPENDS ON THE BRAIN
+- Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `043dd25`, pilot `0ae8bf9` (N 720). Budget 6, lesson 80, 14,501 s.
+- Result: scaled D A .874, C .937, D1 .610; A-D1 -.263 (95% -.349 to -.180); A-C +.064 (-.025 to +.153).
+- Reading: M5 (the instrument as an outside ingredient) gets its first powered answer on this task family: the judge sets the exchange rate between kinds of contribution, across architectures, and scaling does not remove it; it does not set the order.
 
 ### iter41 (2026-10-20): EXP-62g, cross-family instrument on a harder task: MAGNITUDE ONLY
 - Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `d241ca0`, sweep `f74362f`, pilot `38bb2ed`. Budget 6, lesson 80, 48 fresh students, 1,315 s. EXP-62f (same question at budget 10) closed at its pilot: D1 at ceiling (SUPERSEDED).
@@ -814,6 +821,8 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-20 update (iter42):** EXP-62h DONE, RATE DEPENDS ON THE BRAIN (cross-family). New top: the exposure test (scaffold students to stage 3 so late-only teachers reach every brain; does the delayed-credit brains' late/early ratio rise toward D1's?). Pre-register before any data.
 
 **2026-10-20 update (iter41):** EXP-62g DONE, MAGNITUDE ONLY (order holds across architecture; gap scales with uptake). EXP-62f SUPERSEDED. EXP-62b re-read scaled the same day (addendum in EXP-62b.md): its near relatives absorb equally (.43 vs .46) yet still differ on the scaled rate (D/know-4 .46 vs .66), so scaling is not a general fix. New top: pre-register a scaled exchange-rate test that includes both a near-relative pair and a cross-family pair, powered to separate about .10.
 

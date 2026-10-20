@@ -35,7 +35,23 @@ Loop verdict: DEPENDS -> CONFIRMED (the instrument sets the exchange rate even a
 - 2026-10-20 07:15-07:33, 1,071 s at 2 workers (sharing the machine with EXP-68), 24 students (7_490_000+), Cadence 0.84.3 (`exp/EXP-62h-pilot.*`). Validity only: untaught A .352, C .372, D1 .786 (no ceiling); know-4 worth A +.255 (.039), C +.180 (.044), D1 +.385 (.059) (all take in content). Largest pair SE .294 -> N = 24 x (.294 / .05)^2 = 840 -> **capped at 720**. The cap leaves the target SE at about .055, so a difference of .10 is about 1.8 SE, not 2. Nothing else in the design changed. The pilot's differences are not reported, as registered.
 
 ## Summary
-- PENDING.
+- Question: once each brain's numbers are scaled by how much it absorbs, do brains agree on how much late knowledge is worth against early knowledge?
+- Setup: as registered. Cadence 0.84.3 (`8dc92d8`), budget 6, lesson 80, N 720 from the pilot (0ae8bf9), seeds 7_400_000+, 2,160 student-instruments, 14,501 s at 4 workers (a detached process).
+- Prediction: see the pre-registration (near relatives differ about 60%; cross-family agree within .10 about 35%; N at the cap about 50%).
+- Result. s = mean(early - late) / mean(know-4 worth), per instrument:
+  - A (delayed-credit): s .874. know-4 worth +.243 (.007), D +.213 (.008), late/early worth ratio .044, untaught .341.
+  - C (near relative): s .937. know-4 +.264 (.007), D +.247 (.007), late/early .009, untaught .340.
+  - D1 (cross-family): s .610. know-4 +.462 (.011), D +.282 (.012), late/early .326, untaught .643.
+  - **A-C: +.064 (SE .046, 95% interval -.025 to +.153).** No difference detected, and not shown equal within .10.
+  - **A-D1: -.263 (SE .043, 95% interval -.349 to -.180).** The interval excludes 0.
+  - Late-label events per student, know-late-2 arm: A 5.7, C 5.6, D1 7.8; know-early-2 arm: 15.0, 16.5, 31.1.
+- Verdict: **RATE DEPENDS ON THE BRAIN** (loop: CONFIRMED).
 
 ## Reflection
-- PENDING.
+- What it means: after scaling by how much each brain absorbs, the cross-family brain still prices late knowledge differently. To the two delayed-credit brains, a teacher who knows only the late stages is worth almost nothing next to one who knows only the early stages (late/early .04 and .01). To the memory-choice brain it is worth about a third (.33). All three brains still rank the teachers the same way: know-4, then early, then late. What differs is how much late knowledge is worth next to early knowledge. That rate depends on which brain judges, and scaling by how much each brain absorbs does not remove the difference. The near relatives do not differ detectably. At this sample size that means any rate difference between them is under about .15.
+- For Noesis (measure-only): a payout rule that prices kinds of contribution through one learned judge inherits that judge's exchange rate. The order is robust across these brains; the rate is not. Any rule that pays by rate needs either more than one judge from different families, or a declared judge whose rate is part of the rule, stated up front. More judges do not settle the rate by themselves. Judges from different families give a range, not one number. Here late knowledge was worth .04 of early knowledge to one judge and .33 to another. So the rule still has to say which point of that range it pays, for example the lowest. And a declared judge invites contributors to fit that judge, which is the same capture problem the frozen-judge rule already addresses.
+- Prediction check: "near relatives differ" (60%) did not hold; "cross-family agrees within .10" (35%) did not hold, it differed by .26; "N at the cap" (50%) held (840 asked, 720 run).
+- Both exploratory readings that motivated this test were wrong, and in opposite directions. EXP-62g (n 48) suggested the cross-family pair agreed once scaled (.71 vs .76). The EXP-62b re-read (n 48) suggested the near relatives differed (.46 vs .66). At n 720 on one task, the cross-family pair differs and the near relatives don't. Even A's own late/early ratio moved from .16 (EXP-62g, n 48) to .04 here. Both earlier write-ups now carry an addendum pointing here.
+- Lesson: an exploratory ratio of two noisy means at n 48 can point either way. At intervals as wide as these (about plus or minus .35), treat it as a reason to run a powered test, not as a reading. The pre-registered internal pilot sized this run correctly. Its SE estimate (.294 at n 24) predicted the run's actual SE (.043 to .046 at n 720) almost exactly.
+- Mechanism hint (not tested). A late-only teacher can only help a student that gets far enough to hear it. D1 gets further on its own: untaught accuracy .643, against .34 for A and C. So a late-only teacher gets more chances to teach it (7.8 late labels per student, against 5.6). And D1 already knows enough of the early chain to put those late labels to use.
+- Next: test that hint directly. Equalize how far students get (a scaffold that starts some attempts at stage 3) and check whether the delayed-credit brains' late/early ratio rises toward D1's. If it does, the "exchange rate" is mostly exposure, not valuation.
