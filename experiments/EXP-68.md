@@ -41,7 +41,22 @@ Loop verdict: SUPPORTIVE -> CONFIRMED; BOUNDARY -> INCONCLUSIVE; NULL -> REFUTED
 - 2026-10-20 07:10, `exp/EXP-68-check.out`, Cadence 0.84.3, seed 68_990, hidden chain, natural: **PASS.** (a) penm, penmR and penmW at p = 0 are identical to ctx5. (b) At .005 the memory saw the cost 809 / 809 times in pen (path / outcome), 0 / 0 in penm, 0 / 552 in penmR, 906 / 0 in penmW. pen@1e-6 charged all 915 non-terminal misses, and the memory saw them. (c) pen at .005 equals EXP-67's `life()`. Nothing in the design changed.
 
 ## Summary
-- PENDING.
+- Question: is the per-miss cost's harm to a teacherless learner a switch in the episodic memory, and which part of the memory carries it?
+- Setup: as registered. Cadence 0.84.3 (`8dc92d8`), check PASS (90da30b), hidden chain, natural signal, 7 arms x 48 lives = 336, seeds 68_000+, 1,358 s at 4 workers.
+- Prediction: see the pre-registration (switch about 75%; penm recovers about 65%; replay part recovers more than the writes part about 60%).
+- Result, sampled success (delta vs ctx5, paired SEM):
+  - ctx5 .413. pen@1e-6 .068 (-.344, .051). pen@1e-4 .071 (-.341, .052). pen@.005 .127 (-.285, .059). A cost of one millionth harms as much as one of .005.
+  - penm@.005 (the learner gets the cost, the memory sees none) .417 (+.004, .083): no harm detected (the interval still allows a loss of up to about .16). penm minus pen@.005 +.290 (.060).
+  - penmR@.005 (replay restored, writes kept) .294; penmR minus pen +.167 (.055). penmW@.005 (writes removed, replay still stopped) .142; penmW minus pen +.015 (.044).
+  - Additivity, (R + W) minus both: -.107 (.082). The two parts recover less apart than together. Removing the writes matters only once replay is restored.
+  - Clean greedy passes stay near zero under reward alone (0 to 5 of 48).
+- Criteria: pen@1e-6 at -6.7 SEM (switch). penm recovers (+4.8 SEM over pen, +.004 vs ctx5).
+- Verdict: **MEMORY SWITCH** (SUPPORTIVE; loop: CONFIRMED).
 
 ## Reflection
-- PENDING.
+- What it means: the timidity in EXP-66 and EXP-67 is not the learner reacting to a cost. It is the episodic memory flipping a switch. Hide the cost from the memory alone and no harm is detected (.417 vs .413; the SEM of .083 still allows a loss of up to about .16), even though the actor-critic still gets every charge. Show the memory a cost of 1e-6 and the harm is full size. The switch is mostly the replay rule. `_replay` credits the final reward backwards only through steps whose own reward is exactly 0.0 (`generic.py` 3221-3222, Cadence 0.84.3). So any charged miss stops the replayed success credit at that miss, and the decisions before it never get that credit (they can still learn through the actor-critic). Restoring replay recovers about 58% of the harm. Removing the writes recovers nothing alone, and the rest together with replay.
+- For upstream (#202, #210): for this brain (memory choice with replay on), in a world that charges anything for a miss, the memory's replay stops at every miss. A shaping cost then works against a reward-only learner at any size, and that is a property of the exact-zero tests (`reward != 0` for writes, `== 0.0` for replay), not of the cost. Whether to change them is the library's design call. A tolerance, or treating sub-salient rewards as nothing on the replay path, would be the obvious candidates, and this harness can test either.
+- Prediction check: all three held (switch, penm recovers, replay part larger than the writes part). I did not predict the interaction: removing writes helps only together with restored replay.
+- Process: reading the library before designing the test turned a vague "eligibility switch" into two exact code sites. That let one run split the mechanism instead of just confirming it. The check confirmed each mask hid exactly what it said (path 0 / outcome 552 for penmR, path 906 / outcome 0 for penmW) before any data.
+- Lesson: when a harm is flat across sizes, find the exact-zero test in the code. Then build one arm per test site that hides the signal from that site only.
+- Next: offer the finding on #202 (Will's call), with the two code sites and this harness. A natural follow-up is the replay rule with a tolerance, under reward alone and with the corrective teacher, to check that it does not cost EXP-66's teacher gains.

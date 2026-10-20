@@ -2911,5 +2911,52 @@
    ]
   },
   "quote_worthy": false
+ },
+ {
+  "id": "EXP-68",
+  "date": "2026-10-20",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "SUPPORTIVE",
+  "name": "The cost's harm is a switch in the memory's replay: a millionth hurts as much as a lot",
+  "verdict_note": "pre-registered + check PASS (90da30b); MEMORY SWITCH: a per-miss cost of 1e-6 cuts hidden-chain sampled success .413 -> .068 (6.7 SEM); hiding the cost from the episodic memory alone gives .417; restoring replay alone recovers +.167 of +.290; 336 lives, natural signal, Cadence 0.84.3",
+  "headline": "A cost of one millionth for each mistake hurt a learner with no teacher as much as a cost of .005. Hiding the cost from the memory alone, while the learner still paid it, removed the harm. The cause is a replay rule: success is credited back only through steps whose reward is exactly zero, so any charged mistake stops the credit there.",
+  "question": "Is the per-miss cost's harm a switch in the episodic memory, and which part of the memory carries it?",
+  "process_issues": [
+   "the masks patch two private library methods in the test process; they are a probe, not a proposed change",
+   "hidden chain only, reward only; the teacher case (EXP-66) was not re-run under the masks"
+  ],
+  "lesson": "When a harm is flat across sizes, find the exact-zero test in the code and build one arm per test site.",
+  "chart": {
+   "title": "Hidden chain, reward only: sampled success, 48 lives per arm",
+   "unit": "sampled success",
+   "bars": [
+    {
+     "label": "no cost",
+     "value": 0.413
+    },
+    {
+     "label": "cost 1e-6",
+     "value": 0.068
+    },
+    {
+     "label": "cost .005",
+     "value": 0.127
+    },
+    {
+     "label": "cost .005, memory blind",
+     "value": 0.417
+    },
+    {
+     "label": "cost .005, replay restored",
+     "value": 0.294
+    },
+    {
+     "label": "cost .005, writes removed",
+     "value": 0.142
+    }
+   ]
+  },
+  "quote_worthy": true
  }
 ]
