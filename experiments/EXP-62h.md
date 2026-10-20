@@ -32,7 +32,7 @@ D2 is dropped: it equalled D1 in every arm of all 51 students measured (3 in the
 Loop verdict: DEPENDS -> CONFIRMED (the instrument sets the exchange rate even after scaling); AGREES -> REFUTED; INCONCLUSIVE -> INCONCLUSIVE.
 
 ## Pilot
-- PENDING.
+- 2026-10-20 07:15-07:33, 1,071 s at 2 workers (sharing the machine with EXP-68), 24 students (7_490_000+), Cadence 0.84.3 (`exp/EXP-62h-pilot.*`). Validity only: untaught A .352, C .372, D1 .786 (no ceiling); know-4 worth A +.255 (.039), C +.180 (.044), D1 +.385 (.059) (all take in content). Largest pair SE .294 -> N = 24 x (.294 / .05)^2 = 840 -> **capped at 720**. The cap leaves the target SE at about .055, so a difference of .10 is about 1.8 SE, not 2. Nothing else in the design changed. The pilot's differences are not reported, as registered.
 
 ## Summary
 - PENDING.
