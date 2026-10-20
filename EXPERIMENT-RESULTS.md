@@ -11,7 +11,7 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 ## EXP-68 — the cost's harm is a switch in the memory's replay (MEMORY SWITCH) — 2026-10-20
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-68_memory_switch.py` (imports EXP-67). Pre-registered + check PASS `90da30b`. Hidden chain, natural signal, 7 arms x 48 lives, seeds 68_000+, 1,358 s.
 - **Result:** sampled success ctx5 .413; per-miss cost 1e-6 .068, 1e-4 .071, .005 .127. Memory blind to the cost (learner still pays it) .417. Replay restored only .294 (+.167 over pen); writes removed only .142 (+.015).
-- **Verdict: MEMORY SWITCH (SUPPORTIVE; loop CONFIRMED).** The harm is the replay rule (`generic.py` 3221-3222: credit flows back only through steps whose reward is exactly 0.0), with the write rule (`reward != 0`, 3154) mattering only together with it. Off-program (memory track, #202 / #210). Detail: experiments/EXP-68.md.
+- **Verdict: MEMORY SWITCH (SUPPORTIVE; loop CONFIRMED).** The harm is the replay rule (`generic.py` 3221-3223: credit flows back only through steps whose reward is exactly 0.0), with the write rule (`reward != 0`, 3154) mattering only together with it. Off-program (memory track, #202 / #210). Detail: experiments/EXP-68.md.
 
 ## EXP-67 — a failure cost makes a teacherless learner timid at every size, and the size barely matters (TIMID AT EVERY SIZE) — 2026-10-20
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-67_reward_only_penalty.py` (imports EXP-66). Pre-registered + check PASS `55dbccd`. Natural signal only, 13 arms x 96 lives, seeds 67_000+, 4,646 s.
