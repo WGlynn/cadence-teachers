@@ -1,0 +1,8 @@
+EXP-67 check: cadence 0.84.3
+  (a) pen at p = 0 identical to ctx5: True
+  (a) peng at p = 0 identical to ctx5: True
+  (a) penr at p = 0 identical to ctx5: True
+  (b) penr at .02 charges exactly the repeat misses: True ({'misses': 939, 'first': 166, 'charged': 773})
+  (b) pen at .02 charges every non-terminal miss: True ({'misses': 941, 'first': 159, 'charged': 941})
+  (c) pen at .05 through this script identical to EXP-66's life(): True
+check: PASS
