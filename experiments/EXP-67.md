@@ -44,7 +44,24 @@ Loop verdict: SUPPORTIVE -> CONFIRMED; BOUNDARY -> INCONCLUSIVE; NULL -> REFUTED
 - What (b) says about the design, before any outcome: because a wrong action changes nothing, a learner stuck at a stage repeats its miss, so most misses are repeats. On this life the repeat-only form waives about 18% of the charges, not most of them. penr is a gentler form, but only mildly gentler. Nothing in the design changed.
 
 ## Summary
-- PENDING.
+- Question: under reward alone, does any failure cost (smaller sizes, with or without the gate, or charged only for repeat misses) help, or does it make the learner timid at every size?
+- Setup: as registered. Cadence 0.84.3 (`8dc92d8`), check PASS (55dbccd), 13 arms x 96 lives = 1,248 lives, natural signal, seeds 67_000+, 4,646 s at 4 workers.
+- Prediction: see the pre-registration (P0 about 85%; some arm helps about 20%; pen@.005 still harmful on the hidden chain about 40%; penr less harmful than pen at .02 and .05 about 65%).
+- Result, sampled success, delta vs ctx5 paired by seed (SEM):
+  - Hidden chain (ctx5 .349). In plain words: every size and form of cost cut sampled success, most by about three quarters. The numbers: pen .005 / .01 / .02 / .05 = -.311 (.055) / -.305 (.055) / -.249 (.054) / -.280 (.052). peng .005 / .01 / .02 = -.246 / -.256 / -.277. penr .005 / .01 / .02 / .05 = -.228 / -.191 / -.140 / -.165 (SEM .059 to .074). Every penalised arm is below ctx5 by at least 2 SEM.
+  - Invisible chain (ctx5 .155): every arm within 1.6 SEM of ctx5 (the largest gap is peng .02, -.062, 1.5 SEM). Best: penr .02 +.024 (.054).
+  - Visible chain (ctx5 .748): pen -.13 to -.19 (about 1.2 to 1.6 SEM); peng .005 +.024, peng .02 -.299 (2.7 SEM); penr -.02 to +.08.
+  - penr minus pen on the hidden chain: +.082 / +.114 / +.109 / +.115 (2.4 to 3.1 SEM); on the visible chain +.14 to +.25.
+  - out5t (oracle gate, no cost) under reward alone: sampled within .04 of ctx5 on every chain; hidden clean passes 7 vs 2 (McNemar p .18).
+  - The learner sees the miss more as the cost grows (stage-1 AUC on the invisible chain .51 at .005 to .87 at .05), yet sampled success does not improve.
+- Criteria: P0 HELD (pen@.05 hidden -.280, 5.4 SEM). No arm meets HELPS. pen@.005 on the hidden chain is harmful (-.311, 5.7 SEM).
+- Verdict: **TIMID AT EVERY SIZE** (BOUNDARY; loop: INCONCLUSIVE).
 
 ## Reflection
-- PENDING.
+- What it means: for a learner with no teacher, a per-miss cost did not help at any size tested, gated or not, or in the gentler repeat-only form. On the hidden chain it cut sampled success by about three quarters. Charging only for repeat misses removes about a third of that harm, but the rest remains. The answer to EXP-66's open question is that the timidity is not a side effect of p = .05. It is there at .005.
+- The striking part is that the harm barely depends on size. From .005 to .05 the hidden-chain loss stays between -.25 and -.31. A tenfold change in the cost leaves the damage flat, which looks like a threshold, not a dose. One candidate, not tested here: on 0.84.x any nonzero reward makes a decision eligible for an episodic write (#210, quoted in EXP-66's registration). A cost of any size would then flip every miss into a stored episode, and the memory-choice brain would start avoiding whatever it stored. That would explain why size barely matters. It is a hypothesis only. The test is a cost far below .005 (say 1e-6), where a learning-rate effect would vanish but an eligibility effect would not.
+- Prediction check: P0 right; "some arm helps" was right to be unlikely; I gave pen@.005 below even odds of harming, and it harmed as much as .05, so the size intuition was wrong; "penr less harmful than pen" right.
+- Process: the check paid off before any data. It showed that a stuck learner's misses are mostly repeats, so the repeat-only form waives only about 18% of the charges. That is why it could only ever be mildly gentler. Without that line in the record, the penr result would read as "gentle costs still hurt" when the form was barely gentler.
+- Lesson: when a cost hurts as much at a tenth of the size, stop shrinking it and look for a switch. A dose effect fades as the dose falls; a threshold effect does not.
+- For #202: a failure cost through `step()`'s reward argument is a tool for learners that also have a teacher (EXP-66), not for teacherless ones. Draft follow-up for the thread (not posted): `~/Desktop/Cadence/cadence-issue202-exp67-followup-draft-2026-10-20.md`.
+- Next (needs its own registration): the eligibility test. Same hidden chain under reward alone, a cost of 1e-6 alongside .005, and a readout of episodic writes per life. If 1e-6 harms like .005, the switch is the eligibility rule.

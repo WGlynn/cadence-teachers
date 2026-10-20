@@ -2864,5 +2864,52 @@
    ]
   },
   "quote_worthy": false
+ },
+ {
+  "id": "EXP-67",
+  "date": "2026-10-20",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "BOUNDARY",
+  "name": "A cost for failing makes a learner with no teacher timid at every size, and the size barely matters",
+  "verdict_note": "pre-registered + check PASS (55dbccd); TIMID AT EVERY SIZE: no arm helps at a 3-SEM bar over 22 chances; pen@.005 cuts hidden-chain sampled success .349 -> .039 (5.7 SEM); 1,248 lives, natural signal, Cadence 0.84.3",
+  "headline": "Charging a learner a small cost for each mistake, with no teacher around, never helped. On the hidden chain even the smallest cost tested cut success by about three quarters, about as much as a cost ten times larger. Charging only for repeated mistakes removed about a third of the harm. A harm that does not shrink with the dose looks like a switch, not a dial.",
+  "question": "Under reward alone, does any failure cost help, at smaller sizes, with or without the gate, or charged only for repeat misses?",
+  "process_issues": [
+   "the repeat-only form waived only about 18% of the charges (most misses are repeats), so it was only mildly gentler, as the check showed before any data",
+   "the threshold reading (any nonzero reward makes a miss eligible for an episodic write, upstream #210) is a hypothesis, not tested"
+  ],
+  "lesson": "When a cost hurts as much at a tenth of the size, stop shrinking it and look for a switch.",
+  "chart": {
+   "title": "Hidden chain, reward only: sampled success by cost size (base .349), 36 lives per arm",
+   "unit": "sampled success",
+   "bars": [
+    {
+     "label": "no cost",
+     "value": 0.349
+    },
+    {
+     "label": "per miss .005",
+     "value": 0.039
+    },
+    {
+     "label": "per miss .05",
+     "value": 0.07
+    },
+    {
+     "label": "repeat miss .005",
+     "value": 0.121
+    },
+    {
+     "label": "repeat miss .05",
+     "value": 0.184
+    },
+    {
+     "label": "per miss .005 + gate",
+     "value": 0.103
+    }
+   ]
+  },
+  "quote_worthy": false
  }
 ]

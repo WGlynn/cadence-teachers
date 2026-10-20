@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-67 — a failure cost makes a teacherless learner timid at every size, and the size barely matters (TIMID AT EVERY SIZE) — 2026-10-20
+- **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-67_reward_only_penalty.py` (imports EXP-66). Pre-registered + check PASS `55dbccd`. Natural signal only, 13 arms x 96 lives, seeds 67_000+, 4,646 s.
+- **Result:** hidden chain sampled success (ctx5 .349): per-miss cost .005 / .01 / .02 / .05 = .039 / .044 / .100 / .070 (all at least 4.6 SEM below); gated .10 / .09 / .07; repeat-miss-only .12 / .16 / .21 / .18 (penr minus pen +.08 to +.12, 2.4-3.1 SEM). Invisible chain: no arm moves (within 1.6 SEM). No arm helps at the 3-SEM bar.
+- **Verdict: TIMID AT EVERY SIZE (BOUNDARY; loop INCONCLUSIVE).** The harm is flat over a tenfold range of cost, which looks like a threshold (candidate: #210's reward != 0 episodic-write eligibility; untested), not a dose. Off-program (memory track, #202). Detail: experiments/EXP-67.md.
+
 ## EXP-62g — a brain built differently ranks knowledge the same way; the gap scales with how much it absorbs (MAGNITUDE ONLY) — 2026-10-20
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-62g_budget_cross_family.py` (EXP-62f's instruments and readings plus a decision-budget knob). Pre-registered `d241ca0`, sweep `f74362f` (untaught only: 6 decisions per attempt chosen), pilot `38bb2ed`. Lesson 80, 48 fresh students (7_200_000+), 1,315 s.
 - **Result:** A (delayed-credit) early +.173 / late +.027 / know-4 +.204, D = +.146 (.037). D1 (memory-choice architecture with A's learning rule) +.414 / +.073 / +.451, D = +.341 (.038). D2 (arousal off) identical to D1 everywhere. Same order on all three. D_A - D_D1 = -.195 (3.6 SEM). Exploratory: scaled by each brain's know-4, late/early .16 vs .18 and D/know-4 .71 vs .76, no difference detected (wide intervals).
