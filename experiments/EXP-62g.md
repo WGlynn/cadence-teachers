@@ -31,7 +31,9 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED; ORDER AGREES -> REFUTED; MAGNITUDE ONL
 **Cost.** The sweep is 5 budgets x 6 students x 2 untaught twins, a few minutes. The full run is 48 x 3 x 5 = 720 twins. At budget 10 that was about 30-40 min at 4 workers. A smaller budget means shorter attempts, so the full run should take that long or less.
 
 ## Sweep
-- PENDING.
+- 2026-10-20 ~05:15, 110 s at 3 workers, Cadence 0.84.3, lesson 80, 6 students (7_280_000+), untaught only (`exp/EXP-62g-sweep.*`). Untaught mean accuracy, D1 | A (A not in the rule): budget 10: .990 | .406; 8: .979 | .542; 6: .562 | .469; 5: .198 | .229; 4: .250 | .292.
+- Rule (largest budget with untaught D1 <= .60): **BUDGET = 6.** Nothing else in the design changed.
+- What the sweep already says, untaught only: D1 solves the chain alone with 8 or more decisions, about half the time with 6, and almost never with 5 or 4. At budgets 4 and 5 both brains sit near chance (.20), so 6 is the one setting where D1 alone is neither at ceiling nor at the floor. Per-student spread at 6 is wide (one student at 1.00), n 6.
 
 ## Pilot
 - PENDING.
