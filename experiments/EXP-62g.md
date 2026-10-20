@@ -36,7 +36,8 @@ Loop verdict: ORDER DEPENDS -> CONFIRMED; ORDER AGREES -> REFUTED; MAGNITUDE ONL
 - What the sweep already says, untaught only: D1 solves the chain alone with 8 or more decisions, about half the time with 6, and almost never with 5 or 4. At budgets 4 and 5 both brains sit near chance (.20), so 6 is the one setting where D1 alone is neither at ceiling nor at the floor. Per-student spread at 6 is wide (one student at 1.00), n 6.
 
 ## Pilot
-- PENDING.
+- 2026-10-20 ~05:22, 101 s at 3 workers, BUDGET 6, lesson 80, 3 students (7_290_000+) (`exp/EXP-62g-pilot.*`). Untaught accuracy A .354, D1 .292, D2 .292: no ceiling. know-4 worth vs null: A +.375, D1 +.312, D2 +.312: none below .05. **Rule: full run at lesson 80.** Nothing in the design changed.
+- n 3, not a result: all three take in content now, and D has A's sign in every instrument (A +.333, D1 = D2 +.208). D1 and D2 are again identical to the digit, so arousal is inert here too. Late-label events per arm (stages 3-4) show the predicted mechanism: know-early-2 students reach late stages and make late mistakes (A 16.0, D1 30.3 events), know-late-2 students rarely get there (A 3.7, D1 8.3). Against untaught, the null (random labels) is worth +.33 to D1 at this budget, so random labels themselves help this brain; the zero stays the null as registered.
 
 ## Summary
 - PENDING.

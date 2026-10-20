@@ -1,0 +1,31 @@
+EXP-62g [pilot]: lesson 80, budget 6; 9 jobs to go (0 done); seeds 7290000+
+C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  B 6 A st 0: null 0.50 untaught 0.31 know-early-2 0.75 know-late-2 0.44 know-4 0.69 (21.5s)
+C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  B 6 D2 st 0: null 0.62 untaught 0.62 know-early-2 0.75 know-late-2 0.38 know-4 1.00 (31.0s)
+  B 6 D1 st 0: null 0.62 untaught 0.62 know-early-2 0.75 know-late-2 0.38 know-4 1.00 (31.2s)
+  B 6 A st 1: null 0.31 untaught 0.56 know-early-2 0.31 know-late-2 0.00 know-4 0.56 (20.2s)
+  B 6 A st 2: null 0.19 untaught 0.19 know-early-2 0.62 know-late-2 0.25 know-4 0.88 (19.6s)
+C:\Users\Will\_cadence_study\src\cadence\generic.py:2417: RuntimeWarning: finite teaching free phase used its entire free_steps budget; the lesson may have been learned from a state that did not settle (free_residual in the report holds the equation residual). Raise free_steps, lower the gain, or opt into qualified=True to refuse such lessons; see docs/learning.md#finite-free-phases-that-run-out-of-budget.
+  lesson, teaching = self.learner.step(drive, labels, answer=answer)
+  B 6 D1 st 1: null 0.88 untaught 0.25 know-early-2 0.50 know-late-2 0.81 know-4 1.00 (33.3s)
+  B 6 D2 st 1: null 0.88 untaught 0.25 know-early-2 0.50 know-late-2 0.81 know-4 1.00 (33.5s)
+  B 6 D1 st 2: null 0.38 untaught 0.00 know-early-2 0.88 know-late-2 0.31 know-4 0.81 (36.9s)
+  B 6 D2 st 2: null 0.38 untaught 0.00 know-early-2 0.88 know-late-2 0.31 know-4 0.81 (36.5s)
+
+EXP-62g [pilot] summary (101s), lesson 80
+  [A] n=3 takes in content: True | worth vs null: know-early-2 +0.229 (0.127)  know-late-2 -0.104 (0.110)  know-4 +0.375 (0.157)  untaught +0.021 (0.127) | D = early - late +0.333 (0.021) | rank know-4 > know-early-2 > know-late-2 | 20s per student
+  [D1] n=3 takes in content: True | worth vs null: know-early-2 +0.083 (0.253)  know-late-2 -0.125 (0.062)  know-4 +0.312 (0.095)  untaught -0.333 (0.182) | D = early - late +0.208 (0.266) | rank know-4 > know-early-2 > know-late-2 | 34s per student
+  [D2] n=3 takes in content: True | worth vs null: know-early-2 +0.083 (0.253)  know-late-2 -0.125 (0.062)  know-4 +0.312 (0.095)  untaught -0.333 (0.182) | D = early - late +0.208 (0.266) | rank know-4 > know-early-2 > know-late-2 | 34s per student
+  pair A-D1: n=3 D diff +0.125 (0.253) opposite sign at 2 SEM: False; |diff| > 2 SEM: False
+  pair A-D2: n=3 D diff +0.125 (0.253) opposite sign at 2 SEM: False; |diff| > 2 SEM: False
+  pair D1-D2: n=3 D diff +0.000 (0.000) opposite sign at 2 SEM: False; |diff| > 2 SEM: False
+  valid instruments: ['A', 'D1', 'D2'] -> ORDER AGREES
+  [A] mean late labels (stages 3-4) per arm: null 4.7  untaught 0.0  know-early-2 16.0  know-late-2 3.7  know-4 13.0
+  [D2] mean late labels (stages 3-4) per arm: null 3.3  untaught 0.0  know-early-2 30.3  know-late-2 8.3  know-4 22.3
+  [D1] mean late labels (stages 3-4) per arm: null 3.3  untaught 0.0  know-early-2 30.3  know-late-2 8.3  know-4 22.3
+  untaught accuracy: {'A': 0.3541666666666667, 'D1': 0.2916666666666667, 'D2': 0.2916666666666667}
+  pilot rule: know-4 worth < .05 for [] -> full run lesson 80
+pilot exit 0
