@@ -49,6 +49,16 @@ Loop verdict: SUPPORTIVE -> CONFIRMED; BOUNDARY -> INCONCLUSIVE; NULL -> REFUTED
 
 **Cost and contingency.** 96 + 48 + 96 + 48 = 288 lives. EXP-68 averaged about 4 s of wall time per life at 4 workers, so about 20 min at 4 workers. The check measures the time per life. If that projects the full run past 30 min at 4 workers, only seeds 0..47 of every arm run (192 lives). That smaller run is a pilot under the same rules, and the missing seeds 48..95 of ctx5 and sal@.005 are recorded as owed.
 
+## Check
+- 2026-10-21, after the pre-registration commit `2ee8712` and before any data, `exp/EXP-69-check.out`, Cadence 0.84.3 at `be372b8`, seed 69_990, hidden chain, natural: **PASS.**
+  - (a) ctx5 and pen@.005 with `lateral=-0.5` explicit are identical to the same lives with it unset.
+  - (b) sal@0 is identical to ctx5. Salience 0 was passed at all 608 misses, and nothing was written for them.
+  - (c) At sal@.005, all 859 misses were marked and written, the memory saw no nonzero miss reward (path 0, outcome 0), and replay was stopped at 0 of 17 successes. At sal@1: 610 of 610 marked and written, path and outcome 0, stopped at 0 of 63 successes.
+  - (d) At pen@.005 the memory saw the cost 939 times, and replay was stopped at 3 of 3 successes.
+  - Time: 13.5 s per life, about 16 min projected at 4 workers, so the full registered run goes ahead (no pilot fallback).
+- Process note: the check's "pinned brain" line printed `lateral None` and `working_memory_scale None`. That was a printing bug: `describe()` keeps both one level down. Read back directly from `describe()["initialization"]["composition"]`, they are -0.5 and 1.2. Check (a) independently shows the explicit pin equals the unset default. Nothing in the design changed.
+- Seen in the check, one seed only and not a reading: training success was ctx5 .533, sal@1 .525, sal@.005 .142, pen@.005 .025.
+
 ## Summary
 - Question: under reward alone on the hidden chain, does marking each miss with `step(salience=)` (reward 0) instead of charging it -.005 keep sampled success at the no-cost level?
 - Setup: as registered above. Cadence `be372b8`, `lateral=-0.5` explicit, hidden chain, natural signal, 4 arms (ctx5 96, pen@.005 48, sal@.005 96, sal@1 48 lives), seeds 69_000+.

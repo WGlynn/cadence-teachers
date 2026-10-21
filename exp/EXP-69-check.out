@@ -1,0 +1,11 @@
+EXP-69 check: cadence 0.84.3 from C:\Users\Will/_cadence_study/src\cadence
+  pinned brain: lateral None, memory_replay 8, gamma 0.9, hippocampus rate 0.5 consolidation 0.05 decay 0.9, context memory rate 0.5 consolidation 0.05, temperature 0.2, working_memory_scale None
+  (a) ctx5 with lateral -0.5 explicit identical to lateral unset (EXP-68's life): True
+  (a) pen@.005 with lateral -0.5 explicit identical to lateral unset: True
+  (b) sal@0 (salience 0 passed at every miss) identical to ctx5, nothing written: True ({'misses': 608, 'marked': 608, 'written': 0})
+  (c) sal@0.005: every miss marked and written, no nonzero miss reward reached the memory, replay never stopped at a miss: True (marks {'misses': 859, 'marked': 859, 'written': 859}, memory saw {'path': 0, 'outcome': 0}, replay {'successes': 17, 'reach': 51, 'stopped': 0})
+  (c) sal@1: every miss marked and written, no nonzero miss reward reached the memory, replay never stopped at a miss: True (marks {'misses': 610, 'marked': 610, 'written': 610}, memory saw {'path': 0, 'outcome': 0}, replay {'successes': 63, 'reach': 189, 'stopped': 0})
+  (d) pen@.005: the memory saw the cost and replay stopped at a charged miss: True (memory saw {'path': 939, 'outcome': 939}, replay {'successes': 3, 'reach': 1, 'stopped': 3})
+  (info) ctx5 replay {'successes': 64, 'reach': 192, 'stopped': 0}; train_success ctx5 0.533, sal@.005 0.142, pen@.005 0.025
+  (time) 13.5 s per life in the check; full run 288 lives, about 16 min at 4 workers
+check: PASS
