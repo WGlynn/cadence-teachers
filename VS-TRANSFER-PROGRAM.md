@@ -127,6 +127,7 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-20 (iter43, EXP-62i MOSTLY EXPOSURE, on 0.84.3 source c7dc2f0): scaffolding half the lesson attempts to stage 3 moved the delayed-credit brain's late/early ratio from .004 to .394 (phi_A +1.23, 95% +.91 to +1.67). D1's ratio fell to .04 because its random-label null stopped hurting it; against an untaught twin the EXP-62h cross-family gap is not detected (+.037, 95% -.08 to +.15). The rate is set by exposure and by the zero, not by the brain alone. Next (Will-gated): a registered zero test (untaught as a second zero, per-stage accuracy stored).
 2026-10-20 (iter42, EXP-62h RATE DEPENDS ON THE BRAIN, on v0.84.3): powered (n 720) on one task, scaled by each brain's own range, the cross-family brain prices late knowledge at about a third of early, the delayed-credit brains at almost nothing (scaled D .61 vs .87, difference -.26, 95% -.35 to -.18); near relatives not different (+.06, -.03 to +.15). Order holds across size and architecture; the exchange rate does not, even scaled. Both n 48 exploratory scaled readings withdrawn. Next: test whether the rate difference is exposure (late-only teachers only reach students who get far), by scaffolding students to stage 3.
 
 2026-10-20 (iter41, EXP-62g MAGNITUDE ONLY, on v0.84.3): a cross-family brain (memory-choice architecture with the delayed-credit brain's learning rule), on a task made harder by an untaught-only sweep (6 decisions per attempt), ranks early / late / full knowledge exactly as the reference does; the early-late gap is 3.6 SEM bigger, but it absorbs about twice as much of everything, and scaled by that the exchange rate agrees (.16 vs .18, wide intervals). The order of worth holds across size and architecture on this task family. EXP-62b re-read scaled: its near relatives still differ (.46 vs .66), so scaling is not a general fix. Next: a scaled-rate test with both kinds of pair.
@@ -207,6 +208,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter43 (2026-10-20): EXP-62i, the exposure test: MOSTLY EXPOSURE
+- Version: Cadence 0.84.3 source at `c7dc2f0`. Pre-registered `f19bb0f`, pilot `f14333b` (N 720), raw `8377298`, write-up `05e042f`. Budget 6, lesson 80, 18,936 s.
+- Result: R(A) .004 off to .394 on; R(D1) .320 off to .039 on; phi_A +1.234 (+.910 to +1.674). Exploratory: D1's late worth was the harm random late labels do; against untaught, both brains price late knowledge near 0 without the scaffold.
+- Reading: M5 refined. The judge's exchange rate is not a fixed property of the brain: it moves with the curriculum (exposure) and with the declared zero (decoy vs absence). A payout rule must pin the judge's whole setup, including baseline and practice conditions.
 
 ### iter42 (2026-10-20): EXP-62h, scaled exchange rate across a near-relative and a cross-family pair: RATE DEPENDS ON THE BRAIN
 - Version: Cadence v0.84.3 `8dc92d8`. Pre-registered `043dd25`, pilot `0ae8bf9` (N 720). Budget 6, lesson 80, 14,501 s.
@@ -821,6 +827,8 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-21 update (iter43):** EXP-62i DONE, MOSTLY EXPOSURE; the cross-family gap sat in the zero (exploratory). New top candidates (Will-gated): the registered zero test; the per-stage look at why random late labels stop hurting D1 under the scaffold.
 
 **2026-10-20 update (iter42):** EXP-62h DONE, RATE DEPENDS ON THE BRAIN (cross-family). New top: the exposure test (scaffold students to stage 3 so late-only teachers reach every brain; does the delayed-credit brains' late/early ratio rise toward D1's?). Pre-register before any data.
 

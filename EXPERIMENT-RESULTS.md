@@ -8,6 +8,12 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-62i: the delayed-credit brain's price for late knowledge is exposure, and the cross-family gap sat in the zero (MOSTLY EXPOSURE) - 2026-10-20
+- **Version:** Cadence 0.84.3 source at `c7dc2f0`. **Script:** `exp/EXP-62i_exposure.py` (EXP-62h's harness, budget 6, lesson 80; A and D1; stage-3 scaffold on every other lesson attempt). Pre-registered `f19bb0f`, pilot `f14333b` (N capped at 720), raw `8377298`, write-up `05e042f`. 720 fresh students (7_500_000+), 18,936 s.
+- **Result:** late/early worth ratio (worth against the random-label null): A off .004, A on .394, D1 off .320, D1 on .039. phi_A +1.234 (95% +.910 to +1.674). A's rise +.390 (+.293 to +.489), mostly late worth (+.050, +.034 to +.067). D1 fell -.281 (-.411 to -.160).
+- **Exploratory (stored rows of 62h and 62i):** the random-label null hurts D1 (-.119 / -.129 vs untaught) and not A. Against an untaught twin, D1's late-only teacher is worth about 0 and the A-D1 gap is +.037 (-.078 to +.147, 62h) / +.029 (62i off), not detected.
+- **Verdict: MOSTLY EXPOSURE (loop: REFUTED for "the brain sets the rate").** Exposure sets A's price; the EXP-62h cross-family difference sat in the choice of zero. Detail: experiments/EXP-62i.md; EXP-62h carries an addendum.
+
 ## EXP-62h — scaled by how much each brain absorbs, the cross-family brain still prices late knowledge differently (RATE DEPENDS ON THE BRAIN) — 2026-10-20
 - **Version:** Cadence v0.84.3 `8dc92d8`. **Script:** `exp/EXP-62h_scaled_rate.py` (EXP-62g's harness, budget 6). Pre-registered `043dd25`, pilot `0ae8bf9` (N 840 capped at 720). 720 fresh students (7_400_000+), 14,501 s.
 - **Result:** scaled D (D / know-4 worth): A .874, C .937, D1 .610. A-C +.064 (95% -.025 to +.153); A-D1 -.263 (95% -.349 to -.180). Late/early worth ratio A .044, C .009, D1 .326. Same order on all three.
