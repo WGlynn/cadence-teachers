@@ -1,0 +1,60 @@
+# EXP-69: does marking a miss with salience= instead of charging it avoid the cost's harm?
+
+- Date: pre-registered 2026-10-21 (Will's go 2026-10-21; memory track, upstream #210 / #202), before any EXP-69 data | Cadence version: 0.84.3 + Unreleased, main `be372b8` (v0.84.3-20-gbe372b8), editable clone `~/_cadence_study`, record at run time | Program iter: iter44
+- Script: `exp/EXP-69_salience_mark.py` (imports EXP-68, so chambers, brain, cost and readings are EXP-66/67/68's code) | Evidence: `exp/EXP-69-check.out`, `exp/EXP-69-full.*`
+
+## Pre-registration (written 2026-10-21, before any EXP-69 data)
+
+**In one line: if a world marks a miss with `salience=` instead of charging it, does the reward-only chain learner keep its success?**
+
+**Why.** EXP-67 and EXP-68 found that any per-miss cost, down to 1e-6, cuts a reward-only learner's hidden-chain sampled success from about .41 to about .07 to .13. The cause is mostly the replay rule: success is credited backwards only through steps whose own reward is exactly 0.0 (`generic.py` 3221-3223). Upstream issue #210 is about a record that paid once and is not erased by later failures that pay nothing: under `memory_choice`, a zero outcome in the middle of an attempt writes nothing (upstream measured it on a bandit through `live`: 4 of 12 lives learned a moved arm). On 2026-10-20 upstream commit 1bad3da added a fix list to `docs/episodic.md:166-173`. It names three remedies. First, "let failures cost a little". Second, "mark them with a positive `salience=`, which makes them known outcomes that the records write". Third, "leave `memory_choice` off". EXP-68 measured the first remedy as harmful on the chain. This experiment measures the second.
+
+**What the code says salience= does (read at `be372b8` before designing; `src/cadence/generic.py` unless named).**
+- `step(..., salience=)` (2305) passes it to `learn` (2356), which hands it to the episodic memory only: `_received(reward)` (3370) and `_record_outcome(..., salience=importance)` (3371-3374). The actor-critic call `basal_ganglia.learn` (3385) takes no salience.
+- `_received` (3126-3133) stores the **reward**, not the salience, as the path entry's outcome. A marked miss with reward 0 therefore keeps `0.0` on the path, and the replay test `self._paths[row][-1 - k][3] == 0.0` (3223) does not stop at it. `_extend_paths` (3119) also treats it as unbound, so the next decision in the same situation replaces it on the path, exactly as for an unmarked miss. **The replay half of the idea holds by construction.**
+- `_record_outcome` (3153-3154): `marked = salience > 0`, and `known = learned & ((reward != 0) | done | woken | marked)`. So a marked miss becomes a known outcome. `_remember` (3160, 3429) then writes a record of **value 0** for the missed action into the place records and the context records. That write pulls a record that paid earlier toward 0, which is the extinction #210 asks for.
+- Consolidation (`src/cadence/memory.py:119`): the shared record moves at `consolidation + min(1, consolidation * salience)`. On this brain consolidation is .05, so salience .005 gives .05025 (an ordinary write) and salience 1 gives .10 (twice as fast). The per-stream fast write (rate .5) does not depend on salience.
+- `live()` (2444-2446) has no `salience=` argument, so the mark is available only through `step` / `learn`. EXP-56's training loop calls `b.step`, so the arm can be built on this harness.
+- Consequence for the design: a marked miss is EXP-68's `penmR` cell (replay intact, the miss written) with two differences. The written value is 0 instead of -.005, and the actor-critic gets no cost at all (EXP-68's `penm` showed the actor-critic's cost is harmless). The code cannot say whether the zero-valued writes cost this learner something. On the hidden chain the A observations at stages 1 and 3 are byte-identical, so a stage-3 miss on WOOD writes 0 into the same place record that stage 1's WOOD earned. In EXP-68, `penmR` sat at .294 against .417 for `penm`, a gap of about .12 that was not itself significant (additivity -.107, SEM .082). So the run is warranted, and the open half is the writes.
+
+**Setup (pinned).** Cadence main `be372b8` (`__version__` 0.84.3), run from `~/_cadence_study/src` (EXP-56 puts it first on `sys.path`). `_replay` and `_record_outcome` are AST-identical to `8dc92d8`, where EXP-67/68 ran (monitor 2026-10-21), and EXP-08 is bit-identical on `be372b8`. Brain: `Brain.compose(7, 5, modules=(48, 24), seed=69_000 + i, arousal=True, memory_choice=True, memory_context=0.5, lateral=-0.5)`. No other argument is passed, so every other gene is the library default. The check prints the ones that matter here. Replay walks back up to 8 steps (`memory_replay`), with discount .9 per step. Both episodic stores write at rate .5 and consolidate at .05. Read back on `be372b8` before the registration: hippocampus decay .9, temperature .2, working_memory_scale 1.2. **`lateral=-0.5` is set explicitly**, because the harness left it unset and upstream #220 proposes resolving an unset `lateral` to 0.0. Check (a) shows the pin changes nothing today. Chamber: EXP-63's hidden chain (A/B/A/B, byte-identical A's and B's, 5 actions, strict order, a wrong action changes nothing, 10 decisions per attempt, +2 success / -1 timeout). Natural signal only (no teacher), 120 training attempts, readings on a saved copy with the plain context (100 sampled attempts, one greedy attempt, first-try accuracy by stage). Seeds 69_000 + i are fresh: no script in `exp/` uses 69_000-69_999 (checked 2026-10-21 by `grep -rnE "\b69_?[0-9]{3}\b" --include=*.py` over the repo, no hits). The check seed 69_990 is outside the data seeds. Arms, paired by seed:
+- `ctx5`: no cost, no mark. Seeds 0..95.
+- `pen@.005`: every non-terminal miss pays -.005 (EXP-66/67/68's cost; the harmful control). Seeds 0..47.
+- `sal@.005`: every non-terminal miss pays 0 and the next `step` carries `salience=.005` (the primary test arm: the mark at an ordinary consolidation rate, the size matched to the harmful cost). Seeds 0..95.
+- `sal@1`: the same mark at salience 1 (twice the consolidation rate; upstream's docs give no size, and 1 is a natural choice). Seeds 0..47.
+Terminal outcomes (+2 / -1) are never charged or marked, and their salience is left at the library's default (`None`). Correct non-terminal moves are never marked. The mark is a class-level wrap of `Brain.step` in this process only. It passes the documented public argument and patches nothing in the library's logic. Read-only counters wrap `_record_outcome` (marked misses written) and `_replay` (at each success: how far back the exact-zero test lets replay walk, and whether a nonzero received outcome stopped it).
+
+**Primary reading.** Sampled success. Delta = arm minus ctx5, paired by seed, with the paired SEM and the 95% interval. The rescue contrast is sal@.005 minus pen@.005, paired on seeds 0..47. Also reported: sal@1 minus sal@.005, clean greedy passes, training success, first-try accuracy by stage, misses / marks / marked writes per life, and replay stops at successes.
+
+**Check (`MODE=check`, seed 69_990, before the full run; a failure stops it).** (a) ctx5 and pen@.005 with `lateral=-0.5` explicit are identical to the same lives with `lateral` unset (EXP-68's own `life()`). (b) `sal@0` (salience 0.0 passed at every miss) is identical to ctx5, with every miss passed a salience and nothing written for it. (c) At sal@.005 and at sal@1, the check requires three things. Every miss that does not end the attempt is marked, and the memory writes it as a known outcome. No nonzero reward for a miss reaches the memory (EXP-68's two counters stay at 0). And replay never stops at a miss: the life has successes, and at none of them did the walk back stop early. (d) At pen@.005 the memory sees the cost, and replay stops at a charged miss at least once. The check also prints the seconds per life.
+
+**Predictions (written before any data).**
+- (P0, precondition) pen@.005 is below ctx5 by at least 2 SEM on seeds 0..47: about 90% (EXP-67 5.7 SEM, EXP-68 4.8 SEM).
+- The check passes, including (c), replay never stopped at a marked miss: about 97% (it follows from the code; a failure would mean my reading is wrong).
+- Rescue: sal@.005 is above pen@.005 by at least 2 SEM: about 80% (EXP-68's nearest cell, `penmR`, was +.167 above pen at 3.0 SEM).
+- Safe: sal@.005 is not below ctx5 by 2 SEM on 96 paired lives: about 45% (if the writes cost what `penmR` suggests, about .12, that is near 2 to 3 SEM at this size).
+- Verdict odds: SAFE SWAP about 36%, PARTIAL about 36%, NO RESCUE about 18%, VOID about 10%.
+- sal@1 below sal@.005 (point estimate): about 55%. No decision rule attaches to it.
+- No prediction for first-try accuracy by stage (reported; the aliasing argument above says stage 1 is where writes would show).
+
+**Decision rules (written before any data).**
+- VOID: the check fails (no data run), or P0 fails (pen@.005 not below ctx5 by 2 SEM: no harm to rescue on these seeds; numbers reported, no verdict on the mark).
+- SAFE SWAP (SUPPORTIVE): sal@.005 is above pen@.005 by at least 2 SEM, and sal@.005 is not below ctx5 by 2 SEM. Marking misses with salience avoids the cost's harm, and no harm from the marked writes is detected at this size. The 95% interval bounds what may remain.
+- PARTIAL (BOUNDARY): sal@.005 is above pen@.005 by at least 2 SEM, and below ctx5 by 2 SEM or more. The mark avoids the replay harm, but the zero-valued writes still cost the chain learner a stated amount.
+- NO RESCUE (NULL): sal@.005 is not above pen@.005 by 2 SEM. Marking misses harms about as much as charging them. Since replay is intact by construction (check (c)), that would put the harm in the writes.
+- Reported with every verdict: sal@1 against ctx5 and against sal@.005, replay stops per arm, and the 95% interval of sal@.005 minus ctx5.
+Loop verdict: SUPPORTIVE -> CONFIRMED; BOUNDARY -> INCONCLUSIVE; NULL -> REFUTED; VOID -> VOID.
+
+**Power.** At 48 lives, EXP-68's paired SEMs against ctx5 were .051 to .083. The rescue contrast (an expected +.17 to +.29) is well powered at 48. A residual write harm of about .12 would sit near 2 to 3 SEM at 96, so it would be detected about half to three quarters of the time. That is why ctx5 and sal@.005 get 96 lives, and why a SAFE SWAP reads as "no harm detected", bounded by its interval, not "no harm".
+
+**Cost and contingency.** 96 + 48 + 96 + 48 = 288 lives. EXP-68 averaged about 4 s of wall time per life at 4 workers, so about 20 min at 4 workers. The check measures the time per life. If that projects the full run past 30 min at 4 workers, only seeds 0..47 of every arm run (192 lives). That smaller run is a pilot under the same rules, and the missing seeds 48..95 of ctx5 and sal@.005 are recorded as owed.
+
+## Summary
+- Question: under reward alone on the hidden chain, does marking each miss with `step(salience=)` (reward 0) instead of charging it -.005 keep sampled success at the no-cost level?
+- Setup: as registered above. Cadence `be372b8`, `lateral=-0.5` explicit, hidden chain, natural signal, 4 arms (ctx5 96, pen@.005 48, sal@.005 96, sal@1 48 lives), seeds 69_000+.
+- Prediction: see the pre-registration (P0 about 90%; rescue about 80%; safe about 45%; SAFE SWAP about 36%, PARTIAL about 36%, NO RESCUE about 18%, VOID about 10%).
+- Result: PENDING
+- Verdict: PENDING
+
+## Reflection
+- PENDING (written after the run).
