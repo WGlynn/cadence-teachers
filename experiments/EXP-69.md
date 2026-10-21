@@ -61,10 +61,26 @@ Loop verdict: SUPPORTIVE -> CONFIRMED; BOUNDARY -> INCONCLUSIVE; NULL -> REFUTED
 
 ## Summary
 - Question: under reward alone on the hidden chain, does marking each miss with `step(salience=)` (reward 0) instead of charging it -.005 keep sampled success at the no-cost level?
-- Setup: as registered above. Cadence `be372b8`, `lateral=-0.5` explicit, hidden chain, natural signal, 4 arms (ctx5 96, pen@.005 48, sal@.005 96, sal@1 48 lives), seeds 69_000+.
-- Prediction: see the pre-registration (P0 about 90%; rescue about 80%; safe about 45%; SAFE SWAP about 36%, PARTIAL about 36%, NO RESCUE about 18%, VOID about 10%).
-- Result: PENDING
-- Verdict: PENDING
+- Setup: as registered. Cadence 0.84.3 at `be372b8`, `lateral=-0.5` explicit, check PASS, hidden chain, natural signal, 4 arms (ctx5 96, pen@.005 48, sal@.005 96, sal@1 48 lives = 288), seeds 69_000+, 1,030 s at 4 workers.
+- Prediction: see the pre-registration (P0 about 90%; rescue about 80%; safe about 45%; SAFE SWAP about 36%, PARTIAL about 36%, NO RESCUE about 18%, VOID about 10%; sal@1 below sal@.005 about 55%).
+- Result, sampled success (delta vs ctx5 paired by seed, SEM, 95% interval):
+  - ctx5 .459 (96 lives).
+  - pen@.005 .068: -.365 (.054), -.471 to -.259. P0 held (6.8 SEM).
+  - sal@.005 .337: -.122 (.046), -.212 to -.032 (2.65 SEM below ctx5).
+  - sal@1 .353: -.080 (.068), -.213 to +.053 (48 lives).
+  - Rescue: sal@.005 minus pen@.005 +.280 (.047), +.188 to +.371 (6.0 SEM). On the shared seeds 0..47 that is about three quarters (.77) of the cost's harm.
+  - sal@1 minus sal@.005 +.006 (.070): no difference detected.
+  - Mechanism, counted inside the library during training: replay stopped at a miss at 0 of 3,774 successes in ctx5, 0 of 3,756 in sal@.005 and 0 of 1,805 in sal@1, against 422 of 428 in pen@.005. Mean replay reach 3.00 decisions (the whole 4-stage chain) in ctx5 and both sal arms, .94 in pen. Every one of the about 760 misses per life in the sal arms was marked and written as a known outcome.
+  - Training success: ctx5 .328, sal@.005 .326, sal@1 .313, pen@.005 .074. Clean greedy passes: ctx5 8, sal@.005 13 of 96 (McNemar p .36), sal@1 6 of 48, pen 0 of 48.
+  - Exploratory (not registered): first-try accuracy, sal@.005 minus ctx5 by stage: -.030 (.032), +.030 (.039), -.086 (.049), -.007 (.047). The largest drop is at stage 3, at 1.8 SEM.
+- Criteria: P0 held. Rescue held (+.280, 6.0 SEM). Safe failed (-.122, 2.65 SEM below ctx5).
+- Verdict: **PARTIAL** (BOUNDARY; loop: INCONCLUSIVE).
 
 ## Reflection
-- PENDING (written after the run).
+- What it means: upstream's second remedy for #210 works the way the code says, and only partly the way the docs suggest. Marking a miss with `salience=` instead of charging it keeps the replay path open. That is measured, not only inferred: 0 stops in 3,756 successes against 422 of 428 under the cost. It recovers about three quarters of the cost's harm. But marking is not free on this chain. Each mark makes the miss a known outcome, written as a record of value 0, and sampled success still sits .12 below the no-cost learner (95% .03 to .21). That gap matches EXP-68's `penmR` cell almost exactly (.294 vs .413, -.119), which kept replay open and kept the writes. So the residual harm is the writes, now seen through the public argument instead of a patched private method. A bigger mark (salience 1, twice the consolidation rate) did not change it: +.006 (.070).
+- Candidate mechanism, not tested: on the hidden chain the stage-1 and stage-3 observations are byte-identical. A miss at stage 1 on FIRE writes 0 into the same place record that stage 3's FIRE earned, and the reverse. The exploratory per-stage reading points the same way (the largest drop is at stage 3, -.086, but only 1.8 SEM). Two cheap tests would settle it: run on the visible chain, which has no aliased observations, and keep marked writes out of the place records only.
+- For upstream (#210 / #202; nothing posted, Will's call): for this brain under reward alone, `salience=` is the better of the two remedies named in `docs/episodic.md:166-173`. "Let failures cost a little" stops replay at every charged miss and loses about .37 here. Marking loses about .12, because the marks write. Side finding from the code read, not measured: `live()` (generic.py 2444-2446) takes no `salience=`. So the docs' remedy is not available on the `live` path the same paragraph uses for its bandit example. A `live` user would have to switch to `step`.
+- Prediction check: P0, the check and the rescue were right. I gave "safe" 45% and it failed, so PARTIAL (36%) was the outcome. "sal@1 below sal@.005" (55%) was wrong: there was no difference.
+- Process: three things. First, the power plan decided the verdict. On seeds 0..47 alone, sal@.005 minus ctx5 is -.085 (.066), 1.3 SEM, which would have read as SAFE SWAP. The 96 lives were set before any data from EXP-68's `penmR` gap, and they made the -.12 visible. Second, the check's settings printout read `describe()` one level too high (`lateral None`). The values were read back directly, and check (a) had already shown the pin changes nothing. Third, sal@1 had 48 lives by design, so it cannot be told apart from either ctx5 or sal@.005. "No difference" there is weak.
+- Lesson: when a fix clears the measured cause, size the run to see what the fix itself turns on, not only the rescue. Here the rescue was 6 SEM at 48 lives, while the cost of the fix needed 96 lives to show at all.
+- Next: EXP-70 candidate, about 12 min: is the marked write's residual the aliasing? Run sal@.005 against ctx5 on the visible chain (no aliased observations), plus a hidden-chain arm where marked misses write the context records but not the place records. Upstream: an addendum to the held #210 scope draft (`Desktop/Cadence/cadence-pr-draft-2026-10-21-episodic-cost-scope.md`) is Will's call.

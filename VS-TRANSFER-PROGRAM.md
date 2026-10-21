@@ -127,6 +127,7 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-21 (iter44, EXP-69 PARTIAL, on 0.84.3 main be372b8, memory track): on the reward-only hidden chain, marking each miss with `step(salience=)` instead of a .005 cost keeps the memory's replay open (0 stops in 3,756 successes) and recovers +.280 of a .365 loss, but still sits .122 below no cost (95% .032 to .212) because each mark writes the miss as a zero record. Off the V(S) ladder; no milestone moves. Next: EXP-70 (is the residual the aliasing?), and the #210 docs addendum (Will-gated).
 2026-10-20 (iter43, EXP-62i MOSTLY EXPOSURE, on 0.84.3 source c7dc2f0): scaffolding half the lesson attempts to stage 3 moved the delayed-credit brain's late/early ratio from .004 to .394 (phi_A +1.23, 95% +.91 to +1.67). D1's ratio fell to .04 because its random-label null stopped hurting it; against an untaught twin the EXP-62h cross-family gap is not detected (+.037, 95% -.08 to +.15). The rate is set by exposure and by the zero, not by the brain alone. Next (Will-gated): a registered zero test (untaught as a second zero, per-stage accuracy stored).
 2026-10-20 (iter42, EXP-62h RATE DEPENDS ON THE BRAIN, on v0.84.3): powered (n 720) on one task, scaled by each brain's own range, the cross-family brain prices late knowledge at about a third of early, the delayed-credit brains at almost nothing (scaled D .61 vs .87, difference -.26, 95% -.35 to -.18); near relatives not different (+.06, -.03 to +.15). Order holds across size and architecture; the exchange rate does not, even scaled. Both n 48 exploratory scaled readings withdrawn. Next: test whether the rate difference is exposure (late-only teachers only reach students who get far), by scaffolding students to stage 3.
 
@@ -208,6 +209,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter44 (2026-10-21): EXP-69, salience= as the failure mark on the reward-only chain: PARTIAL
+- Version: Cadence 0.84.3 + Unreleased, main `be372b8`, `lateral=-0.5` explicit. Pre-registered `2ee8712`, check PASS (`39753c6`). Hidden chain, natural signal, 288 lives, 1,030 s.
+- Result: ctx5 .459; pen@.005 .068 (-.365); sal@.005 .337 (-.122, 2.65 SEM, 95% -.212 to -.032); sal@1 .353 (-.080, n 48). Rescue over the cost +.280 (6.0 SEM). Replay stopped at a miss 0 of 3,756 successes with the mark, 422 of 428 with the cost.
+- Reading: memory track, not a V(S) rung. Upstream's two named remedies for #210 differ on this learner: a small cost stops replay at every miss; a salience mark keeps it open but its zero-valued writes still cost about .12. At 48 lives the residual would have read as no harm (-.085, 1.3 SEM); the registered 96 lives made it visible.
 
 ### iter43 (2026-10-20): EXP-62i, the exposure test: MOSTLY EXPOSURE
 - Version: Cadence 0.84.3 source at `c7dc2f0`. Pre-registered `f19bb0f`, pilot `f14333b` (N 720), raw `8377298`, write-up `05e042f`. Budget 6, lesson 80, 18,936 s.
@@ -827,6 +833,8 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
 
 Previous list (ordered ~2026-10-08) superseded 2026-10-16; full re-rank in _rerank-2026-10-16.json.
+
+**2026-10-21 update (iter44):** EXP-69 DONE, PARTIAL: the salience mark keeps replay open and recovers about three quarters of the cost's harm, but its writes still cost about .12 on the hidden chain. New candidate (memory track): EXP-70, is that residual the aliasing (visible chain, and marked misses kept out of the place records)? The V(S) top candidates from iter43 are unchanged.
 
 **2026-10-21 update (iter43):** EXP-62i DONE, MOSTLY EXPOSURE; the cross-family gap sat in the zero (exploratory). New top candidates (Will-gated): the registered zero test; the per-stage look at why random late labels stop hurting D1 under the scaffold.
 

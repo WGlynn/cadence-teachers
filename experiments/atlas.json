@@ -2960,6 +2960,46 @@
   "quote_worthy": true
  },
  {
+  "id": "EXP-69",
+  "date": "2026-10-21",
+  "iter": "iter44",
+  "track": "memory & recall",
+  "verdict": "BOUNDARY",
+  "name": "Marking a miss instead of charging it keeps replay open, but the marks still cost the chain learner",
+  "verdict_note": "pre-registered (2ee8712) + check PASS; PARTIAL: sal@.005 rescues +.280 over a .005 cost (6.0 SEM; replay stopped at 0 of 3,756 successes vs 422 of 428) yet sits -.122 below no cost (2.65 SEM, 95% -.212 to -.032); salience 1 no different (+.006); 288 lives, natural signal, Cadence 0.84.3 at be372b8, lateral -0.5 explicit",
+  "headline": "Upstream's docs name two ways to let a miss count in the memory: charge it a little, or mark it with salience. Charging stops the memory's replay at every miss, and success fell from .46 to .07. Marking kept replay open, as the code says it should, and recovered about three quarters of that loss. It did not recover all of it. Each mark writes the miss as a record of zero, and success still sat about .12 below the learner that was never told about its misses.",
+  "question": "Under reward alone on the hidden chain, does marking each miss with step(salience=) instead of charging it keep sampled success at the no-cost level?",
+  "process_issues": [
+   "the check's settings printout read describe() one level too high (lateral printed None); values read back directly (-0.5) and check (a) showed the pin changes nothing",
+   "the salience-1 arm had 48 lives by design, so it cannot be told apart from either the no-cost or the salience-.005 arm",
+   "the aliasing mechanism for the residual is a candidate from an exploratory per-stage reading (stage 3, 1.8 SEM), not tested"
+  ],
+  "lesson": "When a fix clears the measured cause, size the run to see what the fix itself turns on, not only the rescue.",
+  "chart": {
+   "title": "Hidden chain, reward only: sampled success by how a miss is reported",
+   "unit": "sampled success",
+   "bars": [
+    {
+     "label": "miss not reported (96)",
+     "value": 0.459
+    },
+    {
+     "label": "miss costs .005 (48)",
+     "value": 0.068
+    },
+    {
+     "label": "miss marked, salience .005 (96)",
+     "value": 0.337
+    },
+    {
+     "label": "miss marked, salience 1 (48)",
+     "value": 0.353
+    }
+   ]
+  },
+  "quote_worthy": false
+ },
+ {
   "id": "EXP-62h",
   "date": "2026-10-20",
   "iter": "iter42",
