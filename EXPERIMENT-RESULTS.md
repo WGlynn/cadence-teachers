@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-69b: does the salience-mark result hold at lateral 0.0? VOID before any data - 2026-10-22
+- **Version:** check run on tag `v0.85.0` (`b489664`, worktree `~/_cadence_0850`); `v0.85.1` (`ce386af`) followed the same day. **Script:** `exp/EXP-69b_salience_mark_lateral0.py` (imports EXP-69, which imports EXP-68). Pre-registered 2026-10-21 (`2233f1b`).
+- **Result:** VOID by the pre-registered check. The import stops at `Brain._received`: commit `4894ef0` moved the episodic vote, paths and replay out of `Brain` into `memories.EpisodicRecords`, so the code gate fails structurally (AST vs `be372b8`: `step` same, `learn` changed, five hooked functions missing, `memory.py` changed). No data run. Evidence `exp/EXP-69b-check.out` / `.err`; write-up `experiments/EXP-69b.md`.
+- **Insight:** the write rule (`reward != 0 | done | woken | marked`) and the exact-zero replay test survive the move (memories.py 440 / 533 at v0.85.0), so this looks like a move, not a change; that needs an equivalence reading before any successor runs. Every experiment on the EXP-68 harness (EXP-69c, EXP-70) is blocked on a port to `EpisodicRecords`.
+
 ## EXP-69: marking a miss with salience= instead of charging it keeps replay open, but the marks still cost the chain learner (PARTIAL) - 2026-10-21
 - **Version:** Cadence 0.84.3 + Unreleased, main `be372b8`, `lateral=-0.5` set explicitly (upstream #220). **Script:** `exp/EXP-69_salience_mark.py` (imports EXP-68). Pre-registered `2ee8712`, check PASS (recorded in `39753c6`). Hidden chain, natural signal, ctx5 96 / pen@.005 48 / sal@.005 96 / sal@1 48 lives, seeds 69_000+, 1,030 s.
 - **Code read first:** `step(salience=)` reaches only the episodic memory. `_received` stores the reward (0.0) on the replay path, so the exact-zero test (`generic.py` 3223) does not stop at a marked miss; `_record_outcome` (3153-3154) makes it a known outcome written at value 0; the actor-critic (3385) never sees it; `live()` takes no salience.

@@ -127,6 +127,7 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-22 (iter45, EXP-69b VOID, check on v0.85.0): Cadence 0.85 moved the episodic machinery into `memories.EpisodicRecords` (`4894ef0`), so the EXP-68/69 harness no longer imports and the pre-registered code gate voided the run before any data. EXP-08 on 0.85.1 still SEPARATES (+0.422 / -0.148 / -0.578; pinned to the 0.84.3 laws it is byte-identical). Off the V(S) ladder; no milestone moves. Next: port the harness to `EpisodicRecords` with an equivalence reading, then EXP-69c / EXP-70 (both need Will's go; 0.85.1 adds `live(salience=)`).
 2026-10-21 (iter44, EXP-69 PARTIAL, on 0.84.3 main be372b8, memory track): on the reward-only hidden chain, marking each miss with `step(salience=)` instead of a .005 cost keeps the memory's replay open (0 stops in 3,756 successes) and recovers +.280 of a .365 loss, but still sits .122 below no cost (95% .032 to .212) because each mark writes the miss as a zero record. Off the V(S) ladder; no milestone moves. Next: EXP-70 (is the residual the aliasing?), and the #210 docs addendum (Will-gated).
 2026-10-20 (iter43, EXP-62i MOSTLY EXPOSURE, on 0.84.3 source c7dc2f0): scaffolding half the lesson attempts to stage 3 moved the delayed-credit brain's late/early ratio from .004 to .394 (phi_A +1.23, 95% +.91 to +1.67). D1's ratio fell to .04 because its random-label null stopped hurting it; against an untaught twin the EXP-62h cross-family gap is not detected (+.037, 95% -.08 to +.15). The rate is set by exposure and by the zero, not by the brain alone. Next (Will-gated): a registered zero test (untaught as a second zero, per-stage accuracy stored).
 2026-10-20 (iter42, EXP-62h RATE DEPENDS ON THE BRAIN, on v0.84.3): powered (n 720) on one task, scaled by each brain's own range, the cross-family brain prices late knowledge at about a third of early, the delayed-credit brains at almost nothing (scaled D .61 vs .87, difference -.26, 95% -.35 to -.18); near relatives not different (+.06, -.03 to +.15). Order holds across size and architecture; the exchange rate does not, even scaled. Both n 48 exploratory scaled readings withdrawn. Next: test whether the rate difference is exposure (late-only teachers only reach students who get far), by scaffolding students to stage 3.
@@ -209,6 +210,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter45 (2026-10-22): EXP-69b, the salience mark at lateral 0.0: VOID
+- Cadence 0.85.0 / 0.85.1. The pre-registered check stopped at import (`Brain._received` moved to `memories.EpisodicRecords`, commit `4894ef0`); code gate failed; no data. Write-up experiments/EXP-69b.md, results row, atlas iter45. EXP-70 and EXP-69c blocked on a harness port.
 
 ### iter44 (2026-10-21): EXP-69, salience= as the failure mark on the reward-only chain: PARTIAL
 - Version: Cadence 0.84.3 + Unreleased, main `be372b8`, `lateral=-0.5` explicit. Pre-registered `2ee8712`, check PASS (`39753c6`). Hidden chain, natural signal, 288 lives, 1,030 s.
