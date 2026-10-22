@@ -3073,5 +3073,26 @@
    ]
   },
   "quote_worthy": true
+ },
+ {
+  "id": "EXP-69b",
+  "date": "2026-10-22",
+  "iter": "iter45",
+  "track": "memory & recall",
+  "verdict": "VOID",
+  "name": "Does the salience-mark result hold at lateral 0.0? The 0.85 refactor voided the check",
+  "verdict_note": "pre-registered 2026-10-21; check run on v0.85.0 (b489664) stopped at import: the harness hooks Brain._received, which 0.85 moved into memories.EpisodicRecords (commit 4894ef0); code gate fails structurally (5 hooked functions missing from Brain, learn and memory.py changed); no data run",
+  "headline": "The follow-up was meant to rerun yesterday's salience-mark result under the new motor default. Before any data, its own check found that the release had moved the memory code it hooks into a new module, so the run was voided as written. The rules the result rests on are still visible in the moved code, which needs a careful reading and a new pre-registration.",
+  "question": "Does EXP-69's salience-mark rescue, and its residual, hold when the motor lateral is 0.0 (0.85's default)?",
+  "process_issues": [
+   "upstream refactor broke the harness's private-method hooks"
+  ],
+  "lesson": "Hooks on private methods tie an experiment to one release; the code gate caught it before any data, which is what it is for.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "No data (VOID before the run)",
+   "unit": "none",
+   "bars": []
+  }
  }
 ]

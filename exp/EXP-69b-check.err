@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Will\cadence-lab\exp\EXP-69b_salience_mark_lateral0.py", line 21, in <module>
+    _spec.loader.exec_module(E69)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Will\cadence-lab\exp\EXP-69_salience_mark.py", line 24, in <module>
+    _spec.loader.exec_module(E68)          # patches _received / _record_outcome with EXP-68's counters (masks off here)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\Will\cadence-lab\exp\EXP-68_memory_switch.py", line 36, in <module>
+    _orig_received, _orig_record_outcome = G.Brain._received, G.Brain._record_outcome
+                                           ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Brain' has no attribute '_received'

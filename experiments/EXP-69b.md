@@ -50,10 +50,25 @@ Loop verdict: HOLDS -> CONFIRMED (replication); SAFE SWAP AT 0.0 -> INCONCLUSIVE
 **Cost and trigger.** 288 lives, about 17 min at 4 workers (EXP-69 took 1,030 s). Trigger: the day 0.85 is tagged. The monitor loop fast-forwards `~/_cadence_study`, reruns EXP-08 with `lateral=-0.5` explicit (the queued re-baseline), and then this check and run follow. It is not run before the release, because 0.85 may bundle other changes (#220 says the lateral change is "read with the other 0.85 candidates").
 
 ## Result
-PENDING (runs on the 0.85 release).
+**VOID by the pre-registered check (2026-10-22). No data was run.** The check ran on the tag `v0.85.0`
+(`b489664`, the release named 0.85; `v0.85.1` = `ce386af` followed the same day) and stopped at import:
+EXP-68's harness, which EXP-69 imports, hooks `Brain._received`, and that method no longer exists
+(`exp/EXP-69b-check.out`, `.err`). The code gate fails structurally: commit `4894ef0` ("Episodic memory: the
+vote, the paths and the replay as one member of brain.memories") moved the episodic machinery out of `Brain`
+into `memories.EpisodicRecords`. AST against `be372b8`, docstrings stripped, on both 0.85 tags: `step` same;
+`learn` changed; `_received`, `_extend_paths`, `_record_outcome`, `_remember`, `_replay` missing from `Brain`;
+`memory.py` changed. The two rules the mechanism rests on are still visible in the moved code
+(`memories.py` at `v0.85.0`: the write rule `known = learned & ((reward != 0) | done | woken | marked)` at 440,
+the exact-zero replay test at 533), so this looks like a move rather than a change, but that is a reading to do,
+not a result.
 
 ## Summary
-PENDING.
+VOID. The 0.85 refactor of episodic memory broke the harness and the gate, as the pre-registration's main
+risk predicted ("0.85 may touch `step` or the memory for reasons unrelated to this question").
 
 ## Reflection
-PENDING.
+The gate did its job: it stopped a run whose hooks no longer reach the code. A re-registration needs a harness
+port (hooks on `EpisodicRecords.received / outcome / replay`), an equivalence reading of the moved functions
+against `be372b8`, and a choice Will should make: 0.85.1 also added `live(..., salience=)` (Bernhard, #210,
+2026-10-22), so the natural successor measures the mark through `live` as well as `step`. Queued as EXP-69c
+(not pre-registered; needs Will's go).
