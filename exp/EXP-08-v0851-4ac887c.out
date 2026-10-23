@@ -1,0 +1,28 @@
+EXP-08  v(S) transfer separation   K=8 A=2 modules=(16, 8) witness=1600 seeds=16
+seed   acc0   accG  accFr  accFw     tG    tFr    tFw  Fw_own  G_own
+   0   0.62   1.00   0.38   0.00  +0.38  -0.25  -0.62    1.00   0.00
+   1   0.50   1.00   0.38   0.00  +0.50  -0.12  -0.50    1.00   0.00
+   2   0.38   1.00   0.38   0.00  +0.62  +0.00  -0.38    1.00   0.00
+   3   0.88   1.00   0.62   0.00  +0.12  -0.25  -0.88    1.00   0.00
+   4   0.75   1.00   0.25   0.00  +0.25  -0.50  -0.75    1.00   0.00
+   5   0.12   1.00   0.25   0.00  +0.88  +0.12  -0.12    1.00   0.00
+   6   0.62   1.00   0.50   0.00  +0.38  -0.12  -0.62    1.00   0.00
+   7   0.62   1.00   0.75   0.00  +0.38  +0.12  -0.62    1.00   0.00
+   8   0.88   1.00   0.50   0.00  +0.12  -0.38  -0.88    1.00   0.00
+   9   0.50   1.00   0.50   0.00  +0.50  +0.00  -0.50    1.00   0.00
+  10   0.38   1.00   0.62   0.00  +0.62  +0.25  -0.38    1.00   0.00
+  11   0.62   1.00   0.00   0.00  +0.38  -0.62  -0.62    1.00   0.00
+  12   0.50   1.00   0.38   0.00  +0.50  -0.12  -0.50    1.00   0.00
+  13   0.62   1.00   0.62   0.00  +0.38  +0.00  -0.62    1.00   0.00
+  14   0.62   1.00   0.50   0.00  +0.38  -0.12  -0.62    1.00   0.00
+  15   0.62   1.00   0.25   0.00  +0.38  -0.38  -0.62    1.00   0.00
+------------------------------------------------------------------------
+mean transfer  genuine=+0.422 (+-0.045)  fake_random=-0.148  fake_wrong=-0.578
+mean separation  genuine-fake_random=+0.570  genuine-fake_wrong=+1.000
+baseline acc on T (chance 0.50): 0.578
+own-task diagnostic  fake_wrong on T' (its own task)=1.000  genuine on T' (not its task)=0.000
+  -> if fake_wrong learned T' (high) but gives ~0 transfer to T, worth is TASK-SPECIFIC:
+     learning the wrong thing registers as no worth on the exogenous task. That is the point.
+------------------------------------------------------------------------
+VERDICT: SEPARATES. genuine transfers (+0.42), fakes do not (max +-0.15). Non-zero separation where interior scored 0.0%.
+exit=0
