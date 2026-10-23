@@ -1,7 +1,7 @@
 # EXP-05: is a mid-stream snapshot of a learning brain a byte-identical continuation?
 
 - Date: pre-registered 2026-10-23, before any EXP-05 data | Cadence version: 0.85.1 + 41 commits, main `4ac887c` (`git describe` v0.85.1-41-g4ac887c, `__version__` 0.85.1), editable clone `~/_cadence_study`, re-read at run time | Program iter: iter46 (off the V(S) ladder; library & tooling)
-- Script: `exp/EXP-05_snapshot_restore.py` | Evidence: `exp/EXP-05-check.out`, `exp/EXP-05-full.out`, `exp/EXP-05-full.json` (checkpoints and per-process traces stay in the git-ignored `exp/EXP-05_brains/`)
+- Script: `exp/EXP-05_snapshot_restore.py` | Evidence: `exp/EXP-05-check.out`, `exp/EXP-05-check.json`, `exp/EXP-05-check-diagnosis.out` (no full run: VOID by the check; the registered `exp/EXP-05-full.*` files do not exist). Checkpoints and per-process traces stay in the git-ignored `exp/EXP-05_brains/`.
 
 ## Pre-registration (written 2026-10-23, before any EXP-05 data)
 
@@ -77,10 +77,42 @@
 **Cost.** Per life and brain about 30 life-lengths of events (R, R2, P1, 9 restores, 9 fork processes with 4 brains after the cut); a life is about 400 events, so about 90 s for the plain brain and about 4 min for the learned code, serially. 8 brain-lives (4 lives x 2 brains) at 4 workers: about 6 to 8 minutes in total, check included.
 
 ## Check
-PENDING (run after this file is committed).
+- 2026-10-23, after the pre-registration commit `6d710c3` and before any data life. Evidence: `exp/EXP-05-check.out` and `exp/EXP-05-check.json`. Run on Cadence 0.85.1 at `4ac887c` (clean tree), Python 3.12.10, NumPy 2.4.2, life 99, both brains, 76 s wall. Result: **FAIL on k4.**
+  - k1 PASS. 7 of the 9 cut types occurred on each brain, and each saved the groups its type requires. A5 and A6 did not occur on either brain in this life. Each brain was aroused for its 100 youth moments and at none of its other 200 moments, so neither woke after the reversal.
+  - k2 PASS. R and R2 (hash seeds 1 and 2) were identical on both brains, in every event and in the final bytes.
+  - k3 PASS. The 1e-9 reward perturbation at A3 was flagged on both brains. The member digest moved under a one-ULP change.
+  - k4 FAIL. The state moves: every cut's checkpoint bytes differ from the final bytes. But after 6 of the 14 cuts, the reference's remaining events contain only one distinct action. On the plain brain that was A3, A4, B1, B2 and B3; on the learned-code brain, B3. After youth both brains answered greedily with one fixed action. Plain accuracy was .26 / .23 / .49 over moments 0-99 / 100-199 / 200-299 (chance .33). Learned code scored .52 / .52 / .25, which is exactly what one fixed action scores on this map.
+  - k5 PASS. The projected full run was 227 s.
+  - By the registered rule, a failed check stops the run. No data life was run.
+- **Seen in the check** (life 99 only). The registered outcome is VOID, so these are observations, not arm verdicts. 56 continuations were compared (14 cuts x restore, O, D, S), about 13,800 event records.
+  - Fresh-process restores: at 14 of 14 cuts the final checkpoint had the reference's bytes. The event records were identical at 12 of 14.
+  - The 2 differences: at A2 on both brains, one field of one event differs. A2 is a cut after the first of two waits under a sampled action. On the next `wait`, the reference still shows the previous `live`'s `last_arousal` snapshot, while the loaded brain shows `None`. The docs say `last_arousal` is "None after construction, reset or load" (`docs/api.md`, Attributes; `docs/start.md`), and `wait` does not set it. So this is a report that the docs exclude from the continuation, not a state difference. Every other field of the 339 events after that cut matches, and the final bytes are identical.
+  - Round trip (load, then save at once) gave back the cut file's bytes at 14 of 14.
+  - Forks. Deepcopy D matched the reference at 14 of 14, in trace and final bytes. So did the original O, run beside the forks. Save/load fork S matched at 12 of 14 (the same A2 `last_arousal` difference), and its final bytes matched at 14 of 14. The fork-time checkpoints of O, D and S were identical to each other and to P1's cut file at 14 of 14. The diverging twin X differed from the reference at 14 of 14.
+  - `MODE=diagnose` was added after the check. It runs nothing: it reads the stored traces and prints every differing field (`exp/EXP-05-check-diagnosis.out`). Result: 52 continuations identical in every event; 4 differ in exactly that one field at one event.
 
 ## Summary
-PENDING.
+- Question: save a learning Cadence brain in the middle of its life, either while an action still waits for its outcome or right after a reset. Load it in a new Python process. Does it continue bit for bit as the brain that was never stopped? Does a `copy.deepcopy` fork do the same?
+- Setup: as registered. Cadence 0.85.1 + 41 commits at `4ac887c`. Two composed brains with arousal, episodic choice and recall, one with a learned code. A 4-cue / 3-action map learned through `live`, with delayed outcomes, a reversal and three resets. Comparisons were exact: every event's record plus the SHA-256 of the final checkpoint's bytes, against an uninterrupted reference. The check ran on life 99; data lives 0..2 were never run.
+- Prediction (quoted from the pre-registration): check passes about 85%; R equals R2 about 97%; A0 about 97%; arm A about 82%, arm B about 85%, deepcopy about 88%, save/load fork about 85%; all three arms about 65%; round trip about 60%; learning above chance about 70%.
+- Result: the check failed on k4. After 6 of 14 cuts the reference continued with a single action, so "identical" was too cheap to count there. On this life both brains collapsed onto one greedy action after youth and did not wake at the reversal, so A5 and A6 did not occur. Seen in the check, not a reading:
+  - on this life, every fresh-process restore and every fork ended on the reference's checkpoint bytes (14 of 14 each);
+  - event records matched in 52 of 56 continuations;
+  - the other 4 differ only in `last_arousal`, which the docs say a load clears;
+  - load-then-save reproduced the cut bytes at 14 of 14.
+- Verdict: **VOID** (by its own check, before any data life; loop: VOID). No arm verdict is declared. No upstream bug was found, so no draft was written.
 
 ## Reflection
-PENDING.
+- What it means: we still do not have the registered answer. The one check life is consistent with the docs' promise of an exact continuation. Every restore, every save/load fork and every deepcopy ended on the reference's checkpoint bytes, and their event records matched except where the docs say a report resets on load. That is a hint for EXP-05b, not a reading. It is 2 brains on 1 life, and the adult cuts that would have been most informative (A5 and A6, a woken brain after the reversal) never occurred. For our harnesses, it hints that deepcopy behaves like save/load, with one difference to know about: a save/load fork starts with `last_arousal` None, and deepcopy keeps it. That matters only to a harness that reads `last_arousal` before the twin's next `live`. Side observation, one life per brain: under 1 / 0 rewards with salience-marked misses, both brains settled on one fixed greedy action after youth. The learned-code brain did not wake when the reversal halved its income (.52 to .25).
+- Process: two design errors, both mine, both caught before any data life.
+  - First, the task did not keep the brain learning after youth. I piloted only timing and API behaviour, not the brain's behaviour under the exact run conditions. The RUN GATE's VARIANCE line applies to an identity test as well: if the compared trace stops varying, "identical" passes for free. k4 was written to catch this, and it did.
+  - Second, the trace recorded `last_arousal` at `wait` events. The docs say a load clears that field, so the registered "every field" rule would have counted a documented reset as a failure. The diagnosis isolated it to that one field.
+  - What went right: the determinism control (R equal to R2 across hash seeds) and the sensitivity control (a 1e-9 change flagged) both worked. The stop rule held, and no data life was run on a failed check.
+- Prediction check:
+  - "The check passes" (85%) was wrong.
+  - R equal to R2 (97%) and A0 (97%) held on the check life.
+  - The round trip (60%) held at 14 of 14. I expected load to drop report fields such as `last_learning`; it does not. The only report it drops is `last_arousal`, which `save` does not write.
+  - "Learning above chance" (70%) failed for the plain brain (.23). The learned-code brain's .52 is the score of one fixed action, so it did not hold there either.
+  - The arm predictions were not tested.
+- Lesson: an identity test needs a behaviour pilot too. The compared trace must keep varying after every cut, and the compared fields must be the ones the library says survive a load. Read the attribute docs for "None after load" before choosing what to compare.
+- Next: EXP-05b is queued as ready (EXPERIMENT-QUEUE.md). It keeps the same three arms, compares `last_arousal` only at `live` events, uses a task piloted under the exact run conditions to keep the policy moving after youth and to wake the brain at the reversal, and gets fresh seeds and a new pre-registration. It needs a new pre-registration before any data, as this lab requires.

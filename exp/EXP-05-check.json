@@ -1,0 +1,803 @@
+{
+ "env": {
+  "cadence": "0.85.1",
+  "describe": "v0.85.1-41-g4ac887c",
+  "dirty": false,
+  "file": "C:\\Users\\Will\\_cadence_study\\src\\cadence\\__init__.py",
+  "numpy": "2.4.2",
+  "python": "3.12.10",
+  "sha": "4ac887c0981b702b02c144d25d0147e84c858e41",
+  "threads": {
+   "MKL_NUM_THREADS": null,
+   "OMP_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null
+  }
+ },
+ "gates": {
+  "k1": true,
+  "k2": true,
+  "k3": true,
+  "k4": false,
+  "k5": true,
+  "projected_full_seconds": 227.3427758216858
+ },
+ "mode": "check",
+ "units": [
+  {
+   "A0": {
+    "final_equal": true,
+    "first_diff": null,
+    "trace_equal": true
+   },
+   "brain": "plain",
+   "check_life": true,
+   "control": {
+    "R2_final_equal": true,
+    "R2_trace_equal": true,
+    "first_diff": null
+   },
+   "cuts": {
+    "A1": 54,
+    "A2": 87,
+    "A3": 187,
+    "A4": 190,
+    "B1": 143,
+    "B2": 247,
+    "B3": 353
+   },
+   "life": 99,
+   "per_cut": {
+    "A1": {
+     "distinct_actions_after": 3,
+     "event": 54,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 10.137356281280518
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": true,
+      "pending": true,
+      "sampled": true
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 2604,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 2.5187811851501465,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "A2": {
+     "distinct_actions_after": 3,
+     "event": 87,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": 0,
+       "trace_equal": false
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 9.392961025238037
+     },
+     "groups": {
+      "awaiting": true,
+      "lived": true,
+      "pending": true,
+      "sampled": true
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": 0,
+      "loaded_id_ok": true,
+      "pid": 19480,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 2.185734748840332,
+      "trace_equal": false
+     },
+     "state_moves": true
+    },
+    "A3": {
+     "distinct_actions_after": 1,
+     "event": 187,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 6.977205038070679
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": true,
+      "pending": false,
+      "sampled": false
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 3216,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 1.4782826900482178,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "A4": {
+     "distinct_actions_after": 1,
+     "event": 190,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 6.960760831832886
+     },
+     "groups": {
+      "awaiting": true,
+      "lived": true,
+      "pending": false,
+      "sampled": false
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 22284,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 1.480717658996582,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "B1": {
+     "distinct_actions_after": 1,
+     "event": 143,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 7.8672263622283936
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": false,
+      "pending": false,
+      "sampled": null
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 10620,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 1.7665371894836426,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "B2": {
+     "distinct_actions_after": 1,
+     "event": 247,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 6.035480260848999
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": false,
+      "pending": false,
+      "sampled": null
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 25292,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 1.1109535694122314,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "B3": {
+     "distinct_actions_after": 1,
+     "event": 353,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 4.368649244308472
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": false,
+      "pending": false,
+      "sampled": null
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 23100,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 0.5958201885223389,
+      "trace_equal": true
+     },
+     "state_moves": true
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.26,
+     "100-199": 0.23,
+     "200-299": 0.49
+    },
+    "events": 427,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 121
+   },
+   "seconds": {
+    "F": 51.73963904380798,
+    "P1": 3.1113440990448,
+    "P2": 11.136827230453491,
+    "R": 3.113602876663208,
+    "R2": 3.113602876663208
+   },
+   "sensitivity": {
+    "cut": "A3",
+    "error": null,
+    "flagged": true
+   },
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "A0": {
+    "final_equal": true,
+    "first_diff": null,
+    "trace_equal": true
+   },
+   "brain": "code",
+   "check_life": true,
+   "control": {
+    "R2_final_equal": true,
+    "R2_trace_equal": true,
+    "first_diff": null
+   },
+   "cuts": {
+    "A1": 54,
+    "A2": 87,
+    "A3": 187,
+    "A4": 190,
+    "B1": 143,
+    "B2": 247,
+    "B3": 353
+   },
+   "life": 99,
+   "per_cut": {
+    "A1": {
+     "distinct_actions_after": 3,
+     "event": 54,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 26.04150414466858
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": true,
+      "pending": true,
+      "sampled": true
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 8896,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 6.376643419265747,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "A2": {
+     "distinct_actions_after": 3,
+     "event": 87,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": 0,
+       "trace_equal": false
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 23.76823377609253
+     },
+     "groups": {
+      "awaiting": true,
+      "lived": true,
+      "pending": true,
+      "sampled": true
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": 0,
+      "loaded_id_ok": true,
+      "pid": 13724,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 5.6357810497283936,
+      "trace_equal": false
+     },
+     "state_moves": true
+    },
+    "A3": {
+     "distinct_actions_after": 2,
+     "event": 187,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 18.056326866149902
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": true,
+      "pending": false,
+      "sampled": false
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 6596,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 3.627980947494507,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "A4": {
+     "distinct_actions_after": 2,
+     "event": 190,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 17.923599004745483
+     },
+     "groups": {
+      "awaiting": true,
+      "lived": true,
+      "pending": false,
+      "sampled": false
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 22496,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 3.676248788833618,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "B1": {
+     "distinct_actions_after": 2,
+     "event": 143,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 20.00185751914978
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": false,
+      "pending": false,
+      "sampled": null
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 2820,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 4.177855014801025,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "B2": {
+     "distinct_actions_after": 2,
+     "event": 247,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 15.602322101593018
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": false,
+      "pending": false,
+      "sampled": null
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 24848,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 2.768916368484497,
+      "trace_equal": true
+     },
+     "state_moves": true
+    },
+    "B3": {
+     "distinct_actions_after": 1,
+     "event": 353,
+     "fork": {
+      "D": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "O": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "S": {
+       "final_equal": true,
+       "first_diff": null,
+       "trace_equal": true
+      },
+      "X_differs": true,
+      "error": null,
+      "fork_bytes_equal": true,
+      "fork_equals_P1_cut": true,
+      "seconds": 11.19765329360962
+     },
+     "groups": {
+      "awaiting": false,
+      "lived": false,
+      "pending": false,
+      "sampled": null
+     },
+     "groups_ok": true,
+     "restore": {
+      "error": null,
+      "final_equal": true,
+      "first_diff": null,
+      "loaded_id_ok": true,
+      "pid": 18992,
+      "roundtrip_bytes_equal": true,
+      "roundtrip_diff": [],
+      "roundtrip_members_equal": true,
+      "seconds": 1.281036376953125,
+      "trace_equal": true
+     },
+     "state_moves": true
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.52,
+     "100-199": 0.52,
+     "200-299": 0.25
+    },
+    "events": 427,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 121
+   },
+   "seconds": {
+    "F": 132.5914967060089,
+    "P1": 7.031449794769287,
+    "P2": 27.544461965560913,
+    "R": 7.498920440673828,
+    "R2": 7.2584216594696045
+   },
+   "sensitivity": {
+    "cut": "A3",
+    "error": null,
+    "flagged": true
+   },
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  }
+ ],
+ "verdicts_on_check_life": {
+  "A0": true,
+  "arms": {
+   "A": "REFUTED",
+   "B": "CONFIRMED",
+   "C": "REFUTED"
+  },
+  "control": true,
+  "coverage_gap": {
+   "code": [
+    "A5",
+    "A6"
+   ],
+   "plain": [
+    "A5",
+    "A6"
+   ]
+  },
+  "loop": "REFUTED",
+  "overall": "BOUNDARY"
+ },
+ "wall_seconds": 75.78092527389526
+}

@@ -3094,5 +3094,27 @@
    "unit": "none",
    "bars": []
   }
+ },
+ {
+  "id": "EXP-05",
+  "date": "2026-10-23",
+  "iter": "iter46",
+  "track": "library & tooling",
+  "verdict": "VOID",
+  "name": "Does a brain saved mid-life continue bit for bit? Its own check stopped the run",
+  "verdict_note": "pre-registered (6d710c3); check FAIL on k4: after 6 of 14 cuts the uninterrupted reference continued with a single action (both brains settled on one greedy action after youth and did not wake at the reversal, so the post-reversal cuts A5/A6 did not occur); no data life run. Seen in the check only (life 99, 2 brains, 14 cuts, 56 continuations, about 13,800 event records): final checkpoint bytes equal to the reference at 14/14 fresh-process restores and 14/14 deepcopy, save/load and original forks; event records identical in 52 of 56, the other 4 differ only in last_arousal, which the docs say a load clears; determinism control and 1e-9 sensitivity control passed; Cadence 0.85.1 + 41 at 4ac887c",
+  "headline": "We tested whether a Cadence brain saved in the middle of its life picks up exactly where it left off, in a new process, even with an action still waiting for its outcome. The experiment's own check stopped the run before any real data: the task let both test brains settle on one fixed answer, which makes 'identical' too easy to pass. In the one check life, every reloaded brain and every copy ended in exactly the same saved state as the brain that was never stopped. The only differences were in one status field that the docs say a reload clears.",
+  "question": "If a learning brain is saved mid-life, with an action still waiting for its outcome or right after a reset, and loaded in a fresh process, does it continue bit for bit as the brain that was never stopped, and does a deepcopy fork do the same?",
+  "process_issues": [
+   "the task was not piloted for behaviour before registering: both brains settled on one greedy action after youth, so the continuations after 6 of 14 cuts had a single action and check k4 stopped the run",
+   "the trace recorded last_arousal at wait events, a report the docs say load clears; it produced the only 4 event differences"
+  ],
+  "lesson": "An identity test needs a behaviour pilot too: the compared trace must keep varying after every cut, and the compared fields must be the ones the library says survive a load.",
+  "chart": {
+   "title": "No data (VOID by its own check)",
+   "unit": "none",
+   "bars": []
+  },
+  "quote_worthy": ""
  }
 ]

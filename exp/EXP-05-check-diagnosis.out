@@ -1,0 +1,56 @@
+code-99 cut A1 restore: all 372 events identical
+code-99 cut A1 fork O: all 372 events identical
+code-99 cut A1 fork D: all 372 events identical
+code-99 cut A1 fork S: all 372 events identical
+code-99 cut A2 (event 87, ['W', 60, 0]) restore: event +0 ['W', 60, 1] differs in ['arousal'] of 339 events; {"arousal": {"continuation": null, "reference": {"error": "0x1.52f97f274c9dcp-2", "heated_slot": 0, "learned": true, "learning_sweeps": 15, "level": "0x1.b3f7d33688cd3p-5", "mode": "aroused", "recorded": false, "surprise": "0x0.0p+0", "sweeps": 32, "temperature": "0x1.0a1f6bafde7a9p-2", "temperatures": ["0x1.0a1f6bafde7a9p-2"], "want": "0x1.33b5410d04624p-3"}}}
+code-99 cut A2 fork O: all 339 events identical
+code-99 cut A2 fork D: all 339 events identical
+code-99 cut A2 (event 87, ['W', 60, 0]) fork S: event +0 ['W', 60, 1] differs in ['arousal'] of 339 events; {"arousal": {"continuation": null, "reference": {"error": "0x1.52f97f274c9dcp-2", "heated_slot": 0, "learned": true, "learning_sweeps": 15, "level": "0x1.b3f7d33688cd3p-5", "mode": "aroused", "recorded": false, "surprise": "0x0.0p+0", "sweeps": 32, "temperature": "0x1.0a1f6bafde7a9p-2", "temperatures": ["0x1.0a1f6bafde7a9p-2"], "want": "0x1.33b5410d04624p-3"}}}
+code-99 cut A3 restore: all 239 events identical
+code-99 cut A3 fork O: all 239 events identical
+code-99 cut A3 fork D: all 239 events identical
+code-99 cut A3 fork S: all 239 events identical
+code-99 cut A4 restore: all 236 events identical
+code-99 cut A4 fork O: all 236 events identical
+code-99 cut A4 fork D: all 236 events identical
+code-99 cut A4 fork S: all 236 events identical
+code-99 cut B1 restore: all 283 events identical
+code-99 cut B1 fork O: all 283 events identical
+code-99 cut B1 fork D: all 283 events identical
+code-99 cut B1 fork S: all 283 events identical
+code-99 cut B2 restore: all 179 events identical
+code-99 cut B2 fork O: all 179 events identical
+code-99 cut B2 fork D: all 179 events identical
+code-99 cut B2 fork S: all 179 events identical
+code-99 cut B3 restore: all 73 events identical
+code-99 cut B3 fork O: all 73 events identical
+code-99 cut B3 fork D: all 73 events identical
+code-99 cut B3 fork S: all 73 events identical
+plain-99 cut A1 restore: all 372 events identical
+plain-99 cut A1 fork O: all 372 events identical
+plain-99 cut A1 fork D: all 372 events identical
+plain-99 cut A1 fork S: all 372 events identical
+plain-99 cut A2 (event 87, ['W', 60, 0]) restore: event +0 ['W', 60, 1] differs in ['arousal'] of 339 events; {"arousal": {"continuation": null, "reference": {"error": "0x1.0b5c7e4a7c538p-2", "heated_slot": 0, "learned": true, "learning_sweeps": 21, "level": "0x1.dcd33c63fb604p-4", "mode": "aroused", "recorded": false, "surprise": "0x0.0p+0", "sweeps": 32, "temperature": "0x1.f251416aa9dbap-3", "temperatures": ["0x1.f251416aa9dbap-3"], "want": "0x1.b98173f944857p-4"}}}
+plain-99 cut A2 fork O: all 339 events identical
+plain-99 cut A2 fork D: all 339 events identical
+plain-99 cut A2 (event 87, ['W', 60, 0]) fork S: event +0 ['W', 60, 1] differs in ['arousal'] of 339 events; {"arousal": {"continuation": null, "reference": {"error": "0x1.0b5c7e4a7c538p-2", "heated_slot": 0, "learned": true, "learning_sweeps": 21, "level": "0x1.dcd33c63fb604p-4", "mode": "aroused", "recorded": false, "surprise": "0x0.0p+0", "sweeps": 32, "temperature": "0x1.f251416aa9dbap-3", "temperatures": ["0x1.f251416aa9dbap-3"], "want": "0x1.b98173f944857p-4"}}}
+plain-99 cut A3 restore: all 239 events identical
+plain-99 cut A3 fork O: all 239 events identical
+plain-99 cut A3 fork D: all 239 events identical
+plain-99 cut A3 fork S: all 239 events identical
+plain-99 cut A4 restore: all 236 events identical
+plain-99 cut A4 fork O: all 236 events identical
+plain-99 cut A4 fork D: all 236 events identical
+plain-99 cut A4 fork S: all 236 events identical
+plain-99 cut B1 restore: all 283 events identical
+plain-99 cut B1 fork O: all 283 events identical
+plain-99 cut B1 fork D: all 283 events identical
+plain-99 cut B1 fork S: all 283 events identical
+plain-99 cut B2 restore: all 179 events identical
+plain-99 cut B2 fork O: all 179 events identical
+plain-99 cut B2 fork D: all 179 events identical
+plain-99 cut B2 fork S: all 179 events identical
+plain-99 cut B3 restore: all 73 events identical
+plain-99 cut B3 fork O: all 73 events identical
+plain-99 cut B3 fork D: all 73 events identical
+plain-99 cut B3 fork S: all 73 events identical
