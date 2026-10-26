@@ -3267,5 +3267,40 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-75",
+  "date": "2026-10-25",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "SUPPORTIVE",
+  "name": "A tighter solver tolerance keeps learning alive, so a collapse onto one action stops being permanent",
+  "verdict_note": "pre-registered (51738a4); CONFIRMS by its own rule: with learning_tolerance .0003 no nudged phase took zero steps from lesson 1024 on (P1), and 1 of 5 founders was collapsed at a checkpoint (P2: at most 1). Held at 4096 .781 vs .526 at .003 (EXP-71). Training still oscillates under the calm rule; learning stays alive (late steps 1.7e-5 to 1.9e-4 vs decay to 1e-40 at .003), so founders recover. V0.5B, Bernhard's runner, 5 founders, Cadence 0.88.0 b6fdc83.",
+  "headline": "In the brains that collapsed, learning had stopped: the step that pulls the brain toward the right answer quit before moving, because its starting error was already under the solver's threshold. Tightening that threshold ten times kept learning running in every brain. The brains still wobbled under Bernhard's teaching rule, sliding toward one answer and back, but three of the four that had been stuck recovered, and average accuracy on untaught combinations rose from 53% to 78%.",
+  "question": "Does lowering learning_tolerance (.003 to .0003) remove V0.5B's late collapse under the calm rule?",
+  "process_issues": [
+   "an interim mid-run reading looked like REFUTES and was reported as likely; the 4096 checkpoint reversed it",
+   "a lower tolerance also tightens the free phase, so the lever is not isolated to the nudged phase"
+  ],
+  "lesson": "Separate what starts a failure from what makes it permanent; a fix for the second can look like a fix for the first at one checkpoint.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Held accuracy at 4096 lessons, V0.5B, same 5 founders",
+   "unit": "held accuracy (chance .33)",
+   "bars": [
+    {
+     "label": "calm rule, tolerance .003 (EXP-71)",
+     "value": 0.526
+    },
+    {
+     "label": "calm rule, tolerance .0003 (EXP-75)",
+     "value": 0.781
+    },
+    {
+     "label": "wrong rows from lesson 0 (EXP-72)",
+     "value": 0.853
+    }
+   ]
+  }
  }
 ]

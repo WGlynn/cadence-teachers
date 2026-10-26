@@ -13,11 +13,12 @@
   - P2 (the consequence): at most 1 of 5 founders collapses (modal share >= .60 with taught < .60 at any checkpoint from 1024 on). EXP-71 at .003: 4 of 5 under that definition.
   - Verdict rule: CONFIRMS if P1 and P2 hold. If P1 holds and P2 fails, zero-step phases are not the cause: REFUTES. If P1 fails, the tolerance is not the lever: INCONCLUSIVE.
 - Cost: unknown, since tighter settling needs more solver steps. Five jobs beside EXP-72b and EXP-73.
-- Result: PENDING
-- Verdict: PENDING
+- Result (Windows, numpy 2.4.2, OMP_NUM_THREADS=1; finished 23:05 CT). Identical to EXP-71 through 512 lessons (the band .0003 to .003 is not reached before then); the brain's learner reports tolerance .0003 (checked). Zero-step nudged phases from lesson 1024 on: 0 of every founder's taught lessons. Taught / modal share at 4096: 59101 .71 / .56, 59201 .45 / .89, 59202 .98 / .37, 59203 1.00 / .39, 59204 1.00 / .39. Held at 4096 .656 / .427 / .875 / .984 / .964, mean .781 (EXP-71 at .003: .526; EXP-72 surprise from lesson 0: .853). Collapsed founders (modal >= .60 with taught < .60 at any checkpoint from 1024): one, 59201, at 4096 only.
+- Dynamics (per-lesson log): training still oscillates under the calm rule. Mean wrong rows per 256 lessons swing, e.g. 59201 3.4 / 9.4 / 10.3 / 4.9 / 6.5 and 59204 9.5 / 9.6 / 8.0 / 0.0 over the last windows. But learning stays alive: the late mean weight step is 1.7e-5 to 1.9e-4 in every founder that still has wrong rows, against the decay to 1e-28 and 1e-40 at .003 (EXP-74). 59201's 4096 reading falls inside one of its dips.
+- Verdict: CONFIRMS by the pre-registered rule (P1 and P2 hold). The tolerance is a sufficient lever on whether the collapse is permanent.
 
 ## Reflection
-- What it means: PENDING
-- Process: PENDING
-- Lesson: PENDING
-- Next: PENDING
+- What it means: two things happen under Bernhard's calm rule. Training oscillates: brains slide toward one action and come back. That happens at either tolerance, and its cause is still open. At the runner's tolerance (.003) a slide can become permanent: the nudged phase begins inside the tolerance, takes no steps, and learning stops (EXP-74). At .0003 the nudged phase always runs, learning never stops, and three of the four founders that collapsed or regressed at .003 recover by 4096. So the zero-step phase is what makes a collapse permanent, not what starts it. Teaching only wrong rows from lesson 0 (EXP-72) avoids the oscillation itself on this task.
+- Process: pre-registered and pushed before data (51738a4), written after EXP-71/72/74 (disclosed). An interim reading at about lesson 3600 (rising wrong counts) looked like REFUTES and was reported to Will as likely. The 4096 checkpoint reversed it, because the brains recovered. Lesson for process: do not call a verdict from a mid-run trend when the outcome is a checkpoint. A lower tolerance also tightens the free phase, so the lever is not isolated to the nudged phase.
+- Lesson: separate what starts a failure from what makes it permanent; a fix for the second (keep learning alive) can look like a fix for the first at one checkpoint.
+- Next: report to the group. Open: the oscillation under every-row phases (does it come from teaching rows already answered right, as EXP-55 found on 0.83?). That test is learning_surprise always with tolerance .003 versus .0003, which separates the two levers.
