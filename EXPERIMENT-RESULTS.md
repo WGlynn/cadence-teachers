@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-77: M1b on Cadence 0.88.1 (founder lateral): all six criteria pass, VOID by the zero check - 2026-10-26
+- **Version:** Cadence 0.88.1, main `d66f8ea`. **Script:** `exp/EXP-77_m1b_current_release.py` (EXP-73 on the ported composition; `exp/EXP-58_content_delayed_credit_brain.py` passes `scales={'trace': 12.0}` when 0.85+ refuses `working_memory_scale`). Pre-registered `1f5f677`. Port gate on 0.88.1 with lateral -0.5: IDENTICAL. Run at the founder lateral 0.0, 216 fresh students (8_400_000+), lesson 80, 3,080 s at 4 workers.
+- **Result:** zero .439. know-1..4 +.060 / +.147 / +.250 / +.397, Spearman .581 (n 864); margin upper bounds all < 1/32 (untaught +.018 the highest); know-1 beats null / untaught / random by 5.47 / 4.71 / 5.67 SEM and anti-echo by 4.1 SEM; knowledge-free pay .033. All six CONFIRM criteria hold. Zero admission: random .199 [.195, .203] admitted; null .1958 [.1919, .1997] not admitted.
+- **Verdict: VOID** (pre-registered admission check). Null labels are uniform by construction (true rate .2), so the failure is a 2.1 SE chance draw; the check false-fails about 10% of runs. Not re-scored. M1b stays crossed on v0.84.3 only. Exploratory: know-4 .039 below EXP-73's (about 2 SEM, unpaired). Detail: experiments/EXP-77.md.
+
 ## EXP-05: does a brain saved mid-life continue bit for bit? VOID by its own check (k4), before any data life - 2026-10-23
 - **Version:** Cadence 0.85.1 + 41 commits, main `4ac887c` (v0.85.1-41-g4ac887c, clean tree). **Script:** `exp/EXP-05_snapshot_restore.py`. Pre-registered `6d710c3`. Check on life 99 only, two brains (plain; learned code 16), seeds 9_005_000+, 76 s at 4 workers.
 - **Check:** k1 passed (cut types and their saved groups). k2 passed (the uninterrupted life is identical across processes with different hash seeds). k3 passed (a 1e-9 reward change is flagged). k5 passed (cost). **k4 failed:** after 6 of 14 cuts the reference continued with a single action. Both brains settled on one greedy action after youth and did not wake at the reversal, so cuts A5/A6 did not occur. No data life was run.

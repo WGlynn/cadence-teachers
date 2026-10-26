@@ -3389,5 +3389,58 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-77",
+  "date": "2026-10-26",
+  "iter": "iter48",
+  "track": "attribution (M1-M5)",
+  "verdict": "VOID",
+  "name": "M1b on Cadence 0.88.1: every criterion passes, the zero check fails by .0003",
+  "verdict_note": "pre-registered (1f5f677); harness ported to 0.85+ (scales={'trace': 12.0}; gate IDENTICAL with lateral -0.5), run at 0.88.1's founder lateral 0.0. All six CONFIRM criteria hold: know-1..4 +.060 / +.147 / +.250 / +.397 (Spearman .581, n 864), every knowledge-free arm under the 1/32 margin, know-1 beats anti-echo by 4.1 SEM, knowledge-free pay .033. VOID by the zero admission check: null's labels right .1958 [.1919, .1997], though uniform by construction (true rate .2); a 2.1 SE chance draw. Not re-scored.",
+  "headline": "We moved the milestone test to the newest Cadence release. Real teaching again earned in order, from 6 to 40 points above the zero, and every teacher with no task knowledge earned about nothing, so every test of the measure passed. The run still counts as void. A safety check on the zero asked whether random labels were right one time in five, and by plain bad luck they came in at 19.6%, just outside the allowed range. The labels are random by how they are made, so the check was testing something already known, and it fails about one run in ten no matter what.",
+  "question": "Does M1b, crossed on Cadence v0.84.3, hold on the current release (0.88.1) under its own defaults?",
+  "process_issues": [
+   "decision-rule flaw carried over from EXP-73: the zero is admitted by a 95% sample interval on a label rate that is .2 by construction, checked on two arms, so it false-fails about 10% of runs",
+   "VOID kept as pre-registered; not re-scored after seeing the data"
+  ],
+  "lesson": "Don't admit a zero by a sample test of a property that is true by construction; verify the construction, or set the check's false-fail rate on purpose across every arm it covers.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Worth above the measured-chance zero on Cadence 0.88.1, 216 fresh students",
+   "unit": "accuracy gain over the zero (16 unseen states)",
+   "bars": [
+    {
+     "label": "know-1",
+     "value": 0.06,
+     "sem": 0.009
+    },
+    {
+     "label": "know-2",
+     "value": 0.147,
+     "sem": 0.011
+    },
+    {
+     "label": "know-3",
+     "value": 0.25,
+     "sem": 0.013
+    },
+    {
+     "label": "know-4",
+     "value": 0.397,
+     "sem": 0.013
+    },
+    {
+     "label": "anti-echo (no task knowledge)",
+     "value": 0.011,
+     "sem": 0.009
+    },
+    {
+     "label": "random labels",
+     "value": -0.003,
+     "sem": 0.007
+    }
+   ]
+  }
  }
 ]

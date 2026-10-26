@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-26 (iter48, EXP-77 VOID, on 0.88.1 d66f8ea): the EXP-62 harness is ported to 0.85+ (`scales={'trace': 12.0}`; gate IDENTICAL with lateral -0.5). At 0.88.1's founder lateral every M1b criterion holds (know-1..4 +.060 / +.147 / +.250 / +.397, Spearman .581, know-1 beats anti-echo 4.1 SEM), but the pre-registered zero admission check failed: null labels right .1958, interval [.1919, .1997], though uniform by construction (2.1 SE chance draw; the check false-fails ~10% of runs). VOID kept. M1b stays crossed on v0.84.3 only. Next (Will's go): EXP-77b, admission by construction plus the old check reported, fresh seeds.
+
 2026-10-25 (iter47, EXP-73 CROSSED, on v0.84.3, Will's go): **M1b crossed**, the first milestone since 10-09. Transfer prices skill on the delayed-credit brain against a measured-chance zero (know-1..4 +.057 / +.163 / +.269 / +.436, Spearman .638), every knowledge-free arm under the margin, know-1 beats anti-echo by 4.0 SEM. Fifth zero attempt, disclosed; EXP-62e's original rule also passes on this data. Same night, off-ladder: EXP-71/72/72b/74/75 on Bernhard's V0.5B runner; upstream docs adopted EXP-72 (main d66f8ea). Next: port the EXP-62 harness to the current API and re-cross on a current release.
 
 2026-10-23 (iter46, EXP-05 VOID by its own check, on 0.85.1 + 41 main 4ac887c, library & tooling): the snapshot/restore identity test stopped at check k4. After youth both test brains settled on one greedy action, so 6 of 14 continuations had a single action, and no data life ran. In the check life alone, every fresh-process restore and every deepcopy / save-load fork ended on the uninterrupted brain's checkpoint bytes (14/14). Event records matched in 52 of 56; the other 4 differ only in `last_arousal`, which a load clears by documentation. Off the V(S) ladder; no milestone moves. Next: EXP-05b (behaviour-piloted task, `last_arousal` compared at `live` only).
@@ -214,6 +216,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter48 (2026-10-26): EXP-77, M1b on Cadence 0.88.1 (founder lateral): VOID
+- Version: Cadence 0.88.1 (`d66f8ea`). Harness ported (EXP-58 compose: `scales={'trace': 12.0}` when the old name is refused); gate with lateral -0.5 IDENTICAL to EXP-62e student 0. Pre-registered `1f5f677`; pilot passed its stop check.
+- Result: all six CONFIRM criteria hold; VOID by the zero admission check (null labels .1958 [.1919, .1997], uniform by construction). Not re-scored (experiments/EXP-77.md).
+- Milestone: none moves. M1b stays crossed on v0.84.3. Will told in session (live).
 
 ### iter47 (2026-10-25): EXP-73, M1b with a measured-chance zero: CROSSED
 - Version: Cadence v0.84.3 (worktree; the EXP-62 harness does not run on 0.85+). Pre-registered 042fccb, identity gate IDENTICAL.

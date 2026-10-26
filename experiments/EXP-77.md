@@ -1,6 +1,6 @@
 # EXP-77: M1b re-crossed on a current Cadence release (0.88.1, founder lateral)
 
-- Date: pre-registered 2026-10-26 (not run) | Cadence version: 0.88.1 (`d66f8ea`) | Program iter: iter48
+- Date: 2026-10-26 (pre-registered `1f5f677`, run the same day) | Cadence version: 0.88.1 (`d66f8ea`) | Program iter: iter48
 - Script: `exp/EXP-77_m1b_current_release.py` (EXP-73 exactly, on the ported composition in `exp/EXP-58_content_delayed_credit_brain.py`) | Evidence: `exp/EXP-77-*`
 
 ## Pre-registration (written 2026-10-26, before any EXP-77 data)
@@ -36,8 +36,14 @@
 **Cost.** About 80 minutes at 4 workers (EXP-73: 4,764 s on 0.84.3), run detached; the pilot about 3 minutes.
 
 ## Summary
-- Result: PENDING (pre-registered; pilot, then the full run).
-- Verdict: PENDING
+- Question: does M1b, crossed by EXP-73 on Cadence v0.84.3, hold on the current release (0.88.1) under its own defaults?
+- Setup: EXP-73 exactly on the ported composition (`scales={'trace': 12.0}`; port gate IDENTICAL on 0.88.1 with lateral -0.5), lateral left at 0.88.1's founder (0.0). 216 fresh students (seeds 8_400_000+), lesson 80, 10 arms, zero = mean of {null, untaught, random}. Pilot (6 students, seeds 8_390_000+) passed its stop check (know-4 worth +.361). Full run 3,080 s at 4 workers.
+- Prediction: CONFIRM, know-1..4 within about .05 of EXP-73's; main risk the lateral change moving uptake.
+- Result: zero .439 (EXP-73 .439). know-1..4 +.060 / +.147 / +.250 / +.397 (SEM .009-.013), ordered, Spearman .581 (n 864). Margin upper bounds: null +.006, untaught +.018, random +.008, wrong-chain -.060, echo -.116 (all < .03125). know-1 beats null / untaught / random by 5.47 / 4.71 / 5.67 SEM and anti-echo by 4.1 SEM (anti-echo +.011, labels right .249). Knowledge-free arms take .033 of pay. No kill. **All six CONFIRM criteria hold.** Zero admission: random's labels right .199 [.195, .203], admitted; **null's labels right .1958 [.1919, .1997] (7,901 of 40,351), an interval that excludes .20 by .0003: not admitted.**
+- Verdict: VOID by the pre-registered admission check. Not re-scored: the rules said VOID, so M1b is not re-crossed on 0.88.1 by this run.
 
 ## Reflection
-- PENDING
+- What it means: on the measure itself the current release behaves like v0.84.3. Same zero (.439), same order, every margin and separation passes, and know-4 sits .039 below EXP-73's (exploratory, unpaired, about 2 SEM; the lateral change is the only candidate cause). The run is VOID only because of the zero check. The null arm's labels are drawn uniformly from the five actions regardless of the right answer (`labeller('random')`: `int(rng.integers(5))`), so their true hit rate is exactly .2 by construction, and the observed .1958 is a 2.1 SE chance draw. The check tested by sample a property that holds by construction, at 95% on each of two arms, so it false-fails about 10% of the time whatever the instrument does. It did here.
+- Process: port, gate, pre-registration and pilot all went as planned; no harness issue found. The flaw is in the decision rule, written into EXP-73 and carried over unchanged. It is the same family as EXP-62d's lesson (a significance test where the question is something else). Scoring the run as CONFIRM after seeing the data would be exactly the post-hoc rescue these pre-registrations exist to prevent, so it stays VOID.
+- Lesson: don't admit a zero by a sample test of a property that is true by construction. Verify the construction instead (read the generator, plus a large seeded draw outside the run). Or, if a sample check is kept, set its false-fail rate on purpose across all the arms it covers.
+- Next: M1b stays crossed on v0.84.3 only. Candidate EXP-77b (needs Will's go, since it changes a rule after a near-miss): fresh seeds, same six criteria, admission by construction (generator code plus a 10^6-label seeded audit) in place of the per-run interval. Report under the old check too, disclosed before data.

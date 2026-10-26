@@ -185,3 +185,58 @@ C:\Users\Will\_cadence_study\src\cadence\generic.py:3280: RuntimeWarning: finite
   L 80 st181: null 0.38 untaught 0.50 | know-1 0.56 know-2 0.62 know-3 0.62 know-4 0.94 random 0.50 wrong-chain 0.31 echo 0.38 anti-echo 0.50 (51.4s)
   L 80 st182: null 0.31 untaught 0.62 | know-1 0.44 know-2 0.75 know-3 0.75 know-4 0.88 random 0.38 wrong-chain 0.31 echo 0.25 anti-echo 0.50 (58.3s)
   L 80 st183: null 0.62 untaught 0.50 | know-1 0.44 know-2 0.62 know-3 0.50 know-4 1.00 random 0.31 wrong-chain 0.31 echo 0.31 anti-echo 0.38 (57.9s)
+  L 80 st184: null 0.50 untaught 0.50 | know-1 0.50 know-2 0.75 know-3 0.75 know-4 0.88 random 0.50 wrong-chain 0.44 echo 0.19 anti-echo 0.62 (61.8s)
+  L 80 st185: null 0.56 untaught 0.31 | know-1 0.31 know-2 0.50 know-3 0.50 know-4 0.62 random 0.50 wrong-chain 0.50 echo 0.56 anti-echo 0.38 (58.2s)
+  L 80 st186: null 0.38 untaught 0.44 | know-1 0.56 know-2 0.81 know-3 0.62 know-4 0.94 random 0.62 wrong-chain 0.56 echo 0.38 anti-echo 0.56 (60.6s)
+  L 80 st187: null 0.44 untaught 0.38 | know-1 0.38 know-2 0.69 know-3 0.56 know-4 0.94 random 0.31 wrong-chain 0.38 echo 0.50 anti-echo 0.44 (57.2s)
+  L 80 st188: null 0.50 untaught 0.44 | know-1 0.62 know-2 0.62 know-3 0.94 know-4 1.00 random 0.31 wrong-chain 0.31 echo 0.31 anti-echo 0.38 (57.7s)
+  L 80 st189: null 0.44 untaught 0.50 | know-1 0.50 know-2 0.50 know-3 1.00 know-4 0.94 random 0.62 wrong-chain 0.25 echo 0.25 anti-echo 0.44 (57.8s)
+  L 80 st190: null 0.50 untaught 0.44 | know-1 0.38 know-2 0.50 know-3 0.88 know-4 0.88 random 0.38 wrong-chain 0.44 echo 0.25 anti-echo 0.69 (54.9s)
+  L 80 st191: null 0.44 untaught 0.62 | know-1 0.50 know-2 0.50 know-3 0.75 know-4 1.00 random 0.50 wrong-chain 0.38 echo 0.44 anti-echo 0.44 (55.1s)
+  L 80 st192: null 0.38 untaught 0.56 | know-1 0.38 know-2 0.50 know-3 0.69 know-4 0.81 random 0.31 wrong-chain 0.44 echo 0.44 anti-echo 0.38 (56.7s)
+  L 80 st193: null 0.25 untaught 0.56 | know-1 0.56 know-2 0.62 know-3 0.25 know-4 0.69 random 0.62 wrong-chain 0.38 echo 0.31 anti-echo 0.69 (53.9s)
+  L 80 st195: null 0.31 untaught 0.50 | know-1 0.44 know-2 0.56 know-3 0.69 know-4 0.81 random 0.44 wrong-chain 0.25 echo 0.31 anti-echo 0.62 (52.3s)
+  L 80 st194: null 0.38 untaught 0.56 | know-1 0.62 know-2 0.50 know-3 0.25 know-4 0.25 random 0.31 wrong-chain 0.44 echo 0.06 anti-echo 0.44 (55.9s)
+  L 80 st196: null 0.44 untaught 0.38 | know-1 0.81 know-2 0.75 know-3 0.81 know-4 1.00 random 0.50 wrong-chain 0.25 echo 0.25 anti-echo 0.69 (53.9s)
+  L 80 st197: null 0.50 untaught 0.50 | know-1 0.50 know-2 0.75 know-3 0.75 know-4 0.75 random 0.56 wrong-chain 0.25 echo 0.25 anti-echo 0.75 (53.3s)
+  L 80 st198: null 0.38 untaught 0.44 | know-1 0.69 know-2 0.50 know-3 0.75 know-4 1.00 random 0.75 wrong-chain 0.25 echo 0.25 anti-echo 0.50 (53.2s)
+  L 80 st199: null 0.44 untaught 0.38 | know-1 0.25 know-2 0.62 know-3 0.69 know-4 1.00 random 0.50 wrong-chain 0.25 echo 0.19 anti-echo 0.31 (53.4s)
+  L 80 st200: null 0.31 untaught 0.31 | know-1 0.31 know-2 0.75 know-3 0.62 know-4 0.69 random 0.31 wrong-chain 0.44 echo 0.19 anti-echo 0.50 (53.5s)
+  L 80 st201: null 0.38 untaught 0.25 | know-1 0.44 know-2 0.44 know-3 1.00 know-4 0.94 random 0.56 wrong-chain 0.56 echo 0.25 anti-echo 0.75 (50.3s)
+  L 80 st202: null 0.56 untaught 0.50 | know-1 0.56 know-2 0.75 know-3 0.50 know-4 1.00 random 0.44 wrong-chain 0.56 echo 0.50 anti-echo 0.50 (51.9s)
+  L 80 st203: null 0.69 untaught 0.31 | know-1 0.44 know-2 0.44 know-3 0.69 know-4 0.75 random 0.62 wrong-chain 0.31 echo 0.38 anti-echo 0.50 (54.5s)
+  L 80 st204: null 0.44 untaught 0.50 | know-1 0.50 know-2 0.50 know-3 0.38 know-4 0.88 random 0.25 wrong-chain 0.44 echo 0.31 anti-echo 0.50 (54.1s)
+  L 80 st205: null 0.31 untaught 0.38 | know-1 0.50 know-2 0.25 know-3 0.56 know-4 0.25 random 0.44 wrong-chain 0.25 echo 0.25 anti-echo 0.56 (52.3s)
+  L 80 st206: null 0.31 untaught 0.50 | know-1 0.62 know-2 0.50 know-3 0.75 know-4 0.69 random 0.31 wrong-chain 0.50 echo 0.25 anti-echo 0.25 (56.1s)
+  L 80 st207: null 0.56 untaught 0.56 | know-1 0.56 know-2 0.25 know-3 0.81 know-4 0.75 random 0.50 wrong-chain 0.31 echo 0.25 anti-echo 0.31 (56.8s)
+  L 80 st208: null 0.31 untaught 0.25 | know-1 0.56 know-2 0.75 know-3 0.75 know-4 0.88 random 0.56 wrong-chain 0.44 echo 0.50 anti-echo 0.25 (55.4s)
+  L 80 st209: null 0.62 untaught 0.56 | know-1 0.50 know-2 0.56 know-3 0.88 know-4 0.81 random 0.38 wrong-chain 0.50 echo 0.25 anti-echo 0.50 (56.7s)
+  L 80 st210: null 0.56 untaught 0.44 | know-1 0.50 know-2 0.56 know-3 0.69 know-4 0.75 random 0.25 wrong-chain 0.75 echo 0.31 anti-echo 0.44 (50.8s)
+  L 80 st211: null 0.50 untaught 0.50 | know-1 0.38 know-2 0.75 know-3 1.00 know-4 1.00 random 0.56 wrong-chain 0.25 echo 0.25 anti-echo 0.25 (56.6s)
+  L 80 st212: null 0.56 untaught 0.44 | know-1 0.38 know-2 0.69 know-3 0.81 know-4 1.00 random 0.44 wrong-chain 0.44 echo 0.25 anti-echo 0.56 (52.5s)
+  L 80 st213: null 0.44 untaught 0.38 | know-1 0.25 know-2 0.62 know-3 0.62 know-4 0.69 random 0.50 wrong-chain 0.25 echo 0.25 anti-echo 0.56 (53.4s)
+  L 80 st214: null 0.56 untaught 0.50 | know-1 0.44 know-2 0.50 know-3 0.75 know-4 1.00 random 0.44 wrong-chain 0.38 echo 0.62 anti-echo 0.50 (51.0s)
+  L 80 st215: null 0.44 untaught 0.69 | know-1 0.44 know-2 0.75 know-3 0.75 know-4 1.00 random 0.44 wrong-chain 0.25 echo 0.25 anti-echo 0.38 (52.9s)
+
+EXP-77 [full] summary (3080s); worth = arm - mean of ['null', 'untaught', 'random'], same student
+
+  lesson 80: n=216  zero = mean of ['null', 'untaught', 'random'] = 0.439
+    arm             acc   worth    sem  w/sem    pay
+    know-1        0.499  +0.060  0.009  +6.38  0.040
+    know-2        0.586  +0.147  0.011 +13.96  0.153
+    know-3        0.689  +0.250  0.013 +19.35  0.293
+    know-4        0.836  +0.397  0.013 +31.72  0.482
+    null          0.434  -0.005  0.006  -0.76  0.005
+    untaught      0.447  +0.008  0.006  +1.20  0.010
+    random        0.436  -0.003  0.007  -0.46  0.007
+    anti-echo     0.450  +0.011  0.009  +1.17  0.011
+    wrong-chain   0.363  -0.076  0.010  -7.95  0.000
+    echo          0.307  -0.132  0.010 -13.47  0.000
+    know-1 minus uninformative arm (paired): null +0.065 (5.47 SEM)  untaught +0.053 (4.71 SEM)  random +0.063 (5.67 SEM)
+    Spearman(worth, k) = 0.581 (n=864)  ordered=True  fake pay share = 0.021
+    criteria: {'ordered_and_spearman': True, 'know4_ge_2': True, 'nonsuperiority': True, 'know1_beats_zero_by_2sem': True, 'know1_beats_anti_echo_by_2sem': True, 'fake_pay_le_10': True}  kill=False  -> VOID (zero class failed its information check)
+    upper bounds (worth + 1.645 SEM) vs margin 1/32: null +0.006  untaught +0.018  random +0.008  wrong-chain -0.060  echo -0.116
+    anti-echo worth +0.011 (sem 0.009); know-1 minus anti-echo +0.050 (4.1 SEM)
+    label information: null 0.196 [0.192, 0.200] n=40351  random 0.199 [0.195, 0.203] n=40338  anti-echo 0.249 [0.245, 0.254] n=40131
+    fake pay share over all knowledge-free arms 0.033
+    criteria {'ordered_and_spearman': True, 'know4_ge_2': True, 'nonsuperiority': True, 'know1_beats_zero_by_2sem': True, 'know1_beats_anti_echo_by_2sem': True, 'fake_pay_le_10': True}  zero admitted False  kill False  -> VOID (zero class failed its information check)
