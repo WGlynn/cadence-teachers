@@ -1,0 +1,2 @@
+0.85.1 1 7 {'seed': 7, 'acc0': 0.625, 'accG': 1.0, 'accFr': 0.5, 'accFw': 0.0, 'accFw_own': 1.0, 'accG_own': 0.0, 'tG': 0.375, 'tFr': -0.125, 'tFw': -0.625, 'rateG': 0.99375}
+0.85.1 1 12 {'seed': 12, 'acc0': 0.5, 'accG': 1.0, 'accFr': 0.25, 'accFw': 0.0, 'accFw_own': 1.0, 'accG_own': 0.0, 'tG': 0.5, 'tFr': -0.25, 'tFw': -0.5, 'rateG': 0.9925}

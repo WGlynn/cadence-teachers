@@ -3116,5 +3116,38 @@
    "bars": []
   },
   "quote_worthy": ""
+ },
+ {
+  "id": "EXP-72",
+  "date": "2026-10-25",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "SUPPORTIVE",
+  "name": "Teaching only the wrong rows from the first lesson stops the collapse onto one action",
+  "verdict_note": "pre-registered (daa105f); PREVENTS by its own rule (no taught drop over .10 from 1024 on; modal share at most .50 at 2048 and 4096; 0 of 5 founders collapsed). Attention V0.5B (Bernhard's runner, cadence-stone-age PR #1, 5f038a3), H2, 5 founders, 4096 lessons, Cadence 0.88.0 at b6fdc83, Windows. Held at 4096 .853 mean vs .526 under the calm rule on the same founders and lesson stream (EXP-71). Our founder 59101 does not reproduce Bernhard's pilot numbers, so absolute values differ across machines.",
+  "headline": "Cadence 0.88 can attend to two remembered facts at once. On a task where the answer needs both facts, Bernhard's teaching rule taught every example until the brain was almost always right, and only then switched to teaching just the mistakes. Under that rule, three of five brains learned and then fell apart, most answers ending on one action. Teaching only the mistakes from the very first lesson kept all five brains fully right on the taught examples through 4,096 lessons, and lifted accuracy on combinations they were never taught from about half to 85%.",
+  "question": "On V0.5B, does learning_surprise=True from lesson 0 prevent the late collapse onto one action that the calm-teaching rule produced?",
+  "process_issues": [
+   "written after seeing EXP-71's H2 arm to 2048 (disclosed in the pre-registration)",
+   "EXP-71's reproduction gate failed: our founder 59101 at 1024 reads taught .64 / held .51 vs Bernhard's pilot .66 / .65 (different floating-point path); the between-arm comparison is within one machine"
+  ],
+  "lesson": "When a teaching rule switches learning_surprise on partway through, compare it against surprise from the start before trusting either; the switch itself can be the cause. A top-1 attention reading does not show which records a head uses; erasure controls do.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Held accuracy at 4096 lessons, V0.5B, same 5 founders and lesson stream",
+   "unit": "held accuracy (chance .33)",
+   "bars": [
+    {
+     "label": "calm rule (EXP-71)",
+     "value": 0.526,
+     "sem": 0.112
+    },
+    {
+     "label": "wrong rows from lesson 0 (EXP-72)",
+     "value": 0.852,
+     "sem": 0.043
+    }
+   ]
+  }
  }
 ]
