@@ -3229,5 +3229,43 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-72b",
+  "date": "2026-10-25",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "NULL",
+  "name": "Under stable teaching one held head generalizes as well as two; the second head buys speed",
+  "verdict_note": "pre-registered (4373de1); NO HEAD GAIN by its own rule: at 4096 two heads lead one by +.011 held (SEM .022; ahead in 4 of 5), below the .02 bar. Two heads lead at 1024 (+.115) when two one-head brains had not yet fitted. One head's answers use both facts (either erasure to chance). V0.5B, Bernhard's runner, learning_surprise from lesson 0, 5 founders, Cadence 0.88.0 b6fdc83.",
+  "headline": "Cadence 0.88 added several memory heads so a brain can attend to more than one remembered fact. On a task whose answer needs two facts, with teaching that keeps the brains stable, two heads learned faster, but once both versions had learned the taught examples, one head answered new combinations as well as two (84% vs 85%). Erasing either fact still dropped the one-head brain to chance, so a single head was already combining both.",
+  "question": "On V0.5B with stable teaching (learning_surprise from lesson 0), do two held heads beat one on untaught pairs?",
+  "process_issues": [
+   "five founders: a gain of a few points is not excluded (SEM .022)"
+  ],
+  "lesson": "Compare architectures at matched fit, not at matched lesson count: an early lead can be speed rather than reach.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Held accuracy, V0.5B, stable teaching, same 5 founders",
+   "unit": "held accuracy (chance .33)",
+   "bars": [
+    {
+     "label": "two heads, 1024 lessons",
+     "value": 0.817
+    },
+    {
+     "label": "one head, 1024 lessons",
+     "value": 0.702
+    },
+    {
+     "label": "two heads, 4096 lessons",
+     "value": 0.853
+    },
+    {
+     "label": "one head, 4096 lessons",
+     "value": 0.842
+    }
+   ]
+  }
  }
 ]
