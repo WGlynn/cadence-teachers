@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "C:\Users\Will\cadence-lab\exp\EXP-73_m1b_measured_zero.py", line 114, in <module>
+    gate() if GATE else main73()
+    ^^^^^^
+  File "C:\Users\Will\cadence-lab\exp\EXP-73_m1b_measured_zero.py", line 74, in gate
+    new = run((80, 0))
+          ^^^^^^^^^^^^
+  File "EXP-62_content_market_committed_null.py", line 86, in run
+    out["arms"]["null"] = twin(seed, lesson, "random", seed + 2)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "EXP-62_content_market_committed_null.py", line 70, in twin
+    s = compose(seed)
+        ^^^^^^^^^^^^^
+  File "C:\Users\Will\cadence-lab\exp\EXP-58_content_delayed_credit_brain.py", line 34, in compose
+    b = cd.Brain.compose(10, 5, modules=OURS["modules"], seed=int(seed), consolidation=OURS["consolidation"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\generic.py", line 2342, in compose
+    genome, layout = _layout(
+                     ^^^^^^^^
+  File "C:\Users\Will\_cadence_study\src\cadence\generic.py", line 1287, in _layout
+    raise ValueError(refusal)
+ValueError: working_memory_scale is scales={'trace': ...} in this version, a construction setting
