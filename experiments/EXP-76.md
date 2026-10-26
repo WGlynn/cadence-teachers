@@ -1,0 +1,49 @@
+# EXP-76: on a three-fact conjunction, does a second or third held head help generalization once teaching is stable?
+
+- Date: 2026-10-26 | Cadence version: 0.88.1, main `d66f8ea` (editable install of `_cadence_study`) | Program iter: none (Cadence group thread: Bernhard's 0.88 release note "it should now learn to attend to multiple learned facts"; the Next of EXP-72b)
+- Script: `exp/EXP-76_v05c_three_facts.py`, split check `exp/EXP-76_split_check.py` | Evidence: `exp/EXP-76-<seed>-H<k>.jsonl`, `exp/EXP-76.log`, `exp/EXP-76_split_check.out`; smoke test `exp/EXP-76-smoke-76101-H2-256.jsonl`, `exp/EXP-76-smoke.log`
+
+## Summary
+- Question: on a three-fact conjunction (call it V0.5C: four witnessed roles, nine values per role, action = (role0 + role1 + role2) % 3, role3 a distractor), with stable teaching (learning_surprise from lesson 0), does `recall_heads=2` or `recall_heads=3` generalize to held-out triples better than `recall_heads=1`?
+- Why: in EXP-72b, on the two-fact V0.5B task, one held head generalized as well as two once both were fitted (held .842 vs .853 at 4096 lessons). Two heads only learned faster, and a single head's answer already depended on both relevant records. Bernhard's 0.88 note says the brain should now learn to attend to multiple learned facts. A task that needs three facts is where one head might no longer be enough.
+- Setup:
+  - Runner: Bernhard's V0.5B building blocks imported unchanged from `exp/v05b/run_v05b.py` (cadence-stone-age `5f038a3`, vendored, not edited). These are compose (modules (64,), learned_code=16, attention=True, recall_address .01, recall_temperature .25, normalized teaching, learning_qualified, damping 3, 1024 free and 1024 nudged steps, tolerance .003), warm, banks written by Recall itself for all 9^4 four-role patterns, install and answer. Small wrappers in the EXP-76 script add the three-fact label, the samplers over triples, the readings and the controls. Lessons have 16 rows, each a taught triple drawn uniformly plus a distractor value drawn uniformly, from `default_rng(1000 + seed)`. The brain is retuned to `learning_surprise=True` before lesson 0 and never switched (EXP-72; upstream `d66f8ea` docs).
+  - Arms: H1, H2, H3 (`recall_heads` 1, 2, 3). Compose accepts `recall_heads=3`: the brain reports three heads with two further address maps. A 4-lesson pass with every reading and control ran without a refusal.
+  - Founders: fresh seeds 76101, 76102, 76103, 76104, 76105; 4096 lessons; 15 jobs.
+  - Readings, on deepcopies at 256, 512, 1024, 2048 and 4096 lessons: taught accuracy over all 486 taught triples, and held accuracy over all 243 held triples. Each triple appears once, with a distractor drawn from `default_rng(99)`. Unlike EXP-72's 192 sampled rows, the panels are complete, so labels are balanced and chance is exactly 1/3. Also logged: the choice histogram, the modal share, per-class accuracy, and each head's top role record (EXP-72 found this top-1 reading uninformative; logged only).
+  - Causal controls, on the held panel at 1024 and 4096, each on its own copy of the brain. Erase one relevant role's records (role0, role1 or role2, one at a time). Erase the distractor's records. Erase all records. For H2 and H3 only, make every head read with head 0's address (the clone control).
+- The split (`exp/EXP-76_split_check.py`; full output `exp/EXP-76_split_check.out`):
+  - Held iff (r0 + r1 + 2*r2) mod 9 is 0, 1 or 2. That gives 243 held triples and 486 taught.
+  - How it was chosen: a mechanical rule. The family is held iff (r0 + b*r1 + c*r2) mod 9 lies in S, for b and c in 0..8 and S any 3-subset of 0..8 (6804 candidates; scaling the form by a unit gives the same family, so role0's coefficient is 1). The chosen split is the first candidate in (b, c, S) order that passes every check below. 1323 candidates pass the five required checks and 945 also pass the three extra checks. Those 945 are exactly the forms with b and c coprime to 9 and S holding one value of each residue mod 3, minus the 27 with the symmetric form b = c = 1.
+  - Check 1, held answers determined. The declared class of explanations: each of the nine value symbols carries a hidden residue (0, 1 or 2), the same residue in every role, and the action is some fixed function of the residue sum mod 3 (any of the 27 functions from three values to three actions). Every residue assignment (3^9) was paired with every function (27), 531441 explanations in all. Only 6 fit every taught triple. All 6 give the rule's answer on every one of the 243 held triples, so the held answers are determined. The 6 are the rule's own symmetries: adding the same constant to every residue leaves a three-term sum unchanged mod 3, and negating every residue is undone by the map. A GF(3) rank computation of the same class agrees (rank 9 of 10, 6 explanations, 243 determined).
+  - Check 2, single-fact chance: in both panels, each relevant role's value alone predicts each action equally often.
+  - Check 3, pair chance: in both panels, every value pair of any two relevant roles predicts each action equally often. The third role's values that complete a pair within a panel hold one value of each residue mod 3. So a learner that uses two of the three facts is at chance.
+  - Check 4, memorizer: no held triple is taught, so exact lookup is at chance (1/3). A nearest-neighbour memorizer also scores exactly 1/3. It takes the plurality answer of the taught triples at the least Hamming distance, with ties split evenly.
+  - Check 5, size: 243 held and 486 taught, and the taught triples identify the residues (check 1).
+  - Extra E1, role-specific residues (each role and value its own residue in Z3): the taught rows reach the full rank 25, and all 243 held triples are determined.
+  - Extra E2, shared affine Z9 codes (residue alpha*v + beta in Z9, any map of the sum mod 9 to an action): every explanation that fits taught is right on every held triple. This is the check that rejects the symmetric form (r0 + r1 + r2) mod 9. There the code v itself puts every held triple on a sum that taught never shows. Only affine codes are enumerated, not all 9^9 shared Z9 codes.
+  - Extra E3: every value pair of any two relevant roles occurs in both panels. A held triple is new only as a triple, so no held failure can come from an untaught pair.
+  - Limits: a learner with role-specific Z9 codes that match the split's own form (r0 + r1 + 2*r2) is not constrained on held. Some such class exists for any split. The five required checks also admit splits that rely on transfer across roles, such as held iff r0 is 0, 1 or 2 (the shared-residue assumption determines it). E1 and E3 reject those, which is why they were used in the choice.
+- Disclosure: designed after EXP-71 to EXP-75 (all on V0.5B) and Bernhard's V0.5B pilot, and written before any EXP-76 data except two checks. One is a smoke test: founder 76101, H2, stopped at 256 lessons. It read taught .333, held .329, modal share .998 (one action) and running wrong level .665, with no refusals. That is the early pattern of EXP-72's two-fact founders, whose levels at 256 were .53 to .66 with modal shares up to .93. The smoke's first 256 lessons are the registered run's (same seed and stream; readings do not touch training). The other check is a 4-lesson H3 pass that exercised the code path.
+- Prediction (written before running):
+  - Prior: no confident direction. One head combined two facts in EXP-72b, and three may be past one read, which favours a head gain. But EXP-72b found no gain at matched fit, so NO HEAD GAIN is as plausible. No direction is predicted for H3 against H2.
+  - Fit check, per arm: taught at least .95 at 4096 in at least 4 of 5 founders. An arm that fails it is reported FIT-LIMITED. A held gap between a fitted arm and an unfitted one measures fit or speed, not generalization (EXP-72b's lesson).
+  - Primary comparison: held at 4096, paired by founder, H2 minus H1 and H3 minus H1.
+  - HEADS HELP if, for H2 or for H3, the mean paired held difference against H1 is at least .05 and that arm's held exceeds H1's in at least 4 of 5 founders, with both arms passing the fit check.
+  - NO HEAD GAIN if both mean differences (H2 minus H1 and H3 minus H1) are below .02, with all three arms passing the fit check.
+  - ONE HEAD FIT-LIMITED if H1 fails the fit check and H2 or H3 passes it. The held numbers are reported, but this is a capacity or speed finding, not a generalization one.
+  - FIT-LIMITED, with no verdict on heads, if no multi-head arm passes the fit check.
+  - Otherwise MIXED, with the per-founder table. If exactly one multi-head arm fails the fit check while H1 passes, the verdict uses the other multi-head arm alone, and the failing arm is reported FIT-LIMITED.
+  - P2, all three facts used (reported pass or fail, separate from the head verdict): in every brain with taught at least .95 and held at least .60 at 4096, erasing any one relevant role's records drops held below .45. By pair chance, the two remaining facts alone are worth 1/3.
+  - Also reported, with no verdict: H3 minus H2; the differences at 1024 and 2048; taught minus held per arm; the distractor and clone controls.
+  - Risk: no arm may fit the three-fact task within 4096 lessons. The smoke founder was still at chance at 256.
+- Cost (smoke, one process, machine shared with other experiments, OMP_NUM_THREADS=1): setup 96 s (H2) and 101 s (H3), mostly the 6561-pattern banks. The first 256 lessons took 37 s, and the readings plus six controls took 3 s. If the per-lesson cost holds, a job is about 10 to 15 minutes, and 15 jobs are about 3 to 4 CPU-hours. The late per-lesson cost is unmeasured.
+- Run: `python -u exp/EXP-76_v05c_three_facts.py --seed <seed> --heads <k> --out exp/EXP-76-<seed>-H<k>.jsonl`, with OMP_NUM_THREADS=1.
+- Result: PENDING
+- Verdict: PENDING
+
+## Reflection
+- What it means: PENDING
+- Process: PENDING
+- Lesson: PENDING
+- Next: PENDING

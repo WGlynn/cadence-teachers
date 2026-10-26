@@ -1,0 +1,55 @@
+{"candidates": 6804, "pass_required_1_to_5": 1323, "pass_all_incl_E1_E3": 945, "candidates_failing_each_check": {"2_single_fact_chance": 3240, "3_pair_chance": 5481, "4_memorizer_chance": 5481, "E1_role_specific_determined": 108, "E2_affine_z9_determined": 108, "E3_every_pair_in_both_panels": 3024}, "first_passing_all": [[1, 1, 2], [0, 1, 2]]}
+contrast (r0+1r1+1r2)%9 in (0, 1, 2) fails: ['E2_affine_z9_determined']
+contrast (r0+0r1+0r2)%9 in (0, 1, 2) fails: ['E1_role_specific_determined', 'E3_every_pair_in_both_panels']
+contrast (r0+1r1+3r2)%9 in (0, 1, 2) fails: ['3_pair_chance', '4_memorizer_chance']
+{
+ "split": "V0.5C: held iff (r0+1r1+2r2)%9 in (0, 1, 2)",
+ "values": 9,
+ "taught_triples": 486,
+ "held_triples": 243,
+ "chance_taught": {
+  "single": true,
+  "pair": true
+ },
+ "chance_held": {
+  "single": true,
+  "pair": true
+ },
+ "held_also_taught": 0,
+ "lookup_memorizer_held_accuracy": 0.3333333333333333,
+ "nearest_neighbour_memorizer_held_accuracy": 0.3333333333333333,
+ "shared_gf3": {
+  "rank": 9,
+  "consistent_explanations": 6,
+  "held_triples_determined": 243
+ },
+ "E1_role_specific_gf3": {
+  "rank": 25,
+  "full_rank": 25,
+  "held_triples_determined": 243
+ },
+ "E2_shared_affine_z9": {
+  "consistent_explanations": 13176,
+  "consistent_explanations_right_on_every_held": 13176
+ },
+ "shared_exhaustive": {
+  "explanations_enumerated": 531441,
+  "consistent_explanations": 6,
+  "consistent_explanations_right_on_every_held": 6,
+  "held_triples_determined": 243,
+  "determined_answers_match_rule": true,
+  "worst_consistent_held_accuracy": 1.0
+ },
+ "checks": {
+  "1_held_determined": true,
+  "2_single_fact_chance": true,
+  "3_pair_chance": true,
+  "4_memorizer_chance": true,
+  "5_size": true,
+  "E1_role_specific_determined": true,
+  "E2_affine_z9_determined": true,
+  "E3_every_pair_in_both_panels": true
+ },
+ "passes_required": true,
+ "passes_all": true
+}
