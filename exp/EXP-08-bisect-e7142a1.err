@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\Will\cadence-lab\exp\EXP-08_vs_transfer_separation.py", line 157, in <module>
+    main()
+  File "C:\Users\Will\cadence-lab\exp\EXP-08_vs_transfer_separation.py", line 120, in main
+    rows = [run_seed(s) for s in SEEDS]
+            ^^^^^^^^^^^
+  File "C:\Users\Will\cadence-lab\exp\EXP-08_vs_transfer_separation.py", line 92, in run_seed
+    snap = brain0.save(os.path.join(TMP, f"exp08_anc_{seed}"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_e7142a1\src\cadence\generic.py", line 4213, in save
+    return _write(data, path)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Will\_cadence_e7142a1\src\cadence\checkpoint.py", line 124, in _write
+    temporary.replace(path)
+  File "C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1376, in replace
+    os.replace(self, target)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Will\\AppData\\Local\\Temp\\tmp41ywfgae.npz' -> 'C:\\Users\\Will\\AppData\\Local\\Temp\\exp08_anc_0.npz'

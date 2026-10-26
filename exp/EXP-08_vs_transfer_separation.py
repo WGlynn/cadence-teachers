@@ -38,7 +38,7 @@ A = 2                      # actions
 MODULES = (16, 8)
 WITNESS_STEPS = 1600       # iter2: raised with K so each context is still well-sampled
 SEEDS = range(16)          # iter2: 8 -> 16 for a tighter mean
-TMP = tempfile.gettempdir()
+TMP = tempfile.mkdtemp(prefix="exp08_")  # per-process dir: concurrent runs shared exp08_anc_{seed} (fixed 2026-10-25)
 
 onehot = lambda c: np.eye(K)[[c]]
 
