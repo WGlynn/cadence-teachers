@@ -39,11 +39,17 @@
   - Risk: no arm may fit the three-fact task within 4096 lessons. The smoke founder was still at chance at 256.
 - Cost (smoke, one process, machine shared with other experiments, OMP_NUM_THREADS=1): setup 96 s (H2) and 101 s (H3), mostly the 6561-pattern banks. The first 256 lessons took 37 s, and the readings plus six controls took 3 s. If the per-lesson cost holds, a job is about 10 to 15 minutes, and 15 jobs are about 3 to 4 CPU-hours. The late per-lesson cost is unmeasured.
 - Run: `python -u exp/EXP-76_v05c_three_facts.py --seed <seed> --heads <k> --out exp/EXP-76-<seed>-H<k>.jsonl`, with OMP_NUM_THREADS=1.
-- Result: PENDING
-- Verdict: PENDING
+- Result (Windows, numpy 2.4.2, OMP_NUM_THREADS=1, Cadence 0.88.1 d66f8ea; finished 01:14 CT 10-26). Taught / held at 4096, founders 76101..76105:
+  - H1: taught .35 / .75 / .39 / .78 / .87, held .35 / .70 / .37 / .74 / .91 (mean .616). Fit (taught >= .95): 0 of 5.
+  - H2: taught .35 / .33 / 1.00 / 1.00 / 1.00, held .34 / .32 / .98 / .99 / 1.00 (mean .726). Fit: 3 of 5.
+  - H3: taught .44 / .95 / .34 / 1.00 / 1.00, held .48 / .95 / .39 / .99 / 1.00 (mean .762). Fit: 2 of 5 (76102 just under .95).
+  - Founder 76101 stayed near chance in all three arms; collapsed or unfitted brains sit on one action (modal share .69 to .96).
+- Fit check: FAILS in every arm (needs 4 of 5). P2 (reported): PASSES. In all five brains with taught >= .95 and held >= .60 (76103 H2, 76104 H2 and H3, 76105 H2 and H3), erasing any one relevant role's records drops held to .28 to .38 (< .45). Erasing all records gives .33 everywhere.
+- Exploratory, not decisive under the pre-registered rule: H3 minus H1 held +.146 (SEM .046), H3 ahead in 5 of 5; H2 minus H1 +.109 (SEM .161), ahead in 3 of 5. Every fitted brain generalized almost fully (held .95 to 1.00).
+- Verdict: FIT-LIMITED (no multi-head arm passes the fit check), with no verdict on heads.
 
 ## Reflection
-- What it means: PENDING
-- Process: PENDING
-- Lesson: PENDING
-- Next: PENDING
+- What it means: on a three-fact conjunction, every brain that fitted the taught triples answered the held triples almost perfectly and used all three facts, so generalization is again not the ceiling. Fitting within 4096 lessons is. Multi-head brains fitted more often than one-head brains (5 of 10 fitted brains have two or three heads; no one-head brain fitted), and mean held rose with heads, but by the pre-registered rule this is a capacity or speed reading, not a generalization one. It agrees with EXP-72b: heads buy getting there, not reach once there.
+- Process: pre-registered and pushed before data (c10713e), split verified exhaustively (EXP-76_split_check.out). The smoke test warned of fit-limitation at 256 lessons; the run kept the declared 4096 budget rather than extending after seeing data. Five founders and the binary fit rule make the head comparison noisy; 76101 failed everywhere.
+- Lesson: on harder conjunctions, size the lesson budget with a pilot to 4096 on one founder per arm before committing all founders, so the fit check can pass and the heads question gets a verdict.
+- Next: a longer-budget replication (8192 lessons, fresh founders) pre-registered with the same rules, to turn the exploratory head ordering into a verdict; and tell Bernhard and Huncho that on three facts heads appear to help fitting, not generalization.

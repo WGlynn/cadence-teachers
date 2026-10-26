@@ -3355,5 +3355,39 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-76",
+  "date": "2026-10-26",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "BOUNDARY",
+  "name": "Three remembered facts: every brain that fits generalizes, but most do not fit in time",
+  "verdict_note": "pre-registered (c10713e); FIT-LIMITED by its own rule (taught >= .95 at 4096 in 4 of 5 founders: H1 0, H2 3, H3 2). P2 passes: in every fitted brain, erasing any one of the three facts drops held to chance (.28 to .38). Exploratory: mean held .616 / .726 / .762 for one / two / three heads; three heads beat one in 5 of 5 (+.146, SEM .046). Three-fact V0.5C, identifiable split (243 held, 486 taught), learning_surprise from lesson 0, Cadence 0.88.1 d66f8ea.",
+  "headline": "We asked whether more memory heads help a brain combine three remembered facts. Every brain that learned the taught examples also answered combinations it had never seen, almost perfectly, and erasing any one fact broke it. But within 4,096 lessons most brains did not learn the task at all, and none with a single head fully did. Brains with more heads learned it more often, which reads as more heads helping a brain get there rather than helping it generalize.",
+  "question": "On a three-fact conjunction with stable teaching, do two or three held heads generalize to untaught triples better than one?",
+  "process_issues": [
+   "fit-limited at the declared 4096-lesson budget, so the heads question got no verdict; the 256-lesson smoke test had warned of this"
+  ],
+  "lesson": "On a harder conjunction, size the lesson budget with a one-founder-per-arm pilot to the full budget before committing all founders.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Held accuracy at 4096 lessons, three-fact task, 5 founders",
+   "unit": "held accuracy (chance .33)",
+   "bars": [
+    {
+     "label": "one head",
+     "value": 0.616
+    },
+    {
+     "label": "two heads",
+     "value": 0.726
+    },
+    {
+     "label": "three heads",
+     "value": 0.762
+    }
+   ]
+  }
  }
 ]
