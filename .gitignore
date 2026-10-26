@@ -36,3 +36,5 @@ __pycache__/
 /tests/test_arena*.py
 /.github/workflows/arena*.yml
 /.github/ISSUE_TEMPLATE/arena*.yml
+/exp/v05b/*
+!/exp/v05b/SOURCE.md
