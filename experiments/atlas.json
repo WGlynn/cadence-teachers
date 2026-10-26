@@ -3187,5 +3187,47 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-74",
+  "date": "2026-10-25",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "NULL",
+  "name": "The calm switch does not jolt the learner; learning stops when the nudged phase takes no steps",
+  "verdict_note": "pre-registered (ed76b33); REJECTED: the step after calm engaged was .55x and .43x the step before in the two collapsing founders (bar 1.25); the control spiked 4.97x and held. Replay reproduced EXP-71 exactly at 2048 and 4096. Exploratory: from about lesson 1300 the nudged phase increasingly starts within learning_tolerance (.0025 vs .003) and takes 0 steps; in the collapsed founders this reached 100% of lessons and the weight step decayed to 1e-28 and 1e-40 with half the rows wrong. Cadence 0.88.0 b6fdc83, Bernhard's V0.5B runner.",
+  "headline": "We guessed the collapse came from an oversized learning step at the moment Bernhard's teaching rule switched modes. It did not: steps after the switch were smaller. The logs showed something else. From about lesson 1,300 the learning phase that pulls the brain toward the right answer more and more often stopped before taking a single step, because its starting error was already under the solver's 'close enough' threshold. In the two brains that collapsed, this ended all learning while half their answers were still wrong.",
+  "question": "Does switching learning_surprise on mid-training (the calm rule) give normalized teaching an oversized weight step?",
+  "process_issues": [
+   "the zero-step reading is post hoc: logged fields, not a predicted measurement; causation tested in EXP-75"
+  ],
+  "lesson": "When a learner goes quiet, log the solver's own fields per lesson. A phase that 'converges' in zero steps is the tolerance ending it before it starts.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Share of taught lessons whose nudged phase ran 0 steps, founder 59101",
+   "unit": "share of lessons",
+   "bars": [
+    {
+     "label": "lessons 1024-1280",
+     "value": 0.0
+    },
+    {
+     "label": "1536-1792",
+     "value": 0.453
+    },
+    {
+     "label": "2560-2816",
+     "value": 0.684
+    },
+    {
+     "label": "3328-3584",
+     "value": 0.996
+    },
+    {
+     "label": "3840-4096",
+     "value": 1.0
+    }
+   ]
+  }
  }
 ]
