@@ -3149,5 +3149,43 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-71",
+  "date": "2026-10-25",
+  "iter": "none",
+  "track": "memory & recall",
+  "verdict": "BOUNDARY",
+  "name": "Two remembered facts generalize once fitted, but the fit does not stay under calm teaching",
+  "verdict_note": "pre-registered (2b10a49); MIXED by its own rule: P1 holds (held/taught >= .85 at 1024, 4 of 4 fresh founders), P3 holds (two heads beat one at 1024, 4 of 4), P2 fails (more lessons help held in 1 of 4) because taught collapses toward one action after being learned, in both arms (17 founder-arm checkpoints with modal share >= .60). Reproduction gate G0 failed (59101 .64/.51 vs Bernhard's pilot .66/.65). Attention V0.5B, Bernhard's runner (5f038a3), 5 founders x H2/H1 to 4096 lessons, Cadence 0.88.0 b6fdc83, Windows.",
+  "headline": "On a task where the answer needs two remembered facts, a Cadence brain that has fitted the taught examples also answers combinations it never saw: accuracy on new combinations tracks accuracy on taught ones. The trouble is keeping the fit. Under the teaching rule used here, three of five two-head brains learned the task and then fell apart, most answers ending on one action, and one-head brains did the same. Two heads beat one early on, but not after the longer run, because the two-head brains collapsed more.",
+  "question": "On Attention V0.5B, is held accuracy limited by fitting the taught pairs or by generalizing from them, and do the misses pile onto one action?",
+  "process_issues": [
+   "reproduction gate failed against Bernhard's pilot, most likely platform (not isolated); readings are within one machine",
+   "P2 assumed stable training and it was not, so it measured stability rather than generalization"
+  ],
+  "lesson": "Before reading 'does more training help generalization', check the fit stays fitted: a collapse reads as a generalization failure if only held accuracy is watched. Read the choice histogram, not just accuracy.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Held accuracy, V0.5B, calm teaching rule, 5 founders",
+   "unit": "held accuracy (chance .33)",
+   "bars": [
+    {
+     "label": "two heads at 1024 lessons",
+     "value": 0.672,
+     "sem": 0.066
+    },
+    {
+     "label": "two heads at 4096 lessons",
+     "value": 0.526,
+     "sem": 0.112
+    },
+    {
+     "label": "one head at 4096 lessons",
+     "value": 0.624,
+     "sem": 0.131
+    }
+   ]
+  }
  }
 ]

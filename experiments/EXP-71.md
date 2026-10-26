@@ -14,11 +14,19 @@
   - P3: H2 > H1 on held at 1024 in at least 3 of 4 fresh founders (replicates the pilot's direction).
   - P4 (collapse, no direction claimed): reported, not predicted. Collapse is defined as a modal share of predicted actions >= .60 on a panel whose labels are near-balanced (each action about a third).
   - Verdict rule: FIT-LIMITED if P1 and P2 hold. GENERALIZATION-LIMITED if H2 taught >= .95 at 4096 while H2 held <= taught - .15, in at least 3 of 4 fresh founders. Otherwise MIXED, with the per-founder table.
-- Result: PENDING
-- Verdict: PENDING
+- Result (Windows 10, CPython 3.12.10, numpy 2.4.2, OMP_NUM_THREADS=1; all 10 jobs finished 22:25 CT). Taught / held / modal share on the taught panel, H2 then H1:
+  - 59101: H2 1024 .64/.51/.56, 2048 .99/.83/.39, 4096 .39/.35/.88 (calm from 1864). H1 4096 1.00/.92/.39 (calm from 2342).
+  - 59201: H2 2048 and 4096 .36/.38/.97 (never calm). H1 4096 .65/.61/.64.
+  - 59202: H2 1024 .94/.86/.38, 2048 .58/.51/.75, 4096 .68/.51/.65 (never calm). H1 4096 .39/.31/1.00.
+  - 59203: H2 2048 and 4096 1.00/.96/.39 (calm from 1260). H1 4096 1.00/.92/.39.
+  - 59204: H2 1024 .89/.76/.42, 4096 .50/.43/.89 (calm from 1682). H1 4096 .52/.36/.88.
+  - Means over all five: H2 held .672 at 1024 and .526 at 4096; H1 held .451 at 1024 and .626 at 4096.
+- G0: FAILED. Founder 59101 at 1024 reads taught .64 / held .51 against Bernhard's pilot .66 / .65 (controls also differ). Most likely a different floating-point path (his machine vs Windows with numpy 2.4.2; not isolated). The fresh-founder readings below are within one machine.
+- Predictions: P1 HOLDS (H2 held/taught >= .85 at 1024 in 4 of 4 fresh founders). P2 FAILS (H2 held at 4096 > at 1024 in 1 of 4). P3 HOLDS (H2 > H1 held at 1024 in 4 of 4). Generalization-limited rule: 0 of 4. P4 (collapse, reported): yes. A modal share of .60 or more on the near-balanced taught panel appears at 1024 or later in 17 founder-arm checkpoints, in both arms. 59202's H1 ends with every answer on one action.
+- Verdict: MIXED (P1 and P3 hold, P2 fails, not generalization-limited).
 
 ## Reflection
-- What it means: PENDING
-- Process: PENDING
-- Lesson: PENDING
-- Next: PENDING
+- What it means: held follows taught closely wherever taught is high (ratio .85 or more at 1024; 59203 1.00/.96 at 4096). So on V0.5B the conjunction generalizes once the taught pairs are fitted; generalization is not the ceiling. P2 failed for a different reason: under the calm rule the fit itself does not stay, and taught collapses toward one action after being learned, in both arms. EXP-72 shows that teaching only wrong rows from lesson 0 removes it for H2. The heads comparison depends on training length under this rule: H2 > H1 at 1024 in 4 of 4, but H1 ahead on average at 4096 because H2 collapsed more. So "two heads beat one" needs a comparison under stable teaching (EXP-72b).
+- Process: pre-registered and pushed before data (2b10a49). G0 failed, most likely from platform differences (not isolated), and was declared non-voiding in advance. Readings were taken on deepcopies, and EXP-74's copy-free replay reproduced the 2048 numbers exactly for three founders, so the readings did not perturb training. The verdict rule's P2 assumed training is stable, and it was not, so P2 measured stability, not generalization. Ran beside other jobs (up to 13 processes on 6 cores); this affects time only.
+- Lesson: before reading "does more training help generalization", check the fit stays fitted; a collapse reads as a generalization failure if only held is watched. Read the choice histogram, not just accuracy.
+- Next: EXP-72 (surprise from lesson 0, H2): PREVENTS. EXP-72b (same for H1) for the heads question. EXP-74 for the mechanism of the calm-rule collapse.
