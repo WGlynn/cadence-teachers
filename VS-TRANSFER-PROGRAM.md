@@ -66,6 +66,7 @@ A chain of increasingly hard bars. Each is a real milestone; ping Will on each c
   content: know-max minus the form-matched null > 0 by 2 SEM, with that null and the counterfactual rule
   committed in advance. Evidence so far: fails on the default 0.83 memory brain (EXP-52/53/55/61); holds
   on the delayed-credit brain (EXP-58, +.469, 11 SEM). (Added 2026-10-16.)
+  [STATUS 2026-10-25: CROSSED on the delayed-credit brain, Cadence v0.84.3 (EXP-73, 216 fresh students): know-1..4 +.057 / +.163 / +.269 / +.436, Spearman .638; zero = measured-chance arms (labels right .200 / .203); every knowledge-free arm under the 1/32 margin; know-1 beats anti-echo by 4.0 SEM; knowledge-free pay .023. Fifth zero attempt (disclosed); EXP-62e's original rule also passes on this data. Pinned to v0.84.3 until the harness is ported.]
 - **M2 — feature-matched fake.** Separation survives a fake matched on ALL interior features the
   paper's impossibility uses (novelty, synergy, acyclic topology, content-stats), not just surface
   stats. This is the adversary class of wash_sim.rs. Here it is matched by construction (EXP-10's
@@ -126,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 `experiments/TEMPLATE.md`), including nulls, voids and reruns. `python experiments/check.py` must pass.
 
 ## FRONTIER (update every fire — one line: where we actually are)
+
+2026-10-25 (iter47, EXP-73 CROSSED, on v0.84.3, Will's go): **M1b crossed**, the first milestone since 10-09. Transfer prices skill on the delayed-credit brain against a measured-chance zero (know-1..4 +.057 / +.163 / +.269 / +.436, Spearman .638), every knowledge-free arm under the margin, know-1 beats anti-echo by 4.0 SEM. Fifth zero attempt, disclosed; EXP-62e's original rule also passes on this data. Same night, off-ladder: EXP-71/72/72b/74/75 on Bernhard's V0.5B runner; upstream docs adopted EXP-72 (main d66f8ea). Next: port the EXP-62 harness to the current API and re-cross on a current release.
 
 2026-10-23 (iter46, EXP-05 VOID by its own check, on 0.85.1 + 41 main 4ac887c, library & tooling): the snapshot/restore identity test stopped at check k4. After youth both test brains settled on one greedy action, so 6 of 14 continuations had a single action, and no data life ran. In the check life alone, every fresh-process restore and every deepcopy / save-load fork ended on the uninterrupted brain's checkpoint bytes (14/14). Event records matched in 52 of 56; the other 4 differ only in `last_arousal`, which a load clears by documentation. Off the V(S) ladder; no milestone moves. Next: EXP-05b (behaviour-piloted task, `last_arousal` compared at `live` only).
 2026-10-22 (iter45, EXP-69b VOID, check on v0.85.0): Cadence 0.85 moved the episodic machinery into `memories.EpisodicRecords` (`4894ef0`), so the EXP-68/69 harness no longer imports and the pre-registered code gate voided the run before any data. EXP-08 on 0.85.1 still SEPARATES (+0.422 / -0.148 / -0.578; pinned to the 0.84.3 laws it is byte-identical). Off the V(S) ladder; no milestone moves. Next: port the harness to `EpisodicRecords` with an equivalence reading, then EXP-69c / EXP-70 (both need Will's go; 0.85.1 adds `live(salience=)`).
@@ -211,6 +214,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter47 (2026-10-25): EXP-73, M1b with a measured-chance zero: CROSSED
+- Version: Cadence v0.84.3 (worktree; the EXP-62 harness does not run on 0.85+). Pre-registered 042fccb, identity gate IDENTICAL.
+- Result: CONFIRM on all six criteria (experiments/EXP-73.md). Also passes EXP-62e's original rule (anti-echo upper bound .021 < .031).
+- Milestone: M1b CROSSED on one instrument. Will told in session (live).
 
 ### iter46 (2026-10-23): EXP-05, mid-stream snapshot/restore byte identity: VOID
 - Cadence 0.85.1 + 41 commits, main `4ac887c`. Pre-registered `6d710c3`. The check (life 99, plain and learned-code brains, 76 s) failed k4: after 6 of 14 cuts the reference continued with one action. The design's task did not keep the policy moving after youth, and the post-reversal cuts did not occur. No data life ran. Seen in the check only: final checkpoint bytes identical at 14/14 restores and 14/14 forks; event records identical in 52 of 56, the other 4 differing only in `last_arousal` (None after load, documented). Write-up experiments/EXP-05.md, results row, atlas iter46. EXP-05b queued.

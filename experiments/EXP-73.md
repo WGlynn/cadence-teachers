@@ -36,14 +36,15 @@ The strongest objection, answered here: anti-echo is the arm that failed EXP-62e
 **Cost.** About an hour at 4 workers on an idle machine (EXP-62e: 216 students x 10 twins in 3,784 s). Starts after EXP-71 and EXP-72 finish.
 
 ## Summary
-- Question: PENDING
-- Setup: PENDING
-- Prediction: see the pre-registration above.
-- Result: PENDING
-- Verdict: PENDING
+- Question: does transfer price skill on the delayed-credit brain against a zero built only from arms whose labels are right at chance, with the weakest real teacher still out-earning anti-echo?
+- Setup: EXP-62's harness on Cadence v0.84.3 (identity gate IDENTICAL on EXP-62e student 0; the harness does not run on 0.85+, which refuses `working_memory_scale`). 216 fresh students (seeds 8_200_000+), lesson 80, 10 arms, zero = mean of {null, untaught, random}. 4,764 s at 4 workers (shared CPU).
+- Prediction: see the pre-registration above (know-1..4 near +.075 / +.15 / +.26 / +.42; CONFIRM expected; main risk untaught's upper bound).
+- Result: zero .439. know-1..4 +.057 / +.163 / +.269 / +.436 (SEM .010-.012), ordered, Spearman .638 (n 864). Zero admission: labels right .200 [.196, .204] (null, n 40,291) and .203 [.199, .207] (random, n 40,333): admitted. Margin upper bounds: null +.017, untaught +.014, random +.002, wrong-chain -.064, echo -.120 (all < .03125). know-1 beats null / untaught / random by 4.30 / 4.58 / 5.66 SEM and anti-echo by 4.0 SEM (anti-echo worth +.014, SEM .009; its labels right .253). Knowledge-free arms take .023 of pay. No kill.
+- Reported, not decisive (as pre-registered): EXP-62e's original rule on the same data (zero including anti-echo, anti-echo inside the margin test) also gives CONFIRM: anti-echo upper bound +.021 against .031, know-1 beats anti-echo by 3.99 SEM, fake pay .013.
+- Verdict: CROSSED (CONFIRM by the pre-registered rule): M1b on instrument I (the delayed-credit brain, Cadence v0.84.3) against a zero of measured-chance information.
 
 ## Reflection
-- What it means: PENDING
-- Process: PENDING
-- Lesson: PENDING
-- Next: PENDING
+- What it means: the skill price replicates a fifth time on a fifth disjoint student set, and this time every criterion holds. M1b is crossed on one instrument. Limits, unchanged by the crossing: one brain (delayed-credit), one chamber, one lesson length, a pinned old Cadence (v0.84.3; the harness needs a port to run on current releases); the default brain still does not take in content (EXP-52, EXP-61); anti-echo, which needs no task knowledge, still earns a little (+.014), in proportion to the information the corrective schedule leaks to it.
+- Process: this was the fifth zero-point attempt and broke EXP-62e's "no further redesign" commitment, on Will's go, disclosed before data. The decisive check of that history came out in its favour and against its necessity at once: EXP-62e's original rule also passes on this data. So the crossing does not depend on the redesign. A fresh draw passed the old rule too, and EXP-62e's .002 miss was sampling noise around a real but small anti-echo edge. The new rule passes with wide margins; the old one sits near its noise floor on anti-echo.
+- Lesson: when a near-miss is followed by a rule change, also score the new data under the old rule. If both pass, the rule change was not doing the work, and saying so is the honest report.
+- Next: port the EXP-62 harness to the current Cadence API and re-cross on a current release (otherwise M1b is pinned to v0.84.3); then the next rung (instrument dependence, EXP-62b line) on the current API.

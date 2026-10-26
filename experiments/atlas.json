@@ -3302,5 +3302,58 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-73",
+  "date": "2026-10-25",
+  "iter": "iter47",
+  "track": "attribution (M1-M5)",
+  "verdict": "CROSSED",
+  "name": "M1b crossed: transfer prices skill against a zero of measured chance",
+  "verdict_note": "pre-registered (042fccb); CONFIRM on all six criteria: know-1..4 +.057 / +.163 / +.269 / +.436 (Spearman .638, n 864); zero = null, untaught and random, whose labels were right .200 / .203 (admitted); every knowledge-free arm under the 1/32 margin; know-1 beats anti-echo by 4.0 SEM; knowledge-free arms take .023 of pay. Fifth zero-point attempt, disclosed before data; EXP-62e's original rule also passes on this data. Delayed-credit brain, 216 fresh students, Cadence v0.84.3 (the harness needs a port for 0.85+).",
+  "headline": "This was the fifth try at a question four earlier runs had missed by a hair: does measuring what a student gains price real teaching above teaching that knows nothing? On 216 new students, all four levels of real knowledge earned in order, from 6 to 44 points above the zero, and every teacher with no task knowledge earned about nothing. Even the cleverest knowledge-free teacher, one that just says try something else, lost to the weakest real teacher by four standard errors. The data also passes the stricter rule the previous attempt missed.",
+  "question": "Does transfer price skill on the delayed-credit brain against a zero of arms whose labels are right at chance, with the weakest real teacher out-earning the best knowledge-free one?",
+  "process_issues": [
+   "fifth zero-point attempt, breaking EXP-62e's no-further-redesign commitment (Will's go, disclosed before data); the old rule also passes on this data, so the redesign did not do the work",
+   "run on a pinned Cadence v0.84.3: the EXP-62 harness does not run on 0.85+ (working_memory_scale refused)"
+  ],
+  "lesson": "When a near-miss is followed by a rule change, also score the new data under the old rule; if both pass, say the rule change was not doing the work.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Worth above the measured-chance zero, 216 fresh students",
+   "unit": "accuracy gain over the zero (16 unseen states)",
+   "bars": [
+    {
+     "label": "know-1",
+     "value": 0.057,
+     "sem": 0.01
+    },
+    {
+     "label": "know-2",
+     "value": 0.163,
+     "sem": 0.01
+    },
+    {
+     "label": "know-3",
+     "value": 0.269,
+     "sem": 0.012
+    },
+    {
+     "label": "know-4",
+     "value": 0.436,
+     "sem": 0.01
+    },
+    {
+     "label": "anti-echo (no task knowledge)",
+     "value": 0.014,
+     "sem": 0.009
+    },
+    {
+     "label": "random labels",
+     "value": -0.009,
+     "sem": 0.007
+    }
+   ]
+  }
  }
 ]
