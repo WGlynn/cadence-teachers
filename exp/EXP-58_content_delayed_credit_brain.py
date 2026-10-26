@@ -31,9 +31,16 @@ OURS = dict(modules=(32,), eta=0.1, eta_bias=0.01, lam=0.95, gamma=0.95, eta_cri
 
 def compose(seed):
     import cadence as cd
-    b = cd.Brain.compose(10, 5, modules=OURS["modules"], seed=int(seed), consolidation=OURS["consolidation"],
-                         working_memory_amplitude=OURS["working_memory_amplitude"],
-                         working_memory_scale=12.0, working_memory_decay=0.2)   # EXP-45's (0.81) composition
+    kw = dict(modules=OURS["modules"], seed=int(seed), consolidation=OURS["consolidation"],
+              working_memory_amplitude=OURS["working_memory_amplitude"], working_memory_decay=0.2)
+    if os.environ.get("LATERAL"):                       # EXP-77 port gate: pin 0.84.3's unset lateral (-0.5) on 0.85+
+        kw["lateral"] = float(os.environ["LATERAL"])
+    try:
+        b = cd.Brain.compose(10, 5, working_memory_scale=12.0, **kw)    # EXP-45's (0.81) composition
+    except ValueError as e:                             # 0.85+ refuses the old name: same scale under its new name
+        if "scales=" not in str(e):
+            raise
+        b = cd.Brain.compose(10, 5, scales={"trace": 12.0}, **kw)
     b.basal_ganglia.config = replace(b.basal_ganglia.config, **{k: OURS[k] for k in ("eta", "eta_bias", "lam", "gamma", "eta_critic")})
     return b
 
