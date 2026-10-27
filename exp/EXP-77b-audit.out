@@ -1,0 +1,8 @@
+shares by action [0.1997, 0.1999, 0.1999, 0.2006, 0.1998]  hit 0.1995  hit by right [0.1996, 0.2003, 0.1985, 0.1995]
+  code_route     PASS
+  code_branch    PASS
+  blind          PASS
+  shares         PASS
+  hit_rate       PASS
+  hit_by_right   PASS
+ADMITTED BY CONSTRUCTION

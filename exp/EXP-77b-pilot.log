@@ -1,0 +1,31 @@
+EXP-77b [pilot]: cadence 0.89.0 at C:\Users\Will\_cadence_study\src\cadence; 6 students to go (0 done); seeds 8990000+; lengths [80]
+  L 80 st 2: null 0.38 untaught 0.50 | know-1 0.75 know-2 0.50 know-3 0.56 know-4 0.56 random 0.31 wrong-chain 0.38 echo 0.00 anti-echo 0.44 (88.7s)
+  L 80 st 0: null 0.31 untaught 0.62 | know-1 0.69 know-2 0.75 know-3 0.75 know-4 0.75 random 0.50 wrong-chain 0.25 echo 0.44 anti-echo 0.56 (89.5s)
+  L 80 st 3: null 0.25 untaught 0.38 | know-1 0.25 know-2 0.69 know-3 0.69 know-4 1.00 random 0.50 wrong-chain 0.50 echo 0.25 anti-echo 0.50 (95.5s)
+  L 80 st 1: null 0.75 untaught 0.62 | know-1 0.69 know-2 0.50 know-3 0.69 know-4 1.00 random 0.69 wrong-chain 0.25 echo 0.25 anti-echo 0.38 (98.1s)
+  L 80 st 5: null 0.25 untaught 0.31 | know-1 0.25 know-2 0.75 know-3 0.81 know-4 0.94 random 0.31 wrong-chain 0.44 echo 0.44 anti-echo 0.44 (75.8s)
+  L 80 st 4: null 0.56 untaught 0.25 | know-1 0.69 know-2 0.75 know-3 0.75 know-4 1.00 random 0.50 wrong-chain 0.25 echo 0.38 anti-echo 0.44 (77.3s)
+
+EXP-77b [pilot] summary (167s); worth = arm - mean of ['null', 'untaught', 'random'], same student
+    old interval check (reported, not decisive): admitted
+
+  lesson 80: n=6  zero = mean of ['null', 'untaught', 'random'] = 0.444
+    arm             acc   worth    sem  w/sem    pay
+    know-1        0.552  +0.108  0.077  +1.39  0.000
+    know-2        0.656  +0.212  0.092  +2.29  0.234
+    know-3        0.708  +0.264  0.071  +3.73  0.291
+    know-4        0.875  +0.431  0.084  +5.14  0.475
+    null          0.417  -0.028  0.045  -0.62  0.000
+    untaught      0.448  +0.003  0.049  +0.07  0.000
+    random        0.469  +0.024  0.028  +0.86  0.000
+    anti-echo     0.458  +0.014  0.069  +0.20  0.000
+    wrong-chain   0.344  -0.101  0.092  -1.09  0.000
+    echo          0.292  -0.153  0.091  -1.67  0.000
+    know-1 minus uninformative arm (paired): null +0.135 (1.70 SEM)  untaught +0.104 (1.23 SEM)  random +0.083 (0.85 SEM)
+    Spearman(worth, k) = 0.596 (n=24)  ordered=True  fake pay share = 0.000
+    criteria: {'ordered_and_spearman': False, 'know4_ge_2': True, 'nonsuperiority': False, 'know1_beats_zero_by_2sem': False, 'know1_beats_anti_echo_by_2sem': False, 'fake_pay_le_10': True}  kill=False  -> BOUNDARY
+    upper bounds (worth + 1.645 SEM) vs margin 1/32: null +0.046  untaught +0.084  random +0.071  wrong-chain +0.051  echo -0.002
+    anti-echo worth +0.014 (sem 0.069); know-1 minus anti-echo +0.094 (0.9 SEM)
+    label information: null 0.214 [0.190, 0.238] n=1099  random 0.200 [0.176, 0.224] n=1095  anti-echo 0.253 [0.227, 0.278] n=1081
+    fake pay share over all knowledge-free arms 0.000
+    criteria {'ordered_and_spearman': False, 'know4_ge_2': True, 'nonsuperiority': False, 'know1_beats_zero_by_2sem': False, 'know1_beats_anti_echo_by_2sem': False, 'fake_pay_le_10': True}  zero admitted True  kill False  -> BOUNDARY

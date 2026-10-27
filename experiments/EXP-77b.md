@@ -41,6 +41,11 @@ If any check fails, EXP-77b is VOID before any run. The per-run binomial interva
 
 **Cost.** About 50 to 80 minutes at 4 workers (EXP-77: 3,080 s), run detached; audit and pilot a few minutes.
 
+## Status (2026-10-27)
+- Construction audit run before the pilot: ADMITTED BY CONSTRUCTION (all six checks pass; 10^6 labels, shares .1997-.2006, hit .1995; `exp/EXP-77b-audit.out`).
+- Pilot (6 students, seeds 8_990_000+): stop check passed, know-4 worth +.431 (>= .10). Pilot data never enters the verdict (`exp/EXP-77b-pilot.log`).
+- Full run (216 students, seeds 9_000_000+) NOT STARTED: held by Will on 2026-10-27 (token budget given to the ETM doc sweep). Start with `TAG=full WORKERS=4 python -u EXP-77b_m1b_construction_zero.py` from `exp/`; the rules above stand unchanged.
+
 ## Summary
 - PENDING (to be written after the run)
 
