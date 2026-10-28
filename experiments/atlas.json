@@ -3442,5 +3442,58 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-77b",
+  "date": "2026-10-27",
+  "iter": "iter49",
+  "track": "attribution (M1-M5)",
+  "verdict": "CROSSED",
+  "name": "M1b crossed on Cadence 0.89.0, with the zero admitted by construction",
+  "verdict_note": "pre-registered (4eb09f6); EXP-77 exactly on Cadence 0.89.0 (81345d8) at the founder lateral 0.0, fresh seeds (9_000_000+), one rule changed: the zero admitted by construction (audit ADMITTED before the pilot: code route, blindness, 10^6 seeded labels, hit rate .1995). CONFIRM on all six criteria: know-1..4 +.075 / +.157 / +.249 / +.385 (Spearman .549, n 864); every knowledge-free arm under the 1/32 margin (untaught +.021 the highest upper bound); know-1 beats null / untaught / random by 6.54 / 5.70 / 8.10 SEM and anti-echo by 5.7 SEM; knowledge-free pay .005. The old per-run interval check also passes (null .1993, random .1987, both intervals contain .20), so the rule change did not do the work. EXP-77 stays VOID.",
+  "headline": "We ran the milestone test again on the newest Cadence release, this time checking the random labels by how they are made instead of by a sample. Real teaching earned in order, from 7.5 to 38.5 points above the zero, and no teacher without task knowledge earned more than 1.5 points. The weakest real teacher beat the best knowledge-free one by 5.7 standard errors. The old sample check, which voided the last run by bad luck, passed this time too, so the rule change was not what made the result.",
+  "question": "Does M1b hold on the current release (0.89.0) under its own defaults when the zero is admitted by construction instead of by a per-run sample test?",
+  "process_issues": [
+   "rule changed after a near-miss (EXP-77's admission check), on Will's go and disclosed before data; the old check also passes on this data, so the change did not do the work",
+   "the harness's spearman breaks ties by position, not by averaging; tie-averaged Spearman is .563 against the registered .549 (criterion unaffected; same function scored EXP-73 and EXP-77)"
+  ],
+  "lesson": "When a rule is changed after a near-miss, score the new data under the old rule too; if both pass, say the change removed a risk but did not make the result.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Worth above the measured-chance zero on Cadence 0.89.0, 216 fresh students",
+   "unit": "accuracy gain over the zero (16 unseen states)",
+   "bars": [
+    {
+     "label": "know-1",
+     "value": 0.075,
+     "sem": 0.01
+    },
+    {
+     "label": "know-2",
+     "value": 0.157,
+     "sem": 0.013
+    },
+    {
+     "label": "know-3",
+     "value": 0.249,
+     "sem": 0.012
+    },
+    {
+     "label": "know-4",
+     "value": 0.385,
+     "sem": 0.013
+    },
+    {
+     "label": "anti-echo (no task knowledge)",
+     "value": 0.015,
+     "sem": 0.009
+    },
+    {
+     "label": "random labels",
+     "value": -0.009,
+     "sem": 0.005
+    }
+   ]
+  }
  }
 ]

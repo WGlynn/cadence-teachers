@@ -66,7 +66,7 @@ A chain of increasingly hard bars. Each is a real milestone; ping Will on each c
   content: know-max minus the form-matched null > 0 by 2 SEM, with that null and the counterfactual rule
   committed in advance. Evidence so far: fails on the default 0.83 memory brain (EXP-52/53/55/61); holds
   on the delayed-credit brain (EXP-58, +.469, 11 SEM). (Added 2026-10-16.)
-  [STATUS 2026-10-25: CROSSED on the delayed-credit brain, Cadence v0.84.3 (EXP-73, 216 fresh students): know-1..4 +.057 / +.163 / +.269 / +.436, Spearman .638; zero = measured-chance arms (labels right .200 / .203); every knowledge-free arm under the 1/32 margin; know-1 beats anti-echo by 4.0 SEM; knowledge-free pay .023. Fifth zero attempt (disclosed); EXP-62e's original rule also passes on this data. Pinned to v0.84.3 until the harness is ported.]
+  [STATUS 2026-10-27: CROSSED on the delayed-credit brain on two releases, v0.84.3 (EXP-73) and 0.89.0 (EXP-77b). v0.84.3 (EXP-73, 216 fresh students): know-1..4 +.057 / +.163 / +.269 / +.436, Spearman .638; zero = measured-chance arms (labels right .200 / .203); every knowledge-free arm under the 1/32 margin; know-1 beats anti-echo by 4.0 SEM; knowledge-free pay .023. Fifth zero attempt (disclosed); EXP-62e's original rule also passes on this data. 0.89.0 under its founder defaults (EXP-77b, 216 fresh students, harness ported, zero admitted by construction): know-1..4 +.075 / +.157 / +.249 / +.385, Spearman .549; every knowledge-free arm under the 1/32 margin (untaught +.021 the highest); know-1 beats anti-echo by 5.7 SEM; knowledge-free pay .005; the old per-run interval check also passes (null .1993, random .1987). EXP-77 (0.88.1) is VOID by that interval check and not re-scored. Limits: one instrument, one chamber, one lesson length.]
 - **M2 — feature-matched fake.** Separation survives a fake matched on ALL interior features the
   paper's impossibility uses (novelty, synergy, acyclic topology, content-stats), not just surface
   stats. This is the adversary class of wash_sim.rs. Here it is matched by construction (EXP-10's
@@ -127,6 +127,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 `experiments/TEMPLATE.md`), including nulls, voids and reruns. `python experiments/check.py` must pass.
 
 ## FRONTIER (update every fire — one line: where we actually are)
+
+2026-10-27 (iter49, EXP-77b CROSSED, on 0.89.0 81345d8): **M1b crossed on the current release.** Will lifted the hold; the full run finished 216/216 (3,284 s). All six CONFIRM criteria hold at 0.89.0's founder lateral: know-1..4 +.075 / +.157 / +.249 / +.385, Spearman .549, every knowledge-free arm under the 1/32 margin (untaught +.021 the highest), know-1 beats anti-echo by 5.7 SEM, knowledge-free pay .005; zero admitted by construction. The old per-run interval check also passes (null .1993, random .1987), so the rule change did not do the work. EXP-77 stays VOID. M1b is now crossed on v0.84.3 (EXP-73) and 0.89.0 (EXP-77b), one instrument. Next: the next rung on the current API (instrument dependence, EXP-62b / 62h / 62i line), or CAL-1 / CAL-2 (Will-gated).
 
 2026-10-27 (iter49, EXP-77b PRE-REGISTERED, HELD, on 0.89.0 81345d8): Will's go for admission by construction (pre-reg 4eb09f6). Port gate IDENTICAL on 0.89.0 (the new recall position term does not reach this brain); construction audit ADMITTED; pilot stop check passed (know-4 +.431). Full run held by Will (token budget to the ETM doc sweep). No milestone moves. Next: the full run when Will lifts the hold.
 
@@ -218,6 +220,11 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter49 (2026-10-27): EXP-77b, M1b on Cadence 0.89.0, zero admitted by construction: CROSSED
+- Version: Cadence 0.89.0 (`81345d8`). Pre-registered `4eb09f6` (Will's go for the one rule change: zero admitted by construction, the old per-run interval reported only); port gate with lateral -0.5 IDENTICAL to EXP-62e student 0; construction audit ADMITTED; pilot passed its stop check (know-4 +.431). Full run held by Will, then run 16:47 to about 17:40 (216/216, 3,284 s).
+- Result: CONFIRM on all six criteria (experiments/EXP-77b.md): know-1..4 +.075 / +.157 / +.249 / +.385, Spearman .549, know-1 beats anti-echo by 5.7 SEM, knowledge-free pay .005. The old interval check also passes (null .1993 [.1954, .2032], random .1987 [.1948, .2026]), so the rule change did not do the work. EXP-77 stays VOID.
+- Milestone: M1b now crossed on two releases, v0.84.3 (EXP-73) and 0.89.0 (EXP-77b), on one instrument.
 
 ### iter48 (2026-10-26): EXP-77, M1b on Cadence 0.88.1 (founder lateral): VOID
 - Version: Cadence 0.88.1 (`d66f8ea`). Harness ported (EXP-58 compose: `scales={'trace': 12.0}` when the old name is refused); gate with lateral -0.5 IDENTICAL to EXP-62e student 0. Pre-registered `1f5f677`; pilot passed its stop check.
