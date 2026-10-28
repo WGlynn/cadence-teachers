@@ -3495,5 +3495,20 @@
     }
    ]
   }
+ },
+ {
+  "id": "EXP-78",
+  "date": "2026-10-28",
+  "iter": "none (off-ladder)",
+  "track": "teaching regime (outside demo)",
+  "verdict": "NULL",
+  "name": "Surprise lessons do not rescue the recall arms in Sean McClane's Breakout demo",
+  "verdict_note": "pre-registered (b028b0e); Sean's cadence-arcade harness (c8a5e4c) unchanged on Cadence 0.89.0, one flag added (learning_surprise=True), seeds 10-21; his logged every-row runs admitted as baselines by an exact identity check on seed 10. Surprise worse on every arm and seed: pos32 2.21 vs 6.04 bricks (0/12 wins, p .0005), pos0 2.22 vs 5.80 (0/12), norecall 3.88 vs 7.08 (0/12); low-agreement recall lives 17/24 vs 4/24. Training agreement under surprise plateaued at .70-.79, about 270 lessons a block instead of 1,000.",
+  "headline": "A fix that saved our two-fact task (teach only the moments the student gets wrong) made Sean's Breakout players worse on every seed, by about two thirds. His players never had the problem that fix addresses: their agreement with the coach stayed high. Teaching only the contested moments starved them of lessons and they plateaued at 70 to 79 percent agreement.",
+  "question": "Does switching Sean's single-frame Breakout students from every-row lessons to surprise lessons raise the recall arms, as it did for V0.5B in EXP-72?",
+  "process_issues": [],
+  "lesson": "Before porting a fix across tasks, check that the target task shows the symptom the fix addresses. Sean's recall lives never collapsed; surprise lessons only starved them.",
+  "quote_worthy": "",
+  "chart": {}
  }
 ]

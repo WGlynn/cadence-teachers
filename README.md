@@ -9,7 +9,7 @@ page, with charts, verdicts, and the mistakes we made along the way (also at `ex
 
 ## Honest floor first
 
-Small Cadence brains, small tasks (bandits, a key-door world), one PC. <!-- counts:start -->85 experiments so far: 6 crossed, 34 supportive, 18 boundary, 15 null, 5 void, 1 retracted, 6 superseded.<!-- counts:end --> Every bug we caught in our own scripts is kept on the atlas, with the rerun.
+Small Cadence brains, small tasks (bandits, a key-door world), one PC. <!-- counts:start -->86 experiments so far: 6 crossed, 34 supportive, 18 boundary, 16 null, 5 void, 1 retracted, 6 superseded.<!-- counts:end --> Every bug we caught in our own scripts is kept on the atlas, with the rerun.
 Nothing here has been shown at scale, and nulls and retractions are kept, not hidden.
 
 ## What we have measured (see the write-ups for numbers and caveats)

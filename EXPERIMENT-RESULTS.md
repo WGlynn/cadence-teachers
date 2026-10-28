@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-78: surprise lessons on Sean McClane's single-frame Breakout: worse on every arm and seed, NOT SUPPORTED - 2026-10-28
+- **Version:** Cadence 0.89.0 (`81345d8`, pinned venv), harness `sean-mcclane832/cadence-arcade` `c8a5e4c` unchanged + `learning_surprise=True`. **Script:** `exp/EXP-78-run.sh`, analysis `exp/EXP-78_analyze.py`. Pre-registered `b028b0e`.
+- **Result:** pos32 2.21 vs 6.04 bricks (0/12 wins, p .0005), pos0 2.22 vs 5.80 (0/12), norecall 3.88 vs 7.08 (0/12); low-agreement recall lives 17/24 vs 4/24. Identity check on seed 10 matched his log exactly.
+- **Verdict: NOT SUPPORTED.** Surprise lessons taught ~270 moments a block instead of 1,000 and plateaued at .70-.79 training agreement. EXP-72's collapse fix does not transfer to a task that never collapsed. Write-up: experiments/EXP-78.md.
+
 ## EXP-77b: M1b on Cadence 0.89.0, zero admitted by construction: all six criteria pass, CROSSED - 2026-10-27
 - **Version:** Cadence 0.89.0, main `81345d8`. **Script:** `exp/EXP-77b_m1b_construction_zero.py` (EXP-77 exactly, one rule changed); admission `exp/EXP-77b_construction_audit.py`. Pre-registered `4eb09f6`. Port gate on 0.89.0 with lateral -0.5: IDENTICAL. Construction audit before the pilot: ADMITTED BY CONSTRUCTION (code route, blindness, 10^6 seeded labels, hit rate .1995). Run at the founder lateral 0.0, 216 fresh students (9_000_000+), lesson 80, 3,284 s at 4 workers.
 - **Result:** zero .446. know-1..4 +.075 / +.157 / +.249 / +.385, Spearman .549 (n 864); margin upper bounds all < 1/32 (untaught +.021 the highest); know-1 beats null / untaught / random by 6.54 / 5.70 / 8.10 SEM and anti-echo by 5.7 SEM; knowledge-free pay .005. All six CONFIRM criteria hold; no kill. Old per-run interval check (reported, not decisive): null .1993 [.1954, .2032], random .1987 [.1948, .2026], both contain .20: passed.
