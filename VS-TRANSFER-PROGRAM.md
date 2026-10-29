@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-29 (iter50, EXP-05b SUPPORTIVE, on 0.91.1 c9c8080, library & tooling): a brain saved mid-life (pending action, mid-wait, after either reset) continues bit for bit in a fresh process, and deepcopy forks equal save/load forks, on three brains (apical included) over 108 cuts. Off the V(S) ladder; no milestone moves. The V(S) program is still waiting on Will: CAL-1 (draft in experiments/CAL-1.md), CAL-2, or the registered zero test.
+
 2026-10-27 (iter49, EXP-77b CROSSED, on 0.89.0 81345d8): **M1b crossed on the current release.** Will lifted the hold; the full run finished 216/216 (3,284 s). All six CONFIRM criteria hold at 0.89.0's founder lateral: know-1..4 +.075 / +.157 / +.249 / +.385, Spearman .549, every knowledge-free arm under the 1/32 margin (untaught +.021 the highest), know-1 beats anti-echo by 5.7 SEM, knowledge-free pay .005; zero admitted by construction. The old per-run interval check also passes (null .1993, random .1987), so the rule change did not do the work. EXP-77 stays VOID. M1b is now crossed on v0.84.3 (EXP-73) and 0.89.0 (EXP-77b), one instrument. Next: the next rung on the current API (instrument dependence, EXP-62b / 62h / 62i line), or CAL-1 / CAL-2 (Will-gated).
 
 2026-10-27 (iter49, EXP-77b PRE-REGISTERED, HELD, on 0.89.0 81345d8): Will's go for admission by construction (pre-reg 4eb09f6). Port gate IDENTICAL on 0.89.0 (the new recall position term does not reach this brain); construction audit ADMITTED; pilot stop check passed (know-4 +.431). Full run held by Will (token budget to the ETM doc sweep). No milestone moves. Next: the full run when Will lifts the hold.
@@ -220,6 +222,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter50 (2026-10-29): EXP-05b, mid-stream snapshot/restore byte identity on 0.91.1: SUPPORTIVE
+- Cadence 0.91.1, main `c9c8080`. Off the V(S) ladder (library & tooling): the program waits on Will-gated CAL-1 / CAL-2 / the registered zero test, so the loop took the best ready queue item. Pre-registered `96c111a` after a three-lens review that caught an unpinned task, a wrong cache premise and a weak variance guard. Check PASS; all three arms CONFIRMED pooled and on each of three brains (plain, learned code, apical): 108/108 restores, 108/108 deepcopy and 108/108 save/load forks exact over 96,408 event records plus final bytes. Harnesses may fork with `deepcopy`. No milestone moves. Write-up experiments/EXP-05b.md, results row, atlas iter50.
 
 ### iter49 (2026-10-27): EXP-77b, M1b on Cadence 0.89.0, zero admitted by construction: CROSSED
 - Version: Cadence 0.89.0 (`81345d8`). Pre-registered `4eb09f6` (Will's go for the one rule change: zero admitted by construction, the old per-run interval reported only); port gate with lateral -0.5 IDENTICAL to EXP-62e student 0; construction audit ADMITTED; pilot passed its stop check (know-4 +.431). Full run held by Will, then run 16:47 to about 17:40 (216/216, 3,284 s).

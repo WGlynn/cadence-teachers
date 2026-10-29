@@ -3118,6 +3118,51 @@
   "quote_worthy": ""
  },
  {
+  "id": "EXP-05b",
+  "date": "2026-10-29",
+  "iter": "iter50",
+  "track": "library & tooling",
+  "verdict": "SUPPORTIVE",
+  "name": "A brain saved mid-life continues bit for bit, and a deepcopy fork is exact too",
+  "verdict_note": "pre-registered (96c111a) after a three-lens review; check PASS (k1-k5); all three arms CONFIRMED pooled and on each brain (plain, learned code, apical). 12 brain-lives, 108 cuts, 432 continuations, 96,408 event records compared exactly plus final checkpoint SHA-256: fresh-process restores 108/108, deepcopy and save/load forks 108/108 each, diverging twin differs 108/108, determinism control 12/12, 1e-9 reward change caught in trace and bytes. Scope: one machine, CPU NumPy loop, one BLAS thread, Cadence 0.91.1 at c9c8080, task T3 (+1/-1, nursery genes, arousal_need .5); not tested: other machines, numba, torch, founder genes, the learned code's refusal path, the recall cache across a save (empty at every cut by construction)",
+  "headline": "We saved learning Cadence brains in the middle of their lives (with an action still waiting for its outcome, mid-wait, or right after a reset), loaded them in a fresh process, and compared every later event and the final saved state against a brain that was never stopped. All 108 restores and all 216 deepcopy and save/load forks matched exactly, on three brain designs including the new apical one. This time the task kept the brains choosing and learning after every cut, so a match was not free.",
+  "question": "If a learning brain is saved mid-life, with an action still waiting for its outcome, mid-wait or right after a reset, and loaded in a fresh process, does it continue bit for bit as the brain that was never stopped, and does a deepcopy fork do the same, on a task where the brain keeps choosing and learning after every cut?",
+  "process_issues": [
+   "the first draft of the pre-registration asserted a recall-cache gap from the CHANGELOG without reading the code; review showed every slot write empties the cache, so it cannot be warm at a cut (fixed before registration)",
+   "the draft's side observation took its numbers from a quick look at a few moments (level peak .07; it was .13); caught by review",
+   "the harness did not pin the task: a full run without TASK would have pooled EXP-05's collapsing task with a T3 check life into a false CONFIRMED; caught by review, now asserted",
+   "the lab's auto-checkpoint committed two pre-review drafts (91c3881, 2fc0d39) before registration; harmless, no check or data existed, disclosed"
+  ],
+  "lesson": "Read the code path before claiming a library change is the gap a test can see; and an identity test's variance guard must count what the reference actually does after each cut (live moments only, a share floor, a learning moment) on every life.",
+  "chart": {
+   "title": "Exact continuations out of 108 cuts (12 brain-lives x 9 cuts)",
+   "unit": "count of 108",
+   "bars": [
+    {
+     "label": "Fresh-process restore",
+     "value": 108
+    },
+    {
+     "label": "Deepcopy fork",
+     "value": 108
+    },
+    {
+     "label": "Save/load fork",
+     "value": 108
+    },
+    {
+     "label": "Original beside the forks",
+     "value": 108
+    },
+    {
+     "label": "Diverging twin differs (control)",
+     "value": 108
+    }
+   ]
+  },
+  "quote_worthy": "All 108 restores and all 216 forks ended on the never-stopped brain's exact checkpoint bytes, on a task where a match had to be earned."
+ },
+ {
   "id": "EXP-72",
   "date": "2026-10-25",
   "iter": "none",

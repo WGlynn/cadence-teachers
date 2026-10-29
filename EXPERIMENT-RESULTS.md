@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-05b: a brain saved mid-life continues bit for bit on Cadence 0.91.1, and deepcopy forks are exact: SUPPORTIVE - 2026-10-29
+- **Version:** Cadence 0.91.1, main `c9c8080` (clean), CPU NumPy loop, one BLAS thread. **Script:** `exp/EXP-05b_snapshot_restore.py`. Pre-registered `96c111a` after a three-lens review; task T3 (+1/-1, nursery genes, `arousal_need` .5) chosen by a behaviour pilot on pilot seeds by the rule queued 2026-10-23.
+- **Result:** check PASS (k1-k5). 12 brain-lives (plain, learned code, apical x 3 data lives + check life), 108 cuts, 432 continuations, 96,408 event records compared exactly. Fresh-process restores equal the reference 108/108 (trace and final checkpoint bytes); original, deepcopy and save/load forks 108/108 each; diverging twin differs 108/108; R equals R2 12/12; A0 12/12; every cut covered (second-action share >= .20); load-then-save round trip 108/108; recall cache empty at 108/108 cuts.
+- **Verdict: SUPPORTIVE** (all three arms CONFIRMED, pooled and per brain; loop CONFIRMED). Harnesses may fork with `deepcopy`. Scope: one machine and environment; numba, torch, other machines, founder genes and the learned code's refusal path untested. Write-up: experiments/EXP-05b.md.
+
 ## EXP-78: surprise lessons on Sean McClane's single-frame Breakout: worse on every arm and seed, NOT SUPPORTED - 2026-10-28
 - **Version:** Cadence 0.89.0 (`81345d8`, pinned venv), harness `sean-mcclane832/cadence-arcade` `c8a5e4c` unchanged + `learning_surprise=True`. **Script:** `exp/EXP-78-run.sh`, analysis `exp/EXP-78_analyze.py`. Pre-registered `b028b0e`.
 - **Result:** pos32 2.21 vs 6.04 bricks (0/12 wins, p .0005), pos0 2.22 vs 5.80 (0/12), norecall 3.88 vs 7.08 (0/12); low-agreement recall lives 17/24 vs 4/24. Identity check on seed 10 matched his log exactly.
