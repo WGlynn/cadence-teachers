@@ -1,0 +1,3614 @@
+[
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 1,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 1,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.55,
+    "100-199": 0.61,
+    "200-299": 0.3
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 3.4,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 1,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 1,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.56,
+    "100-199": 0.53,
+    "200-299": 0.34
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 3.3,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 2,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 2,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.21,
+    "100-199": 0.26,
+    "200-299": 0.46
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 3.3,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 1,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 1,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.52,
+    "100-199": 0.46,
+    "200-299": 0.24
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 3.4,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.32,
+    "100-199": 0.69,
+    "200-299": 0.22
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 7.7,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 1
+  },
+  "brain": "code",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 60,
+    "distinct_actions": 1,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 30,
+    "distinct_actions": 1,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 1,
+    "distinct_actions": 1,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 1,
+    "distinct_actions": 1,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 1,
+    "distinct_actions": 1,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 1,
+    "distinct_actions": 1,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 1,
+    "distinct_actions": 1,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.46,
+    "100-199": 0.53,
+    "200-299": 0.34
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 101,
+    "routine": 199
+   },
+   "waits": 99
+  },
+  "seconds": 7.1,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 2,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 61,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 41,
+    "distinct_actions": 2,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 2,
+    "distinct_actions": 1,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.2,
+    "100-199": 0.26,
+    "200-299": 0.47
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 102,
+    "routine": 198
+   },
+   "waits": 105
+  },
+  "seconds": 7.2,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 1,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 1,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.52,
+    "100-199": 0.46,
+    "200-299": 0.24
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 7.6,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.78,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 6.2,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.69,
+    "100-199": 0.96,
+    "200-299": 0.0
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 5.9,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 3
+  },
+  "brain": "apical",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 62,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 42,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 3,
+    "distinct_actions": 2,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 3,
+    "distinct_actions": 2,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 3,
+    "distinct_actions": 2,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 3,
+    "distinct_actions": 2,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 3,
+    "distinct_actions": 2,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.49,
+    "100-199": 0.7,
+    "200-299": 0.25
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 103,
+    "routine": 197
+   },
+   "waits": 105
+  },
+  "seconds": 6.0,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 2,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 1,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 1,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.56,
+    "100-199": 0.46,
+    "200-299": 0.24
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 6.3,
+  "task": "T0",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.81,
+    "100-199": 0.99,
+    "200-299": 0.0
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 3.0,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.67,
+    "100-199": 0.78,
+    "200-299": 0.0
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 2.8,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.79,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 2.8,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 2,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 2,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.72,
+    "100-199": 0.7,
+    "200-299": 0.26
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 2.9,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.79,
+    "100-199": 0.86,
+    "200-299": 0.12
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 7.6,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.79,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 7.1,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 2,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 2,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 2,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.63,
+    "100-199": 0.74,
+    "200-299": 0.24
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 7.1,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.85,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 7.7,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.81,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 6.0,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.85,
+    "100-199": 1.0,
+    "200-299": 0.01
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 5.8,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.71,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 5.7,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.86,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 6.1,
+  "task": "T1",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.91,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 3.0,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.88,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 2.8,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.86,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 2.9,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.92,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 3.1,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.92,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 7.4,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.87,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 7.1,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.92,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 7.1,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.94,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 7.5,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.91,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 128
+  },
+  "seconds": 6.0,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 29,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.92,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 99
+  },
+  "seconds": 5.7,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.89,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 105
+  },
+  "seconds": 5.7,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 0,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 59,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "B1": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.94,
+    "100-199": 1.0,
+    "200-299": 0.0
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 100,
+    "routine": 200
+   },
+   "waits": 142
+  },
+  "seconds": 6.3,
+  "task": "T2",
+  "unavailable": [
+   "A5",
+   "A6"
+  ]
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 77,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 311,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 312,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.89,
+    "100-199": 1.0,
+    "200-299": 0.61
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 128
+  },
+  "seconds": 3.2,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 39,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 98,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 68,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "A5": {
+    "aroused_lives": 38,
+    "distinct_actions": 3,
+    "event": 286,
+    "moment": 211
+   },
+   "A6": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 288,
+    "moment": 212
+   },
+   "B1": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.9,
+    "100-199": 1.0,
+    "200-299": 0.75
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 139,
+    "routine": 161
+   },
+   "waits": 99
+  },
+  "seconds": 3.1,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 79,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 288,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 38,
+    "distinct_actions": 3,
+    "event": 290,
+    "moment": 211
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.82,
+    "100-199": 1.0,
+    "200-299": 0.66
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 105
+  },
+  "seconds": 3.1,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "plain",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 77,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 315,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 316,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.87,
+    "100-199": 1.0,
+    "200-299": 0.58
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 142
+  },
+  "seconds": 3.2,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 77,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 311,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 312,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.91,
+    "100-199": 1.0,
+    "200-299": 0.78
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 128
+  },
+  "seconds": 7.8,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 39,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 98,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 68,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "A5": {
+    "aroused_lives": 38,
+    "distinct_actions": 3,
+    "event": 286,
+    "moment": 211
+   },
+   "A6": {
+    "aroused_lives": 37,
+    "distinct_actions": 3,
+    "event": 288,
+    "moment": 212
+   },
+   "B1": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.85,
+    "100-199": 1.0,
+    "200-299": 0.69
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 139,
+    "routine": 161
+   },
+   "waits": 99
+  },
+  "seconds": 7.6,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 79,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 288,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 38,
+    "distinct_actions": 3,
+    "event": 290,
+    "moment": 211
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.83,
+    "100-199": 1.0,
+    "200-299": 0.64
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 105
+  },
+  "seconds": 7.8,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "code",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 77,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 315,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 316,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.87,
+    "100-199": 1.0,
+    "200-299": 0.58
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 142
+  },
+  "seconds": 8.2,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 0,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 61,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 77,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 193,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 195,
+    "moment": 131
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 311,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 312,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 146,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 261,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 365,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.9,
+    "100-199": 1.0,
+    "200-299": 0.64
+   },
+   "events": 434,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 128
+  },
+  "seconds": 6.4,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 1,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 48,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 69,
+    "distinct_actions": 3,
+    "event": 88,
+    "moment": 70
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 170,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 172,
+    "moment": 131
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 284,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 285,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 128,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 233,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 339,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.88,
+    "100-199": 1.0,
+    "200-299": 0.69
+   },
+   "events": 405,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 99
+  },
+  "seconds": 6.2,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 39,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 2,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 98,
+    "distinct_actions": 3,
+    "event": 58,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 78,
+    "distinct_actions": 3,
+    "event": 84,
+    "moment": 60
+   },
+   "A3": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 186,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 189,
+    "moment": 132
+   },
+   "A5": {
+    "aroused_lives": 38,
+    "distinct_actions": 3,
+    "event": 289,
+    "moment": 211
+   },
+   "A6": {
+    "aroused_lives": 38,
+    "distinct_actions": 3,
+    "event": 290,
+    "moment": 211
+   },
+   "B1": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 144,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 243,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 342,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.82,
+    "100-199": 1.0,
+    "200-299": 0.69
+   },
+   "events": 411,
+   "modes": {
+    "aroused": 139,
+    "routine": 161
+   },
+   "waits": 105
+  },
+  "seconds": 6.1,
+  "task": "T3",
+  "unavailable": []
+ },
+ {
+  "aroused_by_phase": {
+   "0-99": 100,
+   "100-199": 0,
+   "200-249": 40,
+   "250-299": 0
+  },
+  "brain": "apical",
+  "life": 3,
+  "per_cut": {
+   "A1": {
+    "aroused_lives": 99,
+    "distinct_actions": 3,
+    "event": 62,
+    "moment": 40
+   },
+   "A2": {
+    "aroused_lives": 77,
+    "distinct_actions": 3,
+    "event": 93,
+    "moment": 62
+   },
+   "A3": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 199,
+    "moment": 130
+   },
+   "A4": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 202,
+    "moment": 132
+   },
+   "A5": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 315,
+    "moment": 210
+   },
+   "A6": {
+    "aroused_lives": 39,
+    "distinct_actions": 3,
+    "event": 316,
+    "moment": 210
+   },
+   "B1": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 147,
+    "moment": 100
+   },
+   "B2": {
+    "aroused_lives": 40,
+    "distinct_actions": 3,
+    "event": 264,
+    "moment": 175
+   },
+   "B3": {
+    "aroused_lives": 0,
+    "distinct_actions": 3,
+    "event": 374,
+    "moment": 250
+   }
+  },
+  "reading": {
+   "accuracy": {
+    "0-99": 0.88,
+    "100-199": 1.0,
+    "200-299": 0.56
+   },
+   "events": 448,
+   "modes": {
+    "aroused": 140,
+    "routine": 160
+   },
+   "waits": 142
+  },
+  "seconds": 6.1,
+  "task": "T3",
+  "unavailable": []
+ }
+]
