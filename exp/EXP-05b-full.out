@@ -1,0 +1,1 @@
+EXP-05b MODE=full TASK=T3 {"genes": {"actor_eta": 0.1, "actor_eta_bias": 0.01, "arousal_need": 0.5, "consolidation": 0.25}, "lose": -1.0, "win": 1.0} | Cadence 0.91.1 v0.91.1 (c9c8080bab3d9f98b3fb49568fa9fa3335caecfe) dirty=False | Python 3.12.10 NumPy 2.4.2 | threads {'OMP_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1'} | {'numba': False, 'torch': False}
