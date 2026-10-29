@@ -1,0 +1,5670 @@
+{
+ "env": {
+  "cadence": "0.91.1",
+  "describe": "v0.91.1",
+  "dirty": false,
+  "file": "C:\\Users\\Will\\_cadence_study\\src\\cadence\\__init__.py",
+  "installed": {
+   "numba": false,
+   "torch": false
+  },
+  "numpy": "2.4.2",
+  "python": "3.12.10",
+  "sha": "c9c8080bab3d9f98b3fb49568fa9fa3335caecfe",
+  "threads": {
+   "MKL_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1"
+  }
+ },
+ "rows": [
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.55,
+     "100-199": 0.61,
+     "200-299": 0.3
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 3.0,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.56,
+     "100-199": 0.53,
+     "200-299": 0.34
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 2.7,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.988,
+      0.012
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.992,
+      0.008
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.994,
+      0.006
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.994,
+      0.006
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.995,
+      0.005
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.992,
+      0.008
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.98,
+      0.02
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.21,
+     "100-199": 0.26,
+     "200-299": 0.46
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 2.8,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.52,
+     "100-199": 0.46,
+     "200-299": 0.24
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 3.0,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.548,
+      0.266,
+      0.185
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.544,
+      0.262,
+      0.194
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.556,
+      0.254,
+      0.189
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.56,
+      0.25,
+      0.19
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.525,
+      0.255,
+      0.22
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.568,
+      0.288,
+      0.144
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.48,
+      0.34,
+      0.18
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.32,
+     "100-199": 0.69,
+     "200-299": 0.22
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 7.6,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 1
+   },
+   "brain": "code",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 60,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 30,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 1,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 1,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 1,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 1,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 1,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.46,
+     "100-199": 0.53,
+     "200-299": 0.34
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 101,
+     "routine": 199
+    },
+    "waits": 99
+   },
+   "seconds": 7.1,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 2,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.988,
+      0.008,
+      0.004
+     ],
+     "aroused_lives_after": 61,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.996,
+      0.004
+     ],
+     "aroused_lives_after": 41,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 2,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.2,
+     "100-199": 0.26,
+     "200-299": 0.47
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 102,
+     "routine": 198
+    },
+    "waits": 105
+   },
+   "seconds": 7.3,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.52,
+     "100-199": 0.46,
+     "200-299": 0.24
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 7.7,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.494,
+      0.27,
+      0.236
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.481,
+      0.274,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.467,
+      0.272,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.47,
+      0.274,
+      0.256
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.485,
+      0.26,
+      0.255
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.424,
+      0.296,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.78,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 6.3,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.583,
+      0.263,
+      0.154
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.568,
+      0.288,
+      0.144
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.538,
+      0.296,
+      0.166
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.536,
+      0.298,
+      0.167
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.555,
+      0.29,
+      0.155
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.536,
+      0.328,
+      0.136
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.58,
+      0.34,
+      0.08
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.69,
+     "100-199": 0.96,
+     "200-299": 0.0
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 5.9,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 3
+   },
+   "brain": "apical",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.541,
+      0.448,
+      0.012
+     ],
+     "aroused_lives_after": 62,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.544,
+      0.448,
+      0.008
+     ],
+     "aroused_lives_after": 42,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.568,
+      0.432
+     ],
+     "aroused_lives_after": 3,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.575,
+      0.425
+     ],
+     "aroused_lives_after": 3,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.56,
+      0.44
+     ],
+     "aroused_lives_after": 3,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.6,
+      0.4
+     ],
+     "aroused_lives_after": 3,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.6,
+      0.4
+     ],
+     "aroused_lives_after": 3,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.49,
+     "100-199": 0.7,
+     "200-299": 0.25
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 103,
+     "routine": 197
+    },
+    "waits": 105
+   },
+   "seconds": 5.9,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.996,
+      0.004
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      1.0
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 1,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.56,
+     "100-199": 0.46,
+     "200-299": 0.24
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 6.2,
+   "task": "T0",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.51,
+      0.266,
+      0.224
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.489,
+      0.266,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.473,
+      0.272,
+      0.254
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.476,
+      0.274,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.49,
+      0.255,
+      0.255
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.432,
+      0.288,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.81,
+     "100-199": 0.99,
+     "200-299": 0.0
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 3.0,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.687,
+      0.309,
+      0.004
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.651,
+      0.345,
+      0.004
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.657,
+      0.343
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.655,
+      0.345
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.66,
+      0.335,
+      0.005
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.664,
+      0.336
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.66,
+      0.34
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.67,
+     "100-199": 0.78,
+     "200-299": 0.0
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 2.8,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.27,
+      0.239
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.481,
+      0.259,
+      0.259
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.485,
+      0.269,
+      0.246
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.495,
+      0.255,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.472,
+      0.28,
+      0.248
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.79,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 2.8,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.506,
+      0.494
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.506,
+      0.494
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.509,
+      0.491
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.503,
+      0.497
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.52,
+      0.48
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.512,
+      0.488
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.54,
+      0.46
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.72,
+     "100-199": 0.7,
+     "200-299": 0.26
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 3.0,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.402,
+      0.347,
+      0.251
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.371,
+      0.367,
+      0.262
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.396,
+      0.349,
+      0.254
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.399,
+      0.351,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.39,
+      0.36,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.416,
+      0.296,
+      0.288
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.4,
+      0.34,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.79,
+     "100-199": 0.86,
+     "200-299": 0.12
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 7.8,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.537,
+      0.274,
+      0.189
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.507,
+      0.293,
+      0.201
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.497,
+      0.296,
+      0.207
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.494,
+      0.298,
+      0.208
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.515,
+      0.29,
+      0.195
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.504,
+      0.328,
+      0.168
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.79,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 7.1,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.525,
+      0.475
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.523,
+      0.477
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.503,
+      0.497
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.503,
+      0.497
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.505,
+      0.495
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.52,
+      0.48
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 2,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.5
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 2,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.63,
+     "100-199": 0.74,
+     "200-299": 0.24
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 7.0,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.506,
+      0.255,
+      0.239
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.498,
+      0.257,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.497,
+      0.272,
+      0.231
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.503,
+      0.263,
+      0.234
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.485,
+      0.275,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.496,
+      0.28,
+      0.224
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.48,
+      0.3,
+      0.22
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.85,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 7.6,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.494,
+      0.259,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.477,
+      0.262,
+      0.262
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.467,
+      0.272,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.47,
+      0.274,
+      0.256
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.485,
+      0.26,
+      0.255
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.424,
+      0.296,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.81,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 6.0,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.533,
+      0.266,
+      0.201
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.507,
+      0.288,
+      0.205
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.503,
+      0.29,
+      0.207
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.5,
+      0.292,
+      0.208
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.52,
+      0.285,
+      0.195
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.512,
+      0.32,
+      0.168
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.52,
+      0.32,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.85,
+     "100-199": 1.0,
+     "200-299": 0.01
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 5.7,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.502,
+      0.27,
+      0.228
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.494,
+      0.259,
+      0.247
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.485,
+      0.269,
+      0.246
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.495,
+      0.255,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.472,
+      0.28,
+      0.248
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.71,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 5.7,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.486,
+      0.266,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.489,
+      0.266,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.278,
+      0.231
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.497,
+      0.269,
+      0.234
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.48,
+      0.28,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.488,
+      0.288,
+      0.224
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.46,
+      0.3,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.86,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 6.2,
+   "task": "T1",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.263,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.477,
+      0.262,
+      0.262
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.467,
+      0.272,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.47,
+      0.274,
+      0.256
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.485,
+      0.26,
+      0.255
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.424,
+      0.296,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.91,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 3.0,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.529,
+      0.282,
+      0.189
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.502,
+      0.293,
+      0.205
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.497,
+      0.296,
+      0.207
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.494,
+      0.298,
+      0.208
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.515,
+      0.29,
+      0.195
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.504,
+      0.328,
+      0.168
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.88,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 2.9,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.481,
+      0.259,
+      0.259
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.485,
+      0.269,
+      0.246
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.495,
+      0.255,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.472,
+      0.28,
+      0.248
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.86,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 3.0,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.483,
+      0.266,
+      0.251
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.485,
+      0.27,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.278,
+      0.231
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.497,
+      0.269,
+      0.234
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.48,
+      0.28,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.488,
+      0.288,
+      0.224
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.46,
+      0.3,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.92,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 3.2,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.259,
+      0.251
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.477,
+      0.262,
+      0.262
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.467,
+      0.272,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.47,
+      0.274,
+      0.256
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.485,
+      0.26,
+      0.255
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.424,
+      0.296,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.92,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 7.4,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.521,
+      0.274,
+      0.205
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.502,
+      0.293,
+      0.205
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.497,
+      0.296,
+      0.207
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.494,
+      0.298,
+      0.208
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.515,
+      0.29,
+      0.195
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.504,
+      0.328,
+      0.168
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.87,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 7.1,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.481,
+      0.259,
+      0.259
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.485,
+      0.269,
+      0.246
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.495,
+      0.255,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.472,
+      0.28,
+      0.248
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.92,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 7.1,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.486,
+      0.266,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.489,
+      0.266,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.278,
+      0.231
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.497,
+      0.269,
+      0.234
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.48,
+      0.28,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.488,
+      0.288,
+      0.224
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.46,
+      0.3,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.94,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 7.7,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.263,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.477,
+      0.262,
+      0.262
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.467,
+      0.272,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.47,
+      0.274,
+      0.256
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.485,
+      0.26,
+      0.255
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.424,
+      0.296,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.91,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 128
+   },
+   "seconds": 6.0,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.517,
+      0.27,
+      0.212
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.502,
+      0.293,
+      0.205
+     ],
+     "aroused_lives_after": 29,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.497,
+      0.296,
+      0.207
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.494,
+      0.298,
+      0.208
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "B1": {
+     "action_shares_after": [
+      0.515,
+      0.29,
+      0.195
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.504,
+      0.328,
+      0.168
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.92,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 99
+   },
+   "seconds": 5.8,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.49,
+      0.263,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.481,
+      0.264,
+      0.255
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.266,
+      0.243
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.485,
+      0.269,
+      0.246
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.495,
+      0.255,
+      0.25
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.472,
+      0.28,
+      0.248
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.89,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 105
+   },
+   "seconds": 5.6,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 0,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.486,
+      0.266,
+      0.247
+     ],
+     "aroused_lives_after": 59,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.489,
+      0.266,
+      0.245
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.491,
+      0.278,
+      0.231
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.497,
+      0.269,
+      0.234
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "B1": {
+     "action_shares_after": [
+      0.48,
+      0.28,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.488,
+      0.288,
+      0.224
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": false,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.46,
+      0.3,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.94,
+     "100-199": 1.0,
+     "200-299": 0.0
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 100,
+     "routine": 200
+    },
+    "waits": 142
+   },
+   "seconds": 6.1,
+   "task": "T2",
+   "unavailable": [
+    "A5",
+    "A6"
+   ]
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.525,
+      0.27,
+      0.205
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.515,
+      0.274,
+      0.211
+     ],
+     "aroused_lives_after": 77,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.521,
+      0.278,
+      0.201
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.524,
+      0.274,
+      0.202
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "A5": {
+     "action_shares_after": [
+      0.438,
+      0.348,
+      0.213
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 311,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.438,
+      0.348,
+      0.213
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 312,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.53,
+      0.275,
+      0.195
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.496,
+      0.32,
+      0.184
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.52,
+      0.28,
+      0.2
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.89,
+     "100-199": 1.0,
+     "200-299": 0.61
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 128
+   },
+   "seconds": 3.1,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 39,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.444,
+      0.305,
+      0.251
+     ],
+     "aroused_lives_after": 98,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.415,
+      0.323,
+      0.262
+     ],
+     "aroused_lives_after": 68,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.379,
+      0.367,
+      0.254
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.375,
+      0.369,
+      0.256
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "A5": {
+     "action_shares_after": [
+      0.489,
+      0.284,
+      0.227
+     ],
+     "aroused_lives_after": 38,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 286,
+     "moment": 211
+    },
+    "A6": {
+     "action_shares_after": [
+      0.483,
+      0.287,
+      0.23
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 288,
+     "moment": 212
+    },
+    "B1": {
+     "action_shares_after": [
+      0.415,
+      0.33,
+      0.255
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.384,
+      0.344,
+      0.272
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.9,
+     "100-199": 1.0,
+     "200-299": 0.75
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 139,
+     "routine": 161
+    },
+    "waits": 99
+   },
+   "seconds": 3.0,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.413,
+      0.32,
+      0.266
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.397,
+      0.343,
+      0.259
+     ],
+     "aroused_lives_after": 79,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.373,
+      0.361,
+      0.266
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.365,
+      0.365,
+      0.269
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "A5": {
+     "action_shares_after": [
+      0.494,
+      0.281,
+      0.225
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 288,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.5,
+      0.273,
+      0.227
+     ],
+     "aroused_lives_after": 38,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 290,
+     "moment": 211
+    },
+    "B1": {
+     "action_shares_after": [
+      0.395,
+      0.355,
+      0.25
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.408,
+      0.312,
+      0.28
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.28,
+      0.22
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.82,
+     "100-199": 1.0,
+     "200-299": 0.66
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 105
+   },
+   "seconds": 3.1,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "plain",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.475,
+      0.266,
+      0.259
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.477,
+      0.278,
+      0.245
+     ],
+     "aroused_lives_after": 77,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.479,
+      0.29,
+      0.231
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.485,
+      0.281,
+      0.234
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "A5": {
+     "action_shares_after": [
+      0.438,
+      0.303,
+      0.258
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 315,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.438,
+      0.303,
+      0.258
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 316,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.47,
+      0.29,
+      0.24
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.472,
+      0.304,
+      0.224
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.87,
+     "100-199": 1.0,
+     "200-299": 0.58
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 142
+   },
+   "seconds": 3.2,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.494,
+      0.266,
+      0.239
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.481,
+      0.266,
+      0.253
+     ],
+     "aroused_lives_after": 77,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.473,
+      0.266,
+      0.26
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.476,
+      0.262,
+      0.262
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "A5": {
+     "action_shares_after": [
+      0.348,
+      0.326,
+      0.326
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 311,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.348,
+      0.326,
+      0.326
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 312,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.49,
+      0.265,
+      0.245
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.432,
+      0.304,
+      0.264
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.34,
+      0.28
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.91,
+     "100-199": 1.0,
+     "200-299": 0.78
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 128
+   },
+   "seconds": 7.6,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 39,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.444,
+      0.301,
+      0.255
+     ],
+     "aroused_lives_after": 98,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.415,
+      0.319,
+      0.266
+     ],
+     "aroused_lives_after": 68,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.379,
+      0.361,
+      0.26
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.375,
+      0.363,
+      0.262
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "A5": {
+     "action_shares_after": [
+      0.477,
+      0.284,
+      0.239
+     ],
+     "aroused_lives_after": 38,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 286,
+     "moment": 211
+    },
+    "A6": {
+     "action_shares_after": [
+      0.471,
+      0.287,
+      0.241
+     ],
+     "aroused_lives_after": 37,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 288,
+     "moment": 212
+    },
+    "B1": {
+     "action_shares_after": [
+      0.415,
+      0.325,
+      0.26
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.376,
+      0.344,
+      0.28
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.85,
+     "100-199": 1.0,
+     "200-299": 0.69
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 139,
+     "routine": 161
+    },
+    "waits": 99
+   },
+   "seconds": 7.5,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.421,
+      0.317,
+      0.263
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.406,
+      0.339,
+      0.255
+     ],
+     "aroused_lives_after": 79,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.385,
+      0.355,
+      0.26
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.377,
+      0.359,
+      0.263
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "A5": {
+     "action_shares_after": [
+      0.483,
+      0.27,
+      0.247
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 288,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.477,
+      0.273,
+      0.25
+     ],
+     "aroused_lives_after": 38,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 290,
+     "moment": 211
+    },
+    "B1": {
+     "action_shares_after": [
+      0.405,
+      0.35,
+      0.245
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.4,
+      0.328,
+      0.272
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.83,
+     "100-199": 1.0,
+     "200-299": 0.64
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 105
+   },
+   "seconds": 7.5,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "code",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.452,
+      0.278,
+      0.27
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.451,
+      0.291,
+      0.257
+     ],
+     "aroused_lives_after": 77,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.438,
+      0.314,
+      0.249
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.443,
+      0.305,
+      0.251
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "A5": {
+     "action_shares_after": [
+      0.36,
+      0.348,
+      0.292
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 315,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.36,
+      0.348,
+      0.292
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 316,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.435,
+      0.31,
+      0.255
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.416,
+      0.336,
+      0.248
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.38,
+      0.32,
+      0.3
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.87,
+     "100-199": 1.0,
+     "200-299": 0.58
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 142
+   },
+   "seconds": 8.0,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 0,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.533,
+      0.274,
+      0.193
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 61,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.523,
+      0.274,
+      0.203
+     ],
+     "aroused_lives_after": 77,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.533,
+      0.278,
+      0.189
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 193,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.536,
+      0.274,
+      0.19
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 195,
+     "moment": 131
+    },
+    "A5": {
+     "action_shares_after": [
+      0.461,
+      0.348,
+      0.191
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 311,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.461,
+      0.348,
+      0.191
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 312,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.54,
+      0.275,
+      0.185
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 146,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.512,
+      0.32,
+      0.168
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 261,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.52,
+      0.28,
+      0.2
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 365,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.9,
+     "100-199": 1.0,
+     "200-299": 0.64
+    },
+    "events": 434,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 128
+   },
+   "seconds": 6.1,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 1,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.452,
+      0.305,
+      0.243
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 48,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.428,
+      0.314,
+      0.258
+     ],
+     "aroused_lives_after": 69,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 88,
+     "moment": 70
+    },
+    "A3": {
+     "action_shares_after": [
+      0.396,
+      0.355,
+      0.249
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 170,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.393,
+      0.357,
+      0.25
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 172,
+     "moment": 131
+    },
+    "A5": {
+     "action_shares_after": [
+      0.461,
+      0.326,
+      0.213
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 284,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.461,
+      0.326,
+      0.213
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 285,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.43,
+      0.32,
+      0.25
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 128,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.368,
+      0.368,
+      0.264
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 233,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.34,
+      0.16
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 339,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.88,
+     "100-199": 1.0,
+     "200-299": 0.69
+    },
+    "events": 405,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 99
+   },
+   "seconds": 5.9,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 39,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 2,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.448,
+      0.286,
+      0.266
+     ],
+     "aroused_lives_after": 98,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 58,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.435,
+      0.305,
+      0.259
+     ],
+     "aroused_lives_after": 78,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 84,
+     "moment": 60
+    },
+    "A3": {
+     "action_shares_after": [
+      0.426,
+      0.302,
+      0.272
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 186,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.419,
+      0.305,
+      0.275
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 189,
+     "moment": 132
+    },
+    "A5": {
+     "action_shares_after": [
+      0.375,
+      0.33,
+      0.295
+     ],
+     "aroused_lives_after": 38,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 289,
+     "moment": 211
+    },
+    "A6": {
+     "action_shares_after": [
+      0.375,
+      0.33,
+      0.295
+     ],
+     "aroused_lives_after": 38,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 290,
+     "moment": 211
+    },
+    "B1": {
+     "action_shares_after": [
+      0.44,
+      0.305,
+      0.255
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 144,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.384,
+      0.328,
+      0.288
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 243,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.5,
+      0.26,
+      0.24
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 342,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.82,
+     "100-199": 1.0,
+     "200-299": 0.69
+    },
+    "events": 411,
+    "modes": {
+     "aroused": 139,
+     "routine": 161
+    },
+    "waits": 105
+   },
+   "seconds": 5.8,
+   "task": "T3",
+   "unavailable": []
+  },
+  {
+   "aroused_by_phase": {
+    "0-99": 100,
+    "100-199": 0,
+    "200-249": 40,
+    "250-299": 0
+   },
+   "brain": "apical",
+   "life": 3,
+   "per_cut": {
+    "A1": {
+     "action_shares_after": [
+      0.475,
+      0.266,
+      0.259
+     ],
+     "aroused_lives_after": 99,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 62,
+     "moment": 40
+    },
+    "A2": {
+     "action_shares_after": [
+      0.477,
+      0.278,
+      0.245
+     ],
+     "aroused_lives_after": 77,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 93,
+     "moment": 62
+    },
+    "A3": {
+     "action_shares_after": [
+      0.473,
+      0.296,
+      0.231
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 199,
+     "moment": 130
+    },
+    "A4": {
+     "action_shares_after": [
+      0.479,
+      0.287,
+      0.234
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 202,
+     "moment": 132
+    },
+    "A5": {
+     "action_shares_after": [
+      0.427,
+      0.315,
+      0.258
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 315,
+     "moment": 210
+    },
+    "A6": {
+     "action_shares_after": [
+      0.427,
+      0.315,
+      0.258
+     ],
+     "aroused_lives_after": 39,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 316,
+     "moment": 210
+    },
+    "B1": {
+     "action_shares_after": [
+      0.465,
+      0.295,
+      0.24
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 147,
+     "moment": 100
+    },
+    "B2": {
+     "action_shares_after": [
+      0.464,
+      0.312,
+      0.224
+     ],
+     "aroused_lives_after": 40,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 264,
+     "moment": 175
+    },
+    "B3": {
+     "action_shares_after": [
+      0.48,
+      0.26,
+      0.26
+     ],
+     "aroused_lives_after": 0,
+     "coverage_ok": true,
+     "distinct_actions_after": 3,
+     "event": 374,
+     "moment": 250
+    }
+   },
+   "reading": {
+    "accuracy": {
+     "0-99": 0.88,
+     "100-199": 1.0,
+     "200-299": 0.56
+    },
+    "events": 448,
+    "modes": {
+     "aroused": 140,
+     "routine": 160
+    },
+    "waits": 142
+   },
+   "seconds": 5.9,
+   "task": "T3",
+   "unavailable": []
+  }
+ ]
+}

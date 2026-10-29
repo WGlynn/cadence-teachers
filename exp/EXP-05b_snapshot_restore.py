@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import importlib.util
 import json
 import os
 import subprocess
@@ -36,6 +37,8 @@ import time
 from collections.abc import Mapping
 from concurrent.futures import ThreadPoolExecutor
 
+for _k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+    os.environ.setdefault(_k, "1")     # registered: one BLAS thread in every process (asserted in main)
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -61,7 +64,9 @@ TASKS = {
     "T2": {"win": 1.0, "lose": -1.0, "genes": dict(NURSERY)},
     "T3": {"win": 1.0, "lose": -1.0, "genes": {**NURSERY, "arousal_need": 0.5}},
 }
-TASK = os.environ.get("TASK", "T0")
+TASK = os.environ.get("TASK")              # MODE=check / full require the registered task (asserted in main)
+REGISTERED_TASK, REGISTERED_SHA = "T3", "c9c8080"
+COVER_SHARE = 0.10                          # coverage: >= 2 actions each >= 10% of the continuation's lives
 CUT_TYPES = ("A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2", "B3")
 WORKERS = 4
 PERTURB = 1e-9
@@ -212,19 +217,26 @@ def role_life(a: dict) -> dict:
     cues, events = schedule(a["life"])
     brain = compose(a["brain"], a["life"])
     env = {"action": None, "moment": None, "id": None}
-    trace, cuts = [], {}
-    for k, ev in enumerate(events):
-        trace.append(event(brain, ev, cues, env))
-        if k in a["cuts"]:
-            name = a["cuts"][k]
-            path = os.path.join(a["dir"], f"cut-{name}.npz")
-            brain.save(path)
-            with open(os.path.join(a["dir"], f"cut-{name}.env.json"), "w") as f:
-                json.dump({"event": k, **env}, f)
-            cuts[name] = {"event": k, **digests(path), "groups": groups(path)}
-    final = os.path.join(a["dir"], f"final-{a['tag']}.npz")
-    brain.save(final)
-    return {"trace": trace, "final": digests(final), "final_path": final, "cuts": cuts,
+    trace, cuts, error, final_d, final = [], {}, None, None, None
+    try:
+        for k, ev in enumerate(events):
+            trace.append(event(brain, ev, cues, env))
+            if k in a["cuts"]:
+                name = a["cuts"][k]
+                rc = getattr(brain, "recall", None)   # reading: 0.91.1's content cache at the cut
+                cache = None if rc is None else {"contents": len(getattr(rc, "_contents", []) or []),
+                                                 "keys_none": getattr(rc, "_content_keys", None) is None}
+                path = os.path.join(a["dir"], f"cut-{name}.npz")
+                brain.save(path)
+                with open(os.path.join(a["dir"], f"cut-{name}.env.json"), "w") as f:
+                    json.dump({"event": k, **env}, f)
+                cuts[name] = {"event": k, **digests(path), "groups": groups(path), "cache": cache}
+        final = os.path.join(a["dir"], f"final-{a['tag']}.npz")
+        brain.save(final)
+        final_d = digests(final)
+    except Exception as exc:  # recorded: R / R2 raising voids the run, P1 raising refutes arm A
+        error = f"{type(exc).__name__}: {exc}"
+    return {"trace": trace, "final": final_d, "final_path": final, "cuts": cuts, "error": error,
             "seconds": time.time() - t0, "pid": os.getpid(), "hashseed": os.environ.get("PYTHONHASHSEED")}
 
 
@@ -272,17 +284,17 @@ def role_fork(a: dict) -> dict:
     out = {"pid": os.getpid(), "hashseed": os.environ.get("PYTHONHASHSEED"), "error": None}
     brains, envs, traces, at_fork = {"O": o}, {"O": env}, {}, {}
     try:
+        brains["D"] = copy.deepcopy(o)              # forked before any save: D itself is never saved
+        brains["X"] = copy.deepcopy(o)              # until the end of the life
         path = os.path.join(a["dir"], f"fork-{a['tag']}-O.npz")
         o.save(path)
-        brains["D"] = copy.deepcopy(o)
         brains["S"] = Brain.load(path)
-        brains["X"] = copy.deepcopy(o)
         for name in ("D", "S", "X"):
             envs[name] = dict(env)
         at_fork["O"] = digests(path)
-        for name in ("D", "S"):
-            p = os.path.join(a["dir"], f"fork-{a['tag']}-{name}.npz")
-            brains[name].save(p)
+        for name in ("D", "S"):                     # fork-time bytes from a throwaway copy, so the
+            p = os.path.join(a["dir"], f"fork-{a['tag']}-{name}.npz")   # continuing twin is not saved
+            copy.deepcopy(brains[name]).save(p)
             at_fork[name] = digests(p)
         traces = {name: [] for name in brains}
         for ev in events[k0 + 1:]:
@@ -313,13 +325,19 @@ def run_role(role: str, args: dict, hashseed: int, name: str) -> dict:
     with open(arg_path, "w") as f:
         json.dump(args, f)
     env = {**os.environ, "PYTHONHASHSEED": str(hashseed)}
-    with _slots:
-        p = subprocess.run([sys.executable, os.path.abspath(__file__), "role", role, arg_path, out_path],
-                           env=env, capture_output=True, text=True)
-    if p.returncode != 0:
-        raise RuntimeError(f"{name} exited {p.returncode}: {p.stderr[-2000:]}")
+    for attempt in (1, 2):   # registered: a process that dies is rerun once; dying twice voids the run
+        with _slots:
+            p = subprocess.run([sys.executable, os.path.abspath(__file__), "role", role, arg_path, out_path],
+                               env=env, capture_output=True, text=True)
+        if p.returncode == 0:
+            break
+        print(f"[{name}] exited {p.returncode} on attempt {attempt}: {p.stderr[-500:]}", flush=True)
+    else:
+        raise RuntimeError(f"{name} exited {p.returncode} twice: {p.stderr[-2000:]}")
     with open(out_path) as f:
-        return json.load(f)
+        out = json.load(f)
+    out["attempts"] = attempt
+    return out
 
 
 def find_cuts(events, trace) -> dict:
@@ -379,6 +397,20 @@ def readings(cues, events, trace) -> dict:
             "waits": sum(1 for e in events if e[0] == "W"), "events": len(events)}
 
 
+def coverage(name: str, ref: list) -> dict:
+    """Registered coverage of one continuation (reference events after the cut), `live` moments only
+    (L events; an end frame's action is dropped): at least 2 actions each taken on >= 10% of them, and
+    at least one aroused (learning) moment, except after B3, whose continuation is routine by design."""
+    recs = [json.loads(t) for t in ref]
+    acts = [r["action"] for r in recs if r["ev"][0] == "L"]
+    counts = {a: acts.count(a) for a in set(acts)}
+    shares = sorted((round(c / len(acts), 3) for c in counts.values()), reverse=True) if acts else []
+    aroused = sum(1 for r in recs if r["ev"][0] == "L" and r["arousal"]["mode"] == "aroused")
+    ok = sum(1 for x in shares if x >= COVER_SHARE) >= 2 and (aroused >= 1 or name == "B3")
+    return {"distinct_actions_after": len(counts), "action_shares_after": shares,
+            "aroused_lives_after": aroused, "coverage_ok": ok}
+
+
 def unit(brain: str, life: int, check: bool) -> dict:
     d = os.path.join(WORK, f"{brain}-{life}")
     cues, events = schedule(life)
@@ -387,8 +419,12 @@ def unit(brain: str, life: int, check: bool) -> dict:
         fr = ex.submit(run_role, "life", {**base, "cuts": {}, "tag": "R"}, 1, "R")
         fr2 = ex.submit(run_role, "life", {**base, "cuts": {}, "tag": "R2"}, 2, "R2")
         R, R2 = fr.result(), fr2.result()
+    if R["error"] or R2["error"]:
+        raise RuntimeError(f"reference life raised ({brain} {life}): {R['error'] or R2['error']} -> VOID")
     cuts = find_cuts(events, R["trace"])
     P1 = run_role("life", {**base, "cuts": {str(k): n for n, k in cuts.items()}, "tag": "P1"}, 3, "P1")
+    if P1["error"]:   # a save that raises: arm A REFUTED (A0); cuts P1 never reached cannot be restored
+        cuts = {n: k for n, k in cuts.items() if n in P1["cuts"]}
     # json keys are strings: role_life reads `k in a["cuts"]` with int k, so pass str and convert there
     jobs = {}
     with ThreadPoolExecutor(2 * len(cuts) + 1) as ex:
@@ -413,8 +449,8 @@ def unit(brain: str, life: int, check: bool) -> dict:
     out["control"] = {"R2_trace_equal": R2["trace"] == R["trace"], "R2_final_equal": R2["final"] == R["final"],
                       "first_diff": first_diff(R["trace"], R2["trace"])}
     out["A0"] = {"trace_equal": P1["trace"] == R["trace"], "final_equal": P1["final"] == R["final"],
-                 "first_diff": first_diff(R["trace"], P1["trace"])}
-    if P1["final"]["bytes"] != R["final"]["bytes"]:
+                 "first_diff": first_diff(R["trace"], P1["trace"]), "error": P1["error"]}
+    if P1["final"] and P1["final"]["bytes"] != R["final"]["bytes"]:
         out["A0"]["members"] = member_diff(R["final_path"], P1["final_path"])
     per_cut = {}
     for name, k in sorted(cuts.items()):
@@ -422,9 +458,7 @@ def unit(brain: str, life: int, check: bool) -> dict:
         p2, f = res[("P2", name)], res[("F", name)]
         c = {"event": k, "groups": P1["cuts"][name]["groups"], "groups_ok": P1["cuts"][name]["groups"] == EXPECTED[name],
              "state_moves": P1["cuts"][name]["bytes"] != R["final"]["bytes"],
-             "distinct_actions_after": len({json.loads(t)["action"] for t in ref if json.loads(t)["action"] is not None}),
-             "aroused_lives_after": sum(1 for t in ref if json.loads(t)["ev"][0] == "L"
-                                        and json.loads(t)["arousal"]["mode"] == "aroused")}
+             "cache_at_cut": P1["cuts"][name].get("cache"), **coverage(name, ref)}
         c["restore"] = {"error": p2["error"], "trace_equal": p2["trace"] == ref, "first_diff": first_diff(ref, p2["trace"]),
                         "final_equal": p2.get("final") == R["final"], "loaded_id_ok": None,
                         "roundtrip_bytes_equal": p2.get("roundtrip", {}).get("bytes") == P1["cuts"][name]["bytes"],
@@ -449,8 +483,12 @@ def unit(brain: str, life: int, check: bool) -> dict:
     if ("SENS", next((n for n in ("A3", "A1") if n in cuts), "")) in res:
         sname = next(n for n in ("A3", "A1") if n in cuts)
         s = res[("SENS", sname)]
-        out["sensitivity"] = {"cut": sname, "error": s["error"], "flagged": (s["trace"] != R["trace"][cuts[sname] + 1:])
-                              or s.get("final") != R["final"]}
+        ref_s, p2_s = R["trace"][cuts[sname] + 1:], res[("P2", sname)]
+        trace_flag, final_flag = s["trace"] != ref_s, s.get("final") != R["final"]
+        clean = s["error"] is None and p2_s["error"] is None and p2_s["trace"] == ref_s and p2_s.get("final") == R["final"]
+        out["sensitivity"] = {"cut": sname, "error": s["error"], "unperturbed_equal": clean,
+                              "trace_flag": trace_flag, "final_flag": final_flag,
+                              "flagged": clean and trace_flag and final_flag}
     out["seconds"]["P2"] = sum(res[("P2", n)]["seconds"] for n in cuts)
     out["seconds"]["F"] = sum(res[("F", n)]["seconds"] for n in cuts)
     return out
@@ -476,23 +514,41 @@ def describe_genes(brain: str, life: int) -> dict:
     return {"genes": d["genes"], "composition": d["layout"].get("composition")}
 
 
-def verdicts(units: list) -> dict:
-    def all_true(xs):
-        return all(xs) if xs else None
-    A = [u["per_cut"][c] for u in units for c in u["per_cut"] if c.startswith("A")]
-    B = [u["per_cut"][c] for u in units for c in u["per_cut"] if c.startswith("B")]
-    cuts = [u["per_cut"][c] for u in units for c in u["per_cut"]]
+def arm_verdicts(units: list) -> dict:
+    """Registered rules (experiments/EXP-05b.md). Any failing cut refutes, covered or not; CONFIRMED also
+    needs, on every brain, at least one covered instance of every cut type of the arm."""
+    brains = sorted({u["brain"] for u in units})
+    items = [(u, n, u["per_cut"][n]) for u in units for n in u["per_cut"]]
     ok = lambda c: c["restore"]["error"] is None and c["restore"]["trace_equal"] and c["restore"]["final_equal"]
-    a0 = all_true([u["A0"]["trace_equal"] and u["A0"]["final_equal"] for u in units])
-    cover = {b: sorted({c for u in units if u["brain"] == b for c in u["per_cut"] if c.startswith("A")}) for b in BRAINS}
-    gap = {b: [t for t in CUT_TYPES[:6] if t not in cover[b]] for b in BRAINS}
-    arm_a = "REFUTED" if not (a0 and all_true([ok(c) for c in A])) else "INCONCLUSIVE" if any(gap.values()) else "CONFIRMED"
-    arm_b = "CONFIRMED" if all_true([ok(c) for c in B]) else "REFUTED"
     fork_ok = lambda c: c["fork"]["error"] is None and all(c["fork"][n]["trace_equal"] and c["fork"][n]["final_equal"]
                                                            for n in ("O", "D", "S")) and c["fork"]["fork_bytes_equal"]
-    arm_c = "REFUTED" if not all_true([fork_ok(c) for c in cuts]) else \
-        "INCONCLUSIVE" if not all(c["fork"]["X_differs"] for c in cuts) else "CONFIRMED"
-    arms = {"A": arm_a, "B": arm_b, "C": arm_c}
+    a0 = all(u["A0"]["trace_equal"] and u["A0"]["final_equal"] and not u["A0"].get("error") for u in units)
+
+    def gap(types):
+        return {b: [t for t in types if not any(u["brain"] == b and n == t and c["coverage_ok"] for u, n, c in items)]
+                for b in brains}
+
+    def arm(types, test, extra=True, empty_reading=False):
+        sel = [c for _, n, c in items if n in types]
+        g = gap(types)
+        if not extra or not all(test(c) for c in sel):
+            return "REFUTED", g
+        if any(g.values()) or empty_reading:
+            return "INCONCLUSIVE", g
+        return "CONFIRMED", g
+
+    arm_a, gap_a = arm(CUT_TYPES[:6], ok, extra=a0)
+    arm_b, gap_b = arm(CUT_TYPES[6:], ok)
+    x_all = all(c["fork"]["X_differs"] for _, _, c in items)
+    arm_c, gap_c = arm(CUT_TYPES, fork_ok, empty_reading=not x_all)
+    uncovered = sorted(f"{u['brain']}-{u['life']}-{n}" for u, n, c in items if not c["coverage_ok"])
+    return {"arms": {"A": arm_a, "B": arm_b, "C": arm_c}, "A0": a0, "X_differs_everywhere": x_all,
+            "coverage_gap": {"A": gap_a, "B": gap_b, "C": gap_c}, "uncovered_cuts": uncovered}
+
+
+def verdicts(units: list) -> dict:
+    pooled = arm_verdicts(units)
+    arms = pooled["arms"]
     control = all(u["control"]["R2_trace_equal"] and u["control"]["R2_final_equal"] for u in units if not u["check_life"])
     if not control:
         overall, loop = "VOID", "VOID"
@@ -502,7 +558,8 @@ def verdicts(units: list) -> dict:
     else:
         overall = "SUPPORTIVE"
         loop = "CONFIRMED" if all(v == "CONFIRMED" for v in arms.values()) else "INCONCLUSIVE"
-    return {"arms": arms, "A0": a0, "coverage_gap": gap, "control": control, "overall": overall, "loop": loop}
+    per_brain = {b: arm_verdicts([u for u in units if u["brain"] == b])["arms"] for b in sorted({u["brain"] for u in units})}
+    return {**pooled, "per_brain": per_brain, "control": control, "overall": overall, "loop": loop}
 
 
 def env_info() -> dict:
@@ -513,7 +570,8 @@ def env_info() -> dict:
                            capture_output=True, text=True).stdout.strip()
     return {"cadence": cadence.__version__, "sha": sha, "describe": desc, "dirty": bool(dirty),
             "file": cadence.__file__, "python": sys.version.split()[0], "numpy": np.__version__,
-            "threads": {k: os.environ.get(k) for k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS")}}
+            "threads": {k: os.environ.get(k) for k in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS")},
+            "installed": {m: importlib.util.find_spec(m) is not None for m in ("numba", "torch")}}
 
 
 def summarize(u: dict) -> str:
@@ -525,7 +583,8 @@ def summarize(u: dict) -> str:
         r, f = c["restore"], c["fork"]
         lines.append(
             f"  {name} ev {c['event']:>3} groups_ok {c['groups_ok']} moves {c['state_moves']} acts {c['distinct_actions_after']}"
-            f" aroused-after {c['aroused_lives_after']}"
+            f" shares {c['action_shares_after']} aroused-after {c['aroused_lives_after']} covered {c['coverage_ok']}"
+            f" cache {c['cache_at_cut']}"
             f" | restore trace {r['trace_equal']} final {r['final_equal']} id {r['loaded_id_ok']} err {r['error']}"
             f" rt-bytes {r['roundtrip_bytes_equal']} rt-members {r['roundtrip_members_equal']}"
             f" | fork O {f['O']['trace_equal'] and f['O']['final_equal']} D {f['D']['trace_equal'] and f['D']['final_equal']}"
@@ -537,7 +596,9 @@ def summarize(u: dict) -> str:
         if r.get("roundtrip_diff"):
             lines.append(f"    round trip differs in: {r['roundtrip_diff']}")
     if "sensitivity" in u:
-        lines.append(f"  k3 sensitivity at {u['sensitivity']['cut']}: flagged {u['sensitivity']['flagged']} err {u['sensitivity']['error']}")
+        sv = u["sensitivity"]
+        lines.append(f"  k3 sensitivity at {sv['cut']}: flagged {sv['flagged']} (unperturbed restore equal {sv['unperturbed_equal']},"
+                     f" trace flag {sv['trace_flag']}, final-bytes flag {sv['final_flag']}) err {sv['error']}")
     return "\n".join(lines)
 
 
@@ -584,12 +645,8 @@ def pilot_life(job):
     phases = {"0-99": (0, 100), "100-199": (100, 200), "200-249": (200, 250), "250-299": (250, 300)}
     aroused = {k: sum(1 for ev, r in zip(events, recs) if ev[0] == "L" and lo <= ev[1] < hi
                       and r["arousal"]["mode"] == "aroused") for k, (lo, hi) in phases.items()}
-    per_cut = {}
-    for name, k in sorted(cuts.items()):
-        after = [(ev, r) for ev, r in zip(events[k + 1:], recs[k + 1:])]
-        per_cut[name] = {"event": k, "moment": events[k][1],
-                         "distinct_actions": len({r["action"] for _, r in after if r["action"] is not None}),
-                         "aroused_lives": sum(1 for ev, r in after if ev[0] == "L" and r["arousal"]["mode"] == "aroused")}
+    per_cut = {name: {"event": k, "moment": events[k][1], **coverage(name, trace[k + 1:])}
+               for name, k in sorted(cuts.items())}
     return {"task": task, "brain": brain, "life": life, "reading": readings(cues, events, trace),
             "aroused_by_phase": aroused, "unavailable": [c for c in CUT_TYPES if c not in cuts],
             "per_cut": per_cut, "seconds": round(time.time() - t0, 1)}
@@ -602,18 +659,23 @@ def pilot():
     with ProcessPoolExecutor(WORKERS) as ex:
         rows = list(ex.map(pilot_life, jobs))
     for r in rows:
-        weakest = min(((c["distinct_actions"], c["aroused_lives"], n) for n, c in r["per_cut"].items()), default=None)
+        weakest = min(((c["action_shares_after"][1] if len(c["action_shares_after"]) > 1 else 0.0,
+                        c["aroused_lives_after"], n) for n, c in r["per_cut"].items()), default=None)
         print(f"{r['task']} {r['brain']:>6} life {r['life']} acc {r['reading']['accuracy']} aroused {r['aroused_by_phase']}"
-              f" unavailable {r['unavailable']} weakest-cut (acts, aroused-after, cut) {weakest} {r['seconds']} s", flush=True)
+              f" unavailable {r['unavailable']} weakest-cut (2nd action share, aroused-after, cut) {weakest}"
+              f" uncovered {[n for n, c in r['per_cut'].items() if not c['coverage_ok']]} {r['seconds']} s", flush=True)
     for t in tasks:
         sub = [r for r in rows if r["task"] == t]
         full = sum(1 for r in sub if not r["unavailable"])
-        moving = sum(1 for r in sub if all(c["distinct_actions"] >= 2 for c in r["per_cut"].values()))
-        learning = sum(1 for r in sub if all(c["aroused_lives"] >= 1 for c in r["per_cut"].values()))
-        print(f"SUMMARY {t}: lives with all 9 cut types {full}/{len(sub)}; every cut followed by >= 2 actions"
-              f" {moving}/{len(sub)}; every cut followed by >= 1 aroused live {learning}/{len(sub)}", flush=True)
-    with open(os.path.join(HERE, "EXP-05b-pilot.json"), "w") as f:
-        json.dump(rows, f, indent=1, sort_keys=True)
+        moving = sum(1 for r in sub if all(c["distinct_actions_after"] >= 2 for c in r["per_cut"].values()))
+        learning = sum(1 for r in sub if all(c["aroused_lives_after"] >= 1 for c in r["per_cut"].values()))
+        covered = sum(1 for r in sub if not r["unavailable"] and all(c["coverage_ok"] for c in r["per_cut"].values()))
+        print(f"SUMMARY {t}: lives with all 9 cut types {full}/{len(sub)}; every cut followed by >= 2 live actions"
+              f" {moving}/{len(sub)}; every cut followed by >= 1 aroused live {learning}/{len(sub)};"
+              f" all 9 cut types and every cut covered (registered rule) {covered}/{len(sub)}", flush=True)
+    out = os.environ.get("PILOT_OUT", "EXP-05b-pilot")
+    with open(os.path.join(HERE, out + ".json"), "w") as f:
+        json.dump({"env": env_info(), "rows": rows}, f, indent=1, sort_keys=True)
 
 
 def main():
@@ -621,11 +683,18 @@ def main():
     if mode == "diagnose":
         return diagnose()
     if mode == "pilot":
+        info = env_info()
+        print(f"EXP-05b MODE=pilot | Cadence {info['cadence']} {info['describe']} ({info['sha']}) dirty={info['dirty']}"
+              f" | Python {info['python']} NumPy {info['numpy']} | threads {info['threads']} | {info['installed']}", flush=True)
         return pilot()
     os.makedirs(WORK, exist_ok=True)
     info = env_info()
-    print(f"EXP-05b MODE={mode} TASK={TASK} {json.dumps(TASKS[TASK], sort_keys=True)} | Cadence {info['cadence']} {info['describe']} ({info['sha']}) dirty={info['dirty']}"
-          f" | Python {info['python']} NumPy {info['numpy']} | threads {info['threads']}", flush=True)
+    print(f"EXP-05b MODE={mode} TASK={TASK} {json.dumps(TASKS.get(TASK), sort_keys=True)} | Cadence {info['cadence']}"
+          f" {info['describe']} ({info['sha']}) dirty={info['dirty']} | Python {info['python']} NumPy {info['numpy']}"
+          f" | threads {info['threads']} | {info['installed']}", flush=True)
+    assert TASK == REGISTERED_TASK, f"TASK must be the registered {REGISTERED_TASK}, got {TASK!r}"
+    assert info["sha"].startswith(REGISTERED_SHA) and not info["dirty"], "Cadence clone is not the registered clean c9c8080"
+    assert all(v == "1" for v in info["threads"].values()), f"thread variables must be 1: {info['threads']}"
     t0 = time.time()
     if mode == "check":
         for b in BRAINS:
@@ -639,13 +708,13 @@ def main():
     wall = time.time() - t0
     for u in units:
         print(summarize(u), flush=True)
-    result = {"mode": mode, "env": info, "wall_seconds": wall, "units": units}
+    result = {"mode": mode, "env": info, "task": TASK, "task_spec": TASKS[TASK], "wall_seconds": wall, "units": units}
     if mode == "check":
         k1 = all(len(u["cuts"]) == len(CUT_TYPES) and all(c["groups_ok"] for c in u["per_cut"].values()) for u in units)
         k2 = all(u["control"]["R2_trace_equal"] and u["control"]["R2_final_equal"] for u in units)
         k3 = all(u.get("sensitivity", {}).get("flagged") for u in units) and \
             ulp_probe(os.path.join(WORK, f"plain-{CHECK_LIFE}", "cut-B1.npz"))
-        k4 = all(c["state_moves"] and c["distinct_actions_after"] >= 2 for u in units for c in u["per_cut"].values())
+        k4 = all(c["state_moves"] and c["coverage_ok"] for u in units for c in u["per_cut"].values())
         # one check life = 3 units; the full run is 3 lives at the same per-unit work, 4 workers either way
         projected = wall * len(DATA_LIVES)
         k5 = projected <= 15 * 60
@@ -660,6 +729,7 @@ def main():
         with open(check_path) as f:
             check = json.load(f)
         assert check["gates"] and all(v for k, v in check["gates"].items() if k.startswith("k")), "check did not pass"
+        assert check["task"] == TASK and check["env"]["sha"] == info["sha"], "check ran another task or Cadence commit"
         result["verdicts"] = verdicts(units + check["units"])
         print(f"VERDICTS (data lives + check life): {json.dumps(result['verdicts'])} | wall {wall:.0f} s")
         out = os.path.join(HERE, "EXP-05b-full.json")
