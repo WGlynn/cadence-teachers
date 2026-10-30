@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-30 (iter51, EXP-07 SUPPORTIVE at ceiling, on 0.91.2 2062eda, generic queue): reward-learning a second skill on new one-hot cues left the first intact in 20/20 seeds (A 1.00 before and after); the design could only see total forgetting, so EXP-07b (overlapping inputs) is queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
+
 2026-10-29 (iter50, EXP-05b SUPPORTIVE, on 0.91.1 c9c8080, library & tooling): a brain saved mid-life (pending action, mid-wait, after either reset) continues bit for bit in a fresh process, and deepcopy forks equal save/load forks, on three brains (apical included) over 108 cuts. Off the V(S) ladder; no milestone moves. The V(S) program is still waiting on Will: CAL-1 (draft in experiments/CAL-1.md), CAL-2, or the registered zero test.
 
 2026-10-27 (iter49, EXP-77b CROSSED, on 0.89.0 81345d8): **M1b crossed on the current release.** Will lifted the hold; the full run finished 216/216 (3,284 s). All six CONFIRM criteria hold at 0.89.0's founder lateral: know-1..4 +.075 / +.157 / +.249 / +.385, Spearman .549, every knowledge-free arm under the 1/32 margin (untaught +.021 the highest), know-1 beats anti-echo by 5.7 SEM, knowledge-free pay .005; zero admitted by construction. The old per-run interval check also passes (null .1993, random .1987), so the rule change did not do the work. EXP-77 stays VOID. M1b is now crossed on v0.84.3 (EXP-73) and 0.89.0 (EXP-77b), one instrument. Next: the next rung on the current API (instrument dependence, EXP-62b / 62h / 62i line), or CAL-1 / CAL-2 (Will-gated).
@@ -222,6 +224,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter51 (2026-10-30): EXP-07, forgetting of an unrelated skill on 0.91.2: SUPPORTIVE at ceiling
+- Cadence 0.91.2, main `2062eda` (monitor today: EXP-08 and the EXP-62e gate unchanged). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took a ready queue item. Pre-registered `7f362fb`. 20 seeds, one-hot cues, A 1.000 before and after B, B 1.000, drop 0. Ceiling: the prediction was never at risk. Follow-up EXP-07b (overlapping inputs) queued ready. experiments/EXP-07.md.
 
 ### iter50 (2026-10-29): EXP-05b, mid-stream snapshot/restore byte identity on 0.91.1: SUPPORTIVE
 - Cadence 0.91.1, main `c9c8080`. Off the V(S) ladder (library & tooling): the program waits on Will-gated CAL-1 / CAL-2 / the registered zero test, so the loop took the best ready queue item. Pre-registered `96c111a` after a three-lens review that caught an unpinned task, a wrong cache premise and a weak variance guard. Check PASS; all three arms CONFIRMED pooled and on each of three brains (plain, learned code, apical): 108/108 restores, 108/108 deepcopy and 108/108 save/load forks exact over 96,408 event records plus final bytes. Harnesses may fork with `deepcopy`. No milestone moves. Write-up experiments/EXP-05b.md, results row, atlas iter50.

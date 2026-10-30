@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-07: learning a second skill on new cues leaves the first intact, at ceiling: SUPPORTIVE - 2026-10-30
+- **Version:** Cadence 0.91.2, main `2062eda`, CPU NumPy loop. **Script:** `exp/EXP-07_forgetting.py`. Pre-registered `7f362fb` before any data. 20 seeds, `Brain.compose(8, 2, arousal=True)`, skill A on one-hot cues 0 to 3, skill B on cues 4 to 7, +1/-1 outcomes, 200 moments each; arms LEARN-B and CONTROL forked with `deepcopy`; exam on copies given the true pending outcome.
+- **Result:** A before 1.000, A after B 1.000, drop +0.000 (SEM 0.000), B after 1.000 (from 0.50 at birth); 0/20 seeds lost any A answer. 40 s.
+- **Verdict: SUPPORTIVE** (loop CONFIRMED). Scope: the easiest case only. One-hot cues share no input weights and every score sat at 1.00, so the design could see total forgetting but not partial interference; reward learning via `live`, not lessons (upstream #238 is about lessons). Follow-up EXP-07b (overlapping inputs) queued ready.
+
 ## EXP-05b: a brain saved mid-life continues bit for bit on Cadence 0.91.1, and deepcopy forks are exact: SUPPORTIVE - 2026-10-29
 - **Version:** Cadence 0.91.1, main `c9c8080` (clean), CPU NumPy loop, one BLAS thread. **Script:** `exp/EXP-05b_snapshot_restore.py`. Pre-registered `96c111a` after a three-lens review; task T3 (+1/-1, nursery genes, `arousal_need` .5) chosen by a behaviour pilot on pilot seeds by the rule queued 2026-10-23.
 - **Result:** check PASS (k1-k5). 12 brain-lives (plain, learned code, apical x 3 data lives + check life), 108 cuts, 432 continuations, 96,408 event records compared exactly. Fresh-process restores equal the reference 108/108 (trace and final checkpoint bytes); original, deepcopy and save/load forks 108/108 each; diverging twin differs 108/108; R equals R2 12/12; A0 12/12; every cut covered (second-action share >= .20); load-then-save round trip 108/108; recall cache empty at 108/108 cuts.

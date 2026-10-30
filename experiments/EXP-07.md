@@ -23,11 +23,20 @@
   - FORGETTING (prediction refuted) if mean drop >= 0.25 or A after <= 0.60.
   - INCONCLUSIVE otherwise.
   The paired drop is reported with its SEM over seeds.
-- Result: PENDING
-- Verdict: PENDING
+- Result (40 s): A before 1.000, A after B 1.000, drop +0.000 (SEM 0.000), B after 1.000; 0 of 20 seeds lost any A
+  answer. Every brain started B at chance (B at birth 0.25 to 0.75, mean 0.50) and learned all four B cues.
+- Verdict: SUPPORTIVE by the pre-registered rule (drop <= 0.10, A after >= 0.75). It is a ceiling result: see Reflection.
 
 ## Reflection
-- What it means: PENDING
-- Process: PENDING
-- Lesson: PENDING
-- Next: PENDING
+- What it means: on this task, reward-learning a second skill on new cues left the first untouched in every seed.
+  That rules out catastrophic forgetting in the easiest case only. The cues are one-hot, so A and B share no input
+  weights, and every score sat at 1.00, so the test could see total forgetting but not partial interference. It says
+  nothing yet about skills whose inputs overlap, which is where forgetting usually shows. It is about reward learning
+  through `live`, not lessons, so it does not speak to upstream's open issue on taught types coexisting (#238).
+- Process: pre-registered and committed (`7f362fb`) before any data; the exam gives each copy the true pending outcome
+  instead of a made-up 0. Weakness: the effect window was at ceiling (both skills learned perfectly in 200 moments),
+  so the prediction was never at risk; I should have picked a task where A sits below 1.00 or the inputs overlap.
+- Lesson: a retention test needs room to fall. Pick a task where the first skill is learned well but not perfectly,
+  or where the second skill reuses the first skill's inputs, otherwise a pass is guaranteed by the design.
+- Next: queued EXP-07b, overlapping inputs: cues as 2-hot codes over 6 features where each B cue shares a feature
+  with an A cue and wants the opposite action, with the same arms and rules.
