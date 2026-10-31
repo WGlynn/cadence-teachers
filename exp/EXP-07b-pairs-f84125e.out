@@ -1,0 +1,22 @@
+seed 7071000: A answers [1, 1, 1, 1] B answers [1, 1, 1, 1] same on 4/4 pairs constant=True
+seed 7071001: A answers [1, 0, 1, 0] B answers [1, 0, 1, 0] same on 4/4 pairs constant=False
+seed 7071002: A answers [0, 0, 1, 1] B answers [1, 1, 0, 0] same on 0/4 pairs constant=False
+seed 7071003: A answers [1, 1, 1, 1] B answers [1, 1, 1, 1] same on 4/4 pairs constant=True
+seed 7071004: A answers [0, 1, 0, 1] B answers [0, 1, 0, 1] same on 4/4 pairs constant=False
+seed 7071005: A answers [1, 1, 0, 0] B answers [0, 0, 1, 1] same on 0/4 pairs constant=False
+seed 7071006: A answers [1, 0, 0, 1] B answers [1, 0, 0, 1] same on 4/4 pairs constant=False
+seed 7071007: A answers [0, 0, 0, 0] B answers [0, 0, 0, 1] same on 3/4 pairs constant=False
+seed 7071008: A answers [0, 0, 0, 0] B answers [0, 0, 0, 0] same on 4/4 pairs constant=True
+seed 7071009: A answers [1, 1, 0, 0] B answers [0, 0, 1, 1] same on 0/4 pairs constant=False
+seed 7071010: A answers [1, 1, 0, 0] B answers [0, 0, 1, 1] same on 0/4 pairs constant=False
+seed 7071011: A answers [0, 1, 0, 1] B answers [0, 1, 0, 1] same on 4/4 pairs constant=False
+seed 7071012: A answers [0, 1, 0, 1] B answers [0, 1, 0, 1] same on 4/4 pairs constant=False
+seed 7071013: A answers [1, 1, 1, 1] B answers [1, 1, 1, 1] same on 4/4 pairs constant=True
+seed 7071014: A answers [0, 0, 0, 1] B answers [1, 0, 0, 0] same on 2/4 pairs constant=False
+seed 7071015: A answers [0, 0, 1, 1] B answers [1, 1, 0, 0] same on 0/4 pairs constant=False
+seed 7071016: A answers [0, 0, 0, 0] B answers [0, 0, 0, 0] same on 4/4 pairs constant=True
+seed 7071017: A answers [0, 1, 1, 1] B answers [0, 1, 1, 0] same on 3/4 pairs constant=False
+seed 7071018: A answers [0, 0, 1, 1] B answers [1, 1, 0, 0] same on 0/4 pairs constant=False
+seed 7071019: A answers [0, 0, 0, 0] B answers [0, 0, 0, 0] same on 4/4 pairs constant=True
+pairs answered alike, per seed: [0, 0, 0, 0, 0, 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+seeds answering one action to all 8 cues: 6

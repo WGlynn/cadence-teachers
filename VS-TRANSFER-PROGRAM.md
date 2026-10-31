@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-10-31 (iter52, EXP-07b FORGETTING, on 0.91.3 f84125e, generic queue): when skill B reuses skill A's inputs and wants the opposite answers, 200 moments of B with no rehearsal took A from .94 to .50 (drop +.44, SEM .09); 6 of 20 brains kept both, 5 let B overwrite A, 6 ended on one answer for every cue (3 of them had learned A first). EXP-07c (interleaved rehearsal) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
+
 2026-10-30 (iter51, EXP-07 SUPPORTIVE at ceiling, on 0.91.2 2062eda, generic queue): reward-learning a second skill on new one-hot cues left the first intact in 20/20 seeds (A 1.00 before and after); the design could only see total forgetting, so EXP-07b (overlapping inputs) is queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
 
 2026-10-29 (iter50, EXP-05b SUPPORTIVE, on 0.91.1 c9c8080, library & tooling): a brain saved mid-life (pending action, mid-wait, after either reset) continues bit for bit in a fresh process, and deepcopy forks equal save/load forks, on three brains (apical included) over 108 cuts. Off the V(S) ladder; no milestone moves. The V(S) program is still waiting on Will: CAL-1 (draft in experiments/CAL-1.md), CAL-2, or the registered zero test.
@@ -224,6 +226,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter52 (2026-10-31): EXP-07b, forgetting with overlapping inputs on 0.91.3: FORGETTING
+- Cadence 0.91.3, main `f84125e` (monitor today: EXP-08 and the EXP-62e gate unchanged). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took the ready queue item. Pre-registered `1766330`. 20 seeds, 2-hot cues, A .938 before and .500 after B, B .825, drop +.438 (SEM .094); exploratory split 6 both / 5 overwrite / 6 single answer / 3 partial. Write-up experiments/EXP-07b.md. Next generic item: EXP-07c.
 
 ### iter51 (2026-10-30): EXP-07, forgetting of an unrelated skill on 0.91.2: SUPPORTIVE at ceiling
 - Cadence 0.91.2, main `2062eda` (monitor today: EXP-08 and the EXP-62e gate unchanged). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took a ready queue item. Pre-registered `7f362fb`. 20 seeds, one-hot cues, A 1.000 before and after B, B 1.000, drop 0. Ceiling: the prediction was never at risk. Follow-up EXP-07b (overlapping inputs) queued ready. experiments/EXP-07.md.

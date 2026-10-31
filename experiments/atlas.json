@@ -1,5 +1,43 @@
 [
  {
+  "id": "EXP-07b",
+  "date": "2026-10-31",
+  "iter": "iter52",
+  "track": "generic queue",
+  "verdict": "BOUNDARY",
+  "name": "A second skill that reuses the first skill's inputs and wants the opposite answers erases the first on average",
+  "verdict_note": "pre-registered rule label FORGETTING (drop >= .25, A after <= .60); pre-registered (1766330) before any data, same arms, exam and rules as EXP-07; 20 seeds on Cadence 0.91.3 at f84125e: A before .938, A after B .500, drop +.438 (SEM .094), B after .825; FORGETTING by the rule (drop >= .25, A after <= .60). Exploratory split (not pre-registered): 6 seeds kept both skills, 5 overwrote A with B, 6 gave one action to all 8 cues (3 of them had learned A first), 3 partial. Scope: 2-hot cues over 6 features, 200 + 200 reward moments, compose(inputs=6, actions=2, arousal=True), one machine, CPU NumPy loop",
+  "headline": "We taught Cadence brains one skill, then a second skill whose cues reused the first skill's inputs but wanted the opposite answers, with no rehearsal of the first. On average the first skill fell from .94 to .50. Six of twenty brains kept both; the rest either let the second skill take over or ended up giving one answer to everything.",
+  "question": "Does reward-learning skill B erase skill A when each B cue shares one input feature with one A cue and its right action is the opposite of that A cue's?",
+  "process_issues": [
+   "the VOID rule was set on the means and passed (A before .938, B after .825), yet 3 seeds never learned A and 6 never learned B; a per-seed learnability filter declared in advance would have kept the drop clean of seeds with nothing to lose"
+  ],
+  "lesson": "Split a forgetting score by how the brain fails: overwriting and collapsing to one answer lower the score by the same amount here (4 of 8 right) but may need different fixes.",
+  "chart": {
+   "title": "How 20 brains ended after learning B (exploratory split)",
+   "unit": "seeds of 20",
+   "bars": [
+    {
+     "label": "Kept both skills",
+     "value": 6
+    },
+    {
+     "label": "B overwrote A",
+     "value": 5
+    },
+    {
+     "label": "One action for all cues",
+     "value": 6
+    },
+    {
+     "label": "Partial",
+     "value": 3
+    }
+   ]
+  },
+  "quote_worthy": "Six of twenty brains kept both skills, so the network can hold the pair; sequential training just does not reliably find that solution."
+ },
+ {
   "id": "EXP-01",
   "name": "Arousal gene sweep on reward flip",
   "track": "library & tooling",

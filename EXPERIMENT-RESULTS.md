@@ -8,6 +8,11 @@ Append-only, newest on top. Each row version-stamped. Insight is the number, pas
 > Note 2026-10-16 (program re-rank): EXP-12 to EXP-35 and EXP-37 to EXP-43 have no rows here; their
 > write-ups are in experiments/EXP-XX.md and the program log (VS-TRANSFER-PROGRAM.md).
 
+## EXP-07b: a second skill that reuses the first skill's inputs and wants the opposite answers erases the first on average: FORGETTING (atlas BOUNDARY) - 2026-10-31
+- **Version:** Cadence 0.91.3, main `f84125e`, CPU NumPy loop. **Script:** `exp/EXP-07b_overlap_forgetting.py`. Pre-registered `1766330` before any data. 20 seeds, `Brain.compose(6, 2, arousal=True)`, 2-hot cues over 6 features: A cue i = {i, context 4 or 5}, B cue i = {i, the other context} with the opposite right action; +1/-1 outcomes, 200 moments each; arms, exam and verdict rules as EXP-07.
+- **Result:** A before 0.938, A after B 0.500, drop +0.438 (SEM 0.094), B after 0.825; 12/20 seeds lost any A answer. 41 s. Exploratory split (`exp/EXP-07b_pairs_explore.py`, not pre-registered, reproduces every scored seed): 6 kept both (different answers on all 4 pairs), 5 overwrote A with B, 6 gave one action to all 8 cues (3 of them had A at 1.00 first), 3 partial.
+- **Verdict: FORGETTING** by the pre-registered rule (loop CONFIRMED: the prediction of a drop >= .25 holds). Scope: one task shape, sequential training with no A rehearsal, reward learning via `live`. The mean mixes two failures (overwrite and single-answer collapse); 3 seeds never learned A and 6 never learned B, which the mean-level VOID rule let through. Follow-up EXP-07c (interleaved rehearsal arm, per-seed learnability filter) queued ready.
+
 ## EXP-07: learning a second skill on new cues leaves the first intact, at ceiling: SUPPORTIVE - 2026-10-30
 - **Version:** Cadence 0.91.2, main `2062eda`, CPU NumPy loop. **Script:** `exp/EXP-07_forgetting.py`. Pre-registered `7f362fb` before any data. 20 seeds, `Brain.compose(8, 2, arousal=True)`, skill A on one-hot cues 0 to 3, skill B on cues 4 to 7, +1/-1 outcomes, 200 moments each; arms LEARN-B and CONTROL forked with `deepcopy`; exam on copies given the true pending outcome.
 - **Result:** A before 1.000, A after B 1.000, drop +0.000 (SEM 0.000), B after 1.000 (from 0.50 at birth); 0/20 seeds lost any A answer. 40 s.
