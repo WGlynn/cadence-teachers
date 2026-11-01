@@ -1,5 +1,35 @@
 [
  {
+  "id": "EXP-07c",
+  "date": "2026-11-01",
+  "iter": "iter53",
+  "track": "generic queue",
+  "verdict": "BOUNDARY",
+  "name": "Rehearsal does not let a brain keep two overlapping skills when holding both needs feature and context combined",
+  "verdict_note": "pre-registered rule label INCONCLUSIVE; pre-registered (8ba827c) before any data; EXP-07b's task and seeds, SEQ arm reproduced EXP-07b on 20/20 seeds; 15/20 passed the per-seed learnability filter: A after SEQ .533, INTER (one A moment in four) .683, diff +.150 (SEM .064), B after .900 vs .767; INCONCLUSIVE by the rule (between .10 and .25), prediction failed. Exploratory (post hoc): kept both = exactly the 6 seeds whose rule a sum of input weights can solve, 0 of the other 14 in either arm. Scope: 2-hot cues over 6 features, 200 + 200 reward moments, compose(inputs=6, actions=2, arousal=True), one machine, CPU NumPy loop",
+  "headline": "We gave the brains from the last test some practice of the first skill while they learned the second (one moment in four). It helped less than expected: the first skill ended at .68 instead of .53. The brains that kept both skills turned out to be exactly the ones whose answers could be worked out by simply adding up the inputs. Where the right answer depends on a feature and its context together, no brain kept both skills, with or without practice.",
+  "question": "In EXP-07b's task, if one moment in four during skill B training is a skill A moment, does the brain keep both skills?",
+  "process_issues": [
+   "the primary averaged two kinds of rule the seed fixes in advance (solvable by a sum of input weights, or needing feature and context combined); that factor was knowable before data and should have been a registered split, and the learnability filter could not catch it because B alone is always sum-solvable"
+  ],
+  "lesson": "When a random assignment decides whether a task is solvable by the simplest mechanism, classify the assignments before running and report each class separately; a mean over both classes can look like a partial effect when it is two populations.",
+  "chart": {
+   "title": "Brains that kept both skills, by rule type (both arms identical)",
+   "unit": "seeds",
+   "bars": [
+    {
+     "label": "Sum-solvable rule (6 seeds)",
+     "value": 6
+    },
+    {
+     "label": "Rule needs feature and context combined (14 seeds)",
+     "value": 0
+    }
+   ]
+  },
+  "quote_worthy": "Rehearsal can only protect a skill the brain is able to hold beside the new one."
+ },
+ {
   "id": "EXP-07b",
   "date": "2026-10-31",
   "iter": "iter52",
@@ -35,7 +65,7 @@
     }
    ]
   },
-  "quote_worthy": "Six of twenty brains kept both skills, so the network can hold the pair; sequential training just does not reliably find that solution."
+  "quote_worthy": "Six of twenty brains kept both skills; EXP-07c later found they are exactly the six whose rule a plain sum of input weights can solve."
  },
  {
   "id": "EXP-01",

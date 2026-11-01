@@ -1,0 +1,25 @@
+EXP-07c rehearsal on cadence 0.91.3: 20 seeds, A 200, then B 200 (SEQ) or B with every 4th moment A (INTER); REF fresh B-only
+  seed 7071000: A before 0.50  REF B 1.00  pass 0  |  SEQ A 0.50 B 0.50 collapse  |  INTER A 0.50 B 0.50 collapse
+  seed 7071001: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.00 B 1.00 overwrote |  INTER A 0.50 B 0.50 collapse
+  seed 7071002: A before 1.00  REF B 1.00  pass 1  |  SEQ A 1.00 B 1.00 kept_both |  INTER A 1.00 B 1.00 kept_both
+  seed 7071003: A before 0.50  REF B 1.00  pass 0  |  SEQ A 0.50 B 0.50 collapse  |  INTER A 0.50 B 0.50 collapse
+  seed 7071004: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.00 B 1.00 overwrote |  INTER A 0.25 B 0.50 partial
+  seed 7071005: A before 1.00  REF B 1.00  pass 1  |  SEQ A 1.00 B 1.00 kept_both |  INTER A 1.00 B 1.00 kept_both
+  seed 7071006: A before 1.00  REF B 0.50  pass 0  |  SEQ A 0.00 B 1.00 overwrote |  INTER A 0.50 B 0.50 collapse
+  seed 7071007: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.50 B 0.75 partial   |  INTER A 0.50 B 0.50 collapse
+  seed 7071008: A before 1.00  REF B 0.50  pass 0  |  SEQ A 0.50 B 0.50 collapse  |  INTER A 0.50 B 0.75 partial
+  seed 7071009: A before 1.00  REF B 1.00  pass 1  |  SEQ A 1.00 B 1.00 kept_both |  INTER A 1.00 B 1.00 kept_both
+  seed 7071010: A before 1.00  REF B 1.00  pass 1  |  SEQ A 1.00 B 1.00 kept_both |  INTER A 1.00 B 1.00 kept_both
+  seed 7071011: A before 1.00  REF B 0.75  pass 1  |  SEQ A 0.00 B 1.00 overwrote |  INTER A 0.75 B 0.75 partial
+  seed 7071012: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.00 B 1.00 overwrote |  INTER A 0.50 B 0.50 collapse
+  seed 7071013: A before 1.00  REF B 0.50  pass 0  |  SEQ A 0.50 B 0.50 collapse  |  INTER A 0.50 B 0.50 collapse
+  seed 7071014: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.25 B 0.75 partial   |  INTER A 0.25 B 0.75 same_pairs_other
+  seed 7071015: A before 1.00  REF B 1.00  pass 1  |  SEQ A 1.00 B 1.00 kept_both |  INTER A 1.00 B 1.00 kept_both
+  seed 7071016: A before 0.75  REF B 1.00  pass 1  |  SEQ A 0.50 B 0.50 collapse  |  INTER A 0.50 B 0.50 collapse
+  seed 7071017: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.25 B 1.00 partial   |  INTER A 0.50 B 0.75 partial
+  seed 7071018: A before 1.00  REF B 1.00  pass 1  |  SEQ A 1.00 B 1.00 kept_both |  INTER A 1.00 B 1.00 kept_both
+  seed 7071019: A before 1.00  REF B 1.00  pass 1  |  SEQ A 0.50 B 0.50 collapse  |  INTER A 0.50 B 0.75 partial
+SEQ vs EXP-07b per-seed mismatches: 0/20
+FILTERED (15/20): SEQ A 0.533 B 0.900 | INTER A 0.683 B 0.767 | A diff INTER-SEQ +0.150 (SEM 0.064)
+CLASSES (all 20): SEQ {'kept_both': 6, 'overwrote': 5, 'collapse': 6, 'partial': 3, 'same_pairs_other': 0}  INTER {'kept_both': 6, 'overwrote': 0, 'collapse': 8, 'partial': 5, 'same_pairs_other': 1}
+VERDICT: INCONCLUSIVE  (85 s)

@@ -37,8 +37,38 @@
   The paired difference is reported with its SEM over filtered seeds. Registered secondary, on all 20 seeds, per arm:
   how many seeds keep both (different answers on all 4 pairs), overwrite (same answer on all 4 pairs, B correct),
   collapse (one action for all 8 cues), or are partial, counted the same way as EXP-07b's exploratory split.
-- Result: (pending)
-- Verdict: (pending)
+- Result (85 s): SEQ reproduced EXP-07b exactly (0 of 20 seeds differ). 15 of 20 seeds passed the filter (2 never
+  learned A, 3 failed REF). On those 15: A after SEQ .533, A after INTER .683, difference +.150 (SEM .064); B after
+  SEQ .900, B after INTER .767. On all 20 seeds, per arm: SEQ kept both 6, overwrote 5, one answer for all 6,
+  partial 3; INTER kept both 6, overwrote 0, one answer for all 8, partial 5, and 1 seed with the same answer on all
+  pairs but B not fully right.
+- Verdict: INCONCLUSIVE by the pre-registered rule (+.15 is above the .10 NULL line and below the .25 SUPPORTIVE
+  line). The prediction failed: A after INTER is .68, not the .85 predicted, and the one-answer collapse grew (6 to 8
+  seeds) instead of shrinking. Atlas category: BOUNDARY (see the exploratory finding below).
+- Exploratory, not pre-registered (computed after the run from each seed's rule, which the seed fixes before any
+  data): whether a brain can hold both skills depends on which cues skill A pairs together. If A cues 0 and 1 want
+  the same action, a plain sum of input weights (feature weight plus context weight) can answer all 8 cues
+  correctly. That holds for 1 in 3 assignments, and 6 of the 20 seeds drew one. For the other assignments, the right
+  answer flips with the context, so the brain has to combine the feature and the context (an XOR-shaped mapping).
+  The split is complete in both arms: the 6 seeds with a sum-solvable rule kept both skills, with or without
+  rehearsal, and none of the other 14 kept both in either arm.
 
 ## Reflection
-- (pending)
+- What it means: EXP-07b's forgetting was not the ordinary kind that rehearsal fixes. In the 6 seeds where a sum of
+  input weights could hold both skills, A survived 200 moments of B with no rehearsal at all. In the other 14, the brain never held both,
+  so learning B had to cost A, and rehearsal only changed how it failed: overwrites became partial answers or one
+  answer for everything. Rehearsal can only protect a skill the brain is able to hold alongside the new one. At these
+  default sizes and 400 reward moments, none of these brains learned the full mapping that needs the feature and the
+  context combined (some got part of it). That points to a representation or learning limit, not an ordering problem. It is shown for one task shape and
+  one budget, and the split is post hoc, so it needs its own registered test.
+- Process: pre-registered and committed (`8ba827c`) before any data, with the per-seed filter EXP-07b's reflection
+  asked for, and a built-in reproduction check (SEQ matched EXP-07b on every seed). Weakness: the primary averaged
+  two kinds of rule that the seed fixes in advance, one the brain can solve with sums and one it cannot. That factor
+  was knowable before data and should have been a registered split, not something found afterwards. The filter
+  could not catch it, because B alone is always sum-solvable.
+- Lesson: when a random assignment decides whether a task is solvable by the simplest mechanism (here, a sum of input
+  weights), classify the assignments before running and report each class separately. A mean over both classes can
+  look like a dose effect when it is two populations.
+- Next: queued EXP-07d, registered on fresh seeds with the rule type balanced (10 sum-solvable, 10 that need the
+  combination): train all 8 cues interleaved from birth for 800 moments, and ask whether the brain learns the
+  combination at all. If it cannot even from birth, the limit is representational and has nothing to do with order.

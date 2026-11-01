@@ -52,3 +52,7 @@
   score, but they may need different fixes (rehearsal is the usual one for overwriting; what causes the single-answer collapse is not known yet).
 - Next: queued EXP-07c, the same setup with an interleaved arm (B training with A moments mixed in at a fixed ratio)
   and a per-seed learnability filter declared before data, to see whether rehearsal keeps both skills.
+- Update 2026-11-01 (EXP-07c): the exploratory split above has a cause. The 6 seeds that kept both are exactly the 6
+  whose rule lets a plain sum of input weights answer all 8 cues (A cues 0 and 1 share an action); the other 14 rules
+  need the feature and context combined, and no brain held both on those, with or without rehearsal. So the drop here
+  measures that limit more than ordinary forgetting. Post hoc; EXP-07d tests it on fresh seeds.
