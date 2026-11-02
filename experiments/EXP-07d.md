@@ -45,9 +45,9 @@
   1600 moments (does twice the budget change the answer), and the learning curve per rule type at 200, 400, 800, 1600.
 - Result (151 s): the brute-force check gave the ceilings expected, 8 of 8 for the sum rules and 6 of 8 for the
   combination rules. At 800 moments the sum seeds scored 1.000 (all 10 at 8 of 8, already at 200 moments) and the
-  combination seeds 0.525: none at 8 of 8, none above the 6-of-8 ceiling, difference +0.475 (SEM 0.031). 7 of the 10
-  combination brains gave one action to every cue. At 1600 moments: combination 0.537, still none above 6 of 8, 6 of
-  10 on one answer. Over the whole curve (200, 400, 800, 1600) the combination mean stayed between 0.52 and 0.57, and
+  combination seeds 0.525: 0 of these 10 seeds at 8 of 8 or above the 6-of-8 ceiling, difference +0.475 (SEM
+  0.031). 7 of the 10 combination brains gave one action to every cue on that exam. At 1600 moments: combination
+  0.537, again 0 of 10 above 6 of 8, 6 of 10 on one answer. Over the whole curve (200, 400, 800, 1600) the combination mean stayed between 0.52 and 0.57, and
   the best single combination score at any exam was 6 of 8 (5 of the 40 combination exams, by 3 seeds: 7074012 at 800
   and 1600, 7074017 at 1600, 7074018 at 200 and 400).
 - Verdict: LIMIT by the pre-registered rule at 800 moments, and LIMIT again at 1600 (registered secondary). The
