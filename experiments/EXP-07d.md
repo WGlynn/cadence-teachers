@@ -10,8 +10,7 @@
   cues are trained mixed together from birth, with the rule type fixed in advance, does the brain learn the combined
   rule? If it cannot even then, the limit is in what the brain can learn here, not in the order of training.
   Why it matters: any learned policy of ours whose right answer depends on a situation and its context together
-  (an encounter whose right answer changes with the context, a hook deciding from two facts) needs this kind of
-  rule. A clean answer tells us whether to expect it at these sizes, or to build the combination into the inputs
+  (an encounter whose right answer changes with the context, a hook deciding from two facts) is a rule of this kind. A clean answer tells us whether to expect it at these sizes, or to build the combination into the inputs
   ourselves. The skeptic's way out is the budget: 1600 moments may simply be too few. The 1600-moment secondary
   answers that in part; a LIMIT at 1600 still holds only for this budget and these default sizes.
 - Setup: EXP-07b's 8 cues exactly (2-hot over 6 features; A cue i = {i, 4 if i < 2 else 5}, B cue i = {i, 5 if i < 2
@@ -44,8 +43,37 @@
   Reported with them: the difference sum mean minus combination mean with its SEM, and how many combination seeds
   beat the 6-of-8 ceiling of a sum of input weights (7 or 8 of 8). Registered secondary: the same rules applied at
   1600 moments (does twice the budget change the answer), and the learning curve per rule type at 200, 400, 800, 1600.
-- Result: PENDING
-- Verdict: PENDING
+- Result (151 s): the brute-force check gave the ceilings expected, 8 of 8 for the sum rules and 6 of 8 for the
+  combination rules. At 800 moments the sum seeds scored 1.000 (all 10 at 8 of 8, already at 200 moments) and the
+  combination seeds 0.525: none at 8 of 8, none above the 6-of-8 ceiling, difference +0.475 (SEM 0.031). 7 of the 10
+  combination brains gave one action to every cue. At 1600 moments: combination 0.537, still none above 6 of 8, 6 of
+  10 on one answer. Over the whole curve (200, 400, 800, 1600) the combination mean stayed between 0.52 and 0.57, and
+  the best single combination score at any exam was 6 of 8 (5 of the 40 combination exams, by 3 seeds: 7074012 at 800
+  and 1600, 7074017 at 1600, 7074018 at 200 and 400).
+- Verdict: LIMIT by the pre-registered rule at 800 moments, and LIMIT again at 1600 (registered secondary). The
+  prediction holds, more strongly than written: I predicted a mean of at most 0.80, and the brains did not even reach
+  the 0.75 that a sum of input weights allows. Atlas category: BOUNDARY.
 
 ## Reflection
-- PENDING
+- What it means: the split EXP-07c found after the fact replicates on fresh seeds with the rule type fixed in
+  advance. Trained on all 8 cues mixed from birth, the default composed brain learns the rule that follows the context
+  alone at once, and does not learn the rule that needs a feature and its context together, in 1600 reward moments.
+  It does not even find the best partial answer (6 of 8, which a sum of input weights gets): most combination brains
+  end on one action for everything, which is right half the time. So the forgetting seen in EXP-07b was mostly this
+  limit, not an effect of training order. What it does not show: whether a larger brain, another budget beyond 1600,
+  or a different learning path would learn it. The composed brain has hidden neurons, so the mapping is not ruled
+  out by its shape; this is what these defaults find through `live`, not what the network could hold.
+- Process: pre-registered and pushed (`3d47707`) before any data, with the rule type fixed by construction (the fix
+  EXP-07c's reflection asked for) and the linear ceiling computed before the run, which turned a vague "learned it or
+  not" into a hard line: a score above 6 of 8 means the brain combined the inputs. (The line is exact for greedy
+  answers; an exam copy the outcome arouses samples, so one lucky draw could add a cue. No exam crossed it.) Weakness: the sum rules in this
+  task follow the context feature alone, so the control is easier than "solvable by a sum" in general; a control rule
+  needing several weights summed would separate "needs a combination" from "needs more than one input". The collapse to
+  one answer has no tested cause here.
+- Lesson: when a task has a simple-mechanism ceiling (here, the best a sum of input weights can do), compute it by
+  brute force before the run and register "beats the ceiling" as the test. A null then says the brain stayed inside
+  the simple mechanism, and a pass says it went beyond it, instead of a score with no reference point.
+- Next: queued EXP-07e, to locate the limit: the same 10 combination rules with arms that change one thing each (the
+  conjunction given as its own input, so a sum can solve it; a larger brain; training that learns on every moment
+  instead of only when aroused). For our own use: a learned policy at these defaults should be handed the
+  situation-and-context combination as an input, not expected to find it.

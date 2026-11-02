@@ -30,6 +30,42 @@
   "quote_worthy": "Rehearsal can only protect a skill the brain is able to hold beside the new one."
  },
  {
+  "id": "EXP-07d",
+  "date": "2026-11-02",
+  "iter": "iter54",
+  "track": "generic queue",
+  "verdict": "BOUNDARY",
+  "name": "Trained on all 8 cues from birth, the brain still does not learn a rule that needs a feature and its context combined",
+  "verdict_note": "pre-registered rule label LIMIT at 800 moments and again at 1600 (registered secondary); pre-registered (3d47707) before any data; 20 fresh seeds, rule type fixed by construction (10 follow the context alone, 10 need feature and context combined); brute-force ceiling of a sum of input weights: 8/8 and 6/8; at 800: sum rules 1.000 (all 10 at 8/8 from 200 moments), combination 0.525, diff +.475 (SEM .031), 0/10 above the 6/8 ceiling, 7/10 one answer for all cues; at 1600: 0.537, 0/10 above 6/8. Scope: EXP-07b's 2-hot cues over 6 features, compose(inputs=6, actions=2, arousal=True) default sizes, 1600 reward moments through live, Cadence 0.92.1 a37d150, one machine, CPU NumPy loop",
+  "headline": "We trained fresh brains on all eight cues mixed together from the start, with the kind of rule chosen in advance. Where the right answer follows the context alone, every brain was perfect within 200 moments. Where the answer depends on a feature and its context together, no brain got past what simply adding up the inputs allows, even after 1600 moments; most ended up giving the same answer to everything. So the forgetting in the earlier tests was mostly this limit, not the order of training.",
+  "question": "Trained on all 8 overlapping cues mixed from birth, with the rule type fixed in advance, does the brain learn the rule that needs a feature and its context combined?",
+  "process_issues": [
+   "the control rules follow the context feature alone, which is easier than solvable by a sum of input weights in general; a control needing several weights summed would separate needs a combination from needs more than one input",
+   "the cause of the collapse to one answer is untested",
+   "exam copies the outcome arouses answer by sampling, so the 6/8 line is exact only for greedy answers (no exam crossed it)"
+  ],
+  "lesson": "When a task has a simple-mechanism ceiling, compute it by brute force before the run and register beating the ceiling as the test, so a null and a pass each say something definite.",
+  "chart": {
+   "title": "Score on the 8 cues after 800 moments, by rule type",
+   "unit": "fraction right",
+   "bars": [
+    {
+     "label": "Rule follows the context alone (10 seeds)",
+     "value": 1.0
+    },
+    {
+     "label": "Rule needs feature and context combined (10 seeds)",
+     "value": 0.525
+    },
+    {
+     "label": "Best a sum of input weights can do on those",
+     "value": 0.75
+    }
+   ]
+  },
+  "quote_worthy": "The brains did not even reach what adding up the inputs allows."
+ },
+ {
   "id": "EXP-07b",
   "date": "2026-10-31",
   "iter": "iter52",
