@@ -38,3 +38,4 @@ __pycache__/
 /.github/ISSUE_TEMPLATE/arena*.yml
 /exp/v05b/*
 !/exp/v05b/SOURCE.md
+*.partial
