@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-11-03 (iter55, EXP-07e LOCATED, on 0.93.0 720c5a9, generic queue): on 10 fresh combination-rule seeds the founder again gave one answer for everything (0/10 above 6/8); a four-times-larger brain (0/10) and learning on every moment through step (0/10) did not help; the 0.93.0 slower-actor recipe (actor_eta 0.1, bias 0.01, episodic memory) learned it on 10/10 and the cue as its own input on 9/10. EXP-07d's limit is the actor's step on shared activity, not size or schedule. EXP-07f (split the recipe) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
+
 2026-11-02 (iter54, EXP-07d LIMIT, on 0.92.1 a37d150, generic queue): trained on all 8 overlapping cues mixed from birth, with the rule type fixed in advance, brains whose rule follows the context alone were perfect by 200 moments (10/10), and brains whose rule needs a feature and its context combined stayed at 0.525 (800) and 0.537 (1600), none above the 6/8 that a sum of input weights allows, 7/10 on one answer for everything. The EXP-07c post hoc split replicates; EXP-07b's forgetting was mostly this limit. EXP-07e (inputs vs size vs learning only when aroused) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
 
 2026-11-01 (iter53, EXP-07c INCONCLUSIVE, on 0.91.3 f84125e, generic queue): interleaving one A moment in four during B training raised A after from .53 to .68 (+.15, SEM .06, 15 filtered seeds), short of the registered .25; overwrites became partial or one-answer failures. Post hoc, the 6 brains that kept both skills are exactly the 6 whose rule a sum of input weights can solve; none of the 14 that need feature and context combined kept both, with or without rehearsal. EXP-07d (joint training from birth, rule type balanced) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
@@ -230,6 +232,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter55 (2026-11-03): EXP-07e, locating EXP-07d's limit on 0.93.0: LOCATED
+- Cadence 0.93.0, main `720c5a9` (monitor today: EXP-08 byte-identical to 0.92.1, EXP-62e gate IDENTICAL). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took the ready queue item. Pre-registered `b15cfc8`. Seeds above 6/8 of 10 at 1600: A0 founder 0, A cue as own input 9, B modules=(256,) 0, C step 0, D 0.93 recipe 10. Prediction right on 4 of 5 arms (wrong on A). Spawned EXP-07f.
 
 ### iter54 (2026-11-02): EXP-07d, joint training from birth on the overlapping cues on 0.92.1: LIMIT
 - Cadence 0.92.1, main `a37d150` (monitor today: EXP-08 byte-identical to 0.91.3, EXP-62e gate IDENTICAL). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took the ready queue item. Pre-registered `3d47707`. 20 fresh seeds, rule type fixed by construction (10 follow the context alone, 10 need feature and context combined), all 8 cues mixed from birth for 1600 moments. Brute-force ceiling of a sum of input weights: 8/8 and 6/8. At 800: 1.000 vs 0.525 (diff +.475, SEM .031), 0/10 combination seeds above 6/8, 7/10 one answer; at 1600 0.537, still 0/10. LIMIT at both; prediction confirmed. Write-up `experiments/EXP-07d.md`; atlas BOUNDARY. Next: EXP-07e.
