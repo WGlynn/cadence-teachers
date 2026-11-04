@@ -87,3 +87,7 @@
   episodic memory alone), so the guidance names the one setting that matters. For the Telegram creature (Will-gated,
   pinned at 0.91.1): if any of its rules depends on an encounter and its context together, it runs at the founder
   actor rate and so cannot learn that rule by this result. Nothing changes there without Will.
+- Correction 2026-11-04 (EXP-07f, Cadence 0.93.1): splitting arm D on the same seeds, `memory_choice=True` alone learns
+  on 10 of 10 (mean .975) and `actor_eta=0.1` alone and `actor_eta_bias=0.01` alone on 0 of 10 each. The memory alone
+  gives D's whole lift on this task, so the verdict's reading that the limit "sits in the actor's step", and the lesson to
+  try a slower actor step first, do not hold here. The arm verdicts above stand.

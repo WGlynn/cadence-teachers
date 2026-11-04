@@ -56,8 +56,44 @@
   - VOID if any arm errors or refuses to answer.
   Reported with them: each arm's mean score with its SEM, 8/8 counts, one-answer counts, and the curve at 400 and
   800 (registered secondary).
-- Result: PENDING
-- Verdict: PENDING
+- Result (444 s wall, exit 0, stderr empty): the brute-force ceiling was 6 of 8 on every rule, as designed, and the
+  settings read back after the runs were the ones listed above. At 1600 moments, seeds above 6 of 8 out of 10, mean
+  score (SEM), seeds at 8 of 8, and seeds giving one answer to every cue:
+  - A0 control: 0/10, 0.500 (0.000), 0, 9/10. Curve 0.525, 0.500, 0.500 at 400, 800, 1600.
+  - ETA `actor_eta=0.1` alone: 0/10, 0.588 (0.033), 0, 2/10. Curve 0.575, 0.537, 0.588. Its best seeds (2) sit at 6
+    of 8, the ceiling, none above it.
+  - BIAS `actor_eta_bias=0.01` alone: 0/10, 0.500 (0.019), 0, 8/10. Curve 0.537, 0.500, 0.500.
+  - MEM `memory_choice=True` alone: 10/10, 0.975 (0.017), 8, 0/10. Curve 0.963, 0.963, 0.975 (9 of 10 seeds above
+    the ceiling already at 400).
+  - D the full recipe: 10/10, 0.975 (0.017), 8, 0/10. Curve 0.925, 0.925, 0.975.
+  - Reproduction: A0's and D's answers are identical to EXP-07e's (0.93.0) at all three exams on 10 of 10 seeds.
+- Verdict: the reproduction holds. By the pre-registered rules A0 FAILS, ETA FAILS, BIAS FAILS, MEM LEARNS, D
+  LEARNS: one setting suffices, and it is the episodic memory, `memory_choice=True`. Loop verdict on the
+  prediction: REFUTED, because I predicted the actor rate would carry the lift and ETA scored 0 of 10. Of the
+  secondary predictions, BIAS FAILS held and MEM at most PARTIAL was wrong (10 of 10). Atlas category: SUPPORTIVE.
 
 ## Reflection
-PENDING
+- What it means: on this task the setting that lets a composed brain learn a situation-and-context rule from
+  reward is the episodic memory. The actor settings are not needed for it (MEM learns at the founder's actor rate
+  1.0 and bias 0.05, as well as the full recipe at 1600), and neither one alone is enough (0 of 10 each). The
+  slower actor alone changes how the failure looks, not whether it fails: 2 of 10 seeds give one answer to every
+  cue against 9 of 10 for the founder, but no seed beats the 6 of 8 a sum of input weights can reach. This
+  corrects EXP-07e's reading, which placed the limit "in the actor's step": here the memory alone gives the
+  bundle's whole lift, and the actor settings are not needed for it. A reading I did not test: the memory's place records are keyed through a fixed random separation
+  (1,024 cells, 24 active per key, per the 0.93.1 docstring), so each of the 8 cues can hold a record of its own,
+  which is what EXP-07e's arm A gave with one-hot units; the lift would then be a per-situation lookup. For our
+  learned policies the guidance becomes: compose with `memory_choice=True`; on this task the slower actor is not
+  needed. Whether that holds as the number of situations grows, or for a situation never seen, is open.
+- Process: pre-registered and pushed with the script (`292cd34`) before any data; an API-only smoke run (30
+  moments, no scores) and a read-back of each arm's settings. Outputs were written as `.partial` and renamed on
+  finish, with python's exit code kept in the `.time` file. The reproduction check against EXP-07e's JSON was
+  exact. Weaknesses: one task, one budget (1600 moments), 10 seeds; the ETA arm kept the founder's bias 0.05,
+  because a named `actor_eta` keeps the current bias rate, so the slower actor pair (0.1 with bias 0.01) without
+  the memory was not run; and MEM and D tie at 1600, so this does not show whether the slower actor helps or
+  hurts beside the memory (their 400 means, 0.963 and 0.925, are within their SEMs of 0.027 and 0.033).
+- Lesson: split a bundle of settings before writing guidance from it, and word a pre-registered reading about a
+  bundle as "in the bundle" until it is split. The recipe's documentation leads with the slower actor; on our
+  task the slower actor alone passed on no seed and the memory alone on every seed.
+- Next: queued EXP-07g on the same seeds: the place records alone (`memory_choice=True, memory_context=0.0`) to
+  test the lookup reading, and the slower actor pair without the memory to close the one combination this run
+  left out. EXP-07e's write-up gets a dated note pointing here.

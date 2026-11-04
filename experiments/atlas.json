@@ -1,5 +1,49 @@
 [
  {
+  "id": "EXP-07f",
+  "date": "2026-11-04",
+  "iter": "iter56",
+  "track": "generic queue",
+  "verdict": "SUPPORTIVE",
+  "name": "The episodic memory alone, not the slower actor, lets the brain learn the rule that needs a feature and its context combined",
+  "verdict_note": "pre-registered (292cd34) before any data; per-arm rule LEARNS if at least 7 of 10 seeds beat the 6/8 ceiling of a sum of input weights at 1600 moments; Cadence 0.93.1; EXP-07e's 10 combination-rule seeds, cue streams and greedy exam. A0 founder 0/10 (mean .500, 9/10 one answer, FAILS); actor_eta=0.1 alone 0/10 (.588, 2/10 one answer, FAILS); actor_eta_bias=0.01 alone 0/10 (.500, FAILS); memory_choice=True alone 10/10 (.975, 8/10 at 8/8, LEARNS); the full recipe 10/10 (.975, LEARNS). The founder and the recipe repeat EXP-07e's answers exactly on 10 of 10 seeds. Prediction REFUTED: I expected the actor rate to carry the lift. Scope: this 8-cue, 2-action task, 1600 moments; the slower actor pair without the memory was not run.",
+  "question": "Which of the 0.93 recipe's three settings, set alone on the founder, lifts EXP-07d's limit?",
+  "headline": "Last time a three-setting recipe from Cadence 0.93 let the brain learn an answer that depends on a cue's feature and its context together. We tried each setting alone. The episodic memory alone learned it on all 10 seeds, as well as the whole recipe did. A slower actor alone, and a slower bias alone, learned it on none.",
+  "lesson": "Split a bundle of settings before writing guidance from it: the recipe's documentation leads with the slower actor, and on our task the slower actor alone passed on no seed while the memory alone passed on every seed.",
+  "process_issues": [
+   "the slower-actor arm kept the founder bias 0.05 (a named actor_eta keeps the current bias rate), so the actor pair 0.1 with bias 0.01 without the memory was not run; EXP-07g",
+   "the memory and the full recipe tie at 1600, so whether the slower actor helps or hurts beside the memory is untested",
+   "one task, one budget (1600 moments)"
+  ],
+  "quote_worthy": "The recipe's fix was its memory, not its step.",
+  "chart": {
+   "title": "Seeds above the 6-of-8 ceiling after 1600 moments (of 10)",
+   "unit": "seeds",
+   "bars": [
+    {
+     "label": "Founder (control)",
+     "value": 0
+    },
+    {
+     "label": "Slower actor alone (actor_eta 0.1)",
+     "value": 0
+    },
+    {
+     "label": "Slower bias alone (actor_eta_bias 0.01)",
+     "value": 0
+    },
+    {
+     "label": "Episodic memory alone (memory_choice)",
+     "value": 10
+    },
+    {
+     "label": "Full 0.93 recipe",
+     "value": 10
+    }
+   ]
+  }
+ },
+ {
   "id": "EXP-07e",
   "date": "2026-11-03",
   "iter": "iter55",
@@ -13,7 +57,8 @@
   "process_issues": [
    "arm D bundles three settings (actor rate, bias rate, episodic memory), so which one does the work is untested; EXP-07f splits them",
    "arm A's one-hot units grow with the number of situations, so it is a positive control here, not a recipe that scales",
-   "one task, one budget (1600 moments)"
+   "one task, one budget (1600 moments)",
+   "corrected by EXP-07f: memory_choice=True alone gives arm D's whole lift (10/10) and the actor settings alone 0/10 each, so the slower-actor reading and lesson do not hold on this task"
   ],
   "quote_worthy": "Four times the brain changed nothing; a slower step changed everything.",
   "chart": {

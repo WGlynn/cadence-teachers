@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-11-04 (iter56, EXP-07f LOCATED, on 0.93.1 a4fcea0, generic queue): splitting the 0.93 recipe on EXP-07e's seeds, the episodic memory alone (memory_choice=True, at the founder actor rate) learned the feature-and-context rule on 10/10 (mean .975, as the full recipe), while the slower actor alone (actor_eta 0.1) and the slower bias alone (0.01) learned it on 0/10. The founder and the full recipe repeat EXP-07e's answers exactly on 0.93.1. Corrects iter55: the memory lifts EXP-07d's limit, not the actor's step. EXP-07g (the place records alone; the actor pair without the memory) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
+
 2026-11-03 (iter55, EXP-07e LOCATED, on 0.93.0 720c5a9, generic queue): on 10 fresh combination-rule seeds the founder again gave one answer for everything (0/10 above 6/8); a four-times-larger brain (0/10) and learning on every moment through step (0/10) did not help; the 0.93.0 slower-actor recipe (actor_eta 0.1, bias 0.01, episodic memory) learned it on 10/10 and the cue as its own input on 9/10. EXP-07d's limit is the actor's step on shared activity, not size or schedule. EXP-07f (split the recipe) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
 
 2026-11-02 (iter54, EXP-07d LIMIT, on 0.92.1 a37d150, generic queue): trained on all 8 overlapping cues mixed from birth, with the rule type fixed in advance, brains whose rule follows the context alone were perfect by 200 moments (10/10), and brains whose rule needs a feature and its context combined stayed at 0.525 (800) and 0.537 (1600), none above the 6/8 that a sum of input weights allows, 7/10 on one answer for everything. The EXP-07c post hoc split replicates; EXP-07b's forgetting was mostly this limit. EXP-07e (inputs vs size vs learning only when aroused) queued. Off the V(S) ladder; no milestone moves. V(S) still waits on Will: CAL-1, CAL-2, or the registered zero test.
@@ -232,6 +234,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter56 (2026-11-04): EXP-07f, splitting the 0.93 recipe into its three settings on 0.93.1: LOCATED (the episodic memory)
+- Cadence 0.93.1, main `a4fcea0` (monitor today: EXP-08 byte-identical to 0.93.0, EXP-62e gate IDENTICAL). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took the ready queue item. Pre-registered `292cd34`. Seeds above 6/8 of 10 at 1600: A0 founder 0, actor_eta=0.1 alone 0, actor_eta_bias=0.01 alone 0, memory_choice=True alone 10, full recipe 10; A0 and the recipe identical to EXP-07e per seed. Prediction REFUTED (I expected the actor rate to carry it). Write-up `experiments/EXP-07f.md`; atlas SUPPORTIVE. Spawned EXP-07g.
 
 ### iter55 (2026-11-03): EXP-07e, locating EXP-07d's limit on 0.93.0: LOCATED
 - Cadence 0.93.0, main `720c5a9` (monitor today: EXP-08 byte-identical to 0.92.1, EXP-62e gate IDENTICAL). Off the V(S) ladder; the program waits on Will-gated CAL-1 / CAL-2 / the zero test, so the loop took the ready queue item. Pre-registered `b15cfc8`. Seeds above 6/8 of 10 at 1600: A0 founder 0, A cue as own input 9, B modules=(256,) 0, C step 0, D 0.93 recipe 10. Prediction right on 4 of 5 arms (wrong on A). Spawned EXP-07f.
