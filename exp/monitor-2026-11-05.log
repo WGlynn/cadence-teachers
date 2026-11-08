@@ -1,0 +1,24 @@
+== start Thu Nov  5 09:51:16 CST 2026
+ 17 files changed, 939 insertions(+), 45 deletions(-)
+ create mode 100644 tests/test_maturity.py
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+import ok 0.94.0
+HEAD now: 2a32a98
+== probes Thu Nov  5 09:51:41 CST 2026
+EXP-08 BYTE-IDENTICAL to EXP-08-v0931-a4fcea0.out
+identity gate on cadence 0.94.0: seed 6800000 vs EXP-62e student 0 (69s): IDENTICAL
+== hygiene Thu Nov  5 09:59:37 CST 2026
+changed test files: tests/test_grow.py tests/test_maturity.py 
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_documentation.py:90: could not import 'torch': No module named 'torch'
+SKIPPED [1] tests\test_grow.py:260: could not import 'torch': No module named 'torch'
+SKIPPED [1] tests\test_maturity.py:422: could not import 'torch': No module named 'torch'
+FAILED tests/test_maturity.py::test_off_is_the_founder_to_the_bit - Permissio...
+1 failed, 132 passed, 3 skipped, 6 warnings in 118.69s (0:01:58)
+
+Found 19 errors.
+[*] 2 fixable with the `--fix` option.
+== end Thu Nov  5 10:01:39 CST 2026
