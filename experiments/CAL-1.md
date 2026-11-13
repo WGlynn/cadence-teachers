@@ -268,6 +268,7 @@ def features(pr):                               # 21 numbers; none reads RIGHTS
 ```
 
 ## Status (2026-10-27)
+- 2026-11-13: GO. Will delegated the V(S) choice ("you decide the Vs program"); Jarvis chose CAL-1 over CAL-2 and the standalone zero test. Reasons: CAL-1 is the direct test of the success measure Noesis adopted (a forecast made before, graded against realized worth after) and of the open moat item (a learned v(S) on realized-use labels); CAL-2 needs a learned v(S) first, so it waits on a CAL-1 CONFIRM; the zero test's question is mostly inside CAL-1 already, since Z averages null, untaught and random. Amendments, written before any CAL-1 data: (a) exploratory only, report W and each criterion under each single zero (null, untaught, random) beside the composite Z; the verdict still uses Z. (b) Version: EXP-77b crossed on 0.89.0 and the installed library differs; the V2 identity gate is the version check. If V2 fails on the installed version, do not run: either pin CAL-1 to the 0.89.0 source or rerun EXP-77b on the installed version first, and record which. The experiment loop commits this file as the pre-registration before the pilot.
 - DRAFT. Nothing has been run: no audit rerun, no gate, no pilot, no script. The file is to be committed only with Will's go. On commit, the date line becomes the pre-registration date, and nothing above changes afterwards.
 
 ## Summary
