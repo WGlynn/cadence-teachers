@@ -1,0 +1,34 @@
+  probes for 24 instances written before any teaching: CAL-1-pilot-probes.json
+CAL-1 [pilot]: cadence 0.94.0 at C:\Users\Will\_cadence_study\src\cadence; 0 twins to go (108 done); 4 workers
+
+CAL-1 pilot chain print (RUN GATE line 5): class, identity, probe S1 / S2 (pilot pool) / K, W per student, mean
+  graded      p=[0.99, 0.75, 0.51, 0.74]   S1 0.719 S2 0.719 K 0.719 | W +0.125 +0.250 +0.188 +0.521 | mean +0.271
+  graded      p=[0.02, 0.67, 0.33, 0.66]   S1 0.547 S2 0.490 K 0.490 | W +0.062 -0.062 -0.062 +0.021 | mean -0.010
+  graded      p=[0.45, 0.06, 0.05, 0.39]   S1 0.448 S2 0.380 K 0.380 | W +0.062 +0.188 +0.000 +0.021 | mean +0.068
+  graded      p=[0.27, 0.77, 0.58, 0.14]   S1 0.578 S2 0.568 K 0.568 | W +0.250 +0.188 +0.312 +0.521 | mean +0.318
+  graded      p=[0.2, 0.1, 0.96, 0.33]     S1 0.542 S2 0.542 K 0.542 | W -0.062 +0.062 +0.125 +0.021 | mean +0.036
+  graded      p=[0.89, 0.48, 0.08, 0.72]   S1 0.688 S2 0.651 K 0.651 | W +0.188 +0.375 +0.188 +0.208 | mean +0.240
+  graded      p=[0.43, 1.0, 0.46, 0.85]    S1 0.760 S2 0.760 K 0.760 | W +0.000 +0.312 +0.000 +0.333 | mean +0.161
+  graded      p=[0.28, 0.03, 0.84, 0.16]   S1 0.490 S2 0.432 K 0.432 | W +0.062 -0.062 +0.000 +0.271 | mean +0.068
+  graded      p=[0.3, 0.28, 0.37, 0.35]    S1 0.391 S2 0.380 K 0.380 | W +0.125 +0.375 +0.188 +0.021 | mean +0.177
+  graded      p=[0.3, 0.69, 0.53, 0.44]    S1 0.589 S2 0.583 K 0.583 | W +0.125 +0.250 -0.062 +0.271 | mean +0.146
+  know-1      p=[0.0, 0.0, 1.0, 0.0]       S1 0.521 S2 0.411 K 0.411 | W -0.125 +0.062 -0.062 -0.167 | mean -0.073
+  know-2      p=[1.0, 1.0, 0.0, 0.0]       S1 0.661 S2 0.599 K 0.599 | W +0.312 +0.375 +0.188 +0.396 | mean +0.318
+  know-3      p=[0.0, 1.0, 1.0, 1.0]       S1 0.849 S2 0.802 K 0.802 | W +0.188 +0.250 +0.188 +0.021 | mean +0.161
+  know-4      p=[1.0, 1.0, 1.0, 1.0]       S1 1.000 S2 1.000 K 1.000 | W +0.312 +0.688 +0.438 +0.271 | mean +0.427
+  random                                   S1 0.344 S2 0.198 K 0.198 | W -0.188 +0.000 -0.188 -0.167 | mean -0.135
+  random                                   S1 0.349 S2 0.161 K 0.161 | W +0.062 +0.188 -0.062 -0.104 | mean +0.021
+  wrong-chain                              S1 1.000 S2 0.000 K 0.000 | W -0.188 +0.125 -0.312 -0.229 | mean -0.151
+  wrong-chain                              S1 1.000 S2 0.000 K 0.000 | W -0.188 +0.125 -0.312 -0.229 | mean -0.151
+  echo                                     S1 1.000 S2 0.000 K 0.000 | W +0.125 -0.312 -0.188 -0.042 | mean -0.104
+  echo                                     S1 1.000 S2 0.000 K 0.000 | W +0.125 -0.312 -0.188 -0.042 | mean -0.104
+  anti-echo                                S1 0.391 S2 0.255 K 0.255 | W -0.125 +0.062 -0.250 +0.146 | mean -0.042
+  anti-echo                                S1 0.417 S2 0.240 K 0.240 | W +0.000 +0.188 -0.062 +0.146 | mean +0.068
+  wrong-map   map=[4, 4, 1, 4]             S1 1.000 S2 0.000 K 0.000 | W -0.438 -0.312 -0.562 -0.479 | mean -0.448
+  wrong-map   map=[4, 3, 1, 4]             S1 1.000 S2 0.000 K 0.000 | W -0.438 +0.125 -0.375 -0.479 | mean -0.292
+
+  one-way split over 24 teachers x 4 students: between-teacher variance v_b 0.03668, within-teacher (student) variance v_w 0.02281
+  projected reliability at m = 6: 0.906; at m = 8: 0.928
+  know-4 W +0.427; SD of the 24 teachers' mean W 0.206; stops {'P1_know4_below_10': False, 'P2_sd_of_means_below_05': False, 'P3_rel_at_8_below_7': False}
+  pilot rule -> GO with m = 6
+CAL-1 [pilot] done in 0s

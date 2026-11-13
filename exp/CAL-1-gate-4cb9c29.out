@@ -1,0 +1,9 @@
+  null         zero     acc 0.500 (EXP-77b 0.500) labels 203  same
+  untaught     zero     acc 0.625 (EXP-77b 0.625) labels   0  same
+  random       zero     acc 0.312 (EXP-77b 0.312) labels 204  same
+  random       teacher  acc 0.312 (EXP-77b 0.312) labels 204  same
+  know-4       teacher  acc 0.875 (EXP-77b 0.875) labels 175  same
+  wrong-chain  teacher  acc 0.312 (EXP-77b 0.312) labels 226  same
+  echo         teacher  acc 0.438 (EXP-77b 0.438) labels 213  same
+  anti-echo    teacher  acc 0.625 (EXP-77b 0.625) labels 190  same
+V2 identity gate on cadence 0.94.0: seed 9000000 vs EXP-77b student 0 (11s): IDENTICAL
