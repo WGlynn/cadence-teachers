@@ -68,13 +68,17 @@ def analyse73(rows, lesson):
 
 def gate():
     import cadence
-    ref = [json.loads(l) for l in open(os.path.join(HERE, "EXP-62e-full.jsonl"))]
+    # GATE_REF: a later reference row (0.95.2 changed Brain.lesson, so EXP-62e cannot match past 0.95.1; monitor 2026-11-14)
+    ref = [json.loads(l) for l in open(os.path.join(HERE, os.environ.get("GATE_REF", "EXP-62e-full.jsonl")))]
     ref = next(r for r in ref if r["student"] == 0 and r["lesson"] == 80)
     t0 = time.time()
     new = run((80, 0))
+    if os.environ.get("GATE_OUT"):
+        with open(os.path.join(HERE, os.environ["GATE_OUT"]), "w") as fh:
+            fh.write(json.dumps(new) + chr(10))
     same = {a: (new["arms"][a]["actions"] == ref["arms"][a]["actions"] and new["arms"][a]["labels"] == ref["arms"][a]["labels"])
             for a in ref["arms"]}
-    print(f"identity gate on cadence {cadence.__version__}: seed {new['seed']} vs EXP-62e student 0 "
+    print(f"identity gate on cadence {cadence.__version__}: seed {new['seed']} vs {os.environ.get('GATE_REF', 'EXP-62e')} student 0 "
           f"({time.time() - t0:.0f}s): " + ("IDENTICAL" if all(same.values()) else f"DIFFERS {same}"), flush=True)
 
 

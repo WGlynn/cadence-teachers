@@ -35,6 +35,8 @@ def compose(seed):
               working_memory_amplitude=OURS["working_memory_amplitude"], working_memory_decay=0.2)
     if os.environ.get("LATERAL"):                       # EXP-77 port gate: pin 0.84.3's unset lateral (-0.5) on 0.85+
         kw["lateral"] = float(os.environ["LATERAL"])
+    if os.environ.get("PIN0940"):                       # 0.95+/0.97+ defaults back to the 0.94.0 composition (monitor 2026-11-14)
+        kw.update(recall=False, backend="cpu", history_decays=(), memory_rate=1.0)
     try:
         b = cd.Brain.compose(10, 5, working_memory_scale=12.0, **kw)    # EXP-45's (0.81) composition
     except ValueError as e:                             # 0.85+ refuses the old name: same scale under its new name
