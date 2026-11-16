@@ -113,7 +113,7 @@ The raw ridge output is the final model's held-out prediction used directly as t
 - What it does not show: all of CAL-1's limits, plus the three named in the pre-registration (wait is one deterministic class; the cause table is one set of rows; the version is 0.94.0, not current upstream).
 - Process: V1, V2, pilot and full run went as registered, one pass, m fixed by the pilot rule, every row on the pinned 0.94.0 (V5 clean). Disclosures:
   - The V2 summary line prints the wrong path label. It is cosmetic: the check itself ran first and passed.
-  - Claude Code stopped the run's wrapper shell for low memory partway through. The Python run was unaffected, and its checkpoint file would have allowed a resume.
+  - Claude Code stopped the run's wrapper shell for low memory partway through. The Python run was unaffected and finished in one pass.
   - Two Cadence RuntimeWarnings (free-phase budget) appeared that CAL-1 did not show. How many lessons they cover is unknown.
   - An automatic checkpoint commit (`85ffcb5`, 11:57) caught the two scripts mid-edit, while they were still CAL-1's text. `060d326` committed the CAL-1b versions at 12:03. Both came before any CAL-1b data; the run started after 12:04. Later automatic checkpoints committed raw rows during the run, before the analysis was read.
   - The post hoc WAIT-count table above was computed after the verdict from the saved analysis and probe files.
