@@ -1,0 +1,2 @@
+  L 80 st 0: null 0.69 untaught 0.50 | know-1 0.50 know-2 0.69 know-3 0.50 know-4 0.75 random 0.44 wrong-chain 0.25 echo 0.25 anti-echo 0.44 (66.4s)
+identity gate on cadence 0.101.0: seed 6800000 vs EXP-77b-gate-ref-b0b09d4.jsonl student 0 (66s): IDENTICAL
