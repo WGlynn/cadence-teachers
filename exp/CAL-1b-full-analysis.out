@@ -1,0 +1,160 @@
+CAL-1b analysis: 2160 twins, m = 6, probe mismatches between rows and the pre-teaching file: 0; rows on a Cadence other than 0.94.0 from ~/_cadence_v0940: 0
+
+=== zero = Z  (m = 6; climatology = training mean W +0.0840; L penalty 31.6228; orientation signs {'L': 1.0, 'S1': -1.0, 'S2': 1.0, 'K': 1.0, 'A': 1.0}) ===
+  pred     rho      MSE   skill
+  L      0.935  0.00839  +0.848
+  S1     0.401  0.03442  +0.378
+  S2     0.906  0.01413  +0.745
+  K      0.905  0.01413  +0.745
+  A      0.807  0.02261  +0.592
+  climatology MSE 0.05536
+  L minus S1: rho +0.534 [+0.396, +0.690]   MSE -0.02603 [-0.03518, -0.01804]
+  L minus S2: rho +0.029 [+0.006, +0.057]   MSE -0.00573 [-0.00879, -0.00271]
+  L minus K : rho +0.030 [+0.007, +0.057]   MSE -0.00573 [-0.00879, -0.00271]
+  L minus A : rho +0.128 [+0.083, +0.180]   MSE -0.01421 [-0.01874, -0.00987]
+  skill_L +0.848 [+0.790, +0.891]
+  N0 (1000 refits): rho 99th pct 0.867 (mean -0.014, max 0.905); MSE 1st pct 0.04056 (mean 0.05849, min 0.03432)
+  reliability of held-out W: split-half r 0.879 (0-2 vs 3-5), Spearman-Brown 0.936, ceiling 0.967
+  class         n       W    sem |    fc_L   fc_S1   fc_S2    fc_K    fc_A |     L-W     se +1.645se
+  graded       64  +0.189  0.014 |  +0.211  +0.166  +0.215  +0.215  +0.217 |  +0.022  0.010   +0.038
+  know-1        8  +0.048  0.021 |  +0.107  +0.170  +0.116  +0.116  +0.068 |  +0.059  0.014   +0.082
+  know-2        8  +0.096  0.036 |  +0.197  +0.170  +0.196  +0.196  +0.224 |  +0.101  0.042   +0.169
+  know-3        8  +0.150  0.040 |  +0.258  +0.170  +0.309  +0.309  +0.169 |  +0.109  0.037   +0.169
+  know-4        8  +0.378  0.034 |  +0.395  -0.126  +0.401  +0.401  +0.427 |  +0.018  0.034   +0.074
+  random       16  -0.029  0.011 |  +0.031  +0.170  +0.031  +0.031  +0.036 |  +0.059  0.011   +0.078
+  wrong-chain  16  -0.130  0.009 |  -0.104  -0.126  -0.214  -0.214  -0.073 |  +0.026  0.009   +0.041
+  echo         16  -0.145  0.012 |  -0.104  -0.126  -0.214  -0.214  -0.135 |  +0.041  0.012   +0.061
+  anti-echo    16  -0.007  0.011 |  +0.059  +0.170  +0.031  +0.031  +0.048 |  +0.066  0.015   +0.091
+  wait         16  -0.451  0.006 |  -0.433  -0.126  -0.214  -0.214  -0.424 |  +0.017  0.006   +0.027
+  wrong-map    16  -0.215  0.019 |  -0.105  -0.126  -0.214  -0.214  -0.155 |  +0.110  0.031   +0.161
+  VOID checks {'V3_reliability_below_5': False, 'V4_know4_W_below_10': False, 'V5_other_cadence': False}
+  criteria {'1_rho_L_ge_.5': True, '2_rank_beats_S1': True, '2_rank_beats_S2': True, '3_mse_beats_S1': True, '3_mse_beats_S2': True, '4_beats_N0': True, '5_skill_above_0': True, '6_not_overpriced_random': False, '6_not_overpriced_wrong-chain': True, '6_not_overpriced_echo': True, '6_not_overpriced_anti-echo': False, '6_not_overpriced_wait': True, '6_not_overpriced_wrong-map': False}
+  kill {'K1_fake_ge_know2': False, 'K2_reversed': False}
+  -> VERDICT: BOUNDARY (failing: 6_not_overpriced_random, 6_not_overpriced_anti-echo, 6_not_overpriced_wrong-map)
+
+  --- reported, not decisive (composite Z) ---
+  rho within graded: {'L': 0.7739564590062459, 'S1': -0.4660917134775443, 'S2': 0.4923166765904823, 'K': 0.4908147709490376, 'A': 0.44583587197566904}
+  rho within know-k: {'L': 0.76965074981082, 'S1': -0.6713388844690605, 'S2': 0.7103347563542558, 'K': 0.7074565408912228, 'A': 0.5045064230934173}
+  L orders know-1 < know-2 < know-3 < know-4: True
+  hindsight: L MSE 0.00454 ratio 1.85  S1 MSE 0.03112 ratio 1.11  S2 MSE 0.01115 ratio 1.27  K MSE 0.01115 ratio 1.27
+  Brier [W >= 1/32]: base_rate_train 0.6198  base_rate_held 0.4531  clim 0.2756  L 0.1017  S1 0.1965  S2 0.1011  K 0.1011  A 0.2135
+  L weight on the right action at stages 0-3 (raw units): [0.124, 0.108, 0.065, 0.034]; on WAIT [-0.153, -0.124, -0.096, -0.1]; echo share -0.042
+  L weights stage x labelled action (raw units): [[0.1243, -0.0464, -0.1082, -0.1293, -0.153], [-0.0396, 0.1075, -0.0739, 0.036, -0.1236], [0.0672, -0.025, 0.0654, -0.025, -0.0959], [-0.0071, 0.2272, 0.0757, 0.0339, -0.0995]]
+  S2 coordinated (64 wrong-chain clones in the pool): rho -0.272, MSE 0.08275; top class wrong-chain
+    class mean S2 coordinated: {graded: 0.102, know-1: 0.143, know-2: 0.102, know-3: 0.048, know-4: 0.000, random: 0.206, wrong-chain: 1.000, echo: 0.250, anti-echo: 0.188, wait: 0.000, wrong-map: 0.203}
+    class mean S2 honest:      {graded: 0.593, know-1: 0.403, know-2: 0.602, know-3: 0.794, know-4: 1.000, random: 0.186, wrong-chain: 0.000, echo: 0.000, anti-echo: 0.250, wait: 0.000, wrong-map: 0.000}
+  probe-gamer (16): L forecast +0.395 vs W -0.029: overpriced +0.424 (se 0.011); know-4 W +0.378
+  L on R probe labels per context: R=1: rho 0.873 MSE 0.01311  R=3: rho 0.908 MSE 0.01105  R=6: rho 0.929 MSE 0.00846
+  student-level bootstrap (95%): rho_L [+0.86774, +0.92451]  drho_S2 [+0.01744, +0.04205]  dmse_S2 [-0.00692, -0.00458]  drho_S1 [+0.46198, +0.55135]  dmse_S1 [-0.02979, -0.02172]
+
+=== CAL-1b cause separation (registered, reported beside the verdict, not part of it; composite Z) ===
+  training with_wait (192 teachers): penalty 31.6228, isotonic floor -0.4332, weight on the WAIT share at stages 0-3 (raw units) [-0.153, -0.124, -0.096, -0.1]
+    iso: rho +0.935 MSE 0.00839 | wrong-map: fc -0.105 W -0.215 over +0.110 (se 0.031) bound +0.161 FAIL | wait: fc -0.433 W -0.451 over +0.017 (se 0.006) bound +0.027 PASS
+    raw: rho +0.935 MSE 0.00787 | wrong-map: fc -0.109 W -0.215 over +0.106 (se 0.029) bound +0.154 FAIL | wait: fc -0.416 W -0.451 over +0.035 (se 0.006) bound +0.045 PASS
+  training without_wait (176 teachers): penalty 31.6228, isotonic floor -0.1037, weight on the WAIT share at stages 0-3 (raw units) [-0.219, -0.094, 0.017, 0.003]
+    iso: rho +0.927 MSE 0.01909 | wrong-map: fc -0.039 W -0.215 over +0.176 (se 0.023) bound +0.214 FAIL | wait: fc -0.104 W -0.451 over +0.347 (se 0.006) bound +0.356 FAIL
+    raw: rho +0.927 MSE 0.01758 | wrong-map: fc -0.071 W -0.215 over +0.144 (se 0.025) bound +0.185 FAIL | wait: fc -0.116 W -0.451 over +0.335 (se 0.006) bound +0.345 FAIL
+  wrong-map criterion 6 by cell: {'primary (with wait, iso)': False, 'L-raw (with wait, raw)': False, 'L-nowait (without wait, iso)': False, 'L-nowait-raw (without wait, raw)': False}
+  reading: primary fails: putting the harm in training did not make the procedure price wrong-map within one state
+
+=== zero = null  (m = 6; climatology = training mean W +0.0849; L penalty 10; orientation signs {'L': 1.0, 'S1': -1.0, 'S2': 1.0, 'K': 1.0, 'A': 1.0}) ===
+  pred     rho      MSE   skill
+  L      0.905  0.00922  +0.828
+  S1     0.389  0.03378  +0.369
+  S2     0.886  0.01368  +0.744
+  K      0.885  0.01368  +0.744
+  A      0.729  0.03299  +0.384
+  climatology MSE 0.05352
+  L minus S1: rho +0.516 [+0.376, +0.670]   MSE -0.02455 [-0.03439, -0.01580]
+  L minus S2: rho +0.019 [-0.014, +0.054]   MSE -0.00446 [-0.00785, -0.00108]
+  L minus K : rho +0.020 [-0.014, +0.054]   MSE -0.00446 [-0.00785, -0.00108]
+  L minus A : rho +0.176 [+0.111, +0.253]   MSE -0.02376 [-0.03010, -0.01776]
+  skill_L +0.828 [+0.763, +0.880]
+  N0 (1000 refits): rho 99th pct 0.848 (mean -0.008, max 0.891); MSE 1st pct 0.03872 (mean 0.05670, min 0.03608)
+  reliability of held-out W: split-half r 0.824 (0-2 vs 3-5), Spearman-Brown 0.904, ceiling 0.951
+  class         n       W    sem |    fc_L   fc_S1   fc_S2    fc_K    fc_A |     L-W     se +1.645se
+  graded       64  +0.213  0.015 |  +0.206  +0.167  +0.215  +0.215  +0.235 |  -0.006  0.011   +0.012
+  know-1        8  +0.072  0.030 |  +0.117  +0.171  +0.115  +0.115  +0.086 |  +0.045  0.020   +0.079
+  know-2        8  +0.120  0.028 |  +0.204  +0.171  +0.198  +0.198  +0.242 |  +0.084  0.039   +0.149
+  know-3        8  +0.173  0.049 |  +0.271  +0.171  +0.309  +0.309  +0.188 |  +0.098  0.043   +0.169
+  know-4        8  +0.401  0.033 |  +0.400  -0.125  +0.401  +0.401  +0.445 |  -0.001  0.033   +0.054
+  random       16  -0.005  0.014 |  +0.041  +0.171  +0.030  +0.030  +0.055 |  +0.046  0.014   +0.068
+  wrong-chain  16  -0.107  0.010 |  -0.103  -0.125  -0.213  -0.213  -0.055 |  +0.004  0.010   +0.021
+  echo         16  -0.121  0.019 |  -0.103  -0.125  -0.213  -0.213  -0.117 |  +0.018  0.019   +0.050
+  anti-echo    16  +0.017  0.013 |  +0.052  +0.171  +0.034  +0.034  +0.066 |  +0.035  0.014   +0.058
+  wait         16  -0.427  0.008 |  -0.432  -0.125  -0.213  -0.213  -0.406 |  -0.005  0.008   +0.008
+  wrong-map    16  -0.191  0.020 |  -0.102  -0.125  -0.213  -0.213  -0.137 |  +0.090  0.043   +0.161
+  VOID checks {'V3_reliability_below_5': False, 'V4_know4_W_below_10': False, 'V5_other_cadence': False}
+  criteria {'1_rho_L_ge_.5': True, '2_rank_beats_S1': True, '2_rank_beats_S2': False, '3_mse_beats_S1': True, '3_mse_beats_S2': True, '4_beats_N0': True, '5_skill_above_0': True, '6_not_overpriced_random': False, '6_not_overpriced_wrong-chain': True, '6_not_overpriced_echo': True, '6_not_overpriced_anti-echo': True, '6_not_overpriced_wait': True, '6_not_overpriced_wrong-map': False}
+  kill {'K1_fake_ge_know2': False, 'K2_reversed': False}
+  -> exploratory reading: BOUNDARY (failing: 2_rank_beats_S2, 6_not_overpriced_random, 6_not_overpriced_wrong-map)
+
+=== zero = untaught  (m = 6; climatology = training mean W +0.0640; L penalty 31.6228; orientation signs {'L': 1.0, 'S1': -1.0, 'S2': 1.0, 'K': 1.0, 'A': 1.0}) ===
+  pred     rho      MSE   skill
+  L      0.915  0.01147  +0.805
+  S1     0.369  0.03739  +0.363
+  S2     0.889  0.01623  +0.724
+  K      0.889  0.01623  +0.724
+  A      0.643  0.05535  +0.058
+  climatology MSE 0.05873
+  L minus S1: rho +0.546 [+0.407, +0.691]   MSE -0.02592 [-0.03524, -0.01748]
+  L minus S2: rho +0.026 [-0.001, +0.055]   MSE -0.00475 [-0.00841, -0.00125]
+  L minus K : rho +0.026 [+0.000, +0.055]   MSE -0.00475 [-0.00841, -0.00125]
+  L minus A : rho +0.272 [+0.200, +0.359]   MSE -0.04388 [-0.05204, -0.03580]
+  skill_L +0.805 [+0.738, +0.857]
+  N0 (1000 refits): rho 99th pct 0.848 (mean -0.014, max 0.877); MSE 1st pct 0.04353 (mean 0.06189, min 0.03735)
+  reliability of held-out W: split-half r 0.878 (0-2 vs 3-5), Spearman-Brown 0.935, ceiling 0.967
+  class         n       W    sem |    fc_L   fc_S1   fc_S2    fc_K    fc_A |     L-W     se +1.645se
+  graded       64  +0.159  0.015 |  +0.188  +0.146  +0.198  +0.198  +0.204 |  +0.029  0.011   +0.047
+  know-1        8  +0.018  0.024 |  +0.088  +0.150  +0.101  +0.101  +0.055 |  +0.069  0.030   +0.120
+  know-2        8  +0.066  0.035 |  +0.183  +0.150  +0.174  +0.174  +0.211 |  +0.116  0.041   +0.184
+  know-3        8  +0.120  0.039 |  +0.256  +0.150  +0.287  +0.287  +0.156 |  +0.136  0.036   +0.196
+  know-4        8  +0.348  0.034 |  +0.369  -0.146  +0.384  +0.384  +0.414 |  +0.021  0.034   +0.076
+  random       16  -0.059  0.015 |  +0.021  +0.150  +0.007  +0.007  +0.023 |  +0.079  0.015   +0.105
+  wrong-chain  16  -0.160  0.016 |  -0.124  -0.146  -0.234  -0.234  -0.086 |  +0.036  0.016   +0.064
+  echo         16  -0.174  0.017 |  -0.124  -0.146  -0.234  -0.234  -0.148 |  +0.051  0.017   +0.079
+  anti-echo    16  -0.036  0.017 |  +0.028  +0.150  +0.007  +0.007  +0.035 |  +0.064  0.017   +0.093
+  wait         16  -0.480  0.013 |  -0.453  -0.146  -0.234  -0.234  -0.438 |  +0.027  0.013   +0.048
+  wrong-map    16  -0.245  0.022 |  -0.129  -0.146  -0.234  -0.234  -0.168 |  +0.115  0.039   +0.179
+  VOID checks {'V3_reliability_below_5': False, 'V4_know4_W_below_10': False, 'V5_other_cadence': False}
+  criteria {'1_rho_L_ge_.5': True, '2_rank_beats_S1': True, '2_rank_beats_S2': False, '3_mse_beats_S1': True, '3_mse_beats_S2': True, '4_beats_N0': True, '5_skill_above_0': True, '6_not_overpriced_random': False, '6_not_overpriced_wrong-chain': False, '6_not_overpriced_echo': False, '6_not_overpriced_anti-echo': False, '6_not_overpriced_wait': True, '6_not_overpriced_wrong-map': False}
+  kill {'K1_fake_ge_know2': False, 'K2_reversed': False}
+  -> exploratory reading: BOUNDARY (failing: 2_rank_beats_S2, 6_not_overpriced_random, 6_not_overpriced_wrong-chain, 6_not_overpriced_echo, 6_not_overpriced_anti-echo, 6_not_overpriced_wrong-map)
+
+=== zero = random  (m = 6; climatology = training mean W +0.1031; L penalty 31.6228; orientation signs {'L': 1.0, 'S1': -1.0, 'S2': 1.0, 'K': 1.0, 'A': 1.0}) ===
+  pred     rho      MSE   skill
+  L      0.901  0.01320  +0.785
+  S1     0.385  0.03950  +0.355
+  S2     0.860  0.01964  +0.679
+  K      0.860  0.01964  +0.679
+  A      0.805  0.02586  +0.578
+  climatology MSE 0.06124
+  L minus S1: rho +0.516 [+0.383, +0.658]   MSE -0.02630 [-0.03595, -0.01767]
+  L minus S2: rho +0.040 [+0.018, +0.069]   MSE -0.00645 [-0.01028, -0.00303]
+  L minus K : rho +0.041 [+0.019, +0.069]   MSE -0.00645 [-0.01028, -0.00303]
+  L minus A : rho +0.095 [+0.053, +0.146]   MSE -0.01266 [-0.01796, -0.00765]
+  skill_L +0.785 [+0.717, +0.837]
+  N0 (1000 refits): rho 99th pct 0.826 (mean -0.014, max 0.870); MSE 1st pct 0.04715 (mean 0.06424, min 0.03891)
+  reliability of held-out W: split-half r 0.830 (0-2 vs 3-5), Spearman-Brown 0.907, ceiling 0.952
+  class         n       W    sem |    fc_L   fc_S1   fc_S2    fc_K    fc_A |     L-W     se +1.645se
+  graded       64  +0.196  0.016 |  +0.230  +0.185  +0.233  +0.233  +0.212 |  +0.035  0.013   +0.056
+  know-1        8  +0.055  0.028 |  +0.121  +0.189  +0.134  +0.134  +0.062 |  +0.067  0.018   +0.097
+  know-2        8  +0.103  0.053 |  +0.212  +0.189  +0.220  +0.220  +0.219 |  +0.109  0.045   +0.183
+  know-3        8  +0.156  0.043 |  +0.273  +0.189  +0.331  +0.331  +0.164 |  +0.117  0.046   +0.192
+  know-4        8  +0.384  0.047 |  +0.417  -0.107  +0.419  +0.419  +0.422 |  +0.033  0.047   +0.110
+  random       16  -0.022  0.019 |  +0.053  +0.189  +0.046  +0.046  +0.031 |  +0.075  0.019   +0.107
+  wrong-chain  16  -0.124  0.018 |  -0.085  -0.107  -0.194  -0.194  -0.078 |  +0.039  0.018   +0.068
+  echo         16  -0.138  0.016 |  -0.085  -0.107  -0.194  -0.194  -0.141 |  +0.053  0.016   +0.079
+  anti-echo    16  +0.000  0.018 |  +0.080  +0.189  +0.052  +0.052  +0.043 |  +0.080  0.019   +0.111
+  wait         16  -0.444  0.018 |  -0.414  -0.107  -0.194  -0.194  -0.430 |  +0.030  0.018   +0.059
+  wrong-map    16  -0.208  0.025 |  -0.082  -0.107  -0.194  -0.194  -0.160 |  +0.126  0.034   +0.182
+  VOID checks {'V3_reliability_below_5': False, 'V4_know4_W_below_10': False, 'V5_other_cadence': False}
+  criteria {'1_rho_L_ge_.5': True, '2_rank_beats_S1': True, '2_rank_beats_S2': True, '3_mse_beats_S1': True, '3_mse_beats_S2': True, '4_beats_N0': True, '5_skill_above_0': True, '6_not_overpriced_random': False, '6_not_overpriced_wrong-chain': False, '6_not_overpriced_echo': False, '6_not_overpriced_anti-echo': False, '6_not_overpriced_wait': True, '6_not_overpriced_wrong-map': False}
+  kill {'K1_fake_ge_know2': False, 'K2_reversed': False}
+  -> exploratory reading: BOUNDARY (failing: 6_not_overpriced_random, 6_not_overpriced_wrong-chain, 6_not_overpriced_echo, 6_not_overpriced_anti-echo, 6_not_overpriced_wrong-map)
+
+=== exploratory per-zero summary (amendment a; the verdict uses Z) ===
+  Z        rho_L 0.935 rho_S1 +0.401 rho_S2 0.906 MSE_L 0.00839 MSE_S2 0.01413 know-4 W +0.378 rel 0.936 failing ['6_not_overpriced_random', '6_not_overpriced_anti-echo', '6_not_overpriced_wrong-map'] -> BOUNDARY (failing: 6_not_overpriced_random, 6_not_overpriced_anti-echo, 6_not_overpriced_wrong-map)
+  null     rho_L 0.905 rho_S1 +0.389 rho_S2 0.886 MSE_L 0.00922 MSE_S2 0.01368 know-4 W +0.401 rel 0.904 failing ['2_rank_beats_S2', '6_not_overpriced_random', '6_not_overpriced_wrong-map'] -> BOUNDARY (failing: 2_rank_beats_S2, 6_not_overpriced_random, 6_not_overpriced_wrong-map)
+  untaught rho_L 0.915 rho_S1 +0.369 rho_S2 0.889 MSE_L 0.01147 MSE_S2 0.01623 know-4 W +0.348 rel 0.935 failing ['2_rank_beats_S2', '6_not_overpriced_random', '6_not_overpriced_wrong-chain', '6_not_overpriced_echo', '6_not_overpriced_anti-echo', '6_not_overpriced_wrong-map'] -> BOUNDARY (failing: 2_rank_beats_S2, 6_not_overpriced_random, 6_not_overpriced_wrong-chain, 6_not_overpriced_echo, 6_not_overpriced_anti-echo, 6_not_overpriced_wrong-map)
+  random   rho_L 0.901 rho_S1 +0.385 rho_S2 0.860 MSE_L 0.01320 MSE_S2 0.01964 know-4 W +0.384 rel 0.907 failing ['6_not_overpriced_random', '6_not_overpriced_wrong-chain', '6_not_overpriced_echo', '6_not_overpriced_anti-echo', '6_not_overpriced_wrong-map'] -> BOUNDARY (failing: 6_not_overpriced_random, 6_not_overpriced_wrong-chain, 6_not_overpriced_echo, 6_not_overpriced_anti-echo, 6_not_overpriced_wrong-map)

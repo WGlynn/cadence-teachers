@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-11-16 (iter59, CAL-1b BOUNDARY, on 0.94.0 pinned from ~/_cadence_v0940, V2 IDENTICAL; off-ladder): with a pure WAIT fake in training, the learned v(S) priced that fake within a few hundredths (against +.35 without it) and still beat consensus (rho .935 vs .906, MSE .0084 vs .0141), but it overpriced the novel wrong-map by +.110 in every cell of the cause table, floor or no floor, and now also random (+.059) and anti-echo (+.066). Training on one harm teaches that harm, not harm in general. No milestone moves; CAL-2 keeps waiting; candidate CAL-1c (Will-gated, not drafted) trains on several consistent-wrong forms with CAL-1's pool.
+
 2026-11-13 (decision after CAL-1 BOUNDARY): CAL-1b approved as the next V(S) run under Will's delegation (it separates CAL-1's two possible causes, a harm no trained class had and a map that cannot forecast below its training floor, before CAL-2 builds on a learned v(S)). Queued ready for the next loop fire.
 
 2026-11-13 (iter58, CAL-1 BOUNDARY, on 0.94.0 4cb9c29 with V2 IDENTICAL to 0.89.0; off-ladder): a learned v(S) priced teachers before they taught. A ridge on 192 probe labels, trained on 192 earlier teachers' realized gain, forecast 192 new teachers on 48 fresh students at rho .928, MSE .00535, skill .838; it beat consensus S2 (.907, .00687; both intervals favour L) and confidence S1, beat its permutation null, and paid no trained fake more than it delivers. It overpriced the one novel fake, wrong-map, by +.098 (criterion 6): wrong-map did more harm than every trained class and the registered map cannot go below the training floor. No milestone moves; CAL-2 waits on a CONFIRM; candidate CAL-1b (Will-gated) separates the two causes.
@@ -242,6 +244,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter59 (2026-11-16): CAL-1b, a pure harm in training and the cause table: BOUNDARY (criterion 6 on random, anti-echo, wrong-map)
+- Cadence 0.94.0 pinned (`~/_cadence_v0940`, v0.94.0; the monitor clone is at 0.101.0, and 0.95.2 changed lessons, so the CAL-1 instrument needs the pin). Off-ladder. Pre-registered `c47fa0f` (timestamped), scripts `060d326`, pilot GO m = 6, 2,160 twins. rho L .935 / S2 .906, skill .848; wait priced (+.017), wrong-map not (+.110, all four cells), random and anti-echo newly overpriced. Write-up `experiments/CAL-1b.md`.
 
 ### iter58 (2026-11-13): CAL-1, calibration-graded v(S) in the teacher market: BOUNDARY (criterion 6, wrong-map)
 - Cadence 0.94.0 (clone `4cb9c29`); the V2 identity gate was IDENTICAL to EXP-77b's 0.89.0 student 0, so CAL-1 ran on the installed version. Off-ladder. Will delegated the V(S) choice; pre-registered `b70748c`; analysis committed `8f600ae` before the full data was read. Pilot rule gave m = 6. Full run 2,160 twins, 2,965 s at 4 workers. Held-out: rho L .928, S2 .907, A .763, S1 -.158; MSE L .00535, S2 .00687; L minus S2 rho +.021 [+.001, +.045], MSE -.00152 [-.00268, -.00048]; skill .838; N0 beaten on both. The four trained fakes priced within 1/16; wrong-map overpriced +.098 (upper +.132). Prediction (CONFIRM about 60%) not met. Write-up `experiments/CAL-1.md`; atlas BOUNDARY. Candidate CAL-1b (Will-gated).
@@ -912,6 +917,8 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## NEXT ITERATIONS (the backlog the loop pulls from; keep ordered by value)
+
+**2026-11-16 update (iter59):** CAL-1b DONE, BOUNDARY. Spanning one harm in training prices that harm but not a new combination of harms (wrong-map +.110 in every cause-table cell), and the stretched range (or the smaller graded pool, confounded) cost calibration near the bar (random, anti-echo). Candidate CAL-1c (Will-gated): several consistent-wrong forms in training (WAIT, wrong-chain, fixed non-WAIT maps drawn per instance, never the held-out maps), 12 graded per group as in CAL-1, and a registered near-the-bar check. CAL-2 keeps waiting on a CAL-1-family CONFIRM.
 
 **2026-11-13 update (iter58):** CAL-1 DONE, BOUNDARY. The learned v(S) beats consensus and confidence out of sample and is calibrated on the classes it was trained on, but it cannot price a novel fake that does more harm than anything in training (the isotonic map stops at the training floor). CAL-2 still waits on a CAL-1 CONFIRM. New Will-gated candidate CAL-1b: a trained fake that labels WAIT consistently, a novel fake inside the trained range, and a registered rule for forecasts below the floor. The registered zero test stays open.
 

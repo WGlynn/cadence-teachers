@@ -1,5 +1,60 @@
 [
  {
+  "id": "CAL-1b",
+  "date": "2026-11-16",
+  "iter": "iter59",
+  "track": "attribution (M1-M5)",
+  "verdict": "BOUNDARY",
+  "name": "Training a price on one kind of harm teaches that harm, not harm in general",
+  "verdict_note": "pre-registered (c47fa0f, Bitcoin-timestamped); CAL-1's instrument on Cadence 0.94.0 pinned from a separate copy (V2 identity gate IDENTICAL, every row checked), composite zero, m = 6 by the pilot rule; a new trained fake (wait: WAIT at every context), 192 training and 192 held-out teachers, 48 fresh held-out students. Held-out rho L .935 / S2 .906 / A .807; MSE L .00839 / S2 .01413; L minus S2 rho +.029 [+.006, +.057], MSE -.0057 [-.0088, -.0027]; skill .848 [.790, .891]; beats N0. Criterion 6: wait +.017 pass, wrong-map +.110 FAIL, random +.059 FAIL, anti-echo +.066 FAIL. Cause table: wrong-map fails with and without wait in training, with the isotonic map and with the raw ridge; the floor (-.433) does not bind. No kill.",
+  "headline": "CAL-1's price could not go below the worst fake it had seen. So we added a very harmful fake to training and asked again. The price learned that new fake almost exactly, and it still ranked teachers better than agreement did. But the new fake from CAL-1 was still overpriced, even with no floor at all: the price had learned what this one harm looks like, not what harm looks like. Two mild fakes near the bar also slipped above it.",
+  "question": "When the training block holds a fake that carries the harm CAL-1 missed, does the learned v(S) price the novel wrong-map within one state, and is the harm in training or a forecast with no floor enough on its own?",
+  "process_issues": [
+   "the V2 summary line prints the wrong path label (a reused variable name); the version check itself ran first and passed, and every row records the pinned version",
+   "Claude Code stopped the run's wrapper shell for low memory partway through; the Python run finished unaffected",
+   "two Cadence free-phase budget warnings that CAL-1 did not show; the number of affected lessons is unknown",
+   "the graded pool shrank (10 per group, not 12) to make room for wait, so the range stretch and the pool change are confounded for the random and anti-echo failures"
+  ],
+  "lesson": "Putting one pure harm in training teaches the forecaster that harm, not harm in general: to test generalization to novel harms, span the kind of harm with several forms, and check near-the-bar classes when the training range is stretched.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Overpricing by the learned v(S), per fake class (192 held-out teachers); the bar is 1/16 = .0625",
+   "unit": "mean forecast minus realized worth (accuracy over 16 unseen states)",
+   "bars": [
+    {
+     "label": "random",
+     "value": 0.059,
+     "sem": 0.011
+    },
+    {
+     "label": "wrong-chain",
+     "value": 0.026,
+     "sem": 0.009
+    },
+    {
+     "label": "echo",
+     "value": 0.041,
+     "sem": 0.012
+    },
+    {
+     "label": "anti-echo",
+     "value": 0.066,
+     "sem": 0.015
+    },
+    {
+     "label": "wait (new, in training)",
+     "value": 0.017,
+     "sem": 0.006
+    },
+    {
+     "label": "wrong-map (never in training)",
+     "value": 0.11,
+     "sem": 0.031
+    }
+   ]
+  }
+ },
+ {
   "id": "CAL-1",
   "date": "2026-11-13",
   "iter": "iter58",
