@@ -1,2 +1,3 @@
 EXP-08 BYTE-IDENTICAL to EXP-08-v0990-b0b09d4.out
 identity gate on cadence 0.101.0: seed 6800000 vs EXP-77b-gate-ref-b0b09d4.jsonl student 0 (66s): IDENTICAL
+EXP-08 pinned BYTE-IDENTICAL to the 0.99.0 pinned run
