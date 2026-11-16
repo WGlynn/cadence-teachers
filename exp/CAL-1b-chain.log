@@ -1,0 +1,10 @@
+audit exit 0
+V1 inspect: CAL-1b's zero arms call EXP-62's twin, whose labeller is the audited EXP-62 entry point: PASS
+V2 identity gate on cadence 0.94.0 at teacher: seed 9000000 vs EXP-77b student 0 (16s): IDENTICAL
+pilot exit 0
+  one-way split over 24 teachers x 4 students: between-teacher variance v_b 0.03656, within-teacher (student) variance v_w 0.02671
+  projected reliability at m = 6: 0.891; at m = 8: 0.916
+  wait teachers' mean W: [-0.396, -0.396] (P4 stops if both are above CAL-1's training floor -0.1215)
+  know-4 W +0.307; SD of the 24 teachers' mean W 0.208; stops {'P1_know4_below_10': False, 'P2_sd_of_means_below_05': False, 'P3_rel_at_8_below_7': False, 'P4_wait_above_floor': False}
+  pilot rule -> GO with m = 6
+CAL-1b [pilot] done in 207s
