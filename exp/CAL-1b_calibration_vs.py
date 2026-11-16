@@ -1,6 +1,9 @@
 """
-CAL-1: calibration-graded v(S) in the teacher market. Harness (the analysis is CAL-1_analysis.py, on the saved rows).
-PRE-REGISTRATION: experiments/CAL-1.md (committed b70748c on 2026-11-13, Will's go, before any CAL-1 data).
+CAL-1b: does the learned v(S) price a novel harmful fake when training spans that harm? Harness (the analysis is
+CAL-1b_analysis.py, on the saved rows). PRE-REGISTRATION: experiments/CAL-1b.md (committed c47fa0f on 2026-11-16, under
+Will's delegation of the V(S) program, before any CAL-1b data; Bitcoin-timestamped). Written from CAL-1_calibration_vs.py;
+what changes is only what CAL-1b.md lists under "What changes": the wait class, the pools of 24, fresh seeds, the pinned
+version (0.94.0 from ~/_cadence_v0940/src, checked on every row) and the pilot's P4 stop.
 
 Student side = EXP-77b's instrument through EXP-62's code, unchanged: compose (delayed-credit brain, scales trace 12.0,
 founder lateral), live_world (weather chamber, corrective schedule), lesson 80, 20 attempts alone through `step`, greedy
@@ -8,10 +11,11 @@ per-state accuracy over 16 unseen states. The zero arms (null, untaught, random)
 `labeller`. New: teachers with a fixed identity (drawn once from their own seed), a 192-label probe before any teaching,
 and jobs that are single twins (block, student, arm), run through EXP-73's pool-and-checkpoint loop.
 
-    MODE=v1 python -u CAL-1_calibration_vs.py                 # V1 inspect check (the audit itself: EXP-77b_construction_audit.py)
-    MODE=gate WORKERS=4 python -u CAL-1_calibration_vs.py     # V2 identity gate: EXP-77b student 0 on this version
-    TAG=pilot WORKERS=4 python -u CAL-1_calibration_vs.py     # pilot: 1 group of 24 x 4 students, pilot rule for m
-    TAG=full M=<6|8> WORKERS=4 python -u CAL-1_calibration_vs.py
+Every run line sets PYTHONPATH=~/_cadence_v0940/src (V5: any other Cadence refuses to run and voids the rows).
+    MODE=v1 python -u CAL-1b_calibration_vs.py                 # V1 inspect check (the audit itself: EXP-77b_construction_audit.py)
+    MODE=gate WORKERS=4 python -u CAL-1b_calibration_vs.py     # V2 identity gate: EXP-77b student 0 on the pinned 0.94.0
+    TAG=pilot WORKERS=4 python -u CAL-1b_calibration_vs.py     # pilot: 1 group of 24 x 4 students, pilot rule for m (+ P4)
+    TAG=full M=<6|8> WORKERS=4 python -u CAL-1b_calibration_vs.py
 """
 import importlib.util, inspect, json, os, time
 from multiprocessing import get_context
@@ -19,7 +23,18 @@ from multiprocessing import get_context
 import numpy as np
 
 if os.environ.get("LATERAL"):
-    raise SystemExit("CAL-1 reads the founder lateral: unset LATERAL")
+    raise SystemExit("CAL-1b reads the founder lateral: unset LATERAL")
+
+PIN_VERSION, PIN_DIR = "0.94.0", "_cadence_v0940"
+
+
+def pinned():
+    """V5: the imported Cadence must be 0.94.0 from ~/_cadence_v0940/src. Returns (version, path); raises otherwise."""
+    import cadence
+    ver, path = getattr(cadence, "__version__", "?"), os.path.dirname(os.path.abspath(cadence.__file__))
+    if ver != PIN_VERSION or PIN_DIR not in path.replace(os.sep, "/").split("/"):
+        raise SystemExit(f"V5: CAL-1b runs only on Cadence {PIN_VERSION} from ~/{PIN_DIR}/src; imported {ver} at {path}")
+    return ver, path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 _spec = importlib.util.spec_from_file_location("e62", os.path.join(HERE, "EXP-62_content_market_committed_null.py"))
@@ -32,12 +47,14 @@ TAG = os.environ.get("TAG", "full")
 M = int(os.environ.get("M", 6))
 WORKERS = min(4, int(os.environ.get("WORKERS", 4)))     # hard cap: 4 worker processes
 LESSON = 80
+CAL1_FLOOR = -0.1215                                    # CAL-1's isotonic training floor (CAL-1b.md, pilot rule P4)
 KNOW = ["know-1", "know-2", "know-3", "know-4"]
-TRAINED_FAKES = ["random", "wrong-chain", "echo", "anti-echo"]
+TRAINED_FAKES = ["random", "wrong-chain", "echo", "anti-echo", "wait"]
+WAIT = 4                                                # the fifth action
 FAKES = TRAINED_FAKES + ["wrong-map"]
 ZERO = ["null", "untaught", "random"]
-GROUP_TRAIN = ["graded"] * 12 + KNOW + [k for k in TRAINED_FAKES for _ in range(2)]
-GROUP_HELD = ["graded"] * 10 + KNOW + [k for k in FAKES for _ in range(2)]
+GROUP_TRAIN = ["graded"] * 10 + KNOW + [k for k in TRAINED_FAKES for _ in range(2)]
+GROUP_HELD = ["graded"] * 8 + KNOW + [k for k in FAKES for _ in range(2)]
 assert len(GROUP_TRAIN) == 24 and len(GROUP_HELD) == 24
 
 
@@ -59,6 +76,8 @@ def make_teacher(kind, ident_seed):            # identity drawn once; kept on ev
             return lambda c, a: c.right() if noise.random() < p[c.right()] else int(noise.integers(5))
         if m is not None:
             return lambda c, a: m[c.right()]
+        if kind == "wait":                      # CAL-1b's new trained fake: WAIT at every context, probe and lessons
+            return lambda c, a: WAIT
         return E62.labeller(kind, noise)        # random, wrong-chain, echo, anti-echo: the existing code
     labeller.identity = dict(kind=kind, ident_seed=int(ident_seed), p=p, map=m)
     return labeller
@@ -89,30 +108,30 @@ def features(pr):                               # 21 numbers; none reads RIGHTS
 def teachers(block):
     """block: train | held | pilot | probe-only. Returns dicts with t (index in block), id (global), group, kind, seeds."""
     if block == "train":
-        return [dict(block=block, t=t, id=t, group=t // 24, kind=GROUP_TRAIN[t % 24], ident_seed=11_000_000 + t,
-                     probe_seed=30_000_000 + t) for t in range(192)]
+        return [dict(block=block, t=t, id=t, group=t // 24, kind=GROUP_TRAIN[t % 24], ident_seed=13_000_000 + t,
+                     probe_seed=50_000_000 + t) for t in range(192)]
     if block == "held":
-        return [dict(block=block, t=t, id=200 + t, group=t // 24, kind=GROUP_HELD[t % 24], ident_seed=11_100_000 + t,
-                     probe_seed=30_000_000 + 200 + t) for t in range(192)]
+        return [dict(block=block, t=t, id=200 + t, group=t // 24, kind=GROUP_HELD[t % 24], ident_seed=13_100_000 + t,
+                     probe_seed=50_000_000 + 200 + t) for t in range(192)]
     if block == "pilot":
-        return [dict(block=block, t=t, id=500 + t, group=0, kind=GROUP_HELD[t], ident_seed=11_900_000 + t,
-                     probe_seed=30_000_000 + 500 + t) for t in range(24)]
+        return [dict(block=block, t=t, id=500 + t, group=0, kind=GROUP_HELD[t], ident_seed=13_900_000 + t,
+                     probe_seed=50_000_000 + 500 + t) for t in range(24)]
     if block == "probe-only":                   # 16 know-4 (probe-gamer) + 64 wrong-chain clones (coordinated S2)
         return [dict(block=block, t=t, id=None, group=None, kind="know-4" if t < 16 else "wrong-chain",
-                     ident_seed=11_200_000 + t, probe_seed=30_000_700 + t) for t in range(80)]
+                     ident_seed=13_200_000 + t, probe_seed=50_000_700 + t) for t in range(80)]
     raise ValueError(block)
 
 
 def students(sblock, m=M):
     """sblock: train | held | audition | pilot. j = the student's index in its block (lesson noise), audition j = 900 + g."""
     if sblock == "train":
-        return [dict(sblock=sblock, s=s, j=s, group=s // 3, seed=10_100_000 + 10 * s, tblock="train") for s in range(24)]
+        return [dict(sblock=sblock, s=s, j=s, group=s // 3, seed=12_100_000 + 10 * s, tblock="train") for s in range(24)]
     if sblock == "held":
-        return [dict(sblock=sblock, s=s, j=s, group=s // m, seed=10_200_000 + 10 * s, tblock="held") for s in range(8 * m)]
+        return [dict(sblock=sblock, s=s, j=s, group=s // m, seed=12_200_000 + 10 * s, tblock="held") for s in range(8 * m)]
     if sblock == "audition":
-        return [dict(sblock=sblock, s=g, j=900 + g, group=g, seed=10_300_000 + 10 * g, tblock="held") for g in range(8)]
+        return [dict(sblock=sblock, s=g, j=900 + g, group=g, seed=12_300_000 + 10 * g, tblock="held") for g in range(8)]
     if sblock == "pilot":
-        return [dict(sblock=sblock, s=s, j=s, group=0, seed=10_900_000 + 10 * s, tblock="pilot") for s in range(4)]
+        return [dict(sblock=sblock, s=s, j=s, group=0, seed=12_900_000 + 10 * s, tblock="pilot") for s in range(4)]
     raise ValueError(sblock)
 
 
@@ -156,13 +175,14 @@ def run_job(job):
         row = dict(sblock=S["sblock"], s=S["s"], group=S["group"], seed=S["seed"], arm=arm, **out)
     else:
         T = job["teacher"]
-        lab_seed = 20_000_000 + 1000 * T["id"] + S["j"]
+        lab_seed = 40_000_000 + 1000 * T["id"] + S["j"]
         lab = make_teacher(T["kind"], T["ident_seed"])
         out = teacher_twin(S["seed"], lab(np.random.default_rng(lab_seed)))
         pr, ident = probe_of(T)
         row = dict(sblock=S["sblock"], s=S["s"], group=S["group"], seed=S["seed"], arm="teacher", t=T["t"], id=T["id"],
                    tblock=T["block"], kind=T["kind"], identity=ident, lab_seed=lab_seed, probe_seed=T["probe_seed"],
                    probe=pr, **out)
+    row["cadence"] = list(pinned())                       # V5, per row
     row["secs"] = round(time.time() - t0, 1)
     return row
 
@@ -188,8 +208,8 @@ def run_pool(jobs, ckpt):
     rows = [json.loads(l) for l in open(ckpt)] if os.path.exists(ckpt) else []
     done = {key(r) for r in rows}
     todo = [j for j in jobs if (j["student"]["sblock"], j["student"]["s"], j["arm"]) not in done]
-    import cadence
-    print(f"CAL-1 [{TAG}]: cadence {getattr(cadence, '__version__', '?')} at {os.path.dirname(cadence.__file__)}; "
+    ver, path = pinned()
+    print(f"CAL-1b [{TAG}]: cadence {ver} at {path}; "
           f"{len(todo)} twins to go ({len(done)} done); {WORKERS} workers", flush=True)
     t0, n = time.time(), 0
     if todo:
@@ -251,7 +271,7 @@ def v1():
     src = inspect.getsource(zero_twin)
     ok = ("E62.twin(" in src and "labeller(kind, np.random.default_rng(lab_seed))" in inspect.getsource(E62.twin)
           and E62.twin.__globals__["labeller"] is E62.labeller)
-    print(f"V1 inspect: CAL-1's zero arms call EXP-62's twin, whose labeller is the audited EXP-62 entry point: "
+    print(f"V1 inspect: CAL-1b's zero arms call EXP-62's twin, whose labeller is the audited EXP-62 entry point: "
           f"{'PASS' if ok else 'FAIL'}")
     return ok
 
@@ -266,7 +286,7 @@ def gate_job(spec):
 
 
 def gate():
-    import cadence
+    ver, path = pinned()
     t0 = time.time()
     ref = next(r for r in (json.loads(l) for l in open(os.path.join(HERE, "EXP-77b-full.jsonl")))
                if r["student"] == 0 and r["lesson"] == LESSON)
@@ -282,7 +302,7 @@ def gate():
         print(f"  {arm:12s} {path:8s} acc {new['acc']:.3f} (EXP-77b {ref['arms'][arm]['acc']:.3f}) labels {new['n_labels']:3d}"
               f"  {'same' if same[f'{arm} ({path} path)'] else 'DIFFERENT'}", flush=True)
     ok = all(same.values())
-    print(f"V2 identity gate on cadence {cadence.__version__}: seed 9000000 vs EXP-77b student 0 ({time.time() - t0:.0f}s): "
+    print(f"V2 identity gate on cadence {ver} at {path}: seed 9000000 vs EXP-77b student 0 ({time.time() - t0:.0f}s): "
           + ("IDENTICAL" if ok else f"DIFFERS {same}"), flush=True)
     return ok
 
@@ -299,7 +319,7 @@ def pilot_report(rows):
     S1 = [s1(p) for p, _ in probes]
     S2 = s2_all([p for p, _ in probes])
     K = [k_key(p) for p, _ in probes]
-    print("\nCAL-1 pilot chain print (RUN GATE line 5): class, identity, probe S1 / S2 (pilot pool) / K, W per student, mean")
+    print("\nCAL-1b pilot chain print (RUN GATE line 5): class, identity, probe S1 / S2 (pilot pool) / K, W per student, mean")
     for k, t in enumerate(T):
         ident = probes[k][1]
         idtxt = (f"p={[round(x, 2) for x in ident['p']]}" if ident["p"] is not None else
@@ -316,16 +336,19 @@ def pilot_report(rows):
     print(f"\n  one-way split over 24 teachers x {n} students: between-teacher variance v_b {v_b:.5f}, "
           f"within-teacher (student) variance v_w {v_w:.5f}")
     print(f"  projected reliability at m = 6: {rel(6):.3f}; at m = 8: {rel(8):.3f}")
+    wait_W = [float(W[k].mean()) for k, t in enumerate(T) if t["kind"] == "wait"]
+    print(f"  wait teachers' mean W: {[round(w, 3) for w in wait_W]} (P4 stops if both are above CAL-1's training "
+          f"floor {CAL1_FLOOR})")
     stops = dict(P1_know4_below_10=bool(know4 < 0.10), P2_sd_of_means_below_05=bool(sd_means < 0.05),
-                 P3_rel_at_8_below_7=bool(rel(8) < 0.7))
+                 P3_rel_at_8_below_7=bool(rel(8) < 0.7), P4_wait_above_floor=bool(all(w > CAL1_FLOOR for w in wait_W)))
     m = 6 if rel(6) >= 0.7 else 8
     print(f"  know-4 W {know4:+.3f}; SD of the 24 teachers' mean W {sd_means:.3f}; stops {stops}")
     verdict = "PILOT STOP" if any(stops.values()) else f"GO with m = {m}"
     print(f"  pilot rule -> {verdict}", flush=True)
     json.dump(dict(W=W.tolist(), Z=Z.tolist(), S1=S1, S2=S2, K=K, kinds=[t["kind"] for t in T],
                    identities=[p[1] for p in probes], v_b=v_b, v_w=v_w, rel6=rel(6), rel8=rel(8), know4=know4,
-                   sd_means=sd_means, stops=stops, m=m, verdict=verdict),
-              open(os.path.join(HERE, "CAL-1-pilot.json"), "w"))
+                   sd_means=sd_means, wait_W=wait_W, stops=stops, m=m, verdict=verdict),
+              open(os.path.join(HERE, "CAL-1b-pilot.json"), "w"))
 
 
 # ============ Main ============
@@ -341,19 +364,20 @@ def save_probes(blocks, path):
 
 
 def main():
+    pinned()
     t0 = time.time()
     if TAG == "pilot":
-        save_probes(["pilot"], os.path.join(HERE, "CAL-1-pilot-probes.json"))
-        rows = run_pool(jobs_for(["pilot"]), os.path.join(HERE, "CAL-1-pilot.jsonl"))
+        save_probes(["pilot"], os.path.join(HERE, "CAL-1b-pilot-probes.json"))
+        rows = run_pool(jobs_for(["pilot"]), os.path.join(HERE, "CAL-1b-pilot.jsonl"))
         pilot_report(rows)
     elif TAG == "full":
         assert M in (6, 8), M
-        save_probes(["train", "held", "probe-only"], os.path.join(HERE, "CAL-1-full-probes.json"))
-        rows = run_pool(jobs_for(["train", "held", "audition"]), os.path.join(HERE, "CAL-1-full.jsonl"))
-        print(f"CAL-1 [full] m = {M}: {len(rows)} twins on disk", flush=True)
+        save_probes(["train", "held", "probe-only"], os.path.join(HERE, "CAL-1b-full-probes.json"))
+        rows = run_pool(jobs_for(["train", "held", "audition"]), os.path.join(HERE, "CAL-1b-full.jsonl"))
+        print(f"CAL-1b [full] m = {M}: {len(rows)} twins on disk", flush=True)
     else:
         raise SystemExit(f"unknown TAG {TAG}")
-    print(f"CAL-1 [{TAG}] done in {time.time() - t0:.0f}s", flush=True)
+    print(f"CAL-1b [{TAG}] done in {time.time() - t0:.0f}s", flush=True)
 
 
 if __name__ == "__main__":

@@ -1,8 +1,10 @@
 """
-CAL-1 analysis: every number the pre-registration names, computed on the saved rows (no compute on brains).
-PRE-REGISTRATION: experiments/CAL-1.md (committed b70748c, 2026-11-13). Written before any full-run data existed.
+CAL-1b analysis: every number the pre-registration names, computed on the saved rows (no compute on brains).
+PRE-REGISTRATION: experiments/CAL-1b.md (committed c47fa0f, 2026-11-16). Written before any CAL-1b data existed, from
+CAL-1_analysis.py: criterion 6 and K1 now cover six fake classes (wait added), V5 checks every row's Cadence, the cause
+table is added, L-archive is not repeated (CAL-1b.md: it reads EXP-77b's lessons, which do not change).
 
-    python -u CAL-1_analysis.py > CAL-1-full-analysis.out      # reads CAL-1-full.jsonl + CAL-1-full-probes.json
+    PYTHONPATH=~/_cadence_v0940/src python -u CAL-1b_analysis.py > CAL-1b-full-analysis.out
 
 Primary (verdict) uses the composite zero Z = per-student mean of {null, untaught, random}. Amendment (a), exploratory:
 the whole primary analysis is repeated with each single zero (null, untaught, random) and reported beside Z; the verdict
@@ -15,14 +17,14 @@ from scipy.stats import rankdata
 from sklearn.isotonic import IsotonicRegression
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-_spec = importlib.util.spec_from_file_location("cal1h", os.path.join(HERE, "CAL-1_calibration_vs.py"))
+_spec = importlib.util.spec_from_file_location("cal1bh", os.path.join(HERE, "CAL-1b_calibration_vs.py"))
 H = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(H)
 KNOW, FAKES, ZERO, RIGHTS = H.KNOW, H.FAKES, H.ZERO, H.RIGHTS
 CLASSES = ["graded"] + KNOW + FAKES
 LAMS = 10 ** np.arange(-3, 3.0001, 0.5)                 # 13 penalties, half-decade steps
 N_PERM, N_BOOT, MARGIN6, B_BAR = 1000, 2000, 1 / 16, 1 / 32
-PREFIX = os.environ.get("PREFIX", "CAL-1-full")
+PREFIX = os.environ.get("PREFIX", "CAL-1b-full")
 
 
 # ============ Small tools ============
@@ -96,8 +98,10 @@ def load():
     rows = [json.loads(l) for l in open(os.path.join(HERE, f"{PREFIX}.jsonl"))]
     probes = json.load(open(os.path.join(HERE, f"{PREFIX}-probes.json")))
     P = {(p["block"], p["t"]): p for p in probes}
-    acc, mism = {}, 0
+    acc, mism, v5_bad = {}, 0, 0
     for r in rows:
+        ver, path = (r.get("cadence") or ["?", "?"])
+        v5_bad += ver != H.PIN_VERSION or H.PIN_DIR not in str(path).replace("\\", "/").split("/")
         acc[H.key(r)] = r["acc"]
         if r["arm"] == "teacher" and [list(x) for x in P[(r["tblock"], r["t"])]["probe"]] != [list(x) for x in r["probe"]]:
             mism += 1
@@ -111,7 +115,7 @@ def load():
                          groups=np.array([p["group"] if p["group"] is not None else -1 for p in ps]),
                          probes=[[tuple(x) for x in p["probe"]] for p in ps],
                          identity=[p["identity"] for p in ps])
-    return rows, acc, blocks, m, mism
+    return rows, acc, blocks, m, mism, v5_bad
 
 
 def worth_tables(acc, m, zero):
@@ -143,7 +147,7 @@ def feats(probes, R=12):
 
 # ============ One full primary analysis under a given zero ============
 
-def analyse(acc, blocks, m, zero, extras=False):
+def analyse(acc, blocks, m, zero, extras=False, v5_bad=0):
     tr, he = blocks["train"], blocks["held"]
     wtr_s, whe_s, aud = worth_tables(acc, m, zero)
     Wtr, Whe = wtr_s.mean(1), whe_s.mean(1)
@@ -228,7 +232,7 @@ def analyse(acc, blocks, m, zero, extras=False):
     # ---- decision rules
     rel = res["reliability"]["spearman_brown"]
     k4 = res["classes"]["know-4"]["W"]
-    void = dict(V3_reliability_below_5=rel < 0.5, V4_know4_W_below_10=k4 < 0.10)
+    void = dict(V3_reliability_below_5=rel < 0.5, V4_know4_W_below_10=k4 < 0.10, V5_other_cadence=v5_bad > 0)
     crit = {
         "1_rho_L_ge_.5": res["rho"]["L"] >= 0.5,
         "2_rank_beats_S1": res["boot"]["drho_S1"]["ci"][0] > 0,
@@ -277,6 +281,7 @@ def analyse(acc, blocks, m, zero, extras=False):
     beta = L["model"][2] / sd
     ex["L_weights"] = dict(stage_by_action=np.round(beta[:20].reshape(4, 5), 4).tolist(), echo_share=float(beta[20]),
                            right_action_at_stage=[float(beta[5 * i + i]) for i in range(4)],
+                           wait_share_at_stage=[float(beta[5 * i + 4]) for i in range(4)],
                            standardized=np.round(L["model"][2], 4).tolist(), lam=L["lam"])
     # S2 coordinated: 64 probe-only wrong-chain clones added to the held-out reference pool; training map unchanged
     po = blocks["probe-only"]
@@ -294,8 +299,7 @@ def analyse(acc, blocks, m, zero, extras=False):
     d = fpg - w_rand
     ex["probe_gamer"] = dict(forecast=float(fpg.mean()), W=float(w_rand.mean()), over=float(d.mean()),
                              over_se=float(d.std(ddof=1) / 4), know4_W=res["classes"]["know-4"]["W"])
-    # L-archive: L's procedure fitted on EXP-77b's logged lessons, applied to the held-out probes
-    ex["L_archive"] = l_archive(std_he=Fhe, Whe=Whe, cls=cls, clim=clim)
+    # L-archive is not repeated in CAL-1b (CAL-1b.md, "Reported, not decisive")
     # L refitted on 1, 3 or 6 probe labels per context
     ex["L_R"] = {}
     for R in (1, 3, 6):
@@ -358,6 +362,76 @@ def l_archive(std_he, Whe, cls, clim):
                 class_fc={c: float(f[cls == c].mean()) for c in CLASSES})
 
 
+# ============ CAL-1b: the registered cause separation (composite Z) ============
+
+def cause_table(acc, blocks, m):
+    """L trained with all 192 teachers (primary) and without the 16 wait instances (176), each read through CAL-1's
+    isotonic map (clipped at its ends) and as the raw ridge output (the final model's held-out prediction, in units of
+    W, no floor). Criterion 6 (mean(forecast - W) + 1.645 SE < 1/16) per cell for wrong-map and for wait."""
+    tr, he = blocks["train"], blocks["held"]
+    wtr_s, whe_s, _ = worth_tables(acc, m, "Z")
+    Wtr, Whe = wtr_s.mean(1), whe_s.mean(1)
+    cls = he["kinds"]
+    Ftr_all, Fhe = feats(tr["probes"]), feats(he["probes"])
+    out = {}
+    for name, keep in (("with_wait", np.ones(len(Wtr), bool)), ("without_wait", tr["kinds"] != "wait")):
+        Ftr, ytr, gtr = Ftr_all[keep], Wtr[keep], tr["groups"][keep]
+        std, mu, sd = standardizer(Ftr)
+        L = L_procedure(std(Ftr), ytr, gtr, [std(Fhe)])
+        sgn = sign_of(L["oof"], ytr)
+        imap = iso(sgn * L["oof"], ytr)
+        fcs = {"iso": imap.predict(sgn * L["te"][0]), "raw": L["te"][0]}
+        beta = L["model"][2] / sd
+        cell = dict(n_train=int(keep.sum()), lam=L["lam"], sign=sgn,
+                    floor=float(np.min(imap.predict(sgn * L["oof"]))),
+                    wait_share_weight_at_stage=[float(beta[5 * i + 4]) for i in range(4)], forecasts={})
+        for kind, f in fcs.items():
+            cell["forecasts"][kind] = {}
+            for c in ("wrong-map", "wait"):
+                ix = cls == c
+                d = f[ix] - Whe[ix]
+                over, se = float(d.mean()), float(d.std(ddof=1) / np.sqrt(ix.sum()))
+                cell["forecasts"][kind][c] = dict(fc=float(f[ix].mean()), W=float(Whe[ix].mean()), over=over, se=se,
+                                                  bound=over + 1.645 * se, passes=bool(over + 1.645 * se < MARGIN6))
+            cell["forecasts"][kind]["rho"] = spearman(f if kind == "raw" else sgn * L["te"][0], Whe)
+            cell["forecasts"][kind]["mse"] = float(np.mean((f - Whe) ** 2))
+        out[name] = cell
+    wm = lambda tr_, kind: out[tr_]["forecasts"][kind]["wrong-map"]["passes"]
+    prim, raw, now, now_raw = wm("with_wait", "iso"), wm("with_wait", "raw"), wm("without_wait", "iso"), wm("without_wait", "raw")
+    readings = []
+    if now:
+        readings.append("L-nowait passes on wrong-map: CAL-1's failure did not replicate; the separation below is read with that caveat")
+    if prim and not now_raw:
+        readings.append("primary passes and L-nowait-raw fails: the missing harm in training was the cause; removing the floor alone does not fix it")
+    if now_raw:
+        readings.append("L-nowait-raw passes: the floor was a sufficient cause; the ridge already scored wrong-map low enough and only the map hid it")
+    if prim and now_raw:
+        readings.append("primary and L-nowait-raw both pass: either change alone is enough")
+    if not prim:
+        readings.append("primary fails: putting the harm in training did not make the procedure price wrong-map within one state")
+    out["cells_wrong_map"] = {"primary (with wait, iso)": prim, "L-raw (with wait, raw)": raw,
+                              "L-nowait (without wait, iso)": now, "L-nowait-raw (without wait, raw)": now_raw}
+    out["readings"] = readings
+    return out
+
+
+def report_cause(ct):
+    p = lambda *a: print(*a, flush=True)
+    p("\n=== CAL-1b cause separation (registered, reported beside the verdict, not part of it; composite Z) ===")
+    for name in ("with_wait", "without_wait"):
+        c = ct[name]
+        p(f"  training {name} ({c['n_train']} teachers): penalty {c['lam']:g}, isotonic floor {c['floor']:+.4f}, "
+          f"weight on the WAIT share at stages 0-3 (raw units) {[round(x, 3) for x in c['wait_share_weight_at_stage']]}")
+        for kind in ("iso", "raw"):
+            f = c["forecasts"][kind]
+            p(f"    {kind:3s}: rho {f['rho']:+.3f} MSE {f['mse']:.5f} | "
+              + " | ".join(f"{k}: fc {f[k]['fc']:+.3f} W {f[k]['W']:+.3f} over {f[k]['over']:+.3f} (se {f[k]['se']:.3f}) "
+                           f"bound {f[k]['bound']:+.3f} {'PASS' if f[k]['passes'] else 'FAIL'}" for k in ("wrong-map", "wait")))
+    p(f"  wrong-map criterion 6 by cell: {ct['cells_wrong_map']}")
+    for r in ct["readings"]:
+        p(f"  reading: {r}")
+
+
 # ============ Report ============
 
 def report(r, full=True):
@@ -401,7 +475,7 @@ def report(r, full=True):
     p(f"  Brier [W >= 1/32]: " + "  ".join(f"{k} {v:.4f}" if isinstance(v, float) else f"{k} {v}" for k, v in ex["brier"].items()))
     w = ex["L_weights"]
     p(f"  L weight on the right action at stages 0-3 (raw units): {[round(x, 3) for x in w['right_action_at_stage']]}; "
-      f"echo share {w['echo_share']:+.3f}")
+      f"on WAIT {[round(x, 3) for x in w['wait_share_at_stage']]}; echo share {w['echo_share']:+.3f}")
     p(f"  L weights stage x labelled action (raw units): {w['stage_by_action']}")
     c = ex["S2_coordinated"]
     p(f"  S2 coordinated (64 wrong-chain clones in the pool): rho {c['rho']:+.3f}, MSE {c['mse']:.5f}; top class {c['top_class']}")
@@ -410,10 +484,6 @@ def report(r, full=True):
     g = ex["probe_gamer"]
     p(f"  probe-gamer (16): L forecast {g['forecast']:+.3f} vs W {g['W']:+.3f}: overpriced {g['over']:+.3f} (se {g['over_se']:.3f}); "
       f"know-4 W {g['know4_W']:+.3f}")
-    a = ex["L_archive"]
-    p(f"  L-archive (EXP-77b lessons, {a['n_train']} rows, penalty {a['lam']:g}): rho {a['rho']:+.3f}, MSE {a['mse']:.5f}, "
-      f"skill {a['skill']:+.3f}")
-    p(f"    class forecasts: {{{', '.join(f'{k}: {v:+.3f}' for k, v in a['class_fc'].items())}}}")
     p("  L on R probe labels per context: " + "  ".join(f"R={R}: rho {v['rho']:.3f} MSE {v['mse']:.5f}" for R, v in ex["L_R"].items()))
     sbt = ex["student_bootstrap"]
     p("  student-level bootstrap (95%): " + "  ".join(f"{k} [{v[0]:+.5f}, {v[1]:+.5f}]" for k, v in sbt.items()
@@ -421,19 +491,28 @@ def report(r, full=True):
 
 
 def main():
-    rows, acc, blocks, m, mism = load()
-    print(f"CAL-1 analysis: {len(rows)} twins, m = {m}, probe mismatches between rows and the pre-teaching file: {mism}")
+    rows, acc, blocks, m, mism, v5_bad = load()
+    print(f"CAL-1b analysis: {len(rows)} twins, m = {m}, probe mismatches between rows and the pre-teaching file: {mism}; "
+          f"rows on a Cadence other than {H.PIN_VERSION} from ~/{H.PIN_DIR}: {v5_bad}")
     out = {}
     for zero in ["Z", "null", "untaught", "random"]:
-        out[zero] = analyse(acc, blocks, m, zero, extras=(zero == "Z"))
+        out[zero] = analyse(acc, blocks, m, zero, extras=(zero == "Z"), v5_bad=v5_bad)
         report(out[zero], full=(zero == "Z"))
+        if zero == "Z":
+            ct = cause_table(acc, blocks, m)
+            prim = np.array(out["Z"]["forecasts"]["L"])
+            assert np.allclose(prim, [0] * 0 or prim), "primary forecasts missing"
+            report_cause(ct)
+            out["cause_table"] = ct
     print("\n=== exploratory per-zero summary (amendment a; the verdict uses Z) ===")
     for zero, r in out.items():
+        if zero == "cause_table":
+            continue
         print(f"  {zero:8s} rho_L {r['rho']['L']:.3f} rho_S1 {r['rho']['S1']:+.3f} rho_S2 {r['rho']['S2']:.3f} "
               f"MSE_L {r['mse']['L']:.5f} MSE_S2 {r['mse']['S2']:.5f} know-4 W {r['classes']['know-4']['W']:+.3f} "
               f"rel {r['reliability']['spearman_brown']:.3f} failing {[k for k, v in r['criteria'].items() if not v]} -> {r['verdict']}")
     import cadence
-    json.dump(dict(analysis=out, m=m, n_rows=len(rows), probe_mismatch=mism, version=cadence.__version__),
+    json.dump(dict(analysis=out, m=m, n_rows=len(rows), probe_mismatch=mism, v5_bad=v5_bad, version=cadence.__version__),
               open(os.path.join(HERE, f"{PREFIX}-analysis.json"), "w"), default=float)
 
 
