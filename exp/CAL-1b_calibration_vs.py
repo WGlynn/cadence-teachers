@@ -286,7 +286,7 @@ def gate_job(spec):
 
 
 def gate():
-    ver, path = pinned()
+    ver, lib = pinned()
     t0 = time.time()
     ref = next(r for r in (json.loads(l) for l in open(os.path.join(HERE, "EXP-77b-full.jsonl")))
                if r["student"] == 0 and r["lesson"] == LESSON)
@@ -302,7 +302,7 @@ def gate():
         print(f"  {arm:12s} {path:8s} acc {new['acc']:.3f} (EXP-77b {ref['arms'][arm]['acc']:.3f}) labels {new['n_labels']:3d}"
               f"  {'same' if same[f'{arm} ({path} path)'] else 'DIFFERENT'}", flush=True)
     ok = all(same.values())
-    print(f"V2 identity gate on cadence {ver} at {path}: seed 9000000 vs EXP-77b student 0 ({time.time() - t0:.0f}s): "
+    print(f"V2 identity gate on cadence {ver} at {lib}: seed 9000000 vs EXP-77b student 0 ({time.time() - t0:.0f}s): "
           + ("IDENTICAL" if ok else f"DIFFERS {same}"), flush=True)
     return ok
 
