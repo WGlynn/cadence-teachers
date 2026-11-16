@@ -1,5 +1,90 @@
 [
  {
+  "id": "CAL-1",
+  "date": "2026-11-13",
+  "iter": "iter58",
+  "track": "attribution (M1-M5)",
+  "verdict": "BOUNDARY",
+  "name": "A learned v(S) prices teachers before they teach, but not a novel fake worse than any it saw",
+  "verdict_note": "pre-registered (b70748c); EXP-77b's instrument on Cadence 0.94.0 (4cb9c29; V2 identity gate IDENTICAL to 0.89.0), composite zero, m = 6 by the pilot rule; 192 training and 192 held-out teachers with fixed identities, 48 fresh held-out students. Held-out rho L .928 / S2 .907 / A .763 / S1 -.158; MSE L .00535 / S2 .00687; L minus S2 rho +.021 [+.001, +.045], MSE -.00152 [-.00268, -.00048]; skill .838 [.803, .871]; beats N0 (rho 99th percentile .850, MSE 1st percentile .0235). Criterion 6 fails on wrong-map only: overpriced +.098 (upper +.132 against 1/16); the four trained fakes pass. No kill.",
+  "headline": "Can a learned price tell a good teacher from a bad one before the teacher has taught anyone? We trained one on 192 teachers' real results and asked it to price 192 new teachers from a short quiz of their answers. It ranked and priced them better than agreement with other teachers did, and far better than rewarding confidence, because it learned which stages of the task are worth teaching most. But one new kind of fake teacher, never seen in training, did more harm than any fake it had seen, and the price could not go that low.",
+  "question": "Before a teacher teaches, can a v(S) learned from earlier teachers' realized student gain forecast its worth from its probe labels better than consistency and peer agreement, out of sample, without overpricing any fake class, including one absent from training?",
+  "process_issues": [
+   "ran on 0.94.0, not the 0.89.0 the draft named; the V2 identity gate (the version check added before data) was IDENTICAL",
+   "the pilot's JSON dump failed on a numpy bool after the pilot rule printed; fixed and rerun from the checkpoint with no twin rerun",
+   "the registered isotonic map cannot forecast below the training floor, so a novel class worse than every trained class could not pass criterion 6 (found post hoc)"
+  ],
+  "lesson": "A calibration map fitted on a training block cannot forecast outside that block's range: register a map that extrapolates or a criterion against the training floor, and check novel fakes for harms no trained class has.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Overpricing by the learned v(S), per fake class (192 held-out teachers); the bar is 1/16 = .0625",
+   "unit": "mean forecast minus realized worth (accuracy over 16 unseen states)",
+   "bars": [
+    {
+     "label": "random",
+     "value": 0.012,
+     "sem": 0.012
+    },
+    {
+     "label": "wrong-chain",
+     "value": -0.03,
+     "sem": 0.007
+    },
+    {
+     "label": "echo",
+     "value": -0.039,
+     "sem": 0.01
+    },
+    {
+     "label": "anti-echo",
+     "value": -0.011,
+     "sem": 0.012
+    },
+    {
+     "label": "wrong-map (never in training)",
+     "value": 0.098,
+     "sem": 0.021
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP-07g",
+  "date": "2026-11-13",
+  "iter": "iter57",
+  "track": "generic queue",
+  "verdict": "SUPPORTIVE",
+  "name": "The episodic memory learns the feature-and-context rule without the context in its key; the slower actor pair without the memory does not",
+  "verdict_note": "pre-registered (7a27f4e) before any data; per-arm rule LEARNS if at least 7 of 10 seeds beat the 6/8 ceiling of a sum of input weights at 1600 moments; Cadence 0.94.0 (maturity off); EXP-07f's 10 combination-rule seeds, cue streams and greedy exam. MEM control memory_choice=True 10/10 (.975, LEARNS), answers identical to EXP-07f on 10 of 10 seeds; MEMCTX0 memory_context=0.0 10/10 (1.000, all 10 at 8/8, LEARNS); PAIR actor_eta=0.1 with bias 0.01 and no memory 0/10 (.588, 2/10 one answer, FAILS). Prediction CONFIRMED. First run 2026-11-05 by a fire that stopped before the write-up; recorded 2026-11-13 after a rerun matched it in full. Scope: this 8-cue, 2-action task, 1600 moments; no unseen situation tested.",
+  "question": "Does the episodic memory's lift need the temporal context in its key, and does the slower actor pair lift EXP-07d's limit without the memory?",
+  "headline": "Last time the episodic memory alone let the brain learn an answer that depends on a cue's feature and its context together. This time we took the temporal context out of the memory's key: it still learned, on all 10 seeds, every one at 8 of 8. The slower actor step and slower bias together, without the memory, learned it on none.",
+  "lesson": "An orphaned run (outputs on disk, write-up never filled) is not a result until a deterministic rerun under the same pre-registration matches it; then record both, and say who saw what when.",
+  "process_issues": [
+   "the pre-registering fire ran it on 2026-11-05 and stopped before the write-up; recorded eight days later from a rerun that matched in full, by a fire that had seen the first numbers",
+   "consistent with a per-observation lookup but does not prove it; whether the lift holds as situations grow, or for an unseen one, is untested; EXP-07h",
+   "one task, 8 situations, one budget (1600 moments); not checked on upstream 0.95 to 0.99"
+  ],
+  "quote_worthy": "The memory did not need the context in its key; the slower step did not need to be there at all.",
+  "chart": {
+   "title": "Seeds above the 6-of-8 ceiling after 1600 moments (of 10)",
+   "unit": "seeds",
+   "bars": [
+    {
+     "label": "Episodic memory (control)",
+     "value": 10
+    },
+    {
+     "label": "Episodic memory, no context in the key",
+     "value": 10
+    },
+    {
+     "label": "Slower actor pair, no memory",
+     "value": 0
+    }
+   ]
+  }
+ },
+ {
   "id": "EXP-07f",
   "date": "2026-11-04",
   "iter": "iter56",

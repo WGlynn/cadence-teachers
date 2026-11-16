@@ -1,8 +1,8 @@
 # EXP-07g: is the episodic memory's lift a per-situation lookup, and does the slower actor pair lift EXP-07d's limit without the memory?
 
-- Date: 2026-11-05 | Cadence version: 0.94.0 (main `2a32a98`) | Program iter: iter57 (generic queue; off the V(S) ladder, which waits on Will-gated CAL-1 / CAL-2 / the registered zero test)
-- Version note: 0.94.0 adds maturity as an opt-in. It is off here, the default. Upstream reports that a brain with it off is 0.93.1 to the bit; the MEM control tests that claim on this task.
-- Script: `exp/EXP-07g_split2.py` | Evidence: `exp/EXP-07g-2a32a98.out`, `exp/EXP-07g-2a32a98.json`, `exp/EXP-07g-2a32a98.err`, `exp/EXP-07g-2a32a98.time`
+- Date: pre-registered 2026-11-05 (`7a27f4e`, 09:57); first run 2026-11-05 10:00; recorded 2026-11-13 from a rerun | Cadence version: 0.94.0 (main `2a32a98`; the 2026-11-13 rerun used the clone at `4cb9c29`, which is `2a32a98` plus one local commit that touches only tests/test_maturity.py, so `src/` is identical) | Program iter: iter57 (generic queue; off the V(S) ladder, which waits on Will-gated CAL-1 / CAL-2 / the registered zero test)
+- Version note: 0.94.0 adds maturity as an opt-in. It is off here, the default. Upstream reports that a brain with it off is 0.93.1 to the bit; the MEM control tests that claim on this task. Upstream has since released up to 0.99.0 (2026-11-12); this result is not checked there.
+- Script: `exp/EXP-07g_split2.py` | Evidence: `exp/EXP-07g-2a32a98.out`, `exp/EXP-07g-2a32a98.json`, `exp/EXP-07g-2a32a98.err`, `exp/EXP-07g-2a32a98.time` (2026-11-05 run); `exp/EXP-07g-4cb9c29-rerun.out`, `.json`, `.err`, `.time` (2026-11-13 rerun)
 
 ## Summary
 - Question: EXP-07f found that `memory_choice=True` alone lifts EXP-07d's limit (10 of 10 seeds above the 6 of 8 a
@@ -59,8 +59,47 @@
   - VOID if any arm errors or refuses to answer.
   Reported with them: each arm's mean score with its SEM, 8/8 counts, one-answer counts, and the curve at 400 and
   800 (registered secondary).
-- Result: PENDING (pre-registered before any data; the run follows the 0.94.0 monitor probes).
-- Verdict: PENDING.
+- Result (2026-11-13 rerun: 205 s wall, exit 0, stderr empty; the 2026-11-05 run: 273 s, exit 0, stderr empty): the
+  rerun's rows, summary checks and settings read-back are equal to the 2026-11-05 run's JSON in full, so the two
+  runs are one result. The API smoke run passed on 0.94.0. The brute-force ceiling was 6 of 8 on every rule, and the
+  settings read back were MEM eta 1.0, bias 0.05, memory on, context 0.5; MEMCTX0 the same with context 0.0; PAIR eta
+  0.1, bias 0.01, memory off. At 1600 moments, seeds above 6 of 8 out of 10, mean score (SEM), seeds at 8 of 8, seeds
+  giving one answer to every cue:
+  - MEM control `memory_choice=True`: 10/10, 0.975 (0.017), 8, 0/10. Curve 0.963, 0.963, 0.975 at 400, 800, 1600.
+    Reproduction: answers identical to EXP-07f's MEM arm (0.93.1) at all three exams on 10 of 10 seeds.
+  - MEMCTX0 `memory_choice=True, memory_context=0.0`: 10/10, 1.000 (0.000), 10, 0/10. Curve 0.975, 0.988, 1.000;
+    9 of 10 seeds already above the ceiling at 400.
+  - PAIR `actor_eta=0.1, actor_eta_bias=0.01`, no memory: 0/10, 0.588 (0.033), 0, 2/10. Curve 0.525, 0.512, 0.588.
+    Best seeds (2) at 6 of 8, the ceiling, none above it. Its scores at 1600 have the same spread as EXP-07f's
+    `actor_eta=0.1` alone arm (five at 4/8, three at 5/8, two at 6/8) but differ seed by seed (equal on 1 of 10).
+- Verdict: the reproduction holds (0.94.0 with maturity off answers as 0.93.1 on this task). By the pre-registered
+  rules MEM LEARNS, MEMCTX0 LEARNS, PAIR FAILS. Loop verdict on the prediction: CONFIRMED (MEMCTX0 LEARNS and PAIR
+  FAILS, both as predicted, and the reproduction is exact). Atlas category: SUPPORTIVE.
 
 ## Reflection
-- PENDING.
+- What it means: on this task the memory's lift does not need the temporal context in the key. With the context
+  weight at 0.0 the place records, keyed by the observation alone through the memory's fixed random separation,
+  learned the feature-and-context rule on every seed, at 8 of 8 on all 10 (the default context weight 0.5 left 2
+  seeds at 7 of 8). That is what a per-observation record predicts, the same thing EXP-07e's arm A got from one-hot
+  units, but it does not prove it; a record keyed on the observation alone is consistent with the lookup reading
+  and so is anything else that separates the 8 distinct 2-hot inputs. The slower actor pair without the memory
+  fails like each of its halves did alone in EXP-07f: no seed beats what a sum of input weights allows, so the
+  actor settings are not a second way out on this task. EXP-07f's guidance stands and gets narrower: compose with
+  `memory_choice=True`; the context in the key and the slower actor are not needed here. If the lift is a lookup,
+  it grows with the number of distinct situations and should give nothing for a situation never seen; that is the
+  open question, and it decides whether this is a recipe for our learned policies or only for small, closed sets
+  of situations.
+- Process: pre-registered and committed (`7a27f4e`, 09:57) before any data. The fire that pre-registered it ran
+  it at 10:00 on 2026-11-05 (exit 0, outputs on disk) and then stopped before writing it up, so the result sat
+  unrecorded for eight days with the queue item still `ready`. This fire found the orphaned outputs, reran the
+  script under the same pre-registration on the installed clone, and recorded the run only after the rerun matched
+  it in full. The interpreter of this fire saw the 2026-11-05 numbers before the rerun; the verdict comes from the
+  pre-registered rules, so that did not change it. MONITOR-STATE's baseline still says 0.93.1 (the monitor has not
+  run since 2026-11-08 because of a cron fault); the clone's installed version was read directly. Weaknesses: one
+  task, 8 situations, one budget (1600 moments), 10 seeds; no unseen situation was tested; the setting read-back
+  shows the context weight the brain reports, not how the key is built inside the memory.
+- Lesson: an orphaned run (outputs on disk, write-up never filled) is not a result until a deterministic rerun
+  under the same pre-registration matches it; then record both, and say who saw what when.
+- Next: queued EXP-07h (does the memory's lift hold as the number of situations grows, and does it give anything
+  on a situation it never saw?). The queue item is marked done; it should be re-read on the version the monitor
+  installs next (upstream is at 0.99.0).
