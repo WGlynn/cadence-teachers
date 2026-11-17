@@ -1,0 +1,54 @@
+.......F........FFFF.....................                                [100%]
+================================== FAILURES ===================================
+_ test_process_errors_stay_in_the_complete_denominator_without_fabricated_work _
+benchmarks\acquisition\test_confirmation_verifier.py:200: in test_process_errors_stay_in_the_complete_denominator_without_fabricated_work
+    result = verifier.verify(tmp_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\acquisition\verify_confirmation.py:874: in verify
+    check(
+benchmarks\acquisition\verify_confirmation.py:40: in check
+    raise ValueError(message)
+E   ValueError: frozen source hash differs: __init__.py
+_ test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[2] _
+benchmarks\acquisition\test_confirmation_verifier.py:333: in test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds
+    result = verifier.verify(tmp_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\acquisition\verify_confirmation.py:874: in verify
+    check(
+benchmarks\acquisition\verify_confirmation.py:40: in check
+    raise ValueError(message)
+E   ValueError: frozen source hash differs: __init__.py
+_ test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[3] _
+benchmarks\acquisition\test_confirmation_verifier.py:333: in test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds
+    result = verifier.verify(tmp_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\acquisition\verify_confirmation.py:874: in verify
+    check(
+benchmarks\acquisition\verify_confirmation.py:40: in check
+    raise ValueError(message)
+E   ValueError: frozen source hash differs: __init__.py
+_ test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[4] _
+benchmarks\acquisition\test_confirmation_verifier.py:333: in test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds
+    result = verifier.verify(tmp_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\acquisition\verify_confirmation.py:874: in verify
+    check(
+benchmarks\acquisition\verify_confirmation.py:40: in check
+    raise ValueError(message)
+E   ValueError: frozen source hash differs: __init__.py
+_ test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[5] _
+benchmarks\acquisition\test_confirmation_verifier.py:333: in test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds
+    result = verifier.verify(tmp_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\acquisition\verify_confirmation.py:874: in verify
+    check(
+benchmarks\acquisition\verify_confirmation.py:40: in check
+    raise ValueError(message)
+E   ValueError: frozen source hash differs: __init__.py
+=========================== short test summary info ===========================
+FAILED benchmarks/acquisition/test_confirmation_verifier.py::test_process_errors_stay_in_the_complete_denominator_without_fabricated_work
+FAILED benchmarks/acquisition/test_confirmation_verifier.py::test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[2]
+FAILED benchmarks/acquisition/test_confirmation_verifier.py::test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[3]
+FAILED benchmarks/acquisition/test_confirmation_verifier.py::test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[4]
+FAILED benchmarks/acquisition/test_confirmation_verifier.py::test_new_recipe_requires_matching_passed_development_and_preserves_five_seeds[5]
+5 failed, 36 passed in 4.23s

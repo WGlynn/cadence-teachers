@@ -1,0 +1,85 @@
+........F........F.s.FFF.                                                [100%]
+================================== FAILURES ===================================
+______________ test_introductory_python_snippets[docs/memory.md] ______________
+C:\Users\Will\_cadence_study\tests\test_documentation.py:99: in test_introductory_python_snippets
+    blocks = snippets(page)
+             ^^^^^^^^^^^^^^
+C:\Users\Will\_cadence_study\tests\test_documentation.py:22: in snippets
+    return [code for marker, code in BLOCK.findall((ROOT / page).read_text()) if not marker]
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py:23: in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 176872: character maps to <undefined>
+_____________ test_introductory_python_snippets[docs/settling.md] _____________
+C:\Users\Will\_cadence_study\tests\test_documentation.py:99: in test_introductory_python_snippets
+    blocks = snippets(page)
+             ^^^^^^^^^^^^^^
+C:\Users\Will\_cadence_study\tests\test_documentation.py:22: in snippets
+    return [code for marker, code in BLOCK.findall((ROOT / page).read_text()) if not marker]
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py:23: in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 18188: character maps to <undefined>
+____________________ test_every_guide_opens_with_its_title ____________________
+tests\test_documentation.py:114: in test_every_guide_opens_with_its_title
+    assert page.read_text().startswith("# "), page.name
+           ^^^^^^^^^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py:23: in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 176872: character maps to <undefined>
+____________ test_every_python_block_is_run_or_marked_illustrative ____________
+tests\test_documentation.py:123: in test_every_python_block_is_run_or_marked_illustrative
+    if snippets(page.relative_to(ROOT).as_posix())
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_documentation.py:22: in snippets
+    return [code for marker, code in BLOCK.findall((ROOT / page).read_text()) if not marker]
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py:23: in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 176872: character maps to <undefined>
+___________________ test_local_documentation_links_resolve ____________________
+tests\test_documentation.py:146: in test_local_documentation_links_resolve
+    content = destination.read_text()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py:23: in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 18188: character maps to <undefined>
+============================== warnings summary ===============================
+tests/test_documentation.py::test_introductory_python_snippets[docs/teach.md]
+  docs/teach.md:python-block-5:8: RuntimeWarning: lesson on the observations the brain just acted on: the act already wrote this moment to the recall memory, so the lesson reads the moment itself, its successor still empty. Teach before acting, as step(..., teacher=labels) orders them. A world whose next moment looks the same as this one is already in that order, and this does not apply to it.
+
+tests/test_documentation.py::test_introductory_python_snippets[docs/tune.md]
+  C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\dataclasses.py:1588: RuntimeWarning: ActorCriticConfig with eta_bias (0.05) above eta (0.03): the actor's bias step dominates its synapse step and the greedy policy tends to one action whatever the observation. The default couples eta_bias to eta / 10; when lowering eta through dataclasses.replace, set eta_bias too, or pass eta_bias=None to re-derive it. See docs/reward.md#actor-rates.
+    return obj.__class__(**changes)
+
+tests/test_documentation.py::test_introductory_python_snippets[docs/tune.md]
+  docs/tune.md:python-block-9:9: RuntimeWarning: lesson on the observations the brain just acted on: the act already wrote this moment to the recall memory, so the lesson reads the moment itself, its successor still empty. Teach before acting, as step(..., teacher=labels) orders them. A world whose next moment looks the same as this one is already in that order, and this does not apply to it.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_documentation.py::test_introductory_python_snippets[docs/memory.md]
+FAILED tests/test_documentation.py::test_introductory_python_snippets[docs/settling.md]
+FAILED tests/test_documentation.py::test_every_guide_opens_with_its_title - U...
+FAILED tests/test_documentation.py::test_every_python_block_is_run_or_marked_illustrative
+FAILED tests/test_documentation.py::test_local_documentation_links_resolve - ...
+5 failed, 19 passed, 1 skipped, 3 warnings in 127.55s (0:02:07)

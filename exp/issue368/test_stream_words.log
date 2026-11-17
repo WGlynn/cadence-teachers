@@ -1,0 +1,18 @@
+..................FF                                                     [100%]
+================================== FAILURES ===================================
+________ test_a_smoke_life_writes_a_receipt_that_verifies_and_reports _________
+benchmarks\stream_words\test_stream_words.py:250: in test_a_smoke_life_writes_a_receipt_that_verifies_and_reports
+    assert chamber.main(["--arm", "gru", "--seed", "1", "--out", str(tmp_path), "--smoke"]) == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\stream_words\stream_words.py:796: in main
+    signal.signal(signal.SIGALRM, timeout)
+                  ^^^^^^^^^^^^^^
+E   AttributeError: module 'signal' has no attribute 'SIGALRM'. Did you mean: 'SIGABRT'?
+______ test_the_history_amendment_adds_one_arm_and_changes_nothing_else _______
+benchmarks\stream_words\test_stream_words.py:283: in test_the_history_amendment_adds_one_arm_and_changes_nothing_else
+    assert digest in amended["amendment"]["amends"]
+E   AssertionError: assert '1cdcc0dcc9605fa4cd52594a4b7b457c25d05b73a92230f935e112de3a63efd3' in 'protocol.json (sha256 fad9ae7d52d01a7159adb1baf7a9e6da967607047043c6024254502a06c14ac6), every other entry unchanged'
+=========================== short test summary info ===========================
+FAILED benchmarks/stream_words/test_stream_words.py::test_a_smoke_life_writes_a_receipt_that_verifies_and_reports
+FAILED benchmarks/stream_words/test_stream_words.py::test_the_history_amendment_adds_one_arm_and_changes_nothing_else
+2 failed, 18 passed in 4.32s

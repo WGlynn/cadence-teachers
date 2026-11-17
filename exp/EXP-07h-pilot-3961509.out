@@ -1,0 +1,10 @@
+EXP-07h on cadence 0.101.0: sizes [8, 32, 128], arms ('FOUNDER', 'MEM', 'MEMCTX0'), 10 seeds, PER_SIT 100 (PILOT)
+  size 8: trained ceiling upper bound [0.75], construction [0.75], exhaustive linear (of 8) [6]
+  size 32: trained ceiling upper bound [0.75], construction [0.75], exhaustive linear (of 32) n/a
+  size 128: trained ceiling upper bound [0.75], construction [0.75], exhaustive linear (of 128) n/a
+  pilot MEM size 128: moments to 500 8.8 s
+  pilot MEM size 128: moments to 1000 5.7 s
+  pilot MEM size 128: moments to 1500 3.0 s
+  pilot MEM size 128: moments to 2000 2.9 s
+  pilot MEM size 128: exam of 128 cues 1.4 s
+PILOT ok (31 s)

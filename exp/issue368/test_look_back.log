@@ -1,0 +1,24 @@
+..FF                                                                     [100%]
+================================== FAILURES ===================================
+____________ test_retained_receipt_is_source_bound_and_recomputed _____________
+benchmarks\attention\test_look_back.py:43: in test_retained_receipt_is_source_bound_and_recomputed
+    assert ok, message
+E   AssertionError: historical source digest differs
+E   assert False
+________ test_the_check_refuses_a_decision_its_readings_do_not_support ________
+benchmarks\attention\test_look_back.py:55: in test_the_check_refuses_a_decision_its_readings_do_not_support
+    assert subject.historical_check(body) is not None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\attention\look_back.py:168: in historical_check
+    return evidence["historical_check"](ROOT, "benchmarks/attention/results/look-back.json", body)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\provenance.py:155: in historical_check
+    bound = dict(historical_sources(root, receipt))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks\provenance.py:147: in historical_sources
+    raise ValueError("historical source digest differs")
+E   ValueError: historical source digest differs
+=========================== short test summary info ===========================
+FAILED benchmarks/attention/test_look_back.py::test_retained_receipt_is_source_bound_and_recomputed
+FAILED benchmarks/attention/test_look_back.py::test_the_check_refuses_a_decision_its_readings_do_not_support
+2 failed, 2 passed in 0.57s

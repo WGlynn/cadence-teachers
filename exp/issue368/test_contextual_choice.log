@@ -1,0 +1,10 @@
+...F....                                                                 [100%]
+================================== FAILURES ===================================
+______ test_retained_four_founder_receipt_is_source_bound_and_recomputed ______
+benchmarks\attention\test_contextual_choice.py:53: in test_retained_four_founder_receipt_is_source_bound_and_recomputed
+    assert ok, message
+E   AssertionError: historical source digest differs
+E   assert False
+=========================== short test summary info ===========================
+FAILED benchmarks/attention/test_contextual_choice.py::test_retained_four_founder_receipt_is_source_bound_and_recomputed
+1 failed, 7 passed in 33.21s

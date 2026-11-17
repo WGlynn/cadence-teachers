@@ -1,0 +1,8 @@
+test_confirmation_verifier exit=1 secs=7 5 failed, 36 passed in 4.23s
+test_documentation exit=1 secs=130 5 failed, 19 passed, 1 skipped, 3 warnings in 127.55s (0:02:07)
+test_look_back exit=1 secs=2 2 failed, 2 passed in 0.57s
+test_stream_words exit=1 secs=5 2 failed, 18 passed in 4.32s
+test_contextual_choice exit=1 secs=35 1 failed, 7 passed in 33.21s
+test_finite_horizon exit=1 secs=106 1 failed, 18 passed in 104.82s (0:01:44)
+test_retained_receipts exit=1 secs=10 36 failed, 34 passed in 8.59s
+DONE

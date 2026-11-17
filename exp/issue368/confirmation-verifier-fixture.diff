@@ -1,0 +1,13 @@
+diff --git a/benchmarks/acquisition/test_confirmation_verifier.py b/benchmarks/acquisition/test_confirmation_verifier.py
+index c695ec98..62ca7066 100644
+--- a/benchmarks/acquisition/test_confirmation_verifier.py
++++ b/benchmarks/acquisition/test_confirmation_verifier.py
+@@ -133,7 +133,7 @@ def failed_campaign(root):
+         folder = root / base
+         folder.mkdir(parents=True, exist_ok=True)
+         for name, source in sources[group].items():
+-            (folder / name).write_text(source)
++            (folder / name).write_bytes(source.encode())
+     fixture = root / "source/fixture"
+     fixture.mkdir()
+     frozen_task = task()

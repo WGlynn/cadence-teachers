@@ -1,0 +1,24 @@
+........................................................................ [ 38%]
+..........................................................s............. [ 77%]
+..............F......................F.....                              [100%]
+================================== FAILURES ===================================
+E   AttributeError: module 'signal' has no attribute 'SIGALRM'. Did you mean: 'SIGABRT'?
+C:\Users\Will\_cadence_lf368\benchmarks\stream_words\stream_words.py:796: AttributeError: module 'signal' has no attribute 'SIGALRM'. Did you mean: 'SIGABRT'?
+E   OSError: [WinError 87] The parameter is incorrect
+C:\Users\Will\_cadence_lf368\benchmarks\recall\test_finite_horizon.py:349: OSError: [WinError 87] The parameter is incorrect
+============================== warnings summary ===============================
+tests/test_documentation.py::test_introductory_python_snippets[docs/teach.md]
+  docs/teach.md:python-block-5:8: RuntimeWarning: lesson on the observations the brain just acted on: the act already wrote this moment to the recall memory, so the lesson reads the moment itself, its successor still empty. Teach before acting, as step(..., teacher=labels) orders them. A world whose next moment looks the same as this one is already in that order, and this does not apply to it.
+
+tests/test_documentation.py::test_introductory_python_snippets[docs/tune.md]
+  C:\Users\Will\AppData\Local\Programs\Python\Python312\Lib\dataclasses.py:1588: RuntimeWarning: ActorCriticConfig with eta_bias (0.05) above eta (0.03): the actor's bias step dominates its synapse step and the greedy policy tends to one action whatever the observation. The default couples eta_bias to eta / 10; when lowering eta through dataclasses.replace, set eta_bias too, or pass eta_bias=None to re-derive it. See docs/reward.md#actor-rates.
+    return obj.__class__(**changes)
+
+tests/test_documentation.py::test_introductory_python_snippets[docs/tune.md]
+  docs/tune.md:python-block-9:9: RuntimeWarning: lesson on the observations the brain just acted on: the act already wrote this moment to the recall memory, so the lesson reads the moment itself, its successor still empty. Teach before acting, as step(..., teacher=labels) orders them. A world whose next moment looks the same as this one is already in that order, and this does not apply to it.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED benchmarks/stream_words/test_stream_words.py::test_a_smoke_life_writes_a_receipt_that_verifies_and_reports
+FAILED benchmarks/recall/test_finite_horizon.py::test_hard_deadline_reaps_an_artificial_worker_and_keeps_all_denominators
+2 failed, 184 passed, 1 skipped, 3 warnings in 310.63s (0:05:10)

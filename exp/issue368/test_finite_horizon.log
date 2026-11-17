@@ -1,0 +1,9 @@
+.............F.....                                                      [100%]
+================================== FAILURES ===================================
+__ test_hard_deadline_reaps_an_artificial_worker_and_keeps_all_denominators ___
+benchmarks\recall\test_finite_horizon.py:349: in test_hard_deadline_reaps_an_artificial_worker_and_keeps_all_denominators
+    os.kill(guard["pid"], 0)
+E   OSError: [WinError 87] The parameter is incorrect
+=========================== short test summary info ===========================
+FAILED benchmarks/recall/test_finite_horizon.py::test_hard_deadline_reaps_an_artificial_worker_and_keeps_all_denominators
+1 failed, 18 passed in 104.82s (0:01:44)

@@ -1,0 +1,331 @@
+FFFFFFFF.FFFFFFFFFFFFFFFFFFFFFFFFFFF.................................F   [100%]
+================================== FAILURES ===================================
+_____ test_every_source_a_receipt_binds_is_archived[admission-1024.json] ______
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/admission.py
+E   assert ('63c33e925256511f8aee1b59937fa27a922f188012e3aac48d070e16c27c9f66' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '9ab09b453671...f0ed105ca2a46' == '63c33e925256...70e16c27c9f66'
+E     
+E     - 63c33e925256511f8aee1b59937fa27a922f188012e3aac48d070e16c27c9f66
+E     + 9ab09b453671c147c2a73c688fb954ce509d89f5ca9c3058decf0ed105ca2a46)
+______ test_every_source_a_receipt_binds_is_archived[admission-256.json] ______
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/protocol.json
+E   assert ('d61a6db81a9c7e1fc2aeb9147e1e408ee62a1070b17b6e257328e636d7d31ee8' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '5277fc503f97...c01bbd59bf3ad' == 'd61a6db81a9c...8e636d7d31ee8'
+E     
+E     - d61a6db81a9c7e1fc2aeb9147e1e408ee62a1070b17b6e257328e636d7d31ee8
+E     + 5277fc503f97a9e7e11c126e099417aeeb25bdbf0d5cb31dc77c01bbd59bf3ad)
+_ test_every_source_a_receipt_binds_is_archived[content-results-development.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/content_control.py
+E   assert ('770da9ce85d61cc1509832eca879c4db52cc0c7eb97e4138004f961d65c020ca' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '342e64e41be0...9c391285ad3a1' == '770da9ce85d6...f961d65c020ca'
+E     
+E     - 770da9ce85d61cc1509832eca879c4db52cc0c7eb97e4138004f961d65c020ca
+E     + 342e64e41be0cd16096db62fee4da30adc7c9f95402ad0b5c209c391285ad3a1)
+_ test_every_source_a_receipt_binds_is_archived[contextual-choice-v0870.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/contextual_choice.py
+E   assert ('e7a3f5b37c27818de34a23cc2e4f2656b7f2de71c4c548839098f6ece4f6ef18' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '29077a016ad9...c175057775242' == 'e7a3f5b37c27...8f6ece4f6ef18'
+E     
+E     - e7a3f5b37c27818de34a23cc2e4f2656b7f2de71c4c548839098f6ece4f6ef18
+E     + 29077a016ad98cd6f5801a2309e1dafe529b78b5902c191ffc3c175057775242)
+_ test_every_source_a_receipt_binds_is_archived[continuous-relevance-capacity-summary.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/continuous_relevance_campaign.py
+E   assert ('74751478c3c052206ec69f5bcdc832df3a52afa477d58577a820b61085fe3d6a' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'eb912828f03b...c0c39c6ae2765' == '74751478c3c0...0b61085fe3d6a'
+E     
+E     - 74751478c3c052206ec69f5bcdc832df3a52afa477d58577a820b61085fe3d6a
+E     + eb912828f03b4b68de96c269e9343b16debc4ad19336d688c80c0c39c6ae2765)
+_ test_every_source_a_receipt_binds_is_archived[continuous-relevance-h1-summary.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/continuous_relevance_campaign.py
+E   assert ('74751478c3c052206ec69f5bcdc832df3a52afa477d58577a820b61085fe3d6a' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'eb912828f03b...c0c39c6ae2765' == '74751478c3c0...0b61085fe3d6a'
+E     
+E     - 74751478c3c052206ec69f5bcdc832df3a52afa477d58577a820b61085fe3d6a
+E     + eb912828f03b4b68de96c269e9343b16debc4ad19336d688c80c0c39c6ae2765)
+_______ test_every_source_a_receipt_binds_is_archived[copy-tokens.json] _______
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/copy_tokens.py
+E   assert ('2bb086f301b391b46c5f96c3f11b2371d528a7802e35b7a07ff534ed15447668' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '8b267c5cd509...ea0be8dfa6e43' == '2bb086f301b3...534ed15447668'
+E     
+E     - 2bb086f301b391b46c5f96c3f11b2371d528a7802e35b7a07ff534ed15447668
+E     + 8b267c5cd50902299d6d6d9b944c141a53b8e889c62f24a9fa6ea0be8dfa6e43)
+____ test_every_source_a_receipt_binds_is_archived[damping-readback.json] _____
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/diagnose.py
+E   assert ('a3e94ef7fdf79901ff63ba1aa7af82d89ff01cddb6864616a41105c7d97e616c' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'f586339baa41...e05682c77dd17' == 'a3e94ef7fdf7...105c7d97e616c'
+E     
+E     - a3e94ef7fdf79901ff63ba1aa7af82d89ff01cddb6864616a41105c7d97e616c
+E     + f586339baa41bb222e7260ea5f0a1fa6ed22c275fdc37b15b2fe05682c77dd17)
+_ test_every_source_a_receipt_binds_is_archived[empty-boundary-development.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/empty_boundary_admission.py
+E   assert ('26b63c98e885289d386c738b419adfc24c37e02e8c10ab351ae1cd013a752d87' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'f0845e83183a...6164dc1815c9b' == '26b63c98e885...1cd013a752d87'
+E     
+E     - 26b63c98e885289d386c738b419adfc24c37e02e8c10ab351ae1cd013a752d87
+E     + f0845e83183a4b7b2929b73faa02121295c1b5e2c982ed436246164dc1815c9b)
+_ test_every_source_a_receipt_binds_is_archived[founder-capacity-development.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('9b7dc145fdac5b41e385e75ed8b7fc73ecd26c1dc00d1bb955c3e65bf0ec8c21' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'd02c210f2a29...03d6b6f4dc9fa' == '9b7dc145fdac...3e65bf0ec8c21'
+E     
+E     - 9b7dc145fdac5b41e385e75ed8b7fc73ecd26c1dc00d1bb955c3e65bf0ec8c21
+E     + d02c210f2a29d3d1434c751f7ea6d79a4239b5ffb60294c275703d6b6f4dc9fa)
+_ test_every_source_a_receipt_binds_is_archived[founder-capacity-extended.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('f19ce10159ac987c1dbc2ab319524e168f775a5c936dd7509a3b951db563d317' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '99b973995863...ba5725c336efc' == 'f19ce10159ac...b951db563d317'
+E     
+E     - f19ce10159ac987c1dbc2ab319524e168f775a5c936dd7509a3b951db563d317
+E     + 99b9739958639b9f8c37a9fb75c9e3c105356fb8fdbe53dd708ba5725c336efc)
+_ test_every_source_a_receipt_binds_is_archived[heads-capacity-corrected.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('0020e36229f7e795a06ba37209a8b07926d10e5ad7e8e30614770410524a6ce6' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'ac0dbcf8c359...31cf7a959250b' == '0020e36229f7...70410524a6ce6'
+E     
+E     - 0020e36229f7e795a06ba37209a8b07926d10e5ad7e8e30614770410524a6ce6
+E     + ac0dbcf8c3599179d24cb583179126dc483435faf104e39e5fe31cf7a959250b)
+_ test_every_source_a_receipt_binds_is_archived[heads-capacity-diagnostic.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('0020e36229f7e795a06ba37209a8b07926d10e5ad7e8e30614770410524a6ce6' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'ac0dbcf8c359...31cf7a959250b' == '0020e36229f7...70410524a6ce6'
+E     
+E     - 0020e36229f7e795a06ba37209a8b07926d10e5ad7e8e30614770410524a6ce6
+E     + ac0dbcf8c3599179d24cb583179126dc483435faf104e39e5fe31cf7a959250b)
+_ test_every_source_a_receipt_binds_is_archived[heads-capacity-fixed-read.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('0f726e230f1da52c2744ba8438f7cfcf1d16f10d342f27f5de2b6496518a7fa6' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'a937bcf069be...f0afb9e7bb918' == '0f726e230f1d...b6496518a7fa6'
+E     
+E     - 0f726e230f1da52c2744ba8438f7cfcf1d16f10d342f27f5de2b6496518a7fa6
+E     + a937bcf069be02527ad6b49ba1320a81c90a13e961871488426f0afb9e7bb918)
+_ test_every_source_a_receipt_binds_is_archived[heads-capacity-initial.json] __
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('0d66f2157f93384395c83515aa75537ed3ca8c27709f33c30ea390a0a969b4bf' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '02619c9d4e81...8f98921da2c90' == '0d66f2157f93...390a0a969b4bf'
+E     
+E     - 0d66f2157f93384395c83515aa75537ed3ca8c27709f33c30ea390a0a969b4bf
+E     + 02619c9d4e817ceee77e81d81baefc1a65ccd0b11f4193843038f98921da2c90)
+__ test_every_source_a_receipt_binds_is_archived[heads-capacity-longer.json] __
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('e0a503d3ffab18b25e0a56e3a4972475b93078603258f54e58f330276476c190' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '3447db286eb3...6c548f1a1c725' == 'e0a503d3ffab...330276476c190'
+E     
+E     - e0a503d3ffab18b25e0a56e3a4972475b93078603258f54e58f330276476c190
+E     + 3447db286eb3d939ce083ff5f15203ac2afee2553c22cb8dd8f6c548f1a1c725)
+_ test_every_source_a_receipt_binds_is_archived[heads-continuation-development.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_continuation.py
+E   assert ('c81fd905844a65deea16fc8a0b444ab18e2702bfc696cb61be573fb7f23a67fc' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '40c530ce1add...aba0fc06e8c1c' == 'c81fd905844a...73fb7f23a67fc'
+E     
+E     - c81fd905844a65deea16fc8a0b444ab18e2702bfc696cb61be573fb7f23a67fc
+E     + 40c530ce1addee866b43f43873e2e2d03014b7358e15668d0e8aba0fc06e8c1c)
+_ test_every_source_a_receipt_binds_is_archived[heads-h1-boundary-diagnostic.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('f19ce10159ac987c1dbc2ab319524e168f775a5c936dd7509a3b951db563d317' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '99b973995863...ba5725c336efc' == 'f19ce10159ac...b951db563d317'
+E     
+E     - f19ce10159ac987c1dbc2ab319524e168f775a5c936dd7509a3b951db563d317
+E     + 99b9739958639b9f8c37a9fb75c9e3c105356fb8fdbe53dd708ba5725c336efc)
+_ test_every_source_a_receipt_binds_is_archived[heads-relevance-founder-extended.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/heads_admission.py
+E   assert ('f19ce10159ac987c1dbc2ab319524e168f775a5c936dd7509a3b951db563d317' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '99b973995863...ba5725c336efc' == 'f19ce10159ac...b951db563d317'
+E     
+E     - f19ce10159ac987c1dbc2ab319524e168f775a5c936dd7509a3b951db563d317
+E     + 99b9739958639b9f8c37a9fb75c9e3c105356fb8fdbe53dd708ba5725c336efc)
+__ test_every_source_a_receipt_binds_is_archived[held-heads-competing.json] ___
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/held_heads.py
+E   assert ('619100d04cfb0633dc20d7e9a9c60845a7e0c66bbfa33d6337a020b2e51e6476' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '47da5fad219d...56604fec249fe' == '619100d04cfb...020b2e51e6476'
+E     
+E     - 619100d04cfb0633dc20d7e9a9c60845a7e0c66bbfa33d6337a020b2e51e6476
+E     + 47da5fad219d30a814a313b1ac419ab2298a14934003bfc846356604fec249fe)
+_______ test_every_source_a_receipt_binds_is_archived[held-heads.json] ________
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/held_heads.py
+E   assert ('607cda9c65a71e2398eb5f3a03cb8958f9253ada780ac561688be49bad28120e' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'b0b1765bc5ac...2aabcf7553b2d' == '607cda9c65a7...be49bad28120e'
+E     
+E     - 607cda9c65a71e2398eb5f3a03cb8958f9253ada780ac561688be49bad28120e
+E     + b0b1765bc5acc72a1bbe546b378606a0987f6ab586c7e201b942aabcf7553b2d)
+________ test_every_source_a_receipt_binds_is_archived[look-back.json] ________
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/look_back.py
+E   assert ('e78e48d3510753a347946a3692ef435acee94a43b62e5f445ca9b8d3f3bf5394' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '82d3da50de83...9ee428787bd76' == 'e78e48d35107...9b8d3f3bf5394'
+E     
+E     - e78e48d3510753a347946a3692ef435acee94a43b62e5f445ca9b8d3f3bf5394
+E     + 82d3da50de83b2eebb3abf21b7fec78a406c5176b5fc1f3e1989ee428787bd76)
+_ test_every_source_a_receipt_binds_is_archived[minimal-binding-capacity.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/minimal_binding_campaign.py
+E   assert ('024a4de09586c8a3611041296305a16ba5b42600d7c2adbac52462ce0a3a77db' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'b4de0cb06175...bf7dd98422616' == '024a4de09586...462ce0a3a77db'
+E     
+E     - 024a4de09586c8a3611041296305a16ba5b42600d7c2adbac52462ce0a3a77db
+E     + b4de0cb061757b8b2016c182ad3ca83a6e03dd2bef6587baf8fbf7dd98422616)
+___ test_every_source_a_receipt_binds_is_archived[minimal-binding-h2.json] ____
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/minimal_binding_campaign.py
+E   assert ('024a4de09586c8a3611041296305a16ba5b42600d7c2adbac52462ce0a3a77db' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'b4de0cb06175...bf7dd98422616' == '024a4de09586...462ce0a3a77db'
+E     
+E     - 024a4de09586c8a3611041296305a16ba5b42600d7c2adbac52462ce0a3a77db
+E     + b4de0cb061757b8b2016c182ad3ca83a6e03dd2bef6587baf8fbf7dd98422616)
+_ test_every_source_a_receipt_binds_is_archived[neutral-variation-capacity.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/neutral_variation_campaign.py
+E   assert ('864071de18a39b9af44f22e952c956e03d66b2318ea7e30c4bb663cdd2621898' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'd89b79ed000b...c8fe505dace65' == '864071de18a3...663cdd2621898'
+E     
+E     - 864071de18a39b9af44f22e952c956e03d66b2318ea7e30c4bb663cdd2621898
+E     + d89b79ed000b811b368c71998b1b3981f16843438735dfc4b7ac8fe505dace65)
+__ test_every_source_a_receipt_binds_is_archived[neutral-variation-h2.json] ___
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/neutral_variation_campaign.py
+E   assert ('864071de18a39b9af44f22e952c956e03d66b2318ea7e30c4bb663cdd2621898' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'd89b79ed000b...c8fe505dace65' == '864071de18a3...663cdd2621898'
+E     
+E     - 864071de18a39b9af44f22e952c956e03d66b2318ea7e30c4bb663cdd2621898
+E     + d89b79ed000b811b368c71998b1b3981f16843438735dfc4b7ac8fe505dace65)
+_______ test_every_source_a_receipt_binds_is_archived[own-action.json] ________
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/own_action.py
+E   assert ('aee543ce10e4579efbfdfa00884942da07108ad8d2eed7ba1d6c5f6c78663858' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'aa58abf25dca...87ba838c47159' == 'aee543ce10e4...c5f6c78663858'
+E     
+E     - aee543ce10e4579efbfdfa00884942da07108ad8d2eed7ba1d6c5f6c78663858
+E     + aa58abf25dca2e382e762baec95a002f1b697aa34352cdf50fe87ba838c47159)
+_ test_every_source_a_receipt_binds_is_archived[query-founder-capacity.json] __
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/query_founder_campaign.py
+E   assert ('cb239f9563fa1a268c17cb98580a668ce5cf02bba77818a2724f879cc10e812a' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '65d2e7dc40d2...1fe6235624fd3' == 'cb239f9563fa...f879cc10e812a'
+E     
+E     - cb239f9563fa1a268c17cb98580a668ce5cf02bba77818a2724f879cc10e812a
+E     + 65d2e7dc40d2ef7791a29fd073d54246c3f5a740502735d16561fe6235624fd3)
+____ test_every_source_a_receipt_binds_is_archived[query-founder-h2.json] _____
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/query_founder_campaign.py
+E   assert ('cb239f9563fa1a268c17cb98580a668ce5cf02bba77818a2724f879cc10e812a' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '65d2e7dc40d2...1fe6235624fd3' == 'cb239f9563fa...f879cc10e812a'
+E     
+E     - cb239f9563fa1a268c17cb98580a668ce5cf02bba77818a2724f879cc10e812a
+E     + 65d2e7dc40d2ef7791a29fd073d54246c3f5a740502735d16561fe6235624fd3)
+___ test_every_source_a_receipt_binds_is_archived[query-founder-prior.json] ___
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+                                        ^^^^^^^^^^^^^^^^
+benchmarks\attention\test_retained_receipts.py:29: in digest
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Will\\_cadence_study\\benchmarks\\attention\\results\\sources\\df075bd7d759042836fa37d0f36df77ece891f182a2330c0de8e35d34c6cdd04.txt'
+___ test_every_source_a_receipt_binds_is_archived[repair-confirmation.json] ___
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/repair_admission.py
+E   assert ('dbee3bd57cd1e3b7f2207eb241598e19c3b95e3129ad8ed5421041688a6a8676' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '96cd920e7668...ed0ce1fdd8a6e' == 'dbee3bd57cd1...041688a6a8676'
+E     
+E     - dbee3bd57cd1e3b7f2207eb241598e19c3b95e3129ad8ed5421041688a6a8676
+E     + 96cd920e76689fc79dc95f02c9805346a4f7827f3da9d83a15fed0ce1fdd8a6e)
+_ test_every_source_a_receipt_binds_is_archived[repair-development-precheck.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/repair_admission.py
+E   assert ('001bbc37f6ca95258ae6394d99b4ab88359970081ea79683925dbc2e2a8e9548' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '70024059eef0...46e6dbb3fe167' == '001bbc37f6ca...dbc2e2a8e9548'
+E     
+E     - 001bbc37f6ca95258ae6394d99b4ab88359970081ea79683925dbc2e2a8e9548
+E     + 70024059eef0ab8a991858a6af54a52542a54302e96e51d7a9346e6dbb3fe167)
+___ test_every_source_a_receipt_binds_is_archived[repair-development.json] ____
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/repair_admission.py
+E   assert ('dbee3bd57cd1e3b7f2207eb241598e19c3b95e3129ad8ed5421041688a6a8676' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or '96cd920e7668...ed0ce1fdd8a6e' == 'dbee3bd57cd1...041688a6a8676'
+E     
+E     - dbee3bd57cd1e3b7f2207eb241598e19c3b95e3129ad8ed5421041688a6a8676
+E     + 96cd920e76689fc79dc95f02c9805346a4f7827f3da9d83a15fed0ce1fdd8a6e)
+_ test_every_source_a_receipt_binds_is_archived[single-relevance-capacity.json] _
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/single_relevance_campaign.py
+E   assert ('9055d880cb9d880c34d50fb516196405d3c7014525b86a54d755c739554f47cc' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'fc8b7c646a1a...49886b78f5709' == '9055d880cb9d...5c739554f47cc'
+E     
+E     - 9055d880cb9d880c34d50fb516196405d3c7014525b86a54d755c739554f47cc
+E     + fc8b7c646a1a694deed3bddd5524006f116d6ac32b0b3351d2949886b78f5709)
+___ test_every_source_a_receipt_binds_is_archived[single-relevance-h1.json] ___
+benchmarks\attention\test_retained_receipts.py:45: in test_every_source_a_receipt_binds_is_archived
+    assert row["sha256"] in retained or digest(archived) == row["sha256"], row["path"]
+E   AssertionError: benchmarks/attention/single_relevance_campaign.py
+E   assert ('9055d880cb9d880c34d50fb516196405d3c7014525b86a54d755c739554f47cc' in {'075a715798367bf956a914093c786bf2ed27c3f29d9d87f535ce75d76296bf1d', '0cd09b72fb1606cbbb1fd485c5450b9891848ad914a993e2...b0ae53725566f6bb046068ae5193b6a18b8614ed5e38', '388e4f8c02de57b87f96b736c2bf6fd19fcfba8c31b49bb4cc930a2d36cb2641', ...} or 'fc8b7c646a1a...49886b78f5709' == '9055d880cb9d...5c739554f47cc'
+E     
+E     - 9055d880cb9d880c34d50fb516196405d3c7014525b86a54d755c739554f47cc
+E     + fc8b7c646a1a694deed3bddd5524006f116d6ac32b0b3351d2949886b78f5709)
+_______ test_the_copy_pathways_receipt_reads_with_its_archived_checker ________
+benchmarks\attention\test_retained_receipts.py:67: in test_the_copy_pathways_receipt_reads_with_its_archived_checker
+    assert valid, message
+E   AssertionError: historical source digest differs
+E   assert False
+=========================== short test summary info ===========================
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[admission-1024.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[admission-256.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[content-results-development.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[contextual-choice-v0870.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[continuous-relevance-capacity-summary.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[continuous-relevance-h1-summary.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[copy-tokens.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[damping-readback.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[empty-boundary-development.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[founder-capacity-development.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[founder-capacity-extended.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-capacity-corrected.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-capacity-diagnostic.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-capacity-fixed-read.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-capacity-initial.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-capacity-longer.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-continuation-development.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-h1-boundary-diagnostic.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[heads-relevance-founder-extended.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[held-heads-competing.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[held-heads.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[look-back.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[minimal-binding-capacity.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[minimal-binding-h2.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[neutral-variation-capacity.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[neutral-variation-h2.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[own-action.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[query-founder-capacity.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[query-founder-h2.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[query-founder-prior.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[repair-confirmation.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[repair-development-precheck.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[repair-development.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[single-relevance-capacity.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_every_source_a_receipt_binds_is_archived[single-relevance-h1.json]
+FAILED benchmarks/attention/test_retained_receipts.py::test_the_copy_pathways_receipt_reads_with_its_archived_checker
+36 failed, 34 passed in 8.59s
