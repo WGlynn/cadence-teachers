@@ -128,6 +128,8 @@ AFTER every experiment (Will 2026-10-10): write `experiments/EXP-XX.md` (Summary
 
 ## FRONTIER (update every fire — one line: where we actually are)
 
+2026-11-17 (iter60, EXP-07h CONFIRMED, on 0.101.0 3961509, generic queue): the V(S) program waits on Will-gated CAL-1c, so the loop took the ready queue item. On XOR feature-and-context rules the episodic memory beat the 3/4 any sum of inputs allows at 8, 32 and 128 situations (MEMCTX0 10, 9, 10 of 10; MEM 7, 9, 10), the founder at none, but at a fixed 50 moments per situation it weakened with size (.963 to .863) and every arm sat at chance on held-out situations (an XOR rule cannot tell a lookup from similarity recall). EXP-07g's verdicts hold on 0.101.0 (V0). EXP-07i queued. Off the V(S) ladder; no milestone moves. CAL-1c still waits on Will.
+
 2026-11-16 (iter59, CAL-1b BOUNDARY, on 0.94.0 pinned from ~/_cadence_v0940, V2 IDENTICAL; off-ladder): with a pure WAIT fake in training, the learned v(S) priced that fake within a few hundredths (against +.35 without it) and still beat consensus (rho .935 vs .906, MSE .0084 vs .0141), but it overpriced the novel wrong-map by +.110 in every cell of the cause table, floor or no floor, and now also random (+.059) and anti-echo (+.066). Training on one harm teaches that harm, not harm in general. No milestone moves; CAL-2 keeps waiting; candidate CAL-1c (Will-gated, not drafted) trains on several consistent-wrong forms with CAL-1's pool.
 
 2026-11-13 (decision after CAL-1 BOUNDARY): CAL-1b approved as the next V(S) run under Will's delegation (it separates CAL-1's two possible causes, a harm no trained class had and a map that cannot forecast below its training floor, before CAL-2 builds on a learned v(S)). Queued ready for the next loop fire.
@@ -244,6 +246,9 @@ M4 matched peer-prediction baseline; M3 isomorphism-invariance. M2-synergy is th
 ---
 
 ## ITERATION LOG (append-only, newest on top; version-stamp each)
+
+### iter60 (2026-11-17): EXP-07h, the episodic memory at 8, 32 and 128 situations and on unseen ones, on 0.101.0: CONFIRMED
+- Cadence 0.101.0 (`3961509`). Off the V(S) ladder; the program waits on Will-gated CAL-1c. Pre-registered `16cf487` (timestamped). Seeds above the 3/4 ceiling of 10 at 8 / 32 / 128 situations: FOUNDER 0 / 0 / 0, MEM 7 / 9 / 10, MEMCTX0 10 / 9 / 10 (MEMCTX0 trained .963 / .889 / .863); held-out .450 to .506, all within 2 SEM of chance. V0: EXP-07g's verdicts hold on 0.101.0. Prediction CONFIRMED. Write-up `experiments/EXP-07h.md`; atlas SUPPORTIVE. Spawned EXP-07i.
 
 ### iter59 (2026-11-16): CAL-1b, a pure harm in training and the cause table: BOUNDARY (criterion 6 on random, anti-echo, wrong-map)
 - Cadence 0.94.0 pinned (`~/_cadence_v0940`, v0.94.0; the monitor clone is at 0.101.0, and 0.95.2 changed lessons, so the CAL-1 instrument needs the pin). Off-ladder. Pre-registered `c47fa0f` (timestamped), scripts `060d326`, pilot GO m = 6, 2,160 twins. rho L .935 / S2 .906, skill .848; wait priced (+.017), wrong-map not (+.110, all four cells), random and anti-echo newly overpriced. Write-up `experiments/CAL-1b.md`.

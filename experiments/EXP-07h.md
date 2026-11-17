@@ -1,6 +1,6 @@
 # EXP-07h: does the episodic memory's lift hold as the number of situations grows, and does it carry anything to a situation it never saw?
 
-- Date: pre-registered 2026-11-17 before any data | Cadence version: 0.101.0 (clone `~/_cadence_study` at `3961509` = origin/main, v0.101.0 plus #350 docs; CPU NumPy loop, numba not installed; BLAS threads pinned to 1 to keep the machine's load moderate) | Program iter: iter60 (generic queue; off the V(S) ladder, which waits on Will-gated CAL-1c)
+- Date: pre-registered 2026-11-17 (`16cf487`, Bitcoin-timestamped on 3 calendars via `stamp_commit.py`, before any data); run 2026-11-17 | Cadence version: 0.101.0 (clone `~/_cadence_study` at `3961509` = origin/main, v0.101.0 plus #350 docs; CPU NumPy loop, numba not installed; BLAS threads pinned to 1 to keep the machine's load moderate) | Program iter: iter60 (generic queue; off the V(S) ladder, which waits on Will-gated CAL-1c)
 - Script: `exp/EXP-07h_scale.py` | Evidence: `exp/EXP-07h-3961509.out`, `.json`, `.err`, `.time`; pilot `exp/EXP-07h-pilot-3961509.out`; version check `exp/EXP-07g-3961509-v0.out`, `.json`
 
 ## Summary
@@ -66,11 +66,64 @@
     - VOID if any arm errors or refuses beyond the 5-try contract.
     - Reported with them: trained mean with SEM, seeds at all right, one-answer seeds, the curve at 25% and 50%
       (registered secondary), and the fewest and most visits any trained situation got.
-- Result: PENDING
-- Verdict: PENDING
+- Result (2026-11-17; V0 508 s, pilot 31 s, run 2,167 s wall, all exit 0, stderr empty):
+  - Pilot and budget: MEM at size 128 took 8.8 s for its first 500 moments (the slowest chunk; later chunks 5.7,
+    3.0 and 2.9 s) and 1.4 s for an exam of 128 cues. Projected wall at PER_SIT 100 was about 133 minutes, so by the
+    registered rule PER_SIT = 50: 400, 1,400 and 5,600 moments at 8, 32 and 128 situations (projected about 68
+    minutes; it took 36, because the first chunk carries the warm-up). Fewest and most visits to any trained
+    situation: 32 to 67 at 8, 32 to 70 at 32, 30 to 76 at 128.
+  - Ceilings: the script's checks passed for all 30 seed-size pairs (tiling, XOR pattern, held-out half 1 and half
+    0); the bound and the construction were both exactly 3/4 at every size, and the exhaustive search at 8 gave 6 of 8.
+  - Settings read back: FOUNDER eta 1.0, bias 0.05, memory off; MEM the same with memory on, context share 0.5;
+    MEMCTX0 the same with share 0.0, at every size.
+  - At the full budget, seeds above 3/4 on the trained situations out of 10, trained mean (SEM), seeds with every
+    trained situation right, seeds giving one answer to every cue; then the held-out mean (SEM over seeds):
+    - size 8 (400 moments): FOUNDER 0, .500 (.000), 0, 9. MEM 7, .850 (.025), 1, 0. MEMCTX0 10, .963 (.019), 7, 0.
+    - size 32 (1,400): FOUNDER 0, .500 (.000), 0, 9; held .500 (.000). MEM 9, .886 (.027), 1, 0; held .500 (.065).
+      MEMCTX0 9, .889 (.027), 1, 0; held .450 (.050).
+    - size 128 (5,600): FOUNDER 0, .501 (.001), 0, 8; held .506 (.015). MEM 10, .850 (.022), 0, 0; held .456 (.038).
+      MEMCTX0 10, .863 (.018), 0, 0; held .487 (.036).
+    - Curves (trained mean at 25%, 50%, 100%): MEM .613 / .762 / .850 (8), .646 / .682 / .886 (32), .698 / .724 / .850
+      (128); MEMCTX0 .887 / .938 / .963 (8), .650 / .754 / .889 (32), .730 / .835 / .863 (128); FOUNDER flat at .50.
+  - V0 (EXP-07g's script on 0.101.0): MEM 10/10 above 6 of 8 (.950, SEM .020), MEMCTX0 10/10 (.988, .012), PAIR 0/10
+    (.575, .033): all three verdicts as on 0.94.0. Answers identical to the 0.94.0 rerun at every exam on 4 of 10
+    seeds for MEM, 6 of 10 for MEMCTX0, 0 of 10 for PAIR. MEM is slower early on 0.101.0 (.825 at 400 moments, was
+    .963 on 0.94.0) and ends a little lower (.950 at 1600, was .975).
+- Verdict: by the pre-registered rules FOUNDER FAILS at 8, 32 and 128; MEM LEARNS at all three (7/10 at 8, the
+  smallest passing count, 9/10 at 32, 10/10 at 128); MEMCTX0 LEARNS at all three (10, 9, 10). Held out, no arm is
+  above .5 + 2 SEM at 32 or 128, and none below .5 - 2 SEM. Loop verdict on the prediction: CONFIRMED. Atlas
+  category: SUPPORTIVE.
 
 ## Reflection
-- What it means: PENDING
-- Process: PENDING
-- Lesson: PENDING
-- Next: PENDING
+- What it means: the memory's lift holds as the situations grow. At 128 situations and about 50 moments each,
+  every seed of both memory arms beat the 3/4 that any sum of input weights allows, while the founder gave one
+  answer for everything on 8 of 10 seeds. It does not hold at full strength, though. At a fixed budget per
+  situation the place-records arm fell from .963 at 8 to .889 at 32 and .863 at 128, and seeds with every trained
+  situation right fell from 7 to 1 to 0. A strict per-situation lookup with independent keys should not lose
+  accuracy as other situations are added at the same budget per situation. So either the keys interfere (at 128
+  each situation shares a feature or a context with 22 others), or more situations cost more than their share of
+  moments. This run does not tell which. On unseen situations every arm sat at chance: .456 to .506, none outside
+  2 SEM of .5, and nowhere near the .75 an additive fit could carry. Nothing carried over. But this XOR family is
+  the hard case by design: a situation's neighbours are half right and half wrong, so a strict lookup and a
+  similarity-weighted recall both predict chance here, and the test cannot tell them apart. What we now know for
+  our own learned policies: "compose with `memory_choice=True`" is a per-situation recipe. It scales to a closed set
+  of about a hundred situations at roughly .86 accuracy for 50 visits each. On this family it gives nothing for a
+  situation it never saw. A plain table keyed on the situation is the obvious baseline for such a closed set, and it
+  was not measured here.
+- Process: pre-registered, committed (`16cf487`), pushed and Bitcoin-timestamped before any data; the API smoke run
+  (no scores) came before the pre-registration, and the timing pilot (no scores) after it. The budget rule did its
+  job but its projection was conservative: it applied the warm-up chunk's rate to every moment, so it chose 50 per
+  situation for a run that took 36 minutes, where 100 would have taken about 70. Size 8 here had a quarter of
+  EXP-07g's budget (400 moments, not 1,600), and MEM passed at 8 with the smallest count that passes (7/10). V0 shows
+  why: on 0.101.0 MEM learns this task more slowly early than on 0.94.0 (.825 vs .963 at 400), likely the 0.97.0
+  memory_rate default (1.0 to 0.2), which this run did not isolate. BLAS threads were pinned to 1 for every run in
+  this fire; V0 differences from 0.94.0 could in principle include that, but the 0.95.0 and 0.97.0 default changes
+  are the expected cause. One version (0.101.0), one task family, one budget per situation, 10 seeds; held-out
+  means rest on 4 cells per seed at 32 and 16 at 128.
+- Lesson: a held-out test only separates the readings it was built to separate. On an XOR rule a lookup and a
+  similarity-weighted recall both predict chance, so testing carry-over needs a rule where similar situations share
+  answers, plus a baseline that can only look up.
+- Next: queued EXP-07i: the same harness on a rule where neighbours are informative, with a plain lookup table as
+  an arm, to separate lookup from similarity recall and to price the brain against the table. Also worth a later
+  look: whether the drop with size is interference or budget (128 situations at 100 or 200 per situation). Queue
+  item marked done; EXP-07g's verdicts re-read on 0.101.0 (V0).

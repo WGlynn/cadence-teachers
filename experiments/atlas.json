@@ -140,6 +140,54 @@
   }
  },
  {
+  "id": "EXP-07h",
+  "date": "2026-11-17",
+  "iter": "iter60",
+  "track": "generic queue",
+  "verdict": "SUPPORTIVE",
+  "name": "The episodic memory's lift holds from 8 to 128 situations but weakens, and carries nothing to a situation it never saw",
+  "verdict_note": "pre-registered (16cf487, Bitcoin-timestamped) before any data; Cadence 0.101.0; XOR rules g(f) XOR h(c) over 2-hot feature-and-context inputs at 8, 32 and 128 situations, ceiling exactly 3/4 for any sum of input weights; about 50 moments per trained situation; held-out whole quadruples at 32 and 128. Per-arm rule LEARNS if at least 7 of 10 seeds beat 3/4 on trained situations. FOUNDER FAILS at all three (0/10; one answer on 9, 9, 8 seeds); MEM memory_choice=True LEARNS 7, 9, 10 of 10 (.850, .886, .850); MEMCTX0 memory_context=0.0 LEARNS 10, 9, 10 (.963, .889, .863). Held out: every arm within 2 SEM of chance (.450 to .506). Prediction CONFIRMED. V0: EXP-07g's verdicts hold on 0.101.0, answers differ on most seeds. Scope: one task family, one budget per situation; an XOR rule cannot separate a lookup from a similarity-weighted recall.",
+  "question": "Does the episodic memory's lift hold as the number of situations grows, and does it carry anything to a situation it never saw?",
+  "headline": "The memory that let a brain learn an answer depending on a cue's feature and its context together still beat what any sum of inputs allows at 128 situations, on every seed. But at the same practice per situation it got less accurate as situations were added (.96 at 8, .86 at 128), and on situations it never trained on it was at chance.",
+  "lesson": "A held-out test only separates the readings it was built to separate: on an XOR rule a lookup and a similarity-weighted recall both predict chance, so carry-over needs a rule where similar situations share answers, plus a lookup-only baseline.",
+  "process_issues": [
+   "the budget rule's projection applied the warm-up chunk's speed to every moment, so it chose 50 moments per situation for a run that took 36 minutes",
+   "size 8 had a quarter of EXP-07g's budget and MEM passed there with the smallest passing count (7/10); on 0.101.0 MEM learns more slowly early than on 0.94.0 (V0), likely the 0.97.0 memory_rate default, not isolated",
+   "one version, one task family, one budget per situation, 10 seeds; no plain lookup table measured as a baseline"
+  ],
+  "quote_worthy": "It learned all 128 situations better than any sum of inputs could, and knew nothing about the 129th.",
+  "chart": {
+   "title": "Seeds above the 3/4 ceiling on trained situations (of 10)",
+   "unit": "seeds",
+   "bars": [
+    {
+     "label": "Founder, 8 situations",
+     "value": 0
+    },
+    {
+     "label": "Founder, 128 situations",
+     "value": 0
+    },
+    {
+     "label": "Episodic memory, 8 situations",
+     "value": 7
+    },
+    {
+     "label": "Episodic memory, 128 situations",
+     "value": 10
+    },
+    {
+     "label": "Memory without context in the key, 8",
+     "value": 10
+    },
+    {
+     "label": "Memory without context in the key, 128",
+     "value": 10
+    }
+   ]
+  }
+ },
+ {
   "id": "EXP-07f",
   "date": "2026-11-04",
   "iter": "iter56",

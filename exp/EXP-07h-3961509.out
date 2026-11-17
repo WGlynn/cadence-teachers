@@ -87,3 +87,27 @@ EXP-07h on cadence 0.101.0: sizes [8, 32, 128], arms ('FOUNDER', 'MEM', 'MEMCTX0
   MEMCTX0 size 128 seed 7080202  trained 1400:0.786  2800:0.821  5600:0.875  held 0.4375  one-answer 0  visits 35-67  (37 s)
   MEMCTX0 size 128 seed 7080203  trained 1400:0.500  2800:0.884  5600:0.955  held 0.625  one-answer 0  visits 36-64  (46 s)
   MEMCTX0 size 128 seed 7080204  trained 1400:0.902  2800:0.920  5600:0.920  held 0.5  one-answer 0  visits 30-70  (41 s)
+  MEMCTX0 size 128 seed 7080205  trained 1400:0.500  2800:0.821  5600:0.812  held 0.5625  one-answer 0  visits 34-70  (45 s)
+  MEMCTX0 size 128 seed 7080206  trained 1400:0.804  2800:0.812  5600:0.920  held 0.6875  one-answer 0  visits 32-66  (40 s)
+  MEMCTX0 size 128 seed 7080207  trained 1400:0.759  2800:0.750  5600:0.804  held 0.4375  one-answer 0  visits 35-68  (38 s)
+  MEMCTX0 size 128 seed 7080208  trained 1400:0.750  2800:0.786  5600:0.812  held 0.375  one-answer 0  visits 34-68  (40 s)
+  MEMCTX0 size 128 seed 7080209  trained 1400:0.705  2800:0.812  5600:0.821  held 0.5  one-answer 0  visits 32-66  (39 s)
+  settings FOUNDER@8    {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': False, 'memory_context': None, 'backend': 'None'}
+  settings MEM@8        {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.5, 'backend': 'None'}
+  settings MEMCTX0@8    {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.0, 'backend': 'None'}
+  settings FOUNDER@32   {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': False, 'memory_context': None, 'backend': 'None'}
+  settings MEM@32       {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.5, 'backend': 'None'}
+  settings MEMCTX0@32   {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.0, 'backend': 'None'}
+  settings FOUNDER@128  {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': False, 'memory_context': None, 'backend': 'None'}
+  settings MEM@128      {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.5, 'backend': 'None'}
+  settings MEMCTX0@128  {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.0, 'backend': 'None'}
+FOUNDER size 8   @400: trained 0.500 (SEM 0.000)  above 3/4 0/10  all right 0/10  one answer 9/10  -> FAILS  | held n/a  | curve 100:0.487  200:0.500  400:0.500
+MEM     size 8   @400: trained 0.850 (SEM 0.025)  above 3/4 7/10  all right 1/10  one answer 0/10  -> LEARNS  | held n/a  | curve 100:0.613  200:0.762  400:0.850
+MEMCTX0 size 8   @400: trained 0.963 (SEM 0.019)  above 3/4 10/10  all right 7/10  one answer 0/10  -> LEARNS  | held n/a  | curve 100:0.887  200:0.938  400:0.963
+FOUNDER size 32  @1400: trained 0.500 (SEM 0.000)  above 3/4 0/10  all right 0/10  one answer 9/10  -> FAILS  | held 0.500 (SEM 0.000)  | curve 350:0.504  700:0.496  1400:0.500
+MEM     size 32  @1400: trained 0.886 (SEM 0.027)  above 3/4 9/10  all right 1/10  one answer 0/10  -> LEARNS  | held 0.500 (SEM 0.065)  | curve 350:0.646  700:0.682  1400:0.886
+MEMCTX0 size 32  @1400: trained 0.889 (SEM 0.027)  above 3/4 9/10  all right 1/10  one answer 0/10  -> LEARNS  | held 0.450 (SEM 0.050)  | curve 350:0.650  700:0.754  1400:0.889
+FOUNDER size 128 @5600: trained 0.501 (SEM 0.001)  above 3/4 0/10  all right 0/10  one answer 8/10  -> FAILS  | held 0.506 (SEM 0.015)  | curve 1400:0.504  2800:0.499  5600:0.501
+MEM     size 128 @5600: trained 0.850 (SEM 0.022)  above 3/4 10/10  all right 0/10  one answer 0/10  -> LEARNS  | held 0.456 (SEM 0.038)  | curve 1400:0.698  2800:0.724  5600:0.850
+MEMCTX0 size 128 @5600: trained 0.863 (SEM 0.018)  above 3/4 10/10  all right 0/10  one answer 0/10  -> LEARNS  | held 0.487 (SEM 0.036)  | curve 1400:0.730  2800:0.835  5600:0.863
+VERDICTS at the full budget: FOUNDER@8=FAILS  MEM@8=LEARNS  MEMCTX0@8=LEARNS  FOUNDER@32=FAILS  MEM@32=LEARNS  MEMCTX0@32=LEARNS  FOUNDER@128=FAILS  MEM@128=LEARNS  MEMCTX0@128=LEARNS  (2167 s)
