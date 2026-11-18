@@ -419,7 +419,7 @@ def forms_table(acc, blocks, m):
                   "novel form (spanning the kind worked where one pure harm did not)")
     if P("primary", "mixed-map") and P("L-nomap", "mixed-map"):
         rd.append("R2: primary and L-nomap both pass on mixed-map: on these rows the non-WAIT maps were not needed; the pass "
-                  "comes with the rest of the design (CAL-1's graded share, the wait class, fresh seeds)")
+                  "comes with the rest of the design (CAL-1's 96 graded teachers, the wait class, fresh seeds)")
     if not P("primary", "mixed-map"):
         rd.append("R3: primary fails on mixed-map: training on several consistent-wrong forms did not make the procedure "
                   "price the novel form within one state")
@@ -433,16 +433,16 @@ def forms_table(acc, blocks, m):
     near = ("random", "anti-echo")
     fail_p = [c for c in near if not P("primary", c)]
     if not fail_p:
-        rd.append("N1: primary passes random and anti-echo: with CAL-1's graded share restored and wait in training, "
-                  "near-the-bar calibration holds; CAL-1b's failures there go with its smaller graded pool or its draw, "
-                  "not with the range stretch alone")
+        rd.append("N1: primary passes random and anti-echo: adding wait and nowait-map to CAL-1's training pool, its 96 "
+                  "graded teachers kept, does not cost calibration near the bar on these rows; CAL-1b's failures there go "
+                  "with its smaller graded pool or its draw, not with the range stretch alone")
     elif all(P("L-cal1", c) for c in fail_p):
         rd.append(f"N2: primary fails {fail_p} and L-cal1 passes them: on these rows adding the consistent-wrong forms to "
-                  f"training costs calibration near the bar (L-nowait passes {[c for c in fail_p if P('L-nowait', c)]}, "
-                  f"L-nomap passes {[c for c in fail_p if P('L-nomap', c)]})")
+                  f"training costs calibration near the bar (L-nomap, CAL-1's pool plus wait, passes "
+                  f"{[c for c in fail_p if P('L-nomap', c)]}; L-nowait passes {[c for c in fail_p if P('L-nowait', c)]})")
     else:
         rd.append(f"N3: primary fails {fail_p} and L-cal1 fails {[c for c in fail_p if not P('L-cal1', c)]} too: these "
-                  f"classes fail near the bar on these seeds even with CAL-1's training classes; the stretch is not shown "
+                  f"classes fail near the bar on these seeds even with CAL-1's exact training pool; the stretch is not shown "
                   f"to be the cause" + (f" (L-cal1 passes {[c for c in fail_p if P('L-cal1', c)]})"
                                          if any(P("L-cal1", c) for c in fail_p) else ""))
     hci = out["honest_mse_primary_minus_cal1"]["ci"]

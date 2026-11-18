@@ -3,7 +3,7 @@ CAL-1c: does training on several consistent-wrong forms let the learned v(S) pri
 Harness (the analysis is CAL-1c_analysis.py, on the saved rows). PRE-REGISTRATION: experiments/CAL-1c.md (Will's go
 2026-11-18, committed before any CAL-1c data; Bitcoin-timestamped). Written from CAL-1b_calibration_vs.py; what changes
 is only what CAL-1c.md lists under "What changes": the nowait-map class (trained) and the mixed-map class (held-out only,
-the novel form) with their identity rules, pools of 28 (CAL-1's graded share restored), fresh seeds, BLAS threads pinned
+the novel form) with their identity rules, pools of 28 (CAL-1's 12 graded per group kept), fresh seeds, BLAS threads pinned
 to 1, and the pilot's P5 stop. The version stays pinned (0.94.0 from ~/_cadence_v0940/src, checked on every row).
 
 Student side = EXP-77b's instrument through EXP-62's code, unchanged: compose (delayed-credit brain, scales trace 12.0,
