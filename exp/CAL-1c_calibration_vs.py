@@ -72,13 +72,26 @@ assert len(GROUP_TRAIN) == G and len(GROUP_HELD) == G
 # ============ Identity rules for the two map classes (CAL-1c.md, "What changes") ============
 
 def nowait_map(ident_seed, exclude):
-    """A fixed wrong action per stage drawn from the three wrong actions other than WAIT; redrawn from the same stream
-    until the map is not in `exclude`."""
+    """Held-out and pilot nowait-map: a fixed wrong action per stage drawn from the three wrong actions other than WAIT;
+    redrawn from the same stream until the map is not in `exclude`."""
     r = np.random.default_rng(ident_seed)
     while True:
         m = [int(r.choice([x for x in range(4) if x != i])) for i in range(4)]
         if m not in exclude:
             return m
+
+
+def balanced_maps(n, seed):
+    """Training nowait-map: n maps drawn jointly so that each stage's labels spread over its three non-WAIT wrong actions
+    as evenly as possible (counts differ by at most 1: 5, 5, 6 at n = 16), assigned to instances by a seeded shuffle per
+    stage; reshuffled until the n maps are distinct and none is wrong-chain's map. (CAL-1c.md: cell coverage.)"""
+    r = np.random.default_rng(seed)
+    cols = [[[x for x in range(4) if x != i][(k + i) % 3] for k in range(n)] for i in range(4)]
+    while True:
+        perm = [r.permutation(cols[i]).tolist() for i in range(4)]
+        maps = [[int(perm[i][k]) for i in range(4)] for k in range(n)]
+        if len({tuple(m) for m in maps}) == n and CHAIN_MAP not in maps:
+            return maps
 
 
 def mixed_map(ident_seed):
@@ -91,16 +104,21 @@ def mixed_map(ident_seed):
             return m
 
 
+TRAIN_NWM = [t for t in range(8 * G) if GROUP_TRAIN[t % G] == "nowait-map"]   # training indices of the class
+BALANCE_SEED = 15_050_000
+
+
 @lru_cache(maxsize=None)
 def training_maps():
-    """The 16 training nowait-map maps (excluding wrong-chain's map), in block order."""
-    return tuple(tuple(nowait_map(15_000_000 + t, [CHAIN_MAP])) for t in range(8 * G) if GROUP_TRAIN[t % G] == "nowait-map")
+    """The 16 training nowait-map maps, in block order (the k-th instance gets the k-th map)."""
+    return tuple(tuple(m) for m in balanced_maps(len(TRAIN_NWM), BALANCE_SEED))
 
 
 def map_of(kind, ident_seed, block):
+    if kind == "nowait-map" and block == "train":
+        return list(training_maps()[TRAIN_NWM.index(ident_seed - 15_000_000)])
     if kind == "nowait-map":
-        excl = [CHAIN_MAP] + ([] if block == "train" else [list(x) for x in training_maps()])
-        return nowait_map(ident_seed, excl)
+        return nowait_map(ident_seed, [CHAIN_MAP] + [list(x) for x in training_maps()])
     if kind == "mixed-map":
         return mixed_map(ident_seed)
     return None
@@ -324,9 +342,17 @@ def ids_audit():
     for b in ("train", "held", "pilot"):
         out[b] = [(T["t"], T["kind"], teacher_of(T).identity["map"]) for T in teachers(b) if T["kind"].endswith("-map")]
     tr = [tuple(m) for _, k, m in out["train"] if k == "nowait-map"]
+    cells = np.zeros((4, 5), int)
+    for mp in tr:
+        for i, a in enumerate(mp):
+            cells[i, a] += 1
+    print(f"  training nowait-map cell counts (stage x labelled action): {cells.tolist()}")
     checks = {
-        "training nowait-maps hold no WAIT and are not wrong-chain's map":
-            all(WAIT not in m and list(m) != CHAIN_MAP for m in tr),
+        "training nowait-maps hold no WAIT, are distinct and are not wrong-chain's map":
+            all(WAIT not in m and list(m) != CHAIN_MAP for m in tr) and len(set(tr)) == len(tr),
+        "training nowait-maps cover every (stage, non-WAIT wrong action) cell, counts within 1 per stage":
+            all(cells[i, i] == 0 and cells[i, WAIT] == 0 and min(cells[i, a] for a in range(4) if a != i) > 0
+                and max(cells[i, :4]) - min(cells[i, a] for a in range(4) if a != i) <= 1 for i in range(4)),
         "no class absent from training (mixed-map) in the training block":
             all(k != "mixed-map" for _, k, _ in out["train"]),
         "every held-out and pilot mixed-map mixes WAIT and non-WAIT stages":

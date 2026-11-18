@@ -1,10 +1,12 @@
 """
-CAL-1b analysis: every number the pre-registration names, computed on the saved rows (no compute on brains).
-PRE-REGISTRATION: experiments/CAL-1b.md (committed c47fa0f, 2026-11-16). Written before any CAL-1b data existed, from
-CAL-1_analysis.py: criterion 6 and K1 now cover six fake classes (wait added), V5 checks every row's Cadence, the cause
-table is added, L-archive is not repeated (CAL-1b.md: it reads EXP-77b's lessons, which do not change).
+CAL-1c analysis: every number the pre-registration names, computed on the saved rows (no compute on brains).
+PRE-REGISTRATION: experiments/CAL-1c.md (Will's go 2026-11-18). Written before any CAL-1c data existed, from
+CAL-1b_analysis.py: blocks of 224 teachers in groups of 28, criterion 6 and K1 cover seven fake classes (nowait-map and
+mixed-map added), the forms table (L refitted without nowait-map, without wait, without both) replaces CAL-1b's cause
+table, with the registered readings for the novel form, the near-the-bar classes and the honest classes. Reported, not
+decisive: two-sided calibration per fake class, consensus (S2) overpricing per class, mixed-map by WAIT count.
 
-    PYTHONPATH=~/_cadence_v0940/src python -u CAL-1b_analysis.py > CAL-1b-full-analysis.out
+    PYTHONPATH=~/_cadence_v0940/src python -u CAL-1c_analysis.py > CAL-1c-full-analysis.out
 
 Primary (verdict) uses the composite zero Z = per-student mean of {null, untaught, random}. Amendment (a), exploratory:
 the whole primary analysis is repeated with each single zero (null, untaught, random) and reported beside Z; the verdict
@@ -17,14 +19,16 @@ from scipy.stats import rankdata
 from sklearn.isotonic import IsotonicRegression
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-_spec = importlib.util.spec_from_file_location("cal1bh", os.path.join(HERE, "CAL-1b_calibration_vs.py"))
+_spec = importlib.util.spec_from_file_location("cal1ch", os.path.join(HERE, "CAL-1c_calibration_vs.py"))
 H = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(H)
-KNOW, FAKES, ZERO, RIGHTS = H.KNOW, H.FAKES, H.ZERO, H.RIGHTS
+KNOW, FAKES, ZERO, RIGHTS, G, WAIT = H.KNOW, H.FAKES, H.ZERO, H.RIGHTS, H.G, H.WAIT
+NT = 8 * G                                              # teachers per block (224)
+HONEST = ["graded"] + KNOW
 CLASSES = ["graded"] + KNOW + FAKES
 LAMS = 10 ** np.arange(-3, 3.0001, 0.5)                 # 13 penalties, half-decade steps
 N_PERM, N_BOOT, MARGIN6, B_BAR = 1000, 2000, 1 / 16, 1 / 32
-PREFIX = os.environ.get("PREFIX", "CAL-1b-full")
+PREFIX = os.environ.get("PREFIX", "CAL-1c-full")
 
 
 # ============ Small tools ============
@@ -110,7 +114,7 @@ def load():
     m = n_held // 8
     blocks = {}
     for b in ("train", "held", "probe-only"):
-        ps = [P[(b, t)] for t in range(192 if b != "probe-only" else 80)]
+        ps = [P[(b, t)] for t in range(NT if b != "probe-only" else 80)]
         blocks[b] = dict(kinds=np.array([p["kind"] for p in ps]),
                          groups=np.array([p["group"] if p["group"] is not None else -1 for p in ps]),
                          probes=[[tuple(x) for x in p["probe"]] for p in ps],
@@ -123,11 +127,11 @@ def worth_tables(acc, m, zero):
     def z(sb, s):
         arms = ZERO if zero == "Z" else [zero]
         return float(np.mean([acc[(sb, s, a)] for a in arms]))
-    wtr = np.array([[acc[("train", 3 * (t // 24) + k, t)] - z("train", 3 * (t // 24) + k) for k in range(3)]
-                    for t in range(192)])
-    whe = np.array([[acc[("held", m * (t // 24) + k, t)] - z("held", m * (t // 24) + k) for k in range(m)]
-                    for t in range(192)])
-    aud = np.array([acc[("audition", t // 24, t)] - z("audition", t // 24) for t in range(192)])
+    wtr = np.array([[acc[("train", 3 * (t // G) + k, t)] - z("train", 3 * (t // G) + k) for k in range(3)]
+                    for t in range(NT)])
+    whe = np.array([[acc[("held", m * (t // G) + k, t)] - z("held", m * (t // G) + k) for k in range(m)]
+                    for t in range(NT)])
+    aud = np.array([acc[("audition", t // G, t)] - z("audition", t // G) for t in range(NT)])
     return wtr, whe, aud
 
 
@@ -176,7 +180,7 @@ def analyse(acc, blocks, m, zero, extras=False, v5_bad=0):
         out["clim"] = float(np.mean((clim - W[idx]) ** 2))
         return out
 
-    allidx = np.arange(192)
+    allidx = np.arange(NT)
     base = stats(allidx, Whe)
     res = dict(zero=zero, m=m, clim=clim, lam=L["lam"], signs=sgn,
                rho={k: base[k][0] for k in preds}, mse={k: base[k][1] for k in preds}, mse_clim=base["clim"])
@@ -206,7 +210,7 @@ def analyse(acc, blocks, m, zero, extras=False, v5_bad=0):
     n0_rho, n0_mse = [], []
     Xtr, Xhe = std(Ftr), std(Fhe)
     for _ in range(N_PERM):
-        yp = Wtr[rng1.permutation(192)]
+        yp = Wtr[rng1.permutation(NT)]
         Lp = L_procedure(Xtr, yp, gtr, [Xhe])
         s, (f,) = mapped(Lp["oof"], yp, [Lp["te"][0]])
         n0_rho.append(spearman(s * Lp["te"][0], Whe))
@@ -299,7 +303,26 @@ def analyse(acc, blocks, m, zero, extras=False, v5_bad=0):
     d = fpg - w_rand
     ex["probe_gamer"] = dict(forecast=float(fpg.mean()), W=float(w_rand.mean()), over=float(d.mean()),
                              over_se=float(d.std(ddof=1) / 4), know4_W=res["classes"]["know-4"]["W"])
-    # L-archive is not repeated in CAL-1b (CAL-1b.md, "Reported, not decisive")
+    # L-archive is not repeated (CAL-1c.md, as CAL-1b)
+    # two-sided calibration per fake class: |mean(L - W)| + 1.645 SE < 1/16 ("priced within one state both ways")
+    ex["two_sided"] = {c: dict(over=res["classes"][c]["over_L"], se=res["classes"][c]["over_L_se"],
+                               bound=abs(res["classes"][c]["over_L"]) + 1.645 * res["classes"][c]["over_L_se"],
+                               passes=bool(abs(res["classes"][c]["over_L"]) + 1.645 * res["classes"][c]["over_L_se"] < MARGIN6))
+                       for c in FAKES}
+    # consensus (S2, through its own isotonic map) overpricing per fake class, as criterion 6 reads L
+    ex["S2_over"] = {}
+    for c in FAKES:
+        d = fc["S2"][cls == c] - Whe[cls == c]
+        se = float(d.std(ddof=1) / np.sqrt(len(d)))
+        ex["S2_over"][c] = dict(over=float(d.mean()), se=se, bound=float(d.mean()) + 1.645 * se,
+                                passes=bool(float(d.mean()) + 1.645 * se < MARGIN6))
+    # mixed-map by its number of WAIT stages
+    ix_mm = np.where(cls == "mixed-map")[0]
+    nw = np.array([he["identity"][t]["map"].count(WAIT) for t in ix_mm])
+    ex["mixed_by_wait"] = {int(k): dict(n=int((nw == k).sum()), W=float(Whe[ix_mm][nw == k].mean()),
+                                        fc_L=float(fc["L"][ix_mm][nw == k].mean()),
+                                        over_L=float((fc["L"][ix_mm] - Whe[ix_mm])[nw == k].mean()))
+                           for k in sorted(set(nw.tolist()))}
     # L refitted on 1, 3 or 6 probe labels per context
     ex["L_R"] = {}
     for R in (1, 3, 6):
@@ -314,7 +337,7 @@ def analyse(acc, blocks, m, zero, extras=False, v5_bad=0):
     sb.update({"drho_S2": [], "dmse_S2": [], "drho_S1": [], "dmse_S1": []})
     for _ in range(N_BOOT):
         pick = rng.integers(0, m, size=(8, m))
-        Wb = np.array([whe_s[t, pick[t // 24]].mean() for t in range(192)])
+        Wb = np.array([whe_s[t, pick[t // G]].mean() for t in range(NT)])
         for k in preds:
             sb[f"rho_{k}"].append(spearman(osc[k], Wb))
             sb[f"mse_{k}"].append(float(np.mean((fc[k] - Wb) ** 2)))
@@ -330,106 +353,125 @@ def analyse(acc, blocks, m, zero, extras=False, v5_bad=0):
     return res
 
 
-def l_archive(std_he, Whe, cls, clim):
-    """Training rows: EXP-77b's 216 students x 8 teacher arms, features from each lesson's label stream (a stage with no
-    labels in a lesson gets the uniform 0.2 shares; disclosed), W = arm minus the composite zero on that student.
-    Folds: 8 blocks of 27 students, so a fold never splits a student. Applied to the CAL-1 held-out probe features."""
-    rows = [json.loads(l) for l in open(os.path.join(HERE, "EXP-77b-full.jsonl"))]
-    arms = KNOW + ["random", "wrong-chain", "echo", "anti-echo"]
-    X, y, g = [], [], []
-    for r in rows:
-        if r["lesson"] != 80:
-            continue
-        z = np.mean([r["arms"][a]["acc"] for a in ZERO])
-        for a in arms:
-            f, same = np.zeros((4, 5)), 0
-            st = r["arms"][a]["labels"]
-            for right, act, t in st:
-                f[right, t] += 1
-                same += t == act
-            tot = f.sum(1, keepdims=True)
-            sh = np.where(tot > 0, f / np.where(tot > 0, tot, 1), 0.2)
-            X.append(np.r_[sh.ravel(), same / len(st) if st else 0.2])
-            y.append(r["arms"][a]["acc"] - z)
-            g.append(r["student"] // 27)
-    X, y, g = np.array(X), np.array(y), np.array(g)
-    std = standardizer(X)[0]
-    La = L_procedure(std(X), y, g, [std(std_he)])
-    s, (f,) = mapped(La["oof"], y, [La["te"][0]])
-    mse = float(np.mean((f - Whe) ** 2))
-    return dict(n_train=len(y), lam=La["lam"], rho=spearman(s * La["te"][0], Whe), mse=mse,
-                skill=1 - mse / float(np.mean((clim - Whe) ** 2)),
-                class_fc={c: float(f[cls == c].mean()) for c in CLASSES})
+# ============ CAL-1c: the registered forms table (composite Z) ============
+
+VARIANTS = (("primary", ()), ("L-nomap", ("nowait-map",)), ("L-nowait", ("wait",)), ("L-cal1", ("wait", "nowait-map")))
 
 
-# ============ CAL-1b: the registered cause separation (composite Z) ============
-
-def cause_table(acc, blocks, m):
-    """L trained with all 192 teachers (primary) and without the 16 wait instances (176), each read through CAL-1's
-    isotonic map (clipped at its ends) and as the raw ridge output (the final model's held-out prediction, in units of
-    W, no floor). Criterion 6 (mean(forecast - W) + 1.645 SE < 1/16) per cell for wrong-map and for wait."""
+def forms_table(acc, blocks, m):
+    """L's whole procedure (penalty by leave-one-group-out CV, isotonic map on the out-of-fold scores, clipped) refitted with
+    training instances of the named classes dropped: primary (all 224), L-nomap (no nowait-map, 208), L-nowait (no wait,
+    208), L-cal1 (neither, 192: CAL-1's training classes and graded share on fresh seeds). Per cell: criterion 6 for every
+    fake class, the floor, rho and MSE on all held-out teachers and on the honest classes (graded and know-k). Plus the
+    primary's raw ridge output on mixed-map (reported), and the paired bootstrap of MSE primary minus L-cal1."""
     tr, he = blocks["train"], blocks["held"]
     wtr_s, whe_s, _ = worth_tables(acc, m, "Z")
     Wtr, Whe = wtr_s.mean(1), whe_s.mean(1)
-    cls = he["kinds"]
+    cls, ghe = he["kinds"], he["groups"]
+    honest = np.isin(cls, HONEST)
     Ftr_all, Fhe = feats(tr["probes"]), feats(he["probes"])
-    out = {}
-    for name, keep in (("with_wait", np.ones(len(Wtr), bool)), ("without_wait", tr["kinds"] != "wait")):
+    out, fcs = {}, {}
+    for name, drop in VARIANTS:
+        keep = ~np.isin(tr["kinds"], drop)
         Ftr, ytr, gtr = Ftr_all[keep], Wtr[keep], tr["groups"][keep]
         std, mu, sd = standardizer(Ftr)
         L = L_procedure(std(Ftr), ytr, gtr, [std(Fhe)])
         sgn = sign_of(L["oof"], ytr)
         imap = iso(sgn * L["oof"], ytr)
-        fcs = {"iso": imap.predict(sgn * L["te"][0]), "raw": L["te"][0]}
-        beta = L["model"][2] / sd
-        cell = dict(n_train=int(keep.sum()), lam=L["lam"], sign=sgn,
+        f = imap.predict(sgn * L["te"][0])
+        fcs[name] = f
+        cell = dict(n_train=int(keep.sum()), dropped=list(drop), lam=L["lam"], sign=sgn,
                     floor=float(np.min(imap.predict(sgn * L["oof"]))),
-                    wait_share_weight_at_stage=[float(beta[5 * i + 4]) for i in range(4)], forecasts={})
-        for kind, f in fcs.items():
-            cell["forecasts"][kind] = {}
-            for c in ("wrong-map", "wait"):
-                ix = cls == c
-                d = f[ix] - Whe[ix]
-                over, se = float(d.mean()), float(d.std(ddof=1) / np.sqrt(ix.sum()))
-                cell["forecasts"][kind][c] = dict(fc=float(f[ix].mean()), W=float(Whe[ix].mean()), over=over, se=se,
-                                                  bound=over + 1.645 * se, passes=bool(over + 1.645 * se < MARGIN6))
-            cell["forecasts"][kind]["rho"] = spearman(f if kind == "raw" else sgn * L["te"][0], Whe)
-            cell["forecasts"][kind]["mse"] = float(np.mean((f - Whe) ** 2))
+                    rho=spearman(sgn * L["te"][0], Whe), mse=float(np.mean((f - Whe) ** 2)),
+                    mse_honest=float(np.mean((f[honest] - Whe[honest]) ** 2)), c6={})
+        for c in FAKES:
+            ix = cls == c
+            d = f[ix] - Whe[ix]
+            over, se = float(d.mean()), float(d.std(ddof=1) / np.sqrt(ix.sum()))
+            cell["c6"][c] = dict(fc=float(f[ix].mean()), W=float(Whe[ix].mean()), over=over, se=se,
+                                 bound=over + 1.645 * se, passes=bool(over + 1.645 * se < MARGIN6))
+        if name == "primary":
+            raw = L["te"][0]
+            ix = cls == "mixed-map"
+            d = raw[ix] - Whe[ix]
+            cell["raw_mixed_map"] = dict(fc=float(raw[ix].mean()), over=float(d.mean()),
+                                         bound=float(d.mean()) + 1.645 * float(d.std(ddof=1) / np.sqrt(ix.sum())))
         out[name] = cell
-    wm = lambda tr_, kind: out[tr_]["forecasts"][kind]["wrong-map"]["passes"]
-    prim, raw, now, now_raw = wm("with_wait", "iso"), wm("with_wait", "raw"), wm("without_wait", "iso"), wm("without_wait", "raw")
-    readings = []
-    if now:
-        readings.append("L-nowait passes on wrong-map: CAL-1's failure did not replicate; the separation below is read with that caveat")
-    if prim and not now_raw:
-        readings.append("primary passes and L-nowait-raw fails: the missing harm in training was the cause; removing the floor alone does not fix it")
-    if now_raw:
-        readings.append("L-nowait-raw passes: the floor was a sufficient cause; the ridge already scored wrong-map low enough and only the map hid it")
-    if prim and now_raw:
-        readings.append("primary and L-nowait-raw both pass: either change alone is enough")
-    if not prim:
-        readings.append("primary fails: putting the harm in training did not make the procedure price wrong-map within one state")
-    out["cells_wrong_map"] = {"primary (with wait, iso)": prim, "L-raw (with wait, raw)": raw,
-                              "L-nowait (without wait, iso)": now, "L-nowait-raw (without wait, raw)": now_raw}
-    out["readings"] = readings
+    # honest classes: MSE primary minus L-cal1, paired bootstrap over held-out teachers stratified by group, models fixed
+    rng = np.random.default_rng(0)
+    gidx = [np.where(ghe == g)[0] for g in range(8)]
+    sq = {k: (fcs[k] - Whe) ** 2 for k in ("primary", "L-cal1")}
+    diffs_h, diffs_a = [], []
+    for _ in range(N_BOOT):
+        idx = np.concatenate([rng.choice(ix, size=len(ix), replace=True) for ix in gidx])
+        h = idx[honest[idx]]
+        diffs_h.append(float(sq["primary"][h].mean() - sq["L-cal1"][h].mean()))
+        diffs_a.append(float(sq["primary"][idx].mean() - sq["L-cal1"][idx].mean()))
+    out["honest_mse_primary_minus_cal1"] = dict(
+        point=float(sq["primary"][honest].mean() - sq["L-cal1"][honest].mean()), ci=ci(diffs_h), n=int(honest.sum()))
+    out["all_mse_primary_minus_cal1"] = dict(point=float(sq["primary"].mean() - sq["L-cal1"].mean()), ci=ci(diffs_a))
+
+    # ---- the registered readings (CAL-1c.md), fixed before any data
+    P = lambda v, c: out[v]["c6"][c]["passes"]
+    rd = []
+    if P("primary", "mixed-map") and not P("L-nomap", "mixed-map"):
+        rd.append("R1: primary passes and L-nomap fails on mixed-map: the non-WAIT maps in training are what priced the "
+                  "novel form (spanning the kind worked where one pure harm did not)")
+    if P("primary", "mixed-map") and P("L-nomap", "mixed-map"):
+        rd.append("R2: primary and L-nomap both pass on mixed-map: on these rows the non-WAIT maps were not needed; the pass "
+                  "comes with the rest of the design (CAL-1's graded share, the wait class, fresh seeds)")
+    if not P("primary", "mixed-map"):
+        rd.append("R3: primary fails on mixed-map: training on several consistent-wrong forms did not make the procedure "
+                  "price the novel form within one state")
+    if P("L-cal1", "mixed-map"):
+        rd.append("R4: L-cal1 passes on mixed-map: the CAL-1 / CAL-1b failure on the novel class did not replicate on these "
+                  "seeds (the novel class here is mixed maps only); R1 to R3 are read with that caveat")
+    if not P("primary", "nowait-map"):
+        rd.append("R5: primary fails on nowait-map (a trained form, new maps): the procedure does not price new instances "
+                  "of a trained consistent-wrong form within one state, so the binding limit is the forecaster's form "
+                  "(additive in per-stage label shares), not only which forms training covers")
+    near = ("random", "anti-echo")
+    fail_p = [c for c in near if not P("primary", c)]
+    if not fail_p:
+        rd.append("N1: primary passes random and anti-echo: with CAL-1's graded share restored and wait in training, "
+                  "near-the-bar calibration holds; CAL-1b's failures there go with its smaller graded pool or its draw, "
+                  "not with the range stretch alone")
+    elif all(P("L-cal1", c) for c in fail_p):
+        rd.append(f"N2: primary fails {fail_p} and L-cal1 passes them: on these rows adding the consistent-wrong forms to "
+                  f"training costs calibration near the bar (L-nowait passes {[c for c in fail_p if P('L-nowait', c)]}, "
+                  f"L-nomap passes {[c for c in fail_p if P('L-nomap', c)]})")
+    else:
+        rd.append(f"N3: primary fails {fail_p} and L-cal1 fails {[c for c in fail_p if not P('L-cal1', c)]} too: these "
+                  f"classes fail near the bar on these seeds even with CAL-1's training classes; the stretch is not shown "
+                  f"to be the cause" + (f" (L-cal1 passes {[c for c in fail_p if P('L-cal1', c)]})"
+                                         if any(P("L-cal1", c) for c in fail_p) else ""))
+    hci = out["honest_mse_primary_minus_cal1"]["ci"]
+    rd.append("H1: the honest-class MSE interval is above 0: training on the consistent-wrong forms cost calibration on "
+              "honest teachers" if hci[0] > 0 else
+              "H2: the honest-class MSE interval is below 0: training on the consistent-wrong forms improved calibration "
+              "on honest teachers" if hci[1] < 0 else
+              "H3: the honest-class MSE interval spans 0: no change on honest teachers shown")
+    out["readings"] = rd
+    out["primary_forecasts"] = np.round(fcs["primary"], 6).tolist()
     return out
 
 
-def report_cause(ct):
+def report_forms(ft):
     p = lambda *a: print(*a, flush=True)
-    p("\n=== CAL-1b cause separation (registered, reported beside the verdict, not part of it; composite Z) ===")
-    for name in ("with_wait", "without_wait"):
-        c = ct[name]
-        p(f"  training {name} ({c['n_train']} teachers): penalty {c['lam']:g}, isotonic floor {c['floor']:+.4f}, "
-          f"weight on the WAIT share at stages 0-3 (raw units) {[round(x, 3) for x in c['wait_share_weight_at_stage']]}")
-        for kind in ("iso", "raw"):
-            f = c["forecasts"][kind]
-            p(f"    {kind:3s}: rho {f['rho']:+.3f} MSE {f['mse']:.5f} | "
-              + " | ".join(f"{k}: fc {f[k]['fc']:+.3f} W {f[k]['W']:+.3f} over {f[k]['over']:+.3f} (se {f[k]['se']:.3f}) "
-                           f"bound {f[k]['bound']:+.3f} {'PASS' if f[k]['passes'] else 'FAIL'}" for k in ("wrong-map", "wait")))
-    p(f"  wrong-map criterion 6 by cell: {ct['cells_wrong_map']}")
-    for r in ct["readings"]:
-        p(f"  reading: {r}")
+    p("\n=== CAL-1c forms table (registered, reported beside the verdict, not part of it; composite Z) ===")
+    for name, _ in VARIANTS:
+        c = ft[name]
+        p(f"  {name:9s} ({c['n_train']} training teachers, dropped {c['dropped']}): penalty {c['lam']:g}, isotonic floor "
+          f"{c['floor']:+.4f}, rho {c['rho']:+.3f}, MSE {c['mse']:.5f}, MSE on honest classes {c['mse_honest']:.5f}")
+        p("     criterion 6 (over, bound): " + " | ".join(
+            f"{k} {v['over']:+.3f} ({v['bound']:+.3f}) {'pass' if v['passes'] else 'FAIL'}" for k, v in c["c6"].items()))
+    r = ft["primary"]["raw_mixed_map"]
+    p(f"  primary raw ridge output on mixed-map (reported): fc {r['fc']:+.3f}, over {r['over']:+.3f}, bound {r['bound']:+.3f}")
+    h, a = ft["honest_mse_primary_minus_cal1"], ft["all_mse_primary_minus_cal1"]
+    p(f"  MSE primary minus L-cal1: honest classes (n {h['n']}) {h['point']:+.5f} [{h['ci'][0]:+.5f}, {h['ci'][1]:+.5f}]; "
+      f"all held-out {a['point']:+.5f} [{a['ci'][0]:+.5f}, {a['ci'][1]:+.5f}]")
+    for x in ft["readings"]:
+        p(f"  reading: {x}")
 
 
 # ============ Report ============
@@ -485,6 +527,13 @@ def report(r, full=True):
     p(f"  probe-gamer (16): L forecast {g['forecast']:+.3f} vs W {g['W']:+.3f}: overpriced {g['over']:+.3f} (se {g['over_se']:.3f}); "
       f"know-4 W {g['know4_W']:+.3f}")
     p("  L on R probe labels per context: " + "  ".join(f"R={R}: rho {v['rho']:.3f} MSE {v['mse']:.5f}" for R, v in ex["L_R"].items()))
+    p("  two-sided, |mean(L - W)| + 1.645 SE < 1/16: " + " | ".join(
+        f"{k} {v['over']:+.3f} ({v['bound']:.3f}) {'pass' if v['passes'] else 'FAIL'}" for k, v in ex["two_sided"].items()))
+    p("  consensus S2 overpricing (over, upper bound): " + " | ".join(
+        f"{k} {v['over']:+.3f} ({v['bound']:+.3f}) {'pass' if v['passes'] else 'FAIL'}" for k, v in ex["S2_over"].items()))
+    p("  mixed-map by WAIT stages: " + " | ".join(
+        f"{k} WAIT (n {v['n']}): W {v['W']:+.3f} fc_L {v['fc_L']:+.3f} over {v['over_L']:+.3f}"
+        for k, v in ex["mixed_by_wait"].items()))
     sbt = ex["student_bootstrap"]
     p("  student-level bootstrap (95%): " + "  ".join(f"{k} [{v[0]:+.5f}, {v[1]:+.5f}]" for k, v in sbt.items()
                                                     if k.startswith(("rho_L", "drho", "dmse"))))
@@ -492,21 +541,20 @@ def report(r, full=True):
 
 def main():
     rows, acc, blocks, m, mism, v5_bad = load()
-    print(f"CAL-1b analysis: {len(rows)} twins, m = {m}, probe mismatches between rows and the pre-teaching file: {mism}; "
+    print(f"CAL-1c analysis: {len(rows)} twins, m = {m}, probe mismatches between rows and the pre-teaching file: {mism}; "
           f"rows on a Cadence other than {H.PIN_VERSION} from ~/{H.PIN_DIR}: {v5_bad}")
     out = {}
     for zero in ["Z", "null", "untaught", "random"]:
         out[zero] = analyse(acc, blocks, m, zero, extras=(zero == "Z"), v5_bad=v5_bad)
         report(out[zero], full=(zero == "Z"))
         if zero == "Z":
-            ct = cause_table(acc, blocks, m)
-            prim = np.array(out["Z"]["forecasts"]["L"])
-            assert np.allclose(prim, [0] * 0 or prim), "primary forecasts missing"
-            report_cause(ct)
-            out["cause_table"] = ct
+            ft = forms_table(acc, blocks, m)
+            assert np.allclose(ft["primary_forecasts"], out["Z"]["forecasts"]["L"], atol=1e-4), "forms primary != verdict L"
+            report_forms(ft)
+            out["forms_table"] = ft
     print("\n=== exploratory per-zero summary (amendment a; the verdict uses Z) ===")
     for zero, r in out.items():
-        if zero == "cause_table":
+        if zero == "forms_table":
             continue
         print(f"  {zero:8s} rho_L {r['rho']['L']:.3f} rho_S1 {r['rho']['S1']:+.3f} rho_S2 {r['rho']['S2']:.3f} "
               f"MSE_L {r['mse']['L']:.5f} MSE_S2 {r['mse']['S2']:.5f} know-4 W {r['classes']['know-4']['W']:+.3f} "
