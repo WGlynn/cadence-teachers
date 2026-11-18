@@ -1,0 +1,14 @@
+V6 identity audit: PASS
+audit exit 0
+V1 inspect: CAL-1c's zero arms call EXP-62's twin, whose labeller is the audited EXP-62 entry point: PASS
+V2 identity gate on cadence 0.94.0 at C:\Users\Will\_cadence_v0940\src\cadence, BLAS threads 1: seed 9000000 vs EXP-77b student 0 (15s): IDENTICAL
+pilot exit 0 in 200s
+
+  one-way split over 28 teachers x 4 students: between-teacher variance v_b 0.04028, within-teacher (student) variance v_w 0.02030
+  projected reliability at m = 6: 0.922; at m = 8: 0.941
+  wait teachers' mean W: [-0.432, -0.432] (P4 stops if both are above CAL-1's training floor -0.1215)
+  nowait-map teachers' mean W: [-0.182, -0.151] (P5 stops if both are above -0.0625); mixed-map (reported only): [-0.182, -0.104]
+  know-4 W +0.427; SD of the 28 teachers' mean W 0.213; stops {'P1_know4_below_10': False, 'P2_sd_of_means_below_05': False, 'P3_rel_at_8_below_7': False, 'P4_wait_above_floor': False, 'P5_nowait_map_above_bar': False}
+  pilot rule -> GO with m = 6
+CAL-1c [pilot] done in 200s
+PILOT_ONLY set: stopping after the pilot (m = 6)

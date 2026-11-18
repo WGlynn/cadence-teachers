@@ -1,0 +1,44 @@
+  probes for 28 instances written before any teaching: CAL-1c-pilot-probes.json
+CAL-1c [pilot]: cadence 0.94.0 at C:\Users\Will\_cadence_v0940\src\cadence; 124 twins to go (0 done); 4 workers
+  31/124 twins, 57s
+  62/124 twins, 102s
+  93/124 twins, 149s
+  124/124 twins, 200s
+
+CAL-1c pilot chain print (RUN GATE line 5): class, identity, probe S1 / S2 (pilot pool) / K, W per student, mean
+  graded      p=[0.42, 0.04, 0.51, 0.02]   S1 0.495 S2 0.443 K 0.443 | W +0.167 +0.125 +0.042 +0.000 | mean +0.083
+  graded      p=[0.48, 0.07, 0.6, 0.12]    S1 0.516 S2 0.464 K 0.464 | W +0.292 +0.125 +0.104 +0.250 | mean +0.193
+  graded      p=[0.98, 0.6, 0.21, 0.88]    S1 0.740 S2 0.719 K 0.719 | W +0.417 +0.125 +0.354 +0.500 | mean +0.349
+  graded      p=[0.16, 0.11, 0.03, 0.41]   S1 0.438 S2 0.344 K 0.344 | W +0.479 +0.062 -0.083 +0.000 | mean +0.115
+  graded      p=[0.99, 0.11, 0.7, 0.4]     S1 0.630 S2 0.599 K 0.599 | W +0.417 +0.125 +0.292 +0.250 | mean +0.271
+  graded      p=[0.11, 0.85, 0.03, 0.37]   S1 0.531 S2 0.500 K 0.500 | W +0.167 +0.125 +0.042 +0.188 | mean +0.130
+  graded      p=[0.49, 0.74, 0.11, 0.57]   S1 0.630 S2 0.630 K 0.630 | W +0.417 +0.062 +0.042 +0.312 | mean +0.208
+  graded      p=[0.4, 0.91, 0.84, 0.9]     S1 0.807 S2 0.807 K 0.807 | W +0.167 +0.000 +0.167 +0.312 | mean +0.161
+  graded      p=[0.36, 0.19, 0.06, 0.52]   S1 0.484 S2 0.448 K 0.448 | W +0.292 +0.125 -0.083 +0.188 | mean +0.130
+  graded      p=[0.26, 0.94, 0.8, 0.59]    S1 0.719 S2 0.682 K 0.682 | W +0.542 +0.062 +0.042 +0.438 | mean +0.271
+  know-1      p=[1.0, 0.0, 0.0, 0.0]       S1 0.516 S2 0.365 K 0.365 | W +0.229 +0.250 +0.292 +0.188 | mean +0.240
+  know-2      p=[0.0, 1.0, 1.0, 0.0]       S1 0.667 S2 0.599 K 0.599 | W +0.417 +0.125 +0.292 +0.250 | mean +0.271
+  know-3      p=[1.0, 1.0, 0.0, 1.0]       S1 0.849 S2 0.802 K 0.802 | W +0.479 +0.375 +0.104 +0.000 | mean +0.240
+  know-4      p=[1.0, 1.0, 1.0, 1.0]       S1 1.000 S2 1.000 K 1.000 | W +0.542 +0.250 +0.417 +0.500 | mean +0.427
+  random                                   S1 0.385 S2 0.219 K 0.219 | W +0.292 -0.125 +0.104 -0.250 | mean +0.005
+  random                                   S1 0.323 S2 0.219 K 0.219 | W +0.104 +0.250 -0.083 +0.188 | mean +0.115
+  wrong-chain                              S1 1.000 S2 0.000 K 0.000 | W +0.104 -0.125 -0.271 +0.125 | mean -0.042
+  wrong-chain                              S1 1.000 S2 0.000 K 0.000 | W +0.104 -0.125 -0.271 +0.125 | mean -0.042
+  echo                                     S1 1.000 S2 0.000 K 0.000 | W -0.021 -0.062 -0.208 -0.062 | mean -0.089
+  echo                                     S1 1.000 S2 0.000 K 0.000 | W -0.021 -0.062 -0.208 -0.062 | mean -0.089
+  anti-echo                                S1 0.422 S2 0.240 K 0.240 | W +0.042 +0.125 +0.042 -0.062 | mean +0.036
+  anti-echo                                S1 0.458 S2 0.271 K 0.271 | W +0.167 +0.000 +0.042 +0.125 | mean +0.083
+  wait                                     S1 1.000 S2 0.000 K 0.000 | W -0.333 -0.375 -0.521 -0.500 | mean -0.432
+  wait                                     S1 1.000 S2 0.000 K 0.000 | W -0.333 -0.375 -0.521 -0.500 | mean -0.432
+  nowait-map  map=[1, 0, 1, 1]             S1 1.000 S2 0.000 K 0.000 | W -0.083 -0.125 -0.271 -0.250 | mean -0.182
+  nowait-map  map=[1, 3, 3, 1]             S1 1.000 S2 0.000 K 0.000 | W -0.083 -0.125 -0.146 -0.250 | mean -0.151
+  mixed-map   map=[3, 3, 1, 4]             S1 1.000 S2 0.000 K 0.000 | W -0.083 -0.125 -0.271 -0.250 | mean -0.182
+  mixed-map   map=[1, 4, 0, 1]             S1 1.000 S2 0.000 K 0.000 | W -0.021 -0.062 -0.208 -0.125 | mean -0.104
+
+  one-way split over 28 teachers x 4 students: between-teacher variance v_b 0.04028, within-teacher (student) variance v_w 0.02030
+  projected reliability at m = 6: 0.922; at m = 8: 0.941
+  wait teachers' mean W: [-0.432, -0.432] (P4 stops if both are above CAL-1's training floor -0.1215)
+  nowait-map teachers' mean W: [-0.182, -0.151] (P5 stops if both are above -0.0625); mixed-map (reported only): [-0.182, -0.104]
+  know-4 W +0.427; SD of the 28 teachers' mean W 0.213; stops {'P1_know4_below_10': False, 'P2_sd_of_means_below_05': False, 'P3_rel_at_8_below_7': False, 'P4_wait_above_floor': False, 'P5_nowait_map_above_bar': False}
+  pilot rule -> GO with m = 6
+CAL-1c [pilot] done in 200s

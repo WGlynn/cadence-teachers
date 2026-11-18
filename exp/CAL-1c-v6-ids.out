@@ -1,0 +1,12 @@
+  training nowait-map cell counts (stage x labelled action): [[0, 6, 5, 5, 0], [5, 0, 6, 5, 0], [5, 5, 0, 6, 0], [6, 5, 5, 0, 0]]
+  train nowait-map (16): 1031 3230 1210 2202 3301 2011 2030 1212 3001 2211 1332 1310 2032 3200 3302 1330
+  held  nowait-map (16): 1202 3300 3210 3312 2201 3332 2332 1311 1012 3201 1200 3332 2310 2001 1331 3031
+  held  mixed-map  (16): 2414 2411 3412 4034 4234 4204 1304 4011 1342 1240 2341 1004 2334 2402 4214 4404   WAIT stages: [2, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3]
+  pilot nowait-map ( 2): 1011 1331
+  pilot mixed-map  ( 2): 3314 1401   WAIT stages: [1, 1]
+  PASS: training nowait-maps hold no WAIT, are distinct and are not wrong-chain's map
+  PASS: training nowait-maps cover every (stage, non-WAIT wrong action) cell, counts within 1 per stage
+  PASS: no class absent from training (mixed-map) in the training block
+  PASS: every held-out and pilot mixed-map mixes WAIT and non-WAIT stages
+  PASS: no held-out or pilot map equals a training map, wait's map or wrong-chain's map
+V6 identity audit: PASS

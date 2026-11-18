@@ -111,6 +111,10 @@ Readings, fixed now:
 
 ## Status
 - 2026-11-18: pre-registration written, before any CAL-1c data. Harness, analysis and chain written from CAL-1b's with only the registered changes, and committed with this file. V6 identity audit PASS when written (the maps above). To be timestamped (stamp_commit.py) before V1.
+- 2026-11-18 15:07 CT: pre-registration committed `34a04cc` together with the harness, analysis and chain. The Pre-registration section has not changed since that commit. Timestamp: `stamp_commit.py ~/cadence-lab 34a04cc CAL-1c` printed "stamped CAL-1c 34a04cc on 3 calendars" (OpenTimestamps; the tool publishes to WGlynn/provenance). Two automatic checkpoint commits (`7521008` at 14:55, `71bb6d1` at 15:04) caught the scripts mid-edit before that; both came before any CAL-1c data.
+- V6 identity audit PASS (`exp/CAL-1c-v6-ids.out`). V1: `exp/EXP-77b_construction_audit.py` unchanged, ADMITTED BY CONSTRUCTION (`exp/CAL-1c-v1-audit.out`); inspect check PASS (`exp/CAL-1c-v1-inspect.out`). V2: CAL-1c's twin on EXP-77b student 0 (seed 9_000_000) on the pinned 0.94.0 with BLAS threads at 1: IDENTICAL on all eight arm paths (15 s; `exp/CAL-1c-v2-gate.out`).
+- Pilot (one group of 28 x 4 students, 124 twins, 200 s, 1.61 s per twin at 4 workers): know-4 W +.427; SD of the 28 mean W .213; v_b .0403, v_w .0203; projected reliability .922 at m = 6, .941 at m = 8; the two wait teachers W -.432 and -.432 (P4 clear); the two nowait-map teachers -.182 and -.151 (P5 clear); mixed-map (reported only) -.182 and -.104. No stop; m = 6 by the rule (`exp/CAL-1c-pilot.out`, `CAL-1c-pilot.json`, chain log `exp/CAL-1c-chain-pilot.log`). Projected full run: 2,480 twins, about 67 min, under the 3-hour stop.
+- Full run started 15:11:52 CT at m = 6, 4 workers, detached; probes for all 528 instances written to `exp/CAL-1c-full-probes.json` before any twin ran.
 
 ## Summary
 - PENDING (filled in after the run).
