@@ -188,6 +188,47 @@
   }
  },
  {
+  "id": "EXP-07i",
+  "date": "2026-11-18",
+  "iter": "iter61",
+  "track": "generic queue",
+  "verdict": "SUPPORTIVE",
+  "name": "The episodic memory recalls by similarity, but a brain without it carries a regular rule to unseen situations as well, and a plain table beats both on seen ones",
+  "verdict_note": "pre-registered (b8c12ce, Bitcoin-timestamped) before any data; Cadence 0.101.0; a regular rule (the answer follows the feature) with context exceptions in a quarter of EXP-07h's quadruples, at 32 and 128 situations, held-out regular quadruples; exact additive ceiling per seed (.920 to .929); 50 moments per trained situation. Held out, mean (SEM): records alone .800 (.062) and .856 (.026), never a tie; MEMCTX0 .750 (.053) and .869 (.027); FOUNDER .750 (.091) and .819 (.060); TABLE .650 (.055, a chance draw of its coin) and .537 (.046). Trained: TABLE 1.000 at both; MEMCTX0 .889 and .900 (above the ceiling on 1 and 3 of 10 seeds; exceptions .650 and .575); FOUNDER .779 and .770 (0 of 10; exceptions .375 and .237). Prediction CONFIRMED (records and brain carry at both sizes, table above the brain on trained cells). Optional arm: on EXP-07h's XOR rules at 128, 100 moments per situation lifted MEMCTX0 from .863 to .927 (gain +.063, SEM .013), short of .963; answers repeat EXP-07h's exactly on 10 of 10 seeds. Scope: one version, one task family, 10 seeds.",
+  "question": "Does the episodic memory carry anything to an unseen situation when similar situations share answers, and how does it compare with a plain lookup table?",
+  "headline": "This time situations that share a feature mostly share the answer. The memory's records, read on their own, got about 8 in 10 unseen situations right, so the memory is not a strict lookup. But a brain without the memory did about as well on unseen situations, and a plain table got every seen situation right while the brain with the memory got about 9 in 10.",
+  "lesson": "A carry-over test needs two controls: a rule where neighbours share answers, and an arm with the same access to the rule's additive part but no memory; and a baseline whose null is known exactly should be tested against that null, not a SEM from 10 seeds.",
+  "process_issues": [
+   "the registered carry rule (mean above .5 + 2 SEM over 10 seeds) passed the table's coin-flip answers at 32 (26 of 40, one-sided chance .04); the brain arms there also clear a fair-coin binomial (checked after the run)",
+   "the additive ceiling is high by design (.920 to .929), so the ceiling count says less than the exception-cell accuracy",
+   "the records-alone read uses private attributes (_episodic, _placed), not a public API",
+   "one version, one task family, one budget per situation in the main arms, 10 seeds; held out rests on 4 cells per seed at 32 and 16 at 128"
+  ],
+  "quote_worthy": "The memory reads its neighbours on a situation it never saw; so does a brain without it.",
+  "chart": {
+   "title": "Unseen situations right at 128 situations (mean of 10 seeds; chance .5)",
+   "unit": "fraction right",
+   "bars": [
+    {
+     "label": "Plain table (random when unseen)",
+     "value": 0.537
+    },
+    {
+     "label": "Founder, no episodic memory",
+     "value": 0.819
+    },
+    {
+     "label": "Brain with the memory",
+     "value": 0.869
+    },
+    {
+     "label": "The memory's records alone",
+     "value": 0.856
+    }
+   ]
+  }
+ },
+ {
   "id": "EXP-07f",
   "date": "2026-11-04",
   "iter": "iter56",

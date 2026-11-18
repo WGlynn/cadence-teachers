@@ -1,7 +1,7 @@
 # EXP-07i: does the episodic memory carry anything to an unseen situation when similar situations share answers, and how does it compare with a plain lookup table?
 
-- Date: pre-registered 2026-11-18, before any data (commit and timestamp line added after the run) | Cadence version: 0.101.0 (clone `~/_cadence_study` at `3961509` = origin/main, v0.101.0 plus #350 docs; CPU NumPy loop; BLAS threads pinned to 1 inside the script) | Program iter: iter61 (generic queue; off the V(S) ladder, which waits on Will-gated CAL-1c)
-- Script: `exp/EXP-07i_neighbours.py` | Evidence (planned): `exp/EXP-07i-3961509.out`, `.json`, `.err`, `.time`; pilot `exp/EXP-07i-pilot-3961509.out`; rule-level checks `exp/EXP-07i-check-3961509.out`
+- Date: pre-registered 2026-11-18 (`b8c12ce`, before any data; stamp line: "stamped EXP-07i b8c12ce on 3 calendars", OpenTimestamps via `stamp_commit.py`, anchor `b19dcf2` in WGlynn/provenance); run 2026-11-18 | Cadence version: 0.101.0 (clone `~/_cadence_study` at `3961509` = origin/main, v0.101.0 plus #350 docs; CPU NumPy loop; BLAS threads pinned to 1 inside the script) | Program iter: iter61 (generic queue; off the V(S) ladder, which waits on Will-gated CAL-1c)
+- Script: `exp/EXP-07i_neighbours.py` | Evidence: `exp/EXP-07i-3961509.out`, `.json`, `.err`, `.time`; pilot `exp/EXP-07i-pilot-3961509.out`; rule-level checks `exp/EXP-07i-check-3961509.out`
 
 ## Summary
 - Question: EXP-07h found that the episodic memory (`memory_choice=True`) beats what any sum of inputs allows on
@@ -100,8 +100,98 @@
     one-answer seeds, accuracy on the exception cells and on the regular trained cells, the curve at 25% and 50%,
     FOUNDER's carry-over, the paired differences MEMCTX0 minus FOUNDER (held out and trained) and MEMORY minus
     MEMCTX0 (held out), MEMORY's ties, and the fewest and most visits any trained situation got.
-- Result: PENDING
-- Verdict: PENDING
+- Result (2026-11-18; pilot 72 s, run 1,820 s wall, exit 0, stderr empty):
+  - Pilot and budget: at 128 FOUNDER took 18.5 s and MEMCTX0 18.2 s for 2,000 moments (first chunk of 500 the
+    slowest, 6.5 and 6.8 s), and about 1 s for an exam of 128 cues. Projected total 40 minutes (main 22.6, XOR arm
+    17.4), so by the registered rule the XOR arm ran. It took 30 minutes. The pilot changed nothing else. Fewest and
+    most visits to any trained situation: 34 to 68 at 32, 29 to 71 at 128.
+  - Settings read back: FOUNDER eta 1.0, bias 0.05, memory off; MEMCTX0 the same with memory on, context share 0.0,
+    at both sizes.
+  - At the full budget, per arm: trained mean (SEM); seeds above their own ceiling out of 10 and the ceiling verdict;
+    seeds all right; accuracy on the exception cells and on the regular trained cells; then the held-out mean (SEM)
+    and the carry reading:
+    - size 32 (1,400 moments): TABLE 1.000 (.000), 10, LEARNS, 10 all right; exceptions 1.000, regular 1.000; held
+      .650 (.055) CARRIES (see below: a coin). FOUNDER .779 (.034), 0, FAILS, 0; exceptions .375, regular .846; one
+      answer on 1 seed; held .750 (.091) CARRIES. MEMCTX0 .889 (.026), 1, FAILS, 1; exceptions .650, regular .929;
+      held .750 (.053) CARRIES. MEMORY (records alone) .939 (.014), 4, PARTIAL, 2; exceptions .775, regular .967;
+      held .800 (.062) CARRIES; 0 ties.
+    - size 128 (5,600): TABLE 1.000 (.000), 10, LEARNS, 10; exceptions 1.000, regular 1.000; held .537 (.046)
+      CHANCE. FOUNDER .770 (.037), 0, FAILS, 0; exceptions .237, regular .858; held .819 (.060) CARRIES. MEMCTX0
+      .900 (.014), 3, PARTIAL, 0; exceptions .575, regular .954; held .869 (.027) CARRIES. MEMORY .905 (.010), 3,
+      PARTIAL, 0; exceptions .569, regular .961; held .856 (.026) CARRIES; 0 ties.
+  - Paired over seeds (registered): TABLE minus MEMCTX0 on trained +.111 (SEM .026) at 32, +.100 (.014) at 128.
+    MEMCTX0 minus FOUNDER on held out +.000 (.112) at 32, +.050 (.071) at 128; on trained +.111 (.019) and +.130
+    (.041). MEMORY minus MEMCTX0 on held out +.050 (.062) and -.013 (.008).
+  - Curves, trained / held-out mean at 25%, 50%, 100%: TABLE .993/.475, 1.000/.575, 1.000/.650 (32) and .999/.475,
+    1.000/.531, 1.000/.537 (128). FOUNDER .675/.525, .750/.650, .779/.750 (32) and .671/.731, .801/.881, .770/.819
+    (128). MEMCTX0 .779/.675, .839/.700, .889/.750 (32) and .862/.756, .882/.800, .900/.869 (128). MEMORY .900/.775,
+    .921/.775, .939/.800 (32) and .883/.794, .889/.800, .905/.856 (128).
+  - XOR arm (MEMCTX0, 128 situations, EXP-07h's rules and seeds): trained .835 (SEM .017) at 2,800, .863 (.018) at
+    5,600, .927 (.009) at 11,200; paired gain from 50 to 100 per situation +.063 (SEM .013). Answers identical to
+    EXP-07h's at 2,800 and at 5,600 on 10 of 10 seeds.
+  - The TABLE's held-out score at 32 is a coin: by construction its answers on unseen cells are seeded coin flips
+    (expectation .5). It got 26 of 40 right (one-sided chance .040 for a fair coin). It passed the registered rule
+    because the sample SEM over 10 seeds (.055) came out below a fair coin's true SEM (.079; with it the bar is .658).
+    Checked after the run, not registered: under the same fair-coin model the brain arms' held-out counts at 32 are
+    30, 30 and 32 of 40 (FOUNDER, MEMCTX0, MEMORY; one-sided chance .0011, .0011, .0001). At 128, with 16 held-out
+    cells per seed, the TABLE sat at chance as built.
+  - Exploratory: MEMCTX0's greedy choice agreed with the sign of its records' vote on .938 (32) and .981 (128) of
+    all cues; MEMORY minus MEMCTX0 on trained +.050 (SEM .032) at 32 and +.005 (.005) at 128.
+- Verdict: by the pre-registered rules, (A) MEMORY CARRIES at 32 and 128; (B) MEMCTX0 CARRIES at both; (C) TABLE
+  beats MEMCTX0 on the trained cells by more than 2 SEM at both. Loop verdict on the prediction: CONFIRMED. The rest
+  of the prediction: TABLE 1.000 on 10 of 10 as predicted. Its held-out reads CHANCE at 128 and, by the letter of
+  the rule, CARRIES at 32, a chance draw of its coin (above). FOUNDER FAILS the ceiling at both sizes (0 of 10) and
+  CARRIES at both, as leaned. MEMCTX0 does not LEARN at 128 (PARTIAL, 3 of 10), as predicted, and FAILS at 32
+  (1 of 10). XOR arm PARTIAL: more practice helps (gain +.063, SEM .013) but the gap is not closed (.927, below
+  .963 - 2 SEM = .945), as predicted, with answers repeating EXP-07h's exactly. Atlas category: SUPPORTIVE.
 
 ## Reflection
-- PENDING (written after the run).
+- What it means:
+  - The place records are not a strict lookup. On situations they never stored, the records alone answered the
+    held-out cells at .800 (32) and .856 (128). They never read a tie, so every unseen situation read its
+    neighbours' records. So EXP-07h's chance on held-out situations came from the XOR rule, not from a lookup.
+  - But the memory is not what carried the brain to unseen situations here. The founder, with no episodic memory,
+    carried as far: .750 and .819, MEMCTX0 minus FOUNDER +.000 and +.050, both well inside their SEMs. The regular
+    part of this rule is a sum of inputs, and the founder's actor learns sums. A likely reason the two match, argued
+    from the construction and not measured: on 2-hot inputs, a recall that sums over records whose keys overlap is
+    in expectation a row term plus a column term, so it can carry only what a sum of inputs carries.
+  - What the memory adds is on situations it has seen: +.111 and +.130 over the founder on the trained cells. Most
+    of it is the exceptions: .650 and .575 of them, against the founder's .375 and .237. It still did not beat the
+    best sum of inputs on most seeds (1 and 3 of 10). It held about 6 in 10 exceptions and lost a few regular cells.
+    That fits the similarity that carries the rule to unseen cells also pulling each exception toward its
+    neighbours' answer (records alone: .569 of exceptions against .961 of regular cells at 128), but this run does
+    not prove that cause.
+  - The plain table got every trained cell right by a quarter of the budget at both sizes. It beat the brain with
+    the memory by .10 to .11 on the trained cells and had nothing for unseen ones. On a closed set of situations, a
+    table is more accurate and far cheaper.
+  - EXP-07h's drop with size is partly a matter of practice. At 128 situations, twice the practice (100 per
+    situation) lifted MEMCTX0 from .863 to .927 on EXP-07h's own rules and seeds. That closes about two thirds of
+    the gap to the .963 it reached on 8 situations with 50, but not all of it. More situations need more than their
+    share of moments.
+  - For our learned policies: use a table for situations seen before. Cadence carries a regular rule to unseen
+    situations, but on this family the founder did that as well as the brain with the memory. The memory's own
+    contribution was holding exceptions in seen situations, and it held only about 6 in 10. A table for seen
+    situations and a brain for unseen ones would beat either alone here; that is an inference from these numbers,
+    not something this run tested.
+- Process:
+  - Pre-registered, committed (`b8c12ce`), pushed and Bitcoin-timestamped before any data. The rule-level checks and
+    the API smoke run (no scores) came before the pre-registration, the timing pilot (no scores) after it. The
+    pilot changed nothing; by the registered rule it ran the optional arm (projected 40 minutes, took 30).
+  - The carry rule passed a coin. With 4 held-out cells per seed at 32, the sample SEM over 10 seeds is itself
+    noisy, and the table's coin-flip answers cleared .5 + 2 SEM by luck. The brain arms at 32 also clear a fair-coin
+    binomial (p .001 or smaller, checked after the run), and 128, with 16 cells per seed, is the clearer reading.
+    But the registered rule alone would not have caught a coin.
+  - The additive ceiling here is high by design (.920 to .929, a quarter of the quadruples exceptions). Beating it
+    needed at most 1 error in 28, or 7 to 8 in 112. So the exception-cell accuracy is the more telling lookup
+    reading than the ceiling count.
+  - The records-alone read uses private attributes (`_episodic`, `_placed`). It is the vote the choice adds, and
+    the choice agreed with its sign on .94 and .98 of cues, but it is not a public API and could move in a release.
+  - One version (0.101.0), one task family, one budget per situation in the main arms, 10 seeds. Held-out means
+    rest on 4 cells per seed at 32 and 16 at 128.
+- Lesson: a carry-over test needs two controls, not one. A rule where neighbours share answers lets a
+  similarity-weighted recall show itself. An arm with the same access to the rule's additive part but without the
+  memory shows whether the memory is what carries. And when a baseline's null is known exactly (a coin), test
+  against that null, not against a SEM estimated from 10 seeds.
+- Next: queue item marked done. Queued EXP-07j (ready): can the memory carry what a sum of inputs cannot? It needs
+  situation codes whose overlap is graded and not additive, where near situations share answers but no sum of
+  inputs fits, with the same arms and the records-alone read.
