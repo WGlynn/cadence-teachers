@@ -65,3 +65,32 @@ EXP-07i on cadence 0.101.0: sizes [32, 128], arms ('TABLE', 'FOUNDER', 'MEMCTX0'
   XOR MEMCTX0 size 128 seed 7080200  trained 2800:0.839  5600:0.812  11200:0.884  answers as EXP-07h at 2800 True, 5600 True  (78 s)
   XOR MEMCTX0 size 128 seed 7080201  trained 2800:0.902  5600:0.902  11200:0.920  answers as EXP-07h at 2800 True, 5600 True  (73 s)
   XOR MEMCTX0 size 128 seed 7080202  trained 2800:0.821  5600:0.875  11200:0.938  answers as EXP-07h at 2800 True, 5600 True  (76 s)
+  XOR MEMCTX0 size 128 seed 7080203  trained 2800:0.884  5600:0.955  11200:0.955  answers as EXP-07h at 2800 True, 5600 True  (81 s)
+  XOR MEMCTX0 size 128 seed 7080204  trained 2800:0.920  5600:0.920  11200:0.964  answers as EXP-07h at 2800 True, 5600 True  (78 s)
+  XOR MEMCTX0 size 128 seed 7080205  trained 2800:0.821  5600:0.812  11200:0.902  answers as EXP-07h at 2800 True, 5600 True  (79 s)
+  XOR MEMCTX0 size 128 seed 7080206  trained 2800:0.812  5600:0.920  11200:0.946  answers as EXP-07h at 2800 True, 5600 True  (74 s)
+  XOR MEMCTX0 size 128 seed 7080207  trained 2800:0.750  5600:0.804  11200:0.893  answers as EXP-07h at 2800 True, 5600 True  (74 s)
+  XOR MEMCTX0 size 128 seed 7080208  trained 2800:0.786  5600:0.812  11200:0.911  answers as EXP-07h at 2800 True, 5600 True  (77 s)
+  XOR MEMCTX0 size 128 seed 7080209  trained 2800:0.812  5600:0.821  11200:0.955  answers as EXP-07h at 2800 True, 5600 True  (76 s)
+  settings FOUNDER@32   {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': False, 'memory_context': None, 'backend': 'None'}
+  settings MEMCTX0@32   {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.0, 'backend': 'None'}
+  settings FOUNDER@128  {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': False, 'memory_context': None, 'backend': 'None'}
+  settings MEMCTX0@128  {'actor_eta': 1.0, 'actor_eta_bias': 0.05, 'memory_choice': True, 'memory_context': 0.0, 'backend': 'None'}
+TABLE   size 32  @1400: trained 1.000 (SEM 0.000)  above ceiling 10/10 -> LEARNS  all right 10/10  one answer 0  exceptions 1.000  regular 1.000  | held 0.650 (SEM 0.055) -> CARRIES  | curve 350:0.993/0.475  700:1.000/0.575  1400:1.000/0.650
+FOUNDER size 32  @1400: trained 0.779 (SEM 0.034)  above ceiling 0/10 -> FAILS  all right 0/10  one answer 1  exceptions 0.375  regular 0.846  | held 0.750 (SEM 0.091) -> CARRIES  | curve 350:0.675/0.525  700:0.750/0.650  1400:0.779/0.750
+MEMCTX0 size 32  @1400: trained 0.889 (SEM 0.026)  above ceiling 1/10 -> FAILS  all right 1/10  one answer 0  exceptions 0.650  regular 0.929  | held 0.750 (SEM 0.053) -> CARRIES  | curve 350:0.779/0.675  700:0.839/0.700  1400:0.889/0.750
+MEMORY  size 32  @1400: trained 0.939 (SEM 0.014)  above ceiling 4/10 -> PARTIAL  all right 2/10  one answer None  exceptions 0.775  regular 0.967  | held 0.800 (SEM 0.062) -> CARRIES  ties 0  | curve 350:0.900/0.775  700:0.921/0.775  1400:0.939/0.800
+  paired TABLE minus MEMCTX0 on trained at 32: +0.111 (SEM 0.026)
+  paired MEMCTX0 minus FOUNDER on held at 32: +0.000 (SEM 0.112)
+  paired MEMCTX0 minus FOUNDER on trained at 32: +0.111 (SEM 0.019)
+  paired MEMORY minus MEMCTX0 on held at 32: +0.050 (SEM 0.062)
+TABLE   size 128 @5600: trained 1.000 (SEM 0.000)  above ceiling 10/10 -> LEARNS  all right 10/10  one answer 0  exceptions 1.000  regular 1.000  | held 0.537 (SEM 0.046) -> CHANCE  | curve 1400:0.999/0.475  2800:1.000/0.531  5600:1.000/0.537
+FOUNDER size 128 @5600: trained 0.770 (SEM 0.037)  above ceiling 0/10 -> FAILS  all right 0/10  one answer 0  exceptions 0.237  regular 0.858  | held 0.819 (SEM 0.060) -> CARRIES  | curve 1400:0.671/0.731  2800:0.801/0.881  5600:0.770/0.819
+MEMCTX0 size 128 @5600: trained 0.900 (SEM 0.014)  above ceiling 3/10 -> PARTIAL  all right 0/10  one answer 0  exceptions 0.575  regular 0.954  | held 0.869 (SEM 0.027) -> CARRIES  | curve 1400:0.862/0.756  2800:0.882/0.800  5600:0.900/0.869
+MEMORY  size 128 @5600: trained 0.905 (SEM 0.010)  above ceiling 3/10 -> PARTIAL  all right 0/10  one answer None  exceptions 0.569  regular 0.961  | held 0.856 (SEM 0.026) -> CARRIES  ties 0  | curve 1400:0.883/0.794  2800:0.889/0.800  5600:0.905/0.856
+  paired TABLE minus MEMCTX0 on trained at 128: +0.100 (SEM 0.014)
+  paired MEMCTX0 minus FOUNDER on held at 128: +0.050 (SEM 0.071)
+  paired MEMCTX0 minus FOUNDER on trained at 128: +0.130 (SEM 0.041)
+  paired MEMORY minus MEMCTX0 on held at 128: -0.013 (SEM 0.008)
+XOR MEMCTX0 size 128: trained 2800 0.835, 5600 0.863 (SEM 0.018), 11200 0.927 (SEM 0.009); paired gain +0.063 (SEM 0.013); answers as EXP-07h on 10/10 at 2800, 10/10 at 5600
+VERDICTS at the full budget: TABLE@32=LEARNS/CARRIES  FOUNDER@32=FAILS/CARRIES  MEMCTX0@32=FAILS/CARRIES  MEMORY@32=PARTIAL/CARRIES  TABLE@128=LEARNS/CHANCE  FOUNDER@128=FAILS/CARRIES  MEMCTX0@128=PARTIAL/CARRIES  MEMORY@128=PARTIAL/CARRIES  (1820 s)
