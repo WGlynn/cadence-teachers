@@ -1,5 +1,65 @@
 [
  {
+  "id": "CAL-1c",
+  "date": "2026-11-18",
+  "iter": "iter62",
+  "track": "attribution (M1-M5)",
+  "verdict": "BOUNDARY",
+  "name": "Training on the whole kind of harm prices a new combination of harms; a linear price still misses new copies of a trained fake",
+  "verdict_note": "pre-registered with its scripts (34a04cc, Bitcoin-timestamped) on Will's go; CAL-1's instrument on Cadence 0.94.0 pinned from a separate copy (V2 identity gate IDENTICAL with BLAS threads at 1, every row checked), composite zero, m = 6 by the pilot rule; CAL-1's 12 graded per group kept; training adds wait and 16 cell-balanced non-WAIT maps; held out: maps mixing WAIT with other wrong labels, a form no trained teacher has; 224 training and 224 held-out teachers, 48 fresh held-out students. Held-out rho L .945 / S2 .914 / A .785; MSE L .00524 / S2 .01162; L minus S2 rho +.031 [+.017, +.045], MSE -.0064 [-.0082, -.0046]; skill .896 [.869, .920]; beats N0. Criterion 6: mixed-map (novel) +.006 pass, nowait-map (trained form, new maps) +.044 (bound +.069) FAIL, the other five pass. Forms table on mixed-map: without the non-WAIT maps +.066 FAIL, with CAL-1's exact pool +.124 FAIL. No kill.",
+  "headline": "Twice the learned price had overpriced the one fake it had never seen. This time training held the whole kind of harm: a fake that says WAIT everywhere, the old wrong-chain fake, and sixteen fakes that each give their own fixed wrong answers. The price then valued a new kind of fake, one that mixes WAIT with other wrong answers, almost exactly, and taking the sixteen out of training brought the old miss back. It also kept beating agreement. But it overpriced new copies of the sixteen-fake kind by a hair over the bar, because a straight-line price cannot tell a teacher who is always wrong from one who is wrong at random.",
+  "question": "When training spans the consistent-wrong kind of harm, does the learned v(S) price a wrong form no trained teacher has within one state, and keep its calibration on everything else?",
+  "process_issues": [
+   "the analysis was tested on synthetic rows before any data; that test made the training maps cell-balanced and added reading R5 before registration (both disclosed in the pre-registration)",
+   "the novel class is mixed maps only, so it is not directly comparable to CAL-1's and CAL-1b's wrong-map; the forms table's L-cal1 cell is the within-run comparison",
+   "automatic checkpoint commits caught the scripts mid-edit before the pre-registration commit and committed raw rows during the run, before the analysis was read",
+   "one Cadence free-phase budget warning; the number of affected lessons is unknown"
+  ],
+  "lesson": "To price a new combination of harms, training has to span the kind of harm, not one pure instance of it; and before blaming coverage, check that the forecaster can fit each class in its own training data.",
+  "quote_worthy": "",
+  "chart": {
+   "title": "Overpricing by the learned v(S), per fake class (224 held-out teachers); the bar is 1/16 = .0625",
+   "unit": "mean forecast minus realized worth (accuracy over 16 unseen states)",
+   "bars": [
+    {
+     "label": "random",
+     "value": -0.059,
+     "sem": 0.012
+    },
+    {
+     "label": "wrong-chain",
+     "value": -0.034,
+     "sem": 0.013
+    },
+    {
+     "label": "echo",
+     "value": -0.033,
+     "sem": 0.02
+    },
+    {
+     "label": "anti-echo",
+     "value": -0.071,
+     "sem": 0.015
+    },
+    {
+     "label": "wait (in training)",
+     "value": -0.01,
+     "sem": 0.007
+    },
+    {
+     "label": "nowait-map (trained form, new maps)",
+     "value": 0.044,
+     "sem": 0.015
+    },
+    {
+     "label": "mixed-map (form never in training)",
+     "value": 0.006,
+     "sem": 0.023
+    }
+   ]
+  }
+ },
+ {
   "id": "CAL-1b",
   "date": "2026-11-16",
   "iter": "iter59",
