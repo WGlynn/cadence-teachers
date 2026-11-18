@@ -1,0 +1,5 @@
+EXP-07i on cadence 0.101.0: sizes [32, 128], arms ('TABLE', 'FOUNDER', 'MEMCTX0'), 10 seeds, PER_SIT 50, XOR arm on (CHECK)
+  ceiling search: EXP-07h XOR rules [0.75] (want [0.75]); integer search agrees on 40/40 random 4 x 2 tables
+  size 32: trained 28, exceptions 4, held 4; additive ceiling per seed [0.929, 0.929, 0.929, 0.929, 0.929, 0.929, 0.929, 0.929, 0.929, 0.929] (g alone 0.857, one error per exception quadruple 0.929); held-out by the feature majority 0.850, by the feature and context majority 0.850
+  size 128: trained 112, exceptions 16, held 16; additive ceiling per seed [0.929, 0.92, 0.92, 0.92, 0.92, 0.92, 0.929, 0.929, 0.929, 0.92] (g alone 0.857, one error per exception quadruple 0.929); held-out by the feature majority 1.000, by the feature and context majority 1.000
+CHECK ok (34 s)
